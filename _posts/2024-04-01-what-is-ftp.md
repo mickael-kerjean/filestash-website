@@ -1,6 +1,6 @@
 ---
 title: What is FTP? The Essential Guide
-description: File Transfer Protocol (FTP) refers to a xxxx that organisations use to manage files remotely
+description: FTP is a protocol used to transfer files 📂 over a network. Same idea as your local file manager on your desktop or mobile but the filesystem is on a different machine
 layout: landing
 language: en
 permalink: /what-is-ftp.html
@@ -256,6 +256,54 @@ legend:
     color: #2b679b;
 }
 </style>
+
+<h2 id="recent-videos">Recent Videos</h2>
+
+<!-- js generated <div class="video-container"></div> -->
+<style>
+.video-container {
+    display:flex;
+    flex-wrap: nowrap;
+    overflow-x: scroll;
+    height:320px;
+}
+.video-container iframe {
+    min-width: 530px;
+    margin-right: 15px;
+}
+</style>
+<script>
+const $app = document.getElementById("recent-videos");
+fetch("https://pages.kerjean.me/projects/filestash/apps/youtube-search/?q=ftp")
+  .then((e) => e.json())
+  .then((resp) => resp.items.map((item) => {
+     const $iframe = document.createElement("iframe");
+     $iframe.setAttribute("width", "530");
+     $iframe.setAttribute("height", "300");
+     $iframe.setAttribute("src", "https://www.youtube.com/embed/"+item.id.videoId);
+     $iframe.setAttribute("title", "Youtube video player");
+     $iframe.setAttribute("frameborder", "0");
+     $iframe.setAttribute("allow", "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture;");
+     $iframe.setAttribute("referrerpolicy", "strict-origin-when-cross-origin");
+     $iframe.setAttribute("allowfullscreen", "true");
+     return $iframe;
+  }))
+  .then(($videos) => {
+     const $section = document.createElement("p");
+     $section.classList.add("video-container");
+     $videos.forEach(($video) => {
+         $section.appendChild($video)
+     });
+     console.log($videos, $section);
+     $app.appendChild($section);
+  })
+  .catch((err) => {
+     console.error("error generating videos", err);
+     $app.remove();
+  });
+</script>
+
+
 </div>
 
 
