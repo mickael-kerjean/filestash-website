@@ -1,0 +1,215 @@
+---
+layout: default
+---
+
+{% include menu.html context="homepage" %}
+<div id="splash">
+    <div class="container">
+	    <div class="row">
+	        <div class="col-sm-12">
+		        <div class="hgroup">
+		            <h1>Filestash</h1>
+		            <h2>
+                        A self hosted web app to manage the data on your
+                        <noscript>
+                            FTP / SFTP / S3 / Minio / Git / Google drive / Dropbox server
+                        </noscript>
+                        <span id="typing"></span>
+                    </h2>
+		        </div>
+
+                <script src="/js/typed.min.js"></script>
+                <script>
+                 new Typed('#typing', {
+                     strings: [
+                         'rock solid FTP server',
+                         'rock solid SFTP server',
+                         'awesome Webdav server',
+                         'boring Google Drive account',
+                         'boring Dropbox account',
+                         'shinny S3 buckets',
+                         'shinny Minio server',
+                         'reliable Git repo',
+                     ],
+                     typeSpeed: 50,
+                     backSpeed: 30,
+                     startDelay: 100,
+                     backDelay: 500,
+                     smartBackspace: true,
+                     loop: true
+                 });
+                </script>
+
+
+		        <p>
+		            <a class="btn" href="https://demo.filestash.app/">Try the demo</a>
+		            <br>
+		            Or <a href="/docs">get started</a>.
+		        </p>
+	        </div>
+	    </div>
+    </div>
+</div>
+
+<div id="features">
+    <div class="container">
+	    <p>
+		  <img class="screenshot" src="{% link /img/screenshots/viewerpage.png %}">
+	    </p>
+
+        <div class="row features main">
+            <div class="feature">
+                <img class="lazy fancy pull-right hidden-xs" data-src="/img/screenshots/feature1.png" />
+                <h3>Manage your data</h3>
+                <p>
+                    Filestash lets you easily manage your data regardless of where it is store: FTP / SFTP / Git / S3 / Minio / Dropbox / Google Drive
+                </p>
+                <img class="lazy fancy visible-xs" data-src="/img/screenshots/feature1.png" />
+            </div>
+            <div class="feature">
+                <img class="lazy fancy pull-left hidden-xs" data-src="/img/screenshots/feature_share_0000.png" />
+                <h3>Flexible Collaboration</h3>
+                <p>
+                    Thanks to its flexible sharing mechanism, Filestash allows the creation of shared links with fine grain access control. Collaboration links can be mounted as a network drive, handy!
+                </p>
+                <img class="lazy fancy visible-xs" data-src="/img/screenshots/feature_share_0000.png" />
+            </div>
+            <div class="feature">
+                <img class="lazy fancy pull-right hidden-xs" data-src="/img/screenshots/feature3.png" />
+                <h3>Configurable and customisable</h3>
+                <p>
+                    Filestash can be configure to fit many use cases. Need additional flexibility? Create your own plugin
+                </p>
+                <img class="lazy fancy visible-xs" data-src="/img/screenshots/feature3.png" />
+            </div>
+            <div class="feature">
+                <img class="lazy fancy pull-left hidden-xs" data-src="/img/screenshots/feature_orgmode_0000.png" />
+                <h3>Note taking</h3>
+                <p>
+                    Thanks to it’s powerfull editor, Filestash is a fully feature org mode client which mean you can use it to create notes, agendas, todos and even author beautiful documents
+                </p>
+                <img class="lazy fancy visible-xs" data-src="/img/screenshots/feature_orgmode_0000.png" />
+            </div>
+            <div class="feature">
+                <img class="lazy fancy pull-right hidden-xs" data-src="/img/screenshots/feature_image_0000.jpg" />
+                <h3>Your photo gallery</h3>
+                <p>
+                    Upload your photos and share a link to your friends. The image viewer expose all the metadata in your pictures
+                </p>
+                <img class="lazy fancy visible-xs" data-src="/img/screenshots/feature_image_0000.jpg" />
+            </div>
+            <div class="feature">
+                <img class="lazy fancy pull-left hidden-xs" data-src="/img/screenshots/feature_media.png" />
+                <h3>Multimedia viewer</h3>
+                <p>
+                    Filestash can read your videos and music straight from your browser
+                </p>
+                <img class="lazy fancy visible-xs" data-src="/img/screenshots/feature_media.png" />
+            </div>
+        </div>
+    </div>
+
+    <div class="call-to-action">
+        <h2> Ready to try Filestash? </h2>
+        <a class="btn" href="/docs">GETTING STARTED</a>
+        <a class="btn" href="https://demo.filestash.app">DEMO</a>
+    </div>
+
+    <div class="container">
+        <h2> More Features</h2>
+        <div class="row">
+            <div class="col-sm-4 feature center">
+		        <h3>Works everywhere</h3>
+		        <p>The web app works flowlessly on all your devices</p>
+	        </div>
+            <div class="col-sm-4 feature center">
+		        <h3>Low resources</h3>
+		        <p>No supercomputer was ever arm while using Filestash</p>
+	        </div>
+            <div class="col-sm-4 feature center">
+		        <h3>Simple but powerfull</h3>
+		        <p>Our only mission: "Filestash let you manage the data in your cloud"</p>
+	        </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-4 feature center">
+		        <h3>Shortcuts</h3>
+		        <p>Padawans use their keyboard and have a healthy shift ctrl routine</p>
+	        </div>
+            <div class="col-sm-4 feature center">
+		        <h3>Secure</h3>
+		        <p>We've passed agressive security audit to deploy in a F500 company</p>
+	        </div>
+            <div class="col-sm-4 feature center">
+		        <h3>Open Source</h3>
+		        <p>The source code is available, under the license beard dude love: the AGPL</p>
+	        </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-4 feature center">
+		        <h3>Super fast</h3>
+		        <p>The web app feels extremely fast, see by yourself!</p>
+	        </div>
+            <div class="col-sm-4 feature center">
+                <h3>Intelligent image resizing</h3>
+                <p>Your pictures are optimised for your screen without thumbails junks all over the place</p>
+            </div>
+            <div class="col-sm-4 feature center">
+		        <h3>Simple Search</h3>
+		        <p>To let you find your files in an instant</p>
+	        </div>
+	    </div>
+        <div class="row">
+            <div class="col-sm-4 feature center">
+		        <h3>Quick Access</h3>x3
+		        <p>Your most visited files are pined to your homepage for quick access</p>
+	        </div>
+            <div class="col-sm-4 feature center">
+                <span>Coming soon</span>
+		        <h3>Admin area</h3>
+		        <p>An easy to use admin pannel to configure your instance</p>
+	        </div>
+            <div class="col-sm-4 feature center">
+                <span>Coming soon</span>
+		        <h3>Network Drive</h3>
+		        <p>Shared links can be used as a network drive</p>
+	        </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-4 feature center">
+                <span>In the roadmao fir v0.6</span>
+		        <h3>Powerfull Search</h3>
+		        <p>To let you find your files in an instant</p>
+	        </div>
+            <div class="col-sm-4 feature center">
+                <span>In the roadmap for v0.5</span>
+                <h3>Database plugins</h3>
+                <p>New connectors to explore data in Mysql, Postgres, Sqlite without SQL knowledge</p>
+            </div>
+            <div class="col-sm-4 feature center">
+                <span>In the roadmap for v0.7</span>
+                <h3>Video transcoding</h3>
+                <p>Automatically transcode videos on demand</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-4 feature center">
+                <span>In the roadmap for v0.8</span>
+                <h3>Automatic SSL</h3>
+                <p>Automatically generate your SSL certificate so that you don't have to do it yourself</p>
+            </div>
+            <div class="col-sm-4 feature center">
+                <span>In the roadmap for v0.8</span>
+                <h3>Automatic config</h3>
+                <p>Automagically configure itself to be publicly accessible from a public URL</p>
+            </div>
+            <div class="col-sm-4 feature center">
+                <span>In the roadmap for v0.8</span>
+		        <h3>Automatic Upgrade</h3>
+		        <p>Filestash automatically update itself without any action required from your end</p>
+	        </div>
+        </div>
+    </div>
+</div>
+
+{% include footer.html %}
