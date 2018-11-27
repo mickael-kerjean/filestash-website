@@ -1,17 +1,23 @@
-pipeline:
-  build:
-    image: ruby
-    pull: true
-    commands:
-      - gem install bundler
-      - bundle install
-      - bundle exec jekyll build
+kind: pipeline
+name: default
 
-  deploy:
-    image: drillster/drone-rsync
+steps:
+- name: build
+  image: ruby
+  pull: true
+  commands:
+  - gem install bundler
+  - bundle install
+  - bundle exec jekyll build
+- name: deploy
+  image: drillster/drone-rsync
+  settings:
     hosts: [ "hal.kerjean.me" ]
     source: _site/*
     target: /app/pages/data/projects/filestash/website/
     recursive: true
     delete: true
-    secrets: [ rsync_user, rsync_key ]
+    user: 
+      from_secret: RSYNC_USER
+    key:
+      from_secret: RSYNC_KEY
