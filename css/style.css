@@ -47,7 +47,7 @@ pre {
 
 /* DEFAULT */
 body {
-	background: var(--bg-color);
+	background: var(--super-light);
 	color: var(--color);
     font-family: avenir next,avenir,helvetica neue,helvetica,ubuntu,roboto,noto,segoe ui,arial,sans-serif;
 }
@@ -80,7 +80,7 @@ blockquote p { margin: 0; }
 #nav {
     background: white;
     color: var(--light);
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0px 4px rgba(0, 0, 0, 0.05);
     font-size: 1.05em;
 }
 #nav.homepage{
@@ -349,6 +349,7 @@ blockquote p { margin: 0; }
 
 /* BUTTON */
 .btn {
+    text-decoration: none!important;
 	border: 2px solid var(--secondary);
 	border-radius: 3px;
 	color: var(--secondary);
@@ -498,14 +499,13 @@ h3:hover a.link-anchor {
 	text-align: center;
 }
 #features .main{
-    max-width: 700px;
     margin-top: 130px;
     margin-right: auto;
     margin-left: auto;
 }
 #features h3 {
     font-weight: 100;
-    margin: 0 0 10px 0;
+    margin: 0 0 25px 0;
     font-size: 1.5em;
     text-align: left;
     line-height: 1em;
@@ -528,7 +528,7 @@ h3:hover a.link-anchor {
 #features .features.main .feature {
     clear: both;
     min-height: 300px;
-    margin-bottom: 20px;
+    margin-bottom: 50px;
 }
 @media (max-width: 768px) {
     #features .feature {
@@ -549,6 +549,7 @@ h3:hover a.link-anchor {
     height: 450px;
     object-fit: contain;
     object-position: top;
+    background: var(--bg-color);
 }
 #features .feature img.fancy {
     border: 9px solid #0000001a;
@@ -560,8 +561,8 @@ h3:hover a.link-anchor {
 img.fancy.hidden-xs{
     margin-top: -60px;
 }
-img.fancy.pull-left { margin-right: 20px; }
-img.fancy.pull-right { margin-left: 20px; }
+img.fancy.pull-left { margin-right: 50px; }
+img.fancy.pull-right { margin-left: 50px; }
 
 #features .call-to-action{
     padding: 150px 0;
