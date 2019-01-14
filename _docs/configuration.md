@@ -4,50 +4,34 @@ title: Configuration
 order: 3
 ---
 
-This part of the documentation will show you how Filestash can be configured and customised to fit different needs
-
 {% include toc.md %}
 
+Need additional flexibility? [contact us directly](mailto:mickael@kerjean.me), we can even generate custom build just for you!
 
-## Different type of configuration
-If you need customisation that isn't cover in here, you can either:
-- open an issue or a pull request
-- [contact us directly](mailto:mickael@kerjean.me) if you need specific things, we can even do custom builds that's created just for you!
+## The admin console
 
-## The `config.json` file
+The admin console enable you to change the settings of your filestash instance. It can be access at: `https://demo.filestash.app/admin`
 
-The `config.json` file is the centerpiece of the configuration that's covered in this article. It is located by default under `/app/data/config/config.json`.
+<img src="https://raw.githubusercontent.com/mickael-kerjean/filestash_images/master/screenshots/admin_console.png" alt="admin console screenshot" height="320"/>
 
-## Connection page
-You can customise the connection page by editing [this file](https://github.com/mickael-kerjean/filestash/blob/master/config/config.json). You can add/remove/prefill any field or connector: 
-![example of customisation](https://github.com/mickael-kerjean/filestash/blob/master/.assets/img/customisation_1.png?raw=true)
+The admin console let you:
+1. configure your instance with a whole range of customisation
+2. see your logs
+3. create the login screen that fit your specific need. As an example: <img src="https://raw.githubusercontent.com/mickael-kerjean/filestash_images/master/screenshots/backend_example.png" alt="other instance screenshot" height="320"/>
 
-Can be quite a cool way to provide access without your users having knowledge about the underlying system they're connecting to.
+## Configure the Dropbox connector
 
-## Dropbox and Google Drive
+Configuring Dropbox must be done by:
+1. requesting access to the Dropbox API. Without this, Filestash can't access anything store on the Dropbox servers. To do that, go [here](https://www.dropbox.com/developers/apps/), then:
+   - click: "Create App"
+   - select: "dropbox api"
+   - select: "Full Dropbox" or "App folder"
+   - insert: "whatever name you want"
+   - insert at 'redirect URI' => https://example.com/login
+2. store the client_id configuration given by Dropbox in the admin console or by setting the `DROPBOX_CLIENT_ID` environment variable
 
-**Google drive**:
-1. Enable the drive api: [link](https://console.developers.google.com/apis/api/drive.googleapis.com/overview)
-2. Create credentials: [link](https://console.developers.google.com/apis/credentials/oauthclient)
-3. Publish your credentials in the config.json or via the `GDRIVE_CLIENT_ID` and `GDRIVE_CLIENT_SECRET` env variable
+## Configure the Google Drive connector
 
-**Dropbox**:
-1. create an third party app: [link](https://www.dropbox.com/developers/apps/create)
-2. `dropbox api -> "Full Dropbox" or "App folder" -> whatever name you want -> set redirect URI to https://example.com/login`
-3. Publish your credentials in the config.json or via the `DROPBOX_CLIENT_ID` env variable
-
-## Editor keybinding
-
-There's 3 different keybinding available: emacs, vim or sublime. It can be setup from the [config.json](https://github.com/mickael-kerjean/filestash/blob/master/config/config.json#L3)
-
-## Usage statistics
-
-By default, Filestash is sending telemetry data to `log.kerjean.me`. You can opt out by editing the [config.json](https://github.com/mickael-kerjean/filestash/blob/master/config/config.json#L14) file to `telemetry: false`
-The purpose of this module is two folds:
-
-1. Get an idea of how many install are in the wild and see if there's any usage from it. It’s very motivating for me to watch the number of users grow over time.
-
-2. Proactively findout about errors and slow request to fix the root cause in the code in order to make filestash better for everyone
-
-The collected data includes: timestamp, response time, HTTP status code, hostname, protocol (http or https), HTTP method, URI, referrer, log level
-Those logs aren't share with anybody, the only person who has access to it is [Mickael Kerjean](http://mickael.kerkjean.me)
+Configuring Google drive can be done by:
+1. Requesting access to the Google drive API. Without this, Filestash can't get anything store on the server of Google. To do that, you need to [go here](https://console.developers.google.com/apis/api/drive.googleapis.com/overview) and enable the drive api. Then, go [here](https://console.developers.google.com/apis/credentials/oauthclient) and create credentials that filestash will be using to communicate with Google
+2. Publish the configuration given by Google (client_id and client_secret) in your admin console or by setting the `GDRIVE_CLIENT_ID` and `GDRIVE_CLIENT_SECRET` environment variable

@@ -3,17 +3,11 @@ layout: page
 title: Support
 ---
 
-{% include toc.md %}
+- report an issue or bug on our [issue tracker](https://github.com/mickael-kerjean/filestash/issues)
+- community based support in our official IRC channel on Freenode: `#filestash`
 
-It would go a long way [to become a Patreon](https://www.patreon.com/mickaelk) if you enjoy the project or require help. Also you can contact [us](mailto:mickael@kerjean.me) for any other enquiries.
+It would go a long way [to become a Patreon](https://www.patreon.com/mickaelk). Also you can contact [us](mailto:mickael@kerjean.me) for any other enquiries.
 
-## IRC channel
-
-`#filestash` is our official IRC channel on [Freenode](https://freenode.net/) (`chat.freenode.net:6697` on a secure connection).
-
-<div class="center">
-    <a id="irc" class="btn" href="https://kiwiirc.com/nextclient/#irc://irc.freenode.net/#filestash?nick=guest??">Click here to Join</a>
-</div>
 
 ## Contribute to the project
 
@@ -36,3 +30,11 @@ Credentials are stored client's side using a http only cookie that's encrypted a
 ### Why don't you support ubuntu, debian, centos, rhel, fedora, arch, ... ?
 
 There's support for many linux distribution but those installers are only provided to my patreons. For everyone else, you can use docker to install Filestash.
+
+### Why did filestash got developed?
+
+Filestash [original author](https://mickael-kerjean.me) couldn't find an open source file sharing service he was happy with, something that:
+1. Only focus on solving the problem "Managing your data in a cloud you control" and do it well
+2. Doesn't try to own your data but let you sit on the shoulders of giant (eg: many FTP and SFTP servers that have been battles tested for decades, PAM for authentication, the access right of a linux server)
+3. has a user interface that doesn't feel like a second class citizen compared to Dropbox or Google Drive
+4. is fast and not bloated whilst being open source

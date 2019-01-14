@@ -4,7 +4,7 @@ title: Plugins
 order: 5
 ---
 
-If you find yourself needing something that's not available by default, plugins is the butter of customisation. Concretly, a plugin is a `.so` files that can be drop in the `data/plugins/` directory.
+If you find yourself needing something that's not available by default, plugins is the butter of customisation. Concretely, a plugin is a `.so` files that can be drop in the `data/plugins/` directory.
 
 ## The image plugin
 
@@ -14,7 +14,7 @@ By default, Filestash ship with the image plugin which is looking after image tr
 
 ## Develop a plugin
 
-Develop a plugin is done using the Go programming language. Let's start with the skeleton of a Filestash plugin:
+Develop a plugin is done using the Go programming language. In its simplest form, it looks like this:
 ```
 package main
 
@@ -32,8 +32,22 @@ func Init(config *Config) {
 	})
 }
 ```
-At startup, Filestash will load all its plugins and execute the `Init` function which is the entrypoint of the plugin. From this time, you have the opportunity to:
-1. update the `config.json` via the `config` object that's injected on the `Init` function
+At startup, Filestash will load all its plugins and execute the `Init` function which is the entrypoint of the plugin. When loaded, you have the opportunity to:
+1. add your own configuration that will be added to the admin console automatically:
+```
+// mutate our configuration
+Config.Get("general.test").Default("test")
+// same as above but the generated field in the admin console will be much more user friendly
+Config.Get("general.test").Schema(func(f *FormElement) *FormElement {
+	if f == nil {
+		f = &FormElement{}
+	}
+    f.Description = "This is the description a user will see in the admin console"
+	f.Name = "test"
+	f.Type = "text"
+    f.Default = "test"
+})
+```
 2. hook into some events that change how the application behave
 3. Register new backends
 

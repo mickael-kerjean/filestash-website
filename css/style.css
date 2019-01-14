@@ -20,9 +20,9 @@ body {
 }
 p { line-height: 1.5; }
 li { line-height: 1.5; margin: 6px 0; }
-img { max-width: 100%; }
+img { max-width: 100%; object-fit: contain; }
 
-pre, code{
+pre, code, .terminal{
     background: white;
     border: 1px solid rgba(0,0,0,0.15);
 	border-radius: 2px;
@@ -31,19 +31,30 @@ pre code {
     background: none;
     border: none;
 }
-code {
+code, .terminal {
 	font-size: 0.9em;
-	padding: 2px 4px;
+	padding: 2px 0px;
     word-break: break-word;
 }
-pre {
+pre, .terminal {
 	font-size: 1em;
 	line-height: 1.4;
 	padding: 6px 10px;
 	-moz-tab-size: 4;
 	     tab-size: 4;
 }
+.terminal{
+    white-space: nowrap;
+    overflow-x: auto;
+}
 
+.terminal > span.prompt {
+    color: var(--secondary);
+}
+.terminal > span {
+    color: var(--light);
+    opacity: 0.5;
+}
 
 /* DEFAULT */
 body {
@@ -227,7 +238,7 @@ blockquote p { margin: 0; }
 /*****************************
 /*******   CONTENT    ********
 /*****************************/
-#main { margin-top: 30px; margin-bottom: 60px; }
+#main { margin-top: 30px; margin-bottom: 60px; min-height: calc(100vh - 260px); }
 #main h1,
 #main h2,
 #main h3 {

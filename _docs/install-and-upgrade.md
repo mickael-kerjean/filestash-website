@@ -8,37 +8,55 @@ order: 2
 
 ## Requirement
 
-To install Filestash, you either need:
-1. A web server running Linux (preferred) with 2 tools: `docker` and `docker-compose`
-2. A phone running Android with `Termux` installed either from the [Playstore](https://play.google.com/store/apps/details?id=com.termux) or [Fdroid](https://f-droid.org/packages/com.termux/)
+To install Filestash, you need a Linux server with the following tools installed:
+- [docker](https://docs.docker.com/install/)
+- [docker-compose](https://docs.docker.com/compose/install/)
+- curl (preinstalled in your linux distribution 9 times out of 10)
 
+## Installation
+The installation can be done in 3 bash commands:
+<div class="terminal">
+<span class="prompt">/tmp$</span> mkdir filestash && cd filestash <br>
+<span class="prompt">/tmp/filestash$</span> curl -O https://downloads.filestash.app/latest/docker-compose.yml <br>
+<span>
+% Total    % Received % Xferd  Average Speed   Time    Time     Time  Current<br>
+                                 Dload  Upload   Total   Spent    Left  Speed<br>
+100   322  100   322    0     0     98      0  0:00:03  0:00:03 --:--:--    98<br>
+</span>
+<span class="prompt">/app/filestash$</span> docker-compose up -d <br>
+<span>
+Creating filestash_app ... <br>
+Creating filestash_app ... done
+</span>
+</div>
 
+*Note*: Official Docker images are made available on [DockerHub](https://hub.docker.com/r/machines/filestash/).
 
-## Installation on Linux
+Once the installation has complete, open up a browser and navigate to: `http://your_ip:8334`, you will be greet with:
 
-Using Docker and docker-compose:
-```
-mkdir filestash && cd filestash
-curl -O https://downloads.filestash.app/latest/docker-compose.yml
-docker-compose up -d
-```
+<img src="https://raw.githubusercontent.com/mickael-kerjean/filestash_images/master/screenshots/setup.png" alt="setup screenshot" height="320"/>
 
-Official Docker images are made available on [DockerHub](https://hub.docker.com/r/machines/filestash/).
+Follow the wizard and you should be up and running in less than a minute
 
-## Upgrade on Linux
+## Upgrade
 
-Using Docker and docker-compose:
-```
-cd filestash
-curl -O http://filestash.app/downloads/docker-compose.yml
-docker-compose pull
-docker-compose up -d
-```
-
-## Installation on Android
-
-Installation on Android will be supported once we have a solution to [this opened issue](https://github.com/mickael-kerjean/filestash/issues/104)
-
-## What now?
-
-You now have the basic application running. You can customise a lot of stuff in Filestash so be sure to keep reading the next chapter about [configuration](/docs/configuration).
+<div class="terminal">
+<span class="prompt">/tmp/filestash$</span> curl -O http://filestash.app/downloads/docker-compose.yml <br>
+<span>
+% Total    % Received % Xferd  Average Speed   Time    Time     Time  Current<br>
+                                 Dload  Upload   Total   Spent    Left  Speed<br>
+100   322  100   322    0     0     98      0  0:00:03  0:00:03 --:--:--    98<br>
+</span>
+<span class="prompt">/app/filestash$</span> docker-compose pull <br>
+<span>
+Pulling app (machines/filestash:latest)... <br>
+latest: Pulling from machines/filestash <br>
+Digest: sha256:4da068a5868d736f6382618e6f8baa6cf44c1cf0f94a3ded05aa25b00a41f425 <br>
+Status: Image is up to date for machines/filestash:latest <br>
+</span>
+<span class="prompt">/app/filestash$</span> docker-compose up -d <br>
+<span>
+Recreating filestash_app ... <br>
+Recreating filestash_app ... done
+</span>
+</div>
