@@ -38,6 +38,41 @@ Once the installation has complete, open up a browser and navigate to: `http://y
 
 Follow the wizard and you should be up and running in less than a minute
 
+## Using a reverse proxy
+
+Using a reverse proxy isn't mandatory but is quite usefull when you have multiple things installed on your server and can't dedicate the port 80 and 443 to 1 application. Using nginx, the configuration looks like:
+```
+# change the env variable to what you want to use
+export FILESTASH_DOMAIN=demo.filestash.app
+
+cat > /etc/nginx/sites-available/filestash.conf <<EOF
+server {
+    listen         80;
+    server_name    $FILESTASH_DOMAIN;
+    return         301 https://\$server_name\$request_uri;
+}
+server {
+    listen 443 ssl;
+    server_name $FILESTASH_DOMAIN;
+    expires \$expires;
+    location / {
+        proxy_set_header     Host \$host:\$server_port;
+        proxy_set_header     X-Real-IP \$remote_addr;
+        proxy_set_header     X-Forwarded-For \$proxy_add_x_forwarded_for;
+        proxy_set_header     X-Forwarded-Proto \$scheme;
+        proxy_pass           http://127.0.0.1:8334;
+        proxy_read_timeout   86400;
+        client_max_body_size 50G;
+    }
+}
+EOF
+cat /tmp/filestash.conf
+ln -s /etc/nginx/sites-available/filestash.conf /etc/nginx/sites-enabled/filestash.conf
+nginx -t && service nginx restart
+```
+
+*Note*: Resist the temptation of using gzip and other caching mechanism at the reverse proxy level. All those technics are implemented extremely efficiently by the filestash server to minimise resource consumptions whilst being as fast as possible for the browser to load.
+
 ## Upgrade
 
 <div class="terminal">
