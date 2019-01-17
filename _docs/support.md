@@ -1,6 +1,7 @@
 ---
-layout: page
+layout: documentation
 title: Support
+order: 6
 ---
 
 - report an issue or bug on our [issue tracker](https://github.com/mickael-kerjean/filestash/issues)

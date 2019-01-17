@@ -4,51 +4,49 @@ layout: default
 
 {% include menu.html context="homepage" %}
 <div id="splash">
-    <div class="container">
-	    <div class="row">
-	        <div class="col-sm-12">
-		        <div class="hgroup">
-		            <h1>Filestash</h1>
-		            <h2>
-                        A self hosted web app to manage the data on your
-                        <noscript>
-                            FTP / SFTP / S3 / Minio / Git / Google drive / Dropbox server
-                        </noscript>
-                        <span id="typing"></span>
-                    </h2>
-		        </div>
+  <div class="row">
+	<div class="col-sm-12">
+	  <div class="hgroup">
+		<h1>Filestash</h1>
+		<h2>
+          A web app to access, manage and share the data on your
+          <noscript>
+            FTP / SFTP / S3 / Minio / Git / Google drive / Dropbox server
+          </noscript>
+          <span id="typing"></span>
+        </h2>
+	  </div>
 
-                <script src="/js/typed.min.js"></script>
-                <script>
-                 new Typed('#typing', {
-                     strings: [
-                         'rock solid FTP server',
-                         'rock solid SFTP server',
-                         'awesome Webdav server',
-                         'boring Google Drive account',
-                         'boring Dropbox account',
-                         'shinny S3 buckets',
-                         'shinny Minio server',
-                         'reliable Git repo',
-                     ],
-                     typeSpeed: 50,
-                     backSpeed: 30,
-                     startDelay: 100,
-                     backDelay: 500,
-                     smartBackspace: true,
-                     loop: true
-                 });
-                </script>
+      <script src="/js/typed.min.js"></script>
+      <script>
+        new Typed('#typing', {
+        strings: [
+        'rock solid FTP server',
+        'rock solid SFTP server',
+        'awesome Webdav server',
+        'boring Google Drive account',
+        'boring Dropbox account',
+        'shinny S3 buckets',
+        'shinny Minio server',
+        'reliable Git repo',
+        ],
+        typeSpeed: 50,
+        backSpeed: 30,
+        startDelay: 100,
+        backDelay: 500,
+        smartBackspace: true,
+        loop: true
+        });
+      </script>
 
 
-		        <p>
-		            <a class="btn" href="https://demo.filestash.app/">Try the demo</a>
-		            <br>
-		            Or <a href="/docs">get started</a>
-		        </p>
-	        </div>
-	    </div>
-    </div>
+	  <p>
+		<a class="btn" href="https://demo.filestash.app/">Try the demo</a>
+		<br>
+		Or <a href="/docs">get started</a>
+	  </p>
+	</div>
+  </div>
 </div>
 
 <div id="features">

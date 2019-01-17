@@ -149,7 +149,6 @@ window.search_data_loaded = function (search_data) {
 	}, false);
 })();
 
-
 (function(){
     new LazyLoad({
         elements_selector: ".lazy"

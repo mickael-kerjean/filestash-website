@@ -21,7 +21,12 @@ body {
 p { line-height: 1.5; }
 li { line-height: 1.5; margin: 6px 0; }
 img { max-width: 100%; object-fit: contain; }
-
+.radius-top-left{ border-top-left-radius: 4px; }
+.radius-top-right{ border-top-right-radius: 4px; }
+.radius-bottom-left{ border-bottom-left-radius: 4px; }
+.radius-bottom-right{ border-bottom-right-radius: 4px; }
+.spacing{ margin: 50px 0;}
+.center{ text-align: center; }
 pre, code, .terminal{
     background: white;
     border: 1px solid rgba(0,0,0,0.15);
