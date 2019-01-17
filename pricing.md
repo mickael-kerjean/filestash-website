@@ -164,7 +164,7 @@ title: Buy
                 <li>Shared links are reset every week</li>
                 <li>No customisation</li>
             </ul>
-            <div class="amount"> 0$/month</div>
+            <div class="amount"> $0/month</div>
             <a class="action" href="https://demo.filestash.app">USE NOW</a>
         </div>
         <div class="package">
@@ -175,8 +175,8 @@ title: Buy
                 <li>Link it to your domain</li>
             </ul>
             <div class="amount">
-                <s>9$/month</s><br>
-                <span>early bird: </span> 5$/month for the first year
+                <s>$9/month</s><br>
+                <span>early bird: </span> $5/month for the first year
             </div>
             <a class="action" href="#cloud_personal" rel="modal:open">ORDER NOW</a>
         </div>
@@ -198,7 +198,7 @@ title: Buy
                 <li>You perform the installation & maintenance</li>
                 <li>No automatic upgrade</li>
             </ul>
-            <div class="amount">0$</div>
+            <div class="amount">$0</div>
             <a class="action" href="/docs">START NOW</a>
         </div>
         <div class="package">
@@ -208,7 +208,7 @@ title: Buy
                 <li>Automatic upgrade</li>
             </ul>
             <div class="amount">
-                9$/month
+                $9/month
             </div>
             <a class="action" href="#selfhosted_personal" rel="modal:open">ORDER NOW</a>
         </div>
