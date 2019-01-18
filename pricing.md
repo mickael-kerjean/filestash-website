@@ -689,7 +689,7 @@ title: Buy
                 <td data-related="selfhosted"><i class="check"></i></td>
             </tr>
             <tr>
-                <td>Community support on freenode</td>
+                <td>Community support on <a href="https://kiwiirc.com/nextclient/#irc://irc.freenode.net/#filestash?nick=guest??">freenode</a></td>
                 <td data-related="cloud"><i class="check"></i></td>
                 <td data-related="cloud"><i class="check"></i></td>
                 <td data-related="cloud"><i class="check"></i></td>
