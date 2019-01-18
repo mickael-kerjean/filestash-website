@@ -530,7 +530,7 @@ title: Buy
                 <td data-related="selfhosted"><i class="check"></i></td>
             </tr>
             <tr>
-                <td>Export node to PDF</td>
+                <td>Export note to PDF</td>
                 <td data-related="cloud"><i class="check"></i></td>
                 <td data-related="cloud"><i class="check"></i></td>
                 <td data-related="cloud"><i class="check"></i></td>
@@ -673,7 +673,75 @@ title: Buy
                 <td data-related="selfhosted"><i class="check"></i></td>
                 <td data-related="selfhosted"><i class="check"></i></td>
             </tr>
-
+           
+            <tr class="header">
+                <td colspan="5">
+                    <h3>Support & maintenance</h3>
+                </td>
+            </tr>
+            <tr>
+                <td>Setup call with our specialists</td>
+                <td data-related="cloud"><i class="close"></i></td>
+                <td data-related="cloud"><i class="check"></i></td>
+                <td data-related="cloud"><i class="check"></i></td>
+                <td data-related="selfhosted"><i class="close"></i></td>
+                <td data-related="selfhosted"><i class="check"></i></td>
+                <td data-related="selfhosted"><i class="check"></i></td>
+            </tr>
+            <tr>
+                <td>Community support on freenode</td>
+                <td data-related="cloud"><i class="check"></i></td>
+                <td data-related="cloud"><i class="check"></i></td>
+                <td data-related="cloud"><i class="check"></i></td>
+                <td data-related="selfhosted"><i class="check"></i></td>
+                <td data-related="selfhosted"><i class="check"></i></td>
+                <td data-related="selfhosted"><i class="check"></i></td>
+            </tr>
+            <tr>
+                <td>Email support</td>
+                <td data-related="cloud"><i class="close"></i></td>
+                <td data-related="cloud"><i class="check"></i></td>
+                <td data-related="cloud"><i class="check"></i></td>
+                <td data-related="selfhosted"><i class="close"></i></td>
+                <td data-related="selfhosted"><i class="check"></i></td>
+                <td data-related="selfhosted"><i class="check"></i></td>
+            </tr>
+            <tr>
+                <td>Phone support</td>
+                <td data-related="cloud"><i class="close"></i></td>
+                <td data-related="cloud"><i class="close"></i></td>
+                <td data-related="cloud"><i class="check"></i></td>
+                <td data-related="selfhosted"><i class="close"></i></td>
+                <td data-related="selfhosted"><i class="close"></i></td>
+                <td data-related="selfhosted"><i class="check"></i></td>
+            </tr>
+            <tr>
+                <td>Automatic upgrade</td>
+                <td data-related="cloud"><i class="close"></i></td>
+                <td data-related="cloud"><i class="check"></i></td>
+                <td data-related="cloud"><i class="check"></i></td>
+                <td data-related="selfhosted"><i class="close"></i></td>
+                <td data-related="selfhosted"><i class="check"></i></td>
+                <td data-related="selfhosted"><i class="check"></i></td>
+            </tr>
+            <tr>
+                <td>System maintenance</td>
+                <td data-related="cloud"><i class="close"></i></td>
+                <td data-related="cloud"><i class="check"></i></td>
+                <td data-related="cloud"><i class="check"></i></td>
+                <td data-related="selfhosted"><i class="close"></i></td>
+                <td data-related="selfhosted"><i class="check"></i></td>
+                <td data-related="selfhosted"><i class="check"></i></td>
+            </tr>
+            <tr>
+                <td>Automatic SSL</td>
+                <td data-related="cloud"><i class="check"></i></td>
+                <td data-related="cloud"><i class="check"></i></td>
+                <td data-related="cloud"><i class="check"></i></td>
+                <td data-related="selfhosted"><i class="close"></i></td>
+                <td data-related="selfhosted"><i class="check"></i></td>
+                <td data-related="selfhosted"><i class="check"></i></td>
+            </tr>
 
             <tr class="header">
                 <td colspan="5">
@@ -732,66 +800,6 @@ title: Buy
                 <td data-related="cloud"><i class="close"></i></td>
                 <td data-related="selfhosted"><i class="close"></i></td>
                 <td data-related="selfhosted"><i class="close"></i></td>
-                <td data-related="selfhosted"><i class="check"></i></td>
-            </tr>
-
-            <tr class="header">
-                <td colspan="5">
-                    <h3>Support & maintenance</h3>
-                </td>
-            </tr>
-            <tr>
-                <td>Setup call with our specialists</td>
-                <td data-related="cloud"><i class="close"></i></td>
-                <td data-related="cloud"><i class="check"></i></td>
-                <td data-related="cloud"><i class="check"></i></td>
-                <td data-related="selfhosted"><i class="close"></i></td>
-                <td data-related="selfhosted"><i class="check"></i></td>
-                <td data-related="selfhosted"><i class="check"></i></td>
-            </tr>
-            <tr>
-                <td>Community support on freenode</td>
-                <td data-related="cloud"><i class="check"></i></td>
-                <td data-related="cloud"><i class="check"></i></td>
-                <td data-related="cloud"><i class="check"></i></td>
-                <td data-related="selfhosted"><i class="check"></i></td>
-                <td data-related="selfhosted"><i class="check"></i></td>
-                <td data-related="selfhosted"><i class="check"></i></td>
-            </tr>
-            <tr>
-                <td>Email support</td>
-                <td data-related="cloud"><i class="close"></i></td>
-                <td data-related="cloud"><i class="check"></i></td>
-                <td data-related="cloud"><i class="check"></i></td>
-                <td data-related="selfhosted"><i class="close"></i></td>
-                <td data-related="selfhosted"><i class="check"></i></td>
-                <td data-related="selfhosted"><i class="check"></i></td>
-            </tr>
-            <tr>
-                <td>Phone support</td>
-                <td data-related="cloud"><i class="close"></i></td>
-                <td data-related="cloud"><i class="close"></i></td>
-                <td data-related="cloud"><i class="check"></i></td>
-                <td data-related="selfhosted"><i class="close"></i></td>
-                <td data-related="selfhosted"><i class="close"></i></td>
-                <td data-related="selfhosted"><i class="check"></i></td>
-            </tr>
-            <tr>
-                <td>Automatic upgrade</td>
-                <td data-related="cloud"><i class="close"></i></td>
-                <td data-related="cloud"><i class="check"></i></td>
-                <td data-related="cloud"><i class="check"></i></td>
-                <td data-related="selfhosted"><i class="close"></i></td>
-                <td data-related="selfhosted"><i class="check"></i></td>
-                <td data-related="selfhosted"><i class="check"></i></td>
-            </tr>
-            <tr>
-                <td>System maintenance</td>
-                <td data-related="cloud"><i class="close"></i></td>
-                <td data-related="cloud"><i class="check"></i></td>
-                <td data-related="cloud"><i class="check"></i></td>
-                <td data-related="selfhosted"><i class="close"></i></td>
-                <td data-related="selfhosted"><i class="check"></i></td>
                 <td data-related="selfhosted"><i class="check"></i></td>
             </tr>
         </tbody>
