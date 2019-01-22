@@ -742,6 +742,33 @@ title: Buy
                 <td data-related="selfhosted"><i class="check"></i></td>
                 <td data-related="selfhosted"><i class="check"></i></td>
             </tr>
+            <tr>
+                <td>Safe before security annoucement</td>
+                <td data-related="cloud"><i class="close"></i></td>
+                <td data-related="cloud"><i class="close"></i></td>
+                <td data-related="cloud"><i class="check"></i></td>
+                <td data-related="selfhosted"><i class="close"></i></td>
+                <td data-related="selfhosted"><i class="close"></i></td>
+                <td data-related="selfhosted"><i class="check"></i></td>
+            </tr>
+            <tr>
+                <td>Training</td>
+                <td data-related="cloud"><i class="close"></i></td>
+                <td data-related="cloud"><i class="close"></i></td>
+                <td data-related="cloud"><i class="check"></i></td>
+                <td data-related="selfhosted"><i class="close"></i></td>
+                <td data-related="selfhosted"><i class="close"></i></td>
+                <td data-related="selfhosted"><i class="check"></i></td>
+            </tr>
+            <tr>
+                <td>Consulting</td>
+                <td data-related="cloud"><i class="close"></i></td>
+                <td data-related="cloud"><i class="close"></i></td>
+                <td data-related="cloud"><i class="check"></i></td>
+                <td data-related="selfhosted"><i class="close"></i></td>
+                <td data-related="selfhosted"><i class="close"></i></td>
+                <td data-related="selfhosted"><i class="check"></i></td>
+            </tr>
 
             <tr class="header">
                 <td colspan="5">
