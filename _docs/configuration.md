@@ -22,13 +22,13 @@ The admin console let you:
 ## Configure the Dropbox connector
 
 Configuring Dropbox must be done by:
-1. requesting access to the Dropbox API. Without this, Filestash can't access anything store on the Dropbox servers. To do that, go [here](https://www.dropbox.com/developers/apps/), then:
+1. requesting access to the Dropbox API. Without this, Filestash can't access anything stored on the Dropbox servers. To do that, go [here](https://www.dropbox.com/developers/apps/), then:
    - click: "Create App"
    - select: "dropbox api"
    - select: "Full Dropbox" or "App folder"
    - insert: "whatever name you want"
    - insert at 'redirect URI' => https://example.com/login
-2. store the client_id configuration given by Dropbox in the admin console or by setting the `DROPBOX_CLIENT_ID` environment variable
+2. store the client_id configuration given by Dropbox (also known as the `App key`) in the admin console or by setting the `DROPBOX_CLIENT_ID` environment variable
 
 ## Configure the Google Drive connector
 
