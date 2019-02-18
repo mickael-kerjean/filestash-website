@@ -332,7 +332,7 @@ title: Buy
 
             <tr class="header">
                 <td>
-                    <h3>File management</h3>
+                    <h3>Backend connector</h3>
                 </td>
             </tr>
             <tr>
@@ -396,6 +396,51 @@ title: Buy
                 <td data-related="cloud"><i class="check"></i></td>
                 <td data-related="selfhosted"><i class="check"></i></td>
                 <td data-related="selfhosted"><i class="check"></i></td>
+                <td data-related="selfhosted"><i class="check"></i></td>
+            </tr>
+            <tr>
+                <td>Mysql</td>
+                <td data-related="cloud"><i class="close"></i></td>
+                <td data-related="cloud"><i class="check"></i></td>
+                <td data-related="cloud"><i class="check"></i></td>
+                <td data-related="selfhosted"><i class="close"></i></td>
+                <td data-related="selfhosted"><i class="check"></i></td>
+                <td data-related="selfhosted"><i class="check"></i></td>
+            </tr>
+            <tr>
+                <td>Postgres</td>
+                <td data-related="cloud"><i class="close"></i></td>
+                <td data-related="cloud"><i class="close"></i></td>
+                <td data-related="cloud"><i class="check"></i></td>
+                <td data-related="selfhosted"><i class="close"></i></td>
+                <td data-related="selfhosted"><i class="close"></i></td>
+                <td data-related="selfhosted"><i class="check"></i></td>
+            </tr>
+            <tr>
+                <td>Sqlite</td>
+                <td data-related="cloud"><i class="close"></i></td>
+                <td data-related="cloud"><i class="close"></i></td>
+                <td data-related="cloud"><i class="check"></i></td>
+                <td data-related="selfhosted"><i class="close"></i></td>
+                <td data-related="selfhosted"><i class="close"></i></td>
+                <td data-related="selfhosted"><i class="check"></i></td>
+            </tr>
+            <tr>
+                <td>MS SQL</td>
+                <td data-related="cloud"><i class="close"></i></td>
+                <td data-related="cloud"><i class="close"></i></td>
+                <td data-related="cloud"><i class="check"></i></td>
+                <td data-related="selfhosted"><i class="close"></i></td>
+                <td data-related="selfhosted"><i class="close"></i></td>
+                <td data-related="selfhosted"><i class="check"></i></td>
+            </tr>
+            <tr>
+                <td>Oracle</td>
+                <td data-related="cloud"><i class="close"></i></td>
+                <td data-related="cloud"><i class="close"></i></td>
+                <td data-related="cloud"><i class="check"></i></td>
+                <td data-related="selfhosted"><i class="close"></i></td>
+                <td data-related="selfhosted"><i class="close"></i></td>
                 <td data-related="selfhosted"><i class="check"></i></td>
             </tr>
             <tr>
@@ -673,7 +718,7 @@ title: Buy
                 <td data-related="selfhosted"><i class="check"></i></td>
                 <td data-related="selfhosted"><i class="check"></i></td>
             </tr>
-           
+
             <tr class="header">
                 <td colspan="5">
                     <h3>Support & maintenance</h3>
