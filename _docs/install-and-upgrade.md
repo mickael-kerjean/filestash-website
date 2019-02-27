@@ -8,10 +8,13 @@ order: 2
 
 ## Requirement
 
-To install Filestash, you need a Linux server with the following tools installed:
+The official installation guide requires a Linux server with the following tools installed:
 - [docker](https://docs.docker.com/install/)
 - [docker-compose](https://docs.docker.com/compose/install/)
-- curl (preinstalled in your linux distribution 9 times out of 10)
+- curl (very likely already installed in your linux distribution)
+
+Community supported guides are also available:
+- SRugina: [ubuntu instructions + script](https://github.com/mickael-kerjean/filestash/pull/136)
 
 ## Installation
 The installation can be done in 3 bash commands:
