@@ -20,6 +20,10 @@ Unless you use the share feature for which Filestash is forced to persist an enc
 
 There's support for many linux distribution but those installers are only provided to my patreons and enterprise users. For everyone else, you can use docker to install Filestash or submit pull request if you're willing to support those as part of the open source offering.
 
+## Don't you guys test your code?
+
+Yes we do, but those aren't open source.
+
 ## Why did filestash got developed?
 
 Filestash [original author](https://mickael-kerjean.me) couldn't find an open source file sharing service he was happy with, something that:
