@@ -39,7 +39,7 @@ Once the installation has complete, open up a browser and navigate to: `http://y
 
 <img src="https://raw.githubusercontent.com/mickael-kerjean/filestash_images/master/screenshots/setup.png" alt="setup screenshot" height="320"/>
 
-Follow the wizard and you should be up and running in less than a minute
+Follow the wizard and you should be up and running in less than a minute. For a production instance, make sure you fill the `host` value under `configure->general` to your domain name
 
 ## Using a reverse proxy
 
