@@ -687,20 +687,6 @@ title: Buy
                 <td data-related="selfhosted"><i class="check"></i></td>
             </tr>
             <tr>
-                <td>Customisation</td>
-                <td data-related="cloud">
-                    <div class="tooltip">
-                        <i class="close"></i>
-                        <span class="tooltiptext">imagine the mess if everyone would be an admin!</span>
-                    </div>
-                </td>
-                <td data-related="cloud"><i class="check"></i></td>
-                <td data-related="cloud"><i class="check"></i></td>
-                <td data-related="selfhosted"><i class="check"></i></td>
-                <td data-related="selfhosted"><i class="check"></i></td>
-                <td data-related="selfhosted"><i class="check"></i></td>
-            </tr>
-            <tr>
                 <td>Usage logs</td>
                 <td data-related="cloud"><i class="close"></i></td>
                 <td data-related="cloud"><i class="check"></i></td>
