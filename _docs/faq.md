@@ -20,9 +20,9 @@ Unless you use the share feature for which Filestash is forced to persist an enc
 
 There's support for many linux distribution but those installers are only provided to my patreons and enterprise users. For everyone else, you can use docker to install Filestash or submit pull request if you're willing to support those as part of the open source offering.
 
-## Don't you guys test your code?
+## I can't see much tests in the repo, are you guys cowboys?
 
-Yes we do, but those aren't open source.
+We do have an extensive suite of tests but we don't publish them under an open source license.
 
 ## Why did filestash got developed?
 
