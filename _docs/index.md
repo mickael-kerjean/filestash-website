@@ -5,7 +5,7 @@ order: 1
 permalink: /docs
 ---
 
-When all your documents are spread over many different places, vendors and clouds, Filestash is the solution to unify all your data into one single web application (S3, FTP, SFTP, Webdav, Minio, Dropbox and Google drive)
+With your data spread over to many different places, vendors and clouds, Filestash unify it all from one single web application.
 
 To install Filestash, you can either:
 - Install the application on your own server: [see the documentation](/docs/install-and-upgrade).

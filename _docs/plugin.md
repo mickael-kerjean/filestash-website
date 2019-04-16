@@ -4,18 +4,21 @@ title: Plugins
 order: 5
 ---
 
-If you find yourself needing something that's not available by default, plugins is the butter of customisation. Concretely, a plugin is a `.so` files that can be drop in the `data/plugins/` directory.
+When you find yourself needing something that's not available by default, plugins helps you make things happen. The scope of plugin is large, from creating a view of your CRM to send notification when someone access a presentation and everything in between.
 
-## The image plugin
+## Anatomy of a Filestash plugin
 
-By default, Filestash ship with the image plugin which is looking after image transcoding and resizing. The plugin is available in 2 flavors:
-- [a fast plugin](https://github.com/mickael-kerjean/filestash/tree/master/server/plugin/image_light) (the one installed by default on the official docker hub image): that is blazing fast but rely on the installation of 2 c libraries: libraw and libvips
-- [a slow plugin](https://github.com/mickael-kerjean/filestash/tree/master/server/plugin/image_heavy): that is an order of magnitude slower that the fast one but doesn't require any installation of third party libraries
+Plugins are developped using the Go programming language. Concretly they are given as a `.so` file that when located in the `data/plugins` directories provide extra functionalities.
 
-## Develop a plugin
+Internally, plugins have a few key parts:
+- an entry point: which will be called when Filestash boots up. The entry point has the following signature: `func Init(config *Config)`
+- a list of hooks that's available for your plugin to register on and provide its extra functionality
 
-Develop a plugin is done using the Go programming language. In its simplest form, it looks like this:
-```
+The list of installed plugin is available for everyone to see under `/about` along with the version of Filestash for which the plugins were compiled and their associated hash. This information makes the build reproducible whilst allowing anyone to verify the integrity of a deployement.
+
+## Basic example
+
+``` go
 package main
 
 import (
@@ -24,21 +27,35 @@ import (
 )
 
 func Init(config *Config) {
-	plugin_enable := config.Get("feature.myplugin.enable").Default(true).Bool()
+    plugin_enable := config.Get("features.nothing.enable").Default(true).Bool()
 
-	Hooks.Register.ProcessFileContentBeforeSend(func(reader io.Reader, ctx *App, res *http.ResponseWriter, req *http.Request) (io.Reader, error){
-        Log.Info("HELLO FROM A USELESS PLUGIN: %v", plugin_enable)
-		return reader, nil
-	})
+    Hooks.Register.ProcessFileContentBeforeSend(func(reader io.ReadCloser, ctx *App, res *http.ResponseWriter, req *http.Request) (io.ReadCloser, error){
+        if plugin_enable {
+            Log.Info("Can do something here: %v", plugin_enable)
+        }
+        return reader, nil
+    })
 }
 ```
-At startup, Filestash will load all its plugins and execute the `Init` function which is the entrypoint of the plugin. When loaded, you have the opportunity to:
-1. add your own configuration that will be added to the admin console automatically:
+
+To work, plugins needs to be:
+1. compiled into a `.so`:
 ```
-// mutate our configuration
-Config.Get("general.test").Default("test")
-// same as above but the generated field in the admin console will be much more user friendly
-Config.Get("general.test").Schema(func(f *FormElement) *FormElement {
+go build -buildmode=plugin -o plugin.so index.go
+```
+2. placed in the plugin folder. To be loaded, Filestash will need to be restarted
+
+## Configuration management
+
+A Plugin can query and/or mutate the configuration state via the `Config` object provided in its entry point. The resulting configuration can be seen and update by an application admin from the UI by visiting `/admin/configure`.
+
+Usage Example:
+``` go
+// mutate the configuration state
+var testConfig0 string = Config.Get("general.test").Default("test").String()
+
+// same as above except that the admin console will be more user friendly
+var testConfig1 string = Config.Get("general.test").Schema(func(f *FormElement) *FormElement {
 	if f == nil {
 		f = &FormElement{}
 	}
@@ -46,12 +63,14 @@ Config.Get("general.test").Schema(func(f *FormElement) *FormElement {
 	f.Name = "test"
 	f.Type = "text"
     f.Default = "test"
-})
+    f.Placeholder = "Input placeholder"
+}).String()
 ```
-2. hook into some events that change how the application behave
-3. Register new backends
 
-To transform your plugin into a `.so` file that you can drop in the plugin directory you need to build it:
-```
-go build -buildmode=plugin -o artifact.so index.go
-```
+## Complete example
+
+Filestash has a range of builtin plugins you can [see here](https://github.com/mickael-kerjean/filestash/tree/master/server/plugin). Those are all built along the same model given in the [anatomy of a Filestash plugin](/docs/plugin#anatomy-of-a-filestash-plugin) section and serve as code sample for a plugin developer to build upon.
+
+*Tips*:
+1. The list of available hooks is defined [here](https://github.com/mickael-kerjean/filestash/blob/master/server/common/plugin.go). Those will be extended when a need is identified, pull request are welcome
+2. Backend are registered [like this](https://github.com/mickael-kerjean/filestash/blob/master/server/plugin/plg_backend_dav/index.go#L33) and needs to implement [this interface](https://github.com/mickael-kerjean/filestash/blob/master/server/common/types.go#L10-L20)

@@ -10,11 +10,13 @@ No. Plus, if you run one of those archaic things, it's time for you to upgrade t
 
 ## What happens to my credentials?
 
-Credentials are stored in your browser via cookies that are protected by 2 mechanisms:
+Credentials are stored in your browser via cookies that are protected by a few mechanisms:
 - cookies are [http only](https://developer.mozilla.org/en-US/docs/Web/HTTP/Cookies)
 - the data within your cookie is both encrypted and authenticated using state of the art cryptographic algorithms
+- various mechanism leveraging HTTP headers (HSTS, CSP, SameSite Cookie, X-XSS-Protection, X-Frame-Options, X-Content-Type-Options and X-Requested-With) to protect against an attacker trying to trick your browser into doing something nefarious
+- various other technics that are let to the reader to dig through the code
 
-Unless you use the share feature for which Filestash is forced to persist an encrypted version of your credentials, nothing is kept server side.
+Nothing is kept server side unless you use the share feature. In this scenario, Filestash persist an encrypted version of your credentials.
 
 ## Why don't you support a proper installer on my Windows, OSX and all the Linux distribution like ubuntu, debian, centos, rhel, fedora, arch, ... ?
 

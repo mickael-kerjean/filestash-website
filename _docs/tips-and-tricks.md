@@ -4,9 +4,9 @@ title: Tips and tricks
 order: 4
 ---
 
-1. Clicking on the edit icon lets you **move a file** either with an absolute path or relative. In other word, you can type: 
-  - `/tmp/foo.txt` to move in your tmp folder and rename your file to test.txtaq
-  - `../test/bar.txt` 
+1. Clicking on the edit icon lets you **move a file** either with an absolute path or relative. In other word, you can type:
+  - `/tmp/foo.txt` to move in your tmp folder and rename your file to foo.txt
+  - `../test/bar.txt`
 2. Ctrl+F to **search** for something
 3. Alt+1, Alt+2: to change the **view mode** while browsing your files
 4. Ctrl+h: to toggle visibility of **hidden files**
