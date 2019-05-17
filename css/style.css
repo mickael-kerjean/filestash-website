@@ -262,6 +262,7 @@ blockquote p { margin: 0; }
 	margin-bottom: 13px;
 }
 #main p {
+    word-spacing: -1px;
 	text-align: justify;
 }
 #main a {

@@ -4,28 +4,33 @@ title: Plugins
 order: 5
 ---
 
-When you find yourself needing something that's not available by default, plugins helps you make things happen. The scope of plugin is large, from creating a view of your CRM to send notification when someone access a presentation and everything in between.
+When you find yourself needing something that's not available by default, plugins helps you make things happen. The scope of plugin is large, it allows to built on top of core to extends beyond the current capabilities.
 
 ## Plugin Marketplace
 - [plg_backend_backblaze](https://github.com/mickael-kerjean/filestash/tree/master/server/plugin/plg_backend_backblaze): this plugin provide an integration with the Blackblaze B2 cloud storage services
 - [plg_backend_dav](https://github.com/mickael-kerjean/filestash/tree/master/server/plugin/plg_backend_dav): this plugin provide an integration with a CalDAV server and a CardDAV server
 - [plg_backend_ldap](https://github.com/mickael-kerjean/filestash/tree/master/server/plugin/plg_backend_ldap): this plugin provide an integration with an LDAP server
 - [plg_backend_mysql](https://github.com/mickael-kerjean/filestash/tree/master/server/plugin/plg_backend_mysql): this plugin provide an integration with a Mysql server
+- [plg_handler_console](https://github.com/mickael-kerjean/filestash/tree/master/server/plugin/plg_handler_console): a full fledge tty console that's handy to maintain your instance when SSH access is blocked ([screenshot](https://raw.githubusercontent.com/mickael-kerjean/filestash_images/master/screenshots/admin_tty.png))
 - [plg_image_light](https://github.com/mickael-kerjean/filestash/tree/master/server/plugin/plg_image_light): this plugin handle image transcoding and resizing.
-- [plg_image_heavy](https://github.com/mickael-kerjean/filestash/tree/master/server/plugin/plg_image_heavy): this plugin handle image resizing, it is a dropin replacement for plg_image_light in scenarios where your can't/don't want to install third party C libraries or want to reduce the installation size compared to plg_image_light
 - [plg_security_scanner](https://github.com/mickael-kerjean/filestash/tree/master/server/plugin/plg_security_scanner): this plugin handle non legitimate traffic from scaners with a bunch of tricks that are randomly pick: things like gzip bomb, XML bomb, redirection to the attacker own IP, redirection to localhost, sendout of HTTP headers that don't match with the sent content and other fun stuff
+- [plg_security_svg](https://github.com/mickael-kerjean/filestash/tree/master/server/plugin/plg_security_svg): this plugin handle the security aspect of SVG images (by default, SVG images could be crafted to execute javascript or break the browser with XML bomb). This plugin has 2 modes that are configurable from the admin console: mitigation mode where SVG images are allowed but filtered to remove potential harms and blocking mode where SVG images are simply blocked
+- [plg_starter_http](https://github.com/mickael-kerjean/filestash/tree/master/server/plugin/plg_starter_http): serve application via HTTP. This plugin is the legacy server that was used til May 2019
+- [plg_starter_http2](https://github.com/mickael-kerjean/filestash/tree/master/server/plugin/plg_starter_http2): same as plg_starter_http but with an HTTP2 server
+- [plg_started_https](https://github.com/mickael-kerjean/filestash/tree/master/server/plugin/plg_starter_https): same as plg_starter_http but with an HTTPS server.
+- [plg_starter_tor](https://github.com/mickael-kerjean/filestash/tree/master/server/plugin/plg_starter_tor): same as plg_starter_http but the server is expose on TOR with an onion URL
+- [plg_starter_tunnel](https://github.com/mickael-kerjean/filestash/tree/master/server/plugin/plg_starter_tunnel): this is the default server that's use since May 2019
+
 - *add you own with a PR*
 
 
 ## Anatomy of a Filestash plugin
 
-Plugins are developped using the Go programming language. Concretly they are given as a `.so` file that when located in the `data/plugins` directories provide extra functionalities.
+Plugins are developped using the Go programming language. Those are listed from [this file](https://github.com/mickael-kerjean/filestash/blob/master/server/plugin/index.go) before getting compiled (see [our guide](https://github.com/mickael-kerjean/filestash/blob/master/CONTRIBUTING.md) to make a build)
 
 Internally, plugins have a few key parts:
-- an entry point: which will be called when Filestash boots up. The entry point has the following signature: `func Init(config *Config)`
-- a list of hooks that's available for your plugin to register on and provide its extra functionality
-
-The list of installed plugin is available for everyone to see under `/about` along with the version of Filestash for which the plugins were compiled and their associated hash. This information makes the build reproducible whilst allowing anyone to verify the integrity of a deployement.
+- an entry point: which will be called when Filestash boots up. The entry point of a plugin is its `init` function
+- they can call a serie of hooks and APIs to perform their functions (see [here](https://github.com/mickael-kerjean/filestash/blob/master/server/common/plugin.go))
 
 ## Basic example
 
@@ -38,8 +43,8 @@ import (
 	"net/http"
 )
 
-func Init(config *Configuration) {
-    plugin_enable := config.Get("features.nothing.enable").Default(true).Bool()
+func init() {
+    plugin_enable := Config.Get("features.nothing.enable").Default(true).Bool()
 
     Hooks.Register.ProcessFileContentBeforeSend(func(reader io.ReadCloser, ctx *App, res *http.ResponseWriter, req *http.Request) (io.ReadCloser, error){
         if plugin_enable {
@@ -50,16 +55,9 @@ func Init(config *Configuration) {
 }
 ```
 
-To work, plugins needs to be:
-1. compiled into a `.so`:
-```
-go build -buildmode=plugin -o plugin.so index.go
-```
-2. placed in the plugin folder. To be loaded, Filestash will need to be restarted
-
 ## Configuration management
 
-A Plugin can query and/or mutate the configuration state via the `Config` object provided in its entry point. The resulting configuration can be seen and update by an application admin from the UI by visiting `/admin/configure`.
+A Plugin can query and/or mutate the configuration state using the global `Config` object. The resulting configuration can be seen and update by an application admin from the UI by visiting `/admin/configure`.
 
 Usage Example:
 ``` go
@@ -82,4 +80,5 @@ var testConfig1 string = Config.Get("general.test").Schema(func(f *FormElement) 
 ## Development Hints
 
 - The list of available hooks is defined [here](https://github.com/mickael-kerjean/filestash/blob/master/server/common/plugin.go). Those will be extended when a need is identified, pull request are welcome
-- Backend are registered [like this](https://github.com/mickael-kerjean/filestash/blob/master/server/plugin/plg_backend_dav/index.go#L33) and needs to implement [this interface](https://github.com/mickael-kerjean/filestash/blob/master/server/common/types.go#L10-L20)
+- Backend are registered [like this](https://github.com/mickael-kerjean/filestash/blob/master/server/plugin/plg_backend_dav/index.go#L33) and need to implement [this interface](https://github.com/mickael-kerjean/filestash/blob/master/server/common/types.go#L10-L20)
+- There's a range of middleware available for reusable logic (all things like managing access, permissions and sessions, ...), reuse them as you see fit (see [examples](https://github.com/mickael-kerjean/filestash/blob/master/server/main.go))

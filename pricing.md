@@ -18,7 +18,6 @@ title: Buy
         <style>
          .plans{
              text-align: center;
-             margin-bottom: 200px;
              display: inline-block;
              box-shadow: 5px 2px 20px var(--emphasis-primary);
          }
@@ -37,6 +36,17 @@ title: Buy
              background: var(--secondary);
              color: var(--super-light);
          }
+         .definition{
+             margin-bottom: 200px;
+             display: block;
+             color: var(--secondary);
+             font-size: 1.3em;
+             margin-top: 10px;
+             margin-bottom: -10px;
+         }
+         .clear_space{
+             margin-bottom: 200px;
+         }
         </style>
         <script>
          function selectPlan(type){
@@ -49,6 +59,17 @@ title: Buy
                      $els[i].classList.remove("active");
                  }
              }
+
+             // definition highlight
+             $els = document.querySelectorAll(".definition");
+             for (i=0; i< $els.length; i++){
+                 if($els[i].getAttribute("data-related") === type){
+                     $els[i].style.display = "block";
+                 }else{
+                     $els[i].style.display = "none";
+                 }
+             }
+
 
              // pricing grid
              $els = document.querySelectorAll(".pricing");
@@ -84,11 +105,14 @@ title: Buy
             <a class="radius-top-left radius-bottom-left" onClick='selectPlan("cloud")'>Cloud</a>
             <a class="radius-top-right radius-bottom-right" onClick='selectPlan("selfhosted")'>Selfhosted</a>
         </div>
+        <div class="definition" data-related="cloud"> In the cloud plan, we manage the servers</div>
+        <div class="definition" data-related="selfhosted"> Selfhosted plan are for those who owns a server</div>
+        <div class="clear_space"></div>
     </div>
 </div>
 
 <style>
- .pricing-container { min-height: 230px; }
+ .pricing-container { min-height: 160px; margin-bottom: 30px; }
  .pricing{
      display: flex;
      justify-content: space-between;
@@ -176,7 +200,7 @@ title: Buy
             </ul>
             <div class="amount">
                 <s>$9/month</s><br>
-                <span>early bird: </span> $5/month for the first year
+                <span>early bird: </span> $5/month
             </div>
             <a class="action" href="#cloud_personal" rel="modal:open">ORDER NOW</a>
         </div>
@@ -403,7 +427,7 @@ title: Buy
                 <td data-related="cloud"><i class="close"></i></td>
                 <td data-related="cloud"><i class="check"></i></td>
                 <td data-related="cloud"><i class="check"></i></td>
-                <td data-related="selfhosted"><i class="close"></i></td>
+                <td data-related="selfhosted"><i class="check"></i></td>
                 <td data-related="selfhosted"><i class="check"></i></td>
                 <td data-related="selfhosted"><i class="check"></i></td>
             </tr>
@@ -830,7 +854,7 @@ title: Buy
                 <td data-related="cloud"><i class="close"></i></td>
                 <td data-related="cloud"><i class="close"></i></td>
                 <td data-related="selfhosted"><i class="close"></i></td>
-                <td data-related="selfhosted"><i class="close"></i></td>
+                <td data-related="selfhosted"><i class="check"></i></td>
                 <td data-related="selfhosted"><i class="check"></i></td>
             </tr>
             <tr>
@@ -848,7 +872,7 @@ title: Buy
                 <td data-related="cloud"><i class="close"></i></td>
                 <td data-related="cloud"><i class="close"></i></td>
                 <td data-related="selfhosted"><i class="close"></i></td>
-                <td data-related="selfhosted"><i class="close"></i></td>
+                <td data-related="selfhosted"><i class="check"></i></td>
                 <td data-related="selfhosted"><i class="check"></i></td>
             </tr>
             <tr>
@@ -884,7 +908,7 @@ title: Buy
          $pack.appendChild($node);
      }
 
-     selectPlan("cloud");
+     location.hash === "#selfhosted" ? selectPlan("selfhosted") : selectPlan("cloud");
  })()
 </script>
 

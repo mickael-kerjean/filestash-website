@@ -11,5 +11,6 @@ order: 4
 3. Alt+1, Alt+2: to change the **view mode** while browsing your files
 4. Ctrl+h: to toggle visibility of **hidden files**
 5. Esc to exit visible popup
-6. Navigating to [/about](http://demo.filestash.app/about) gives you information about the release and associated plugins that are in use
+6. Navigating to [/about](http://demo.filestash.app/about) gives you information about the release
 7. The text editor supports many of the **keybindings** from emacs. If you're not part of the [church of emacs](https://www.youtube.com/watch?v=ZAnWjQQufgs&t=22), we also provide keybindings for vi and sublime. This can be set via the admin console
+8. The admin console has a few cool trick in its belt, my favorite is to be enable from `features => enable_console`. Restart your instance and navigate to `/tty/` you will be greet with a full fledge bash console straight from your browser which is very handy when it comes to maintenance.

@@ -13,6 +13,8 @@ The official installation guide requires a Linux server with the following tools
 - [docker-compose](https://docs.docker.com/compose/install/)
 - curl (very likely already installed in your linux distribution)
 
+Hardware requirement is minimal: 64MB of RAM and 1 core will give you plenty of confort. If you're expecting heavier load, we have some numbers [here](https://github.com/mickael-kerjean/filestash/wiki/Benchmark) and [here](https://github.com/mickael-kerjean/filestash/wiki/Benchmark-Multi-Config)
+
 ## Installation
 The installation can be done in 3 bash commands:
 <div class="terminal">
@@ -32,19 +34,36 @@ Creating filestash_app ... done
 
 *Note*: Official Docker images are made available on [DockerHub](https://hub.docker.com/r/machines/filestash/).
 
-Once the installation has complete, open up a browser and navigate to: `http://your_ip:8334`, you will be greet with:
+Once the installation has complete, open up a browser and navigate to: `http://your_ip:8334`, you will be greet with the configurator:
 
-<img src="https://raw.githubusercontent.com/mickael-kerjean/filestash_images/master/screenshots/setup.png" alt="setup screenshot" height="320"/>
+<img src="https://raw.githubusercontent.com/mickael-kerjean/filestash_images/master/screenshots/setup.png" alt="setup screenshot" height="320px"/>
+Enter the admin password you want to use to protect the admin console that's available under `/admin`.
 
-Follow the wizard and you should be up and running in less than a minute.
+Last step is to let Filestash configure itself depending on what you are trying to achieve:
+<img src="https://raw.githubusercontent.com/mickael-kerjean/filestash_images/master/screenshots/setup_stage2.png" alt="stage 2 of the setup- screenshot" height="320px"/>
+
+At this stage, selecting `Yes` will expose your instance to the internet from one of our subdomain (eg https://user-foo.filestash.app) without requiring any further setup from your end (see [here](https://github.com/mickael-kerjean/filestash/wiki/Report) if you worry about the automatic configuration). 
+
+**How is it working?** Filestash establish a bidirectional tunnel from your instance to one of our public server. Incoming requests through our domain will first hit our server to then be directed within the tunnel.
+
+**Why would I care?** The motivation behind this feature is security since we discovered (big thank you to the people would have opt in the telemetry) many instances weren't being secured properly: lack of SSL certificates, missconfiguration of reverse proxy, ...
+
+<img height="320px" src="https://img.memecdn.com/poodle-vulnerability_o_4000087.webp" alt="poodle ssl vulnerability"/>
+
+**Pro and Cons:** This approach isn't perfect, it adds on latency and won't give control of the proxy server. However, it has benefits such as:
+- it is secure by default
+- you aren't require to be an admin of anything to make it work
+- if a security vulnerability come up, we will be able to block potential exploit
+
+**Your domain name**: If you have the tunnel enable, a filestash sub domain will be automatically assigned to your instance (eg: user-foo.filestash.app). We can change this domain to whatever you want (eg: stallman.filestash.app) but considering the extra cost associated with that feature (our server aren't free) we will only do it for the people supporting the project.
 
 ## Once you are up and running
 
 1. For a production instance, it is advised to fill the `host` value under `configure->general` with your domain name.
 
 2. You can enable the full text search via the admin console. This feature is disabled by default for 2 reasons:
-    - a privacy concern as creating a searchable index will result in Filestash to crawl through your content and persist some data for the only purpose of answering search queries
     - associated cost when you use a vendor like S3 that charges both for the bandwith and API calls. In your settings you can change the reindex time to a higher value to minimise cost at the expense of having some stale data in your index.
+    - a privacy concern as creating a searchable index will result in your instance crawling through your content and persist some data locally for the purpose of answering those search queries
 
 ## Upgrade
 
@@ -79,14 +98,7 @@ In the meantime, community supported guides are also available:
 - SRugina: [ubuntu instructions + script](https://github.com/mickael-kerjean/filestash/pull/136)
 - *add you own with a PR*
 
-If you want to install Filestash on your own with a more custom build approach, the installation recipe reference is the [Dockerfile](https://github.com/mickael-kerjean/filestash/blob/master/docker/prod/Dockerfile). This recipe is just 1 example of a custom compilation that emphasis on speed, efficiency and features at the cost of installation size. You could shrink down the required space by more than 95% by:
-1. removing everything that's under the "Dependencies" section:
-   - which is about compiling a few low level C libraries (libvips and libraw) that is used by the image_light plugin to transcode image from various format and resize them for a better experience from a browser
-   - if you do remove libvips and libraw, it is recommended to compile the alternate image_heavy plugin instead that trade transcoding speed and support for various less common graphic format for a more cross platform appraoch that don't assume anything is installed in your system and a much smaller footprint when it comes to install size
-
-2. removing everything that's under the "External dependencies" section, with more notably:
-   - texlive and emacs: used by the org-mode client to perform the export to several format. If you don't plan on using org-mode, this alone will save a massive amount of space
-   - poppler-utils: used as part of the full text search indexation logic for text extraction of PDF documents
+If you want to install Filestash on your own with a more custom build approach, the reference is the [Dockerfile](https://github.com/mickael-kerjean/filestash/blob/master/docker/prod/Dockerfile). This recipe is just 1 example of a custom compilation that emphasis on speed, efficiency and features at the cost of installation size. You could shrink down the required space by 90% by disabling features such as image transcoding (getting rid of libvips and libraw), org-mode export (getting rid of emacs and our latex distribution) and other tools (such as pdftotext, ...)
 
 ## Optional: Using a reverse proxy
 
@@ -96,6 +108,7 @@ A sample configuration for nginx:
 ```
 # change the env variable to what you want to use
 export FILESTASH_DOMAIN=demo.filestash.app
+openssl dhparam -out /etc/letsencrypt/live/$FILESTASH_DOMAIN/dh2048.pem -outform PEM -2 2048
 
 cat > /etc/nginx/sites-available/filestash.conf <<EOF
 server {
@@ -107,20 +120,36 @@ server {
     listen 443 ssl;
     server_name $FILESTASH_DOMAIN;
     expires \$expires;
+
+    ssl on;
+    ssl_certificate /etc/letsencrypt/live/$FILESTASH_DOMAIN/fullchain.pem;
+    ssl_certificate_key /etc/letsencrypt/live/$FILESTASH_DOMAIN/privkey.pem;
+    ssl_dhparam /etc/letsencrypt/live/$FILESTASH_DOMAIN/dh2048.pem;
+    ssl_protocols TLSv1.1 TLSv1.2;
+    ssl_ciphers 'ECDHE-ECDSA-CHACHA20-POLY1305:ECDHE-RSA-CHACHA20-POLY1305:ECDHE-ECDSA-AES128-GCM-SHA256:ECDHE-RSA-AES128-GCM-SHA256:ECDHE-ECDSA-AES256-GCM-SHA384:ECDHE-RSA-AES256-GCM-SHA384:DHE-RSA-AES128-GCM-SHA256:DHE-RSA-AES256-GCM-SHA384:ECDHE-ECDSA-AES128-SHA256:ECDHE-RSA-AES128-SHA256:ECDHE-ECDSA-AES128-SHA:ECDHE-RSA-AES256-SHA384:ECDHE-RSA-AES128-SHA:ECDHE-ECDSA-AES256-SHA384:ECDHE-ECDSA-AES256-SHA:ECDHE-RSA-AES256-SHA:DHE-RSA-AES128-SHA256:DHE-RSA-AES128-SHA:DHE-RSA-AES256-SHA256:DHE-RSA-AES256-SHA:ECDHE-ECDSA-DES-CBC3-SHA:ECDHE-RSA-DES-CBC3-SHA:EDH-RSA-DES-CBC3-SHA:AES128-GCM-SHA256:AES256-GCM-SHA384:AES128-SHA256:AES256-SHA256:AES128-SHA:AES256-SHA:DES-CBC3-SHA:!DSS';
+    ssl_ecdh_curve secp384r1;
+
     location / {
+        proxy_http_version 1.1;
+        proxy_set_header Upgrade \$http_upgrade;
+        proxy_set_header Connection "upgrade";
+
         proxy_set_header     Host \$host:\$server_port;
         proxy_set_header     X-Real-IP \$remote_addr;
         proxy_set_header     X-Forwarded-For \$proxy_add_x_forwarded_for;
         proxy_set_header     X-Forwarded-Proto \$scheme;
+        proxy_set_header     Origin '';
+
+        add_header Strict-Transport-Security "max-age=31536000; includeSubDomains" always;
+
         proxy_pass           http://127.0.0.1:8334;
         proxy_read_timeout   86400;
-        client_max_body_size 50G;
     }
 }
 EOF
-cat /tmp/filestash.conf
+
 ln -s /etc/nginx/sites-available/filestash.conf /etc/nginx/sites-enabled/filestash.conf
 nginx -t && service nginx restart
 ```
 
-*Note*: Resist the temptation of using gzip and other caching mechanism at the reverse proxy level. All those technics are already implemented within the filestash server to both minimise resource consumptions on the server and to perform as fast as possible for the client whilst handling all the cache invalidation logic.
+**Note**: Resist the temptation of using gzip and other caching mechanism at the reverse proxy level, you would waste valuable CPU cycles adding latency and increasing the bandwith usage, creating issues with cache invalidation. Filestash is already doing its best at compile time optimising at a level no reverse proxy could ever do with a few lines of configuration and no deep knowledge of the underlying service.

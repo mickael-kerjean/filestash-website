@@ -14,7 +14,7 @@ Credentials are stored in your browser via cookies that are protected by a few m
 - cookies are [http only](https://developer.mozilla.org/en-US/docs/Web/HTTP/Cookies)
 - the data within your cookie is both encrypted and authenticated using state of the art cryptographic algorithms
 - various mechanism leveraging HTTP headers (HSTS, CSP, SameSite Cookie, X-XSS-Protection, X-Frame-Options, X-Content-Type-Options and X-Requested-With) to protect against an attacker trying to trick your browser into doing something nefarious
-- various other technics that are let to the reader to dig through the code
+- various other technics that are left to the reader to dig through the code
 
 Nothing is kept server side unless you use the share feature. In this scenario, Filestash persist an encrypted version of your credentials.
 
@@ -22,9 +22,9 @@ Nothing is kept server side unless you use the share feature. In this scenario, 
 
 There's support for many linux distribution but those installers are only provided to my patreons and enterprise users. For everyone else, you can use docker to install Filestash or submit pull request if you're willing to support those as part of the open source offering.
 
-## I can't see much tests in the repo, are you guys cowboys?
+## The code doesn't have tests ?!? Are you guys cowboys?
 
-We do have an extensive suite of tests but we don't publish them under an open source license.
+We do have an extensive suite of tests but those haven't been open source. We wrote on the why [here](https://github.com/mickael-kerjean/filestash/blob/master/CONTRIBUTING.md#tests)
 
 ## Why did filestash got developed?
 
@@ -33,4 +33,5 @@ Filestash [original author](https://mickael-kerjean.me) couldn't find an open so
 2. Doesn't try to own your data making it hard to move away
 3. Doesn't reinvent the wheel but leverage the state of technology we've seen in the past 20 years (eg: FTP servers, Authentication via PAM, access levels of a linux server, ...)
 4. Has a user interface that's not a second class citizen compared to Dropbox or Google Drive
-5. Is submillisecond fast and open source
+5. Is submillisecond fast
+6. Is open source
