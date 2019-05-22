@@ -2,10 +2,12 @@ title: Filestash &mdash; Self-hosted client for your data
 description: "The official website for Filestash (formerly Nuage), the self-hosted web client for your data"
 kramdown:
   toc_levels: "2"
-url: https://www.filestash.app # Domain used by jekyll-sitemap in sitemap.xml
+url: https://www.filestash.app
 plugins:
+  - jekyll-feed
   - jekyll-sitemap
-permalink: /:path
+
+permalink: :year/:month/:day/:title/
 collections:
   docs:
     output: true
