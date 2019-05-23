@@ -13,7 +13,7 @@ The official installation guide requires a Linux server with the following tools
 - [docker-compose](https://docs.docker.com/compose/install/)
 - curl (very likely already installed in your linux distribution)
 
-Hardware requirement is minimal: 64MB of RAM and 1 core will give you plenty of confort. If you're expecting heavier load, we have some numbers [here](https://github.com/mickael-kerjean/filestash/wiki/Benchmark) and [here](https://github.com/mickael-kerjean/filestash/wiki/Benchmark-Multi-Config)
+Hardware requirement is minimal: 64MB of RAM and 1 core will give you plenty of confort. If you're expecting heavier load, we have some numbers [here](/2019/05/06/benchmark/)
 
 ## Installation
 The installation can be done in 3 bash commands:
@@ -42,7 +42,7 @@ Enter the admin password you want to use to protect the admin console that's ava
 Last step is to let Filestash configure itself depending on what you are trying to achieve:
 <img src="https://raw.githubusercontent.com/mickael-kerjean/filestash_images/master/screenshots/setup_stage2.png" alt="stage 2 of the setup- screenshot" height="320px"/>
 
-At this stage, selecting `Yes` will expose your instance to the internet from one of our subdomain (eg https://user-foo.filestash.app) without requiring any further setup from your end (see [here](https://github.com/mickael-kerjean/filestash/wiki/Report) if you worry about the automatic configuration). 
+At this stage, selecting `Yes` will expose your instance to the internet from one of our subdomain (eg https://user-foo.filestash.app) without requiring any further setup from your end (see [here](/2019/05/01/performance/) if you worry about the automatic configuration).
 
 **How is it working?** Filestash establish a bidirectional tunnel from your instance to one of our public server. Incoming requests through our domain will first hit our server to then be directed within the tunnel.
 

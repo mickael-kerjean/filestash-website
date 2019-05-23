@@ -1,15 +1,14 @@
 ---
 layout: post
 title: Release Note v0.2
-image: /assets/thumbnails/postgres.jpg
 ---
 
 This release focus on making Nuage a comfy place to host your own photos. As screenshot worths more than words, this is it in action:
 
-![demo release 0.2](https://raw.githubusercontent.com/mickael-kerjean/nuage/master/.assets/img/photo_management.gif)
+![demo release 0.2](https://raw.githubusercontent.com/mickael-kerjean/filestash_images/master/.assets/photo_management.gif)
 
 <p align="center">
-<a href="http://nuage.kerjean.me"><img src="https://raw.githubusercontent.com/mickael-kerjean/nuage/master/.assets/img/button_demo.png" /></a>
+<a href="http://demo.filestash.app"><img src="https://raw.githubusercontent.com/mickael-kerjean/filestash_images/master/.assets/button_demo.png" /></a>
 </p>
 
 **What's new:**

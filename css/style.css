@@ -598,3 +598,6 @@ img.fancy.pull-right { margin-left: 50px; }
 .col-sm-4.feature.center {
     margin-bottom: 40px;
 }
+p[align="center"]{
+    text-align: center!important;
+}

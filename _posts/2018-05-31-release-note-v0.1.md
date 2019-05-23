@@ -1,7 +1,6 @@
 ---
 title: Release Note v0.1
 layout: post
-image: /assets/thumbnails/postgres.jpg
 ---
 
 Release note version v0.1
@@ -32,7 +31,7 @@ Nuage v0.1 release brought a lot of the sweetness that makes org mode awesome wi
 ![org mode demo](https://raw.githubusercontent.com/mickael-kerjean/nuage/master/.assets/img/orgmode.gif)
 
 <p align="center">
-<a href="http://nuage.kerjean.me"><img src="https://raw.githubusercontent.com/mickael-kerjean/nuage/master/.assets/img/button_demo.png" /></a>
+<a href="http://demo.filestash.app"><img src="https://raw.githubusercontent.com/mickael-kerjean/filestash_images/master/.assets/button_demo.png" /></a>
 </p>
 
 To get an overview of the features:

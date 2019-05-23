@@ -6,5 +6,14 @@ layout: default
 
 <div id="main" class="container">
   {% include page.html %}
+
+  <section id="isso-thread"></section>
+  <script data-isso="https://comment.filestash.app/" src="https://comment.filestash.app/js/embed.min.js"></script>
+  <style>
+    #isso-thread{padding: 30px 10px 10px 10px;}
+    #isso-thread a{text-decoration: none;}
+    .isso-postbox > .form-wrapper > .auth-section .input-wrapper input{ box-shadow: none; }
+    .isso-postbox > .form-wrapper > .auth-section .post-action > input{ box-shadow: none; }
+  </style>
 </div>
 {% include footer.html %}
