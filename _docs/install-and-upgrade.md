@@ -70,7 +70,7 @@ At this stage, selecting `Yes` will expose your instance to the internet from on
 Upgrade is straightforward:
 
 <div class="terminal">
-<span class="prompt">~/filestash$</span> curl -O http://filestash.app/downloads/docker-compose.yml <br>
+<span class="prompt">~/filestash$</span> curl -O https://downloads.filestash.app/latest/docker-compose.yml <br>
 <span>
 % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current<br>
                                  Dload  Upload   Total   Spent    Left  Speed<br>
