@@ -1,6 +1,5 @@
 ---
 layout: default
-title: Buy
 ---
 
 {% include menu.html context="homepage" %}
