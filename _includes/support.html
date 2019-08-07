@@ -1,0 +1,35 @@
+<div id="supportbox">
+  <div class="supportbox-title">SUPPORT</div>
+  <div class="supportbox-container">
+    <a title="community support" href="https://support.filestash.app" style="background: rgba(255,255,255,0.1);">Community <br> support</a>
+    <a title="enterprise support" href="/pricing#support">Enterprise <br> support</a>
+  </div>
+  <style>
+    #supportbox{
+        position: fixed;
+        text-align: center;
+        bottom: 0;
+        right: 0;
+        background: var(--emphasis-primary);
+        border-top-left-radius: 5px;
+        color: var(--dark);
+        box-shadow: 0px 0px 15px rgba(0,0,0,0.1);
+    }
+    #supportbox .supportbox-title {
+        cursor: pointer;
+        padding: 10px 30px 5px 30px;
+    }
+    #supportbox .supportbox-container {
+        line-height: 17px;
+        background: var(--emphasis-secondary);
+        font-size: 15px;
+    }
+    #supportbox .supportbox-container > a {
+        display: block;
+        padding: 18px 0;
+        color: white;
+    }
+    #supportbox { transform: translateY(140px); transition: 0.15s ease transform; }
+    #supportbox:hover { transform: translateY(0); transition: 0.3s ease transform; }
+  </style>
+</div>
