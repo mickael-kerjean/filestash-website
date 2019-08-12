@@ -6,8 +6,20 @@ url: https://www.filestash.app
 plugins:
   - jekyll-feed
   - jekyll-sitemap
+  - jekyll-archives
 
 permalink: :year/:month/:day/:title/
 collections:
   docs:
     output: true
+
+jekyll-archives:
+  layout: 'archive'
+  enabled:
+    - year
+    - month
+    - day
+  permalinks:
+    year: '/:year/'
+    month: '/:year/:month/'
+    day: '/:year/:month/:day/'
