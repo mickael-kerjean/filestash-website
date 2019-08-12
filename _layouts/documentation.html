@@ -5,17 +5,18 @@ layout: default
 {% include menu.html context="splash" %}
 
 <div id="main" class="container">
-	<div class="row">
-		<aside id="desktop-menu" class="col-sm-3 hidden-xs sticky">
-			<ul class="menu">
-				{% include docmenu.html %}
-			</ul>
-		</aside>
-		<div class="col-sm-9">
-			{% include page.html %}
+    <div class="row">
+        <aside id="desktop-menu" class="col-sm-3 hidden-xs sticky">
+            <ul class="menu">
+                {% include docmenu.html %}
+            </ul>
+        </aside>
+        <div class="col-sm-9">
+            {% include banner.html %}
+            {% include page.html %}
             {% include contribute.html %}
-		</div>
-	</div>
+        </div>
+    </div>
 </div>
 
 <script src="https://cdn.rawgit.com/leafo/sticky-kit/v1.1.2/jquery.sticky-kit.min.js"></script>
