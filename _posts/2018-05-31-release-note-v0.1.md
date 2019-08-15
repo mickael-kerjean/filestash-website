@@ -11,11 +11,11 @@ Release note version v0.1
 > 
 > A random dude (me)
 
-Nuage has brought org mode out of emacs:
+Filestash has brought org mode out of emacs:
 
 ![menubar view](http://archive.kerjean.me/public/2018/nuage_orgmode.jpg)
 
-Nuage v0.1 release brought a lot of the sweetness that makes org mode awesome without denaturing it or trying to reinvent it but rather by making it available to any touch based devices:
+Filestash v0.1 release brought a lot of the sweetness that makes org mode awesome without denaturing it or trying to reinvent it but rather by making it available to any touch based devices:
 - todolist: supports for tags with inheritance, checkbox, priority and more
 - agenda: supporting everything from the todolist + recurrent event
 - toggle button: fold headlines
@@ -36,7 +36,7 @@ Nuage v0.1 release brought a lot of the sweetness that makes org mode awesome wi
 
 To get an overview of the features:
 ```
--> go on the demo: http://nuage.kerjean.me
+-> go on the demo: http://demo.filestash.app
 -> git
 -> repo field: https://github.com/mickael-kerjean/nuage_org_demo
 -> connect
