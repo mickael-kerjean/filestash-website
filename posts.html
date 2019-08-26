@@ -5,12 +5,20 @@ layout: default
 
 {% include menu.html context="splash" %}
 
-<div id="main" class="container">
+<div id="main" class="container no-anchor">
+  <h1>Posts and Guides</h1>
+  <style>
+    #main h2{
+        font-weight: normal!important;
+        display: inline-block!important;
+        margin: 0!important;
+    }
+  </style>
   <section>
     {% for post in site.posts %}
     <div class="article">
       <a href="{{ post.url }}">
-        {{ post.title }} <br><span class="timestamp">{{ post.date | date: "%b %Y" }}</span>
+        <h2>{{ post.title }}</h2> <br><span class="timestamp">{{ post.date | date: "%b %Y" }}</span>
       </a>
     </div>
     {% endfor %}
