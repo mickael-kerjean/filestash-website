@@ -62,7 +62,9 @@ PLATFORMS
 
 DEPENDENCIES
   jekyll (= 3.8.4)
+  jekyll-archives (= 2.2.1)
   jekyll-feed (~> 0.6)
+  jekyll-redirect-from (= 0.15.0)
   jekyll-sitemap (= 1.2.0)
 
 BUNDLED WITH

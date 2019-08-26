@@ -14,7 +14,7 @@ collections:
     output: true
 
 jekyll-archives:
-  layout: 'archive'
+  layout: 'post-archive'
   enabled:
     - year
     - month
