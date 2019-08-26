@@ -359,7 +359,7 @@ layout: default
                 </td>
             </tr>
             <tr>
-                <td>FTP</td>
+                <td><a href="{% post_url 2019-08-20-ftp-web-client %}">FTP</a></td>
                 <td data-related="cloud"><i class="check"></i></td>
                 <td data-related="cloud"><i class="check"></i></td>
                 <td data-related="cloud"><i class="check"></i></td>
