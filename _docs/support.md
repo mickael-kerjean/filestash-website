@@ -5,7 +5,7 @@ order: 6
 ---
 
 - report an issue or bug on our [issue tracker](https://github.com/mickael-kerjean/filestash/issues)
-- community based support in our official IRC channel on Freenode: [`#filestash`](https://kiwiirc.com/nextclient/#irc://irc.freenode.net/#filestash?nick=guest??)
+- community based support in our official IRC channel on Freenode: [`#filestash`](https://kiwiirc.com/nextclient/#irc://irc.freenode.net/#filestash?nick=guest??). A searchable archive is available at [https://support.filestash.app](https://support.filestash.app)
 
 Also you can contact [us](mailto:mickael@kerjean.me) for any other enquiries.
 
