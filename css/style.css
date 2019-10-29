@@ -556,8 +556,14 @@ h3:hover a.link-anchor {
 }
 @media (max-width: 768px) {
     #features .feature {
-        margin: 0 auto;
-        max-width: 320px;
+        margin-left: 4%;
+        margin-right: 4%;
+    }
+    #features .feature h3 {
+        margin-bottom: 5px;
+    }
+    #features .feature .visible-xs {
+        margin-top: 10px;
     }
 }
 #features .feature p {
