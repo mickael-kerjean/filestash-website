@@ -562,6 +562,10 @@ h3:hover a.link-anchor {
     #features .feature h3 {
         margin-bottom: 5px;
     }
+    #features .feature h2 {
+        margin-bottom: 5px!important;
+    }
+
     #features .feature .visible-xs {
         margin-top: 10px;
     }
