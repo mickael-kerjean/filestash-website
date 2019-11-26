@@ -206,6 +206,7 @@ i.arrow{
 }
 i.right { transform: rotate(-45deg); }
 i.top { transform: rotate(-135deg); }
+i.down{ transform: rotate(45deg); }
 
 .arrow-right{
     padding-left: 35px;

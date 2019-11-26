@@ -12,7 +12,7 @@ form {
 }
 form label{ display: block; margin-bottom: 5px; }
 form label span{ display: inline-block; width: 145px}
-form label input{ width: calc(100% - 145px); padding: 2px 5px; color: var(--emphasis); }
+form label input, form label select{ width: calc(100% - 145px); padding: 2px 5px; color: var(--emphasis); }
 form input[type="submit"]{ margin-top: 20px; width: 100%; }
 
 #splash h1{ font-size: 30px; }
@@ -34,6 +34,8 @@ form input[type="submit"]{ margin-top: 20px; width: 100%; }
     margin-top: -2px;
 }
 
+form fieldset legend{ padding: 2px 7px; cursor: pointer; user-select: none; }
+form select{ background: white; }
 ul > li:nth-child(3) {
     display: none;
 }

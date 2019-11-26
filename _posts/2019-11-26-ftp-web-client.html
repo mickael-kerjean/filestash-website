@@ -27,7 +27,6 @@ redirect_from:
         <label>
           <span>Password:</span><input type="password" name="password" />
         </label>
-        <br>
         <label>
           <span>Port:</span><input type="text" name="port" placeholder="Default: 21"/>
         </label>
@@ -43,10 +42,10 @@ redirect_from:
       </script>
       <p class="example">
         Examples of currently online FTP servers:<br>
-        <a onclick="clickPublicFTPHandler(event);" href="ftp://ftp.gnu.org/">ftp.gnu.org</a>
-        <a onclick="clickPublicFTPHandler(event);" href="ftp://ftp.pureftpd.org/">ftp.pureftpd.org</a>
-        <a onclick="clickPublicFTPHandler(event);" href="ftp://ftp.vim.org/pub/">ftp.vim.org</a>
-        <a onclick="clickPublicFTPHandler(event);" href="ftp://ftp.slackware.com/">ftp.slackware.com</a>
+        <a rel="nofollow noopener" onclick="clickPublicFTPHandler(event);" href="ftp://ftp.gnu.org/">ftp.gnu.org</a>
+        <a rel="nofollow noopener" onclick="clickPublicFTPHandler(event);" href="ftp://ftp.pureftpd.org/">ftp.pureftpd.org</a>
+        <a rel="nofollow noopener" onclick="clickPublicFTPHandler(event);" href="ftp://ftp.vim.org/pub/">ftp.vim.org</a>
+        <a rel="nofollow noopener" onclick="clickPublicFTPHandler(event);" href="ftp://ftp.slackware.com/">ftp.slackware.com</a>
       </p>
     </div>
   </div>
@@ -130,11 +129,25 @@ redirect_from:
         <img alt="plugin illustration" class="lazy fancy visible-xs" data-src="/img/posts/2019-08-20-ftp-web-client.html.6.png" />
       </div>
 
-      <p style="background: rgba(0,0,0,0.05); padding: 10px; border-radius: 5px";>
-        We hope you find Filestash as cool as we do. If you need help or want to chat, you can find us on IRC on freenode at <a href="https://support.filestash.app/">#filestash</a>
-      </p>
-
     </div>
   </div>
 
+  <div class="call-to-action slant up">
+    <h2>We have a few more clients:</h2>
+    <a class="btn" href="{% post_url 2019-11-21-s3-browser %}">S3</a>
+    <a class="btn" rel="nofollow" href="https://demo.filestash.app/login">SFTP</a>
+    <a class="btn" rel="nofollow" href="https://demo.filestash.app/login">Webdav</a>
+    <a class="btn" rel="nofollow" href="https://demo.filestash.app/login">GIT</a>
+  </div>
+
+
+  <div class="container">
+    <p style="margin-top: 100px;">
+      We hope you find Filestash as cool as we do. If you need help or want to chat, you can find us on IRC on freenode at <a href="https://support.filestash.app/">#filestash</a>
+    </p>
+  </div>
+
+
 </div>
+
+{% include support.html %}
