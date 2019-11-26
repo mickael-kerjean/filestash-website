@@ -62,7 +62,7 @@ At this stage, selecting `Yes` will expose your instance to the internet from on
 1. For a production instance, it is advised to fill the `host` value under `configure->general` with your domain name.
 
 2. You can enable the full text search via the admin console. This feature is disabled by default for 2 reasons:
-    - associated cost when you use a vendor like S3 that charges both for the bandwith and API calls. In your settings you can change the reindex time to a higher value to minimise cost at the expense of having some stale data in your index.
+    - associated cost when you use a vendor like [S3]({% post_url 2019-11-21-s3-browser %}) that charges both for the bandwith and API calls. In your settings you can change the reindex time to a higher value to minimise cost at the expense of having some stale data in your index.
     - a privacy concern as creating a searchable index will result in your instance crawling through your content and persist some data locally for the purpose of answering those search queries
 
 ## Upgrade

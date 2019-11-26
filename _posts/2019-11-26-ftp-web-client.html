@@ -16,7 +16,7 @@ redirect_from:
       <div class="hgroup">
         <h1><a rel="nofollow noreferrer noopener" href="https://en.wikipedia.org/wiki/File_Transfer_Protocol">FTP</a> Online; Try our web based FTP Client</h1>
       </div>
-      <form action="http://demo.filestash.app/login" method="GET">
+      <form onsubmit='$("form input[type=\"submit\"]").attr("value", "LOADING...")' action="https://demo.filestash.app/login" method="GET">
         <input type="hidden" name="type" value="ftp" />
         <label>
           <span>Hostname:</span><input type="text" name="hostname" placeholder="IP address of your server" required/>
@@ -133,7 +133,7 @@ redirect_from:
   </div>
 
   <div class="call-to-action slant up">
-    <h2>We have a few more clients:</h2>
+    <h2>We have some more online clients:</h2>
     <a class="btn" href="{% post_url 2019-11-21-s3-browser %}">S3</a>
     <a class="btn" rel="nofollow" href="https://demo.filestash.app/login">SFTP</a>
     <a class="btn" rel="nofollow" href="https://demo.filestash.app/login">Webdav</a>

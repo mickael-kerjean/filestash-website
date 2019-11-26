@@ -386,7 +386,7 @@ layout: default
                 <td data-related="selfhosted"><i class="check"></i></td>
             </tr>
             <tr>
-                <td>S3</td>
+                <td><a href="{% post_url 2019-11-21-s3-browser %}">S3</a></td>
                 <td data-related="cloud"><i class="check"></i></td>
                 <td data-related="cloud"><i class="check"></i></td>
                 <td data-related="cloud"><i class="check"></i></td>
@@ -395,7 +395,7 @@ layout: default
                 <td data-related="selfhosted"><i class="check"></i></td>
             </tr>
             <tr>
-                <td>Minio</td>
+                <td><a href="{% post_url 2019-11-21-s3-browser %}">Minio</a></td>
                 <td data-related="cloud"><i class="check"></i></td>
                 <td data-related="cloud"><i class="check"></i></td>
                 <td data-related="cloud"><i class="check"></i></td>
