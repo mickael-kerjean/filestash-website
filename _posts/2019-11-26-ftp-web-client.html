@@ -1,0 +1,141 @@
+---
+title: FTP Online - A web client for FTP | Filestash
+description: Access and manage your FTP from your browser, view and edit your files on the spot and collaborate with other people
+layout: landing
+permalink: /online-ftp-client.html
+redirect_from:
+  - /ftp-client.html
+---
+
+<link rel="stylesheet" href="/css/landing-page.css">
+<link rel="stylesheet" href="/css/landing-page-login.css">
+
+<div id="splash" class="nopadding">
+  <div class="row">
+    <div class="col-sm-12">
+      <div class="hgroup">
+        <h1><a rel="nofollow noreferrer noopener" href="https://en.wikipedia.org/wiki/File_Transfer_Protocol">FTP</a> Online; Try our web based FTP Client</h1>
+      </div>
+      <form action="http://demo.filestash.app/login" method="GET">
+        <input type="hidden" name="type" value="ftp" />
+        <label>
+          <span>Hostname:</span><input type="text" name="hostname" placeholder="IP address of your server" required/>
+        </label>
+        <label>
+          <span>Username:</span><input default="anonymous" type="text" name="username" placeholder="Default: anonymous"/>
+        </label>
+        <label>
+          <span>Password:</span><input type="password" name="password" />
+        </label>
+        <br>
+        <label>
+          <span>Port:</span><input type="text" name="port" placeholder="Default: 21"/>
+        </label>
+        <input type="submit" value="Connect" />
+      </form>
+
+      <script>
+        function clickPublicFTPHandler(e){
+            e.preventDefault();
+            document.querySelector("form input[name='hostname']").value = e.target.text;
+            document.querySelector("form input[type='submit']").click()
+        }
+      </script>
+      <p class="example">
+        Examples of currently online FTP servers:<br>
+        <a onclick="clickPublicFTPHandler(event);" href="ftp://ftp.gnu.org/">ftp.gnu.org</a>
+        <a onclick="clickPublicFTPHandler(event);" href="ftp://ftp.pureftpd.org/">ftp.pureftpd.org</a>
+        <a onclick="clickPublicFTPHandler(event);" href="ftp://ftp.vim.org/pub/">ftp.vim.org</a>
+        <a onclick="clickPublicFTPHandler(event);" href="ftp://ftp.slackware.com/">ftp.slackware.com</a>
+      </p>
+    </div>
+  </div>
+</div>
+<div class="waveshape"></div>
+
+<div id="features">
+  <div class="container">
+    <div class="row features main">
+
+      <div class="feature">
+        <img class="lazy fancy pull-left hidden-xs" data-src="/img/screenshots/feature1.png" style="margin-top: -30px;" />
+        <h2>Explore and Manage the data on your FTP server</h2>
+        <p>
+          Our web based online FTP client let you easily view / edit / delete / rename your data on your server. It will work wether you use <a rel="nofollow noopener" href="http://www.proftpd.org/">proftpd</a>, <a rel="nofollow noopener" href="https://www.pureftpd.org/project/pure-ftpd/">pureftpd</a>, <a rel="nofollow noopener" href="https://filezilla-project.org/">filezilla</a>, <a rel="nofollow noopener" href="https://security.appspot.com/vsftpd.html">vsftpd</a> or any other <a rel="nofollow noopener" href="https://tools.ietf.org/html/rfc959">FTP compliant server</a>.
+        </p>
+        <img class="lazy fancy visible-xs" data-src="/img/screenshots/feature1.png" />
+      </div>
+
+
+      <div class="feature">
+        <img class="lazy fancy pull-right hidden-xs" data-src="/img/posts/2019-08-20-ftp-web-client.html.2.png" />
+        <h2>Open source</h2>
+        <p>
+          This software is open source. The code is available from <a rel="nofollow" href="https://github.com/mickael-kerjean/filestash">github</a>, feel free to audit it and selfhost your own version (see the <a href="/docs">documentation</a> on how to do that).
+        </p>
+        <img class="lazy fancy visible-xs" data-src="/img/posts/2019-08-20-ftp-web-client.html.2.png" />
+      </div>
+
+      <div class="feature">
+        <img class="lazy fancy pull-left hidden-xs" data-src="/img/posts/2019-08-20-ftp-web-client.html.1.png" />
+        <h2>Text editor</h2>
+        <p>
+          Our integrated text editor let you edit the content on your FTP. It is based on <a ref="noopener nofollow" href="https://codemirror.net/">CodeMirror</a> and has no problem with syntax highlighting on a wide range of languages
+        </p>
+        <img class="lazy fancy visible-xs" data-src="/img/posts/2019-08-20-ftp-web-client.html.1.png" />
+      </div>
+
+      <div class="feature">
+        <img class="lazy fancy pull-right hidden-xs" data-src="/img/posts/2019-08-20-ftp-web-client.html.5.png" />
+        <h2>Online and offline</h2>
+        <p>
+          Filestash is a PWA which mean that it not only works great online but it has some functionality for offline usage as well
+        </p>
+        <img class="lazy fancy visible-xs" data-src="/img/posts/2019-08-20-ftp-web-client.html.5.png" />
+      </div>
+
+      <div class="feature">
+        <img class="lazy fancy pull-left hidden-xs" data-src="/img/posts/2019-08-20-ftp-web-client.html.4.png" />
+        <h2>Mac, Windows and Linux</h2>
+        <p>
+          Our software is available as a web application from your browser giving your the ultimate portability without having to install anything
+        </p>
+        <img class="lazy fancy pull-left visible-xs" data-src="/img/posts/2019-08-20-ftp-web-client.html.4.png" />
+      </div>
+
+      <div class="feature">
+        <img class="lazy fancy pull-right hidden-xs" data-src="/img/posts/2019-08-20-ftp-web-client.html.3.png" />
+        <h2>Integrates with your file manager</h2>
+        <p>
+          Filestash integrates with your local file manager.
+          yes, that means Filestash translates FTP call onto webdav with its webdav your file manager support
+        </p>
+        <img class="lazy fancy visible-xs" data-src="/img/posts/2019-08-20-ftp-web-client.html.3.png" />
+      </div>
+
+      <div class="feature">
+        <img class="lazy fancy pull-left hidden-xs" data-src="/img/screenshots/feature_share_0000.png" />
+        <h2>Shared links and full text search</h2>
+        <p>
+          Filestash modernise your FTP server by enabling new usage like full text search and shared links.
+        </p>
+        <img class="lazy fancy visible-xs" data-src="/img/screenshots/feature_share_0000.png" />
+      </div>
+
+      <div class="feature">
+        <img class="lazy fancy pull-right hidden-xs" data-src="/img/posts/2019-08-20-ftp-web-client.html.6.png" />
+        <h2>Extensible </h2>
+        <p>
+          Extend the base program to customise it to your exact need by creating some <a href="/docs/plugin/">plugins</a>
+        </p>
+        <img class="lazy fancy visible-xs" data-src="/img/posts/2019-08-20-ftp-web-client.html.6.png" />
+      </div>
+
+      <p style="background: rgba(0,0,0,0.05); padding: 10px; border-radius: 5px";>
+        We hope you find Filestash as cool as we do. If you need help or want to chat, you can find us on IRC on freenode at <a href="https://support.filestash.app/">#filestash</a>
+      </p>
+
+    </div>
+  </div>
+
+</div>

@@ -3,20 +3,40 @@ layout: default
 ---
 
 {% include menu.html context="homepage" %}
-<div id="splash">
+<link rel="stylesheet" href="/css/landing-page.css">
+<div id="splash" class="slant down">
   <div class="row">
 	<div class="col-sm-12">
+      <div class="iframe-wrapper onlyForDesktop">
+        <iframe id="appframe" frameborder="0" src="https://demo.filestash.app/login?type=webdav&url=http://server_webdav" allow="fullscreen;speaker"></iframe>
+        <div class="arrow-top">
+          <i class="arrow top"></i>
+          <i class="arrow top"></i>
+          try me
+          <i class="arrow top"></i>
+          <i class="arrow top"></i>
+        </div>
+      </div>
 	  <div class="hgroup">
 		<h1>Filestash</h1>
 		<h2>
-          A web app to manage the data on your
+          turns your <br>
           <noscript>
-            <a href="{% post_url 2019-08-20-ftp-web-client %}">FTP</a> / SFTP / S3 / Minio / Git / Google drive / Dropbox server
+            <a href="{% post_url 2019-08-20-ftp-web-client %}">FTP</a> / WebDav / SFTP / S3 / Minio / Git / Google drive / Dropbox server
           </noscript>
-          <br/>
-          <span id="typing"></span>
+          <span id="typing"></span> <br>
+          into this
+            <span class="arrow-right onlyForDesktop">
+              <i class="arrow right"></i>
+              <i class="arrow right"></i>
+              <i class="arrow right"></i>
+            </span>
         </h2>
 	  </div>
+
+      <div class="screenshot onlyForMobile">
+        <img src="/img/screenshots/viewerpage.png" />
+      </div>
 
       <script src="/js/typed.min.js"></script>
       <script>
@@ -24,16 +44,16 @@ layout: default
           strings: [
             "rock solid FTP server",
             "rock solid SFTP server",
-            "old school LDAP server",
-            "reliable Git repo",
-            "reliable mysql server",
+            "shinny S3 buckets",
+            "shinny Minio server",
             "awesome Webdav server",
             "awesome CardDav/CalDav server",
-            "shinny Minio server",
-            "shinny S3 buckets",
-            "boring Google Drive account",
-            "boring Dropbox account",
-            "Backblaze B2 account"
+            "Backblaze B2",
+            "reliable Git repo",
+            "reliable mysql server",
+            "old school LDAP server",
+            "boring Google Drive",
+            "boring Dropbox",
         ],
         typeSpeed: 50,
         backSpeed: 30,
@@ -44,34 +64,30 @@ layout: default
         });
       </script>
 
-
-	  <p>
-		<a class="btn" href="https://demo.filestash.app/">Try the demo</a>
-		<br>
-		Or <a href="/docs">get started</a>
+      <p class="button">
+        <a class="btn" href="/docs">Start now</a>
 	  </p>
-	</div>
+
+    </div>
   </div>
 </div>
 
+<div id="introduce-second-heading"> Also it lets you: </div>
+
 <div id="features">
     <div class="container">
-	    <p>
-		  <img class="screenshot" src="{% link /img/screenshots/viewerpage.png %}">
-	    </p>
-
         <div class="row features main">
             <div class="feature">
                 <img class="lazy fancy pull-right hidden-xs" data-src="/img/screenshots/feature1.png" />
                 <h3>Manage your data</h3>
                 <p>
-                    Filestash lets you easily manage your data regardless of where it is store: <a href="{% post_url 2019-08-20-ftp-web-client %}">FTP</a> / SFTP / Git / S3 / Minio / Dropbox / Google Drive
+                    Filestash lets you easily manage your data regardless of where it is store: <a href="{% post_url 2019-08-20-ftp-web-client %}">FTP</a> / WebDav / SFTP / Git / S3 / Minio / Dropbox / Google Drive
                 </p>
                 <img class="lazy fancy visible-xs" data-src="/img/screenshots/feature1.png" />
             </div>
             <div class="feature">
                 <img class="lazy fancy pull-left hidden-xs" data-src="/img/screenshots/feature_share_0000.png" />
-                <h3>Flexible Collaboration</h3>
+                <h3>Collaborate effectively</h3>
                 <p>
                     With its flexible sharing mechanism, Filestash allows the creation of shared links that can be mounted as a network drive
                 </p>
@@ -79,7 +95,7 @@ layout: default
             </div>
             <div class="feature">
                 <img class="lazy fancy pull-right hidden-xs" data-src="/img/screenshots/feature3.png" />
-                <h3>Configurable and customisable</h3>
+                <h3>Configure your instance to your needs</h3>
                 <p>
                     Filestash can be configure to fit many use cases. Need additional flexibility? Create your own plugin
                 </p>
@@ -105,15 +121,15 @@ layout: default
                 <img class="lazy fancy pull-left hidden-xs" data-src="/img/screenshots/feature_media.png" />
                 <h3>Multimedia viewer</h3>
                 <p>
-                    Filestash lets you stream your videos and music straight from your browser
+                     Filestash lets you stream your videos and music straight from your browser
                 </p>
                 <img class="lazy fancy visible-xs" data-src="/img/screenshots/feature_media.png" />
             </div>
         </div>
     </div>
 
-    <div class="call-to-action">
-        <h2> Ready to try Filestash? </h2>
+    <div class="call-to-action slant down up">
+        <h2> Let's try now? </h2>
         <a class="btn" href="/docs">GETTING STARTED</a>
         <a class="btn" href="https://demo.filestash.app">DEMO</a>
     </div>

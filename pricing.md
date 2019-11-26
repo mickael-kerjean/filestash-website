@@ -377,7 +377,7 @@ layout: default
                 <td data-related="selfhosted"><i class="check"></i></td>
             </tr>
             <tr>
-                <td>Webdav</td>
+                <td>WebDav</td>
                 <td data-related="cloud"><i class="check"></i></td>
                 <td data-related="cloud"><i class="check"></i></td>
                 <td data-related="cloud"><i class="check"></i></td>
