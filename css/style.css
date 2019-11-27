@@ -60,6 +60,7 @@ pre, .terminal {
     color: var(--light);
     opacity: 0.5;
 }
+.terminal span.prompt, .terminal span.stdout { user-select: none; font-size: 0.95em; }
 
 /* DEFAULT */
 body {
