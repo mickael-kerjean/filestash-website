@@ -5,6 +5,18 @@ order: 2
 ---
 
 {% include toc.md %}
+<div style="
+background: var(--emphasis-primary);
+color: var(--dark);
+padding: 5px 10px;
+border-radius: 3px;
+border: 2px solid var(--primary);
+text-decoration: none;
+margin-bottom: 15px;
+margin-top: -5px;">
+    <style>.banner{display:none!important;}</style>
+    Do you prefer video tutorial more than reading documentation? Vote <a href="https://github.com/mickael-kerjean/filestash/issues/215">here</a> and we will create one if we ever reach 100 votes
+</div>
 
 ## Requirement
 
