@@ -6,7 +6,7 @@ permalink: /docs
 ---
 
 To use Filestash, you can either:
-1. selfhost it on your own server and manage everything all by yourself: [install documentation](/docs/install-and-upgrade/)
+1. selfhost it on your own server and manage everything yourself: [see the documentation](/docs/install-and-upgrade/)
 2. get the best solution for your needs by becoming a customer: [see the pricing](/pricing/)
 
 <p class="center">
