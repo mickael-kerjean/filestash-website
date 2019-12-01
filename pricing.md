@@ -183,7 +183,7 @@ layout: default
         <div class="package">
             <h2>Free</h2>
             <ul>
-                <li>2MB upload limit</li>
+                <li>10MB upload limit</li>
                 <li>Shared links are reset every week</li>
                 <li>No customisation</li>
             </ul>
