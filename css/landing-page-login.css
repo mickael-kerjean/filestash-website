@@ -1,0 +1,41 @@
+h1 a{ color: inherit; border-bottom: 2px dashed white; }
+form {
+    background: white;
+    border-radius: 5px;
+    max-width: 500px;
+    margin: 0 auto;
+    color: var(--emphasis);
+    text-align: left;
+    padding: 20px 10px;
+    margin-top: 30px;
+    box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+}
+form label{ display: block; margin-bottom: 5px; }
+form label span{ display: inline-block; width: 145px}
+form label input, form label select{ width: calc(100% - 145px); padding: 2px 5px; color: var(--emphasis); }
+form input[type="submit"]{ margin-top: 20px; width: 100%; }
+
+#splash h1{ font-size: 30px; }
+#splash .hgroup{ margin-top: 0; padding-top: 20px; }
+#splash p.example{ margin-bottom: 0; }
+
+#features .main{ margin-top: 0; }
+.features h2{
+    margin: 0 0 25px 0!important;
+    font-size: 1.5em!important;
+    text-align: left!important;
+    line-height: 1em!important;
+}
+
+.waveshape{
+    background-image: url(data:image/svg+xml;charset=utf8,%0A%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%221440%22%20height%3D%22220%22%20viewBox%3D%220%200%201440%20220%22%3E%0A%20%20%3Cpath%20style%3D%22fill%3A%239ad1ed%22%20d%3D%22m%201440%2C18.005668%20c%20-19.3%2C4.3%20-39.2%2C8.6%20-60%2C13%20-174.2%2C36.5%20-228.8%2C287.999832%20-467%2C76.199972%20C%20759.4%2C-29.394332%20489%2C84.405668%20252.6%2C101.40567%20122.4%2C110.70563%200%2C26.405668%200%2C26.405668%20V%200.00566875%20h%201440%22%20%2F%3E%0A%3C%2Fsvg%3E);
+    background-size: cover;
+    height: 220px;
+    margin-top: -2px;
+}
+
+form fieldset legend{ padding: 2px 7px; cursor: pointer; user-select: none; }
+form select{ background: white; }
+ul > li:nth-child(3) {
+    display: none;
+}

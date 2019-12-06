@@ -1,0 +1,199 @@
+---
+title: S3 Browser - a web based S3 client to explore your buckets
+description: Browse and manage your S3 buckets with our web client, collaborate and edit your files directly from your browser
+layout: landing
+permalink: /s3-browser.html
+---
+
+<link rel="stylesheet" href="/css/landing-page.css">
+<link rel="stylesheet" href="/css/landing-page-login.css">
+
+<div id="splash" class="nopadding">
+  <div class="row">
+    <div class="col-sm-12">
+      <div class="hgroup">
+        <h1>An <a rel="noreferrer noopener" href="https://en.wikipedia.org/wiki/Amazon_S3">S3</a> Browser to explore and manage your buckets</a></h1>
+      </div>
+      <form onsubmit='$("form input[type=\"submit\"]").attr("value", "LOADING...")' action="https://demo.filestash.app/login" method="GET">
+        <input type="hidden" name="type" value="s3" />
+        <label>
+          <span>Access Key ID:</span><input type="text" name="access_key_id" placeholder="Access Key ID*" required/>
+        </label>
+        <label>
+          <span>Secret Access Key:</span><input type="text" name="secret_access_key" placeholder="Secret Access Key*" required/>
+        </label>
+        <label>
+          <span>Region:</span><select name="region">
+            <option name="us-east-2" default>us-east-2</option>
+            <option name="us-east-1">us-east-1</option>
+            <option name="us-west-1">us-west-1</option>
+            <option name="us-west-2">us-west-2</option>
+            <option name="ap-east-1">ap-east-1</option>
+            <option name="ap-south-1">ap-south-1</option>
+            <option name="ap-northeast-3">ap-northeast-3</option>
+            <option name="ap-northeast-2">ap-northeast-2</option>
+            <option name="ap-southeast-1">ap-southeast-1</option>
+            <option name="ap-southeast-2">ap-southeast-2</option>
+            <option name="ap-northeast-1">ap-northeast-1</option>
+            <option name="ca-central-1">ca-central-1</option>
+            <option name="cn-north-1">cn-north-1</option>
+            <option name="cn-northwest-1">cn-northwest-1</option>
+            <option name="eu-central-1">eu-central-1</option>
+            <option name="eu-west-1">eu-west-1</option>
+            <option name="eu-west-2">eu-west-2</option>
+            <option name="eu-west-3">eu-west-3</option>
+            <option name="eu-north-1">eu-north-1</option>
+            <option name="me-south-1">me-south-1</option>
+            <option name="sa-east-1">sa-east-1</option>
+            <option name="us-gov-east-1">us-gov-east-1</option>
+            <option name="us-gov-west-1">us-gov-west-1</option>
+          </select>
+        </label>
+        <fieldset>
+          <legend onclick="$('form fieldset .fieldset-content').slideToggle(300)"><i style="transform: scale(0.6) rotate(45deg);margin-right:5px" class="arrow down"></i>Advanced:</legend>
+          <div class="fieldset-content" style="display:none;">
+            <label>
+              <span>Encryption Key:</span><input type="text" name="encryption_key" placeholder="Encryption Key" />
+            </label>
+            <label>
+              <span>Endpoint:</span><input type="text" name="endpoint" placeholder="Endpoint"/>
+            </label>
+          </div>
+        </fieldset>
+        <input type="submit" value="Connect" />
+      </form>
+      <script>
+        function clickPublicS3Handler(e, data){
+            e.preventDefault();
+            for(var key in data){
+                document.querySelector("form [name='"+key+"']").value = data[key]
+            }
+            document.querySelector("form input[type='submit']").click()
+        }
+      </script>
+
+
+      <p class="example">
+        Examples of publicly available S3: <a rel="nofollow" onclick="clickPublicS3Handler(event, {access_key_id: 'Q3AM3UQ867SPQQA43P2F', secret_access_key: 'zuf+tfteSlswRu7BJ86wekitnifILbZam1KYY3TG', endpoint: 'https://play.minio.io:9000/'});" href="https://play.minio.io:9000/">https://play.minio.io:9000</a>
+      </p>
+    </div>
+  </div>
+</div>
+<div class="waveshape"></div>
+
+<div id="features">
+  <div class="container">
+    <div class="row features main">
+
+      <div class="feature">
+        <img alt="screenshot of Filestash when uploading" class="lazy fancy pull-left hidden-xs" data-src="/img/screenshots/feature1.png" />
+        <h2>Browse, Explore and Manage your buckets on AWS</h2>
+        <p>
+          With our client, you can view / edit / delete / rename from the web interface.
+        </p>
+        <img alt="screenshot of Filestash when uploading" class="lazy fancy visible-xs" data-src="/img/screenshots/feature1.png" />
+      </div>
+
+      <div class="feature">
+        <img class="lazy fancy pull-right hidden-xs" data-src="https://miro.medium.com/max/580/1*DHe24MbDHtbkOeIJzxrfdA.png" />
+        <h2>Amazon S3 but not only</h2>
+        <p>
+          Filestash works well with Amazon S3 and other API compatible alternative such as <a rel="nofollow noopener" href="https://min.io/">Minio</a>
+        </p>
+        <img alt="illustration of the shared link screen" class="lazy fancy visible-xs" data-src="/img/posts/2019-11-26-s3.png" />
+      </div>
+
+      <div class="feature">
+        <img alt="logo of the 3 main operating system" class="lazy fancy pull-left hidden-xs" data-src="/img/posts/2019-08-20-ftp-web-client.html.4.png" />
+        <h2>Mac, Windows, Linux, IOS and Android</h2>
+        <p>
+          Our software is available from your favorite browser be it Chrome or Firefox. No download required!
+        </p>
+        <img alt="logo of the 3 main operating system" class="lazy fancy pull-left visible-xs" data-src="/img/posts/2019-08-20-ftp-web-client.html.4.png" />
+      </div>
+
+      <div class="feature">
+        <img alt="agpl logo" class="lazy fancy pull-right hidden-xs" data-src="/img/posts/2019-08-20-ftp-web-client.html.2.png" />
+        <h2>Open source</h2>
+        <p>
+          You don't have to trust us. The code of this software is available on <a rel="nofollow" href="https://github.com/mickael-kerjean/filestash">github</a>. Feel free to download it, audit it, selfhost your own version or contribute back with a pull request
+        </p>
+        <img alt="agpl logo" class="lazy fancy visible-xs" data-src="/img/posts/2019-08-20-ftp-web-client.html.2.png" />
+      </div>
+
+      <div class="feature">
+        <img alt="screenshot of the text editor" class="lazy fancy pull-left hidden-xs" data-src="/img/posts/2019-08-20-ftp-web-client.html.1.png" />
+        <h2>Text editor</h2>
+        <p>
+          Our text editor let you edit in place the content from your buckets. It makes for a much easier flow than manually download, edit and reupload something. Also it has syntax highlighting for a wide range of file extension.
+        </p>
+        <img alt="screenshot of the text editor" class="lazy fancy visible-xs" data-src="/img/posts/2019-08-20-ftp-web-client.html.1.png" />
+      </div>
+
+      <div class="feature">
+        <img class="lazy fancy pull-right hidden-xs" data-src="/img/screenshots/feature_share_0000.png" />
+        <h2>Collaborate easily</h2>
+        <p>
+          Filestash lets you create shared links without sharing your keys. Shared links can be protected with a password and/or only available to a specific email adress or a domain (example: anyone who has a gmail address => '*@gmail.com')
+        </p>
+        <img class="lazy fancy visible-xs" data-src="/img/screenshots/feature_share_0000.png" />
+      </div>
+
+      <div class="feature">
+        <img class="lazy fancy pull-left hidden-xs" data-src="/img/posts/2019-08-20-ftp-web-client.html.3.png" />
+        <h2>Easy to use</h2>
+        <p>
+          Filestash intend to be easy to use by everyone. Power users who needs extra power can always use the complete <a rel="nofollow" href="https://docs.aws.amazon.com/cli/latest/reference/s3/">AWS CLI</a> to access all advanced features built for them.
+        </p>
+        <img class="lazy fancy visible-xs" data-src="/img/posts/2019-08-20-ftp-web-client.html.3.png" />
+      </div>
+
+      <div class="feature">
+        <img class="lazy fancy pull-right hidden-xs" data-src="/img/posts/2019-08-20-ftp-web-client.html.3.png" />
+        <h2>Integrates with your file manager</h2>
+        <p>
+          Filestash integrates with your local file manager.
+          yes, that means Filestash translates S3 calls onto webdav with its webdav your file manager support
+        </p>
+        <img class="lazy fancy visible-xs" data-src="/img/posts/2019-08-20-ftp-web-client.html.3.png" />
+      </div>
+
+      <div class="feature">
+        <img class="lazy fancy pull-left hidden-xs" data-src="/img/screenshots/feature_share_0000.png" />
+        <h2>Full text search</h2>
+        <p>
+          Filestash can find your content with its full text search index that's automatically build by crawling your buckets (This feature is disable by default and needs to be enable from the admin console as to avoid extra charge from Amazon during the crawl process)
+        </p>
+        <img class="lazy fancy visible-xs" data-src="/img/screenshots/feature_share_0000.png" />
+      </div>
+
+      <div class="feature">
+        <img class="lazy fancy pull-right hidden-xs" data-src="/img/posts/2019-08-20-ftp-web-client.html.6.png" />
+        <h2>Extensible and Configurable</h2>
+        <p>
+          Filestash can be configure to predefine login information and wide range of other features that can be enable/disable. Also you can extend the program by creating your own <a href="/docs/plugin/">plugins</a>
+        </p>
+        <img class="lazy fancy visible-xs" data-src="/img/posts/2019-08-20-ftp-web-client.html.6.png" />
+      </div>
+
+    </div>
+  </div>
+
+  <div class="call-to-action slant up">
+    <h2>See our other web client:</h2>
+    <a class="btn" href="{% post_url 2019-11-26-ftp-web-client %}">FTP</a>
+    <a class="btn" rel="nofollow" href="https://demo.filestash.app/login">SFTP</a>
+    <a class="btn" rel="nofollow" href="https://demo.filestash.app/login">Webdav</a>
+    <a class="btn" rel="nofollow" href="https://demo.filestash.app/login">GIT</a>
+  </div>
+
+  <div class="container">
+    <p style="margin-top: 100px;">
+      We hope you find Filestash as cool as we do. If you need help or want to chat, you can find us on IRC on freenode at <a href="https://support.filestash.app/">#filestash</a>
+    </p>
+  </div>
+
+
+</div>
+
+{% include support.html %}

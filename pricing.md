@@ -188,7 +188,7 @@ layout: default
                 <li>No customisation</li>
             </ul>
             <div class="amount"> $0/month</div>
-            <a class="action" href="https://demo.filestash.app">USE NOW</a>
+            <a rel="nofollow" class="action" href="https://demo.filestash.app">USE NOW</a>
         </div>
         <div class="package">
             <h2>Personal</h2>
@@ -227,8 +227,7 @@ layout: default
         <div class="package">
             <h2>Personal</h2>
             <ul>
-                <li>We perform the install on your behalf</li>
-                <li>Automatic upgrade</li>
+                <li>We perform the install/maintenance on your behalf</li>
             </ul>
             <div class="amount">
                 $9/month
@@ -359,7 +358,7 @@ layout: default
                 </td>
             </tr>
             <tr>
-                <td><a href="{% post_url 2019-08-20-ftp-web-client %}">FTP</a></td>
+                <td><a href="{% post_url 2019-11-26-ftp-web-client %}">FTP</a></td>
                 <td data-related="cloud"><i class="check"></i></td>
                 <td data-related="cloud"><i class="check"></i></td>
                 <td data-related="cloud"><i class="check"></i></td>
@@ -377,7 +376,7 @@ layout: default
                 <td data-related="selfhosted"><i class="check"></i></td>
             </tr>
             <tr>
-                <td>Webdav</td>
+                <td>WebDav</td>
                 <td data-related="cloud"><i class="check"></i></td>
                 <td data-related="cloud"><i class="check"></i></td>
                 <td data-related="cloud"><i class="check"></i></td>
@@ -386,7 +385,7 @@ layout: default
                 <td data-related="selfhosted"><i class="check"></i></td>
             </tr>
             <tr>
-                <td>S3</td>
+                <td><a href="{% post_url 2019-11-21-s3-browser %}">S3</a></td>
                 <td data-related="cloud"><i class="check"></i></td>
                 <td data-related="cloud"><i class="check"></i></td>
                 <td data-related="cloud"><i class="check"></i></td>
@@ -395,7 +394,7 @@ layout: default
                 <td data-related="selfhosted"><i class="check"></i></td>
             </tr>
             <tr>
-                <td>Minio</td>
+                <td><a href="{% post_url 2019-11-21-s3-browser %}">Minio</a></td>
                 <td data-related="cloud"><i class="check"></i></td>
                 <td data-related="cloud"><i class="check"></i></td>
                 <td data-related="cloud"><i class="check"></i></td>
@@ -743,7 +742,7 @@ layout: default
                 <td data-related="selfhosted"><i class="check"></i></td>
             </tr>
             <tr>
-                <td>Community support on <a href="https://kiwiirc.com/nextclient/#irc://irc.freenode.net/#filestash?nick=guest??">freenode</a></td>
+                <td>Community support on <a rel="nofollow" href="https://kiwiirc.com/nextclient/#irc://irc.freenode.net/#filestash?nick=guest??">freenode</a></td>
                 <td data-related="cloud"><i class="check"></i></td>
                 <td data-related="cloud"><i class="check"></i></td>
                 <td data-related="cloud"><i class="check"></i></td>
@@ -898,11 +897,33 @@ layout: default
  $(".pricing a.action").modal({fadeDuration: 300});
 </script>
 
+<script>
+function submitForm(e){
+    var $submit = e.target.querySelector("button");
+    var n = 0;
+    if($submit.textContent.indexOf("LOADING") !== -1){
+        e.preventDefault(); // block multiple submit
+        return;
+    }
+    $submit.setAttribute("value", "LOADING ...");
+    window.setInterval(function(){
+        n += 1;
+        if(n === 1){
+            $submit.innerHTML = "LOADING .&nbsp&nbsp";
+        } else if(n === 2){
+            $submit.innerHTML = "LOADING ..&nbsp";
+        } else if(n === 3){
+            $submit.innerHTML = "LOADING ...";
+            n = 0;
+        }
+    }, 800);
+}
+</script>
 <div id="cloud_personal" class="modal">
     <h3>Personal cloud</h3>
-    <form action="https://downloads.filestash.app/compute/form.php" method="post">
+    <form onsubmit="submitForm(event)" action="https://downloads.filestash.app/compute/form.php" method="post">
         <input type="hidden" name="type" value="cloud::personal" />
-        <input type="hidden" name="redirect" value="https://www.filestash.app/ok" />
+        <input type="hidden" name="redirect" value="https://www.filestash.app/ok/" />
         <input type="email" name="email" placeholder="Your email address" />
         <input type="phone" name="phone" placeholder="Your phone number" />
         <textarea name="message" placeholder="what are you trying to achieve?"></textarea>
@@ -911,9 +932,9 @@ layout: default
 </div>
 <div id="cloud_enterprise" class="modal">
     <h3>Enterprise cloud</h3>
-    <form action="https://downloads.filestash.app/compute/form.php" method="post">
+    <form onsubmit="submitForm(event)" action="https://downloads.filestash.app/compute/form.php" method="post">
         <input type="hidden" name="type" value="cloud::enterprise" />
-        <input type="hidden" name="redirect" value="https://www.filestash.app/ok" />
+        <input type="hidden" name="redirect" value="https://www.filestash.app/ok/" />
         <input type="text" name="company" placeholder="Your company name" />
         <input type="email" name="email" placeholder="Your email address" />
         <input type="phone" name="phone" placeholder="Your phone number" />
@@ -924,9 +945,9 @@ layout: default
 
 <div id="selfhosted_personal" class="modal">
     <h3>Personal selfhosted</h3>
-    <form action="https://downloads.filestash.app/compute/form.php" method="post">
+    <form onsubmit="submitForm(event)" action="https://downloads.filestash.app/compute/form.php" method="post">
         <input type="hidden" name="type" value="selfhosted::personal" />
-        <input type="hidden" name="redirect" value="https://www.filestash.app/ok" />
+        <input type="hidden" name="redirect" value="https://www.filestash.app/ok/" />
         <input type="email" name="email" placeholder="Your email address" />
         <input type="phone" name="phone" placeholder="Your phone number" />
         <textarea name="message" placeholder="what are you trying to achieve?"></textarea>
@@ -935,9 +956,9 @@ layout: default
 </div>
 <div id="selfhosted_enterprise" class="modal">
     <h3>Enterprise selfhosted</h3>
-    <form action="https://downloads.filestash.app/compute/form.php" method="post">
+    <form onsubmit="submitForm(event)" action="https://downloads.filestash.app/compute/form.php" method="post">
         <input type="hidden" name="type" value="selfhosted::enterprise" />
-        <input type="hidden" name="redirect" value="https://www.filestash.app/ok" />
+        <input type="hidden" name="redirect" value="https://www.filestash.app/ok/" />
         <input type="text" name="company" placeholder="Your company name" />
         <input type="email" name="email" placeholder="Your email address" />
         <input type="phone" name="phone" placeholder="Your phone number" />
@@ -947,9 +968,9 @@ layout: default
 </div>
 <div id="support_register" class="modal">
     <h3>Register for support</h3>
-    <form action="https://downloads.filestash.app/compute/form.php" method="post">
+    <form onsubmit="submitForm(event)" action="https://downloads.filestash.app/compute/form.php" method="post">
         <input type="hidden" name="type" value="support::register" />
-        <input type="hidden" name="redirect" value="https://www.filestash.app/ok" />
+        <input type="hidden" name="redirect" value="https://www.filestash.app/ok/" />
         <input type="text" name="company" placeholder="Your company name" />
         <input type="email" name="email" placeholder="Your email address" />
         <input type="phone" name="phone" placeholder="Your phone number" />

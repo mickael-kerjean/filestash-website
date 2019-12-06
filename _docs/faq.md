@@ -11,7 +11,7 @@ No. Plus, if you run one of those archaic things, it's time for you to upgrade t
 ## What happens to my credentials?
 
 Credentials are stored in your browser via cookies that are protected by a few mechanisms:
-- cookies are [http only](https://developer.mozilla.org/en-US/docs/Web/HTTP/Cookies)
+- cookies are [http only](https://developer.mozilla.org/en-US/docs/Web/HTTP/Cookies){:rel="nofollow"}
 - the data within your cookie is both encrypted and authenticated using state of the art cryptographic algorithms
 - various mechanism leveraging HTTP headers (HSTS, CSP, SameSite Cookie, X-XSS-Protection, X-Frame-Options, X-Content-Type-Options and X-Requested-With) to protect against an attacker trying to trick your browser into doing something nefarious
 - various other technics that are left to the reader to dig through the code
@@ -24,7 +24,7 @@ There's support for many linux distribution but those installers are only provid
 
 ## The code doesn't have tests ?!? Are you guys cowboys?
 
-We do have an extensive suite of tests but those haven't been open source. We wrote on the why [here](https://github.com/mickael-kerjean/filestash/blob/master/CONTRIBUTING.md#tests)
+We do have an extensive suite of tests but those haven't been open source. We wrote on the why [here](https://github.com/mickael-kerjean/filestash/blob/master/CONTRIBUTING.md#tests){:rel="nofollow"}
 
 ## Why did filestash got developed?
 

@@ -7,6 +7,7 @@ plugins:
   - jekyll-feed
   - jekyll-sitemap
   - jekyll-archives
+  - jekyll-redirect-from
 
 permalink: :year/:month/:day/:title/
 collections:

@@ -22,7 +22,7 @@ The admin console let you:
 ## Configure the Dropbox connector
 
 Configuring Dropbox must be done by:
-1. requesting access to the Dropbox API. Without this, Filestash can't access anything stored on the Dropbox servers. To do that, go [here](https://www.dropbox.com/developers/apps/), then:
+1. requesting access to the Dropbox API. Without this, Filestash can't access anything stored on the Dropbox servers. To do that, go [here](https://www.dropbox.com/developers/apps/){:rel="nofollow"}, then:
    - click: "Create App"
    - select: "dropbox api"
    - select: "Full Dropbox" or "App folder"
@@ -33,5 +33,5 @@ Configuring Dropbox must be done by:
 ## Configure the Google Drive connector
 
 Configuring Google drive can be done by:
-1. Requesting access to the Google drive API. Without this, Filestash can't get anything store on the server of Google. To do that, you need to [go here](https://console.developers.google.com/apis/api/drive.googleapis.com/overview) and enable the drive api. Then, go [here](https://console.developers.google.com/apis/credentials/oauthclient) and create credentials that filestash will be using to communicate with Google
+1. Requesting access to the Google drive API. Without this, Filestash can't get anything store on the server of Google. To do that, you need to [go here](https://console.developers.google.com/apis/api/drive.googleapis.com/overview){:rel="nofollow"} and enable the drive api. Then, go [here](https://console.developers.google.com/apis/credentials/oauthclient){:rel="nofollow"} and create credentials that filestash will be using to communicate with Google
 2. Publish the configuration given by Google (client_id and client_secret) in your admin console or by setting the `GDRIVE_CLIENT_ID` and `GDRIVE_CLIENT_SECRET` environment variable
