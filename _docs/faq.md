@@ -4,6 +4,10 @@ title: Faq
 order: 7
 ---
 
+## Can I use the local filesystem?
+
+Yes. The trick is to leverage the builtin SFTP server that comes with the SSH package. In other words, if you use SSH to connect to your machine, accessing the local filesystem can be done using SFTP where your username is your machine username and password is your password.
+
 ## Can I disable the admin console?
 
 Yes but you'd need to do it at the reverse proxy level. All the urls from the admin console use the suffix `/admin`. If you're using nginx as a reverse proxy it will look like this:
