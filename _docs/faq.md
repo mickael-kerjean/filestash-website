@@ -4,6 +4,20 @@ title: Faq
 order: 7
 ---
 
+## Can I disable the admin console?
+
+Yes but you'd need to do it at the reverse proxy level. All the urls from the admin console use the suffix `/admin`. If you're using nginx as a reverse proxy it will look like this:
+```
+server {
+    ...
+    location ~ ^/admin {
+        allow 127.0.0.1;
+        deny all;
+    }
+    ...
+}
+```
+
 ## My server provider only support PHP based applications, is that ok?
 
 No. Plus, if you run one of those archaic things, it's time for you to upgrade to an actual server.
