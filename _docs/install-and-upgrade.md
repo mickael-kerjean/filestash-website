@@ -25,7 +25,7 @@ The official installation guide requires a Linux server with the following tools
 - [docker-compose](https://docs.docker.com/compose/install/){:rel="nofollow"}
 - curl (very likely already installed in your linux distribution)
 
-Hardware requirement is minimal: 64MB of RAM and 1 core will give you plenty of confort. If you're expecting heavier load, we have some numbers [here](/2019/05/06/benchmark/)
+Hardware requirement is minimal: 64MB of RAM and 1 core will give you plenty of comfort. If you're expecting heavier load, we have some numbers [here](/2019/05/06/benchmark/)
 
 ## Installation
 The installation can be done in 3 bash commands:
