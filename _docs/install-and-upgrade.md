@@ -25,7 +25,7 @@ The official installation guide requires a Linux server with the following tools
 - [docker-compose](https://docs.docker.com/compose/install/){:rel="nofollow"}
 - curl (very likely already installed in your linux distribution)
 
-Hardware requirement is minimal: 64MB of RAM and 1 core will give you plenty of confort. If you're expecting heavier load, we have some numbers [here](/2019/05/06/benchmark/)
+Hardware requirement is minimal: 64MB of RAM and 1 core will give you plenty of comfort. If you're expecting heavier load, we have some numbers [here](/2019/05/06/benchmark/)
 
 ## Installation
 The installation can be done in 3 bash commands:
@@ -56,16 +56,16 @@ Last step is to let Filestash configure itself depending on what you are trying 
 
 At this stage, selecting `Yes` will expose your instance to the internet from one of our subdomain (eg https://user-foo.filestash.app) without requiring any further setup from your end (see [here](/2019/05/01/performance/) if you worry about the automatic configuration).
 
-**How is it working?** Filestash establish a bidirectional tunnel from your instance to one of our public server. Incoming requests through our domain will first hit our server to then be directed within the tunnel.
+**How does it work?** Filestash establish a bidirectional tunnel from your instance to one of our public server. Incoming requests through our domain will first hit our server to then be directed within the tunnel.
 
-**Why would I care?** The motivation behind this feature is security since we discovered (big thank you to the people would have opt in the telemetry) many instances weren't being secured properly: lack of SSL certificates, missconfiguration of reverse proxy, ...
+**Why should I care?** The motivation behind this feature is security since we discovered (big thank you to the people would have opt in the telemetry) many instances weren't being secured properly: lack of SSL certificates, missconfiguration of reverse proxy, ...
 
 <img height="320px" src="https://img.memecdn.com/poodle-vulnerability_o_4000087.webp" alt="poodle ssl vulnerability"/>
 
 **Pro and Cons:** This approach isn't perfect, it adds on latency and won't give control of the proxy server. However, it has benefits such as:
 - it is secure by default
 - you aren't require to be an admin of anything to make it work
-- if a security vulnerability come up, we will be able to block potential exploit
+- if a security vulnerability comes up, we will be able to block potential exploit
 
 **Your domain name**: If you have the tunnel enable, a filestash sub domain will be automatically assigned to your instance (eg: user-foo.filestash.app). We can change this domain to whatever you want (eg: stallman.filestash.app) but considering the extra cost associated with that feature (our server aren't free) we will only do it for the people supporting the project.
 
@@ -107,8 +107,8 @@ Recreating filestash_app ... done
 *Warning*: to date, docker is the only officially supported installation method that's available free of charge. The reason is creating and maintaining hundreds of guides for every possible linux distribution isn't trivial with linux packaging alone beeing a massive rabbit hole that can only be illustrated by [this XKCD](https://xkcd.com/927/){:rel="nofollow"}. If you need to have Filestash working in a production setting without docker, contact us and we'll make it work as part of a support contract
 
 In the meantime, community supported guides are also available:
-- SRugina: [ubuntu instructions + script](https://github.com/mickael-kerjean/filestash/pull/136){:rel="nofollow"}
-- *add you own with a PR*
+- SRugina: [ubuntu instructions + script](https://github.com/mickael-kerjean/filestash/pull/136)
+- *add your own with a PR*
 
 If you want to install Filestash on your own with a more custom build approach, the reference is the [Dockerfile](https://github.com/mickael-kerjean/filestash/blob/master/docker/prod/Dockerfile){:rel="nofollow"}. This recipe is just 1 example of a custom compilation that emphasis on speed, efficiency and features at the cost of installation size. You could shrink down the required space by 90% by disabling features such as image transcoding (getting rid of libvips and libraw), org-mode export (getting rid of emacs and our latex distribution) and other tools (such as pdftotext, ...)
 
