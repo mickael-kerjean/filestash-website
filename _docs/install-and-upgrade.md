@@ -56,16 +56,16 @@ Last step is to let Filestash configure itself depending on what you are trying 
 
 At this stage, selecting `Yes` will expose your instance to the internet from one of our subdomain (eg https://user-foo.filestash.app) without requiring any further setup from your end (see [here](/2019/05/01/performance/) if you worry about the automatic configuration).
 
-**How is it working?** Filestash establish a bidirectional tunnel from your instance to one of our public server. Incoming requests through our domain will first hit our server to then be directed within the tunnel.
+**How does it work?** Filestash establish a bidirectional tunnel from your instance to one of our public server. Incoming requests through our domain will first hit our server to then be directed within the tunnel.
 
-**Why would I care?** The motivation behind this feature is security since we discovered (big thank you to the people would have opt in the telemetry) many instances weren't being secured properly: lack of SSL certificates, missconfiguration of reverse proxy, ...
+**Why should I care?** The motivation behind this feature is security since we discovered (big thank you to the people would have opt in the telemetry) many instances weren't being secured properly: lack of SSL certificates, missconfiguration of reverse proxy, ...
 
 <img height="320px" src="https://img.memecdn.com/poodle-vulnerability_o_4000087.webp" alt="poodle ssl vulnerability"/>
 
 **Pro and Cons:** This approach isn't perfect, it adds on latency and won't give control of the proxy server. However, it has benefits such as:
 - it is secure by default
 - you aren't require to be an admin of anything to make it work
-- if a security vulnerability come up, we will be able to block potential exploit
+- if a security vulnerability comes up, we will be able to block potential exploit
 
 **Your domain name**: If you have the tunnel enable, a filestash sub domain will be automatically assigned to your instance (eg: user-foo.filestash.app). We can change this domain to whatever you want (eg: stallman.filestash.app) but considering the extra cost associated with that feature (our server aren't free) we will only do it for the people supporting the project.
 
