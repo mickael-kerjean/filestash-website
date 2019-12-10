@@ -8,6 +8,7 @@ plugins:
   - jekyll-sitemap
   - jekyll-archives
   - jekyll-redirect-from
+  - jekyll-gzip
 
 permalink: :year/:month/:day/:title/
 collections:
