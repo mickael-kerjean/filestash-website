@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: default_nocompress
 ---
 
 {% include menu.html context="homepage" %}
