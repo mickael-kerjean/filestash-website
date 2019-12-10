@@ -1,7 +1,29 @@
-// Real-time client-side search using https://github.com/olivernn/lunr.js
-// Open search field with the search icon, close it with "Escape" / the close
-// icon, cycle through results with "Up" and "Down" and visit selected result
-// with "Enter".
+(function() {
+    // Real-time client-side search using https://github.com/olivernn/lunr.js
+    // Open search field with the search icon, close it with "Escape" / the close
+    // icon, cycle through results with "Up" and "Down" and visit selected result
+    // with "Enter"
+
+    $("#search-btn").click(function() {
+	    $(".nav-search-overlay")
+		    .addClass("opened")
+		    .one("transitionend webkitTransitionEnd oTransitionEnd", function () {
+			    // `.focus()` does not work on hidden elements, which also happens if
+			    // they are starting their transition.
+			    $("#search-input").focus();
+		    });
+	    // This is required to focus the input when there is no transition, i.e.
+	    // when input is already visible without being focused.
+	    $("#search-input").focus();
+	    return false;
+    });
+    $("#search-btn").one('click', function(){ // Load the search index
+        var $script = document.createElement("script");
+        $script.setAttribute("src", "/js/search_data.js");
+        document.body.appendChild($script);
+    });
+})();
+
 window.search_data_loaded = function (search_data) {
 	// Preparing lunrjs index based on data store located in HTML pages
 	const lunrIndex = lunr(function () {
@@ -88,20 +110,6 @@ window.search_data_loaded = function (search_data) {
 			$("#search-results li:first-child a").focus();
 			return false;
 		}
-	});
-
-	$("#search-btn").click(function() {
-		$(".nav-search-overlay")
-			.addClass("opened")
-			.one("transitionend webkitTransitionEnd oTransitionEnd", function () {
-				// `.focus()` does not work on hidden elements, which also happens if
-				// they are starting their transition.
-				$("#search-input").focus();
-			});
-		// This is required to focus the input when there is no transition, i.e.
-		// when input is already visible without being focused.
-		$("#search-input").focus();
-		return false;
 	});
 
 	$("#search-close-btn").click(function() {
