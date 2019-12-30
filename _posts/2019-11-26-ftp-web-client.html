@@ -1,6 +1,6 @@
 ---
 title: FTP Online - A web client for FTP
-description: Access and manage your FTP from your browser, view and edit your files on the spot and collaborate with other people
+description: Access and manage your FTP from your browser, download, view and edit your files on the spot and collaborate with other people
 layout: landing
 permalink: /online-ftp-client.html
 redirect_from:
@@ -14,7 +14,7 @@ redirect_from:
   <div class="row">
     <div class="col-sm-12">
       <div class="hgroup">
-        <h1><a href="https://en.wikipedia.org/wiki/File_Transfer_Protocol">FTP</a> Online; Try our web based FTP Client</h1>
+        <h1><a href="https://en.wikipedia.org/wiki/File_Transfer_Protocol">FTP</a> Online; Try our web based FTP client</h1>
       </div>
       <form onsubmit='$("form input[type=\"submit\"]").attr("value", "LOADING...")' action="https://demo.filestash.app/login" method="GET">
         <input type="hidden" name="type" value="ftp" />
@@ -41,7 +41,7 @@ redirect_from:
         }
       </script>
       <p class="example">
-        Examples of currently online FTP servers:<br>
+        Examples of currently online FTP servers for testing:<br>
         <a rel="nofollow noopener" onclick="clickPublicFTPHandler(event);" href="ftp://ftp.gnu.org/">ftp.gnu.org</a>
         <a rel="nofollow noopener" onclick="clickPublicFTPHandler(event);" href="ftp://ftp.pureftpd.org/">ftp.pureftpd.org</a>
         <a rel="nofollow noopener" onclick="clickPublicFTPHandler(event);" href="ftp://ftp.vim.org/pub/">ftp.vim.org</a>
@@ -57,28 +57,19 @@ redirect_from:
 <div id="features">
   <div class="container">
     <div class="row features main">
-
+      
       <div class="feature">
         <img alt="screenshot of Filestash when uploading" class="lazy fancy pull-left hidden-xs" data-src="/img/screenshots/feature1.png" style="margin-top: -30px;" />
         <h2>Explore and Manage the data on your FTP server</h2>
         <p>
-          Our web based online FTP client let you easily view / edit / delete / rename your data on your server. It will work wether you use <a href="http://www.proftpd.org/">proftpd</a>, <a href="https://www.pureftpd.org/project/pure-ftpd/">pureftpd</a>, <a href="https://filezilla-project.org/">filezilla</a>, <a href="https://security.appspot.com/vsftpd.html">vsftpd</a> or any other <a href="https://tools.ietf.org/html/rfc959">FTP compliant server</a>.
+          With our web based online FTP client, you can easily access / explore / edit / upload / download / delete / rename the data on your server. It will work wether you use <a href="http://www.proftpd.org/">proftpd</a>, <a href="https://www.pureftpd.org/project/pure-ftpd/">pureftpd</a>, <a href="https://filezilla-project.org/">filezilla</a>, <a href="https://security.appspot.com/vsftpd.html">vsftpd</a> or any other <a href="https://tools.ietf.org/html/rfc959">FTP compliant server</a>.
         </p>
         <img alt="screenshot of Filestash when uploading" class="lazy fancy visible-xs" data-src="/img/screenshots/feature1.png" />
       </div>
 
       <div class="feature">
-        <img alt="agpl logo" class="lazy fancy pull-right hidden-xs" data-src="/img/posts/2019-08-20-ftp-web-client.html.2.png" />
-        <h2>Open source</h2>
-        <p>
-          This software is open source. The code is available from <a href="https://github.com/mickael-kerjean/filestash">github</a>, feel free to audit it and selfhost your own version (see the <a href="/docs">documentation</a> on how to do that).
-        </p>
-        <img alt="agpl logo" class="lazy fancy visible-xs" data-src="/img/posts/2019-08-20-ftp-web-client.html.2.png" />
-      </div>
-
-      <div class="feature">
-        <img alt="screenshot of the text editor" class="lazy fancy pull-left hidden-xs" data-src="/img/posts/2019-08-20-ftp-web-client.html.1.png" />
-        <h2>Text editor</h2>
+        <img alt="screenshot of the text editor" class="lazy fancy pull-right hidden-xs" data-src="/img/posts/2019-08-20-ftp-web-client.html.1.png" />
+        <h2>Content editor</h2>
         <p>
           Our integrated text editor let you edit the content on your FTP. It is based on <a rel="noopener nofollow" href="https://codemirror.net/">CodeMirror</a> and has no problem with syntax highlighting on a wide range of languages
         </p>
@@ -86,21 +77,48 @@ redirect_from:
       </div>
 
       <div class="feature">
-        <img alt="illustration of the online behavior" class="lazy fancy pull-right hidden-xs" data-src="/img/posts/2019-08-20-ftp-web-client.html.5.png" />
+        <img alt="agpl logo" class="lazy fancy pull-left hidden-xs" data-src="/img/posts/2019-08-20-ftp-web-client.html.2.png" />
+        <h2>Open source and Free Software</h2>
+        <p>
+          This software is open source. The code is available from <a href="https://github.com/mickael-kerjean/filestash">github</a>, feel free to audit it and selfhost your own version (see the <a href="/docs">documentation</a> on how to do that).
+        </p>
+        <img alt="agpl logo" class="lazy fancy visible-xs" data-src="/img/posts/2019-08-20-ftp-web-client.html.2.png" />
+      </div>
+
+      <div class="feature">
+        <img alt="logo of the 3 main operating system" class="lazy fancy pull-right hidden-xs" data-src="/img/posts/2019-08-20-ftp-web-client.html.4.png" />
+        <h2>Mac, Windows and Linux</h2>
+        <p>
+          Our software tool is available as a web application from your browser giving your the ultimate portability without having to install anything. It works best with Chrome, Chromium and Firefox.
+        </p>
+        <img alt="logo of the 3 main operating system" class="lazy fancy visible-xs" data-src="/img/posts/2019-08-20-ftp-web-client.html.4.png" />
+      </div>
+
+      <div class="feature">
+        <img alt="illustration of the shared link screen" class="lazy fancy pull-left hidden-xs" data-src="/img/screenshots/feature_share_0000.png" />
+        <h2>File Sharing and full text search</h2>
+        <p>
+          Shared links can be easily created and manage with plenty of option for access control, putting you in control over what you share and how. Also the full text search engine let you find your data easily
+        </p>
+        <img alt="illustration of the shared link screen" class="lazy fancy visible-xs" data-src="/img/screenshots/feature_share_0000.png" />
+      </div>
+
+      <div class="feature">
+        <img alt="illustration of the shared link screen" class="lazy fancy pull-right hidden-xs" data-src="/img/screenshots/viewerpage.png" />
+        <h2>Putting your FTP on the web</h2>
+        <p>
+          Just create an iframe that point to a shared link or create some automatic login links like we did in our own <a href="/">landing page</a>
+        </p>
+        <img alt="illustration of the shared link screen" class="lazy fancy visible-xs" data-src="/img/screenshots/feature_share_0000.png" />
+      </div>
+
+      <div class="feature">
+        <img alt="illustration of the online behavior" class="lazy fancy pull-left hidden-xs" data-src="/img/posts/2019-08-20-ftp-web-client.html.5.png" />
         <h2>Online and offline</h2>
         <p>
           Filestash is a PWA which mean that it not only works great online but it has some functionality for offline usage as well
         </p>
         <img alt="illustration of the online behavior" class="lazy fancy visible-xs" data-src="/img/posts/2019-08-20-ftp-web-client.html.5.png" />
-      </div>
-
-      <div class="feature">
-        <img alt="logo of the 3 main operating system" class="lazy fancy pull-left hidden-xs" data-src="/img/posts/2019-08-20-ftp-web-client.html.4.png" />
-        <h2>Mac, Windows and Linux</h2>
-        <p>
-          Our software is available as a web application from your browser giving your the ultimate portability without having to install anything
-        </p>
-        <img alt="logo of the 3 main operating system" class="lazy fancy pull-left visible-xs" data-src="/img/posts/2019-08-20-ftp-web-client.html.4.png" />
       </div>
 
       <div class="feature">
@@ -114,24 +132,24 @@ redirect_from:
       </div>
 
       <div class="feature">
-        <img alt="illustration of the shared link screen" class="lazy fancy pull-left hidden-xs" data-src="/img/screenshots/feature_share_0000.png" />
-        <h2>Shared links and full text search</h2>
-        <p>
-          Filestash modernise your FTP server by enabling new usage like full text search and shared links.
-        </p>
-        <img alt="illustration of the shared link screen" class="lazy fancy visible-xs" data-src="/img/screenshots/feature_share_0000.png" />
-      </div>
-
-      <div class="feature">
-        <img alt="plugin illustration" class="lazy fancy pull-right hidden-xs" data-src="/img/posts/2019-08-20-ftp-web-client.html.6.png" />
+        <img alt="plugin illustration" class="lazy fancy pull-left hidden-xs" data-src="/img/posts/2019-08-20-ftp-web-client.html.6.png" />
         <h2>Extensible </h2>
         <p>
-          Extend the base program to customise it to your exact need by creating some <a href="/docs/plugin/">plugins</a>
+          Our tool comes with a plugin mechanism allowing for a lot of flexility to extend the core service and customise it to fit your specific need and workflow. Wanna start create plugin? See the <a href="/docs/plugin/">documentation</a>
         </p>
         <img alt="plugin illustration" class="lazy fancy visible-xs" data-src="/img/posts/2019-08-20-ftp-web-client.html.6.png" />
       </div>
 
     </div>
+
+    <h2 style="margin-top:0;">Creating an awesome Web FTP client</h2>
+    <p>
+      Traditional FTP clients such as <a href="https://filezilla-project.org/">Filezilla FTP</a> or <a href="https://winscp.net/eng/index.php">WinSCP</a> are great for sys admin, but having access to all the feature from the FTP protocols makes it hard to use for everyone else. The value proposition of Filestash is to make FTP <strong>easy to use</strong> for the <strong>end users</strong>, not sys admins, bringing collaboration features to make FTP a modern replacement to <a href="https://www.theguardian.com/technology/2014/jul/17/edward-snowden-dropbox-privacy-spideroak">Dropbox that respect your privacy</a>
+    </p>
+    <div class="alert" style="background:rgba(0,0,0,0.05)">
+      <strong>Using a freebox?</strong> <a href="https://free.fr/">free</a> gives free FTP account to their customers. Use "ftpperso.free.fr" as the hostname and fill your username and password as given by 
+    </div>
+    <br><br><br><br><br><br><br><br><br><br>
   </div>
 
   <div class="call-to-action slant up">
@@ -148,7 +166,6 @@ redirect_from:
       We hope you find Filestash as cool as we do. If you need help or want to chat, you can find us on IRC on freenode at <a href="https://support.filestash.app/">#filestash</a>
     </p>
   </div>
-
 
 </div>
 

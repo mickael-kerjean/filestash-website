@@ -36,6 +36,6 @@ form input[type="submit"]{ margin-top: 20px; width: 100%; }
 
 form fieldset legend{ padding: 2px 7px; cursor: pointer; user-select: none; }
 form select{ background: white; }
-ul > li:nth-child(3) {
+#nav ul > li:nth-child(3) {
     display: none;
 }
