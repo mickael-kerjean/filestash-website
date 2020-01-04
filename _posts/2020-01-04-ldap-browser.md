@@ -47,6 +47,7 @@ permalink: /ldap-browser.html
       </p>
     </div>
   </div>
+  {% include share.html %}
 </div>
 <div class="waveshape"></div>
 
