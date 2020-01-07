@@ -1,6 +1,6 @@
 ---
-title: S3 Browser - a web based S3 client to explore your buckets
-description: Browse and manage your S3 buckets with our web client, collaborate and edit your files directly from your browser
+title: S3 Browser - Try our online web client and explore your S3 buckets
+description: Browse and manage your bucket from your browser, download, view and edit your data on the spot and collaborate with other people
 layout: landing
 permalink: /s3-browser.html
 ---
@@ -12,7 +12,7 @@ permalink: /s3-browser.html
   <div class="row">
     <div class="col-sm-12">
       <div class="hgroup">
-        <h1>An <a href="https://en.wikipedia.org/wiki/Amazon_S3">S3</a> Browser to explore and manage your buckets</a></h1>
+        <h1><a href="https://en.wikipedia.org/wiki/Amazon_S3">S3</a> Browser</a>; Try our online S3 client and explore your bucket:</h1>
       </div>
       <form onsubmit='$("form input[type=\"submit\"]").attr("value", "LOADING...")' action="https://demo.filestash.app/login" method="GET">
         <input type="hidden" name="type" value="s3" />
@@ -88,9 +88,9 @@ permalink: /s3-browser.html
 
       <div class="feature">
         <img alt="screenshot of Filestash when uploading" class="lazy fancy pull-left hidden-xs" data-src="/img/screenshots/feature1.png" />
-        <h2>Browse, Explore and Manage your buckets on AWS</h2>
+        <h2>Browse, Explore and Manage your S3 buckets</h2>
         <p>
-          With our client, you can view / edit / delete / rename from the web interface.
+          Our web client makes it easy to upload files to S3 via drag and drop but also view those files individually, rename them, edit a range of file formats and delete anything all from the web interface
         </p>
         <img alt="screenshot of Filestash when uploading" class="lazy fancy visible-xs" data-src="/img/screenshots/feature1.png" />
       </div>
@@ -99,7 +99,7 @@ permalink: /s3-browser.html
         <img class="lazy fancy pull-right hidden-xs" data-src="https://miro.medium.com/max/580/1*DHe24MbDHtbkOeIJzxrfdA.png" />
         <h2>Amazon S3 but not only</h2>
         <p>
-          Filestash works well with Amazon S3 and other API compatible alternative such as <a href="https://min.io/">Minio</a>
+          Wether you're using AWS or an API <a href="https://en.wikipedia.org/wiki/Amazon_S3#S3_API_and_competing_services">compatible alternative</a>, Filestash is there to help you explore your buckets. As a example, you can connect to <a href="https://min.io">Minio</a> by clicking <a onclick="clickPublicS3Handler(event, {access_key_id: 'Q3AM3UQ867SPQQA43P2F', secret_access_key: 'zuf+tfteSlswRu7BJ86wekitnifILbZam1KYY3TG', endpoint: 'https://play.minio.io:9000/'});" href="https://play.minio.io:9000/">on this link</a>
         </p>
         <img alt="illustration of the shared link screen" class="lazy fancy visible-xs" data-src="/img/posts/2019-11-26-s3.png" />
       </div>
@@ -108,25 +108,25 @@ permalink: /s3-browser.html
         <img alt="logo of the 3 main operating system" class="lazy fancy pull-left hidden-xs" data-src="/img/posts/2019-08-20-ftp-web-client.html.4.png" />
         <h2>Mac, Windows, Linux, IOS and Android</h2>
         <p>
-          Our software is available from your favorite browser be it Chrome or Firefox. No download required!
+          No download required, our software tool is available from your browser, giving you the best portability accross platforms
         </p>
         <img alt="logo of the 3 main operating system" class="lazy fancy pull-left visible-xs" data-src="/img/posts/2019-08-20-ftp-web-client.html.4.png" />
       </div>
 
       <div class="feature">
         <img alt="agpl logo" class="lazy fancy pull-right hidden-xs" data-src="/img/posts/2019-08-20-ftp-web-client.html.2.png" />
-        <h2>Open source</h2>
+        <h2>Open source and Free software</h2>
         <p>
-          You don't have to trust us. The code of this software is available on <a href="https://github.com/mickael-kerjean/filestash">github</a>. Feel free to download it, audit it, selfhost your own version or contribute back with a pull request
+          You don't have to trust us. The code of our software is available on <a href="https://github.com/mickael-kerjean/filestash">github</a> for everyone to download, audit, selfhost and contribute back
         </p>
         <img alt="agpl logo" class="lazy fancy visible-xs" data-src="/img/posts/2019-08-20-ftp-web-client.html.2.png" />
       </div>
 
       <div class="feature">
         <img alt="screenshot of the text editor" class="lazy fancy pull-left hidden-xs" data-src="/img/posts/2019-08-20-ftp-web-client.html.1.png" />
-        <h2>Text editor</h2>
+        <h2>Document editor</h2>
         <p>
-          Our text editor let you edit in place the content from your buckets. It makes for a much easier flow than manually download, edit and reupload something. Also it has syntax highlighting for a wide range of file extension.
+          You can now edit a range of documents from word, spreadsheets, presentations and of course plain text with syntax highlighting and other goodies
         </p>
         <img alt="screenshot of the text editor" class="lazy fancy visible-xs" data-src="/img/posts/2019-08-20-ftp-web-client.html.1.png" />
       </div>
@@ -135,37 +135,36 @@ permalink: /s3-browser.html
         <img class="lazy fancy pull-right hidden-xs" data-src="/img/screenshots/feature_share_0000.png" />
         <h2>Collaborate easily</h2>
         <p>
-          Filestash lets you create shared links without sharing your keys. Shared links can be protected with a password and/or only available to a specific email adress or a domain (example: anyone who has a gmail address => '*@gmail.com')
+          Filestash lets you create shared links without sharing your keys. Shared links can be protected with a password and/or only available to a specific email adress or a domain (example: '*@my-company.com')
         </p>
         <img class="lazy fancy visible-xs" data-src="/img/screenshots/feature_share_0000.png" />
       </div>
 
       <div class="feature">
-        <img class="lazy fancy pull-left hidden-xs" data-src="/img/posts/2019-08-20-ftp-web-client.html.3.png" />
+        <img class="lazy fancy pull-left hidden-xs" data-src="/img/screenshots/viewerpage.png" />
         <h2>Easy to use</h2>
         <p>
-          Filestash intend to be easy to use by everyone. Power users who needs extra power can always use the complete <a href="https://docs.aws.amazon.com/cli/latest/reference/s3/">AWS CLI</a> to access all advanced features built for them.
+          Filestash intend to be easy to use by everyone without training. Power users who needs extra power can always use the complete <a href="https://docs.aws.amazon.com/cli/latest/reference/s3/">AWS CLI</a> to access all advanced features built for them.
         </p>
-        <img class="lazy fancy visible-xs" data-src="/img/posts/2019-08-20-ftp-web-client.html.3.png" />
+        <img class="lazy fancy visible-xs" data-src="/img/screenshots/viewerpage.png" />
       </div>
 
       <div class="feature">
         <img class="lazy fancy pull-right hidden-xs" data-src="/img/posts/2019-08-20-ftp-web-client.html.3.png" />
-        <h2>Integrates with your file manager</h2>
+        <h2>File manager integration</h2>
         <p>
-          Filestash integrates with your local file manager.
-          yes, that means Filestash translates S3 calls onto webdav with its webdav your file manager support
+          Shared links can be mounted in your file manager and be used like any other network drive
         </p>
         <img class="lazy fancy visible-xs" data-src="/img/posts/2019-08-20-ftp-web-client.html.3.png" />
       </div>
 
       <div class="feature">
-        <img class="lazy fancy pull-left hidden-xs" data-src="/img/screenshots/feature_share_0000.png" />
+        <img class="lazy fancy pull-left hidden-xs" data-src="/img/screenshots/search.png" />
         <h2>Full text search</h2>
         <p>
-          Filestash can find your content with its full text search index that's automatically build by crawling your buckets (This feature is disable by default and needs to be enable from the admin console as to avoid extra charge from Amazon during the crawl process)
+          Find your content is key. Filestash has a powerfull full text search engine. It will create its own index automatically by crawling your buckets (The feature is disable by default to avoid extra charge from Amazon to crawl your bucket)
         </p>
-        <img class="lazy fancy visible-xs" data-src="/img/screenshots/feature_share_0000.png" />
+        <img class="lazy fancy visible-xs" data-src="/img/screenshots/search.png" />
       </div>
 
       <div class="feature">
@@ -178,6 +177,12 @@ permalink: /s3-browser.html
       </div>
 
     </div>
+
+    <h2 style="margin-top:0;">Creating an awesome S3 Browser</h2>
+    <p>
+      Traditional S3 clients such as the <a href="https://aws.amazon.com/cli/">Amazon CLI</a>, <a href="https://cloudberry-explorer-for-amazon-s3.en.lo4d.com/windows">Cloudberry Explorer</a> or <a href="https://cyberduck.io/">Cyberduck</a> are great for sys admin who need the full power of S3, but having access to all those features makes it hard to use for everyone else. The value proposition of Filestash is to       make protocols and platform like Amazon S3 <strong>easy to use</strong> for the <strong>end users</strong> (not sys admins who already have great tools to work with) bringing collaboration features and making S3 look and feel like a modern Dropbox replacement
+    </p>
+    <br><br><br><br><br><br><br><br><br><br>
   </div>
 
   <div class="call-to-action slant up">

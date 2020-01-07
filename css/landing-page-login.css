@@ -39,3 +39,6 @@ form select{ background: white; }
 #nav ul > li:nth-child(3) {
     display: none;
 }
+#features .container a {
+    border-bottom: 1px dashed;
+}
