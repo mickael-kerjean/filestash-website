@@ -84,9 +84,9 @@ permalink: /ldap-browser.html
 
       <div class="feature">
         <img alt="object class editor" class="lazy fancy pull-right hidden-xs" data-src="/img/screenshots/2020-01-04-ldap-browser/viewerpage.png" />
-        <h2>Inline editing</h2>
+        <h2>Object Viewer and Editor</h2>
         <p>
-          Our integrated editor makes it easy to edit an object from your directory without being a wizard at creating LDIF files.
+          Our integrated viewer makes it easy to edit an object from your directory without being a wizard at creating LDIF files.
         </p>
         <img alt="object class editor" class="lazy fancy visible-xs" data-src="/img/screenshots/2020-01-04-ldap-browser/viewerpage.png" />
       </div>
