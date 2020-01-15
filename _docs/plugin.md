@@ -13,7 +13,7 @@ When you find yourself needing something that's not available by default, plugin
 - [plg_backend_mysql](https://github.com/mickael-kerjean/filestash/tree/master/server/plugin/plg_backend_mysql){:rel="nofollow"}: this plugin provide an integration with a Mysql server
 - [plg_handler_console](https://github.com/mickael-kerjean/filestash/tree/master/server/plugin/plg_handler_console){:rel="nofollow"}: a full fledge tty console that's handy to maintain your instance when SSH access is blocked ([screenshot](https://raw.githubusercontent.com/mickael-kerjean/filestash_images/master/screenshots/admin_tty.png){:rel="nofollow"})
 - [plg_image_light](https://github.com/mickael-kerjean/filestash/tree/master/server/plugin/plg_image_light){:rel="nofollow"}: this plugin handle image transcoding and resizing.
-- [plg_security_scanner](https://github.com/mickael-kerjean/filestash/tree/master/server/plugin/plg_security_scanner){:rel="nofollow"}: this plugin handle non legitimate traffic from scaners with a bunch of tricks that are randomly pick: things like gzip bomb, XML bomb, redirection to the attacker own IP, redirection to localhost, sendout of HTTP headers that don't match with the sent content and other fun stuff
+- [plg_security_scanner](https://github.com/mickael-kerjean/filestash/tree/master/server/plugin/plg_security_scanner){:rel="nofollow"}: this plugin handle non legitimate traffic from scanners with a bunch of tricks that are randomly pick: things like gzip bomb, XML bomb, redirection to the attacker own IP, redirection to localhost, sendout of HTTP headers that don't match with the sent content and other fun stuff
 - [plg_security_svg](https://github.com/mickael-kerjean/filestash/tree/master/server/plugin/plg_security_svg){:rel="nofollow"}: this plugin handle the security aspect of SVG images (by default, SVG images could be crafted to execute javascript or break the browser with XML bomb). This plugin has 2 modes that are configurable from the admin console: mitigation mode where SVG images are allowed but filtered to remove potential harms and blocking mode where SVG images are simply blocked
 - [plg_starter_http](https://github.com/mickael-kerjean/filestash/tree/master/server/plugin/plg_starter_http){:rel="nofollow"}: serve application via HTTP. This plugin is the legacy server that was used til May 2019
 - [plg_starter_http2](https://github.com/mickael-kerjean/filestash/tree/master/server/plugin/plg_starter_http2){:rel="nofollow"}: same as plg_starter_http but with an HTTP2 server
@@ -26,11 +26,11 @@ When you find yourself needing something that's not available by default, plugin
 
 ## Anatomy of a Filestash plugin
 
-Plugins are developped using the Go programming language. Those are listed from [this file](https://github.com/mickael-kerjean/filestash/blob/master/server/plugin/index.go){:rel="nofollow"} before getting compiled (see [our guide](https://github.com/mickael-kerjean/filestash/blob/master/CONTRIBUTING.md){:rel="nofollow"} to make a build)
+Plugins are developed using the Go programming language. Those are listed from [this file](https://github.com/mickael-kerjean/filestash/blob/master/server/plugin/index.go){:rel="nofollow"} before getting compiled (see [our guide](https://github.com/mickael-kerjean/filestash/blob/master/CONTRIBUTING.md){:rel="nofollow"} to make a build)
 
 Internally, plugins have a few key parts:
 - an entry point: which will be called when Filestash boots up. The entry point of a plugin is its `init` function
-- they can call a serie of hooks and APIs to perform their functions (see [here](https://github.com/mickael-kerjean/filestash/blob/master/server/common/plugin.go){:rel="nofollow"})
+- they can call a series of hooks and APIs to perform their functions (see [here](https://github.com/mickael-kerjean/filestash/blob/master/server/common/plugin.go){:rel="nofollow"})
 
 ## Basic example
 
