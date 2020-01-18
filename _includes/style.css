@@ -282,6 +282,7 @@ blockquote p { margin: 0; }
 #main h1 {
     margin-top: 0;
     font-size: 2.5em;
+    line-height: 40px;
     font-weight: 200;
 }
 #main h2 {
