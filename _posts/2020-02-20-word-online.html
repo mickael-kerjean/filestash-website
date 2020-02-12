@@ -1,0 +1,211 @@
+---
+title: Word online | A free online editor for your microsoft office documents
+description: Want an online editor with no shenanigans? You're just one click away
+layout: landing
+permalink: /word-online.html
+---
+<link rel="stylesheet" href="/css/landing-page.css">
+<link rel="stylesheet" href="/css/landing-page-login.css">
+
+<style>
+  #appframe{ width: 100%; height: 80vh; height: calc(90vh - 56px); position: relative; }
+  #appframe iframe, #appframe .appframe-loader{ width: 100%; height: 100%; }
+  #appframe .appframe-loader{
+      position: absolute;
+      top: 0;
+      left: 0;
+      background: var(--secondary);
+      color: var(--emphasis-primary);
+      font-size: 20px;
+      padding-top: 25vh;
+      text-align: center;
+      margin: 0 auto;
+      line-height: 22px;
+      transition: 1s ease all;
+  }
+  #appframe .appframe-loader.animate-out{
+      opacity: 0;
+  }
+
+  .spinner {
+      border: 8px solid var(--emphasis);
+      border-radius: 50%;
+      border-top: 8px solid var(--emphasis-primary);
+      width: 60px;
+      height: 60px;
+      -webkit-animation: spin 2s cubic-bezier(0.445, 0.05, 0.55, 0.95) infinite; /* Safari */
+      animation: spin 2s cubic-bezier(0.445, 0.05, 0.55, 0.95) infinite;
+      margin: 0 auto 10px auto;
+  }
+  @-webkit-keyframes spin {
+      0% { -webkit-transform: rotate(0deg); }
+      100% { -webkit-transform: rotate(360deg); }
+  }
+  @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+  }
+
+  #main h1{ text-align: center; padding-bottom: 60px; }
+  #main h2{ margin-bottom: 20px; }
+
+  .brand-integrations {
+      display: flex;
+      flex-flow: wrap;
+  }
+  .brand-integrations > div > a {
+      display: block;
+      background: var(--emphasis-primary);
+      padding: 15px 20px;
+      border-radius: 5px;
+      color: var(--emphasis);
+      margin: 10px 10px;
+      width: 230px;
+      height: 200px;
+      font-size: 22px;
+      text-align: center;
+      text-decoration: none!important;
+      transition: 0.1s ease background;
+  }
+  .brand-integrations > div > a:hover{
+      color: var(--bg-color);
+      background: var(--emphasis);
+  }
+  .brand-integrations img {
+      display: block;
+      height: calc(100% - 50px);
+      width: 100%;
+      padding-top: 15px;
+  }
+  .other-choice{
+      font-size: 20px;
+      font-style: italic;
+      text-align: center;
+      margin-top: 15px;
+  }
+
+  .share_buttons{ margin-top: 120px!important; margin-bottom: 120px!important; }
+</style>
+
+<div id="appframe">
+  <iframe id="appframe" frameborder="0" src="https://demo.filestash.app/login?next=/view/Documents/office.docx#type=webdav&url=http://server_webdav"></iframe>
+  <div class="appframe-loader">
+    <div class="spinner"></div>
+      Preparing the <br> online word document editor
+  </div>
+</div>
+<script>
+  (function(){
+      var $iframe = document.querySelector("#appframe iframe");
+      var $loader = document.querySelector("#appframe .appframe-loader");
+      $iframe.addEventListener("load", function(){
+          window.setTimeout(function(){              
+              $loader.classList.add("animate-out");
+              window.setTimeout(function(){
+                  $loader.remove();
+              }, 1500);
+          }, 4000);
+      });
+      $iframe.addEventListener("error", function(){
+          $loader.innerHTML = "Couldn't load the application";
+      });
+  })()
+</script>
+
+
+<div id="main">
+  <h1>An online editor for your microsoft word documents</h1>
+
+  <div class="container">
+    <div>
+      <h2 class="no-anchor">Connect the word editor to your existing cloud storage:</h2>
+      <div class="brand-integrations">
+        <div><a href="https://www.dropbox.com/oauth2/authorize?client_id=rwwexrciugmfkls&redirect_uri=https://demo.filestash.app/login&response_type=token&state=dropbox">
+          Dropbox
+          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/78/Dropbox_Icon.svg/150px-Dropbox_Icon.svg.png" />
+        </a></div>
+
+        <div><a href="https://demo.filestash.app">
+          Google Drive
+          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e8/Google_Drive_logo.svg/150px-Google_Drive_logo.svg.png" />
+        </a></div>
+        <div><a href="/s3-browser.html">
+          AWS S3
+          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/32/AWS_Simple_Icons_Storage_Amazon_S3.svg/150px-AWS_Simple_Icons_Storage_Amazon_S3.svg.png"/>
+        </a></div>
+        <div><a href="/online-ftp-browser.html">
+          FTP
+          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/Human-folder-remote-ftp.svg/150px-Human-folder-remote-ftp.svg.png" />
+        </a></div>
+        <div><a href="https://demo.filestash.app">
+          SFTP
+          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e9/Gnome-fs-ssh.svg/150px-Gnome-fs-ssh.svg.png"/>
+        </a></div>
+        <div><a href="https://demo.filestash.app">
+            Webdav
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/69/Antu_folder-owncloud.svg/150px-Antu_folder-owncloud.svg.png" />
+        </a></div>
+
+        <div><a href="https://demo.filestash.app">
+            Github
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Font_Awesome_5_brands_github.svg/100px-Font_Awesome_5_brands_github.svg.png" />
+        </a></div>
+
+        <div><a href="https://demo.filestash.app">
+            Gitlab
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/GitLab_Logo.svg/150px-GitLab_Logo.svg.png" />
+        </a></div>
+
+      </div>
+      <div class="other-choice">Or use some public shared storage like <a href="https://demo.filestash.app/login?type=s3&access_key_id=Q3AM3UQ867SPQQA43P2F&secret_access_key=zuf%2BtfteSlswRu7BJ86wekitnifILbZam1KYY3TG&region=us-east-2&encryption_key=&endpoint=https%3A%2F%2Fplay.minio.io%3A9000%2F">this one</a></div>
+    </div>
+  </div>
+</div>
+
+
+{% include share.html %}
+
+
+<div id="features">
+  <div class="container">
+    <div class="row features main">
+
+      <div class="feature">
+        <img alt="screenshot of the text editor" class="lazy fancy pull-right hidden-xs" data-src="/img/screenshots/viewerpage.png" />
+        <h2>Create, edit and save your microsoft word documents</h2>
+        <p>
+          Manage all your cloud storage from a single web interface
+        </p>
+        <img alt="screenshot of the text editor" class="lazy fancy visible-xs" data-src="/img/screenshots/viewerpage.png" />
+      </div>
+
+      <div class="feature">
+        <img alt="agpl logo" class="lazy fancy pull-left hidden-xs" data-src="https://www.filestash.app/img/screenshots/feature_image_0000.jpg" />
+        <h2>More than just docx and doc documents</h2>
+        <p>
+          Filestash supports all the classic ms office documents, be it docx, xls, ppt and can be use as a simple viewer or a full fledge editor with document using either word 2007 or word 2010.
+        </p>
+        <img alt="agpl logo" class="lazy fancy visible-xs" data-src="https://www.filestash.app/img/screenshots/feature_image_0000.jpg" />
+      </div>
+
+      <div class="feature">
+        <img alt="logo of the 3 main operating system" class="lazy fancy pull-right hidden-xs" data-src="/img/screenshots/feature_share_0000.png" />
+        <h2>Share your work and collaborate</h2>
+        <p>
+          Create shared link with anyone you want while staying in control without asking anyone to register an account
+        </p>
+        <img alt="logo of the 3 main operating system" class="lazy fancy visible-xs" data-src="/img/screenshots/feature_share_0000.png" />
+      </div>
+
+      <div class="feature">
+        <img alt="illustration of the shared link screen" class="lazy fancy pull-left hidden-xs" data-src="/img/screenshots/feature3.png" />
+        <h2>Your companion to the cloud</h2>
+        <p>
+          Filestash connects to your existing cloud storage and let you manage all your data from a single web interface
+        </p>
+        <img alt="illustration of the shared link screen" class="lazy fancy visible-xs" data-src="/img/screenshots/feature3.png" />
+      </div>
+
+    </div>
+  </div>
+</div>

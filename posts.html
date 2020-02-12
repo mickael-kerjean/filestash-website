@@ -15,11 +15,13 @@ layout: default
   </style>
   <section>
     {% for post in site.posts %}
+    {% if post.date < site.time %}
     <div class="article">
       <a href="{{ post.url }}">
         <h2>{{ post.title }}</h2> <br><span class="timestamp">{{ post.date | date: "%b %Y" }}</span>
       </a>
     </div>
+    {% endif %}
     {% endfor %}
   </section>
   <style>
