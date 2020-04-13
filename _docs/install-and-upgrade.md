@@ -112,9 +112,15 @@ In the meantime, community supported guides are also available:
 
 If you want to install Filestash on your own with a more custom build approach, the reference is the [Dockerfile](https://github.com/mickael-kerjean/filestash/blob/master/docker/Dockerfile){:rel="nofollow"}. This recipe is just 1 example of a custom compilation that emphasis on speed, efficiency and features at the cost of installation size. You could shrink down the required space by 90% by disabling features such as image transcoding (getting rid of libvips and libraw), org-mode export (getting rid of emacs and our latex distribution) and other tools (such as pdftotext, ...)
 
-The easiest way to run Filestash without Docker Compose is to use the following Docker command:
-
-`docker run -d -p 8443:8443 -v $pwd:/app/data/state/ -e APPLICATION_URL=example.com machines/filestash`
+The easiest way to run Filestash without Docker Compose is to use the following steps:
+```
+mkdir -p /srv/filestash/{log,config}
+touch /srv/filestash/log/access.log
+chmod 0777 /srv/filestash/log/access.log
+touch /srv/filestash/config/config.json
+chmod 0777 /srv/filestash/config/config.json
+docker run -d -p 8443:8443 -v /srv/filestash:/app/data/state -e APPLICATION_URL=example.com machines/filestash
+```
 
 ## Optional: Using a reverse proxy
 
