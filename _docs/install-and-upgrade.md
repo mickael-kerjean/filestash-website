@@ -114,9 +114,7 @@ If you want to install Filestash on your own with a more custom build approach, 
 
 The easiest way to run Filestash without Docker Compose is to use the following steps:
 ```
-mkdir -p /srv/filestash/{log,config}
-touch /srv/filestash/log/access.log
-chmod 0777 /srv/filestash/log/access.log
+mkdir -p /srv/filestash/{db,config}
 touch /srv/filestash/config/config.json
 chmod 0777 /srv/filestash/config/config.json
 docker run -d -p 8443:8443 -v /srv/filestash:/app/data/state -e APPLICATION_URL=example.com machines/filestash
