@@ -46,6 +46,8 @@ Creating filestash_app ... done
 
 *Note*: Official Docker images are made available on [DockerHub](https://hub.docker.com/r/machines/filestash/).
 
+*Note*: The Docker Compose command above will run Filestash as well as OnlyOffice Document Server. Please check the requirements here: https://hub.docker.com/r/onlyoffice/documentserver#recommended-system-requirements
+
 Once the installation has complete, open up a browser and navigate to: `http://your_ip:8334`, you will be greet with the configurator:
 
 <img src="https://raw.githubusercontent.com/mickael-kerjean/filestash_images/master/screenshots/setup.png" alt="setup screenshot" height="320px"/>
@@ -112,12 +114,12 @@ In the meantime, community supported guides are also available:
 
 If you want to install Filestash on your own with a more custom build approach, the reference is the [Dockerfile](https://github.com/mickael-kerjean/filestash/blob/master/docker/Dockerfile){:rel="nofollow"}. This recipe is just 1 example of a custom compilation that emphasis on speed, efficiency and features at the cost of installation size. You could shrink down the required space by 90% by disabling features such as image transcoding (getting rid of libvips and libraw), org-mode export (getting rid of emacs and our latex distribution) and other tools (such as pdftotext, ...)
 
-The easiest way to run Filestash without Docker Compose is to use the following steps:
+Docker Compose will run Filestash as well as the OnlyOffice integration. Since the OnlyOffice Image needs at least 4GB RAM (as per https://hub.docker.com/r/onlyoffice/documentserver#recommended-system-requirements), you may want to run Filestash without Docker Compose. The easiest way to run Filestash without Docker Compose is to use the following steps:
 <div class="terminal">
-<span class="prompt">~/$ </span>mkdir -p /srv/filestash/{db,config}<br>
+<span class="prompt">~/$ </span>mkdir -p /srv/filestash/config<br>
 <span class="prompt">~/$ </span>touch /srv/filestash/config/config.json<br>
 <span class="prompt">~/$ </span>chmod 0777 /srv/filestash/config/config.json<br>
-<span class="prompt">~/$ </span>docker run -d -p 8443:8443 -v /srv/filestash/config:/app/data/state/config -v /srv/filestash/db:/app/data/state/db -e APPLICATION_URL=example.com machines/filestash
+<span class="prompt">~/$ </span>docker run -d -p 8443:8443 -v /srv/filestash/config/config.json:/app/data/state/config/config.json -e APPLICATION_URL=example.com machines/filestash
 </div>
 
 ## Optional: Using a reverse proxy
