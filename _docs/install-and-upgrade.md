@@ -117,7 +117,11 @@ The easiest way to run Filestash without Docker Compose is to use the following 
 mkdir -p /srv/filestash/{db,config}
 touch /srv/filestash/config/config.json
 chmod 0777 /srv/filestash/config/config.json
-docker run -d -p 8443:8443 -v /srv/filestash:/app/data/state -e APPLICATION_URL=example.com machines/filestash
+docker run -d -p 8443:8443 \
+    -v /srv/filestash/config:/app/data/state/config \
+    -v /srv/filestash/db:/app/data/state/db \
+    -e APPLICATION_URL=example.com \
+    machines/filestash
 ```
 
 ## Optional: Using a reverse proxy
