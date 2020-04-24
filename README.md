@@ -1,4 +1,4 @@
-This is the website of [Filestash](http://filestash.app).
+This is the website of [Filestash](https://www.filestash.app).
 
 ## What is Filestash?
 
