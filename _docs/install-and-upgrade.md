@@ -46,32 +46,22 @@ Creating filestash_app ... done
 
 *Note*: Official Docker images are made available on [DockerHub](https://hub.docker.com/r/machines/filestash/).
 
-Once the installation has complete, open up a browser and navigate to: `http://your_ip:8334`, you will be greet with the configurator:
+Once the installation has complete, open up a browser and navigate to: `http://your_ip:8334`, you will be greet with the setup screen:
 
 <img src="https://raw.githubusercontent.com/mickael-kerjean/filestash_images/master/screenshots/setup.png" alt="setup screenshot" height="320px"/>
-Enter the admin password you want to use to protect the admin console that's available under `/admin`.
+Enter the admin password you want to use to protect the admin console. The admin console is available at the `/admin` url.
 
-Last step is to let Filestash configure itself depending on what you are trying to achieve:
+Once done, you will reach the last step of the configuration which look like this:
 <img src="https://raw.githubusercontent.com/mickael-kerjean/filestash_images/master/screenshots/setup_stage2.png" alt="stage 2 of the setup- screenshot" height="320px"/>
+If you're not too sure about linux servers and selfhosting, you will want to select `yes`. This will expose your instance to the internet via a filestash URL like https://user-foo.filestash.app.
 
-At this stage, selecting `Yes` will expose your instance to the internet from one of our subdomain (eg https://user-foo.filestash.app) without requiring any further setup from your end (see [here](/2019/05/01/performance/) if you worry about the automatic configuration).
+Otherwise, just skip this screen and get yourself set like you'd do for any other selfhosted app. Also if you want to dig onto what this is about, read [this](#note-on-the-proxy-feature)
 
-**How does it work?** Filestash establish a bidirectional tunnel from your instance to one of our public server. Incoming requests through our domain will first hit our server to then be directed within the tunnel.
+Once this is done, you should be ready to go
 
-**Why should I care?** The motivation behind this feature is security since we discovered (big thank you to the people would have opt in the telemetry) many instances weren't being secured properly: lack of SSL certificates, missconfiguration of reverse proxy, ...
+## Preparing your instance
 
-<img height="320px" src="https://img.memecdn.com/poodle-vulnerability_o_4000087.webp" alt="poodle ssl vulnerability"/>
-
-**Pro and Cons:** This approach isn't perfect, it adds on latency and won't give control of the proxy server. However, it has benefits such as:
-- it is secure by default
-- you aren't require to be an admin of anything to make it work
-- if a security vulnerability comes up, we will be able to block potential exploit
-
-**Your domain name**: If you have the tunnel enable, a filestash sub domain will be automatically assigned to your instance (eg: user-foo.filestash.app). We can change this domain to whatever you want (eg: stallman.filestash.app) but considering the extra cost associated with that feature (our server aren't free) we will only do it for the people supporting the project.
-
-## Once you are up and running
-
-1. For a production instance, it is advised to fill the `host` value under `configure->general` with your domain name.
+1. For a production instance, it is advised to fill the `host` value under `configure->general` with your domain name. This enable some additional security measures like HSTS and host name verification
 
 2. You can enable the full text search via the admin console. This feature is disabled by default for 2 reasons:
     - associated cost when you use a vendor like [S3]({% post_url 2019-11-21-s3-browser %}) that charges both for the bandwith and API calls. In your settings you can change the reindex time to a higher value to minimise cost at the expense of having some stale data in your index.
@@ -79,7 +69,7 @@ At this stage, selecting `Yes` will expose your instance to the internet from on
 
 ## Upgrade
 
-Upgrade is straightforward:
+Upgrades are straightforward:
 
 <div class="terminal">
 <span class="prompt">~/filestash$ </span>curl -O https://downloads.filestash.app/latest/docker-compose.yml<br>
@@ -165,3 +155,16 @@ nginx -t && service nginx restart
 ```
 
 **Note**: Resist the temptation of using gzip and other caching mechanism at the reverse proxy level, you would waste valuable CPU cycles adding latency and increasing the bandwith usage, creating issues with cache invalidation. Filestash is already doing its best at compile time optimising at a level no reverse proxy could ever do with a few lines of configuration and no deep knowledge of the underlying service.
+
+## Note on the proxy feature
+
+**How does this work?** the proxy work by establishing a bidirectional tunnel between your server and our public proxy server. Incoming traffic to the filestash domain will then use that tunnel.
+
+**Why should I care?** The motivation behind this feature is security as we discovered (big thank you to the people would have opt in the telemetry) many people didn't bothered to properly secured their instance and domain
+
+**Pro and Cons:** This approach isn't perfect, it adds on latency and won't give control of the proxy server. However, it has benefits such as:
+- it is secure by default
+- you aren't require to be an admin of anything to make it work
+- if a security vulnerability comes up, we will be able to block potential exploit
+
+**Your domain name**: If you have the tunnel enable, a filestash sub domain will be automatically assigned to your instance (eg: user-foo.filestash.app). We can change this domain to whatever you want (eg: stallman.filestash.app) but considering the extra cost associated with that feature (our server aren't free) we will only do it for the people supporting the project.

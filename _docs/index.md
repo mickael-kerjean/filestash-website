@@ -6,12 +6,10 @@ permalink: /docs
 ---
 
 To use Filestash, you can either:
-1. selfhost it on your own server and manage everything yourself: [see the documentation](/docs/install-and-upgrade/)
-2. get the best solution for your needs by becoming a customer: [see the pricing](/pricing/)
+1. use it without managing any server at all. [Get started here](https://deploy.filestash.app/?type=personal::cloud)
+2. selfhost it on your own server and manage everything yourself: [see the documentation](/docs/install-and-upgrade/)
+3. play around with your own backend:
 
-<p class="center">
-    Also, you can try Filestash with your own backend:
-</p>
 <iframe style="width: 100%;height: 500px;border: 9px solid #0000001a;border-radius: 5px;" id="appframe" frameborder="0" src="https://demo.filestash.app/login" allow="fullscreen;speaker"></iframe>
 
 <div class="related">

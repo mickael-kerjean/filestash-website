@@ -8,7 +8,7 @@ layout: default_nocompress
      color: var(--bg-color);
      font-weight: 500;
      text-align: center;
-     margin: 50px 0;
+     margin: 50px 0 40px 0;
  }
 </style>
 <div style="background:var(--primary)">
@@ -25,7 +25,7 @@ layout: default_nocompress
              display: inline-block;
              border: 4px solid var(--secondary);
              padding: 5px 15px;
-             font-size: 1.2em;
+             font-size: 1.3em;
              margin: 0 -4px;
          }
          .plans a:not(.active):hover{
@@ -104,8 +104,8 @@ layout: default_nocompress
             <a class="radius-top-left radius-bottom-left" onClick='selectPlan("cloud")'>Cloud</a>
             <a class="radius-top-right radius-bottom-right" onClick='selectPlan("selfhosted")'>Selfhosted</a>
         </div>
-        <div class="definition" data-related="cloud"> In the cloud plan, we manage the servers</div>
-        <div class="definition" data-related="selfhosted"> Selfhosted plan are for those who owns a server</div>
+        <div class="definition" data-related="cloud">with the cloud plans, you don't manage any server</div>
+        <div class="definition" data-related="selfhosted">selfhosted is when you use your own server</div>
         <div class="clear_space"></div>
     </div>
 </div>
@@ -123,9 +123,14 @@ layout: default_nocompress
      flex: 1;
      background: var(--bg-color);
      margin: 0 7px;
-     box-shadow: 2px 2px 2px rgba(0,0,0,0.2);
+     border: 2px solid rgba(0,0,0,0.05);
      border-radius: 2px;
      text-align: center;
+ }
+ .package.package__emphasis {
+     transform: scale(1.15);
+     z-index: 1;
+     box-shadow: rgba(158, 163, 172, 0.5) 5px 5px 20px;
  }
  .package h2{
      margin: 0 0 5px 0;
@@ -140,6 +145,9 @@ layout: default_nocompress
      text-align: center;
      color: var(--bg-color)!important;
      border-radius: 2px;
+     font-weight: bold;
+     text-shadow: 0 0 1px rgba(0,0,0,0.4);
+     border: 2px solid rgba(0,0,0,0.05);
  }
  .package ul{
      margin: 0 0 0px 0;
@@ -183,34 +191,36 @@ layout: default_nocompress
         <div class="package">
             <h2>Free</h2>
             <ul>
-                <li>10MB upload limit</li>
-                <li>Shared links are reset every week</li>
+                <li>2MB upload limit</li>
+                <li>Shared links expire after a week</li>
                 <li>No customisation</li>
-            </ul>
+            </ul><br>
             <div class="amount"> $0/month</div>
             <a rel="nofollow" class="action" href="https://demo.filestash.app">USE NOW</a>
         </div>
-        <div class="package">
+        <div class="package package__emphasis">
             <h2>Personal</h2>
             <ul>
-                <li>No upload limit</li>
-                <li>Full access to the admin console</li>
-                <li>Link it to your domain</li>
+                <li>Full access to everything</li>
+                <li>Full customisation</li>
+                <li>Unlimited shared link</li>
+                <li>Unlimited uploads</li>
             </ul>
             <div class="amount">
                 <s>$9/month</s><br>
-                <span>early bird: </span> $5/month
+                Free trial, then $5/month
             </div>
-            <a class="action" href="#cloud_personal" rel="modal:open">ORDER NOW</a>
+            <a class="action" href="https://deploy.filestash.app?type=personal::cloud">FREE TRIAL</a>
         </div>
         <div class="package">
             <h2>Enterprise</h2>
             <ul>
+                <li>Unlimited users</li>
+                <li>Everything unlimited</li>
                 <li>Enterprise support 24/7 by phone and email</li>
-                <li>Custom installation</li>
             </ul>
             <div class="amount"></div>
-            <a class="action" href="#cloud_enterprise" rel="modal:open">ORDER NOW</a>
+            <a class="action" href="#cloud_enterprise" rel="modal:open">CONTACT US</a>
         </div>
     </div>
 
@@ -218,8 +228,8 @@ layout: default_nocompress
         <div class="package">
             <h2>Free</h2>
             <ul>
+                <li>Everything unlimited</li>
                 <li>You perform the installation & maintenance</li>
-                <li>No automatic upgrade</li>
             </ul>
             <div class="amount">$0</div>
             <a class="action" href="/docs">START NOW</a>
@@ -227,6 +237,7 @@ layout: default_nocompress
         <div class="package">
             <h2>Personal</h2>
             <ul>
+                <li>Everything unlimited</li>
                 <li>We perform the install/maintenance on your behalf</li>
             </ul>
             <div class="amount">
@@ -237,17 +248,18 @@ layout: default_nocompress
         <div class="package">
             <h2>Enterprise</h2>
             <ul>
+                <li>Everything unlimited</li>
                 <li>Enterprise support</li>
-                <li>Custom installation</li>
+                <li>Customisation</li>
             </ul>
-            <a class="action" href="#selfhosted_enterprise" rel="modal:open">ORDER NOW</a>
+            <a class="action" href="#selfhosted_enterprise" rel="modal:open">CONTACT US</a>
         </div>
     </div>
 </div>
 
 <style>
  .featurelist h2{
-     margin-top: 0px;
+     margin-top: 10px;
      text-align: center;
      color: var(--light);
      font-weight: 100;
@@ -257,10 +269,8 @@ layout: default_nocompress
      margin: 0px 0 100px 0;
  }
  table.features th{ font-weight: 300; }
+ table.features i{ margin: 0 auto; display: block; width: 24px; height: 24px;}
  table.features i.check{
-     display: inline-block;
-     width: 24px;
-     height: 24px;
      background-image: url("data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20encoding%3D%22UTF-8%22%3F%3E%0A%3C!DOCTYPE%20svg%20PUBLIC%20%22-%2F%2FW3C%2F%2FDTD%20SVG%201.1%2F%2FEN%22%20%22http%3A%2F%2Fwww.w3.org%2FGraphics%2FSVG%2F1.1%2FDTD%2Fsvg11.dtd%22%3E%0A%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20xmlns%3Axlink%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxlink%22%20version%3D%221.1%22%20%20width%3D%2224%22%20height%3D%2224%22%20viewBox%3D%220%200%2024%2024%22%3E%0A%20%20%20%3Cpath%20fill%3D%22%23FFFFFF%22%20d%3D%22M21%2C7L9%2C19L3.5%2C13.5L4.91%2C12.09L9%2C16.17L19.59%2C5.59L21%2C7Z%22%20%2F%3E%0A%3C%2Fsvg%3E");
      background-repeat: no-repeat;
      background-size: 18px;
@@ -269,9 +279,6 @@ layout: default_nocompress
      background-color: var(--primary);
  }
  table.features i.close {
-     display: inline-block;
-     width: 24px;
-     height: 24px;
      -webkit-mask-image: url("data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20encoding%3D%22UTF-8%22%3F%3E%0A%3C!DOCTYPE%20svg%20PUBLIC%20%22-%2F%2FW3C%2F%2FDTD%20SVG%201.1%2F%2FEN%22%20%22http%3A%2F%2Fwww.w3.org%2FGraphics%2FSVG%2F1.1%2FDTD%2Fsvg11.dtd%22%3E%0A%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20xmlns%3Axlink%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxlink%22%20version%3D%221.1%22%20%20width%3D%2224%22%20height%3D%2224%22%20viewBox%3D%220%200%2024%2024%22%3E%0A%20%20%20%3Cpath%20fill%3D%22%23000000%22%20d%3D%22M19%2C13H5V11H19V13Z%22%20%2F%3E%0A%3C%2Fsvg%3E");
      -webkit-mask-repeat: no-repeat;
      -webkit-mask-size: 24px;
@@ -289,6 +296,7 @@ layout: default_nocompress
  }
  table.features td{
      text-align: center;
+     padding: 3px 0;
  }
  table.features td:first-of-type {
      text-align: left;
@@ -300,7 +308,6 @@ layout: default_nocompress
 <style>
  .tooltip {
      position: relative;
-     display: inline-block;
      font-size: 0.9em;
  }
  .tooltip .tooltiptext {
@@ -312,7 +319,7 @@ layout: default_nocompress
      text-align: center;
      border-radius: 4px;
      position: absolute;
-     left: -48px;
+     left: -19px;
      z-index: 1;
  }
  .tooltip:hover .tooltiptext {
@@ -335,6 +342,16 @@ layout: default_nocompress
  .tooltip:hover .tooltiptext {
      opacity: 1;
  }
+ tr:not(.header):hover {
+     background: rgba(0,0,0,0.07);
+ }
+ tr:not(.header) td {
+     padding-left: 10px;
+ }
+ tr.header > th{
+     font-style: italic;
+     font-weight: bold;
+ }
 </style>
 
 <div class="container featurelist">
@@ -354,7 +371,7 @@ layout: default_nocompress
 
             <tr class="header">
                 <td>
-                    <h3>Backend connector</h3>
+                    <h3 style="margin-top:0">Backend connector</h3>
                 </td>
             </tr>
             <tr>
@@ -762,7 +779,7 @@ layout: default_nocompress
             <tr>
                 <td>Phone support</td>
                 <td data-related="cloud"><i class="close"></i></td>
-                <td data-related="cloud"><i class="close"></i></td>
+                <td data-related="cloud"><i class="check"></i></td>
                 <td data-related="cloud"><i class="check"></i></td>
                 <td data-related="selfhosted"><i class="close"></i></td>
                 <td data-related="selfhosted"><i class="close"></i></td>
