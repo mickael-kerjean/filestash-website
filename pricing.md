@@ -217,6 +217,7 @@ layout: default_nocompress
             <ul>
                 <li>Unlimited users</li>
                 <li>Everything unlimited</li>
+                <li>Custom integration</li>
                 <li>Enterprise support 24/7 by phone and email</li>
             </ul>
             <div class="amount"></div>
@@ -250,7 +251,7 @@ layout: default_nocompress
             <ul>
                 <li>Everything unlimited</li>
                 <li>Enterprise support</li>
-                <li>Customisation</li>
+                <li>Custom integration</li>
             </ul>
             <a class="action" href="#selfhosted_enterprise" rel="modal:open">CONTACT US</a>
         </div>
