@@ -208,7 +208,7 @@ layout: default_nocompress
             </ul>
             <div class="amount">
                 <s>$9/month</s><br>
-                Free trial, then $5/month
+                Free trial, then $6/month
             </div>
             <a class="action" href="https://deploy.filestash.app?type=personal::cloud">FREE TRIAL</a>
         </div>
