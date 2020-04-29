@@ -13,11 +13,19 @@
     --dark: #313538;
 }
 
-/* RESET */
 body {
+    background: var(--super-light);
+    color: var(--color);
+    font-family: avenir next,avenir,helvetica neue,helvetica,ubuntu,roboto,noto,segoe ui,arial,sans-serif;
     margin: 0;
     font-size: 16px;
 }
+h1, h2, h3{
+    font-family: "Segoe UI", Arial, Ubuntu, sans-serif;
+}
+a, a:hover, a:focus{ text-decoration: none; }
+
+/* RESET */
 p { line-height: 1.5; }
 li { line-height: 1.5; margin: 6px 0; }
 img { max-width: 100%; object-fit: contain; }
@@ -63,15 +71,9 @@ pre, .terminal {
 .terminal span.prompt, .terminal span.stdout { user-select: none; font-size: 0.95em; }
 
 /* DEFAULT */
-body {
-    background: var(--super-light);
-    color: var(--color);
-    font-family: avenir next,avenir,helvetica neue,helvetica,ubuntu,roboto,noto,segoe ui,arial,sans-serif;
-}
 h1,h2,h3,a,strong{
     color: var(--secondary);
 }
-a, a:hover, a:focus{ text-decoration: none; }
 h2 {
     font-size: 32px;
     font-weight: normal;
