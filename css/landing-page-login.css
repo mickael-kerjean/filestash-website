@@ -28,10 +28,12 @@ form input[type="submit"]{ margin-top: 20px; width: 100%; }
 }
 
 .waveshape{
-    background-image: url(data:image/svg+xml;charset=utf8,%0A%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%221440%22%20height%3D%22220%22%20viewBox%3D%220%200%201440%20220%22%3E%0A%20%20%3Cpath%20style%3D%22fill%3A%239ad1ed%22%20d%3D%22m%201440%2C18.005668%20c%20-19.3%2C4.3%20-39.2%2C8.6%20-60%2C13%20-174.2%2C36.5%20-228.8%2C287.999832%20-467%2C76.199972%20C%20759.4%2C-29.394332%20489%2C84.405668%20252.6%2C101.40567%20122.4%2C110.70563%200%2C26.405668%200%2C26.405668%20V%200.00566875%20h%201440%22%20%2F%3E%0A%3C%2Fsvg%3E);
+    background-image: url(data:image/svg+xml;charset=utf8,%0A%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%221440%22%20height%3D%22220%22%20viewBox%3D%220%200%201440%20220%22%3E%0A%20%20%3Cpath%20style%3D%22fill%3A%239ad1ed%22%20d%3D%22M%201440%2C0.00566875%20C%201058.2025%2C-0.18654985%201111.1906%2C74.615531%20868.26628%2C46.755935%20625.34191%2C18.896339%20375.67341%2C9.504338%20251.53491%2C30.044723%20127.39641%2C50.585108%2094.792899%2C1.3763015%200%2C0.00566875%20h%201440%22%20%2F%3E%0A%3C%2Fsvg%3E);
     background-size: cover;
+    background-repeat: no-repeat;
     height: 220px;
     margin-top: -2px;
+    background-position: top center;
 }
 
 form fieldset legend{ padding: 2px 7px; cursor: pointer; user-select: none; }
