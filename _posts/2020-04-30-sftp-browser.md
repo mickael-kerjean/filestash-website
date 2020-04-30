@@ -69,7 +69,7 @@ permalink: /online-sftp-browser.html
           <h2>Works with all the popular free SFTP servers</h2>
           <p>
               Our online tool works great with any <a href="https://tools.ietf.org/html/draft-ietf-secsh-filexfer-13">SFTP compliant server</a> like
-              <a href="https://www.openssh.com/">Openssh</a> and <a href="http://proftpd.org/">ProFTPD</a>.
+              <a href="https://www.openssh.com/">Openssh</a>, <a href="http://proftpd.org/">ProFTPD</a> and even your Amazon S3 buckets with <a href="https://console.aws.amazon.com/transfer/home">AWS SFTP</a>
         </p>
         <img alt="illustration of the shared link screen" class="lazy fancy visible-xs" data-src="/img/posts/2019-11-26-s3.png" />
       </div>
