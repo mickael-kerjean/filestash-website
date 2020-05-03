@@ -167,12 +167,9 @@
     background: var(--bg-color);
 }
 #features .feature img.fancy {
-    border: 9px solid #0000001a;
-    border-radius: 5px;
     height: 270px;
     width: 400px;
     object-fit: cover;
-    box-shadow: rgba(158, 163, 172, 0.3) 3px 3px 20px;
 }
 img.fancy.hidden-xs{
     margin-top: -60px;

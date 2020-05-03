@@ -22,6 +22,10 @@ server {
 }
 ```
 
+## I want to use S3. How do you create an AWS access Key ID and AWS Secret Access key?
+
+We wrote a post about this, [check it out](({% post_url 2019-11-21-s3-browser %}))
+
 ## My server provider only support PHP based applications, is that ok?
 
 No. Plus, if you run one of those archaic things, it's time for you to upgrade to an actual server.
