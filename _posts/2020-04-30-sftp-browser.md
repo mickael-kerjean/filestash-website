@@ -1,8 +1,10 @@
 ---
-title: SFTP Browser | The best online SFTP client
+title: A web client to do file transfer over SSH
 description: A web interface to access your SFTP server from your browser
 layout: landing
-permalink: /online-sftp-browser.html
+permalink: /ssh-file-transfer.html
+redirect_from:
+  - /online-sftp-browser.html
 ---
 
 <link rel="stylesheet" href="/css/landing-page.css">
@@ -12,7 +14,7 @@ permalink: /online-sftp-browser.html
   <div class="row">
     <div class="col-sm-12">
       <div class="hgroup">
-        <h1><a href="https://en.wikipedia.org/wiki/SSH_File_Transfer_Protocol">SFTP</a> Browser; An online web-based SFTP client:</h1>
+        <h1>SSH File transfer made easy with our <a href="https://en.wikipedia.org/wiki/SSH_File_Transfer_Protocol">SFTP</a> Browser</h1>
       </div>
       <form onsubmit='$("form input[type=\"submit\"]").attr("value", "LOADING...")' action="https://demo.filestash.app/login" method="GET">
         <input type="hidden" name="type" value="sftp" />
@@ -54,6 +56,15 @@ permalink: /online-sftp-browser.html
 <div id="features" style="padding-bottom:0">
   <div class="container">
     <div class="row features main">
+
+      <div class="feature">
+        <img alt="screenshot of Filestash when uploading" class="lazy fancy pull-right hidden-xs" data-src="/img/screenshots/feature1.png" style="margin-top: -30px;" />
+        <h2>Transfer files over SSH</h2>
+        <p>
+          Our web client makes it easy to copy files and folders both from local to remote and from remote to local. Under the hood it uses the SSH File Transfer Protocol also known as SFTP
+        </p>
+        <img alt="screenshot of Filestash when uploading" class="lazy fancy visible-xs" data-src="/img/screenshots/feature1.png" />
+      </div>
 
       <div class="feature">
         <img alt="screenshot of Filestash when uploading" class="lazy fancy pull-left hidden-xs" data-src="/img/screenshots/viewerpage.png" />

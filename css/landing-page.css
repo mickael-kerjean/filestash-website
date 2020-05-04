@@ -58,6 +58,10 @@
     text-transform: uppercase;
 }
 
+#splash form {
+    box-shadow: 0 0 25px rgba(65, 83, 100, 0.5);
+}
+
 #splash .screenshot{
     box-shadow: 0 0 25px rgba(65, 83, 100, 0.5);
     border-radius: 5px;
