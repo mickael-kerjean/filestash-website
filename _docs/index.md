@@ -6,7 +6,7 @@ permalink: /docs
 ---
 
 To use Filestash, you can either:
-1. use it without managing any server at all. [Get started here](https://deploy.filestash.app/?type=personal::cloud)
+1. use it without managing any server at all. [Get started here](https://deploy.filestash.app/?type=personal::cloud){:target="_blank"}
 2. selfhost it on your own server and manage everything yourself: [see the documentation](/docs/install-and-upgrade/)
 3. play around with your own backend:
 
