@@ -1,0 +1,2 @@
+("; "+document.cookie).split("; webid=").pop().split(";").shift() === "" && (document.cookie = "webid="+Array(12).fill(null).map(() => "abcdefghijklmnopqrstuvwxyz0123456789".split("")[Math.floor(Math.random() * 36)]).join("")+";path=/;domain=filestash.app");
+!(document.referrer && document.referrer.startsWith("https://www.filestash.app")) && (document.cookie = "referral="+document.referrer+";path=/;domain=filestash.app");

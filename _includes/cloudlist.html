@@ -1,0 +1,77 @@
+<div class="brand-integrations">
+    <div><a href="https://www.dropbox.com/oauth2/authorize?client_id=rwwexrciugmfkls&redirect_uri=https://demo.filestash.app/login&response_type=token&state=dropbox">
+        Dropbox
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/78/Dropbox_Icon.svg/150px-Dropbox_Icon.svg.png" />
+    </a></div>
+
+    <div><a href="https://demo.filestash.app" target="_blank">
+        Google Drive
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e8/Google_Drive_logo.svg/150px-Google_Drive_logo.svg.png" />
+    </a></div>
+    <div><a href="/s3-browser.html" target="_blank">
+        AWS S3
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/32/AWS_Simple_Icons_Storage_Amazon_S3.svg/150px-AWS_Simple_Icons_Storage_Amazon_S3.svg.png"/>
+    </a></div>
+    <div><a href="/online-ftp-browser.html" target="_blank">
+        FTP
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/Human-folder-remote-ftp.svg/150px-Human-folder-remote-ftp.svg.png" />
+    </a></div>
+    <div><a href="https://demo.filestash.app" target="_blank">
+        SFTP
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e9/Gnome-fs-ssh.svg/150px-Gnome-fs-ssh.svg.png"/>
+    </a></div>
+    <div><a href="https://demo.filestash.app" target="_blank">
+        Webdav
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/69/Antu_folder-owncloud.svg/150px-Antu_folder-owncloud.svg.png" />
+    </a></div>
+    <div><a href="https://demo.filestash.app" target="_blank">
+        Github
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Font_Awesome_5_brands_github.svg/100px-Font_Awesome_5_brands_github.svg.png" />
+    </a></div>
+
+    <div><a href="https://demo.filestash.app" target="_blank">
+        Gitlab
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/GitLab_Logo.svg/150px-GitLab_Logo.svg.png" />
+    </a></div>
+
+</div>
+
+<div class="other-choice">Don't have anything like this? Use some public storage like <a href="https://demo.filestash.app/login?type=s3&access_key_id=Q3AM3UQ867SPQQA43P2F&secret_access_key=zuf%2BtfteSlswRu7BJ86wekitnifILbZam1KYY3TG&region=us-east-2&encryption_key=&endpoint=https%3A%2F%2Fplay.minio.io%3A9000%2F">this one</a></div>
+
+<style>
+ .brand-integrations {
+     display: flex;
+     flex-flow: wrap;
+ }
+ .brand-integrations > div > a {
+     display: block;
+     background: var(--emphasis-primary);
+     padding: 15px 20px;
+     border-radius: 5px;
+     color: var(--emphasis);
+     margin: 10px 10px;
+     width: 230px;
+     height: 200px;
+     font-size: 22px;
+     text-align: center;
+     text-decoration: none!important;
+     transition: 0.1s ease background;
+ }
+ .brand-integrations > div > a:hover{
+     color: var(--bg-color);
+     background: var(--emphasis);
+ }
+ .brand-integrations img {
+     display: block;
+     height: calc(100% - 50px);
+     width: 100%;
+     padding-top: 15px;
+ }
+ .other-choice{
+     font-size: 20px;
+     font-style: italic;
+     text-align: center;
+     margin-top: 15px;
+ }
+
+</style>
