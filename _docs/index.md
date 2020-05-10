@@ -5,10 +5,12 @@ order: 1
 permalink: /docs
 ---
 
+<style>.banner{ display: none; }</style>
+
 To use Filestash, you can either:
-1. use it without managing any server at all. [Get started here](https://deploy.filestash.app/?type=personal::cloud){:target="_blank"}
-2. selfhost it on your own server and manage everything yourself: [see the documentation](/docs/install-and-upgrade/)
-3. play around with your own backend:
+1. Get your own instance running in the cloud under 60 seconds. Register to your free trial [here](https://deploy.filestash.app/?type=personal::cloud){:target="_blank"}
+2. Selfhost the application on your own server and manage everything yourself: [see the documentation](/docs/install-and-upgrade/)
+3. Play around with the public demo:
 
 <iframe style="width: 100%;height: 500px;border: 9px solid #0000001a;border-radius: 5px;" id="appframe" frameborder="0" src="https://demo.filestash.app/login" allow="fullscreen;speaker"></iframe>
 
