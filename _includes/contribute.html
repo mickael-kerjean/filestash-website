@@ -1,9 +1,15 @@
 <div id="contribute">
     <hr>
     <p>
+      {% if page.language == 'fr' %}
+        <a rel="nofollow noopener" href="https://github.com/mickael-kerjean/filestash-website/blob/master/{{page.path}}">
+            Modifier cette page!
+        </a>
+      {% else %}
         Want to contribute to this page?
         <a rel="nofollow noopener" href="https://github.com/mickael-kerjean/filestash-website/blob/master/{{page.path}}">
             Edit this page!
         </a>
+        {% endif %}
     </p>
 </div>

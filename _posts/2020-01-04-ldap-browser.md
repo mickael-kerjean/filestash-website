@@ -3,6 +3,7 @@ title: LDAP Browser - An online tool to manage and explore your LDAP server
 description: A web-based tool to browse and manage your LDAP without beeing a LDIF wizard
 layout: landing
 permalink: /ldap-browser.html
+language: en
 ---
 
 <link rel="stylesheet" href="/css/landing-page.css">

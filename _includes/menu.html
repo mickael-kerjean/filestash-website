@@ -1,19 +1,38 @@
 <nav id="nav" class="{{include.context}}">
 	<div class="container">
-        <a href="/" class="logo">
+
+        {% if page.language == 'fr' %}
+        <a href="{% link index.fr.html %}" class="logo">
             {% if page.url == "/" %}
             <img alt="logo" src="https://downloads.filestash.app/brand/logo_white.svg">
             {% else %}
             <img alt="logo" src="https://downloads.filestash.app/brand/logo_grey.svg">
             {% endif %}
 		</a>
+        {% else %}
+        <a href="{% link index.html %}" class="logo">
+            {% if page.url == "/" %}
+            <img alt="logo" src="https://downloads.filestash.app/brand/logo_white.svg">
+            {% else %}
+            <img alt="logo" src="https://downloads.filestash.app/brand/logo_grey.svg">
+            {% endif %}
+		</a>
+        {% endif %}
 
 		<ul class="nav-links">
 		    <li class="hidden-xs">
-			    <a href="/docs" {% if page.url contains "/docs" %}class="active"{% endif %}>Documentation</a>
+                {% if page.language == 'fr' %}
+                <a href="{% link _docs/index.fr.md %}" {% if page.url contains "/docs" %}class="active"{% endif %}>Documentation</a>
+                {% else %}
+                <a href="{% link _docs/index.md %}" {% if page.url contains "/docs" %}class="active"{% endif %}>Documentation</a>
+                {% endif %}
 		    </li>
             <li class="hidden-xs">
-			    <a href="/pricing/" {% if page.url == "/support" %}class="active"{% endif %}>Pricing</a>
+                {% if page.language == 'fr' %}
+                <a href="{% link pricing.fr.md %}">Prix</a>
+                {% else %}
+                <a href="{% link pricing.md %}">Pricing</a>
+                {% endif %}
 		    </li>
 		    <li><a rel="nofollow" href="https://github.com/mickael-kerjean/filestash" title="GitHub">
 			    <svg class="svg-inline svg-inline-large" viewBox="0 0 16 16" version="1.1" aria-hidden="true">

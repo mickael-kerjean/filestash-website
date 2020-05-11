@@ -3,7 +3,7 @@
 {% for node in docs %}
 	{% assign path = node.url | split: '/' %}
 	{% assign level = path | size %}
-	{% if level <= 3 # Not a subfolder %}
+	{% if level <= 3 and page.language == node.language # Not a subfolder %}
 		<li>
 			<a
 				href="{{ node.url }}"
@@ -14,4 +14,9 @@
 		</li>
 	{% endif %}
 {% endfor %}
-<li><a href="/posts/">Articles</a></li>
+
+{% if page.language == 'fr' %}
+<li><a href="{% link posts.fr.html %}">Articles</a></li>
+{% else %}
+<li><a href="{% link posts.html %}">Articles</a></li>
+{% endif %}

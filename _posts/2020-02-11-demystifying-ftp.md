@@ -2,6 +2,7 @@
 layout: post
 title: Demystifying FTP
 description: Answering all the questions about the nearly 50 year old protocol
+language: en
 ---
 
 FTP isn't just back, it never left. After all those years, FTP isn't close to being leaving anytime soon. With over [8.3 million FTP servers](https://www.shodan.io/search?query=port%3A21&language=en) sitting on the public internet, FTP is still nearly 50 years after its inception alive and well.

@@ -1,14 +1,11 @@
----
-layout: compress
----
 <!DOCTYPE html>
-<html lang="en">
+<html lang="{% if page.language %}{{ page.language }}{% else %}en{% endif %}">
     <head>
 	    <meta charset="utf-8">
-	    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
 	    <title>{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}</title>
+
 	    <meta name="description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	    <meta name="theme-color" content="#415364">
 	    <meta property="twitter:card" content="summary">
 	    <meta property="og:type" content="website">
@@ -17,11 +14,11 @@ layout: compress
 	    <meta property="og:title" content="{% if page.title %}{{ page.title }}{% else %}Filestash{% endif %}">
 	    <meta property="og:description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}">
 	    <meta property="og:image" content="/img/logo/logo.png">
-
-	    <link rel="canonical" href="{{ site.url }}{{ page.url }}">
-
-	    <link rel="stylesheet" href="/css/bootstrap.min.css">
+        <link rel="stylesheet" href="/css/bootstrap.min.css">
 	    <script src="/js/jquery.min.js"></script>
+        <link rel="canonical" href="{{ page.url }}">
+        {% for head in page.head %}
+        {{ head }}{% endfor %}
     </head>
     <body>
         <style> {% include style.css %} </style>

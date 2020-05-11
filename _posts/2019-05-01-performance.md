@@ -1,6 +1,7 @@
 ---
 title: Performance
 layout: post
+language: en
 ---
 
 Report from *https://observatory.mozilla.org*:

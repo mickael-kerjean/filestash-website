@@ -2,6 +2,7 @@
 layout: post
 title: Install Filestash using Docker
 description: Install Filestash using Docker - Knowledge base
+language: en
 ---
 
 Filestash can easily be installed using Docker, the official image beeing available from [the hub](https://hub.docker.com/r/machines/filestash/tags). If you want to know the Nitty-gritty of how to install and maintain Filestash with docker, the [documentation](https://www.filestash.app/docs/install-and-upgrade/) is where you want to go.

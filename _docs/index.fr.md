@@ -1,28 +1,27 @@
 ---
 layout: documentation
-title: Getting started
+title: Point de départ
 order: 1
-permalink: /docs
-head:
-  - <link rel="alternate" href="/fr/docs/" hreflang="fr" />
+language: fr
+permalink: /fr/docs
 ---
 
 <style>.banner{ display: none; }</style>
 
-To use Filestash, you can either:
-1. Get your own instance running in the cloud under 60 seconds. Register to your free trial [here](https://deploy.filestash.app/?type=personal::cloud){:target="_blank"}
-2. Selfhost the application on your own server and manage everything yourself: [see the documentation](/docs/install-and-upgrade/)
-3. Play around with the public demo:
+Pour utiliser Filestash, vous pouvez soit:
+1. Faire fonctionner votre propre instance dans le cloud en moins de 60 secondes. Vous pouvez ainsi avoir un essai gratuit en cliquant [ici](https://deploy.filestash.app/?type=personal::cloud){:target="_blank"}
+2. Hébergez l'application sur votre propre serveur et gérez tout vous-même. Tous est documenté dans la [documentation](/docs/install-and-upgrade/) (écrit en Anglais)
+3. Jouez avec l'instance publique que nous utilisons comme démo:
 
 <iframe style="width: 100%;height: 500px;border: 9px solid #0000001a;border-radius: 5px;" id="appframe" frameborder="0" src="https://demo.filestash.app/login" allow="fullscreen;speaker"></iframe>
 
 <div class="related">
     <div class="title">
-        Related Pages <br>
+        Pages associées <br>
         <img src="https://mickael.kerjean.me/assets/img/arrow_bottom.png"/>
     </div>
     <div class="related_content">
-        <a href="{% post_url 2019-11-26-ftp-web-client %}"><h3 class="no-anchor">FTP Client</h3></a><a href="{% post_url 2019-11-21-s3-browser %}"><h3 class="no-anchor">S3 Client</h3></a><a href="{% post_url 2020-01-04-ldap-browser %}"><h3 class="no-anchor">LDAP Browser</h3></a>
+        <a href="{% post_url 2019-11-26-ftp-web-client-fr %}"><h3 class="no-anchor">Client FTP</h3></a><a href="{% post_url 2019-11-21-s3-browser %}"><h3 class="no-anchor">Client S3</h3></a><a href="{% post_url 2020-01-04-ldap-browser %}"><h3 class="no-anchor">Client LDAP</h3></a>
     </div>
 </div>
 

@@ -3,6 +3,7 @@ title: A web client to do file transfer over SSH
 description: A web interface to access your SFTP server from your browser
 layout: landing
 permalink: /ssh-file-transfer.html
+language: en
 redirect_from:
   - /online-sftp-browser.html
 ---

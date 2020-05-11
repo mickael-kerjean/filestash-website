@@ -1,5 +1,7 @@
 ---
 layout: default
+permalink: /fr/prix.html
+language: fr
 ---
 
 {% include menu.html context="homepage" %}
@@ -13,7 +15,7 @@ layout: default
 </style>
 <div style="background:var(--primary)">
     <div class="container center">
-        <h1>Choose the plan that's right for you</h1>
+        <h1>Choisissez le plan qui vous convient</h1>
         <style>
          .plans{
              text-align: center;
@@ -104,8 +106,8 @@ layout: default
             <a class="radius-top-left radius-bottom-left" onClick='selectPlan("cloud")'>Cloud</a>
             <a class="radius-top-right radius-bottom-right" onClick='selectPlan("selfhosted")'>Selfhosted</a>
         </div>
-        <div class="definition" data-related="cloud">with the cloud plans, you don't manage any server</div>
-        <div class="definition" data-related="selfhosted">selfhosted is when you use your own server</div>
+        <div class="definition" data-related="cloud">avec les plans cloud, vous ne gérez aucun serveur</div>
+        <div class="definition" data-related="selfhosted">hébergement par vous même, vous utilisez votre propre serveur</div>
         <div class="clear_space"></div>
     </div>
 </div>
@@ -191,37 +193,37 @@ layout: default
         <div class="package">
             <h2>Free</h2>
             <ul>
-                <li>2MB upload limit</li>
-                <li>Shared links expire after a week</li>
-                <li>No customisation</li>
+                <li>Limite de téléchargement de 2 Mo</li>
+                <li>Les liens partagés expirent après une semaine</li>
+                <li>Pas de personnalisation</li>
             </ul><br>
             <div class="amount"> $0/month</div>
-            <a rel="nofollow" class="action" href="https://demo.filestash.app">USE NOW</a>
+            <a rel="nofollow" class="action" href="https://demo.filestash.app">UTILISER MAINTENANT</a>
         </div>
         <div class="package package__emphasis">
             <h2>Personal</h2>
             <ul>
-                <li>Full access to everything</li>
-                <li>Full customisation</li>
-                <li>Unlimited shared link</li>
-                <li>Unlimited uploads</li>
+                <li>Accès complet à tout</li>
+                <li>Personnalisation complète</li>
+                <li>Lien partagé illimité</li>
+                <li>Téléchargements illimités</li>
             </ul>
             <div class="amount">
                 <s>$9/month</s><br>
-                Free trial, then $6/month
+                gratuit, puis 6 $ / mois
             </div>
-            <a class="action" href="https://deploy.filestash.app?type=personal::cloud">FREE TRIAL</a>
+            <a class="action" href="https://deploy.filestash.app?type=personal::cloud">ESSAI GRATUIT</a>
         </div>
         <div class="package">
             <h2>Enterprise</h2>
             <ul>
-                <li>Unlimited users</li>
-                <li>Everything unlimited</li>
-                <li>Custom integration</li>
-                <li>Enterprise support 24/7 by phone and email</li>
+                <li>Utilisateurs illimités</li>
+                <li>Tout illimité</li>
+                <li>Intégration personnalisée</li>
+                <li>Assistance entreprise 24/7 par téléphone et e-mail</li>
             </ul>
             <div class="amount"></div>
-            <a class="action" href="#cloud_enterprise" rel="modal:open">CONTACT US</a>
+            <a class="action" href="#cloud_enterprise" rel="modal:open">NOUS CONTACTER</a>
         </div>
     </div>
 
@@ -356,7 +358,7 @@ layout: default
 </style>
 
 <div class="container featurelist">
-    <h2> Feature comparison ( <span data-related="selfhosted">Selfhosted</span> <span data-related="cloud">Cloud</span> )</h2>
+    <h2> Comparaison des fonctionnalités ( <span data-related="selfhosted">Selfhosted</span> <span data-related="cloud">Cloud</span> )</h2>
     <table class="features">
         <tbody>
             <tr class="header">
@@ -372,7 +374,7 @@ layout: default
 
             <tr class="header">
                 <td>
-                    <h3 style="margin-top:0">Backend connector</h3>
+                    <h3 style="margin-top:0">Connecteurs Backend</h3>
                 </td>
             </tr>
             <tr>
@@ -484,7 +486,7 @@ layout: default
                 <td data-related="selfhosted"><i class="check"></i></td>
             </tr>
             <tr>
-                <td>Unlimited upload</td>
+                <td>Téléchargement illimité</td>
                 <td data-related="cloud">
                     <div class="tooltip">
                         <i class="close"></i>
@@ -504,7 +506,7 @@ layout: default
                 </td>
             </tr>
             <tr>
-                <td>Image viewer</td>
+                <td>Visionneuse d'images</td>
                 <td data-related="cloud"><i class="check"></i></td>
                 <td data-related="cloud"><i class="check"></i></td>
                 <td data-related="cloud"><i class="check"></i></td>
@@ -513,7 +515,7 @@ layout: default
                 <td data-related="selfhosted"><i class="check"></i></td>
             </tr>
             <tr>
-                <td>Image transcoding</td>
+                <td>Transcodage d'images</td>
                 <td data-related="cloud"><i class="check"></i></td>
                 <td data-related="cloud"><i class="check"></i></td>
                 <td data-related="cloud"><i class="check"></i></td>
@@ -522,7 +524,7 @@ layout: default
                 <td data-related="selfhosted"><i class="check"></i></td>
             </tr>
             <tr>
-                <td>Video viewer</td>
+                <td>Visionneuse vidéo</td>
                 <td data-related="cloud"><i class="check"></i></td>
                 <td data-related="cloud"><i class="check"></i></td>
                 <td data-related="cloud"><i class="check"></i></td>
@@ -531,7 +533,7 @@ layout: default
                 <td data-related="selfhosted"><i class="check"></i></td>
             </tr>
             <tr>
-                <td>File editor</td>
+                <td>Éditeur de fichiers</td>
                 <td data-related="cloud"><i class="check"></i></td>
                 <td data-related="cloud"><i class="check"></i></td>
                 <td data-related="cloud"><i class="check"></i></td>
@@ -540,7 +542,7 @@ layout: default
                 <td data-related="selfhosted"><i class="check"></i></td>
             </tr>
             <tr>
-                <td>Shared link</td>
+                <td>Lien partagé</td>
                 <td data-related="cloud">
                     <div class="tooltip">
                         <i class="close"></i>
@@ -554,7 +556,7 @@ layout: default
                 <td data-related="selfhosted"><i class="check"></i></td>
             </tr>
             <tr>
-                <td>Advanced collaboration permission</td>
+                <td>Permission avancée</td>
                 <td data-related="cloud">
                     <div class="tooltip">
                         <i class="close"></i>
@@ -574,7 +576,7 @@ layout: default
                 </td>
             </tr>
             <tr>
-                <td>WYSIWYG editor</td>
+                <td>Éditeur WYSIWYG</td>
                 <td data-related="cloud"><i class="check"></i></td>
                 <td data-related="cloud"><i class="check"></i></td>
                 <td data-related="cloud"><i class="check"></i></td>
@@ -601,7 +603,7 @@ layout: default
                 <td data-related="selfhosted"><i class="check"></i></td>
             </tr>
             <tr>
-                <td>Org note as wikis</td>
+                <td>Org note comme wikis</td>
                 <td data-related="cloud">
                     <div class="tooltip">
                         <i class="close"></i>
@@ -615,7 +617,7 @@ layout: default
                 <td data-related="selfhosted"><i class="check"></i></td>
             </tr>
             <tr>
-                <td>Export note to PDF</td>
+                <td>PDF export</td>
                 <td data-related="cloud"><i class="check"></i></td>
                 <td data-related="cloud"><i class="check"></i></td>
                 <td data-related="cloud"><i class="check"></i></td>
@@ -624,7 +626,7 @@ layout: default
                 <td data-related="selfhosted"><i class="check"></i></td>
             </tr>
             <tr>
-                <td>Export note to HTML</td>
+                <td>HTML export</td>
                 <td data-related="cloud"><i class="check"></i></td>
                 <td data-related="cloud"><i class="check"></i></td>
                 <td data-related="cloud"><i class="check"></i></td>
@@ -633,7 +635,7 @@ layout: default
                 <td data-related="selfhosted"><i class="check"></i></td>
             </tr>
             <tr>
-                <td>Export note to ODT</td>
+                <td>ODT export</td>
                 <td data-related="cloud"><i class="check"></i></td>
                 <td data-related="cloud"><i class="check"></i></td>
                 <td data-related="cloud"><i class="check"></i></td>
@@ -642,7 +644,7 @@ layout: default
                 <td data-related="selfhosted"><i class="check"></i></td>
             </tr>
             <tr>
-                <td>Export note to TXT</td>
+                <td>TXT export</td>
                 <td data-related="cloud"><i class="check"></i></td>
                 <td data-related="cloud"><i class="check"></i></td>
                 <td data-related="cloud"><i class="check"></i></td>
@@ -651,7 +653,7 @@ layout: default
                 <td data-related="selfhosted"><i class="check"></i></td>
             </tr>
             <tr>
-                <td>Export note to iCal</td>
+                <td>iCal export</td>
                 <td data-related="cloud"><i class="check"></i></td>
                 <td data-related="cloud"><i class="check"></i></td>
                 <td data-related="cloud"><i class="check"></i></td>
@@ -660,7 +662,7 @@ layout: default
                 <td data-related="selfhosted"><i class="check"></i></td>
             </tr>
             <tr>
-                <td>Export note to Beamer</td>
+                <td>Beamer export</td>
                 <td data-related="cloud"><i class="check"></i></td>
                 <td data-related="cloud"><i class="check"></i></td>
                 <td data-related="cloud"><i class="check"></i></td>
@@ -669,7 +671,7 @@ layout: default
                 <td data-related="selfhosted"><i class="check"></i></td>
             </tr>
             <tr>
-                <td>Export note to Latex</td>
+                <td>Latex export</td>
                 <td data-related="cloud"><i class="check"></i></td>
                 <td data-related="cloud"><i class="check"></i></td>
                 <td data-related="cloud"><i class="check"></i></td>
@@ -685,49 +687,7 @@ layout: default
                 </td>
             </tr>
             <tr>
-                <td>Access to admin console</td>
-                <td data-related="cloud">
-                    <div class="tooltip">
-                        <i class="close"></i>
-                        <span class="tooltiptext">imagine the mess if everyone would be an admin!</span>
-                    </div>
-                </td>
-                <td data-related="cloud"><i class="check"></i></td>
-                <td data-related="cloud"><i class="check"></i></td>
-                <td data-related="selfhosted"><i class="check"></i></td>
-                <td data-related="selfhosted"><i class="check"></i></td>
-                <td data-related="selfhosted"><i class="check"></i></td>
-            </tr>
-            <tr>
-                <td>Security tools</td>
-                <td data-related="cloud">
-                    <div class="tooltip">
-                        <i class="close"></i>
-                        <span class="tooltiptext">imagine the mess if everyone would be an admin!</span>
-                    </div>
-                </td>
-                <td data-related="cloud"><i class="check"></i></td>
-                <td data-related="cloud"><i class="check"></i></td>
-                <td data-related="selfhosted"><i class="check"></i></td>
-                <td data-related="selfhosted"><i class="check"></i></td>
-                <td data-related="selfhosted"><i class="check"></i></td>
-            </tr>
-            <tr>
-                <td>Customisation</td>
-                <td data-related="cloud">
-                    <div class="tooltip">
-                        <i class="close"></i>
-                        <span class="tooltiptext">imagine the mess if everyone would be an admin!</span>
-                    </div>
-                </td>
-                <td data-related="cloud"><i class="check"></i></td>
-                <td data-related="cloud"><i class="check"></i></td>
-                <td data-related="selfhosted"><i class="check"></i></td>
-                <td data-related="selfhosted"><i class="check"></i></td>
-                <td data-related="selfhosted"><i class="check"></i></td>
-            </tr>
-            <tr>
-                <td>Usage logs</td>
+                <td>Accès à la console d'administration</td>
                 <td data-related="cloud"><i class="close"></i></td>
                 <td data-related="cloud"><i class="check"></i></td>
                 <td data-related="cloud"><i class="check"></i></td>
@@ -736,7 +696,39 @@ layout: default
                 <td data-related="selfhosted"><i class="check"></i></td>
             </tr>
             <tr>
-                <td>BYOD: bring your own DNS</td>
+                <td>Outils de sécurité</td>
+                <td data-related="cloud"><i class="close"></i></td>
+                <td data-related="cloud"><i class="check"></i></td>
+                <td data-related="cloud"><i class="check"></i></td>
+                <td data-related="selfhosted"><i class="check"></i></td>
+                <td data-related="selfhosted"><i class="check"></i></td>
+                <td data-related="selfhosted"><i class="check"></i></td>
+            </tr>
+            <tr>
+                <td>Personnalisation</td>
+                <td data-related="cloud">
+                    <div class="tooltip">
+                        <i class="close"></i>
+                        <span class="tooltiptext">imagine the mess if everyone would be an admin!</span>
+                    </div>
+                </td>
+                <td data-related="cloud"><i class="check"></i></td>
+                <td data-related="cloud"><i class="check"></i></td>
+                <td data-related="selfhosted"><i class="check"></i></td>
+                <td data-related="selfhosted"><i class="check"></i></td>
+                <td data-related="selfhosted"><i class="check"></i></td>
+            </tr>
+            <tr>
+                <td>Accès aux logs</td>
+                <td data-related="cloud"><i class="close"></i></td>
+                <td data-related="cloud"><i class="check"></i></td>
+                <td data-related="cloud"><i class="check"></i></td>
+                <td data-related="selfhosted"><i class="check"></i></td>
+                <td data-related="selfhosted"><i class="check"></i></td>
+                <td data-related="selfhosted"><i class="check"></i></td>
+            </tr>
+            <tr>
+                <td>plugger votre propre DNS</td>
                 <td data-related="cloud"><i class="close"></i></td>
                 <td data-related="cloud"><i class="check"></i></td>
                 <td data-related="cloud"><i class="check"></i></td>
@@ -751,7 +743,7 @@ layout: default
                 </td>
             </tr>
             <tr>
-                <td>Setup call with our specialists</td>
+                <td>Mise en place avec un spécialiste</td>
                 <td data-related="cloud"><i class="close"></i></td>
                 <td data-related="cloud"><i class="check"></i></td>
                 <td data-related="cloud"><i class="check"></i></td>
@@ -760,7 +752,7 @@ layout: default
                 <td data-related="selfhosted"><i class="check"></i></td>
             </tr>
             <tr>
-                <td>Community support on <a rel="nofollow" href="https://kiwiirc.com/nextclient/#irc://irc.freenode.net/#filestash?nick=guest??">freenode</a></td>
+                <td>Support communautaire sur <a rel="nofollow" href="https://kiwiirc.com/nextclient/#irc://irc.freenode.net/#filestash?nick=guest??">freenode</a></td>
                 <td data-related="cloud"><i class="check"></i></td>
                 <td data-related="cloud"><i class="check"></i></td>
                 <td data-related="cloud"><i class="check"></i></td>
@@ -769,7 +761,7 @@ layout: default
                 <td data-related="selfhosted"><i class="check"></i></td>
             </tr>
             <tr>
-                <td>Email support</td>
+                <td>Support par Email</td>
                 <td data-related="cloud"><i class="close"></i></td>
                 <td data-related="cloud"><i class="check"></i></td>
                 <td data-related="cloud"><i class="check"></i></td>
@@ -778,7 +770,7 @@ layout: default
                 <td data-related="selfhosted"><i class="check"></i></td>
             </tr>
             <tr>
-                <td>Phone support</td>
+                <td>Support par téléphone</td>
                 <td data-related="cloud"><i class="close"></i></td>
                 <td data-related="cloud"><i class="check"></i></td>
                 <td data-related="cloud"><i class="check"></i></td>
@@ -787,7 +779,7 @@ layout: default
                 <td data-related="selfhosted"><i class="check"></i></td>
             </tr>
             <tr>
-                <td>Automatic upgrade</td>
+                <td>Mise à jour automatique</td>
                 <td data-related="cloud"><i class="close"></i></td>
                 <td data-related="cloud"><i class="check"></i></td>
                 <td data-related="cloud"><i class="check"></i></td>
@@ -796,7 +788,7 @@ layout: default
                 <td data-related="selfhosted"><i class="check"></i></td>
             </tr>
             <tr>
-                <td>System maintenance</td>
+                <td>Maintenance</td>
                 <td data-related="cloud"><i class="close"></i></td>
                 <td data-related="cloud"><i class="check"></i></td>
                 <td data-related="cloud"><i class="check"></i></td>
@@ -805,7 +797,7 @@ layout: default
                 <td data-related="selfhosted"><i class="check"></i></td>
             </tr>
             <tr>
-                <td>Automatic SSL</td>
+                <td>SSL par default</td>
                 <td data-related="cloud"><i class="check"></i></td>
                 <td data-related="cloud"><i class="check"></i></td>
                 <td data-related="cloud"><i class="check"></i></td>
@@ -814,7 +806,7 @@ layout: default
                 <td data-related="selfhosted"><i class="check"></i></td>
             </tr>
             <tr>
-                <td>Safe before security annoucement</td>
+                <td>En rê,gle avant une annonce de sécurité</td>
                 <td data-related="cloud"><i class="close"></i></td>
                 <td data-related="cloud"><i class="close"></i></td>
                 <td data-related="cloud"><i class="check"></i></td>
@@ -832,7 +824,7 @@ layout: default
                 <td data-related="selfhosted"><i class="check"></i></td>
             </tr>
             <tr>
-                <td>Consulting</td>
+                <td>Consultance</td>
                 <td data-related="cloud"><i class="close"></i></td>
                 <td data-related="cloud"><i class="close"></i></td>
                 <td data-related="cloud"><i class="check"></i></td>
@@ -856,7 +848,7 @@ layout: default
                 <td data-related="selfhosted"><i class="check"></i></td>
             </tr>
             <tr>
-                <td>Custom install</td>
+                <td>Installation personnalisée</td>
                 <td data-related="cloud"><i class="close"></i></td>
                 <td data-related="cloud"><i class="close"></i></td>
                 <td data-related="cloud"><i class="close"></i></td>
@@ -865,7 +857,7 @@ layout: default
                 <td data-related="selfhosted"><i class="check"></i></td>
             </tr>
             <tr>
-                <td>Debian installer</td>
+                <td>Installeur Debian</td>
                 <td data-related="cloud"><i class="close"></i></td>
                 <td data-related="cloud"><i class="close"></i></td>
                 <td data-related="cloud"><i class="close"></i></td>
@@ -874,7 +866,7 @@ layout: default
                 <td data-related="selfhosted"><i class="check"></i></td>
             </tr>
             <tr>
-                <td>RHEL installer</td>
+                <td>Installeur RHEL</td>
                 <td data-related="cloud"><i class="close"></i></td>
                 <td data-related="cloud"><i class="close"></i></td>
                 <td data-related="cloud"><i class="close"></i></td>
@@ -883,7 +875,7 @@ layout: default
                 <td data-related="selfhosted"><i class="check"></i></td>
             </tr>
             <tr>
-                <td>Ubuntu installer</td>
+                <td>Installeur Ubuntu</td>
                 <td data-related="cloud"><i class="close"></i></td>
                 <td data-related="cloud"><i class="close"></i></td>
                 <td data-related="cloud"><i class="close"></i></td>
@@ -892,7 +884,7 @@ layout: default
                 <td data-related="selfhosted"><i class="check"></i></td>
             </tr>
             <tr>
-                <td>Windows installer</td>
+                <td>Installeur Windows</td>
                 <td data-related="cloud"><i class="close"></i></td>
                 <td data-related="cloud"><i class="close"></i></td>
                 <td data-related="cloud"><i class="close"></i></td>
@@ -916,26 +908,26 @@ layout: default
 </script>
 
 <script>
-function submitForm(e){
-    var $submit = e.target.querySelector("button");
-    var n = 0;
-    if($submit.textContent.indexOf("LOADING") !== -1){
-        e.preventDefault(); // block multiple submit
-        return;
-    }
-    $submit.setAttribute("value", "LOADING ...");
-    window.setInterval(function(){
-        n += 1;
-        if(n === 1){
-            $submit.innerHTML = "LOADING .&nbsp&nbsp";
-        } else if(n === 2){
-            $submit.innerHTML = "LOADING ..&nbsp";
-        } else if(n === 3){
-            $submit.innerHTML = "LOADING ...";
-            n = 0;
-        }
-    }, 800);
-}
+ function submitForm(e){
+     var $submit = e.target.querySelector("button");
+     var n = 0;
+     if($submit.textContent.indexOf("LOADING") !== -1){
+         e.preventDefault(); // block multiple submit
+         return;
+     }
+     $submit.setAttribute("value", "LOADING ...");
+     window.setInterval(function(){
+         n += 1;
+         if(n === 1){
+             $submit.innerHTML = "LOADING .&nbsp&nbsp";
+         } else if(n === 2){
+             $submit.innerHTML = "LOADING ..&nbsp";
+         } else if(n === 3){
+             $submit.innerHTML = "LOADING ...";
+             n = 0;
+         }
+     }, 800);
+ }
 </script>
 <div id="cloud_personal" class="modal">
     <h3>Personal cloud</h3>

@@ -1,6 +1,7 @@
 ---
 title: Release Note v0.1
 layout: post
+language: en
 ---
 
 Release note version v0.1

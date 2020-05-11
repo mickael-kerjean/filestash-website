@@ -1,6 +1,7 @@
 ---
 title: Benchmark
 layout: post
+language: en
 ---
 
 Filestash has very light requirement when it comes to hardware. We made some experiments using SFTP (using openssh server) and performed some benchmark using the apache benchmark tool for different type of queries:

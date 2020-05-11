@@ -1,6 +1,7 @@
 ---
 title: A way forward for filebrowser's users
 layout: post
+language: en
 ---
 
 [Filebrowser](https://filebrowser.xyz/) used to be an open source web file browser. Following the annoucement of its author moving on, the project has now been been [archived on their Github](https://github.com/filebrowser/filebrowser)

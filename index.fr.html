@@ -1,0 +1,241 @@
+---
+layout: default
+language: fr
+permalink: /fr/
+---
+
+{% include menu.html context="homepage" %}
+<link rel="stylesheet" href="/css/landing-page.css">
+<div id="splash" class="slant down">
+  <div class="row">
+	<div class="col-sm-12">
+      <div class="iframe-wrapper onlyForDesktop">
+        <iframe id="appframe" frameborder="0" src="https://demo.filestash.app/login?type=webdav&url=http://server_webdav" allow="fullscreen;speaker"></iframe>
+        <div class="arrow-top">
+          <i class="arrow top"></i>
+          <i class="arrow top"></i>
+          Essayez moi
+          <i class="arrow top"></i>
+          <i class="arrow top"></i>
+        </div>
+      </div>
+	  <div class="hgroup">
+		<h1>Filestash</h1>
+		<h2>
+          transforme votre <br>
+          <noscript>
+            <a href="{% post_url 2019-11-26-ftp-web-client-fr %}">FTP</a> / WebDav / SFTP / S3 / Minio / Git / Google drive / Dropbox server
+          </noscript>
+          <span id="typing"></span> <br>
+          en ça
+            <span class="arrow-right onlyForDesktop">
+              <i class="arrow right"></i>
+              <i class="arrow right"></i>
+              <i class="arrow right"></i>
+            </span>
+        </h2>
+	  </div>
+
+      <div class="screenshot onlyForMobile">
+        <img alt="Filestash screenshot" src="/img/screenshots/viewerpage.png" />
+      </div>
+
+      <script src="/js/typed.min.js"></script>
+      <script>
+        new Typed('#typing', {
+          strings: [
+            "super solide serveur FTP",
+            "super solide serveur SFTP",
+            "tout nouveau S3 buckets",
+            "tout nouveau Minio serveur",
+            "serveur Webdav",
+            "serveur CardDav/CalDav",
+            "Backblaze B2",
+            "systemes backoffice",
+            "fiable repository GIT",
+            "fiable serveur mysql",
+            "fiable serveur LDAP",
+            "compte Google Drive",
+            "compte Dropbox",
+        ],
+        typeSpeed: 50,
+        backSpeed: 30,
+        startDelay: 100,
+        backDelay: 500,
+        smartBackspace: true,
+        loop: true
+        });
+      </script>
+
+      <p class="button">
+        <a class="btn" href="{% link _docs/index.fr.md %}">Commencez maintenant!</a>
+	  </p>
+
+    </div>
+  </div>
+</div>
+
+<h2 id="introduce-second-heading">Un gestionnaire de fichiers Web pour:</h2>
+
+<div id="features">
+    <div class="container">
+        <div class="row features main">
+            <div class="feature">
+                <img alt="screenshot of Filestash when uploading files/folders" class="lazy fancy pull-right hidden-xs" data-src="/img/screenshots/feature1.png" />
+                <h3>Gérer vos données en ligne</h3>
+                <p>
+                  Filestash vous permet de gérer facilement vos données quel que soit leur emplacement de stockage: <a href="{% post_url 2019-11-26-ftp-web-client-fr %}">FTP</a> / WebDav / SFTP / Git / S3 / Minio / Dropbox / Google Drive
+                </p>
+                <img alt="screenshot of Filestash when uploading files/folders" class="lazy fancy visible-xs" data-src="/img/screenshots/feature1.png" />
+            </div>
+            <div class="feature">
+                <img alt="screenshot while creating a shared link" class="lazy fancy pull-left hidden-xs" data-src="/img/screenshots/feature_share_0000.png" />
+                <h3>Collaborer</h3>
+                <p>
+                  Filestash facilite la collaboration avec son mécanisme de partage de liens flexible. Les liens partagés peuvent même être montés en tant que lecteur réseau
+                </p>
+                <img alt="screenshot while creating a shared link" class="lazy fancy visible-xs" data-src="/img/screenshots/feature_share_0000.png" />
+            </div>
+
+            <div class="feature">
+                <img alt="Filestash as a photo gallery" class="lazy fancy pull-right hidden-xs" data-src="/img/screenshots/feature_image_0000.jpg" />
+                <h3>Explorer vos photos</h3>
+                <p>
+                  Téléchargez vos photos et partagez un lien avec vos amis. La visionneuse d'images expose toutes les métadonnées de vos photos
+                </p>
+                <img alt="Filestash as a photo gallery" class="lazy fancy visible-xs" data-src="/img/screenshots/feature_image_0000.jpg" />
+            </div>
+            <div class="feature">
+                 <img alt="Filestash as a media viewer" class="lazy fancy pull-left hidden-xs" data-src="/img/screenshots/feature_media.png" />
+                <h3>Profiter de vos médias</h3>
+                 <p>
+                   Filestash vous permet de diffuser vos vidéos et votre musique directement depuis votre navigateur
+                </p>
+                <img alt="Filestash as a media viewer" class="lazy fancy visible-xs" data-src="/img/screenshots/feature_media.png" />
+            </div>
+
+            <div class="feature">
+                <img alt="org-mode client" class="lazy fancy pull-right hidden-xs" data-src="/img/screenshots/feature_orgmode_0000.png" />
+                <h3>Prendre des notes</h3>
+                <p>
+                  L'éditeur de fichier prend en charge un grand nombre de type de fichier. Il peut être utilisé pour créer des rapports, des notes, des agendas et des tâches, ...
+                </p>
+                <img alt="org-mode client" class="lazy fancy visible-xs" data-src="/img/screenshots/feature_orgmode_0000.png" />
+            </div>
+
+            <div class="feature">
+                <img alt="example of login screen after configuring Filestash" class="lazy fancy pull-left hidden-xs" data-src="/img/screenshots/feature3.png" />
+                <h3>S'adapte aux besoins</h3>
+                <p>
+                  Filestash peut être configuré pour s'adapter à votre cas d'utilisation. Besoin de plus de flexibilité? Vous pouvez faire votre propre plugin
+                </p>
+                <img alt="example of login screen after configuring Filestash" class="lazy fancy visible-xs" data-src="/img/screenshots/feature3.png" />
+            </div>
+
+            <div>
+              <h3>L'idée centrale de Filestash</h3>
+              <p>
+              Filestash vise à résoudre le problème Dropbox en faisant abstraction de l'aspect stockage. Cela permet d'apporter votre propre backend ou de créer le vôtre en implémentant une <a href="https://github.com/mickael-kerjean/filestash/blob/8004ca7c4809a3e81682df51bf718d6b8e3a615d/server/common/types.go#L10-L20">interface simple</a>. La puissance de ce modèle permet à n'importe qui d'interagir facilement avec des systèmes complexes sans formation préalable (en supposant qu'ils connaissent Dropbox)</p>
+            </div>
+            <br><br><br><br><br><br>
+        </div>
+    </div>
+
+    <div class="call-to-action slant down up">
+        <h2>Essayons maintenant?</h2>
+        <a class="btn" href="{% link _docs/index.fr.md %}">Commencez ici</a>
+        <a class="btn" href="https://demo.filestash.app">DEMO</a>
+    </div>
+
+    <div class="container">
+        <h2>Plus de fonctionnalités</h2>
+        <div class="row">
+            <div class="col-sm-4 feature center">
+		        <h3>Open Source</h3>
+		        <p>Tout notre code source est disponible sur github</p>
+	        </div>
+            <div class="col-sm-4 feature center">
+		        <h3>Faibles ressources</h3>
+		        <p>Aucun supercalculateur n'a jamais été endommagé lors de l'utilisation de Filestash</p>
+	        </div>
+            <div class="col-sm-4 feature center">
+		        <h3>Full text search</h3>
+		        <p>Pour vous permettre de retrouver vos fichiers en un instant</p>
+	        </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-4 feature center">
+                <h3>Transcodage vidéo</h3>
+                <p>Transcoder automatiquement des vidéos à la demande</p>
+            </div>
+            <div class="col-sm-4 feature center">
+		        <h3>Lecteur réseau</h3>
+		        <p>Les liens partagés sont utilisable comme lecteur réseau</p>
+	        </div>
+            <div class="col-sm-4 feature center">
+                <h3>Optimisation d'image</h3>
+                <p>Les images sont transcodées à la demande pour s'adapter à votre écran sans gaspillage</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-4 feature center">
+		        <h3>Fonctionne partout</h3>
+		        <p>L'application Web fonctionne de manière fluide sur tous les appareils</p>
+	        </div>
+            <div class="col-sm-4 feature center">
+		        <h3>Super rapide</h3>
+		        <p>L'application web se sent extrêmement rapide, voyez par vous-même!</p>
+	        </div>
+            <div class="col-sm-4 feature center">
+		        <h3>Pas de chichi</h3>
+		        <p>Nous nous concentrons simplement sur notre misssion de base</p>
+	        </div>
+	    </div>
+        <div class="row">
+            <div class="col-sm-4 feature center">
+		        <h3>Sécurisé</h3>
+		        <p>Nous avons passé un audit de sécurité complet pour deployer Filestash dans des entreprises du CAC40</p>
+	        </div>
+            <div class="col-sm-4 feature center">
+		        <h3>Accès rapide</h3>
+		        <p>Vos fichiers les plus visités sont épinglés sur votre page d'accueil pour un accès rapide</p>
+	        </div>
+            <div class="col-sm-4 feature center">
+		        <h3>Console d'admin</h3>
+		        <p>Un panneau d'administration facile à utiliser pour configurer votre instance</p>
+	        </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-4 feature center">
+		        <h3>Raccourcis</h3>
+		        <p>Plein de raccourci clavier sont disponible</p>
+	        </div>
+            <div class="col-sm-4 feature center">
+                <h3>Des plugins SGBD</h3>
+                <p>De nouveaux connecteurs pour explorer les données dans les bases de données relationnelles comme Mysql</p>
+            </div>
+            <div class="col-sm-4 feature center">
+                <h3>SSL automatique</h3>
+                <p>Générez automatiquement votre certificat SSL pour ne pas avoir à le faire vous-même</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-4 feature center">
+                <h3>Configuration automatique</h3>
+                <p>Se configurer automatiquement pour être accessible au public à partir d'une URL publique</p>
+            </div>
+            <div class="col-sm-4 feature center">
+		        <h3>Simple mais puissant</h3>
+		        <p>Notre seule mission: "Filestash vous permet de gérer vos données"</p>
+	        </div>
+            <div class="col-sm-4 feature center">
+                <span>Dans notre roadmap</span>
+		        <h3>Mise à jour automatique</h3>
+		        <p>Filestash se met automatiquement à jour sans aucune action requise de votre part</p>
+	        </div>
+        </div>
+    </div>
+</div>
+
+{% include support.html %}
+{% include footer.html %}

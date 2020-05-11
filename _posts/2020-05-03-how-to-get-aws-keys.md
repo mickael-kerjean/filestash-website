@@ -2,6 +2,7 @@
 title: How to create your AWS access Key ID and AWS Secret Access key
 description: Getting started on S3, creating your own AWS acces Key ID and AWS Secret Access key
 layout: post
+language: en
 permalink: /aws-access-key.html
 ---
 
