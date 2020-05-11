@@ -48,6 +48,7 @@ Creating filestash_app ... done
 
 *Note*: The Docker Compose command above will run Filestash as well as OnlyOffice Document Server. Please check the requirements here: https://hub.docker.com/r/onlyoffice/documentserver#recommended-system-requirements
 
+=======
 Once the installation has complete, open up a browser and navigate to: `http://your_ip:8334`, you will be greet with the setup screen:
 
 <img src="https://raw.githubusercontent.com/mickael-kerjean/filestash_images/master/screenshots/setup.png" alt="setup screenshot" height="320px"/>
