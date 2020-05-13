@@ -1,0 +1,149 @@
+## Installing Filestash with the Nomad orchestrator and behind nginx
+
+Filestash is a very low consumption app so if you are using a big-ish server it makes sense to run it together with other applications. Nomad is an easy way to orchestrate containers and applications in a single server without having to deal with the complexity of Kubernetes.
+
+For this simpler use case Nomad is an alternative to docker-compose and docker swarm. Following this documentation it is possible to setup a fully production ready instance of Filestash with a battle tested orchestrator.
+
+### Getting ready
+
+You will need the following software installs:
+
+* Nomad https://www.nomadproject.io/downloads/
+* Docker
+* Nginx
+
+I am assuming a bare metal or dedicated server setup. I am running an Ubuntu OS but because Nomad runs with a single binary all Linux OS systems should be supported.
+
+### Setting up Nomad
+
+If you are not familiar with Nomad I suggest to start from their Learn section: https://learn.hashicorp.com/nomad
+
+We will need 2 tasks inside 1 job and 1 task group. The 2 tasks are going to be `filestash` and `onlyoffice`. We need to make sure we persiste filestash `/app/data` localy using volumes.
+
+```
+job "cloud" {
+  datacenters = ["dc1"]
+  type = "service"
+  update {
+    max_parallel = 1
+    min_healthy_time = "10s"
+    healthy_deadline = "3m"
+    progress_deadline = "10m"
+    auto_revert = false
+    canary = 0
+  }
+  group "cloud" {
+    count = 1
+    restart {
+      attempts = 2
+      interval = "30m"
+      delay = "15s"
+      mode = "fail"
+    }
+    task "filestash" {
+      driver = "docker"
+      env = {
+          ONLYOFFICE_URL="http://127.0.0.1:12002" 
+      }
+      config {
+        image = "machines/filestash" 
+        volumes = [
+          "/app_storage/filestash/data:/app/data"
+        ]
+        port_map {
+          filestash = 8334
+        }
+      }
+      resources {
+        cpu    = 500 # 500 MHz
+        memory = 256 # 256MB 
+        network {
+          mbits = 10
+          port  "filestash"  {
+	     static = 12001
+          }
+        }
+      }
+      service {
+        name = "filestash"
+        port = "filestash"
+        check {
+          name     = "alive"
+          type     = "tcp"
+          interval = "10s"
+          timeout  = "2s"
+        }
+      }
+    }
+    task "onlyoffice" {
+      driver = "docker"
+      config {
+        image = "onlyoffice/documentserver"
+      }
+      resources {
+        cpu    = 500 # 500 MHz
+        memory = 256 # 256MB
+
+        network {
+          mbits = 10
+          port  "oo"  {
+	     static = 12002
+          }
+        }
+      }
+      service {
+        name = "onlyoffice"
+        port = "oo"
+
+        check {
+          name     = "alive"
+          type     = "tcp"
+          interval = "10s"
+          timeout  = "2s"
+        }
+      }
+    }
+  }
+}
+```
+
+### DNS subdomain
+
+If you are using a dns, you will want to setup a subdomain. Here we use "cloud" as subdomain.
+
+### Setting up Nginx
+
+We will need to setup a `proxy_pass` like described below. Note we are still listening on port `80` but for this stanza we have `server_name = cloud.domain.com`. 
+
+```
+server {
+  listen host:80
+  server_name cloud.domain.com;
+  location / {
+    proxy_pass http://127.0.0.1:12001
+  }
+}
+```
+
+###  Volumes 
+
+In the above nomad job we have configured a volume for Filestash `"/app_storage/filestash/data:/app/data"`. The purpose of this volume is to persist the Filestash container data to the host OS.
+
+Filestash will not copy all `/app/data` into the host so the above configuration will be somewhat broken for image previews and icons. To fix that we do:
+
+`docker cp filestash:/app/data /app_storage/filestash`
+
+This will make sure to copy all Filestash app data to the local OS.
+
+Finally, we need to make sure that nginx can see the folder `/assets`. I have configured my nginx to read static files from `/var/www/html` so all I have to do at this point is copy Filestash assets to that folder:
+
+`cp -r /app_storage/filestash/data/public/assets /var/www/html`
+
+### Spinning up Filestash with nomad
+
+At this point all we need to do is:
+
+`nomad job run filestash.nomad`
+
+If we do `nomad status` we should be able to see that our Filestash container is running. If we go to `cloud.domain.com` we should see Filestash admin page (if we log for the first time).
+
