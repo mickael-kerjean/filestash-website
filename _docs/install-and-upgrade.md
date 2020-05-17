@@ -144,6 +144,30 @@ nginx -t && service nginx restart
 
 **Note**: Resist the temptation of using gzip and other caching mechanism at the reverse proxy level, you would waste valuable CPU cycles adding latency and increasing the bandwith usage, creating issues with cache invalidation. Filestash is already doing its best at compile time optimising at a level no reverse proxy could ever do with a few lines of configuration and no deep knowledge of the underlying service.
 
+## Optional: Using a bind mount to persist configuration
+
+You can persist the configuration of your instance by using bind mounts in the `docker-compose.yml`.
+This might  be useful, if you use tools like watchtower to automatically upgrade deployed containers.
+
+In most use-cases only the `/app/data/state`-folder should be persisted, as it contains the configuration files and database.
+
+Filestash currently *does not* create the needed files in an empty mount. Instead, you need to copy the base configuration after the first start.
+
+1. Create the directory, which shall be used for the mount
+1. Use the provided `docker-compose.yml` to start the container (*do not* add the `volumes`-tag yet): `docker-compose up -d`
+1. Copy the contents of the `/app/data/state/`-folder from within the running container to your host directory by issuing the following command on the host: `docker cp filestash /app/data/state:/path/to/your/local/mount/directory` (The name of the container may vary depending on your configuration)
+1. Stop the container: `docker-compose down`
+1. Add the following block to you `docker-compose.yml` (at the same indent level as `image`):
+```
+...
+volumes:
+      - path/to/your/local/mount/directory:/app/data/state
+...
+```
+At the next start, the container will use the files saved on the host and your configuration will be kept throughout restarts and upgrades.
+
+Keep in mind that updates may change the structure of the directory and therefore may require to modify the contents of the mount by hand, although the goal is to automatically migrate via scripts in this case.
+
 ## Note on the proxy feature
 
 **How does this work?** the proxy work by establishing a bidirectional tunnel between your server and our public proxy server. Incoming traffic to the filestash domain will then use that tunnel.
