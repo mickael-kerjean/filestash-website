@@ -1,5 +1,5 @@
 ---
-title: LDAP Browser - An online tool to manage and explore your LDAP server
+title: Online LDAP browser tool to manage and explore your LDAP server
 description: A web-based tool to browse and manage your LDAP without beeing a LDIF wizard
 layout: landing
 permalink: /ldap-browser.html
@@ -85,7 +85,7 @@ language: en
 
       <div class="feature">
         <img alt="object class editor" class="lazy fancy pull-right hidden-xs" data-src="/img/screenshots/2020-01-04-ldap-browser/viewerpage.png" />
-        <h2>Object Viewer and Editor</h2>
+        <h2>LDAP Viewer and Editor</h2>
         <p>
           Our integrated viewer makes it easy to edit an object from your directory without being a wizard at creating LDIF files.
         </p>
