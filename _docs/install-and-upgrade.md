@@ -155,7 +155,7 @@ Filestash currently *does not* create the needed files in an empty mount. Instea
 
 1. Create the directory, which shall be used for the mount
 1. Use the provided `docker-compose.yml` to start the container (*do not* add the `volumes`-tag yet): `docker-compose up -d`
-1. Copy the contents of the `/app/data/state/`-folder from within the running container to your host directory by issuing the following command on the host: `docker cp filestash /app/data/state:/path/to/your/local/mount/directory` (The name of the container may vary depending on your configuration)
+1. Copy the contents of the `/app/data/state/`-folder from within the running container to your host directory by issuing the following command on the host: `docker cp filestash:/app/data/state /path/to/your/local/mount/directory` (The name of the container may vary depending on your configuration)
 1. Stop the container: `docker-compose down`
 1. Add the following block to you `docker-compose.yml` (at the same indent level as `image`):
 ```
