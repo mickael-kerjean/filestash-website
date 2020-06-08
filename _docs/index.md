@@ -2,7 +2,7 @@
 layout: documentation
 title: Getting started
 order: 1
-permalink: /docs
+permalink: /docs/
 head:
   - <link rel="alternate" href="/fr/docs/" hreflang="fr" />
 ---

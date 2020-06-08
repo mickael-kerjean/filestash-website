@@ -3,7 +3,7 @@ layout: documentation
 title: Point de départ
 order: 1
 language: fr
-permalink: /fr/docs
+permalink: /fr/docs/
 ---
 
 <style>.banner{ display: none; }</style>
