@@ -12,12 +12,12 @@ steps:
 - name: deploy
   image: drillster/drone-rsync
   settings:
-    hosts: [ "hal.kerjean.me" ]
+    hosts: [ "rick.kerjean.me" ]
     source: _site/*
-    target: /app/pages/data/projects/filestash/website/
+    target: /mnt/app-filestash-www/
     recursive: true
     delete: true
-    user: 
+    user:
       from_secret: RSYNC_USER
     key:
       from_secret: RSYNC_KEY
