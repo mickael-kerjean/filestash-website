@@ -22,13 +22,6 @@
     </head>
     <body>
         <style> {% include style.css %} </style>
-        <script>
-          (function(){
-              var $script = document.createElement("script");
-              $script.src = "/js/testing.js?version=" + Math.floor(Math.random().toString()*10000000000000000);
-              document.head.appendChild($script);
-          })();
-        </script>
 
         </script>
 	    {{ content }}
