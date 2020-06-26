@@ -10,7 +10,7 @@
 }
 #splash h1, #splash h2{
     display:inline;
-    font-size:26px;
+    font-size:1.70rem;
     font-weight: normal;
     color: inherit;
     text-shadow: 0 0 2px var(--bg-color);
@@ -20,7 +20,7 @@
 #splash p.button {
     margin-top: 50px;
 }
-#splash p a.btn{ padding-left: 30px; padding-right: 30px; }
+#splash p a.btn{ padding-left: 35px; padding-right: 35px; }
 #splash .row {
     max-width:1200px;
     margin: 0 auto;
@@ -51,7 +51,7 @@
     height: 450px;
 }
 #splash .iframe-wrapper div{
-    font-size: 22px;
+    font-size: 1.3rem;
     color: rgba(255,255,255,0.5);
     font-family: monospace;
     padding-top: 20px;
@@ -94,8 +94,8 @@
 
 #introduce-second-heading{
     margin-top: 140px;
-    font-size: 35px;
     text-align: center;
+    color: var(--secondary);
 }
 
 /* Features */
@@ -103,9 +103,11 @@
     padding: 50px 0 80px;
 }
 #features h2 {
-    margin-top: 100px;
-    margin-bottom: 50px;
+    margin-top: 150px;
+    margin-bottom: 75px;
     text-align: center;
+    color: var(--secondary);
+    font-weight: normal;
 }
 #features .main{
     margin-top: 130px;
@@ -113,11 +115,14 @@
     margin-left: auto;
 }
 #features h3 {
-    font-weight: 100;
-    margin: 0 0 25px 0;
-    font-size: 1.5em;
+    margin: 0 0 15px 0;
     text-align: left;
     line-height: 1em;
+    font-weight: normal;
+    font-size: 1.55em!important;
+    color: var(--secondary);
+    text-align: left;
+    line-height: 1.5rem;
 }
 #features .feature {
     padding-bottom: 20px;
@@ -158,6 +163,7 @@
 #features .feature p {
     text-align: justify;
     margin: 0;
+    font-size: 0.95rem;
 }
 #features .screenshot {
     box-shadow: 0 0 25px rgba(65, 83, 100, 0.5);
@@ -192,7 +198,7 @@ img.fancy.pull-right { margin-left: 50px; }
 }
 #features .call-to-action h2{
     color: var(--bg-color);
-    margin: 10px;
+    margin: 30px 0px;
 }
 
 .col-sm-4.feature.center {

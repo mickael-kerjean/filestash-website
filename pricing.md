@@ -1,264 +1,378 @@
 ---
 layout: default
 ---
-
 {% include menu.html context="homepage" %}
 <style>
  h1{
-     color: var(--bg-color);
-     font-weight: 500;
+     font-weight: bold;
+     color: var(--super-light);
      text-align: center;
-     margin: 50px 0 40px 0;
+     margin: 130px 0 40px 0;
+     text-shadow: 1px 0px 5px rgba(0,0,0,0.1);
  }
+ h2{
+     color: var(--color);
+     font-size: 2.5rem;
+     opacity: 0.65;
+     margin-top: 150px;
+     margin-bottom: 70px;
+     letter-spacing: 0.07rem;
+ }
+ h2.center:after {
+     content: ' ';
+     display: block;
+     width: 100px;
+     margin: 10px auto;
+     border-top: 4px solid var(--color);
+ }
+ .jumbotron{
+     background: var(--primary);
+     position: relative;
+ }
+ .jumbotron svg{
+     margin-top: 50px;
+ }
+ .jumbotron h3{
+     font-size: 1.7rem;
+     margin-bottom: 10px;
+ }
+
 </style>
-<div style="background:var(--primary)">
-    <div class="container center">
-        <h1>Choose the plan that's right for you</h1>
+<div class="jumbotron">
+    <div class="geometric-shape" style="left: -13rem;"></div>
+    <div class="geometric-shape" style="transform: rotate(-5deg);
+                top: 7rem;
+                background: linear-gradient(76.4deg,rgba(233,230,246,.21) 11.23%,rgba(233,230,246,0) 36.25%,rgba(233,230,246,0) 55.2%,rgba(255,255,255,0.1) 97.53%);
+                height: 32rem;"></div>
+    <div class="container">
+        <h1>The frontend for your data </h1>
+    </div>
+    <div class="container">
+        <div class="center backend-list">
+            <span>S3</span>
+            <span>SFTP</span>
+            <span>FTP</span>
+            <span>FTPS</span>
+            <span>Minio</span>
+            <span>Backblaze</span>
+            <span>GIT</span>
+            <span>Github</span>
+            <span>Gitlab</span>
+            <span>WebDav</span>
+            <span>LDAP</span>
+            <span>CalDAV</span>
+            <span>CardDAV</span>
+            <span>Mysql</span>
+            <span>Dropbox</span>
+            <span>Google Drive</span>
+            <span>Gogs</span>
+            <span>Gitea</span>
+        </div>
         <style>
-         .plans{
-             text-align: center;
+         .backend-list span{
+             text-shadow: 1px 0px 5px rgba(0,0,0,0.1);
              display: inline-block;
-             box-shadow: 5px 2px 20px var(--emphasis-primary);
-         }
-         .plans a{
-             cursor: pointer;
-             display: inline-block;
-             border: 4px solid var(--secondary);
-             padding: 5px 15px;
-             font-size: 1.3em;
-             margin: 0 -4px;
-         }
-         .plans a:not(.active):hover{
-             background: var(--emphasis-primary);
-         }
-         .plans a.active{
-             background: var(--secondary);
+             padding: 0 10px;
+             font-size: 1.3rem;
+             min-width: 60px;
+             font-weight: bold;
+             opacity: 0.8;
              color: var(--super-light);
-         }
-         .definition{
-             margin-bottom: 200px;
-             display: block;
-             color: var(--secondary);
-             font-size: 1.3em;
-             margin-top: 10px;
-             margin-bottom: -10px;
-         }
-         .clear_space{
-             margin-bottom: 200px;
+             letter-spacing: 0.05rem;
          }
         </style>
-        <script>
-         function selectPlan(type){
-             // category switch
-             let $els = document.querySelectorAll(".plans a");
-             for (let i=0; i< $els.length; i++){
-                 if($els[i].innerText.toLowerCase() === type) {
-                     $els[i].classList.add("active");
-                 } else {
-                     $els[i].classList.remove("active");
-                 }
-             }
+    </div>
+</div>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 200">
+    <path opacity="0.6" fill="var(--emphasis-primary)" fill-rule="evenodd" d="M -19.723897,-2.420471 C 21.409785,9.1198839 657.16289,170.02913 744.82802,193.92276 845.92065,166.87569 1378.2969,21.312708 1455.0231,-0.66252715 1318.9319,-5.5985482 -19.723897,-2.420471 -19.723897,-2.420471 Z"></path>
+    <path fill="var(--primary)" fill-rule="evenodd" d="M -19.723897,-2.420471 C 21.409783,9.119884 655.89733,129.02002 743.56246,152.91365 844.65509,125.86658 1378.2969,21.312709 1455.0231,-0.66252715 1318.9319,-5.5985481 -19.723897,-2.420471 -19.723897,-2.420471 Z"></path>
+</svg>
 
-             // definition highlight
-             $els = document.querySelectorAll(".definition");
-             for (i=0; i< $els.length; i++){
-                 if($els[i].getAttribute("data-related") === type){
-                     $els[i].style.display = "block";
-                 }else{
-                     $els[i].style.display = "none";
-                 }
-             }
-
-
-             // pricing grid
-             $els = document.querySelectorAll(".pricing");
-             for (i=0; i< $els.length; i++){
-                 if($els[i].getAttribute("data-related") === type){
-                     $els[i].style.display = "flex";
-                 }else{
-                     $els[i].style.display = "none";
-                 }
-             }
-
-             // feature comparison
-             $els = document.querySelectorAll("h2 span[data-related]");
-             for (i=0; i< $els.length; i++){
-                 if($els[i].getAttribute("data-related") === type){
-                     $els[i].style.display = "inline";
-                 }else{
-                     $els[i].style.display = "none";
-                 }
-             }
-
-             $els = document.querySelectorAll("table [data-related]");
-             for (i=0; i< $els.length; i++){
-                 if($els[i].getAttribute("data-related") === type){
-                     $els[i].style.display = "table-cell";
-                 }else{
-                     $els[i].style.display = "none";
-                 }
-             }
-         }
-        </script>
-        <div class="plans">
-            <a class="radius-top-left radius-bottom-left" onClick='selectPlan("cloud")'>Cloud</a>
-            <a class="radius-top-right radius-bottom-right" onClick='selectPlan("selfhosted")'>Selfhosted</a>
+<h2 class="center"> Pricing </h2>
+<div class="container" id="pricing">
+    <div class="flex">
+        <div class="padding">
+            <h3>
+                For you
+                <svg width="30" height="30" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M20 21V19C20 17.9391 19.5786 16.9217 18.8284 16.1716C18.0783 15.4214 17.0609 15 16 15H8C6.93913 15 5.92172 15.4214 5.17157 16.1716C4.42143 16.9217 4 17.9391 4 19V21" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                    <path d="M12 11C14.2091 11 16 9.20914 16 7C16 4.79086 14.2091 3 12 3C9.79086 3 8 4.79086 8 7C8 9.20914 9.79086 11 12 11Z" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                </svg>
+            </h3>
+            <div class="plan" id="plan-hobby">
+                <div class="plan-name">
+                    <h4>Hobby
+                        <div class="onoffswitch">
+                            <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="myonoffswitch" tabindex="0" checked>
+                            <label class="onoffswitch-label" for="myonoffswitch">
+                                <span class="onoffswitch-inner"></span>
+                                <span class="onoffswitch-switch"></span>
+                            </label>
+                        </div>
+                    </h4>
+                    <div class="price">
+                        <div data-show="cloud">
+                            6$ / month
+                        </div>
+                    </div>
+                </div>
+                <ul class="features">
+                    <li>All features</li>
+                    <li data-show="cloud">up to 3 users</li>
+                    <li data-show="selfhosted">unlimited users</li>
+                </ul>
+                <a class="btn" href="https://deploy.filestash.app/?type=personal::cloud">
+                    START <span data-related="cloud">Your free trial</span>
+                </a>
+            </div>
         </div>
-        <div class="definition" data-related="cloud">with the cloud plans, you don't manage any server</div>
-        <div class="definition" data-related="selfhosted">selfhosted is when you use your own server</div>
-        <div class="clear_space"></div>
+        <div class="box padding">
+            <h3>
+                For your team
+                <svg width="30" height="30" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M17 21V19C17 17.9391 16.5786 16.9217 15.8284 16.1716C15.0783 15.4214 14.0609 15 13 15H5C3.93913 15 2.92172 15.4214 2.17157 16.1716C1.42143 16.9217 1 17.9391 1 19V21" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                    <path d="M9 11C11.2091 11 13 9.20914 13 7C13 4.79086 11.2091 3 9 3C6.79086 3 5 4.79086 5 7C5 9.20914 6.79086 11 9 11Z" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                    <path d="M23 21V19C22.9993 18.1137 22.7044 17.2528 22.1614 16.5523C21.6184 15.8519 20.8581 15.3516 20 15.13" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                    <path d="M16 3.13C16.8604 3.35031 17.623 3.85071 18.1676 4.55232C18.7122 5.25392 19.0078 6.11683 19.0078 7.005C19.0078 7.89318 18.7122 8.75608 18.1676 9.45769C17.623 10.1593 16.8604 10.6597 16 10.88" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                </svg>
+            </h3>
+            <div>
+                <div class="plan" id="plan-pro">
+                    <div class="plan-name">
+                        <h4>Pro</h4>
+                        <div class="price">
+                            20$ / month
+                        </div>
+                    </div>
+                    <ul class="features">
+                        <li>Unlimited users</li>
+                        <li>SLA</li>
+                        <li>Support</li>
+                    </ul>
+                    <a href="https://deploy.filestash.app/?type=professional::cloud" class="btn">START YOUR FREE TRIAL</a>
+                </div>
+                <div class="plan" id="plan-enterprise">
+                    <div class="plan-name">
+                        <h4>Enterprise</h4>
+                        <div class="price">
+                            Suited to your needs
+                        </div>
+                    </div>
+
+                    <ul class="features">
+                        <li>Customisation</li>
+                        <li>Consulting</li>
+                        <li>24/7 Support</li>
+                    </ul>
+                    <a class="btn action" href="#enterprise" rel="modal:open">START</a>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
 
 <style>
- .pricing-container { min-height: 160px; margin-bottom: 30px; }
- .pricing{
-     display: flex;
-     justify-content: space-between;
-     margin-top: -130px;
+ /* OVERRIDES */
+ .container{
+     width: 99%;
+     margin: 0 auto;
+     max-width: 1100px;
  }
- .package{
+
+ /* PRICING */
+ .flex{ display: flex; }
+
+ #pricing > .flex > div:first-child{ width: 33%; }
+ #pricing > .flex > div:nth-child(2){ width: 67%; }
+ #pricing .box{ background: white; box-shadow: 0 30px 60px rgba(0,0,0,0.12); border-radius: 2px; }
+ #pricing .padding{ padding: 60px; }
+
+ #pricing .padding > div .plan { width: 50%; }
+
+ #pricing .box > div { display: flex; }
+
+ #pricing h3{
+     margin: 0 0 25px 0;
+     font-size: 1.8rem;
+     line-height: 30px;
+ }
+ #pricing h3 svg{
+     stroke: var(--dark);
+     float: right;
+ }
+
+ /* PLAN BOX */
+ #pricing .plan .plan-name h4{ margin: 0; color: inherit; line-height: 30px;}
+ #pricing .plan .plan-name h4 > div{ float:right; }
+ #pricing .plan .plan-name {
+     background: var(--dark);
+     color: white;
+     border-radius: 3px;
+     padding: 15px;
+     margin-bottom: 25px;
+ }
+ #pricing .plan .price{ font-size: 0.95rem; }
+ #pricing .features { height: 120px; padding-left: 20px; }
+ #pricing .plan .btn {
+     text-transform: uppercase;
+     width: 100%;
+     padding: 4px 0;
+     color: var(--emphasis);
+     border: 2px solid var(--secondary);
+     border-radius: 3px;
+     font-size: 0.95rem;
+     font-weight: normal;
+     text-align: center;
+     padding: 4px 0;
+     letter-spacing: initial;
+ }
+
+ #plan-pro{padding-right: 10px;}
+ #plan-pro.plan .plan-name{ background: var(--emphasis); }
+ #plan-enterprise.plan .plan-name{ background: var(--emphasis); }
+ #plan-enterprise{padding-left: 10px;}
+
+ @media only screen and (max-width: 1050px) {
+     #pricing .padding{ padding: 40px; }
+ }
+ @media only screen and (max-width: 910px) {
+     #pricing .padding{ padding: 30px; }
+ }
+ @media only screen and (max-width: 850px) {
+     #pricing .padding{ padding: 30px 15px 15px 15px; }
+ }
+ @media only screen and (max-width: 750px) {
+     #pricing .padding{ padding: 60px; }
+     .flex{ display: block; }
+     #pricing > .flex > div:first-child{ width: 100%; }
+     #pricing > .flex > div:nth-child(2){ width: 100%; }
+ }
+ @media only screen and (max-width: 600px) {
+     #pricing .padding{ padding: 30px 15px 15px 15px; }
+     .container{ padding-left: 5px; padding-right: 5px; }
+ }
+ @media only screen and (max-width: 550px) {
+     #pricing .padding{ padding: 50px 15px 15px 15px; }
+     #plan-pro{padding-right: 5px;}
+     #plan-enterprise{padding-left: 5px;}
+ }
+ @media only screen and (max-width: 500px) {
+     #pricing .padding{ padding: 25px 15px 15px 15px; }
+     #pricing .plan .plan-name{ padding: 10px; }
+     #pricing .plan .price{font-size: 0.85rem;}
+ }
+
+
+ /* DECORATION */
+ body{ overflow-x: hidden; }
+ #pricing{
      position: relative;
-     padding: 10px 15px;
-     flex: 1;
-     background: var(--bg-color);
-     margin: 0 7px;
-     border: 2px solid rgba(0,0,0,0.05);
-     border-radius: 2px;
-     text-align: center;
+     margin-top: 100px;
+     margin-bottom: 230px;
  }
- .package.package__emphasis {
-     transform: scale(1.15);
-     z-index: 1;
-     box-shadow: rgba(158, 163, 172, 0.5) 5px 5px 20px;
- }
- .package h2{
-     margin: 0 0 5px 0;
- }
- .package a.action{
+ #pricing .box{ z-index: 2;}
+ #pricing .flex:before{
+     background-image: radial-gradient(rgb(175, 190, 208) 2px, transparent 2px);
+     background-size: 1.5rem 1.5rem;
+     content: "";
+     height: 20rem;
      position: absolute;
-     left: 10px; right: 10px; bottom: 10px;
+     right: -7rem;
+     top: -3.5rem;
+     width: 20rem;
+ }
+ #pricing .flex:after{
+     background-image: radial-gradient(rgb(175, 190, 208) 2px, transparent 2px);
+     background-size: 1.5rem 1.5rem;
+     content: "";
+     height: 6rem;
+     position: absolute;
+     left: 13.5rem;
+     bottom: -5rem;
+     width: 20rem;
+ }
+ #pricing .btn:hover{
+     box-shadow: 0 0 5px rgba(0,0,0,0.2);
+     transition: 0.1s ease all;
+     color: var(--super-light);
+ }
 
-     display: inline-block;
-     background: var(--primary);
-     padding: 5px 0;
-     text-align: center;
-     color: var(--bg-color)!important;
-     border-radius: 2px;
-     font-weight: bold;
-     text-shadow: 0 0 1px rgba(0,0,0,0.4);
-     border: 2px solid rgba(0,0,0,0.05);
+ /* SWITCH: https://proto.io/freebies/onoff/ */
+ .onoffswitch {
+     position: relative; width: 108px;
+     -webkit-user-select:none; -moz-user-select:none; -ms-user-select: none;
  }
- .package ul{
-     margin: 0 0 0px 0;
-     padding: 0;
-     font-size: 0.95em;
-     list-style-type: none;
- }
- .package li{
-     margin: 12px 0 12px 0;
-     line-height: 15px;
- }
- .package .amount{
-     margin-bottom: 50px;
-     margin-top: 30px;
-     color: var(--dark);
-     font-weight: 500;
- }
- .package .amount span {
-     font-weight: 100;
-     color: var(--color);
- }
- .package.special {
-     box-shadow: 0px 0px 50px var(--secondary);
- }
- .package.special .promo{
+ .onoffswitch-checkbox {
      position: absolute;
-     top: -40px;
-     background: var(--secondary);
-     left: -10px;
-     right: -10px;
-     color: var(--bg-color);
-     border-radius: 2px;
-     box-shadow: 2px 2px 2px rgba(0,0,0,0.5);
-     padding: 10px 5px;
-     line-height: 15px;
+     opacity: 0;
+     pointer-events: none;
  }
- .package.special a{ color: inherit; font-weight: 500; }
+ .onoffswitch-label {
+     display: block; overflow: hidden; cursor: pointer;
+     border-radius: 20px;
+ }
+ .onoffswitch-inner {
+     display: block; width: 200%; margin-left: -100%;
+     transition: margin 0.3s ease-in 0s;
+ }
+ .onoffswitch-inner:before, .onoffswitch-inner:after {
+     display: block; float: left; width: 50%; height: 30px; padding: 0; line-height: 30px;
+     font-size: 14px; color: white; font-family: Trebuchet, Arial, sans-serif; font-weight: bold;
+     box-sizing: border-box;
+ }
+ .onoffswitch-inner:before {
+     content: "CLOUD";
+     padding-left: 10px;
+     background-color: var(--primary); color: var(--super-light);
+ }
+ .onoffswitch-inner:after {
+     content: "ON PREM";
+     padding-right: 10px;
+     background-color: #EEEEEE; color: #999999;
+     text-align: right;
+ }
+ .onoffswitch-switch {
+     display: block; width: 18px; margin: 6px;
+     background: var(--super-light);
+     position: absolute; top: 0; bottom: 0;
+     right: 74px;
+     border: 2px solid var(--super-light); border-radius: 20px;
+     transition: all 0.3s ease-in 0s;
+ }
+ .onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-inner {
+     margin-left: 0;
+ }
+ .onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-switch {
+     right: 0px;
+ }
 </style>
-<div class="container pricing-container">
-    <div class="pricing" data-related="cloud">
-        <div class="package">
-            <h2>Free</h2>
-            <ul>
-                <li>2MB upload limit</li>
-                <li>Shared links expire after a week</li>
-                <li>No customisation</li>
-            </ul><br>
-            <div class="amount"> $0/month</div>
-            <a rel="nofollow" class="action" href="https://demo.filestash.app">USE NOW</a>
-        </div>
-        <div class="package package__emphasis">
-            <h2>Personal</h2>
-            <ul>
-                <li>Full access to everything</li>
-                <li>Full customisation</li>
-                <li>Unlimited shared link</li>
-                <li>Unlimited uploads</li>
-            </ul>
-            <div class="amount">
-                <s>$9/month</s><br>
-                Free trial, then $6/month
-            </div>
-            <a class="action" href="https://deploy.filestash.app?type=personal::cloud">FREE TRIAL</a>
-        </div>
-        <div class="package">
-            <h2>Enterprise</h2>
-            <ul>
-                <li>Unlimited users</li>
-                <li>Everything unlimited</li>
-                <li>Custom integration</li>
-                <li>Enterprise support 24/7 by phone and email</li>
-            </ul>
-            <div class="amount"></div>
-            <a class="action" href="#cloud_enterprise" rel="modal:open">CONTACT US</a>
-        </div>
-    </div>
+<script>
+ jQuery(document).ready(function() {
+     jQuery("[data-related='selfhosted']").hide();
+ });
+ jQuery("input[type='checkbox']").on("change", function(){
+     // update the compare plans & features
+     if(this.checked === true){
+         jQuery("[data-related='selfhosted']").hide();
+         jQuery("[data-related='cloud']").show();
+     } else {
+         jQuery("[data-related='selfhosted']").show();
+         jQuery("[data-related='cloud']").hide();
+     }
 
-    <div class="pricing" data-related="selfhosted">
-        <div class="package">
-            <h2>Free</h2>
-            <ul>
-                <li>Everything unlimited</li>
-                <li>You perform the installation & maintenance</li>
-            </ul>
-            <div class="amount">$0</div>
-            <a class="action" href="/docs">START NOW</a>
-        </div>
-        <div class="package">
-            <h2>Personal</h2>
-            <ul>
-                <li>Everything unlimited</li>
-                <li>We perform the install/maintenance on your behalf</li>
-            </ul>
-            <div class="amount">
-                $9/month
-            </div>
-            <a class="action" href="#selfhosted_personal" rel="modal:open">ORDER NOW</a>
-        </div>
-        <div class="package">
-            <h2>Enterprise</h2>
-            <ul>
-                <li>Everything unlimited</li>
-                <li>Enterprise support</li>
-                <li>Custom integration</li>
-            </ul>
-            <a class="action" href="#selfhosted_enterprise" rel="modal:open">CONTACT US</a>
-        </div>
-    </div>
-</div>
+     // update the links in the hobby section
+     jQuery("#plan-hobby a.btn").attr(
+         "href",
+         this.checked ? "https://deploy.filestash.app/?type=personal::cloud" : "{% link _docs/index.md %}"
+     );
+ });
+</script>
 
+<h2 class="center">Compare plans & Features</h2>
 <style>
+ .featurelist{
+     max-width: 900px;
+ }
  .featurelist h2{
      margin-top: 10px;
      text-align: center;
@@ -292,8 +406,12 @@ layout: default
  }
  table.features h3{
      color: var(--secondary);
+     font-size: 1.25rem;
      font-weight: 100;
-     margin-bottom: 5px;
+     margin-bottom: 10px;
+     margin-top: 30px;
+     border-bottom: 1px solid rgba(0,0,0,0.1);
+     padding-bottom: 10px;
  }
  table.features td{
      text-align: center;
@@ -354,148 +472,113 @@ layout: default
      font-weight: bold;
  }
 </style>
-
 <div class="container featurelist">
-    <h2> Feature comparison ( <span data-related="selfhosted">Selfhosted</span> <span data-related="cloud">Cloud</span> )</h2>
     <table class="features">
         <tbody>
             <tr class="header">
                 <td>
                 </td>
-                <th data-related="cloud">Free</th>
-                <th data-related="cloud">Personal</th>
-                <th data-related="cloud">Enterprise</th>
-                <th data-related="selfhosted">Free</th>
-                <th data-related="selfhosted">Personal</th>
-                <th data-related="selfhosted">Enterprise</th>
+                <th data-related="cloud">Hobby</th>
+                <th data-related="selfhosted">Hobby</th>
+                <th>Pro</th>
+                <th>Enterprise</th>
             </tr>
 
             <tr class="header">
-                <td>
-                    <h3 style="margin-top:0">Backend connector</h3>
+                <td colspan="5">
+                    <h3 style="margin-top:0">Backend connectors</h3>
                 </td>
             </tr>
             <tr>
                 <td><a href="{% post_url 2019-11-26-ftp-web-client %}">FTP</a></td>
                 <td data-related="cloud"><i class="check"></i></td>
-                <td data-related="cloud"><i class="check"></i></td>
-                <td data-related="cloud"><i class="check"></i></td>
                 <td data-related="selfhosted"><i class="check"></i></td>
-                <td data-related="selfhosted"><i class="check"></i></td>
-                <td data-related="selfhosted"><i class="check"></i></td>
+                <td><i class="check"></i></td>
+                <td><i class="check"></i></td>
             </tr>
             <tr>
-                <td>SFTP</td>
-                <td data-related="cloud"><i class="check"></i></td>
-                <td data-related="cloud"><i class="check"></i></td>
+                <td><a href="{% post_url 2020-04-30-sftp-browser %}">SFTP</a></td>
                 <td data-related="cloud"><i class="check"></i></td>
                 <td data-related="selfhosted"><i class="check"></i></td>
-                <td data-related="selfhosted"><i class="check"></i></td>
-                <td data-related="selfhosted"><i class="check"></i></td>
+                <td><i class="check"></i></td>
+                <td><i class="check"></i></td>
             </tr>
             <tr>
                 <td>WebDav</td>
                 <td data-related="cloud"><i class="check"></i></td>
-                <td data-related="cloud"><i class="check"></i></td>
-                <td data-related="cloud"><i class="check"></i></td>
                 <td data-related="selfhosted"><i class="check"></i></td>
-                <td data-related="selfhosted"><i class="check"></i></td>
-                <td data-related="selfhosted"><i class="check"></i></td>
+                <td><i class="check"></i></td>
+                <td><i class="check"></i></td>
             </tr>
             <tr>
                 <td><a href="{% post_url 2019-11-21-s3-browser %}">S3</a></td>
                 <td data-related="cloud"><i class="check"></i></td>
-                <td data-related="cloud"><i class="check"></i></td>
-                <td data-related="cloud"><i class="check"></i></td>
                 <td data-related="selfhosted"><i class="check"></i></td>
-                <td data-related="selfhosted"><i class="check"></i></td>
-                <td data-related="selfhosted"><i class="check"></i></td>
+                <td><i class="check"></i></td>
+                <td><i class="check"></i></td>
             </tr>
             <tr>
                 <td><a href="{% post_url 2019-11-21-s3-browser %}">Minio</a></td>
                 <td data-related="cloud"><i class="check"></i></td>
+                <td data-related="selfhosted"><i class="check"></i></td>
+                <td><i class="check"></i></td>
+                <td><i class="check"></i></td>
+            </tr>
+            <tr>
+                <td><a href="{% post_url 2020-01-04-ldap-browser %}">LDAP</a></td>
                 <td data-related="cloud"><i class="check"></i></td>
-                <td data-related="cloud"><i class="check"></i></td>
                 <td data-related="selfhosted"><i class="check"></i></td>
-                <td data-related="selfhosted"><i class="check"></i></td>
-                <td data-related="selfhosted"><i class="check"></i></td>
+                <td><i class="check"></i></td>
+                <td><i class="check"></i></td>
             </tr>
             <tr>
                 <td>Dropbox</td>
                 <td data-related="cloud"><i class="check"></i></td>
-                <td data-related="cloud"><i class="check"></i></td>
-                <td data-related="cloud"><i class="check"></i></td>
                 <td data-related="selfhosted"><i class="check"></i></td>
-                <td data-related="selfhosted"><i class="check"></i></td>
-                <td data-related="selfhosted"><i class="check"></i></td>
+                <td><i class="check"></i></td>
+                <td><i class="check"></i></td>
             </tr>
             <tr>
                 <td>Google Drive</td>
                 <td data-related="cloud"><i class="check"></i></td>
-                <td data-related="cloud"><i class="check"></i></td>
-                <td data-related="cloud"><i class="check"></i></td>
                 <td data-related="selfhosted"><i class="check"></i></td>
-                <td data-related="selfhosted"><i class="check"></i></td>
-                <td data-related="selfhosted"><i class="check"></i></td>
+                <td><i class="check"></i></td>
+                <td><i class="check"></i></td>
             </tr>
             <tr>
                 <td>Mysql</td>
-                <td data-related="cloud"><i class="close"></i></td>
-                <td data-related="cloud"><i class="check"></i></td>
                 <td data-related="cloud"><i class="check"></i></td>
                 <td data-related="selfhosted"><i class="check"></i></td>
-                <td data-related="selfhosted"><i class="check"></i></td>
-                <td data-related="selfhosted"><i class="check"></i></td>
+                <td><i class="check"></i></td>
+                <td><i class="check"></i></td>
             </tr>
             <tr>
                 <td>Postgres</td>
                 <td data-related="cloud"><i class="close"></i></td>
-                <td data-related="cloud"><i class="close"></i></td>
-                <td data-related="cloud"><i class="check"></i></td>
                 <td data-related="selfhosted"><i class="close"></i></td>
-                <td data-related="selfhosted"><i class="close"></i></td>
-                <td data-related="selfhosted"><i class="check"></i></td>
+                <td><i class="close"></i></td>
+                <td><i class="check"></i></td>
             </tr>
             <tr>
                 <td>Sqlite</td>
                 <td data-related="cloud"><i class="close"></i></td>
-                <td data-related="cloud"><i class="close"></i></td>
-                <td data-related="cloud"><i class="check"></i></td>
                 <td data-related="selfhosted"><i class="close"></i></td>
-                <td data-related="selfhosted"><i class="close"></i></td>
-                <td data-related="selfhosted"><i class="check"></i></td>
+                <td><i class="close"></i></td>
+                <td><i class="check"></i></td>
             </tr>
             <tr>
                 <td>MS SQL</td>
                 <td data-related="cloud"><i class="close"></i></td>
-                <td data-related="cloud"><i class="close"></i></td>
-                <td data-related="cloud"><i class="check"></i></td>
                 <td data-related="selfhosted"><i class="close"></i></td>
-                <td data-related="selfhosted"><i class="close"></i></td>
-                <td data-related="selfhosted"><i class="check"></i></td>
+                <td><i class="close"></i></td>
+                <td><i class="check"></i></td>
             </tr>
             <tr>
                 <td>Oracle</td>
                 <td data-related="cloud"><i class="close"></i></td>
-                <td data-related="cloud"><i class="close"></i></td>
-                <td data-related="cloud"><i class="check"></i></td>
                 <td data-related="selfhosted"><i class="close"></i></td>
-                <td data-related="selfhosted"><i class="close"></i></td>
-                <td data-related="selfhosted"><i class="check"></i></td>
-            </tr>
-            <tr>
-                <td>Unlimited upload</td>
-                <td data-related="cloud">
-                    <div class="tooltip">
-                        <i class="close"></i>
-                        <span class="tooltiptext">2MB file upload limit</span>
-                    </div>
-                </td>
-                <td data-related="cloud"><i class="check"></i></td>
-                <td data-related="cloud"><i class="check"></i></td>
-                <td data-related="selfhosted"><i class="check"></i></td>
-                <td data-related="selfhosted"><i class="check"></i></td>
-                <td data-related="selfhosted"><i class="check"></i></td>
+                <td><i class="close"></i></td>
+                <td><i class="check"></i></td>
             </tr>
 
             <tr class="header">
@@ -506,178 +589,59 @@ layout: default
             <tr>
                 <td>Image viewer</td>
                 <td data-related="cloud"><i class="check"></i></td>
-                <td data-related="cloud"><i class="check"></i></td>
-                <td data-related="cloud"><i class="check"></i></td>
                 <td data-related="selfhosted"><i class="check"></i></td>
-                <td data-related="selfhosted"><i class="check"></i></td>
-                <td data-related="selfhosted"><i class="check"></i></td>
+                <td><i class="check"></i></td>
+                <td><i class="check"></i></td>
             </tr>
             <tr>
                 <td>Image transcoding</td>
                 <td data-related="cloud"><i class="check"></i></td>
-                <td data-related="cloud"><i class="check"></i></td>
-                <td data-related="cloud"><i class="check"></i></td>
                 <td data-related="selfhosted"><i class="check"></i></td>
-                <td data-related="selfhosted"><i class="check"></i></td>
-                <td data-related="selfhosted"><i class="check"></i></td>
+                <td><i class="check"></i></td>
+                <td><i class="check"></i></td>
             </tr>
             <tr>
                 <td>Video viewer</td>
                 <td data-related="cloud"><i class="check"></i></td>
-                <td data-related="cloud"><i class="check"></i></td>
-                <td data-related="cloud"><i class="check"></i></td>
                 <td data-related="selfhosted"><i class="check"></i></td>
-                <td data-related="selfhosted"><i class="check"></i></td>
-                <td data-related="selfhosted"><i class="check"></i></td>
+                <td><i class="check"></i></td>
+                <td><i class="check"></i></td>
             </tr>
             <tr>
                 <td>File editor</td>
                 <td data-related="cloud"><i class="check"></i></td>
+                <td data-related="selfhosted"><i class="check"></i></td>
+                <td><i class="check"></i></td>
+                <td><i class="check"></i></td>
+            </tr>
+            <tr>
+                <td>Code editor</td>
                 <td data-related="cloud"><i class="check"></i></td>
-                <td data-related="cloud"><i class="check"></i></td>
                 <td data-related="selfhosted"><i class="check"></i></td>
-                <td data-related="selfhosted"><i class="check"></i></td>
-                <td data-related="selfhosted"><i class="check"></i></td>
+                <td><i class="check"></i></td>
+                <td><i class="check"></i></td>
             </tr>
             <tr>
                 <td>Shared link</td>
-                <td data-related="cloud">
-                    <div class="tooltip">
-                        <i class="close"></i>
-                        <span class="tooltiptext">links are reset every week</span>
-                    </div>
-                </td>
-                <td data-related="cloud"><i class="check"></i></td>
                 <td data-related="cloud"><i class="check"></i></td>
                 <td data-related="selfhosted"><i class="check"></i></td>
-                <td data-related="selfhosted"><i class="check"></i></td>
-                <td data-related="selfhosted"><i class="check"></i></td>
+                <td><i class="check"></i></td>
+                <td><i class="check"></i></td>
             </tr>
             <tr>
                 <td>Advanced collaboration permission</td>
-                <td data-related="cloud">
-                    <div class="tooltip">
-                        <i class="close"></i>
-                        <span class="tooltiptext">links are reset every week</span>
-                    </div>
-                </td>
-                <td data-related="cloud"><i class="check"></i></td>
                 <td data-related="cloud"><i class="check"></i></td>
                 <td data-related="selfhosted"><i class="check"></i></td>
-                <td data-related="selfhosted"><i class="check"></i></td>
-                <td data-related="selfhosted"><i class="check"></i></td>
-            </tr>
-
-            <tr class="header">
-                <td colspan="5">
-                    <h3>Org Mode</h3>
-                </td>
+                <td><i class="check"></i></td>
+                <td><i class="check"></i></td>
             </tr>
             <tr>
-                <td>WYSIWYG editor</td>
-                <td data-related="cloud"><i class="check"></i></td>
-                <td data-related="cloud"><i class="check"></i></td>
+                <td>Unmetered upload</td>
                 <td data-related="cloud"><i class="check"></i></td>
                 <td data-related="selfhosted"><i class="check"></i></td>
-                <td data-related="selfhosted"><i class="check"></i></td>
-                <td data-related="selfhosted"><i class="check"></i></td>
+                <td><i class="check"></i></td>
+                <td><i class="check"></i></td>
             </tr>
-            <tr>
-                <td>Agenda</td>
-                <td data-related="cloud"><i class="check"></i></td>
-                <td data-related="cloud"><i class="check"></i></td>
-                <td data-related="cloud"><i class="check"></i></td>
-                <td data-related="selfhosted"><i class="check"></i></td>
-                <td data-related="selfhosted"><i class="check"></i></td>
-                <td data-related="selfhosted"><i class="check"></i></td>
-            </tr>
-            <tr>
-                <td>Todos</td>
-                <td data-related="cloud"><i class="check"></i></td>
-                <td data-related="cloud"><i class="check"></i></td>
-                <td data-related="cloud"><i class="check"></i></td>
-                <td data-related="selfhosted"><i class="check"></i></td>
-                <td data-related="selfhosted"><i class="check"></i></td>
-                <td data-related="selfhosted"><i class="check"></i></td>
-            </tr>
-            <tr>
-                <td>Org note as wikis</td>
-                <td data-related="cloud">
-                    <div class="tooltip">
-                        <i class="close"></i>
-                        <span class="tooltiptext">your URLs won't be persistent</span>
-                    </div>
-                </td>
-                <td data-related="cloud"><i class="check"></i></td>
-                <td data-related="cloud"><i class="check"></i></td>
-                <td data-related="selfhosted"><i class="check"></i></td>
-                <td data-related="selfhosted"><i class="check"></i></td>
-                <td data-related="selfhosted"><i class="check"></i></td>
-            </tr>
-            <tr>
-                <td>Export note to PDF</td>
-                <td data-related="cloud"><i class="check"></i></td>
-                <td data-related="cloud"><i class="check"></i></td>
-                <td data-related="cloud"><i class="check"></i></td>
-                <td data-related="selfhosted"><i class="check"></i></td>
-                <td data-related="selfhosted"><i class="check"></i></td>
-                <td data-related="selfhosted"><i class="check"></i></td>
-            </tr>
-            <tr>
-                <td>Export note to HTML</td>
-                <td data-related="cloud"><i class="check"></i></td>
-                <td data-related="cloud"><i class="check"></i></td>
-                <td data-related="cloud"><i class="check"></i></td>
-                <td data-related="selfhosted"><i class="check"></i></td>
-                <td data-related="selfhosted"><i class="check"></i></td>
-                <td data-related="selfhosted"><i class="check"></i></td>
-            </tr>
-            <tr>
-                <td>Export note to ODT</td>
-                <td data-related="cloud"><i class="check"></i></td>
-                <td data-related="cloud"><i class="check"></i></td>
-                <td data-related="cloud"><i class="check"></i></td>
-                <td data-related="selfhosted"><i class="check"></i></td>
-                <td data-related="selfhosted"><i class="check"></i></td>
-                <td data-related="selfhosted"><i class="check"></i></td>
-            </tr>
-            <tr>
-                <td>Export note to TXT</td>
-                <td data-related="cloud"><i class="check"></i></td>
-                <td data-related="cloud"><i class="check"></i></td>
-                <td data-related="cloud"><i class="check"></i></td>
-                <td data-related="selfhosted"><i class="check"></i></td>
-                <td data-related="selfhosted"><i class="check"></i></td>
-                <td data-related="selfhosted"><i class="check"></i></td>
-            </tr>
-            <tr>
-                <td>Export note to iCal</td>
-                <td data-related="cloud"><i class="check"></i></td>
-                <td data-related="cloud"><i class="check"></i></td>
-                <td data-related="cloud"><i class="check"></i></td>
-                <td data-related="selfhosted"><i class="check"></i></td>
-                <td data-related="selfhosted"><i class="check"></i></td>
-                <td data-related="selfhosted"><i class="check"></i></td>
-            </tr>
-            <tr>
-                <td>Export note to Beamer</td>
-                <td data-related="cloud"><i class="check"></i></td>
-                <td data-related="cloud"><i class="check"></i></td>
-                <td data-related="cloud"><i class="check"></i></td>
-                <td data-related="selfhosted"><i class="check"></i></td>
-                <td data-related="selfhosted"><i class="check"></i></td>
-                <td data-related="selfhosted"><i class="check"></i></td>
-            </tr>
-            <tr>
-                <td>Export note to Latex</td>
-                <td data-related="cloud"><i class="check"></i></td>
-                <td data-related="cloud"><i class="check"></i></td>
-                <td data-related="cloud"><i class="check"></i></td>
-                <td data-related="selfhosted"><i class="check"></i></td>
-                <td data-related="selfhosted"><i class="check"></i></td>
-                <td data-related="selfhosted"><i class="check"></i></td>
-            </tr>
-
 
             <tr class="header">
                 <td colspan="5">
@@ -685,160 +649,108 @@ layout: default
                 </td>
             </tr>
             <tr>
-                <td>Access to admin console</td>
-                <td data-related="cloud">
-                    <div class="tooltip">
-                        <i class="close"></i>
-                        <span class="tooltiptext">imagine the mess if everyone would be an admin!</span>
-                    </div>
-                </td>
-                <td data-related="cloud"><i class="check"></i></td>
+                <td>Admin console</td>
                 <td data-related="cloud"><i class="check"></i></td>
                 <td data-related="selfhosted"><i class="check"></i></td>
-                <td data-related="selfhosted"><i class="check"></i></td>
-                <td data-related="selfhosted"><i class="check"></i></td>
+                <td><i class="check"></i></td>
+                <td><i class="check"></i></td>
             </tr>
             <tr>
                 <td>Security tools</td>
-                <td data-related="cloud">
-                    <div class="tooltip">
-                        <i class="close"></i>
-                        <span class="tooltiptext">imagine the mess if everyone would be an admin!</span>
-                    </div>
-                </td>
-                <td data-related="cloud"><i class="check"></i></td>
                 <td data-related="cloud"><i class="check"></i></td>
                 <td data-related="selfhosted"><i class="check"></i></td>
-                <td data-related="selfhosted"><i class="check"></i></td>
-                <td data-related="selfhosted"><i class="check"></i></td>
+                <td><i class="check"></i></td>
+                <td><i class="check"></i></td>
             </tr>
             <tr>
                 <td>Customisation</td>
-                <td data-related="cloud">
-                    <div class="tooltip">
-                        <i class="close"></i>
-                        <span class="tooltiptext">imagine the mess if everyone would be an admin!</span>
-                    </div>
-                </td>
-                <td data-related="cloud"><i class="check"></i></td>
                 <td data-related="cloud"><i class="check"></i></td>
                 <td data-related="selfhosted"><i class="check"></i></td>
-                <td data-related="selfhosted"><i class="check"></i></td>
-                <td data-related="selfhosted"><i class="check"></i></td>
+                <td><i class="check"></i></td>
+                <td><i class="check"></i></td>
             </tr>
             <tr>
-                <td>Usage logs</td>
+                <td>Usage Audit</td>
                 <td data-related="cloud"><i class="close"></i></td>
-                <td data-related="cloud"><i class="check"></i></td>
-                <td data-related="cloud"><i class="check"></i></td>
                 <td data-related="selfhosted"><i class="check"></i></td>
-                <td data-related="selfhosted"><i class="check"></i></td>
-                <td data-related="selfhosted"><i class="check"></i></td>
+                <td><i class="check"></i></td>
+                <td><i class="check"></i></td>
             </tr>
             <tr>
-                <td>BYOD: bring your own DNS</td>
+                <td>Bring your own DNS</td>
                 <td data-related="cloud"><i class="close"></i></td>
-                <td data-related="cloud"><i class="check"></i></td>
-                <td data-related="cloud"><i class="check"></i></td>
                 <td data-related="selfhosted"><i class="check"></i></td>
-                <td data-related="selfhosted"><i class="check"></i></td>
-                <td data-related="selfhosted"><i class="check"></i></td>
+                <td><i class="check"></i></td>
+                <td><i class="check"></i></td>
             </tr>
 
             <tr class="header">
                 <td colspan="5">
-                    <h3>Support & maintenance</h3>
+                    <h3>Support & Maintenance</h3>
                 </td>
             </tr>
             <tr>
-                <td>Setup call with our specialists</td>
+                <td>Setup call</td>
                 <td data-related="cloud"><i class="close"></i></td>
-                <td data-related="cloud"><i class="check"></i></td>
-                <td data-related="cloud"><i class="check"></i></td>
                 <td data-related="selfhosted"><i class="close"></i></td>
-                <td data-related="selfhosted"><i class="check"></i></td>
-                <td data-related="selfhosted"><i class="check"></i></td>
+                <td><i class="close"></i></td>
+                <td><i class="check"></i></td>
             </tr>
             <tr>
-                <td>Community support on <a rel="nofollow" href="https://kiwiirc.com/nextclient/#irc://irc.freenode.net/#filestash?nick=guest??">freenode</a></td>
-                <td data-related="cloud"><i class="check"></i></td>
-                <td data-related="cloud"><i class="check"></i></td>
-                <td data-related="cloud"><i class="check"></i></td>
-                <td data-related="selfhosted"><i class="check"></i></td>
-                <td data-related="selfhosted"><i class="check"></i></td>
-                <td data-related="selfhosted"><i class="check"></i></td>
+                <td>Priority support</td>
+                <td data-related="cloud"><i class="close"></i></td>
+                <td data-related="selfhosted"><i class="close"></i></td>
+                <td><i class="close"></i></td>
+                <td><i class="check"></i></td>
             </tr>
             <tr>
                 <td>Email support</td>
                 <td data-related="cloud"><i class="close"></i></td>
-                <td data-related="cloud"><i class="check"></i></td>
-                <td data-related="cloud"><i class="check"></i></td>
                 <td data-related="selfhosted"><i class="close"></i></td>
-                <td data-related="selfhosted"><i class="check"></i></td>
-                <td data-related="selfhosted"><i class="check"></i></td>
+                <td><i class="check"></i></td>
+                <td><i class="check"></i></td>
             </tr>
             <tr>
                 <td>Phone support</td>
                 <td data-related="cloud"><i class="close"></i></td>
-                <td data-related="cloud"><i class="check"></i></td>
-                <td data-related="cloud"><i class="check"></i></td>
                 <td data-related="selfhosted"><i class="close"></i></td>
-                <td data-related="selfhosted"><i class="close"></i></td>
-                <td data-related="selfhosted"><i class="check"></i></td>
+                <td><i class="close"></i></td>
+                <td><i class="check"></i></td>
             </tr>
             <tr>
-                <td>Automatic upgrade</td>
-                <td data-related="cloud"><i class="close"></i></td>
-                <td data-related="cloud"><i class="check"></i></td>
+                <td>Upgrade & Maintenance</td>
                 <td data-related="cloud"><i class="check"></i></td>
                 <td data-related="selfhosted"><i class="close"></i></td>
-                <td data-related="selfhosted"><i class="check"></i></td>
-                <td data-related="selfhosted"><i class="check"></i></td>
-            </tr>
-            <tr>
-                <td>System maintenance</td>
-                <td data-related="cloud"><i class="close"></i></td>
-                <td data-related="cloud"><i class="check"></i></td>
-                <td data-related="cloud"><i class="check"></i></td>
-                <td data-related="selfhosted"><i class="close"></i></td>
-                <td data-related="selfhosted"><i class="check"></i></td>
-                <td data-related="selfhosted"><i class="check"></i></td>
+                <td><i class="check"></i></td>
+                <td><i class="check"></i></td>
             </tr>
             <tr>
                 <td>Automatic SSL</td>
                 <td data-related="cloud"><i class="check"></i></td>
-                <td data-related="cloud"><i class="check"></i></td>
-                <td data-related="cloud"><i class="check"></i></td>
                 <td data-related="selfhosted"><i class="close"></i></td>
-                <td data-related="selfhosted"><i class="check"></i></td>
-                <td data-related="selfhosted"><i class="check"></i></td>
+                <td><i class="check"></i></td>
+                <td><i class="check"></i></td>
             </tr>
             <tr>
-                <td>Safe before security annoucement</td>
+                <td>Enhanced Security</td>
                 <td data-related="cloud"><i class="close"></i></td>
-                <td data-related="cloud"><i class="close"></i></td>
-                <td data-related="cloud"><i class="check"></i></td>
                 <td data-related="selfhosted"><i class="close"></i></td>
-                <td data-related="selfhosted"><i class="close"></i></td>
-                <td data-related="selfhosted"><i class="check"></i></td>
+                <td><i class="check"></i></td>
+                <td><i class="check"></i></td>
             </tr>
             <tr>
                 <td>Training</td>
                 <td data-related="cloud"><i class="close"></i></td>
-                <td data-related="cloud"><i class="close"></i></td>
-                <td data-related="cloud"><i class="check"></i></td>
                 <td data-related="selfhosted"><i class="close"></i></td>
-                <td data-related="selfhosted"><i class="close"></i></td>
-                <td data-related="selfhosted"><i class="check"></i></td>
+                <td><i class="close"></i></td>
+                <td><i class="check"></i></td>
             </tr>
             <tr>
                 <td>Consulting</td>
                 <td data-related="cloud"><i class="close"></i></td>
-                <td data-related="cloud"><i class="close"></i></td>
-                <td data-related="cloud"><i class="check"></i></td>
                 <td data-related="selfhosted"><i class="close"></i></td>
-                <td data-related="selfhosted"><i class="close"></i></td>
-                <td data-related="selfhosted"><i class="check"></i></td>
+                <td><i class="close"></i></td>
+                <td><i class="check"></i></td>
             </tr>
 
             <tr class="header">
@@ -848,136 +760,91 @@ layout: default
             </tr>
             <tr>
                 <td>Docker</td>
-                <td data-related="cloud"><i class="close"></i></td>
-                <td data-related="cloud"><i class="close"></i></td>
-                <td data-related="cloud"><i class="close"></i></td>
+                <td data-related="cloud"><i>N/A</i></td>
                 <td data-related="selfhosted"><i class="check"></i></td>
-                <td data-related="selfhosted"><i class="check"></i></td>
-                <td data-related="selfhosted"><i class="check"></i></td>
+                <td><i>N/A</i></td>
+                <td><i class="check"></i></td>
             </tr>
             <tr>
                 <td>Custom install</td>
-                <td data-related="cloud"><i class="close"></i></td>
-                <td data-related="cloud"><i class="close"></i></td>
-                <td data-related="cloud"><i class="close"></i></td>
+                <td data-related="cloud"><i>N/A</i></td>
                 <td data-related="selfhosted"><i class="close"></i></td>
-                <td data-related="selfhosted"><i class="close"></i></td>
-                <td data-related="selfhosted"><i class="check"></i></td>
+                <td><i>N/A</i></td>
+                <td><i class="check"></i></td>
             </tr>
             <tr>
                 <td>Debian installer</td>
-                <td data-related="cloud"><i class="close"></i></td>
-                <td data-related="cloud"><i class="close"></i></td>
-                <td data-related="cloud"><i class="close"></i></td>
+                <td data-related="cloud"><i>N/A</i></td>
                 <td data-related="selfhosted"><i class="close"></i></td>
-                <td data-related="selfhosted"><i class="check"></i></td>
-                <td data-related="selfhosted"><i class="check"></i></td>
+                <td><i>N/A</i></td>
+                <td><i class="check"></i></td>
             </tr>
             <tr>
                 <td>RHEL installer</td>
-                <td data-related="cloud"><i class="close"></i></td>
-                <td data-related="cloud"><i class="close"></i></td>
-                <td data-related="cloud"><i class="close"></i></td>
+                <td data-related="cloud"><i>N/A</i></td>
                 <td data-related="selfhosted"><i class="close"></i></td>
-                <td data-related="selfhosted"><i class="close"></i></td>
-                <td data-related="selfhosted"><i class="check"></i></td>
+                <td><i>N/A</i></td>
+                <td><i class="check"></i></td>
             </tr>
             <tr>
                 <td>Ubuntu installer</td>
-                <td data-related="cloud"><i class="close"></i></td>
-                <td data-related="cloud"><i class="close"></i></td>
-                <td data-related="cloud"><i class="close"></i></td>
+                <td data-related="cloud"><i>N/A</i></td>
                 <td data-related="selfhosted"><i class="close"></i></td>
-                <td data-related="selfhosted"><i class="check"></i></td>
-                <td data-related="selfhosted"><i class="check"></i></td>
+                <td><i>N/A</i></td>
+                <td><i class="check"></i></td>
             </tr>
             <tr>
                 <td>Windows installer</td>
-                <td data-related="cloud"><i class="close"></i></td>
-                <td data-related="cloud"><i class="close"></i></td>
-                <td data-related="cloud"><i class="close"></i></td>
+                <td data-related="cloud"><i>N/A</i></td>
                 <td data-related="selfhosted"><i class="close"></i></td>
-                <td data-related="selfhosted"><i class="close"></i></td>
-                <td data-related="selfhosted"><i class="check"></i></td>
+                <td><i>N/A</i></td>
+                <td><i class="check"></i></td>
             </tr>
+
         </tbody>
     </table>
 </div>
 
-{% include footer.html %}
 
-<style>.modal{display: none;}</style>
 <script>
  // A simple jQuery modal (http://github.com/kylefox/jquery-modal)
  !function(o){"object"==typeof module&&"object"==typeof module.exports?o(require("jquery"),window,document):o(jQuery,window,document)}(function(o,t,i,e){var s=[],l=function(){return s.length?s[s.length-1]:null},n=function(){var o,t=!1;for(o=s.length-1;o>=0;o--)s[o].$blocker&&(s[o].$blocker.toggleClass("current",!t).toggleClass("behind",t),t=!0)};o.modal=function(t,i){var e,n;if(this.$body=o("body"),this.options=o.extend({},o.modal.defaults,i),this.options.doFade=!isNaN(parseInt(this.options.fadeDuration,10)),this.$blocker=null,this.options.closeExisting)for(;o.modal.isActive();)o.modal.close();if(s.push(this),t.is("a"))if(n=t.attr("href"),this.anchor=t,/^#/.test(n)){if(this.$elm=o(n),1!==this.$elm.length)return null;this.$body.append(this.$elm),this.open()}else this.$elm=o("<div>"),this.$body.append(this.$elm),e=function(o,t){t.elm.remove()},this.showSpinner(),t.trigger(o.modal.AJAX_SEND),o.get(n).done(function(i){if(o.modal.isActive()){t.trigger(o.modal.AJAX_SUCCESS);var s=l();s.$elm.empty().append(i).on(o.modal.CLOSE,e),s.hideSpinner(),s.open(),t.trigger(o.modal.AJAX_COMPLETE)}}).fail(function(){t.trigger(o.modal.AJAX_FAIL);var i=l();i.hideSpinner(),s.pop(),t.trigger(o.modal.AJAX_COMPLETE)});else this.$elm=t,this.anchor=t,this.$body.append(this.$elm),this.open()},o.modal.prototype={constructor:o.modal,open:function(){var t=this;this.block(),this.anchor.blur(),this.options.doFade?setTimeout(function(){t.show()},this.options.fadeDuration*this.options.fadeDelay):this.show(),o(i).off("keydown.modal").on("keydown.modal",function(o){var t=l();27===o.which&&t.options.escapeClose&&t.close()}),this.options.clickClose&&this.$blocker.click(function(t){t.target===this&&o.modal.close()})},close:function(){s.pop(),this.unblock(),this.hide(),o.modal.isActive()||o(i).off("keydown.modal")},block:function(){this.$elm.trigger(o.modal.BEFORE_BLOCK,[this._ctx()]),this.$body.css("overflow","hidden"),this.$blocker=o('<div class="'+this.options.blockerClass+' blocker current"></div>').appendTo(this.$body),n(),this.options.doFade&&this.$blocker.css("opacity",0).animate({opacity:1},this.options.fadeDuration),this.$elm.trigger(o.modal.BLOCK,[this._ctx()])},unblock:function(t){!t&&this.options.doFade?this.$blocker.fadeOut(this.options.fadeDuration,this.unblock.bind(this,!0)):(this.$blocker.children().appendTo(this.$body),this.$blocker.remove(),this.$blocker=null,n(),o.modal.isActive()||this.$body.css("overflow",""))},show:function(){this.$elm.trigger(o.modal.BEFORE_OPEN,[this._ctx()]),this.options.showClose&&(this.closeButton=o('<a href="#close-modal" rel="modal:close" class="close-modal '+this.options.closeClass+'">'+this.options.closeText+"</a>"),this.$elm.append(this.closeButton)),this.$elm.addClass(this.options.modalClass).appendTo(this.$blocker),this.options.doFade?this.$elm.css({opacity:0,display:"inline-block"}).animate({opacity:1},this.options.fadeDuration):this.$elm.css("display","inline-block"),this.$elm.trigger(o.modal.OPEN,[this._ctx()])},hide:function(){this.$elm.trigger(o.modal.BEFORE_CLOSE,[this._ctx()]),this.closeButton&&this.closeButton.remove();var t=this;this.options.doFade?this.$elm.fadeOut(this.options.fadeDuration,function(){t.$elm.trigger(o.modal.AFTER_CLOSE,[t._ctx()])}):this.$elm.hide(0,function(){t.$elm.trigger(o.modal.AFTER_CLOSE,[t._ctx()])}),this.$elm.trigger(o.modal.CLOSE,[this._ctx()])},showSpinner:function(){this.options.showSpinner&&(this.spinner=this.spinner||o('<div class="'+this.options.modalClass+'-spinner"></div>').append(this.options.spinnerHtml),this.$body.append(this.spinner),this.spinner.show())},hideSpinner:function(){this.spinner&&this.spinner.remove()},_ctx:function(){return{elm:this.$elm,$elm:this.$elm,$blocker:this.$blocker,options:this.options}}},o.modal.close=function(t){if(o.modal.isActive()){t&&t.preventDefault();var i=l();return i.close(),i.$elm}},o.modal.isActive=function(){return s.length>0},o.modal.getCurrent=l,o.modal.defaults={closeExisting:!0,escapeClose:!0,clickClose:!0,closeText:"Close",closeClass:"",modalClass:"modal",blockerClass:"jquery-modal",spinnerHtml:'<div class="rect1"></div><div class="rect2"></div><div class="rect3"></div><div class="rect4"></div>',showSpinner:!0,showClose:!0,fadeDuration:null,fadeDelay:1},o.modal.BEFORE_BLOCK="modal:before-block",o.modal.BLOCK="modal:block",o.modal.BEFORE_OPEN="modal:before-open",o.modal.OPEN="modal:open",o.modal.BEFORE_CLOSE="modal:before-close",o.modal.CLOSE="modal:close",o.modal.AFTER_CLOSE="modal:after-close",o.modal.AJAX_SEND="modal:ajax:send",o.modal.AJAX_SUCCESS="modal:ajax:success",o.modal.AJAX_FAIL="modal:ajax:fail",o.modal.AJAX_COMPLETE="modal:ajax:complete",o.fn.modal=function(t){return 1===this.length&&new o.modal(this,t),this},o(i).on("click.modal",'a[rel~="modal:close"]',o.modal.close),o(i).on("click.modal",'a[rel~="modal:open"]',function(t){t.preventDefault(),o(this).modal()})});</script>
-<style> .blocker{position:fixed;top:0;right:0;bottom:0;left:0;width:100%;height:100%;overflow:auto;z-index:1;padding:20px;box-sizing:border-box;background-color:#000;background-color:rgba(0,0,0,0.8);text-align:center}.blocker:before{content:"";display:inline-block;height:100%;vertical-align:middle;margin-right:-0.05em}.blocker.behind{background-color:transparent}.modal{display:none;vertical-align:middle;position:relative;z-index:2;max-width:500px;box-sizing:border-box;width:90%;background:#fff;padding:15px 30px;-webkit-border-radius:8px;-moz-border-radius:8px;-o-border-radius:8px;-ms-border-radius:8px;border-radius:8px;-webkit-box-shadow:0 0 10px #000;-moz-box-shadow:0 0 10px #000;-o-box-shadow:0 0 10px #000;-ms-box-shadow:0 0 10px #000;box-shadow:0 0 10px #000;text-align:left}.modal a.close-modal{position:absolute;top:-12.5px;right:-12.5px;display:block;width:30px;height:30px;text-indent:-9999px;background-size:contain;background-repeat:no-repeat;background-position:center center;background-image:url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADwAAAA8CAYAAAA6/NlyAAAAAXNSR0IArs4c6QAAA3hJREFUaAXlm8+K00Acx7MiCIJH/yw+gA9g25O49SL4AO3Bp1jw5NvktC+wF88qevK4BU97EmzxUBCEolK/n5gp3W6TTJPfpNPNF37MNsl85/vN/DaTmU6PknC4K+pniqeKJ3k8UnkvDxXJzzy+q/yaxxeVHxW/FNHjgRSeKt4rFoplzaAuHHDBGR2eS9G54reirsmienDCTRt7xwsp+KAoEmt9nLaGitZxrBbPFNaGfPloGw2t4JVamSt8xYW6Dg1oCYo3Yv+rCGViV160oMkcd8SYKnYV1Nb1aEOjCe6L5ZOiLfF120EjWhuBu3YIZt1NQmujnk5F4MgOpURzLfAwOBSTmzp3fpDxuI/pabxpqOoz2r2HLAb0GMbZKlNV5/Hg9XJypguryA7lPF5KMdTZQzHjqxNPhWhzIuAruOl1eNqKEx1tSh5rfbxdw7mOxCq4qS68ZTjKS1YVvilu559vWvFHhh4rZrdyZ69Vmpgdj8fJbDZLJpNJ0uv1cnr/gjrUhQMuI+ANjyuwftQ0bbL6Erp0mM/ny8Fg4M3LtdRxgMtKl3jwmIHVxYXChFy94/Rmpa/pTbNUhstKV+4Rr8lLQ9KlUvJKLyG8yvQ2s9SBy1Jb7jV5a0yapfF6apaZLjLLcWtd4sNrmJUMHyM+1xibTjH82Zh01TNlhsrOhdKTe00uAzZQmN6+KW+sDa/JD2PSVQ873m29yf+1Q9VDzfEYlHi1G5LKBBWZbtEsHbFwb1oYDwr1ZiF/2bnCSg1OBE/pfr9/bWx26UxJL3ONPISOLKUvQza0LZUxSKyjpdTGa/vDEr25rddbMM0Q3O6Lx3rqFvU+x6UrRKQY7tyrZecmD9FODy8uLizTmilwNj0kraNcAJhOp5aGVwsAGD5VmJBrWWbJSgWT9zrzWepQF47RaGSiKfeGx6Szi3gzmX/HHbihwBser4B9UJYpFBNX4R6vTn3VQnez0SymnrHQMsRYGTr1dSk34ljRqS/EMd2pLQ8YBp3a1PLfcqCpo8gtHkZFHKkTX6fs3MY0blKnth66rKCnU0VRGu37ONrQaA4eZDFtWAu2fXj9zjFkxTBOo8F7t926gTp/83Kyzzcy2kZD6xiqxTYnHLRFm3vHiRSwNSjkz3hoIzo8lCKWUlg/YtGs7tObunDAZfpDLbfEI15zsEIY3U/x/gHHc/G1zltnAgAAAABJRU5ErkJggg==')}.modal-spinner{display:none;position:fixed;top:50%;left:50%;transform:translateY(-50%) translateX(-50%);padding:12px 16px;border-radius:5px;background-color:#111;height:20px}.modal-spinner>div{border-radius:100px;background-color:#fff;height:20px;width:2px;margin:0 1px;display:inline-block;-webkit-animation:sk-stretchdelay 1.2s infinite ease-in-out;animation:sk-stretchdelay 1.2s infinite ease-in-out}.modal-spinner .rect2{-webkit-animation-delay:-1.1s;animation-delay:-1.1s}.modal-spinner .rect3{-webkit-animation-delay:-1.0s;animation-delay:-1.0s}.modal-spinner .rect4{-webkit-animation-delay:-0.9s;animation-delay:-0.9s}@-webkit-keyframes sk-stretchdelay{0%,40%,100%{-webkit-transform:scaleY(0.5)}20%{-webkit-transform:scaleY(1.0)}}@keyframes sk-stretchdelay{0%,40%,100%{transform:scaleY(0.5);-webkit-transform:scaleY(0.5)}20%{transform:scaleY(1.0);-webkit-transform:scaleY(1.0)}}</style>
+<style>.blocker{position:fixed;top:0;right:0;bottom:0;left:0;width:100%;height:100%;overflow:auto;z-index:1;padding:20px;box-sizing:border-box;background-color:#000;background-color:rgba(0,0,0,0.8);text-align:center}.blocker:before{content:"";display:inline-block;height:100%;vertical-align:middle;margin-right:-0.05em}.blocker.behind{background-color:transparent}.modal{display:none;vertical-align:middle;position:relative;z-index:2;max-width:500px;box-sizing:border-box;width:90%;background:#fff;padding:15px 30px;-webkit-border-radius:8px;-moz-border-radius:8px;-o-border-radius:8px;-ms-border-radius:8px;border-radius:8px;-webkit-box-shadow:0 0 10px #000;-moz-box-shadow:0 0 10px #000;-o-box-shadow:0 0 10px #000;-ms-box-shadow:0 0 10px #000;box-shadow:0 0 10px #000;text-align:left}.modal a.close-modal{position:absolute;top:-12.5px;right:-12.5px;display:block;width:30px;height:30px;text-indent:-9999px;background-size:contain;background-repeat:no-repeat;background-position:center center;background-image:url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADwAAAA8CAYAAAA6/NlyAAAAAXNSR0IArs4c6QAAA3hJREFUaAXlm8+K00Acx7MiCIJH/yw+gA9g25O49SL4AO3Bp1jw5NvktC+wF88qevK4BU97EmzxUBCEolK/n5gp3W6TTJPfpNPNF37MNsl85/vN/DaTmU6PknC4K+pniqeKJ3k8UnkvDxXJzzy+q/yaxxeVHxW/FNHjgRSeKt4rFoplzaAuHHDBGR2eS9G54reirsmienDCTRt7xwsp+KAoEmt9nLaGitZxrBbPFNaGfPloGw2t4JVamSt8xYW6Dg1oCYo3Yv+rCGViV160oMkcd8SYKnYV1Nb1aEOjCe6L5ZOiLfF120EjWhuBu3YIZt1NQmujnk5F4MgOpURzLfAwOBSTmzp3fpDxuI/pabxpqOoz2r2HLAb0GMbZKlNV5/Hg9XJypguryA7lPF5KMdTZQzHjqxNPhWhzIuAruOl1eNqKEx1tSh5rfbxdw7mOxCq4qS68ZTjKS1YVvilu559vWvFHhh4rZrdyZ69Vmpgdj8fJbDZLJpNJ0uv1cnr/gjrUhQMuI+ANjyuwftQ0bbL6Erp0mM/ny8Fg4M3LtdRxgMtKl3jwmIHVxYXChFy94/Rmpa/pTbNUhstKV+4Rr8lLQ9KlUvJKLyG8yvQ2s9SBy1Jb7jV5a0yapfF6apaZLjLLcWtd4sNrmJUMHyM+1xibTjH82Zh01TNlhsrOhdKTe00uAzZQmN6+KW+sDa/JD2PSVQ873m29yf+1Q9VDzfEYlHi1G5LKBBWZbtEsHbFwb1oYDwr1ZiF/2bnCSg1OBE/pfr9/bWx26UxJL3ONPISOLKUvQza0LZUxSKyjpdTGa/vDEr25rddbMM0Q3O6Lx3rqFvU+x6UrRKQY7tyrZecmD9FODy8uLizTmilwNj0kraNcAJhOp5aGVwsAGD5VmJBrWWbJSgWT9zrzWepQF47RaGSiKfeGx6Szi3gzmX/HHbihwBser4B9UJYpFBNX4R6vTn3VQnez0SymnrHQMsRYGTr1dSk34ljRqS/EMd2pLQ8YBp3a1PLfcqCpo8gtHkZFHKkTX6fs3MY0blKnth66rKCnU0VRGu37ONrQaA4eZDFtWAu2fXj9zjFkxTBOo8F7t926gTp/83Kyzzcy2kZD6xiqxTYnHLRFm3vHiRSwNSjkz3hoIzo8lCKWUlg/YtGs7tObunDAZfpDLbfEI15zsEIY3U/x/gHHc/G1zltnAgAAAABJRU5ErkJggg==')}.modal-spinner{display:none;position:fixed;top:50%;left:50%;transform:translateY(-50%) translateX(-50%);padding:12px 16px;border-radius:5px;background-color:#111;height:20px}.modal-spinner>div{border-radius:100px;background-color:#fff;height:20px;width:2px;margin:0 1px;display:inline-block;-webkit-animation:sk-stretchdelay 1.2s infinite ease-in-out;animation:sk-stretchdelay 1.2s infinite ease-in-out}.modal-spinner .rect2{-webkit-animation-delay:-1.1s;animation-delay:-1.1s}.modal-spinner .rect3{-webkit-animation-delay:-1.0s;animation-delay:-1.0s}.modal-spinner .rect4{-webkit-animation-delay:-0.9s;animation-delay:-0.9s}@-webkit-keyframes sk-stretchdelay{0%,40%,100%{-webkit-transform:scaleY(0.5)}20%{-webkit-transform:scaleY(1.0)}}@keyframes sk-stretchdelay{0%,40%,100%{transform:scaleY(0.5);-webkit-transform:scaleY(0.5)}20%{transform:scaleY(1.0);-webkit-transform:scaleY(1.0)}}</style>
+<style>
+ .jquery-modal{ z-index: 10; }
+ .modal{display: none;}
+</style>
 <script>
  $(".pricing a.action").modal({fadeDuration: 300});
 </script>
 
 <script>
-function submitForm(e){
-    var $submit = e.target.querySelector("button");
-    var n = 0;
-    if($submit.textContent.indexOf("LOADING") !== -1){
-        e.preventDefault(); // block multiple submit
-        return;
-    }
-    $submit.setAttribute("value", "LOADING ...");
-    window.setInterval(function(){
-        n += 1;
-        if(n === 1){
-            $submit.innerHTML = "LOADING .&nbsp&nbsp";
-        } else if(n === 2){
-            $submit.innerHTML = "LOADING ..&nbsp";
-        } else if(n === 3){
-            $submit.innerHTML = "LOADING ...";
-            n = 0;
-        }
-    }, 800);
-}
+ function submitForm(e){
+     var $submit = e.target.querySelector("button");
+     var n = 0;
+     if($submit.textContent.indexOf("LOADING") !== -1){
+         e.preventDefault(); // block multiple submit
+         return;
+     }
+     $submit.setAttribute("value", "LOADING ...");
+     window.setInterval(function(){
+         n += 1;
+         if(n === 1){
+             $submit.innerHTML = "LOADING .&nbsp&nbsp";
+         } else if(n === 2){
+             $submit.innerHTML = "LOADING ..&nbsp";
+         } else if(n === 3){
+             $submit.innerHTML = "LOADING ...";
+             n = 0;
+         }
+     }, 800);
+ }
 </script>
-<div id="cloud_personal" class="modal">
-    <h3>Personal cloud</h3>
+<div id="enterprise" class="modal">
+    <h3>Enterprise</h3>
     <form onsubmit="submitForm(event)" action="https://downloads.filestash.app/compute/form.php" method="post">
-        <input type="hidden" name="type" value="cloud::personal" />
+        <input type="hidden" name="type" value="enterprise" />
         <input type="hidden" name="redirect" value="https://www.filestash.app/ok/" />
-        <input type="email" name="email" placeholder="Your email address" />
-        <input type="phone" name="phone" placeholder="Your phone number" />
-        <textarea name="message" placeholder="what are you trying to achieve?"></textarea>
-        <button>SUBMIT</button>
-    </form>
-</div>
-<div id="cloud_enterprise" class="modal">
-    <h3>Enterprise cloud</h3>
-    <form onsubmit="submitForm(event)" action="https://downloads.filestash.app/compute/form.php" method="post">
-        <input type="hidden" name="type" value="cloud::enterprise" />
-        <input type="hidden" name="redirect" value="https://www.filestash.app/ok/" />
-        <input type="text" name="company" placeholder="Your company name" />
-        <input type="email" name="email" placeholder="Your email address" />
-        <input type="phone" name="phone" placeholder="Your phone number" />
-        <textarea name="message" placeholder="what are you trying to achieve?"></textarea>
-        <button>SUBMIT</button>
-    </form>
-</div>
-
-<div id="selfhosted_personal" class="modal">
-    <h3>Personal selfhosted</h3>
-    <form onsubmit="submitForm(event)" action="https://downloads.filestash.app/compute/form.php" method="post">
-        <input type="hidden" name="type" value="selfhosted::personal" />
-        <input type="hidden" name="redirect" value="https://www.filestash.app/ok/" />
-        <input type="email" name="email" placeholder="Your email address" />
-        <input type="phone" name="phone" placeholder="Your phone number" />
-        <textarea name="message" placeholder="what are you trying to achieve?"></textarea>
-        <button>SUBMIT</button>
-    </form>
-</div>
-<div id="selfhosted_enterprise" class="modal">
-    <h3>Enterprise selfhosted</h3>
-    <form onsubmit="submitForm(event)" action="https://downloads.filestash.app/compute/form.php" method="post">
-        <input type="hidden" name="type" value="selfhosted::enterprise" />
-        <input type="hidden" name="redirect" value="https://www.filestash.app/ok/" />
-        <input type="text" name="company" placeholder="Your company name" />
         <input type="email" name="email" placeholder="Your email address" />
         <input type="phone" name="phone" placeholder="Your phone number" />
         <textarea name="message" placeholder="what are you trying to achieve?"></textarea>
@@ -999,36 +866,81 @@ function submitForm(e){
 
 <script>
  (function(){
-     var promo = window.localStorage.getItem("promo");
-     if(promo === "emacs"){
-         createPromo(
-             document.querySelector(".pricing[data-related='cloud'] .package:nth-of-type(2)"),
-             '25% will go to the <a target="_blank" href="https://www.fsf.org/">free software foundation</a>'
-         );
-     }
-
-     function createPromo($pack, promoHTML){
-         if(!$pack) return;
-         $pack.classList.add("special");
-         var $node = document.createElement("div");
-         $node.classList.add("promo");
-         $node.innerHTML = promoHTML;
-         $pack.appendChild($node);
-     }
-
      if(location.hash === "#support") {
          $('#support_register').modal({fadeDuration: 250});
      }
-     location.hash === "#selfhosted" ? selectPlan("selfhosted") : selectPlan("cloud");
  })()
 </script>
 
 
 
+<h2 class="center">Question & Answers</h2>
+
+<div class="container" id="faq">
+    <h3 data-target="#how-payment-done">How is my payment being processed?</h3>
+    <div class="collapse" id="how-payment-done">
+        We don't handle your credit card information directly and use Stripe to process your payment.
+    </div>
+
+    <h3 data-target="#yearly-option">Do you have monthly and yearly billing options?</h3>
+    <div class="collapse" id="yearly-option">
+        We can arrange that. Send us an email at mickael@kerjean.me and we will get you set
+    </div>
+
+    <h3 data-target="#cancellation">Can I cancel at any time?</h3>
+    <div class="collapse" id="cancellation">
+        Yes. The refund will be calculated on a pro-rata basis
+    </div>
+
+    <h3 data-target="#more-questions">What if I have more questions?</h3>
+    <div class="collapse" id="more-questions">
+        Send us an email at mickael@kerjean.me and we’ll help you out.
+    </div>
+
+</div>
+<script>
+ jQuery("#faq h3").on("click", function(){
+     jQuery("#faq .collapse").hide(100);
+     var $el = jQuery(jQuery(this).attr("data-target"))
+     if($el.is(":hidden")) $el.show(100);
+ });
+</script>
+<style>
+ #faq{
+     padding-left: 15px;
+     padding-right: 15px;
+     max-width: 650px;
+     margin-bottom: 200px;
+ }
+ #faq h3{
+     cursor: pointer;
+     border-top: 1px solid rgba(0,0,0,0.1);
+     padding-top: 20px;
+     margin-top: 20px;
+     user-select: none;
+ }
+ #faq h3:after{
+     content: '+';
+     float: right;
+     font-family: monospace;
+ }
+ @media only screen and (max-width: 550px) {
+     #faq h3:after{ content: ""; }
+ }
+</style>
+
+
+
+
+
+
+
+
 <style>
  .modal{
-     padding: 15px 15px 15px 15px;
+     padding: 40px 35px 35px 35px;
      border-radius: 4px;
+     box-shadow: 1px 1px 10px rgba(255,255,255,0.1);
  }
  .modal a.close-modal{
      top: 10px;
@@ -1038,34 +950,50 @@ function submitForm(e){
  .modal h3{
      text-align: center;
      font-weight: 500;
-     border-bottom: 2px solid;
-     background: var(--secondary);
+     font-size: 1.4rem;
      margin: -15px -15px 20px -15px;
-     color: white;
      padding: 12px 0;
      border-top-left-radius: 4px;
      border-top-right-radius: 4px;
  }
- form input, form textarea {
+ .modal a.close-modal{ display: none; }
+ .modal form input, .modal form textarea {
      display: block;
-     margin: 7px 0;
-     background: var(--bg-color);
-     border: none;
+     margin: 10px 0;
+     border-radius: 3px;
+     border: 2px solid rgba(0,0,0,0.1);
      outline: none;
      padding: 5px 10px;
      min-width: 100%;
      max-width: 100%;
      max-height: 80px;
  }
- form button{
+ .modal form button{
      border: none;
      outline: none;
-     padding: 5px 10px;
+     padding: 7px 0px;
      width: 100%;
      background: var(--primary);
      color: var(--emphasis);
-     font-size: 1em;
+     font-size: 0.9rem;
      margin-top: 5px;
      border-radius: 3px;
  }
 </style>
+
+<style>
+ /* Geometric Shape */
+ .geometric-shape{
+     top: 0;
+     right: 0;
+     bottom: 0;
+     left: 0;
+     position: absolute!important;
+
+     width: 115rem;
+     background: linear-gradient(76.4deg,rgba(233,230,246,.21) 11.23%,rgba(233,230,246,0) 36.25%,rgba(233,230,246,0) 55.2%,#f2f0f8 97.53%);
+     transform: rotate(33deg) translateX(10%) translateY(77%);
+ }
+</style>
+
+{% include footer.html %}

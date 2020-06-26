@@ -15,14 +15,14 @@ form label span{ display: inline-block; width: 145px}
 form label input, form label select{ width: calc(100% - 145px); padding: 2px 5px; color: var(--emphasis); }
 form input[type="submit"]{ margin-top: 20px; width: 100%; }
 
-#splash h1{ font-size: 30px; }
 #splash .hgroup{ margin-top: 0; padding-top: 20px; }
 #splash p.example{ margin-bottom: 0; }
+#splash p.example a{ color: var(--secondary); }
 
 #features .main{ margin-top: 0; }
 .features h2{
-    margin: 0 0 25px 0!important;
-    font-size: 1.5em!important;
+    margin: 0 0 20px 0!important;
+    font-size: 1.55em!important;
     text-align: left!important;
     line-height: 1em!important;
 }
