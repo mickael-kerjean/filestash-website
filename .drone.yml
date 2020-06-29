@@ -14,7 +14,7 @@ steps:
   settings:
     hosts: [ "rick.kerjean.me" ]
     source: _site/*
-    target: /mnt/app-filestash-www/
+    target: /mnt/me-kerjean-pages/projects/filestash/website
     recursive: true
     delete: true
     user:
