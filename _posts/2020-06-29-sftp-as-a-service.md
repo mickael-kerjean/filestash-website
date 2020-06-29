@@ -1,7 +1,9 @@
 ---
-description: SFTP as a service
+title: SFTP As a service
+description: The latest techs for fully managed SFTP services running in the cloud
 layout: post
 permalink: /sftp-as-a-service.html
+language: en
 ---
 
 SFTP might not be the new shiny technology but it's awesome, rock solid and has prooven itself to be a battle tested solution you can rely on. In this post we're exploring how to do SFTP as a service both from [a server](#sftp-server-as-a-service) and [client](#sftp-client) point of view.
