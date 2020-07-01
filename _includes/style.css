@@ -57,34 +57,6 @@ blockquote{
 }
 blockquote p { margin: 0; }
 
-.slant{ position: relative; }
-.slant.down:after{
-    background: inherit;
-    bottom: 0px;
-    content: '';
-    display: block;
-    height: 50%;
-    left: 0;
-    position: absolute;
-    right: 0;
-    transform-origin: 0;
-    z-index: -1;
-    transform: skewY(1deg);
-}
-.slant.up:before{
-    background: inherit;
-    top: -50px;
-    content: '';
-    display: block;
-    height: 50%;
-    left: 0;
-    position: absolute;
-    right: 0;
-    transform: skewY(-1deg);
-    transform-origin: 100%;
-    z-index: -1;
-}
-
 /* MENU */
 #nav {
     background: white;

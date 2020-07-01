@@ -55,7 +55,7 @@ redirect_from:
 <div class="waveshape"></div>
 
 <div id="features" style="padding-bottom:0">
-  <div class="container">
+  <div class="container large">
     <div class="row features main">
 
       <div class="feature">
@@ -137,7 +137,7 @@ redirect_from:
     <br><br><br><br>
   </div>
 
-  <div class="call-to-action slant up">
+  <div class="call-to-action">
     <h2>See our other web client:</h2>
     <a class="btn" href="{% post_url 2019-11-26-ftp-web-client %}">FTP</a>
     <a class="btn" href="{% post_url 2019-11-26-ftp-web-client %}">FTPS</a>

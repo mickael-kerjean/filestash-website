@@ -1,3 +1,17 @@
+#splash-container {
+    background-color: #9AD1ED;
+    background-size: cover;
+}
+#splash-container #splash{ background: inherit; padding-bottom: 10px; }
+#splash-container #nav{ background: inherit; }
+#splash-container #waveshape{
+    background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxNDQwIDMyMCIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPHBhdGggZmlsbD0iI2YyZjNmNSIgZmlsbC1vcGFjaXR5PSIxIiBkPSJNMCwxOTJMNjAsMTgxLjNDMTIwLDE3MSwyNDAsMTQ5LDM2MCwxNjUuM0M0ODAsMTgxLDYwMCwyMzUsNzIwLDI1MC43Qzg0MCwyNjcsOTYwLDI0NSwxMDgwLDIxMy4zQzEyMDAsMTgxLDEzMjAsMTM5LDEzODAsMTE3LjNMMTQ0MCw5NkwxNDQwLDMyMEwxMzgwLDMyMEMxMzIwLDMyMCwxMjAwLDMyMCwxMDgwLDMyMEM5NjAsMzIwLDg0MCwzMjAsNzIwLDMyMEM2MDAsMzIwLDQ4MCwzMjAsMzYwLDMyMEMyNDAsMzIwLDEyMCwzMjAsNjAsMzIwTDAsMzIwWiI+PC9wYXRoPgo8L3N2Zz4K);
+    background-size: 100% 100%;
+    height: 10rem;
+}
+.container.large{ max-width: 1024px; }
+
+
 #splash {
     background: var(--primary);
     color: white;
@@ -142,7 +156,7 @@
 #features .features.main .feature {
     clear: both;
     min-height: 300px;
-    margin-bottom: 50px;
+    margin-bottom: 150px;
 }
 @media (max-width: 768px) {
     #features .feature {
@@ -181,15 +195,28 @@
     width: 400px;
     object-fit: cover;
 }
+@media (max-width: 768px){
+    #features .feature img.fancy{ width: 100%; }
+    #features .features.main .feature { margin-bottom: 50px; }
+}
 img.fancy.hidden-xs{
     margin-top: -60px;
 }
-img.fancy.pull-left { margin-right: 50px; }
-img.fancy.pull-right { margin-left: 50px; }
+img.fancy.pull-left { margin-right: 200px; }
+img.fancy.pull-right { margin-left: 200px; }
+@media (max-width: 1200px){
+    img.fancy.pull-left { margin-right: 130px; }
+    img.fancy.pull-right { margin-left: 130px; }
+}
+@media (max-width: 991px){
+    img.fancy.pull-left { margin-right: 50px; }
+    img.fancy.pull-right { margin-left: 50px; }
+}
 
 #features .call-to-action{
-    padding: 120px 0;
-    background: var(--emphasis);
+    padding: 150px 0;
+    background: var(--dark);
+    background: linear-gradient(var(--dark), #505457);
     text-align: center;
 }
 #features .call-to-action .btn{

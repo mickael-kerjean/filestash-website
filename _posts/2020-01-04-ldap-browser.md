@@ -53,7 +53,7 @@ language: en
 <div class="waveshape"></div>
 
 <div id="features">
-  <div class="container">
+  <div class="container large">
     <div class="row features main">
 
       <div class="feature">
@@ -132,7 +132,7 @@ language: en
     </div>
   </div>
 
-  <div class="call-to-action slant up">
+  <div class="call-to-action">
     <h2>Some other online client tools:</h2>
     <a class="btn" href="{% post_url 2019-11-26-ftp-web-client %}">FTP</a>
     <a class="btn" href="{% post_url 2019-11-21-s3-browser %}">S3</a>

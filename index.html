@@ -4,87 +4,144 @@ head:
   - <link rel="alternate" href="/fr/" hreflang="fr" />
 ---
 
-{% include menu.html context="homepage" %}
-<link rel="stylesheet" href="/css/landing-page.css">
-<div id="splash" class="slant down">
-  <div class="row">
-	<div class="col-sm-12">
-      <div class="iframe-wrapper onlyForDesktop">
-        <iframe id="appframe" frameborder="0" src="https://demo.filestash.app/login?type=webdav&url=https://webdav.filestash.app/" allow="fullscreen;speaker"></iframe>
-        <div class="arrow-top">
-          <i class="arrow top"></i>
-          <i class="arrow top"></i>
-          try me
-          <i class="arrow top"></i>
-          <i class="arrow top"></i>
+<div id="splash-container">
+  {% include menu.html context="homepage" %}
+  <link rel="stylesheet" href="/css/landing-page.css">
+  <div id="splash">
+    <div class="row">
+	  <div class="col-sm-12">
+        <div class="iframe-wrapper onlyForDesktop">
+          <iframe id="appframe" frameborder="0" src="https://demo.filestash.app/login?type=webdav&url=https://webdav.filestash.app/" allow="fullscreen;speaker"></iframe>
+          <div class="arrow-top">
+            <i class="arrow top"></i>
+            <i class="arrow top"></i>
+            try me
+            <i class="arrow top"></i>
+            <i class="arrow top"></i>
+          </div>
         </div>
-      </div>
-	  <div class="hgroup">
-		<h1>Filestash</h1>
-		<h2>
-          turns your <br>
-          <noscript>
-            <a href="{% post_url 2019-11-26-ftp-web-client %}">FTP</a> / WebDav / <a href="{% post_url 2020-04-30-sftp-browser %}">SFTP</a> / <a href="{% post_url 2019-11-21-s3-browser %}">S3</a> / <a href="{% post_url 2019-11-21-s3-browser %}">Minio</a> / Git / Google drive / Dropbox server
-          </noscript>
-          <span id="typing"></span> <br>
-          into this
+	    <div class="hgroup">
+		  <h1>Filestash</h1>
+		  <h2>
+            turns your <br>
+            <noscript>
+              <a href="{% post_url 2019-11-26-ftp-web-client %}">FTP</a> / WebDav / <a href="{% post_url 2020-04-30-sftp-browser %}">SFTP</a> / <a href="{% post_url 2019-11-21-s3-browser %}">S3</a> / <a href="{% post_url 2019-11-21-s3-browser %}">Minio</a> / Git / <a href="{% post_url 2020-01-04-ldap-browser %}">LDAP</a> / Google drive / Dropbox server
+            </noscript>
+            <span id="typing"></span> <br>
+            into this
             <span class="arrow-right onlyForDesktop">
               <i class="arrow right"></i>
               <i class="arrow right"></i>
               <i class="arrow right"></i>
             </span>
-        </h2>
-	  </div>
+          </h2>
+	    </div>
 
-      <div class="screenshot onlyForMobile">
-        <img alt="Filestash screenshot" src="/img/screenshots/viewerpage.png" />
+        <div class="screenshot onlyForMobile">
+          <img alt="Filestash screenshot" src="/img/screenshots/viewerpage.png" />
+        </div>
+
+        <script src="/js/typed.min.js"></script>
+        <script>
+          new Typed('#typing', {
+              strings: [
+                  "rock solid FTP server",
+                  "rock solid SFTP server",
+                  "shiny S3 buckets",
+                  "shiny Minio server",
+                  "awesome Webdav server",
+                  "awesome CardDav/CalDav server",
+                  "Backblaze B2",
+                  "backend systems",
+                  "reliable Git repo",
+                  "reliable mysql server",
+                  "old school LDAP server",
+                  "boring Google Drive",
+                  "boring Dropbox",
+              ],
+              typeSpeed: 50,
+              backSpeed: 30,
+              startDelay: 100,
+              backDelay: 500,
+              smartBackspace: true,
+              loop: true
+          });
+        </script>
+
+        <p class="button">
+          <a class="btn" href="/docs">Start now</a>
+	    </p>
+
       </div>
-
-      <script src="/js/typed.min.js"></script>
-      <script>
-        new Typed('#typing', {
-          strings: [
-            "rock solid FTP server",
-            "rock solid SFTP server",
-            "shiny S3 buckets",
-            "shiny Minio server",
-            "awesome Webdav server",
-            "awesome CardDav/CalDav server",
-            "Backblaze B2",
-            "backend systems",
-            "reliable Git repo",
-            "reliable mysql server",
-            "old school LDAP server",
-            "boring Google Drive",
-            "boring Dropbox",
-        ],
-        typeSpeed: 50,
-        backSpeed: 30,
-        startDelay: 100,
-        backDelay: 500,
-        smartBackspace: true,
-        loop: true
-        });
-      </script>
-
-      <p class="button">
-        <a class="btn" href="/docs">Start now</a>
-	  </p>
-
     </div>
+  </div>
+  <div id="waveshape"></div>
+</div>
+<div id="bring-your-own">
+  <div class="container">
+    <h3>Bring your own backend:</h3>
+    <div class="center backend-list">
+      <strong><a href="{% post_url 2019-11-21-s3-browser %}">S3</a></strong>
+      <strong><a href="{% post_url 2020-04-30-sftp-browser %}">SFTP</a></strong>
+      <strong><a href="{% post_url 2019-11-26-ftp-web-client %}">FTP</a></strong>
+      <strong><a href="{% post_url 2019-11-26-ftp-web-client %}">FTPS</a></strong>
+      <strong><a href="{% post_url 2019-11-21-s3-browser %}">Minio</a></strong>
+      <strong>Backblaze</strong>
+      <strong>GIT</strong>
+      <strong>Github</strong>
+      <strong>Gitlab</strong>
+      <strong>WebDav</strong>
+      <strong><a href="{% post_url 2020-01-04-ldap-browser %}">LDAP</a></strong>
+      <strong>CalDAV</strong>
+      <strong>CardDAV</strong>
+      <strong>Mysql</strong>
+      <strong>Dropbox</strong>
+      <strong>Google Drive</strong>
+      <strong>Gogs</strong>
+      <strong>Gitea</strong>
+    </div>
+    <style>
+      #bring-your-own {
+          background: var(--bg-color);
+          border-bottom: 1px solid rgba(0,0,0,0.05);
+          padding: 50px  0 90px 0;
+      }
+      #bring-your-own {
+          opacity: 0.8;
+          text-align: center;
+          color: var(--dark);
+          font-size: 1.2rem;
+          font-weight: bold;
+      }
+      #bring-your-own .backend-list strong{
+          text-shadow: 1px 0px 5px rgba(0,0,0,0.1);
+          display: inline-block;
+          padding: 0 10px;
+          font-size: 1.1rem;
+          min-width: 60px;
+          font-weight: bold;
+          opacity: 0.8;
+          letter-spacing: 0.05rem;
+          color: var(--dark);
+          opacity: 0.8;
+      }
+      #bring-your-own .backend-list strong a {
+          color: inherit;
+      }
+    </style>
   </div>
 </div>
 
 <h2 id="introduce-second-heading">An awesome web-based file manager to:</h2>
 
 <div id="features">
-    <div class="container">
+    <div class="container large">
         <div class="row features main">
             <div class="feature">
                 <img alt="screenshot of Filestash when uploading files/folders" class="lazy fancy pull-right hidden-xs" data-src="/img/screenshots/feature1.png" />
                 <h3>Manage your data online</h3>
                 <p>
-                    Filestash lets you easily manage your data regardless of where it is store: <a href="{% post_url 2019-11-26-ftp-web-client %}">FTP</a> / WebDav / <a href="{% post_url 2020-04-30-sftp-browser %}">SFTP</a> / Git / <a href="{% post_url 2019-11-21-s3-browser %}">S3</a> / <a href="{% post_url 2019-11-21-s3-browser %}">Minio</a> / Dropbox / Google Drive
+                    Filestash lets you access and manage your data in a simple way regardless of where tat data is stored
                 </p>
                 <img alt="screenshot of Filestash when uploading files/folders" class="lazy fancy visible-xs" data-src="/img/screenshots/feature1.png" />
             </div>
@@ -136,9 +193,9 @@ head:
         </div>
     </div>
 
-    <div class="call-to-action slant down up">
-        <h2> Let's try now? </h2>
-        <a class="btn" href="/docs">GETTING STARTED</a>
+    <div class="call-to-action">
+        <h2>Ready to get started?</h2>
+        <a class="btn" href="/docs">TRY NOW</a>
         <a class="btn" href="https://demo.filestash.app">DEMO</a>
     </div>
 
@@ -220,7 +277,7 @@ head:
                 <p>Automagically configure itself to be publicly accessible from a public URL</p>
             </div>
             <div class="col-sm-4 feature center">
-		        <h3>Simple but powerfull</h3>
+		        <h3>Simple & powerfull</h3>
 		        <p>Our only mission: "Filestash let you manage your data"</p>
 	        </div>
             <div class="col-sm-4 feature center">
