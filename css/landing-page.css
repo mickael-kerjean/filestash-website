@@ -163,15 +163,8 @@
         margin-left: 4%;
         margin-right: 4%;
     }
-    #features .feature h3 {
-        margin-bottom: 5px;
-    }
-    #features .feature h2 {
-        margin-bottom: 5px!important;
-    }
-
     #features .feature .visible-xs {
-        margin-top: 10px;
+        margin-top: 15px;
     }
 }
 #features .feature p {
@@ -197,7 +190,7 @@
 }
 @media (max-width: 768px){
     #features .feature img.fancy{ width: 100%; }
-    #features .features.main .feature { margin-bottom: 50px; }
+    #features .features.main .feature { margin-bottom: 30px; }
 }
 img.fancy.hidden-xs{
     margin-top: -60px;
