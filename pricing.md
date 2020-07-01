@@ -641,6 +641,13 @@ layout: default
                 <td><i class="check"></i></td>
                 <td><i class="check"></i></td>
             </tr>
+            <tr>
+                <td>Branding</td>
+                <td data-related="cloud"><i class="close"></i></td>
+                <td data-related="selfhosted"><i class="close"></i></td>
+                <td><i class="close"></i></td>
+                <td><i class="check"></i></td>
+            </tr>
 
             <tr class="header">
                 <td colspan="5">
@@ -682,6 +689,13 @@ layout: default
                 <td><i class="check"></i></td>
                 <td><i class="check"></i></td>
             </tr>
+            <tr>
+                <td>Cluster</td>
+                <td data-related="cloud"><i class="close"></i></td>
+                <td data-related="selfhosted"><i class="close"></i></td>
+                <td><i class="close"></i></td>
+                <td><i class="check"></i></td>
+            </tr>
 
             <tr class="header">
                 <td colspan="5">
@@ -689,7 +703,7 @@ layout: default
                 </td>
             </tr>
             <tr>
-                <td>Setup call</td>
+                <td>Setup advices</td>
                 <td data-related="cloud"><i class="close"></i></td>
                 <td data-related="selfhosted"><i class="close"></i></td>
                 <td><i class="close"></i></td>
@@ -738,6 +752,13 @@ layout: default
                 <td><i class="check"></i></td>
             </tr>
             <tr>
+                <td>Eearly Security patches</td>
+                <td data-related="cloud"><i class="check"></i></td>
+                <td data-related="selfhosted"><i class="close"></i></td>
+                <td><i class="check"></i></td>
+                <td><i class="check"></i></td>
+            </tr>
+            <tr>
                 <td>Training</td>
                 <td data-related="cloud"><i class="close"></i></td>
                 <td data-related="selfhosted"><i class="close"></i></td>
@@ -746,6 +767,13 @@ layout: default
             </tr>
             <tr>
                 <td>Consulting</td>
+                <td data-related="cloud"><i class="close"></i></td>
+                <td data-related="selfhosted"><i class="close"></i></td>
+                <td><i class="close"></i></td>
+                <td><i class="check"></i></td>
+            </tr>
+            <tr>
+                <td>SLA</td>
                 <td data-related="cloud"><i class="close"></i></td>
                 <td data-related="selfhosted"><i class="close"></i></td>
                 <td><i class="close"></i></td>
