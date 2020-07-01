@@ -111,9 +111,8 @@ layout: default
                         </div>
                     </h4>
                     <div class="price">
-                        <div data-show="cloud">
-                            6$ / month
-                        </div>
+                        <div data-related="cloud"> 6$ / month </div>
+                        <div data-related="selfhosted">FREE</div>
                     </div>
                 </div>
                 <ul class="features">
