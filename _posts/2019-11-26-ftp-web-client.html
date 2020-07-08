@@ -8,7 +8,6 @@ redirect_from:
 language: en
 head:
   - <link rel="alternate" href="/fr/client-web-ftp-en-ligne.html" hreflang="fr" />
-
 ---
 
 <link rel="stylesheet" href="/css/landing-page.css">
@@ -67,7 +66,7 @@ head:
 <div id="features">
   <div class="container large">
     <div class="row features main">
-      
+
       <div class="feature">
         <img alt="screenshot of Filestash when uploading" class="lazy fancy pull-left hidden-xs" data-src="/img/screenshots/feature1.png" style="margin-top: -30px;" />
         <h2>Explore and Manage your FTP server</h2>
@@ -176,5 +175,14 @@ head:
   </div>
 
 </div>
+
+<script>
+  // deep links to login in some anonymous server
+  (function(){
+      if(/#connect=/.test(location.hash) == false) return;
+      document.querySelector("form input[name='hostname']").value = location.hash.replace("#connect=", "");
+      document.querySelector("form input[type='submit']").click()
+  })()
+</script>
 
 {% include support.html %}
