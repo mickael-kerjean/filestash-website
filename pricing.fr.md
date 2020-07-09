@@ -235,7 +235,7 @@ language: fr
                 <li>You perform the installation & maintenance</li>
             </ul>
             <div class="amount">$0</div>
-            <a class="action" href="/docs">START NOW</a>
+            <a class="action" href="{% link _docs/index.fr.md %}">START NOW</a>
         </div>
         <div class="package">
             <h2>Personal</h2>

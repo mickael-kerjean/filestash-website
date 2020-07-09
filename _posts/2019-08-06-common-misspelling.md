@@ -11,5 +11,5 @@ Filestash is a contraction of "Files" and "stash" and is often misspelled **stas
 
 You can find:
 1. the code on various platform like [Github](https://github.com/mickael-kerjean/filestash), our own [selfhosted git repository](http://git.kerjean.me)
-2. the [documentation](https://www.filestash.app/docs) on this very same site
-3. the [faq](https://www.filestash.app/docs/faq/) on this very same site
+2. the [documentation]({% link _docs/index.md %}) on this very same site
+3. the [faq]({% link _docs/faq.md %}) on this very same site
