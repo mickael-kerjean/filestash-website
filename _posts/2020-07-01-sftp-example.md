@@ -52,7 +52,7 @@ The best way to get started with SFTP is to either:
         <img src="https://mickael.kerjean.me/assets/img/arrow_bottom.png"/>
     </div>
     <div class="related_content">
-        <a href="{% post_url 2020-04-30-sftp-browser %}"><h3 class="no-anchor">SFTP Client</h3></a><a href="{% post_url 2020-06-29-sftp-as-a-service %}"><h3 class="no-anchor">SFTP as a service</h3></a>
+        <a href="{% post_url 2020-04-30-sftp-browser %}"><h3 class="no-anchor">SFTP Browser</h3></a><a href="{% post_url 2020-06-29-sftp-as-a-service %}"><h3 class="no-anchor">SFTP as a service</h3></a>
     </div>
 </div>
 
