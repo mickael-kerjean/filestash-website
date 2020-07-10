@@ -25,6 +25,7 @@
 #splash h1, #splash h2{
     display:inline;
     font-size:1.70rem;
+    line-height: 2rem;
     font-weight: normal;
     color: inherit;
     text-shadow: 0 0 2px var(--bg-color);
