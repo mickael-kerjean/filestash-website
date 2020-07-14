@@ -1,11 +1,12 @@
 ---
-title: A web client to do file transfer over SSH
-description: A web interface to access your SFTP server from your browser
+title: SFTP Browser | An online SFTP client tool
+description: A web interface to access and manage your SFTP server from your browser
 layout: landing
-permalink: /ssh-file-transfer.html
+permalink: /sftp-browser.html
 language: en
 redirect_from:
   - /online-sftp-browser.html
+  - /ssh-file-transfer.html
 ---
 
 <link rel="stylesheet" href="/css/landing-page.css">
@@ -44,7 +45,7 @@ redirect_from:
       </script>
 
       <p class="example">
-        Examples of free online SFTP server for testing: <br>
+        <a href="{% post_url 2020-07-01-sftp-example %}">Examples</a> of free <a href="{% post_url 2020-07-01-sftp-example %}">online SFTP server</a> for testing: <br>
         <a onclick="clickPublicSFTPHandler(event, {hostname: 'test.rebex.net', username: 'demo', password: 'password', port: 22});" href="https://test.rebex.net/">test.rebex.net</a>
         <a onclick="clickPublicSFTPHandler(event, {hostname: 'demo.wftpserver.com', username: 'demo-user', password: 'demo-user', port: 2222});" href="http://demo.wftpserver.com/">demo.wftpserver.com</a>
       </p>
