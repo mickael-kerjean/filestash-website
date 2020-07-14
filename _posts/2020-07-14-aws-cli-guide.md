@@ -1,6 +1,6 @@
 ---
 title: A simple guide to the AWS S3 CLI
-description: all the useful command you need to know while using the aws s3 cli from listing files with ls to removal, download, move, copy, ...
+description: Find your way on the AWS S3 CLI - list files with ls, removal with rm, copy, download, move ...
 layout: post
 permalink: /aws-s3-cli.html
 language: en
