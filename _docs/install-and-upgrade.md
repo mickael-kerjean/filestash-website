@@ -6,6 +6,22 @@ order: 2
 
 {% include toc.md %}
 
+<div class="banner">
+    Want help? Receive support from the creator of Filestash for a $10 flat fee.
+    <a href="#" onClick="document.querySelector('#intergramRoot > div > div').click()">
+        Get started now
+    </a>
+</div>
+<style>
+ .banner {
+     background: var(--emphasis-primary);
+     padding: 10px 20px;
+     border-radius: 3px;
+     box-shadow: 1px 1px 10px rgba(0,0,0,0.1);
+     border: 2px dashed var(--primary);
+ }
+</style>
+
 ## Requirement
 
 The official installation method requires a Linux server with the following tools installed:
@@ -13,9 +29,28 @@ The official installation method requires a Linux server with the following tool
 - [docker-compose](https://docs.docker.com/compose/install/){:rel="nofollow"}
 - curl (very likely already installed by your Linux distribution)
 
-Hardware requirement is minimal: 64MB of RAM and 1 core will give you plenty of comfort. If you're expecting a heavier load, we have some numbers [there](/2019/05/06/benchmark/)
+<div class="terminal">
+<span class="prompt">~/$ </span>docker -v<br>
+<span class="stdout">
+Docker version 19.03.8, build afacb8b7f0<br>
+</span>
+<span class="prompt">~/$ </span>docker-compose -v<br>
+<span class="stdout">
+docker-compose version 1.24.0, build 0aa59064<br>
+</span>
+<span class="prompt">~/$ </span>curl --version<br>
+<span class="stdout">
+curl 7.70.0 (x86_64-pc-linux-gnu) ...<br>
+Release-Date: 2020-04-29<br>
+Protocols: ...<br>
+Features: ...<br>
+</span>
+</div>
+
+Hardware requirement is minimal: 64MB of RAM and 1 core will give you plenty of comfort. If you're expecting some heavy load, check out our [benchmark](/2019/05/06/benchmark/)
 
 ## Installation
+
 The installation can be done in 3 bash commands:
 <div class="terminal">
 <span class="prompt">~/$ </span>mkdir filestash && cd filestash<br>
@@ -43,7 +78,7 @@ Once this is done, you will get to the last step of the configuration process, w
 <img src="https://raw.githubusercontent.com/mickael-kerjean/filestash_images/master/screenshots/setup_stage2.png" alt="stage 2 of the setup- screenshot" height="320px"/>
 If you're not too sure about Linux servers and self-hosting, you will want to select `yes`. This will expose your instance to the internet via a Filestash URL like https://user-foo.filestash.app.
 
-Otherwise, just skip this screen and set it up like any other self-hosted app. Further information about this is available [there](#note-on-the-proxy-feature).
+Otherwise, just skip this screen and set it up like any other self-hosted app. Further information about this is available [there](#note-on-the-tunnel-feature).
 
 Once this is done, you should be ready to go
 
@@ -171,7 +206,7 @@ At the next start, the container will use the files saved on the host and your c
 
 Keep in mind that updates may change the structure of the directory and therefore may require you to modify the contents of the mount by hand, although the goal is to automatically migrate via scripts in this case.
 
-## Note on the proxy feature
+## Note on the tunnel feature
 
 **How does this work?** the proxy works by establishing a bidirectional tunnel between your server and our public proxy server. Incoming traffic to the filestash domain will use that tunnel.
 

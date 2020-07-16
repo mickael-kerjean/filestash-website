@@ -7,8 +7,6 @@ head:
   - <link rel="alternate" href="/fr/docs/" hreflang="fr" />
 ---
 
-<style>.banner{ display: none; }</style>
-
 To use Filestash, you can either:
 1. Get your own instance running in the cloud in less than 60 seconds. Start your free trial [here](https://deploy.filestash.app/?type=personal::cloud){:target="_blank"}
 2. Self-host the application on your own server and manage everything yourself: [see the documentation](/docs/install-and-upgrade/)
