@@ -132,11 +132,83 @@ redirect_from:
         </p>
         <img class="lazy fancy visible-xs" data-src="/img/posts/2019-08-20-ftp-web-client.html.6.png" />
       </div>
-
     </div>
-
-    <br><br><br><br>
   </div>
+
+  <div class="container" id="faq">
+      <h2 style="margin-top:0;">Frequently Asked Questions</h2>
+      <h3>What is SFTP?</h3>
+      <p>
+          SFTP stands for <strong>SSH File Transfer Protocol</strong>. It is a protocol for securely transfer file over a network between a client that can use that protocol and a server that implements the protocol.
+      </p>
+
+      <h3>How SFTP works?</h3>
+      <p>
+          The particularity of SFTP compared to <a href="{% post_url 2019-11-26-ftp-web-client %}">FTP and FTPS</a> is how it uses SSH as a transport mechanism to securely transfer files.
+      </p>
+
+      <h3>How to use SFTP?</h3>
+      <p>
+          To use SFTP, you need both a server which implement the SFTP protocol like <a href="https://www.openssh.com/">openssh</a> and a client to communicate with that server.
+      </p>
+
+      <h3>How to access an SFTP server from a browser?</h3>
+      <p>
+          Filestash has a web interface that make it easy to access and transfer your files.
+      </p>
+
+      <script type="application/ld+json">
+       {
+
+           "@context": "https://schema.org",
+           "@type": "FAQPage",
+           "mainEntity": [
+               {
+                   "@type": "Question",
+                   "name": "What is SFTP?",
+                   "acceptedAnswer": {
+                       "@type": "Answer",
+                       "text": "SFTP stands for SSH File Transfer Protocol. It is a protocol for securely transfer file over a network between a client that can use that protocol and a server that implements the protocol."
+                   }
+               },
+               {
+                   "@type": "Question",
+                   "name": "How SFTP works?",
+                   "acceptedAnswer": {
+                       "@type": "Answer",
+                       "text": "The particularity of SFTP compared to FTP and FTPS is how it uses SSH as a transport mechanism to securely transfer files."
+                   }
+               },
+               {
+                   "@type": "Question",
+                   "name": "How to use SFTP?",
+                   "acceptedAnswer": {
+                       "@type": "Answer",
+                       "text": "To use SFTP, you need both a server which implement the SFTP protocol like openssh and a client to communicate with that server."
+                   }
+               },
+               {
+                   "@type": "Question",
+                   "name": "How to access an SFTP server from a browser?",
+                   "acceptedAnswer": {
+                       "@type": "Answer",
+                       "text": "Filestash has a web interface that make it easy to access and transfer your files."
+                   }
+               }
+           ]
+       }
+      </script>
+
+
+  </div>
+  <script>
+   jQuery("#faq h3").on("click", function(){
+       jQuery("#faq .collapse").hide(100);
+       var $el = jQuery(jQuery(this).attr("data-target"))
+       if($el.is(":hidden")) $el.show(100);
+   });
+  </script>
+  <br><br><br><br><br>
 
   <div class="call-to-action">
     <h2>See our other web client:</h2>
@@ -147,8 +219,6 @@ redirect_from:
     <a class="btn" href="https://demo.filestash.app/login">Webdav</a>
     <a class="btn" href="https://demo.filestash.app/login">GIT</a>
   </div>
-
-
 </div>
 
 {% include support.html %}
