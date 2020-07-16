@@ -10,7 +10,7 @@ head:
 <style>.banner{ display: none; }</style>
 
 To use Filestash, you can either:
-1. Get your own instance running in the cloud in under 60 seconds. Register to get a free trial [there](https://deploy.filestash.app/?type=personal::cloud){:target="_blank"}
+1. Get your own instance running in the cloud in less than 60 seconds. Start your free trial [here](https://deploy.filestash.app/?type=personal::cloud){:target="_blank"}
 2. Self-host the application on your own server and manage everything yourself: [see the documentation](/docs/install-and-upgrade/)
 3. Play around with the public demo:
 
@@ -18,11 +18,11 @@ To use Filestash, you can either:
 
 <div class="related">
     <div class="title">
-        Related Pages <br>
+        Related Tools <br>
         <img src="https://mickael.kerjean.me/assets/img/arrow_bottom.png"/>
     </div>
     <div class="related_content">
-        <a href="{% post_url 2019-11-26-ftp-web-client %}"><h3 class="no-anchor">FTP Client</h3></a><a href="{% post_url 2019-11-21-s3-browser %}"><h3 class="no-anchor">S3 Client</h3></a><a href="{% post_url 2020-01-04-ldap-browser %}"><h3 class="no-anchor">LDAP Browser</h3></a>
+        <a href="{% post_url 2019-11-26-ftp-web-client %}"><h3 class="no-anchor">FTP Browser</h3></a><a href="{% post_url 2019-11-21-s3-browser %}"><h3 class="no-anchor">S3 Browser</h3></a><a href="{% post_url 2020-01-04-ldap-browser %}"><h3 class="no-anchor">LDAP Browser</h3></a>
     </div>
 </div>
 
