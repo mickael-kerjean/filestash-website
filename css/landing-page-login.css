@@ -44,3 +44,7 @@ form select{ background: white; }
 #features .container a {
     border-bottom: 1px dashed;
 }
+
+/* FAQ */
+#faq h3{ margin-top: 30px; margin-bottom: 7px; }
+#faq p{ margin-top: 8px; }

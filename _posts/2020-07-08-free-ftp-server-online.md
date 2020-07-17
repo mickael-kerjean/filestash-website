@@ -62,7 +62,6 @@ Filezilla is the historic FTP client used by almost everyone but isn't the only 
     </div>
     <div class="related_content">
         <a href="{% post_url 2019-11-26-ftp-web-client %}"><h3 class="no-anchor">Online FTP Client</h3></a><a href="{% post_url 2020-07-06-ftp-from-the-command-line %}"><h3 class="no-anchor">FTP Commands</h3></a>
-        <a href="{% post_url 2020-02-11-demystifying-ftp %}"><h3 class="no-anchor">FTP FAQ</h3></a>
     </div>
 </div>
 

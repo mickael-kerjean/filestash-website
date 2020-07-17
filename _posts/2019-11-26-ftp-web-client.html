@@ -5,6 +5,7 @@ layout: landing
 permalink: /online-ftp-client.html
 redirect_from:
   - /ftp-client.html
+  - /2020/02/11/demystifying-ftp/
 language: en
 head:
   - <link rel="alternate" href="/fr/client-web-ftp-en-ligne.html" hreflang="fr" />
@@ -57,7 +58,7 @@ head:
 <div class="waveshape"></div>
 
 
-<div id="features">
+<div id="features" style="padding-bottom:0;">
   <div class="container large">
     <div class="row features main">
 
@@ -149,8 +150,214 @@ head:
     <p>
       Traditional FTP clients such as <a href="https://filezilla-project.org/">Filezilla FTP</a> or <a href="https://winscp.net/eng/index.php">WinSCP</a> are great for sysadmin, but having access to all the feature from the FTP protocols makes it hard to use for everyone else. The value proposition of Filestash is to make FTP <strong>easy to use</strong> for the <strong>end-users</strong>, not sys admins, bringing collaboration features to make FTP a modern replacement to <a href="https://www.theguardian.com/technology/2014/jul/17/edward-snowden-dropbox-privacy-spideroak">Dropbox that respect your privacy</a>
     </p>
-    <br><br><br><br><br><br><br><br><br><br>
+    <br><br><br><br>
   </div>
+
+  <div class="container" id="faq">
+    <h2 style="margin-top:0;">Frequently Asked Questions</h2>
+    <h3>What does FTP stand for?</h3>
+    <p>
+      FTP stands for "File Transfer Protocol"
+    </p>
+    <h3>What is the FTP Protocol?</h3>
+    <p>
+      FTP is a protocol that defines how two machines (known as the client and the server) can communicate over a network to transfer files. It has been defined in many different <a href="https://en.wikipedia.org/wiki/File_Transfer_Protocol#History_of_FTP_servers">RFCs</a>
+    </p>
+    <h3>What is FTP used for?</h3>
+    <p>
+      FTP is used to transfer files over a network
+    </p>
+    <h3>What is a FTP server?</h3>
+    <p>
+      An FTP server is a server software that implements the FTP protocol (example: <a href="https://www.pureftpd.org/project/pure-ftpd/">PureFTPd</a>, <a href="http://bftpd.sourceforge.net/">bftpd</a>, <a href="http://proftpd.org/">proFTPd</a>, <a href="https://filezilla-project.org/download.php?type=server">Filezilla server</a>, ...). It is used to enable the sharing of files between different parties over a network.
+    </p>
+    <h3>What is a FTP client?</h3>
+    <p>
+      An FTP client is a software that can be used to access an FTP server. Example: <a href="https://filezilla-project.org/">Filezilla FTP</a>, <a href="{% post_url 2019-11-26-ftp-web-client %}">Filestash</a>, <a href="https://cyberduck.io/">Cyberduck</a>, ...
+    </p>
+    <h3>Who invented FTP?</h3>
+    <p>
+      FTP was invented by <a href="https://en.wikipedia.org/wiki/Abhay_Bhushan">Abhay Bhushan</a> while he was a student at MIT.
+    </p>
+    <h3>When was FTP invented?</h3>
+    <p>
+      The <a href="https://tools.ietf.org/html/rfc114">original specification of FTP</a> was published the 16 April 1971 and was revisited several times in the 1980s, 1990s and 2000s.
+    </p>
+    <h3>What does FTP do?</h3>
+    <p>
+      FTP is a means by which two machines can transfer files over a network.
+    </p>
+    <h3>Is FTP dead?</h3>
+    <p>
+      No, FTP is alive and well. If we account only for the visible side of the iceberg, there are about as many FTP servers exposed to the internet as the entire population of Switzerland.
+    </p>
+    <h3>Is FTP unsecure?</h3>
+    <p>
+      While it is true that FTP wasn't initially created with security in mind, the protocol got refined in 2005 to support TLS with <a href="https://tools.ietf.org/html/rfc4217">RFC4217</a>
+    </p>
+    <h3>Is FTP outdated?</h3>
+    <p>
+      Being invented <a href="https://en.wikipedia.org/wiki/File_Transfer_Protocol">18 years before Time Berners Lee invented HTTP</a>, FTP has passed the test of time. In 2020, there's still millions of FTP servers exposed to the internet and all popular FTP servers are still being actively maintained
+    </p>
+    <h3>Is FTP bulky?</h3>
+    <p>
+      No. In fact, FTP was created at a time where nobody could afford the hardware to run anything bulky.
+    </p>
+    <h3>Is FTP hard to use?</h3>
+    <p>
+      Not necessarily. FTP is a protocol, not an end-user application. On the many software available for FTP, some are harder to use than other ones. <a href="{% post_url 2019-11-26-ftp-web-client %}">Filestash</a> is quite easy to use
+    </p>
+    <h3>Which FTP server to choose?</h3>
+    <p>
+      Out of the millions of FTP server exposed to the internet, the most popular server software are:
+      <ol>
+        <li><a href="https://www.pureftpd.org/project/pure-ftpd/">PureFTPd</a> with 26% of market share</li>
+        <li><a href="http://bftpd.sourceforge.net/">Bftpd</a> with 9% of market share</li>
+        <li><a href="https://www.microsoft.com/en-us/download/details.aspx?id=14045">Microsoft FTPD</a> with 9% of market share</li>
+        <li><a href="http://proftpd.org/">proFTPd</a> with 7% of market share</li>
+      </ol>
+    </p>
+    <h3>Which FTP client to use?</h3>
+    <p>
+      FTP clients are available in 2 flavors:
+      <ol>
+        <li> desktop application: <a href="https://filezilla-project.org/">Filezilla FTP</a>, <a href="https://cyberduck.io/">Cyberduck</a>, ...</li>
+        <li>web application: <a href="#splash">Filestash</a>, ...</li>
+      </ol>
+    </p>
+    <script type="application/ld+json">
+     {
+
+         "@context": "https://schema.org",
+         "@type": "FAQPage",
+         "mainEntity": [
+             {
+                 "@type": "Question",
+                 "name": "What does FTP stand for?",
+                 "acceptedAnswer": {
+                     "@type": "Answer",
+                     "text": "FTP stands for \"File Transfer Protocol\""
+                 }
+             },
+             {
+                 "@type": "Question",
+                 "name": "What is the FTP Protocol?",
+                 "acceptedAnswer": {
+                     "@type": "Answer",
+                     "text": "FTP is a protocol that defines how two machines (known as the client and the server) can communicate over a network to transfer files. It has been defined in many different RFCs"
+                 }
+             },
+             {
+                 "@type": "Question",
+                 "name": "What is FTP used for?",
+                 "acceptedAnswer": {
+                     "@type": "Answer",
+                     "text": "FTP is used to transfer files over a network"
+                 }
+             },
+             {
+                 "@type": "Question",
+                 "name": "What is a FTP server?",
+                 "acceptedAnswer": {
+                     "@type": "Answer",
+                     "text": "An FTP server is a server software that implements the FTP protocol (example: PureFTPd, bftpd, proFTPd, Filezilla server, ...). It is used to enable the sharing of files between different parties over a network."
+                 }
+             },
+             {
+                 "@type": "Question",
+                 "name": "What is a FTP client?",
+                 "acceptedAnswer": {
+                     "@type": "Answer",
+                     "text": "An FTP client is a software that can be used to access an FTP server. Example: Filezilla FTP, Filestash, Cyberduck, ..."
+                 }
+             },
+             {
+                 "@type": "Question",
+                 "name": "Who invented FTP?",
+                 "acceptedAnswer": {
+                     "@type": "Answer",
+                     "text": "FTP was invented by Abhay Bhushan while he was a student at MIT."
+                 }
+             },
+             {
+                 "@type": "Question",
+                 "name": "When was FTP invented?",
+                 "acceptedAnswer": {
+                     "@type": "Answer",
+                     "text": "The original specification of FTP was published the 16 April 1971 and was revisited several times in the 1980s, 1990s and 2000s."
+                 }
+             },
+             {
+                 "@type": "Question",
+                 "name": "What does FTP do?",
+                 "acceptedAnswer": {
+                     "@type": "Answer",
+                     "text": "FTP is a means by which two machines can transfer files over a network."
+                 }
+             },
+             {
+                 "@type": "Question",
+                 "name": "Is FTP dead?",
+                 "acceptedAnswer": {
+                     "@type": "Answer",
+                     "text": "No, FTP is alive and well. If we account only for the visible side of the iceberg, there are about as many FTP servers exposed to the internet as the entire population of Switzerland."
+                 }
+             },
+             {
+                 "@type": "Question",
+                 "name": "Is FTP unsecure?",
+                 "acceptedAnswer": {
+                     "@type": "Answer",
+                     "text": "While it is true that FTP wasn't initially created with security in mind, the protocol got refined in 2005 to support TLS with RFC4217"
+                 }
+             },
+             {
+                 "@type": "Question",
+                 "name": "Is FTP outdated?",
+                 "acceptedAnswer": {
+                     "@type": "Answer",
+                     "text": "Being invented 18 years before Time Berners Lee invented HTTP, FTP has passed the test of time. In 2020, there's still millions of FTP servers exposed to the internet and all popular FTP servers are still being actively maintained"
+                 }
+             },
+             {
+                 "@type": "Question",
+                 "name": "Is FTP bulky?",
+                 "acceptedAnswer": {
+                     "@type": "Answer",
+                     "text": "No. In fact, FTP was created at a time where nobody could afford the hardware to run anything bulky."
+                 }
+             },
+             {
+                 "@type": "Question",
+                 "name": "Is FTP hard to use?",
+                 "acceptedAnswer": {
+                     "@type": "Answer",
+                     "text": "Not necessarily. FTP is a protocol, not an end-user application. On the many software available for FTP, some are harder to use than other ones. Filestash is quite easy to use"
+                 }
+             },
+             {
+                 "@type": "Question",
+                 "name": "Which FTP server to choose?",
+                 "acceptedAnswer": {
+                     "@type": "Answer",
+                     "text": "Out of the millions of FTP server exposed to the internet, the most popular server software are PureFTPd (26% of market share), Bftpd (9% of market share), Microsoft FTPD (9% of market share) and proFTPd (7% of market share)."
+                 }
+             },
+             {
+                 "@type": "Question",
+                 "name": "Which FTP client to use?",
+                 "acceptedAnswer": {
+                     "@type": "Answer",
+                     "text": "FTP clients are available in 2 flavors, desktop applications like Filezilla FTP and Cyberduck and web application like Filestash"
+                 }
+             }
+         ]
+     }
+    </script>
+
+  </div>
+
+  <br><br><br><br><br><br>
 
   <div class="call-to-action">
     <h2>We have some more online clients:</h2>
@@ -159,13 +366,6 @@ head:
     <a class="btn" href="{% post_url 2020-04-30-sftp-browser %}">SFTP</a>
     <a class="btn" href="https://demo.filestash.app/login">Webdav</a>
     <a class="btn" href="https://demo.filestash.app/login">GIT</a>
-  </div>
-
-
-  <div class="container">
-    <p style="margin-top: 100px;">
-      We hope you find Filestash as cool as we do. If you need help or want to chat, you can find us on IRC on Freenode at <a href="https://support.filestash.app/">#filestash</a>
-    </p>
   </div>
 
 </div>
