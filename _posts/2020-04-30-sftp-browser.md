@@ -61,9 +61,9 @@ redirect_from:
 
       <div class="feature">
         <img alt="screenshot of Filestash when uploading" class="lazy fancy pull-right hidden-xs" data-src="/img/screenshots/feature1.png" style="margin-top: -30px;" />
-        <h2>Transfer files over SSH</h2>
+        <h2>SSH File Browser and Explorer</h2>
         <p>
-          Our web client makes it easy to copy files and folders both from local to remote and from remote to local. Under the hood it uses the SSH File Transfer Protocol also known as SFTP
+          Our <strong>web SFTP</strong> client makes it easy to copy files and folders both from local to remote and from remote to local. Under the hood it uses the <strong>SSH File Transfer Protocol</strong> also known as SFTP
         </p>
         <img alt="screenshot of Filestash when uploading" class="lazy fancy visible-xs" data-src="/img/screenshots/feature1.png" />
       </div>
