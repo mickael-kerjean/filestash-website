@@ -9,7 +9,7 @@ permalink: /fr/docs/
 <style>.banner{ display: none; }</style>
 
 Pour utiliser Filestash, vous pouvez soit:
-1. Faire fonctionner votre propre instance dans le cloud en moins de 60 secondes. Vous pouvez bénéficier d'un essai gratuit en cliquant [ici](https://deploy.filestash.app/?type=personal::cloud){:target="_blank"}
+1. Faire fonctionner votre propre instance dans le cloud en moins de 60 secondes. Vous pouvez bénéficier d'un essai gratuit en cliquant [ici](https://deploy.filestash.app/?type=unknown::cloud){:target="_blank"}
 2. Héberger l'application sur votre propre serveur et gérer tout vous-même. Cette procédure est décrite dans la [documentation](/docs/install-and-upgrade/) (en anglais)
 3. Tester Filestash via l'instance publique de démonstration :
 
