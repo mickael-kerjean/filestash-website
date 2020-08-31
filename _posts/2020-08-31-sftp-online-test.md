@@ -1,8 +1,8 @@
 ---
-title: FTP Test Tool
-description: Test your FTP server with our online testing tool
+title: Online SFTP testing Tool
+description: A free tool to test your SFTP server online
 layout: landing
-permalink: /ftp-test.html
+permalink: /sftp-test.html
 language: en
 ---
 
@@ -16,10 +16,10 @@ language: en
   <div class="row">
     <div class="col-sm-12">
       <div class="hgroup">
-        <h1>FTP Test Tool</h1>
+        <h1>SFTP Testing Tool</h1>
         <p class="container">
-          Test your FTP server with this online testing tool <br>
-          Enter your server IP or domain and our test tool will tell you everything it finds about your FTP server
+          Test your SFTP server from this testing tool <br>
+          Enter your server IP or domain and our test tool will tell you everything it finds about your SFTP server
         </p>
       </div>
 
@@ -30,18 +30,16 @@ language: en
       </form>
 
       <script>
-        function clickPublicFTPHandler(e){
+        function clickPublicSFTPHandler(e){
             e.preventDefault();
-            document.querySelector("form input[name='domain']").value = e.target.text;
+            document.querySelector("form input[name='domain']").value = e.target.text.replace(/^sftp:\/\//, "");
             document.querySelector("form").submit()
         }
       </script>
       <p class="example center">
         See how your server stack up against those ones: <br>
-        <a rel="nofollow noopener" onclick="clickPublicFTPHandler(event);" href="ftp://ftp.gnu.org/">ftp.gnu.org</a>
-        <a rel="nofollow noopener" onclick="clickPublicFTPHandler(event);" href="ftp://ftp.pureftpd.org/">ftp.pureftpd.org</a>
-        <a rel="nofollow noopener" onclick="clickPublicFTPHandler(event);" href="ftp://ftp.vim.org/pub/">ftp.vim.org</a>
-        <a rel="nofollow noopener" onclick="clickPublicFTPHandler(event);" href="ftp://ftp.slackware.com/">ftp.slackware.com</a>
+        <a rel="nofollow noopener" onclick="clickPublicSFTPHandler(event);" href="sftp://test.rebex.net">sftp://test.rebex.net</a>
+        <a rel="nofollow noopener" onclick="clickPublicSFTPHandler(event);" href="sftp://itcsubmit.wustl.edu">sftp://itcsubmit.wustl.edu</a>
         <br>
       </p>
     </div>
@@ -52,7 +50,7 @@ language: en
 
 <div id="features" style="padding-bottom:0;">
   <div class="container">
-    <div class="center" id="loader" class="show" style="margin-bottom:200px;">
+    <div class="center" id="loader" class="show" style="margin-bottom:200px;text-align:center;">
       <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
            width="50px" height="50px" viewBox="0 0 24 24" style="enable-background:new 0 0 50 50;" xml:space="preserve">
         <rect x="0" y="0" width="4" height="7" fill="#333">
@@ -86,8 +84,6 @@ language: en
     <div id="tester" class="hide" style="background: white;padding:25px;margin: -150px 0 200px 0;box-shadow: 0px 1px 2px rgba(0,0,0,0.1);">
       <h2 id="hostname"></h2>
       <strong>Online:</strong> <span id="is-online"></span><br>
-      <strong>FTPS:</strong> <span id="ftps"></span><br>
-      <strong>Anonymous user:</strong> <span id="anonymous"></span><br>
       <strong>Latency:</strong> <span id="latency"></span><br>
       <strong>Server info:</strong> <pre id="server_info" style="margin:0;"></pre>
       <style>
@@ -102,20 +98,18 @@ language: en
 
   <script>
     (function() {
-        function ftpTest(domain) {
+        function sftpTest(domain) {
             var oReq = new XMLHttpRequest();
             oReq.onload = function(){
                 var data = JSON.parse(this.responseText);
                 document.getElementById("latency").innerText = data["latency"];
                 document.getElementById("is-online").innerText = data["isOnline"] ? "Yes" : "No";
-                document.getElementById("ftps").innerText = data["ftps"] ? "Enabled" : "Disabled";
-                document.getElementById("anonymous").innerText = data["anonymous"] ? "Yes" : "No";
                 document.getElementById("server_info").innerText = data["server_info"];
 
                 console.log(data);
-                if(data["isOnline"] && data["anonymous"]){
+                if(data["isOnline"]){
                     let html = "<a target=\"_blank\" href=\"";
-                    html += "http://demo.filestash.app/login?type=ftp&hostname="+data["hostname"];
+                    html += "http://demo.filestash.app/login"
                     html += "\">";
                     html += data["hostname"];
                     html += "</a>";
@@ -125,21 +119,22 @@ language: en
                 }
 
                 document.getElementById("tester").classList.add("show");
+                document.getElementById("loader").classList.remove("show");
                 document.getElementById("loader").classList.add("hide");
             };
             oReq.onerror = function(){
                 console.log("ERROR");
             };
-            oReq.open("get", "https://pages.kerjean.me/projects/filestash/apps/ftp_test/?domain="+domain, true);
+            oReq.open("get", "https://pages.kerjean.me/projects/filestash/apps/sftp_test/?domain="+domain, true);
             oReq.send();
         }
 
         var match = location.search.match(/domain=([^&]+)/);
         if(match){
             document.querySelector("form input[name='domain']").value = match[1];
-            ftpTest(match[1]);
+            sftpTest(match[1]);
         } else {
-            ftpTest("ftp.gnu.org")
+            sftpTest("itcsubmit.wustl.edu")
         }
 
     }());
@@ -148,9 +143,9 @@ language: en
   <div class="call-to-action">
     <h2>Our online tools:</h2>
     <a class="btn" href="{% post_url 2019-11-26-ftp-web-client %}">Online FTP Client</a>
-    <a class="btn" href="{% post_url 2020-08-31-sftp-online-test %}">SFTP Testing Tool</a>
-    <a class="btn" href="{% post_url 2020-04-30-sftp-browser %}">SFTP Browser</a>
+    <a class="btn" href="{% post_url 2019-11-26-ftp-web-client %}">FTP Testing Tool</a>
     <a class="btn" href="{% post_url 2019-11-21-s3-browser %}">S3 Explorer</a>
     <a class="btn" href="{% post_url 2020-01-04-ldap-browser %}">LDAP Browser</a>
+    <a class="btn" href="{% post_url 2020-04-30-sftp-browser %}">SFTP Browser</a>
   </div>
 </div>
