@@ -152,10 +152,41 @@ redirect_from:
           To use SFTP, you need both a server which implement the SFTP protocol like <a href="https://www.openssh.com/">openssh</a> and a client to communicate with that server.
       </p>
 
+      <h3>How to transfer file using SFTP?</h3>
+      <p>
+          To transfer files using SFTP, you need to connect to a server that can speak SFTP by using an SFTP Client (eg: Filezilla FTP, WinSCP, Filestash, Cyberduck, ...). Typically you would drag and drop files on your SFTP client to the desired location.
+      </p>
+
       <h3>How to access an SFTP server from a browser?</h3>
       <p>
-          Filestash has a web interface that make it easy to access and transfer your files.
+        You can use an SFTP web client like Filestash which comes with a web interface to access and transfer your files.
       </p>
+
+      <h3>Which port does SFTP uses?</h3>
+      <p>
+          The SFTP protocol typically uses port 22.
+      </p>
+
+      <h3>What's the difference between SSH and SFTP?</h3>
+      <p>
+          SSH is to SFTP what a cinder block is to a house. SFTP leverages the SSH protocol as a transport mechanism to securely transfer your files over a network.
+      </p>
+
+      <h3>What's the difference between FTP and SFTP?</h3>
+      <p>
+          Both FTP and SFTP share the same use case to transfer file over a network. What stands them apart is the nitty gritty details in the protocol. The biggest difference is SFTP leverages SSH for encryption whereas FTPS use SSL and bare FTP has no encryption at all.
+      </p>
+
+      <h3>Can you use curl to access an SFTP server?</h3>
+      <p>
+          Yes. It works like this: `curl -k "sftp://test.rebex.net/readme.txt" --user "demo:password"`
+      </p>
+
+      <h3>Is there free SFTP server?</h3>
+      <p>
+          OpenSSH is the most popular SFTP implementation but some other exists like proFTPd. Also you can find a few unix shell that provide SFTP access like https://sdf.org/
+      </p>
+
 
       <script type="application/ld+json">
        {
@@ -189,10 +220,58 @@ redirect_from:
                },
                {
                    "@type": "Question",
+                   "name": "How to transfer file using SFTP?",
+                   "acceptedAnswer": {
+                       "@type": "Answer",
+                       "text": "To transfer files using SFTP, you need to connect to a server that can speak SFTP by using an SFTP Client (eg: Filezilla FTP, WinSCP, Filestash, Cyberduck, ...). Typically you would drag and drop files on your SFTP client to the desired location."
+                   }
+               },
+               {
+                   "@type": "Question",
                    "name": "How to access an SFTP server from a browser?",
                    "acceptedAnswer": {
                        "@type": "Answer",
                        "text": "Filestash has a web interface that make it easy to access and transfer your files."
+                   }
+               },
+               {
+                   "@type": "Question",
+                   "name": "Which port does SFTP uses?",
+                   "acceptedAnswer": {
+                       "@type": "Answer",
+                       "text": "The SFTP protocol typically uses port 22."
+                   }
+               },
+               {
+                   "@type": "Question",
+                   "name": "What's the difference between SSH and SFTP?",
+                   "acceptedAnswer": {
+                       "@type": "Answer",
+                       "text": "SSH is to SFTP what a cinder block is to a house. SFTP leverages the SSH protocol as a transport mechanism to securely transfer your files over a network."
+                   }
+               },
+               {
+                   "@type": "Question",
+                   "name": "What's the difference between FTP and SFTP?",
+                   "acceptedAnswer": {
+                       "@type": "Answer",
+                       "text": ""
+                   }
+               },
+               {
+                   "@type": "Question",
+                   "name": "Can you use curl to access an SFTP server?",
+                   "acceptedAnswer": {
+                       "@type": "Answer",
+                       "text": "Yes. It works like this: `curl -k \"sftp://test.rebex.net/readme.txt\" --user \"demo:password\"`"
+                   }
+               },
+               {
+                   "@type": "Question",
+                   "name": "Is there free SFTP server?",
+                   "acceptedAnswer": {
+                       "@type": "Answer",
+                       "text": "OpenSSH is the most popular SFTP implementation but some other exists like proFTPd. Also you can find a few unix shell that provide SFTP access like https://sdf.org/"
                    }
                }
            ]
