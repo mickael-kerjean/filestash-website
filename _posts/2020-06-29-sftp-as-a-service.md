@@ -28,7 +28,7 @@ When it comes to desktop client, you're probably already familiar with [Filezill
 
 If you're after a web application, [Filestash]({% post_url 2020-04-30-sftp-browser %}) is a simple as it gets for your users:
 
-![](https://qph.fs.quoracdn.net/main-qimg-b1263917f542141ff92c0b88b025368c)
+[![](https://qph.fs.quoracdn.net/main-qimg-b1263917f542141ff92c0b88b025368c)]({% post_url 2020-04-30-sftp-browser %})
 
 
 ## SFTP Server as a service
