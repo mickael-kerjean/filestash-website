@@ -255,7 +255,7 @@ redirect_from:
                    "name": "What's the difference between FTP and SFTP?",
                    "acceptedAnswer": {
                        "@type": "Answer",
-                       "text": ""
+                       "text": "Both FTP and SFTP share the same use case to transfer file over a network. What stands them apart is the nitty gritty details in the protocol. The biggest difference is SFTP leverages SSH for encryption whereas FTPS use SSL and bare FTP has no encryption at all."
                    }
                },
                {
@@ -277,8 +277,6 @@ redirect_from:
            ]
        }
       </script>
-
-
   </div>
   <script>
    jQuery("#faq h3").on("click", function(){
