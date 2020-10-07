@@ -1,9 +1,11 @@
 ---
-title: S3 Browser | The online Amazon S3 explorer that rocks!
-description: An S3 web client to access, view, browse and explore your S3 buckets online from your web browser
+title: S3 Explorer | An online client for Amazon S3 that rocks!
+description: An online S3 browser to explore your S3 buckets from your browser
 layout: landing
-permalink: /s3-browser.html
+permalink: /aws-s3-explorer.html
 language: en
+redirect_from:
+  - /s3-browser.html
 ---
 
 <link rel="stylesheet" href="/css/landing-page.css">
@@ -13,7 +15,8 @@ language: en
   <div class="row">
     <div class="col-sm-12">
       <div class="hgroup">
-        <h1>The online Browser and Explorer that turns your <a href="https://aws.amazon.com/s3/">S3</a> buckets into a file browser</h1>
+        <h1>AWS S3 Explorer</h1>
+        <h2 style="display:block;font-size:1.3rem;height:inherit;">We turn your <a style="color:inherit" href="https://aws.amazon.com/s3/">S3</a> buckets into an online file browser</h2>
       </div>
       <form onsubmit='$("form input[type=\"submit\"]").attr("value", "LOADING...")' action="https://demo.filestash.app/login" method="GET">
         <input type="hidden" name="type" value="s3" />
@@ -75,7 +78,7 @@ language: en
 
 
       <p class="example">
-        Log in with your <a href="{% post_url 2020-05-03-how-to-get-aws-keys %}">S3 keys</a> or an Amazon S3 compatible software like <br> <a onclick="clickPublicS3Handler(event, {access_key_id: 'Q3AM3UQ867SPQQA43P2F', secret_access_key: 'zuf+tfteSlswRu7BJ86wekitnifILbZam1KYY3TG', endpoint: 'https://play.minio.io:9000/'});" href="https://play.minio.io:9000/">https://play.minio.io:9000</a>
+        Log in with your <a href="{% post_url 2020-05-03-how-to-get-aws-keys %}">S3 keys</a> or use an Amazon S3 compatible software like <br> <a onclick="clickPublicS3Handler(event, {access_key_id: 'Q3AM3UQ867SPQQA43P2F', secret_access_key: 'zuf+tfteSlswRu7BJ86wekitnifILbZam1KYY3TG', endpoint: 'https://play.minio.io:9000/'});" href="https://play.minio.io:9000/">https://play.minio.io:9000</a>
       </p>
     </div>
   </div>
@@ -91,7 +94,7 @@ language: en
         <img alt="screenshot of Filestash when uploading" class="lazy fancy pull-left hidden-xs" data-src="/img/screenshots/feature1.png" />
         <h2>The S3 explorer that works like a file browser</h2>
         <p>
-          Our <strong>web based client</strong> makes it easy to browse, explore, upload files into your bucket but also downloads files, rename or delete them or just act as an S3 viewer, all from the web interface!
+          Our <strong>web client</strong> makes it easy to browse, explore, upload files into your bucket but also downloads files, rename or delete them or just act as an S3 viewer, all from the web interface!
         </p>
         <img alt="screenshot of Filestash when uploading" class="lazy fancy visible-xs" data-src="/img/screenshots/feature1.png" />
       </div>
