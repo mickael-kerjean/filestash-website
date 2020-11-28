@@ -8,6 +8,7 @@ language: en
 ---
 
 Filestash is a light, web-based, central data virtualization platform to access and share your business and industrial data across multiple applications. It helps project and operation teams to manage their business and operational data more efficiently across their organization. Filestash is a tool that runs at the data source level and gathers all your data in real time in one place. It can be deployed on-premise or in the cloud. Connect, organise and share data across your business and operation systems. Book a demo today!
+
 <br>
 <img src="https://www.filestash.app/img/posts/2020-11-28-fs-data-virtualization-architecture.png"
      alt="Filestash Data virtualization architecture"
@@ -20,6 +21,7 @@ FileStash data virtualization makes it easier to find and access data from all y
 ⋅⋅* Expose integrated view of all your connected data
 ⋅⋅* Manage all types of industrial and business data
 ⋅⋅* Connect to edge, on-premise and cloud assets directly in a single web interface
+
 <br>
 <img src="https://www.filestash.app/img/posts/2020-11-28-fs-data-connect.png"
      alt="Filestash Connect Data Source"
@@ -34,7 +36,7 @@ FileStash data virtualization makes it easier to find and access data from all y
      alt="Filestash Define Data Model"
      style="border: 9px solid #0000001a; border-radius: 5px; object-fit: cover;"/>
 
-### Manage and share your data
+## Manage and share your data
 
 ..* Reduce time, cost, and effort to identify, extract and share data
 ..* Share data to business and cloud infrastructure
