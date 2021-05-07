@@ -3,7 +3,7 @@ name: default
 
 steps:
 - name: build
-  image: ruby
+  image: ruby:2.7
   pull: true
   commands:
   - gem install bundler
