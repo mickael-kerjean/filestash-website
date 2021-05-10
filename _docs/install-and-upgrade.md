@@ -217,4 +217,4 @@ Keep in mind that updates may change the structure of the directory and therefor
 - you aren't required to be an admin of anything to make it work
 - if a security vulnerability comes up, we will be able to block potential exploits
 
-**Your domain name**: If you have enabled the tunnel, a filestash subdomain will be automatically assigned to your instance (eg: user-foo.filestash.app). We can change this domain to whatever you want (eg: stallman.filestash.app) but considering the extra cost associated with that feature (our server aren't free) we will only do it for the people supporting the project.
+**Your domain name**: If you have enabled the tunnel, a filestash subdomain will be automatically assigned to your instance (eg: user-foo.filestash.app). We can change this domain to whatever you want (eg: stallman.filestash.app) but considering the extra cost associated with that feature (our server isn't free) we will only do it for the people supporting the project.
