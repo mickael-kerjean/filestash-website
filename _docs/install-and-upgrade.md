@@ -6,22 +6,6 @@ order: 2
 
 {% include toc.md %}
 
-<div class="banner">
-    Want help? Receive support from the creator of Filestash for a $10 flat fee.
-    <a href="#" onClick="document.querySelector('#intergramRoot > div > div').click()">
-        Get started now
-    </a>
-</div>
-<style>
- .banner {
-     background: var(--emphasis-primary);
-     padding: 10px 20px;
-     border-radius: 3px;
-     box-shadow: 1px 1px 10px rgba(0,0,0,0.1);
-     border: 2px dashed var(--primary);
- }
-</style>
-
 ## Requirement
 
 The official installation method requires a Linux server with the following tools installed:
