@@ -6,9 +6,6 @@ permalink: /sftp-test.html
 language: en
 ---
 
-<!-- https://neilpatel.com/ab-testing-calculator/ -->
-
-
 <link rel="stylesheet" href="/css/landing-page.css">
 <link rel="stylesheet" href="/css/landing-page-login.css">
 

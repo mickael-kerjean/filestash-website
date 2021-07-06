@@ -166,8 +166,9 @@ blockquote p { margin: 0; }
     opacity: .5;
 }
 #nav .logo img {
-    height: 100%;
     padding: 7px 0;
+    width: 50px;
+    height: 50px;
 }
 
 #main #desktop-menu ul {
@@ -296,6 +297,7 @@ blockquote p { margin: 0; }
 }
 #footer img {
     height: 50px;
+    width: 50px;
 }
 
 /*****************************

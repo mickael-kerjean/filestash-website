@@ -2,6 +2,7 @@
 layout: default
 ---
 {% include menu.html context="homepage" %}
+<script src="/js/jquery.min.js"></script>
 <style>
  h1{
      font-weight: bold;

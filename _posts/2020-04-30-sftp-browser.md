@@ -278,13 +278,6 @@ redirect_from:
        }
       </script>
   </div>
-  <script>
-   jQuery("#faq h3").on("click", function(){
-       jQuery("#faq .collapse").hide(100);
-       var $el = jQuery(jQuery(this).attr("data-target"))
-       if($el.is(":hidden")) $el.show(100);
-   });
-  </script>
   <br><br><br><br><br>
 
   <div class="call-to-action">

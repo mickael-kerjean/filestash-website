@@ -15,12 +15,48 @@
 	    <meta property="og:title" content="{% if page.title %}{{ page.title }}{% else %}Filestash{% endif %}">
 	    <meta property="og:description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}">
 	    <meta property="og:image" content="/img/logo/logo.png">
-        <link rel="stylesheet" href="/css/bootstrap.min.css">
-        <link rel="stylesheet" href="https://downloads.filestash.app/style.css">
-	    <script src="/js/jquery.min.js"></script>
-        <link rel="canonical" href="{{ page.url }}">
+        <link rel="canonical" href="{{ page.url | absolute_url }}">
         {% for head in page.head %}
         {{ head }}{% endfor %}
+        <style> {% include bootstrap.min.css %} </style>
+        <style>
+          :root {
+              --bg-color: #f2f3f5;
+              --color: #626466;
+              --emphasis: #375160;
+              --primary: #9AD1ED;
+              --emphasis-primary: #c5e2f1;
+              --secondary: #466372;
+              --emphasis-secondary: #466372;
+              --light: #909090;
+              --super-light: #f9fafc;
+              --error: #f26d6d;
+              --success: #63d9b1;
+              --dark: #313538;
+
+              --font-large: 2.7rem;
+              --font-medium: 2.1rem;
+              --font-small: 0.9em;
+          }
+
+          html, body{ font-size: 17px; }
+          body {
+              background: var(--super-light);
+              color: #57595A;
+              font-family: 'Inter', sans-serif;
+              text-rendering: optimizeLegibility;
+              -webkit-font-smoothing: antialiased;
+              margin: 0;
+          }
+
+          h1, h2, h3, h4, h5, h6{ color: #313538; }
+          h1 { font-size: 2.7rem; line-height: 2.7rem; margin-bottom: 50px; }
+          h2 { font-size: 2.1rem; line-height: 2.1rem; margin-bottom: 15px; }
+          a{ color: #428bca; }
+
+          .container{ max-width: 850px; margin: 0 auto; }
+          .center{ text-align: center; }
+        </style>
     </head>
     <body>
         <style> {% include style.css %} </style>
@@ -28,8 +64,10 @@
         </script>
 	    {{ content }}
 
-        <script src="/js/lazyload.min.js"></script>
-	    <script src="/js/main.js" defer></script>
-        <script src="/js/lunr.min.js" defer></script>
+        <script async src="/js/lazyload.min.js"></script>
+	    <script async src="/js/main.js" defer></script>
+        <style>
+          @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
+        </style>
     </body>
 </html>

@@ -19,9 +19,16 @@ layout: default
     </div>
 </div>
 
-<script src="https://cdn.rawgit.com/leafo/sticky-kit/v1.1.2/jquery.sticky-kit.min.js"></script>
+<script src=""></script>
 <script>
- $(".sticky").stick_in_parent();
+  window.addEventListener("load", function() {
+      Promise.all([
+          LOADJS("/js/jquery.min.js"),
+          LOADJS("https://cdn.rawgit.com/leafo/sticky-kit/v1.1.2/jquery.sticky-kit.min.js")
+      ]).then(function(){
+          $(".sticky").stick_in_parent();
+      });
+  })
 </script>
 
 {% include support.html %}
