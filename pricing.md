@@ -927,6 +927,7 @@ layout: default
 
 </div>
 <script>
+ jQuery("#faq .collapse").hide();
  jQuery("#faq h3").on("click", function(){
      jQuery("#faq .collapse").hide(100);
      var $el = jQuery(jQuery(this).attr("data-target"))
@@ -995,6 +996,7 @@ layout: default
      min-width: 100%;
      max-width: 100%;
      max-height: 80px;
+     box-sizing: border-box;
  }
  .modal form button{
      border: none;

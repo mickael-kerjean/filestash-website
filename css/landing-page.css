@@ -2,7 +2,7 @@
     background-color: #9AD1ED;
     background-size: cover;
 }
-#splash-container #splash{ background: inherit; padding-bottom: 10px; }
+#splash-container #splash{ background: inherit; padding: 0 15px; padding-bottom: 10px; }
 #splash-container #nav{ background: inherit; }
 #splash-container #waveshape{
     background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxNDQwIDMyMCIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPHBhdGggZmlsbD0iI2YyZjNmNSIgZmlsbC1vcGFjaXR5PSIxIiBkPSJNMCwxOTJMNjAsMTgxLjNDMTIwLDE3MSwyNDAsMTQ5LDM2MCwxNjUuM0M0ODAsMTgxLDYwMCwyMzUsNzIwLDI1MC43Qzg0MCwyNjcsOTYwLDI0NSwxMDgwLDIxMy4zQzEyMDAsMTgxLDEzMjAsMTM5LDEzODAsMTE3LjNMMTQ0MCw5NkwxNDQwLDMyMEwxMzgwLDMyMEMxMzIwLDMyMCwxMjAwLDMyMCwxMDgwLDMyMEM5NjAsMzIwLDg0MCwzMjAsNzIwLDMyMEM2MDAsMzIwLDQ4MCwzMjAsMzYwLDMyMEMyNDAsMzIwLDEyMCwzMjAsNjAsMzIwTDAsMzIwWiI+PC9wYXRoPgo8L3N2Zz4K);
@@ -16,7 +16,7 @@
     background: var(--primary);
     color: white;
     text-align: center;
-    padding-bottom: 50px;
+    padding: 0 10px 50px 10px;
     border-bottom: none;
 }
 #splash:after {

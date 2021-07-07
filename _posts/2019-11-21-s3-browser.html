@@ -54,7 +54,7 @@ redirect_from:
           </select>
         </label>
         <fieldset>
-          <legend onclick="$('form fieldset .fieldset-content').slideToggle(300)"><i style="transform: scale(0.6) rotate(45deg);margin-right:5px" class="arrow down"></i>Advanced:</legend>
+          <legend onclick="toggleExpand()"><i style="transform: scale(0.6) rotate(45deg);margin-right:5px" class="arrow down"></i>Advanced:</legend>
           <div class="fieldset-content" style="display:none;">
             <label>
               <span>Encryption Key:</span><input type="text" name="encryption_key" placeholder="Encryption Key" />
@@ -64,6 +64,14 @@ redirect_from:
             </label>
           </div>
         </fieldset>
+        <script>
+          function toggleExpand() {
+              LOADJS("/js/jquery.min.js").then(function(){
+                  $('form fieldset .fieldset-content').slideToggle(300)
+              });
+          }
+        </script>
+
         <input type="submit" value="Connect" />
       </form>
       <script>
@@ -91,94 +99,94 @@ redirect_from:
     <div class="row features main">
 
       <div class="feature">
-        <img alt="screenshot of Filestash when uploading" class="lazy fancy pull-left hidden-xs" data-src="/img/screenshots/feature1.png" />
+        <img alt="screenshot of Filestash when uploading" loading="lazy" class="fancy pull-left hidden-xs" src="/img/screenshots/feature1.png" />
         <h2>The S3 explorer that works like a file browser</h2>
         <p>
           Our <strong>web client</strong> makes it easy to browse, explore, upload files into your bucket but also downloads files, rename or delete them or just act as an S3 viewer, all from the web interface!
         </p>
-        <img alt="screenshot of Filestash when uploading" class="lazy fancy visible-xs" data-src="/img/screenshots/feature1.png" />
+        <img alt="screenshot of Filestash when uploading" loading="lazy" class="fancy visible-xs" src="/img/screenshots/feature1.png" />
       </div>
 
       <div class="feature">
-        <img alt="screenshot of the text editor" class="lazy fancy pull-right hidden-xs" data-src="/img/posts/2019-08-20-ftp-web-client.html.1.png" />
+        <img alt="screenshot of the text editor" loading="lazy" class="fancy pull-right hidden-xs" src="/img/posts/2019-08-20-ftp-web-client.html.1.png" />
         <h2>An S3 viewer and a document editor</h2>
         <p>
           Whether you're hosting a website or storing a lot of documents on S3, you can view and edit your website, word documents, spreadsheets and many more.
         </p>
-        <img alt="screenshot of the text editor" class="lazy fancy visible-xs" data-src="/img/posts/2019-08-20-ftp-web-client.html.1.png" />
+        <img alt="screenshot of the text editor" loading="lazy" class="fancy visible-xs" src="/img/posts/2019-08-20-ftp-web-client.html.1.png" />
       </div>
 
       <div class="feature">
-        <img class="lazy fancy pull-left hidden-xs" data-src="https://miro.medium.com/max/580/1*DHe24MbDHtbkOeIJzxrfdA.png" />
+        <img alt="S3 logo" loading="lazy" class="fancy pull-left hidden-xs" src="https://miro.medium.com/max/580/1*DHe24MbDHtbkOeIJzxrfdA.png" />
         <h2>Amazon S3 but not only</h2>
         <p>
           Whether you're using <strong>AWS</strong> or an API <a href="https://en.wikipedia.org/wiki/Amazon_S3#S3_API_and_competing_services">compatible alternative</a>, Filestash is there to help you explore your buckets. As an example, you can connect to <a onclick="clickPublicS3Handler(event, {access_key_id: 'Q3AM3UQ867SPQQA43P2F', secret_access_key: 'zuf+tfteSlswRu7BJ86wekitnifILbZam1KYY3TG', endpoint: 'https://play.minio.io:9000/'});" href="https://play.minio.io:9000/">Minio</a>
         </p>
-        <img alt="illustration of the shared link screen" class="lazy fancy visible-xs" data-src="/img/posts/2019-11-26-s3.png" />
+        <img alt="illustration of the shared link screen" loading="lazy" class="fancy visible-xs" src="https://miro.medium.com/max/580/1*DHe24MbDHtbkOeIJzxrfdA.png" />
       </div>
 
       <div class="feature">
-        <img class="lazy fancy pull-right hidden-xs" data-src="/img/screenshots/viewerpage.png" />
+        <img alt="screenshot of the application" loading="lazy" class="fancy pull-right hidden-xs" src="/img/screenshots/viewerpage.png" />
         <h2>Look and feel like a file manager</h2>
         <p>
           Filestash intends to be easy to use by everyone without training. Power users who need extra power can always use the complete <a href="https://docs.aws.amazon.com/cli/latest/reference/s3/">AWS CLI</a> to access all advanced features built for them.
         </p>
-        <img class="lazy fancy visible-xs" data-src="/img/screenshots/viewerpage.png" />
+        <img alt="screenshot of the application" loading="lazy" class="fancy visible-xs" src="/img/screenshots/viewerpage.png" />
       </div>
 
       <div class="feature">
-        <img alt="agpl logo" class="lazy fancy pull-left hidden-xs" data-src="/img/posts/2019-08-20-ftp-web-client.html.2.png" />
+        <img alt="agpl logo" loading="lazy" class="fancy pull-left hidden-xs" src="/img/posts/2019-08-20-ftp-web-client.html.2.png" />
         <h2>Open source and Free software</h2>
         <p>
           You don't have to trust us. The code of our software is available on <a href="https://github.com/mickael-kerjean/filestash">Github</a> for everyone to download, audit, self-host and contribute back
         </p>
-        <img alt="agpl logo" class="lazy fancy visible-xs" data-src="/img/posts/2019-08-20-ftp-web-client.html.2.png" />
+        <img alt="agpl logo" loading="lazy" class="fancy visible-xs" src="/img/posts/2019-08-20-ftp-web-client.html.2.png" />
       </div>
 
       <div class="feature">
-        <img alt="logo of the 3 main operating system" class="lazy fancy pull-right hidden-xs" data-src="/img/posts/2019-08-20-ftp-web-client.html.4.png" />
+        <img alt="logo of the 3 main operating system" loading="lazy" class="fancy pull-right hidden-xs" src="/img/posts/2019-08-20-ftp-web-client.html.4.png" />
         <h2>Mac, Windows, Linux, IOS and Android</h2>
         <p>
           Filestash is the missing <strong>S3 app</strong> that's is available from your browser. No download required, our tool is portable and works on any platform
         </p>
-        <img alt="logo of the 3 main operating system" class="lazy fancy pull-left visible-xs" data-src="/img/posts/2019-08-20-ftp-web-client.html.4.png" />
+        <img alt="logo of the 3 main operating system" loading="lazy" class="fancy pull-left visible-xs" src="/img/posts/2019-08-20-ftp-web-client.html.4.png" />
       </div>
 
       <div class="feature">
-        <img class="lazy fancy pull-left hidden-xs" data-src="/img/screenshots/feature_share_0000.png" />
+        <img alt="screenshot of the shared link" loading="lazy" class="fancy pull-left hidden-xs" src="/img/screenshots/feature_share_0000.png" />
         <h2>Collaborate easily</h2>
         <p>
           Filestash lets you create shared links without sharing your keys. Shared links can be protected with a password and/or only available to a specific email address or a domain (example: '*@my-company.com')
         </p>
-        <img class="lazy fancy visible-xs" data-src="/img/screenshots/feature_share_0000.png" />
+        <img alt="screenshot of the shared link" loading="lazy" class="fancy visible-xs" src="/img/screenshots/feature_share_0000.png" />
       </div>
 
 
       <div class="feature">
-        <img class="lazy fancy pull-right hidden-xs" data-src="/img/posts/2019-08-20-ftp-web-client.html.3.png" />
+        <img alt="network drive in OSX finder" loading="lazy" class="fancy pull-right hidden-xs" src="/img/posts/2019-08-20-ftp-web-client.html.3.png" />
         <h2>It integrates with your real File manager</h2>
         <p>
           Shared links can be mounted in your file manager and be used like any other <strong>network drive</strong>
         </p>
-        <img class="lazy fancy visible-xs" data-src="/img/posts/2019-08-20-ftp-web-client.html.3.png" />
+        <img alt="network drive in OSX finder" loading="lazy" class="fancy visible-xs" src="/img/posts/2019-08-20-ftp-web-client.html.3.png" />
       </div>
 
       <div class="feature">
-        <img class="lazy fancy pull-left hidden-xs" data-src="/img/screenshots/search.png" />
+        <img alt="search screenshot" loading="lazy" class="fancy pull-left hidden-xs" src="/img/screenshots/search.png" />
         <h2>Full-text search</h2>
         <p>
           Find your content is key. Filestash has a powerful full-text search engine. It will create its index automatically by crawling your buckets (The feature is disabled by default to avoid an extra charge from Amazon to crawl your bucket)
         </p>
-        <img class="lazy fancy visible-xs" data-src="/img/screenshots/search.png" />
+        <img alt="search screenshot" loading="lazy" class="fancy visible-xs" src="/img/screenshots/search.png" />
       </div>
 
       <div class="feature">
-        <img class="lazy fancy pull-right hidden-xs" data-src="/img/posts/2019-08-20-ftp-web-client.html.6.png" />
+        <img alt="plugin" loading="lazy" class="fancy pull-right hidden-xs" src="/img/posts/2019-08-20-ftp-web-client.html.6.png" />
         <h2>Extensible and Configurable</h2>
         <p>
           Filestash can be configured to predefine login information and a wide range of other features that can be enabled/disabled. Also, you can extend the program by creating your <a href="/docs/plugin/">plugins</a>
         </p>
-        <img class="lazy fancy visible-xs" data-src="/img/posts/2019-08-20-ftp-web-client.html.6.png" />
+        <img alt="plugin" loading="lazy" class="fancy visible-xs" src="/img/posts/2019-08-20-ftp-web-client.html.6.png" />
       </div>
 
     </div>
@@ -204,5 +212,6 @@ redirect_from:
   </div>
 
 </div>
+
 
 {% include support.html %}

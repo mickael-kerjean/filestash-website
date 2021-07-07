@@ -12,8 +12,8 @@ form {
 }
 form label{ display: block; margin-bottom: 5px; }
 form label span{ display: inline-block; width: 160px}
-form label input, form label select{ width: calc(100% - 160px); padding: 2px 5px; color: var(--emphasis); }
-form input[type="submit"]{ margin-top: 20px; width: 100%; }
+form label input, form label select{ width: calc(100% - 160px); padding: 5px; color: var(--emphasis); box-sizing: border-box; }
+form input[type="submit"]{ margin-top: 20px; width: 100%; color: inherit; padding: 4px 0; }
 
 #splash .hgroup{ margin-top: 0; padding-top: 20px; }
 #splash p.example{ margin-bottom: 0; }

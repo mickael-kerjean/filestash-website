@@ -60,77 +60,77 @@ redirect_from:
     <div class="row features main">
 
       <div class="feature">
-        <img alt="screenshot of Filestash when uploading" class="lazy fancy pull-right hidden-xs" data-src="/img/screenshots/feature1.png" style="margin-top: -30px;" />
+        <img alt="screenshot of Filestash when uploading" loading="lazy" class="fancy pull-right hidden-xs" src="/img/screenshots/feature1.png" style="margin-top: -30px;" />
         <h2>SSH File Browser and Explorer</h2>
         <p>
           Our <strong>web SFTP</strong> client makes it easy to copy files and folders both from local to remote and from remote to local. Under the hood it uses the <strong>SSH File Transfer Protocol</strong> also known as SFTP
         </p>
-        <img alt="screenshot of Filestash when uploading" class="lazy fancy visible-xs" data-src="/img/screenshots/feature1.png" />
+        <img alt="screenshot of Filestash when uploading" loading="lazy" class="fancy visible-xs" src="/img/screenshots/feature1.png" />
       </div>
 
       <div class="feature">
-        <img alt="screenshot of Filestash when uploading" class="lazy fancy pull-left hidden-xs" data-src="/img/screenshots/viewerpage.png" />
+        <img alt="screenshot of Filestash when uploading" loading="lazy" class="fancy pull-left hidden-xs" src="/img/screenshots/viewerpage.png" />
         <h2>Access your sftp from your browser</h2>
         <p>
             Filestash is a <strong>web interface</strong> to access your SFTP server from your browser. It makes it easy to explore / edit / upload/ download / delete / rename anything on your server
         </p>
-        <img alt="screenshot of Filestash when uploading" class="lazy fancy visible-xs" data-src="/img/screenshots/viewerpage.png" />
+        <img alt="screenshot of Filestash when uploading" loading="lazy" class="fancy visible-xs" src="/img/screenshots/viewerpage.png" />
       </div>
 
       <div class="feature">
-          <img class="lazy fancy pull-right hidden-xs" data-src="https://miro.medium.com/max/580/1*DHe24MbDHtbkOeIJzxrfdA.png" />
+          <img loading="lazy" class="fancy pull-right hidden-xs" src="https://miro.medium.com/max/580/1*DHe24MbDHtbkOeIJzxrfdA.png" />
           <h2>Works with all the popular free SFTP servers</h2>
           <p>
               Our online tool works great with any <a href="https://tools.ietf.org/html/draft-ietf-secsh-filexfer-13">SFTP compliant server</a> like
               <a href="https://www.openssh.com/">Openssh</a>, <a href="http://proftpd.org/">ProFTPD</a> and even your Amazon S3 buckets with <a href="https://console.aws.amazon.com/transfer/home">AWS SFTP</a>
         </p>
-        <img alt="illustration of the shared link screen" class="lazy fancy visible-xs" data-src="/img/posts/2019-11-26-s3.png" />
+        <img alt="illustration of the shared link screen" loading="lazy" class="fancy visible-xs" src="/img/posts/2019-11-26-s3.png" />
       </div>
 
       <div class="feature">
-        <img alt="screenshot of the text editor" class="lazy fancy pull-left hidden-xs" data-src="/img/posts/2019-08-20-ftp-web-client.html.1.png" />
+        <img alt="screenshot of the text editor" loading="lazy" class="fancy pull-left hidden-xs" src="/img/posts/2019-08-20-ftp-web-client.html.1.png" />
         <h2>Document editor</h2>
         <p>
             Open up your files and easily edit them directly from your browser. It even works with word documents, spreadsheet and presentations
         </p>
-        <img alt="screenshot of the text editor" class="lazy fancy visible-xs" data-src="/img/posts/2019-08-20-ftp-web-client.html.1.png" />
+        <img alt="screenshot of the text editor" loading="lazy" class="fancy visible-xs" src="/img/posts/2019-08-20-ftp-web-client.html.1.png" />
       </div>
 
       <div class="feature">
-        <img class="lazy fancy pull-right hidden-xs" data-src="/img/screenshots/feature_share_0000.png" />
+        <img alt="screenshot of the shared link" loading="lazy" class="fancy pull-right hidden-xs" src="/img/screenshots/feature_share_0000.png" />
         <h2>Collaborate easily</h2>
         <p>
             Create shared links without sharing any credentials to anyone. Protect those links with a password, make it available to a specific email adress or a domain, there's many options available.
         </p>
-        <img class="lazy fancy visible-xs" data-src="/img/screenshots/feature_share_0000.png" />
+        <img alt="screenshot of the shared link" loading="lazy" class="fancy visible-xs" src="/img/screenshots/feature_share_0000.png" />
       </div>
 
       <div class="feature">
-          <img class="lazy fancy pull-left hidden-xs" data-src="/img/posts/2019-08-20-ftp-web-client.html.3.png" />
+          <img alt="open as network drive from finder on MacOS" loading="lazy" class="fancy pull-left hidden-xs" src="/img/posts/2019-08-20-ftp-web-client.html.3.png" />
           <h2>File manager integration</h2>
           <p>
               Shared links can be mounted in your file manager and be used like any other network drive
           </p>
-          <img class="lazy fancy visible-xs" data-src="/img/posts/2019-08-20-ftp-web-client.html.3.png" />
+          <img alt="open as network drive from finder on MacOS" loading="lazy" class="fancy visible-xs" src="/img/posts/2019-08-20-ftp-web-client.html.3.png" />
       </div>
 
 
       <div class="feature">
-          <img alt="agpl logo" class="lazy fancy pull-right hidden-xs" data-src="/img/posts/2019-08-20-ftp-web-client.html.2.png" />
+          <img alt="agpl logo" loading="lazy" class="fancy pull-right hidden-xs" src="/img/posts/2019-08-20-ftp-web-client.html.2.png" />
           <h2>Open source and Free software</h2>
           <p>
               You don't have to trust us. The code of our software is available on <a href="https://github.com/mickael-kerjean/filestash">github</a> for everyone to download, audit, selfhost and contribute back
           </p>
-          <img alt="agpl logo" class="lazy fancy visible-xs" data-src="/img/posts/2019-08-20-ftp-web-client.html.2.png" />
+          <img alt="agpl logo" loading="lazy" class="fancy visible-xs" src="/img/posts/2019-08-20-ftp-web-client.html.2.png" />
       </div>
 
       <div class="feature">
-        <img class="lazy fancy pull-left hidden-xs" data-src="/img/posts/2019-08-20-ftp-web-client.html.6.png" />
+        <img alt="plugin" loading="lazy" class="fancy pull-left hidden-xs" src="/img/posts/2019-08-20-ftp-web-client.html.6.png" />
         <h2>Extensible and Configurable</h2>
         <p>
           Filestash can be customised quite simply. Also, many features can be enable/disable from the admin console. If that's not enough, you can extend the program by creating your own <a href="/docs/plugin/">plugins</a>
         </p>
-        <img class="lazy fancy visible-xs" data-src="/img/posts/2019-08-20-ftp-web-client.html.6.png" />
+        <img alt="plugin" loading="lazy" class="fancy visible-xs" src="/img/posts/2019-08-20-ftp-web-client.html.6.png" />
       </div>
     </div>
   </div>

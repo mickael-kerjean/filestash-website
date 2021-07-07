@@ -68,7 +68,6 @@
 
 <div id="search-results" class="container">
 	<div id="results-placeholder"></div>
-	<div id="accessible-search-summary" aria-live="assertive" class="sr-only"></div>
 </div>
 
 <div id="mobile-menu" class="hidden-sm hidden-md hidden-lg container">
@@ -79,3 +78,261 @@
         <li><a href="/pricing/" {% if page.url == "/pricing" %}class="active"{% endif %}>Pricing</a></li>
 	</ul>
 </div>
+
+<style>
+  /* MENU */
+#nav {
+    background: white;
+    color: var(--light);
+    box-shadow: 0 0px 4px rgba(0, 0, 0, 0.05);
+    font-size: 17px;
+    padding: 3px 0;
+}
+#nav.homepage{
+    background: var(--primary);
+    color: var(--bg-color);
+}
+#nav ul.nav-links {
+    float: right;
+    margin: 0;
+    padding: 0;
+}
+#nav ul.nav-links li {
+    float: left;
+    list-style: none;
+    margin: 0;
+}
+#nav input,
+#nav button {
+    background: transparent;
+    border-radius: 0;
+    -webkit-appearance: none;
+    outline: none;
+    border: 0;
+}
+#nav a,
+#nav li button {
+    display: inline-block;
+    height: 50px;
+    line-height: 50px;
+    padding: 0 10px;
+    font-weight: normal;
+    color: inherit;
+}
+#nav a:hover,
+#nav a:focus,
+#nav a.active,
+#nav button:hover,
+#nav button:focus {
+    color: var(--secondary);
+}
+#nav .logo {
+    line-height: 1;
+    margin-left: -10px;
+}
+#nav .container {
+    position: relative;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+#nav .nav-search-overlay {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 0 10px;
+    background: white;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity .2s, visibility .2s;
+}
+#nav .nav-search-overlay.opened {
+    opacity: 1;
+    visibility: visible;
+}
+#nav .search-input-group {
+    position: relative;
+    margin-top: 10px;
+    height: 30px;
+    width: 100%;
+}
+#nav .search-input-group button {
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    height: 30px;
+    text-align: center;
+}
+#nav .search-input-group input {
+    border-bottom: 1px solid white;
+    padding: 0;
+    padding-right: 20px;
+    width: calc(100% - 20px);
+    height: 100%;
+    color: var(--color);
+}
+
+#nav .search-input-group input::-moz-placeholder {
+    color: #b7c5d1;
+    opacity: .5;
+}
+
+#nav .search-input-group input::-webkit-input-placeholder {
+    color: #b7c5d1;
+    opacity: .5;
+}
+
+#nav .search-input-group input:-ms-input-placeholder {
+    color: #b7c5d1;
+    opacity: .5;
+}
+#nav .logo img {
+    padding: 7px 0;
+    width: 50px;
+    height: 50px;
+    box-sizing: border-box;
+    vertical-align: middle;
+}
+</style>
+<script>
+  (function() {
+      // Collapsible menu on mobile
+	  const menu = document.getElementById("mobile-menu");
+	  const button = document.getElementById("menu-btn");
+
+	  button.addEventListener("click", function(e) {
+		  if (button.getAttribute("aria-expanded") === "true") {
+			  menu.style.maxHeight = null;
+			  button.setAttribute("aria-expanded", "false");
+		  } else {
+			  // because animating height changes is not trivial, max-height
+			  // is used, but we don't want to hardcode the value in css
+			  menu.style.maxHeight = menu.scrollHeight + "px";
+			  button.setAttribute("aria-expanded", "true");
+		  }
+		  e.preventDefault();
+	  }, false);
+
+
+      
+      // Real-time client-side search using https://github.com/olivernn/lunr.js
+      // Open search field with the search icon, close it with "Escape" / the close
+      // icon, cycle through results with "Up" and "Down" and visit selected result
+      // with "Enter"
+      document.querySelector("#search-btn").onclick = function() {
+          Promise.all([
+              LOADJS("/js/jquery.min.js"),
+              LOADJS("/js/lunr.min.js")
+          ]).then(function() {
+              // This is required to focus the input when there is no transition, i.e.
+	          // when input is already visible without being focused.
+	          $("#search-input").focus();
+              
+              $(".nav-search-overlay")
+		          .addClass("opened")
+		          .one("transitionend webkitTransitionEnd oTransitionEnd", function () {
+			          // `.focus()` does not work on hidden elements, which also happens if
+			          // they are starting their transition.
+			          $("#search-input").focus();
+		          });
+              window.search_data_loaded = function (search_data) {
+                  // Preparing lunrjs index based on data store located in HTML pages
+	              const lunrIndex = lunr(function () {
+		              this.ref('id');
+		              this.field('title', { boost: 10 });
+		              this.field('category');
+		              this.field('content', { boost: 5 });
+
+		              for (var key in search_data) {
+			              this.add({
+				              id: key,
+				              title: search_data[key].title,
+				              category: search_data[key].category,
+				              content: search_data[key].content,
+			              });
+		              }
+	              });
+
+	              // Run the search every time the search input value changes.
+	              // Use "input" event instead of `keydown`/`keypress`/`keyup` to focus on
+	              // actual content change.
+	              $("#search-input").on('input', function(event) {
+		              var searchTerm = $(this).val();
+		              var resultsElement = $("#search-results");
+		              var contentElement = $("#content");
+
+		              // When the search field is not empty, run lunrjs and wrap all results in a
+		              // list or report that no results were found.
+		              // The first result is marked as "selected" so up/down arrows can cycle
+		              // through results while pressing Enter will click on the link.
+		              if (searchTerm) {
+			              var results = lunrIndex.search(searchTerm);
+			              var resultsContent;
+
+			              if (results.length) {
+				              resultsContent = "<ul>";
+				              results.forEach(function (result) {
+					              var url = result.ref;
+					              var item = search_data[url];
+					              resultsContent += '<li>';
+					              resultsContent += '<a href="' + url + '">' + item.title + '</a>';
+					              resultsContent += "</li>";
+				              });
+				              resultsContent += "</ul>";
+			              } else {
+				              resultsContent = "<p>No results found.</p>";
+			              }
+			              $("#results-placeholder").html(resultsContent);
+			              resultsElement.show();
+			              contentElement.hide();
+		              } else {
+			              // When the search input is empty, hide the result page and display the
+			              // current page. Also clear the accessibility notification area.
+			              resultsElement.hide();
+			              contentElement.show();
+		              }
+	              });
+
+	              // This must be `keydown` to override built-in handlers. `keypress` is not
+	              // emitted on non-printable characters (also differs across browsers) and
+	              // `keyup` arrives too late.
+	              $(document).keydown(function (event) {
+		              if (event.which === 27) {
+			              // "Escape" key, cancels current search. This cannot be on keyup as inputs
+			              // are being cleared by default on Escape keydown.
+			              $("#search-close-btn").click();
+			              return false;
+		              }
+	              });
+
+	              $("#search-input").keydown(function (event) {
+		              if (event.which === 27) {
+			              // Do not clear input when pressing "Escape" but let it bubble up to
+			              // `document.keydown` handler.
+			              event.preventDefault();
+		              } else if (event.which === 13) {
+			              // "Enter" key to focus on the first available result
+			              $("#search-results li:first-child a").focus();
+			              return false;
+		              }
+	              });
+
+	              $("#search-close-btn").click(function() {
+		              $(".nav-search-overlay")
+			              .removeClass("opened")
+			              .one("transitionend webkitTransitionEnd oTransitionEnd", function () {
+				              // Clearing the field only after transition has finished to avoid visual
+				              // glitch of going back to "Search" placeholder for a fraction of time.
+				              // Then trigger `input` event to clear results and bring back content.
+				              $("#search-input").val("").trigger("input");
+			              });
+		              return false;
+	              });
+              }
+              LOADJS("/js/search_data.js");
+          });
+      }
+  })();
+</script>
