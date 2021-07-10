@@ -144,15 +144,8 @@
     text-align: center;
     position: relative;
 }
-#features .feature > span { /* coming soon badge */
-    background: white;
-    padding: 2px 5px;
-    border-radius: 3px;
-    border: 1px solid rgb(0,0,0,0.1);
-    position: absolute;
-    bottom: 50px;
-    right: 0;
-    transform: rotate(-45deg);
+#features .feature p {
+    padding-right: 20px;
 }
 #features .features.main .feature {
     clear: both;
