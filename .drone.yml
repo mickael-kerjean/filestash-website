@@ -11,6 +11,9 @@ steps:
   - JEKYLL_ENV=production bundle exec jekyll build
 - name: deploy
   image: drillster/drone-rsync
+  when:
+    branch:
+    - master
   settings:
     hosts: [ "rick.kerjean.me" ]
     source: _site/*
