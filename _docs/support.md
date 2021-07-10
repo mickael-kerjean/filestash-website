@@ -4,7 +4,7 @@ title: Support
 order: 6
 ---
 
-- report issues or bugs on our [issue tracker](https://github.com/mickael-kerjean/filestash/issues){:rel="nofollow"}
+- report issues or bugs
 - there is community-based support in our official IRC channel on Freenode: [`#filestash`](https://kiwiirc.com/nextclient/#irc://irc.freenode.net/#filestash?nick=guest??){:rel="nofollow"}. A searchable archive is available at [https://support.filestash.app](https://support.filestash.app)
 
 You can also [contact us](mailto:mickael@kerjean.me) for any other enquiries.
@@ -16,5 +16,5 @@ If you want to contribute code, a good starting point is [our guide](https://git
 
 Also there are many ways to contribute which don't involve coding or becoming a customer. For example, you can:
 1. Improve the documentation: the website you are reading can be edited straight from the github interface.
-2. Report bugs on [our github](http://github.com/mickael-kerjean/filestash){:rel="nofollow"}
+2. Report bugs
 3. Be active on our freenode IRC channel: [`#filestash`](https://kiwiirc.com/nextclient/#irc://irc.freenode.net/#filestash?nick=guest??){:rel="nofollow"}

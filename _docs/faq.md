@@ -6,7 +6,7 @@ order: 7
 
 ## Can I use the local filesystem?
 
-Yes. The trick is to leverage the built-in SFTP server which comes with the SSH package. In other words, if you use SSH to connect to your machine, accessing the local filesystem can be done using SFTP where your username is your machine username and password is your password.
+Yes. The trick is to leverage the built-in SFTP server which comes with the SSH package. In other words, if you use SSH to connect to your machine, accessing the local filesystem can be done using SFTP where your username is your machine username and password is your password. We wrote about this in details in [this post]({% post_url 2020-10-20-how-to-access-filesystem-using-filestash %})
 
 ## Can I disable the admin console?
 

@@ -53,18 +53,10 @@ Creating filestash_app ... done
 
 *Note*: Official Docker images are available on [DockerHub](https://hub.docker.com/r/machines/filestash/).
 
-Once the installation has completed, open up a browser and go to: `http://your_ip:8334`. You will be greeted with the setup screen:
+Once the installation has completed, open up a browser and go to: `http://your_ip:8334`. You will be asked to set an admin password:
 
-<img src="https://raw.githubusercontent.com/mickael-kerjean/filestash_images/master/screenshots/setup.png" alt="setup screenshot" height="320px"/>
+<img src="https://raw.githubusercontent.com/mickael-kerjean/filestash_images/master/screenshots/setup_password.png" alt="setup screenshot" height="320px"/>
 Enter the admin password you want to use to protect the admin console. The admin console is available at the `/admin` url.
-
-Once this is done, you will get to the last step of the configuration process, which looks like this:
-<img src="https://raw.githubusercontent.com/mickael-kerjean/filestash_images/master/screenshots/setup_stage2.png" alt="stage 2 of the setup- screenshot" height="320px"/>
-If you're not too sure about Linux servers and self-hosting, you will want to select `yes`. This will expose your instance to the internet via a Filestash URL like https://user-foo.filestash.app.
-
-Otherwise, just skip this screen and set it up like any other self-hosted app. Further information about this is available [there](#note-on-the-tunnel-feature).
-
-Once this is done, you should be ready to go
 
 ## Preparing your instance
 
@@ -180,6 +172,7 @@ Filestash currently *does not* create the needed files in an empty mount. Instea
 1. Copy the contents of the `/app/data/state/` directory from within the running container to your host directory by issuing the following command on the host: `docker cp filestash:/app/data/state /path/to/your/local/mount/directory` (The name of the container may vary depending on your configuration)
 1. Stop and remove the container: `docker-compose down`
 1. Add the following block to you `docker-compose.yml` (at the same indent level as `image`):
+
 ```
 ...
 volumes:
@@ -189,16 +182,3 @@ volumes:
 At the next start, the container will use the files saved on the host and your configuration will be kept throughout restarts and upgrades.
 
 Keep in mind that updates may change the structure of the directory and therefore may require you to modify the contents of the mount by hand, although the goal is to automatically migrate via scripts in this case.
-
-## Note on the tunnel feature
-
-**How does this work?** the proxy works by establishing a bidirectional tunnel between your server and our public proxy server. Incoming traffic to the filestash domain will use that tunnel.
-
-**Why should I care?** The motivation behind this feature is security as we discovered (big thank you to the people who have enabled telemetry) many people didn't bother to properly secure their instance and domain.
-
-**Pro and Cons:** This approach isn't perfect, it adds latency and won't give you control over the proxy server. However, it has benefits:
-- it is secure by default
-- you aren't required to be an admin of anything to make it work
-- if a security vulnerability comes up, we will be able to block potential exploits
-
-**Your domain name**: If you have enabled the tunnel, a filestash subdomain will be automatically assigned to your instance (eg: user-foo.filestash.app). We can change this domain to whatever you want (eg: stallman.filestash.app) but considering the extra cost associated with that feature (our server isn't free) we will only do it for the people supporting the project.
