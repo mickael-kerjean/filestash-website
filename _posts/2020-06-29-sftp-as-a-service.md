@@ -3,6 +3,7 @@ title: SFTP As a service
 description: The latest techs for fully managed SFTP services running in the cloud
 layout: post
 permalink: /sftp-as-a-service.html
+tags: sftp guide
 language: en
 ---
 

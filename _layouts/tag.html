@@ -1,0 +1,45 @@
+---
+layout: default
+---
+{% include menu.html context="splash" %}
+
+<div id="main" class="container no-anchor">
+  <h1>{{ page.tag | upcase }}</h1>
+  <style>
+    #main h2{
+        font-weight: normal!important;
+        display: inline-block!important;
+        margin: 0!important;
+    }
+  </style>
+  <section>
+    {% for post in page.posts %}
+    {% if post.date < site.time and post.language == "en" %}
+    <div class="article">
+      <a href="{{ post.url }}">
+        <h2>{{ post.title }}</h2> <br><span class="timestamp">{{ post.date | date: "%b %Y" }}</span>
+      </a>
+    </div>    
+    {% endif %}
+    {% endfor %}
+  </section>
+  <style>
+    section{
+      min-height: 400px;
+    }
+    #main section .article a {
+      font-size: 1.5em;
+      display: block;
+      text-decoration: none;
+      border-bottom: 1px solid #EEE;
+      padding: 20px 0px;
+      line-height: 20px;
+    }
+    #main section .article a .timestamp {
+      color: #aaa;
+      font-size: 0.8em;
+    }
+  </style>
+</div>
+
+{% include footer.html %}

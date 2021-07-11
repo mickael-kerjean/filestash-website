@@ -13,7 +13,7 @@ Pour utiliser Filestash, vous pouvez soit:
 2. Héberger l'application sur votre propre serveur et gérer tout vous-même. Cette procédure est décrite dans la [documentation](/docs/install-and-upgrade/) (en anglais)
 3. Tester Filestash via l'instance publique de démonstration :
 
-<iframe style="width: 100%;height: 500px;border: 9px solid #0000001a;border-radius: 5px;" id="appframe" frameborder="0" src="https://demo.filestash.app/login" allow="fullscreen;speaker"></iframe>
+<iframe style="width: 100%;height: 500px;border: 9px solid #0000001a;border-radius: 5px;box-sizing:border-box;" id="appframe" frameborder="0" src="https://demo.filestash.app/login" allow="fullscreen;speaker"></iframe>
 
 <div class="related">
     <div class="title">

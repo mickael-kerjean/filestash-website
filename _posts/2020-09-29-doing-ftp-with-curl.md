@@ -3,6 +3,7 @@ title: A guide on how to use FTP with curl
 description: Example of commonly used commands you can use to do FTP using curl
 layout: post
 permalink: /ftp-with-curl.html
+tags: ftp guide
 language: en
 ---
 <style>

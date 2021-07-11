@@ -2,6 +2,7 @@
 title: OEM S3 Solution
 description: Looking for a white labled solution for AWS S3 that you can customised to fit your needs?
 layout: post
+tags: oem aws s3
 language: en
 ---
 

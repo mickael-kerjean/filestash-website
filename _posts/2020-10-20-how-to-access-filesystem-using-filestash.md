@@ -2,6 +2,7 @@
 layout: post
 title: How to access your filesystem using Filestash?
 language: en
+tags: guide
 ---
 
 <style>

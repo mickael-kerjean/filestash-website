@@ -9,6 +9,7 @@ plugins:
   - jekyll-archives
   - jekyll-redirect-from
   - jekyll-gzip
+  - jekyll/tagging
 
 permalink: :year/:month/:day/:title/
 collections:
@@ -21,7 +22,14 @@ jekyll-archives:
     - year
     - month
     - day
+    - tags
   permalinks:
     year: '/:year/'
     month: '/:year/:month/'
     day: '/:year/:month/:day/'
+    tag: '/tags/'
+
+# jekyll-tagging
+tag_page_layout: tag
+tag_page_dir: tags
+tag_permalink_style: pretty

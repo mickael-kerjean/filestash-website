@@ -109,7 +109,7 @@ blockquote p { margin: 0; }
 /*****************************
 /*******   CONTENT    ********
 /*****************************/
-#main { margin-top: 30px; margin-bottom: 60px; min-height: calc(100vh - 260px); }
+#main { margin-top: 30px; margin-bottom: 60px; min-height: calc(100vh - 260px); box-sizing: border-box; }
 
 #main h1 {
     font-size: 2.4rem;
@@ -185,18 +185,6 @@ blockquote p { margin: 0; }
     margin: 0 15px 10px;
 }
 
-
-#footer {
-    clear: both;
-    background: #313538;
-    color: #f2f3f5;
-    padding: 80px 50px 70px;
-    text-align: right;
-}
-#footer img {
-    height: 50px;
-    width: 50px;
-}
 
 /*****************************
 /*******   ALERT     *********

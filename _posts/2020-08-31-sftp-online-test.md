@@ -3,6 +3,7 @@ title: Online SFTP testing Tool
 description: A free tool to test your SFTP server online
 layout: landing
 permalink: /sftp-test.html
+tags: sftp tool
 language: en
 ---
 

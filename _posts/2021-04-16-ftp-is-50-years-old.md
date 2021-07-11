@@ -2,6 +2,7 @@
 title: FTP is 50 years old
 description: FTP was first published the 16th of April 1971
 layout: post
+tags: ftp
 language: en
 ---
 

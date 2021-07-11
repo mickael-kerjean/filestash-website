@@ -12,7 +12,7 @@ To use Filestash, you can either:
 2. Self-host the application on your own server and manage everything yourself: [see the documentation](/docs/install-and-upgrade/)
 3. Play around with the public demo:
 
-<iframe style="width: 100%;height: 500px;border: 9px solid #0000001a;border-radius: 5px;" id="appframe" frameborder="0" src="https://demo.filestash.app/login" allow="fullscreen;speaker"></iframe>
+<iframe style="width: 100%;height: 500px;border: 9px solid #0000001a;border-radius: 5px;box-sizing:border-box;" id="appframe" frameborder="0" src="https://demo.filestash.app/login" allow="fullscreen;speaker"></iframe>
 
 <div class="related">
     <div class="title">

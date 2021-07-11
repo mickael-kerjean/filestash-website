@@ -3,6 +3,7 @@ title: SFTP Browser | An online SFTP client tool
 description: An online web client to browse and manage the content on your SFTP server like if was a modern file sharing service
 layout: landing
 permalink: /sftp-browser.html
+tags: sftp oem browser online-client tool
 language: en
 redirect_from:
   - /online-sftp-browser.html

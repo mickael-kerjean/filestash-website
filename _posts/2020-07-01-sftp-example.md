@@ -3,6 +3,7 @@ title: SFTP by examples
 description: Examples, uses cases and tools to efficiently use SFTP
 layout: post
 permalink: /sftp-by-example.html
+tags: sftp guide
 language: en
 ---
 

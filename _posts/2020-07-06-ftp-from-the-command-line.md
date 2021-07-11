@@ -3,6 +3,7 @@ title: How to use FTP from the command line
 description: A guide to use and manage your FTP server from the CLI
 layout: post
 permalink: /ftp-from-the-command-line.html
+tags: ftp guide
 language: en
 ---
 

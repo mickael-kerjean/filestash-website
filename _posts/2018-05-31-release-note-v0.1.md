@@ -2,6 +2,7 @@
 title: Release Note v0.1
 layout: post
 language: en
+tags: release-note
 ---
 
 Release note version v0.1

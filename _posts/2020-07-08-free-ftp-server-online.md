@@ -3,6 +3,7 @@ title: Free FTP server
 description: A curated list of free FTP server, free FTP hosting to create your site and other online servers
 layout: post
 permalink: /free-ftp.html
+tags: ftp guide
 language: en
 ---
 
