@@ -2,7 +2,6 @@
 layout: post
 title: Release Note v0.2
 language: en
-tags: release-note
 ---
 
 This release focus on making Nuage a comfy place to host your own photos. As screenshot worths more than words, this is it in action:

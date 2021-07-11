@@ -2,7 +2,7 @@
 title: Online LDAP browser tool to manage and explore your LDAP server
 description: A web-based tool to browse and manage your LDAP without beeing a LDIF wizard
 layout: landing
-tags: ldap browser online-client tool
+tags: online-client tool oem
 permalink: /ldap-browser.html
 language: en
 ---
