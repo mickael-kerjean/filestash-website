@@ -1,0 +1,75 @@
+---
+layout: default
+language: en
+permalink: /search/
+---
+{% include menu.html context="splash" %}
+
+<div id="main" class="container no-anchor">
+  <h1 style="text-align:center">Search Results</h1>
+  <style>
+    #main h2{
+        font-weight: normal!important;
+        display: inline-block!important;
+        margin: 0!important;
+    }
+  </style>
+  <section>
+    {% include loader.html %}
+  </section>
+  <style>
+    section{
+      min-height: 400px;
+    }
+    #main section .article a {
+      font-size: 1.5em;
+      display: block;
+      text-decoration: none;
+      border-bottom: 1px solid #EEE;
+      padding: 20px 0px;
+      line-height: 20px;
+    }
+    #main section .article a .timestamp {
+      color: #aaa;
+      font-size: 0.8em;
+    }
+  </style>
+  <script>
+    window.addEventListener("load", function(){
+        LOADJS("/js/jquery.min.js").then(LOADJS("/js/lunr.min.js")).then(function() {
+            LOADJS("/js/search_data.js");
+            window.search_data_loaded = function (search_data) {
+                const lunrIndex = lunr(function () {
+		            this.ref('id');
+		            this.field('title', { boost: 10 });
+		            this.field('category');
+		            this.field('content', { boost: 5 });
+
+		            for (var key in search_data) {
+			            this.add({
+				            id: key,
+				            title: search_data[key].title,
+				            category: search_data[key].category,
+				            content: search_data[key].content,
+			            });
+		            }
+	            });
+                var results = lunrIndex.search(new URLSearchParams(location.search).get("q"));
+                if(results.length == 0){
+                    $("section").html("No results")
+                } else {
+                    $("section").html(results.map(function(result){
+                        return "<div class=\"article\">" +
+                            "<a href=\""+ result.ref +"\">" +
+                            "<h2>" + search_data[result.ref].title + "</h2>" +
+                            "</a>" +
+                            "</div>";
+                    }).join(""))
+                }
+            }
+        });
+    });
+  </script>
+</div>
+
+{% include footer.html %}

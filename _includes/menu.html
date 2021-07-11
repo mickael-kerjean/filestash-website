@@ -56,19 +56,12 @@
 		</ul>
 
 		<div class="nav-search-overlay">
-		    <div class="search-input-group" role="search">
-			    <input id="search-input" name="search" type="search" placeholder="Search" autocomplete="off" autocapitalize="off" spellcheck="false">
-			    <button id="search-close-btn" title="Close this search field and clear results (Esc)" aria-keyshortcuts="Escape">
-			        <svg class="svg-inline" viewBox="0 0 352 512" aria-hidden="true"><path fill="currentColor" d="M242.72 256l100.07-100.07c12.28-12.28 12.28-32.19 0-44.48l-22.24-22.24c-12.28-12.28-32.19-12.28-44.48 0L176 189.28 75.93 89.21c-12.28-12.28-32.19-12.28-44.48 0L9.21 111.45c-12.28 12.28-12.28 32.19 0 44.48L109.28 256 9.21 356.07c-12.28 12.28-12.28 32.19 0 44.48l22.24 22.24c12.28 12.28 32.2 12.28 44.48 0L176 322.72l100.07 100.07c12.28 12.28 32.2 12.28 44.48 0l22.24-22.24c12.28-12.28 12.28-32.19 0-44.48L242.72 256z"></path></svg>
-			    </button>
-		    </div>
+		    <form class="search-input-group" role="search" method="GET" action="/search/">
+			    <input id="search-input" name="q" type="search" placeholder="Search" autocomplete="off" autocapitalize="off" spellcheck="false">
+		    </form>
 		</div>
 	</div>
 </nav>
-
-<div id="search-results" class="container">
-	<div id="results-placeholder"></div>
-</div>
 
 <div id="mobile-menu" class="hidden-sm hidden-md hidden-lg container">
 	<ul class="menu">
@@ -174,6 +167,9 @@
     color: var(--color);
 }
 
+input[type="search"]::-webkit-search-cancel-button {
+  display: none;
+}
 #nav .search-input-group input::-moz-placeholder {
     color: #b7c5d1;
     opacity: .5;
@@ -215,124 +211,31 @@
 		  e.preventDefault();
 	  }, false);
 
-
-      
-      // Real-time client-side search using https://github.com/olivernn/lunr.js
-      // Open search field with the search icon, close it with "Escape" / the close
-      // icon, cycle through results with "Up" and "Down" and visit selected result
-      // with "Enter"
-      document.querySelector("#search-btn").onclick = function() {
-          Promise.all([
-              LOADJS("/js/jquery.min.js"),
-              LOADJS("/js/lunr.min.js")
-          ]).then(function() {
-              // This is required to focus the input when there is no transition, i.e.
-	          // when input is already visible without being focused.
-	          $("#search-input").focus();
-              
-              $(".nav-search-overlay")
-		          .addClass("opened")
-		          .one("transitionend webkitTransitionEnd oTransitionEnd", function () {
-			          // `.focus()` does not work on hidden elements, which also happens if
-			          // they are starting their transition.
-			          $("#search-input").focus();
-		          });
-              window.search_data_loaded = function (search_data) {
-                  // Preparing lunrjs index based on data store located in HTML pages
-	              const lunrIndex = lunr(function () {
-		              this.ref('id');
-		              this.field('title', { boost: 10 });
-		              this.field('category');
-		              this.field('content', { boost: 5 });
-
-		              for (var key in search_data) {
-			              this.add({
-				              id: key,
-				              title: search_data[key].title,
-				              category: search_data[key].category,
-				              content: search_data[key].content,
-			              });
-		              }
-	              });
-
-	              // Run the search every time the search input value changes.
-	              // Use "input" event instead of `keydown`/`keypress`/`keyup` to focus on
-	              // actual content change.
-	              $("#search-input").on('input', function(event) {
-		              var searchTerm = $(this).val();
-		              var resultsElement = $("#search-results");
-		              var contentElement = $("#content");
-
-		              // When the search field is not empty, run lunrjs and wrap all results in a
-		              // list or report that no results were found.
-		              // The first result is marked as "selected" so up/down arrows can cycle
-		              // through results while pressing Enter will click on the link.
-		              if (searchTerm) {
-			              var results = lunrIndex.search(searchTerm);
-			              var resultsContent;
-
-			              if (results.length) {
-				              resultsContent = "<ul>";
-				              results.forEach(function (result) {
-					              var url = result.ref;
-					              var item = search_data[url];
-					              resultsContent += '<li>';
-					              resultsContent += '<a href="' + url + '">' + item.title + '</a>';
-					              resultsContent += "</li>";
-				              });
-				              resultsContent += "</ul>";
-			              } else {
-				              resultsContent = "<p>No results found.</p>";
-			              }
-			              $("#results-placeholder").html(resultsContent);
-			              resultsElement.show();
-			              contentElement.hide();
-		              } else {
-			              // When the search input is empty, hide the result page and display the
-			              // current page. Also clear the accessibility notification area.
-			              resultsElement.hide();
-			              contentElement.show();
-		              }
-	              });
-
-	              // This must be `keydown` to override built-in handlers. `keypress` is not
-	              // emitted on non-printable characters (also differs across browsers) and
-	              // `keyup` arrives too late.
-	              $(document).keydown(function (event) {
-		              if (event.which === 27) {
-			              // "Escape" key, cancels current search. This cannot be on keyup as inputs
-			              // are being cleared by default on Escape keydown.
-			              $("#search-close-btn").click();
-			              return false;
-		              }
-	              });
-
-	              $("#search-input").keydown(function (event) {
-		              if (event.which === 27) {
-			              // Do not clear input when pressing "Escape" but let it bubble up to
-			              // `document.keydown` handler.
-			              event.preventDefault();
-		              } else if (event.which === 13) {
-			              // "Enter" key to focus on the first available result
-			              $("#search-results li:first-child a").focus();
-			              return false;
-		              }
-	              });
-
-	              $("#search-close-btn").click(function() {
-		              $(".nav-search-overlay")
-			              .removeClass("opened")
-			              .one("transitionend webkitTransitionEnd oTransitionEnd", function () {
-				              // Clearing the field only after transition has finished to avoid visual
-				              // glitch of going back to "Search" placeholder for a fraction of time.
-				              // Then trigger `input` event to clear results and bring back content.
-				              $("#search-input").val("").trigger("input");
-			              });
-		              return false;
-	              });
-              }
-              LOADJS("/js/search_data.js");
+      /* SEARCH */
+      window.addEventListener("load", function() {
+          document.querySelector("#search-btn").onclick = function() {          
+              LOADJS("/js/jquery.min.js").then(function() {
+                  $(".nav-search-overlay")
+		              .addClass("opened")
+		              .one("transitionend webkitTransitionEnd oTransitionEnd", function () {
+                          $("#search-input").focus()
+		              });
+              });
+          }
+          window.addEventListener("keyup", function(e) {
+              LOADJS("/js/jquery.min.js").then(function() {
+                  var shouldClose = false
+                  if(e.key === "Escape") shouldClose = true
+                  else if($("#search-input").val().length === 0) shouldClose = true
+                  if(shouldClose) {
+	                  $(".nav-search-overlay")
+	                      .removeClass("opened")
+	                      .one("transitionend webkitTransitionEnd oTransitionEnd", function () {
+	                          $("#search-input").val("").trigger("input");
+	                      });
+                  }
+              });
           });
-      }
+      })
   })();
 </script>
