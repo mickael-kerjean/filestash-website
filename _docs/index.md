@@ -4,7 +4,8 @@ title: Getting started
 order: 1
 permalink: /docs/
 head:
-  - <link rel="alternate" href="/fr/docs/" hreflang="fr" />
+  - <link rel="alternate" href="https://www.filestash.app/docs/" hreflang="en" />
+  - <link rel="alternate" href="https://www.filestash.app/fr/docs/" hreflang="fr" />
 ---
 
 To use Filestash, you can either:

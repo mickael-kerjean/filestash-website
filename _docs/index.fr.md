@@ -4,6 +4,9 @@ title: Point de départ
 order: 1
 language: fr
 permalink: /fr/docs/
+head:
+  - <link rel="alternate" href="https://www.filestash.app/docs/" hreflang="en" />
+  - <link rel="alternate" href="https://www.filestash.app/fr/docs/" hreflang="fr" />
 ---
 
 <style>.banner{ display: none; }</style>
