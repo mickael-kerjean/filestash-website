@@ -46,5 +46,18 @@ form select{ background: white; }
 }
 
 /* FAQ */
-#faq h3{ margin-top: 30px; margin-bottom: 7px; }
+#faq h3 {
+    border-top: 1px solid rgba(0,0,0,0.1);
+    padding-top: 25px;
+    margin-top: 25px;
+    font-size: 1.35rem !important;
+    margin-bottom: 0;
+}
+#faq h2:after {
+    content: ' ';
+    display: block;
+    width: 100px;
+    margin: 10px auto;
+    border-top: 4px solid var(--secondary);
+}
 #faq p{ margin-top: 8px; }
