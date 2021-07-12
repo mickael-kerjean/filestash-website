@@ -56,10 +56,9 @@ head:
     </div>
   </div>
   {% include share.html %}
+  <strong id="oem">OEM Software</strong>
 </div>
 <div class="waveshape"></div>
-
-
 <div id="features" style="padding-bottom:0;">
   <div class="container large">
     <div class="row features main">
@@ -68,16 +67,16 @@ head:
         <img alt="screenshot of Filestash when uploading" loading="lazy" class="fancy pull-left hidden-xs" src="/img/screenshots/feature1.png" style="margin-top: -30px;" />
         <h2>Explore and Manage your FTP server</h2>
         <p>
-          Our <strong>web FTP</strong> client make it easy to access / explore / edit / upload / download / delete / rename data on your server. It will work whether you use <a href="http://www.proftpd.org/">Proftpd</a>, <a href="https://www.pureftpd.org/project/pure-ftpd/">Pureftpd</a>, <a href="https://filezilla-project.org/">Filezilla</a>, <a href="https://security.appspot.com/vsftpd.html">Vsftpd</a> or any other <a href="https://tools.ietf.org/html/rfc959">FTP compliant server</a>.
+          Our <strong>web FTP</strong> client make it easy to access / explore / edit / upload / download / delete / rename data on your server. It will work with any <a href="https://tools.ietf.org/html/rfc959">FTP compliant server</a> such as <a href="http://www.proftpd.org/">Proftpd</a>, <a href="https://www.pureftpd.org/project/pure-ftpd/">Pureftpd</a>, <a href="https://filezilla-project.org/">Filezilla</a>, <a href="https://security.appspot.com/vsftpd.html">Vsftpd</a>, ...
         </p>
         <img alt="screenshot of Filestash when uploading" loading="lazy" class="fancy visible-xs" src="/img/screenshots/feature1.png" />
       </div>
 
       <div class="feature">
         <img alt="screenshot of the text editor" loading="lazy" class="fancy pull-right hidden-xs" src="/img/posts/2019-08-20-ftp-web-client.html.1.png" />
-        <h2>Content editor</h2>
+        <h2>Content editor and viewer</h2>
         <p>
-          Our integrated FTP editor lets you directly edit your files online. It is based on <a rel="noopener nofollow" href="https://codemirror.net/">CodeMirror</a> and has no problem with syntax highlighting on a wide range of languages
+          Watch your videos or images, the integrated FTP editor let you view and edit not only office document but also a wide range of file format and more
         </p>
         <img alt="screenshot of the text editor" loading="lazy" class="fancy visible-xs" src="/img/posts/2019-08-20-ftp-web-client.html.1.png" />
       </div>
@@ -86,7 +85,7 @@ head:
         <img alt="agpl logo" loading="lazy" class="fancy pull-left hidden-xs" src="/img/posts/2019-08-20-ftp-web-client.html.2.png" />
         <h2>Open source and Free Software</h2>
         <p>
-          This software is open source. The code is available from <a href="https://github.com/mickael-kerjean/filestash">Github</a>, feel free to audit it and self-host your own (see the <a href="{% link _docs/index.md %}">documentation</a> on how to do that).
+          Filestash is open source software. Our code is available from <a href="https://github.com/mickael-kerjean/filestash">Github</a> so you can audit, expand and self host your own version (see the <a href="{% link _docs/index.md %}">documentation</a>).
         </p>
         <img alt="agpl logo" loading="lazy" class="fancy visible-xs" src="/img/posts/2019-08-20-ftp-web-client.html.2.png" />
       </div>
@@ -104,16 +103,16 @@ head:
         <img alt="illustration of the shared link screen" loading="lazy" class="fancy pull-left hidden-xs" src="/img/screenshots/feature_share_0000.png" />
         <h2>File Sharing and full-text search</h2>
         <p>
-          Shared links can be easily created and manage with plenty of option for access control, putting you in control over what you share and how. Also, the full-text search engine lets you find your data easily
+          Collaborate with shared link that stay under strict control. The full-text search engine make it easy to find your existing content.
         </p>
         <img alt="illustration of the shared link screen" loading="lazy" class="fancy visible-xs" src="/img/screenshots/feature_share_0000.png" />
       </div>
 
       <div class="feature">
         <img alt="illustration of the shared link screen" loading="lazy" class="fancy pull-right hidden-xs" src="/img/screenshots/viewerpage.png" />
-        <h2>Putting your FTP on the web</h2>
+        <h2>Expose your FTP on the web</h2>
         <p>
-          Just create an iframe that points to a shared link or create some automatic login links as we did in our <a href="/">landing page</a>
+          Get your users the interface they deserved and integrate either through an iframe or with a custom page like this page
         </p>
         <img alt="illustration of the shared link screen" loading="lazy" class="fancy visible-xs" src="/img/screenshots/feature_share_0000.png" />
       </div>
@@ -122,7 +121,7 @@ head:
         <img alt="illustration of the online behavior" loading="lazy" class="fancy pull-left hidden-xs" src="/img/posts/2019-08-20-ftp-web-client.html.5.png" />
         <h2>Online and offline</h2>
         <p>
-          Filestash is a PWA which mean that it not only works great online but it has some functionality for offline usage as well
+          As a PWA, Filestash not only work great online but also goes to great length to provide some basic functionalities for offline usage
         </p>
         <img alt="illustration of the online behavior" loading="lazy" class="fancy visible-xs" src="/img/posts/2019-08-20-ftp-web-client.html.5.png" />
       </div>
@@ -131,8 +130,7 @@ head:
         <img alt="webdav integration" loading="lazy" class="fancy pull-right hidden-xs" src="/img/posts/2019-08-20-ftp-web-client.html.3.png" />
         <h2>Integrates with your file manager</h2>
         <p>
-          Filestash integrates with your local file manager.
-          yes, that means Filestash translates FTP call onto the same WebDAV that's supported by your file manager
+          Shared links integrates with your file manager. They can be used as a network drive under windows, OSX or Linux. Those links are full fledge WebDAV server that ties onto your FTP
         </p>
         <img alt="webdav integration" loading="lazy" class="fancy visible-xs" src="/img/posts/2019-08-20-ftp-web-client.html.3.png" />
       </div>
@@ -141,7 +139,7 @@ head:
         <img alt="plugin illustration" loading="lazy" class="fancy pull-left hidden-xs" src="/img/posts/2019-08-20-ftp-web-client.html.6.png" />
         <h2>Extensible </h2>
         <p>
-          Our <strong>web FTP tool</strong> comes with a plugin mechanism allowing for a lot of flexibility to extend the core service and customise it to fit your specific need and workflow. Wanna start create a plugin? See the <a href="/docs/plugin/">documentation</a>
+          Our <strong>web FTP tool</strong> can be entirely customised. It can be white labelled and extended through the plugin mechanism to fit your needs and processes with a lot of flexibility
         </p>
         <img alt="plugin illustration" loading="lazy" class="fancy visible-xs" src="/img/posts/2019-08-20-ftp-web-client.html.6.png" />
       </div>
@@ -150,13 +148,13 @@ head:
 
     <h2 style="margin-top:0;">Creating an awesome Web FTP client</h2>
     <p>
-      Traditional FTP clients such as <a href="https://filezilla-project.org/">Filezilla FTP</a> or <a href="https://winscp.net/eng/index.php">WinSCP</a> are great for sysadmin, but having access to all the feature from the FTP protocols makes it hard to use for everyone else. The value proposition of Filestash is to make FTP <strong>easy to use</strong> for the <strong>end-users</strong>, not sys admins, bringing collaboration features to make FTP a modern replacement to <a href="https://www.theguardian.com/technology/2014/jul/17/edward-snowden-dropbox-privacy-spideroak">Dropbox that respect your privacy</a>
+      Traditional FTP clients such as <a href="https://filezilla-project.org/">Filezilla FTP</a> or <a href="https://winscp.net/eng/index.php">WinSCP</a> are great for sysadmin and engineers but all your users might not be familiar with the underlying protocol and just want a tool to get things done im a simple manner. The value proposition of Filestash is to make FTP <strong>easy to use</strong> for your <strong>end-users</strong>, bringing collaboration features to make FTP a modern replacement to <a href="https://www.theguardian.com/technology/2014/jul/17/edward-snowden-dropbox-privacy-spideroak">Dropbox</a>.
     </p>
     <br><br><br><br>
   </div>
 
   <div class="container" id="faq" data-nosnippet>
-    <h2 style="margin-top:0;">Frequently Asked Questions</h2>
+    <h2 style="margin-top:0;">FTP FAQ</h2>
     <h3>What does FTP stand for?</h3>
     <p>
       FTP stands for "File Transfer Protocol"
