@@ -51,7 +51,7 @@ We do have an extensive suite of tests but they haven't been open sourced. We di
 
 ## Why was Filestash developed?
 
-Filestash's [original author](https://mickael-kerjean.me) couldn't find an open source file-sharing service he was happy with. He was looking for something which would:
+Filestash's [original author](https://mickael.kerjean.me) couldn't find an open source file-sharing service he was happy with. He was looking for something which would:
 1. Only focus on solving the problem of managing personal data in a cloud controlled by the user and doing it well
 2. Not try to lock one's data in and make it hard to move away from the service
 3. Not try to reinvent the wheel but, rather, leverage the state of technology of the past 20 years (eg: FTP servers, authentication via PAM, access levels of a Linux server, etc.)
