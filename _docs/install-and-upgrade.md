@@ -2,6 +2,7 @@
 layout: documentation
 title: Install and upgrade
 order: 2
+language: en
 ---
 
 {% include toc.md %}

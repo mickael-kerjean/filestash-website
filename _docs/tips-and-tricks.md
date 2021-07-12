@@ -1,6 +1,7 @@
 ---
 layout: documentation
 title: Tips and tricks
+language: en
 order: 4
 ---
 

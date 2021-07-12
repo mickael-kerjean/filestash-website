@@ -1,6 +1,7 @@
 ---
 layout: documentation
 title: Support
+language: en
 order: 6
 ---
 

@@ -1,6 +1,7 @@
 ---
 layout: documentation
 title: Plugins
+language: en
 order: 5
 ---
 

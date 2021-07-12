@@ -1,6 +1,7 @@
 ---
 layout: documentation
 title: Configuration
+language: en
 order: 3
 ---
 

@@ -122,7 +122,6 @@
     margin-bottom: 75px;
     text-align: center;
     color: var(--secondary);
-    font-weight: normal;
 }
 #features .main{
     margin-top: 130px;
@@ -133,7 +132,6 @@
     margin: 0 0 15px 0;
     text-align: left;
     line-height: 1em;
-    font-weight: normal;
     font-size: 1.55em!important;
     color: var(--secondary);
     text-align: left;

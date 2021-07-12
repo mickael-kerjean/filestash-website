@@ -1,15 +1,19 @@
 <div id="footer">
-  <div class="row">
-    <div class="col-sm-10">
-      {% if page.language == "en" %}
-      <div class="flex">
-        {{ site | tag_cloud }}
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-10">
+        {% if page.language == "en" %}
+        <h4>Topics:</h4>
+        <div class="flex">
+          {{ site | tag_cloud }}
+        </div>
+        {% endif %}
       </div>
-      {% endif %}
+      <div class="col-sm-2">
+        <img alt="logo" src="https://downloads.filestash.app/brand/logo_footer.svg"/>
+      </div>
     </div>
-    <div class="col-sm-2">
-      <img alt="logo" src="https://downloads.filestash.app/brand/logo_footer.svg"/>
-    </div>
+  </div>
 </div>
 
 <style>
@@ -19,9 +23,15 @@
       color: #f2f3f5;
       padding: 80px 50px 70px;
   }
+  #footer h4 {
+      font-size: 1.1rem;
+      color: inherit;
+      margin: 0 0 10px;
+  }
   #footer img {
       height: 50px;
       width: 50px;
+      margin-top: -5px;
   }
   #footer .flex {
       display: flex;
@@ -29,11 +39,12 @@
   }
   #footer .flex a {
       display: block;
-      width: 25%;
+      width: 33.33%;
       color: inherit;
       opacity: 0.7;
       text-transform: uppercase;
-      font-size: 0.9rem;
+      font-size: 0.8rem;
+      margin-bottom: 10px;
   }
   #footer .col-sm-2 { text-align: right; }
   @media (max-width: 767px){

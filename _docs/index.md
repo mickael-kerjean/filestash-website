@@ -2,6 +2,7 @@
 layout: documentation
 title: Getting started
 order: 1
+language: en
 permalink: /docs/
 head:
   - <link rel="alternate" href="https://www.filestash.app/docs/" hreflang="en" />
