@@ -32,7 +32,6 @@ form input[type="submit"]{ margin-top: 20px; width: 100%; color: inherit; paddin
 .features h2{
     margin: 0 0 20px 0!important;
     font-size: 1.55em!important;
-    text-align: left!important;
     line-height: 1em!important;
 }
 
@@ -55,6 +54,7 @@ form select{ background: white; }
 }
 
 /* FAQ */
+#faq h2 { text-align: center; }
 #faq h3 {
     border-top: 1px solid rgba(0,0,0,0.1);
     padding-top: 25px;

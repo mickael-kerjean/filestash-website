@@ -111,6 +111,8 @@
     margin-top: 140px;
     text-align: center;
     color: var(--secondary);
+    text-shadow: 0px 0px 2px white;
+    font-size: 2.4rem;
 }
 
 /* Features */
@@ -120,7 +122,6 @@
 #features h2 {
     margin-top: 150px;
     margin-bottom: 75px;
-    text-align: center;
     color: var(--secondary);
 }
 #features .main{
@@ -139,7 +140,6 @@
 }
 #features .feature {
     padding-bottom: 20px;
-    text-align: center;
     position: relative;
 }
 #features .feature p {
@@ -179,6 +179,11 @@
     height: 270px;
     width: 400px;
     object-fit: cover;
+}
+#features > .feature:nth-child(even) > h2,
+#features > .feature:nth-child(even) > h3,
+#features > .feature:nth-child(even) > p {
+    text-align: right;
 }
 @media (max-width: 768px){
     #features .feature img.fancy{ width: 100%; }
