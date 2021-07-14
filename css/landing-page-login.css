@@ -1,5 +1,5 @@
 h1 a{ color: inherit; border-bottom: 2px dashed white; }
-form {
+#splash form {
     background: white;
     border-radius: 5px;
     max-width: 500px;
@@ -10,10 +10,10 @@ form {
     margin-top: 30px;
     box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
 }
-form label{ display: block; margin-bottom: 5px; }
-form label span{ display: inline-block; width: 160px}
-form label input, form label select{ width: calc(100% - 160px); padding: 5px; color: var(--emphasis); box-sizing: border-box; }
-form input[type="submit"]{ margin-top: 20px; width: 100%; color: inherit; padding: 4px 0; margin-bottom: 0; }
+#splash form label{ display: block; margin-bottom: 5px; }
+#splash form label span{ display: inline-block; width: 160px}
+#splash form label input, form label select{ width: calc(100% - 160px); padding: 5px; color: var(--emphasis); box-sizing: border-box; }
+#splash form input[type="submit"]{ margin-top: 20px; width: 100%; color: inherit; padding: 4px 0; margin-bottom: 0; }
 
 #splash .hgroup{ margin-top: 0; padding-top: 20px; }
 #splash p.example{ margin-bottom: 0; }
@@ -35,8 +35,8 @@ form input[type="submit"]{ margin-top: 20px; width: 100%; color: inherit; paddin
     background-position: top center;
 }
 
-form fieldset legend{ padding: 2px 7px; cursor: pointer; user-select: none; }
-form select{ background: white; }
+#splash form fieldset legend{ padding: 2px 7px; cursor: pointer; user-select: none; }
+#splash form select{ background: white; }
 #nav ul > li:nth-child(3) {
     display: none;
 }
