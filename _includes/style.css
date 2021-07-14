@@ -232,6 +232,7 @@ blockquote p { margin: 0; }
     color: var(--secondary);
     display: inline-block;
     font-size: 0.8rem;
+    line-height: 20px;
     font-weight: bold;
     letter-spacing: 1px;
     margin-bottom: 10px;
@@ -241,12 +242,19 @@ blockquote p { margin: 0; }
     word-spacing: 3px;
     cursor: pointer; /* This is useful for `<button>` elements */
 }
+.btn.light {
+    border-color: var(--bg-color);
+    color: var(--bg-color);
+}
 .btn:disabled,
 .btn:hover,
 .btn:focus {
     background: var(--secondary);
     color: var(--bg-color);
     opacity: 1;
+}
+.btn.light:disabled, .btn.light:hover, .btn.light:focus{
+    background: var(--light);
 }
 .btn:active {
     box-shadow: none;

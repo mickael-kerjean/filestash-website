@@ -7,78 +7,86 @@ head:
   - <link rel="alternate" href="/fr/" hreflang="fr" />
 ---
 
-{% include menu.html context="homepage" %}
-<link rel="stylesheet" href="/css/landing-page.css">
-<div id="splash">
-  <div class="row">
-	<div class="col-sm-12">
-      <div class="iframe-wrapper onlyForDesktop">
-        <iframe id="appframe" frameborder="0" src="https://demo.filestash.app/login?type=webdav&url=https://webdav.filestash.app/" allow="fullscreen;speaker"></iframe>
-        <div class="arrow-top">
-          <i class="arrow top"></i>
-          <i class="arrow top"></i>
-          Essayez moi
-          <i class="arrow top"></i>
-          <i class="arrow top"></i>
+<div id="splash-container">
+  {% include menu.html context="homepage" %}
+  <link rel="stylesheet" href="/css/landing-page.css">
+  <div id="splash">
+    <div class="row">
+	  <div class="col-sm-12">
+        <div class="iframe-wrapper onlyForDesktop">
+          <iframe id="appframe" frameborder="0" src="https://demo.filestash.app/login?type=webdav&url=https://webdav.filestash.app/" allow="fullscreen;speaker"></iframe>
+          <div class="arrow-top">
+            <i class="arrow top"></i>
+            <i class="arrow top"></i>
+            Essayez moi
+            <i class="arrow top"></i>
+            <i class="arrow top"></i>
+          </div>
         </div>
-      </div>
-	  <div class="hgroup">
-		<h1>Filestash</h1>
-		<h2>
-          transforme votre <br>
-          <noscript>
-            <a href="{% post_url 2019-11-26-ftp-web-client-fr %}">FTP</a> / WebDav / SFTP / S3 / Minio / Git / Google drive / Dropbox server
-          </noscript>
-          <span id="typing"></span> <br>
-          en ça
+	    <div class="hgroup">
+		  <h1>Filestash</h1>
+		  <h2>
+            transforme votre <br>
+            <noscript>
+              <a href="{% post_url 2019-11-26-ftp-web-client-fr %}">FTP</a> / WebDav / SFTP / S3 / Minio / Git / Google drive / Dropbox server
+            </noscript>
+            <span id="typing"></span> <br>
+            en ça
             <span class="arrow-right onlyForDesktop">
               <i class="arrow right"></i>
               <i class="arrow right"></i>
               <i class="arrow right"></i>
             </span>
-        </h2>
-	  </div>
+          </h2>
+	    </div>
 
-      <div class="screenshot onlyForMobile">
-        <img alt="Filestash screenshot" src="/img/screenshots/viewerpage.png" />
+        <div class="screenshot onlyForMobile">
+          <img alt="Filestash screenshot" src="/img/screenshots/viewerpage.png" />
+        </div>
+
+        <script src="/js/typed.min.js"></script>
+        <script>
+          new Typed('#typing', {
+              strings: [
+                  "super solide serveur FTP",
+                  "super solide serveur SFTP",
+                  "tout nouveau S3 buckets",
+                  "tout nouveau Minio serveur",
+                  "serveur Webdav",
+                  "serveur CardDav/CalDav",
+                  "Backblaze B2",
+                  "systemes backoffice",
+                  "fiable repository GIT",
+                  "fiable serveur mysql",
+                  "fiable serveur LDAP",
+                  "compte Google Drive",
+                  "compte Dropbox",
+              ],
+              typeSpeed: 50,
+              backSpeed: 30,
+              startDelay: 100,
+              backDelay: 500,
+              smartBackspace: true,
+              loop: true
+          });
+        </script>
+
+        <p class="button">
+          <a class="btn" href="{% link _docs/index.fr.md %}">Commencez maintenant!</a>
+	    </p>
       </div>
-
-      <script src="/js/typed.min.js"></script>
-      <script>
-        new Typed('#typing', {
-          strings: [
-            "super solide serveur FTP",
-            "super solide serveur SFTP",
-            "tout nouveau S3 buckets",
-            "tout nouveau Minio serveur",
-            "serveur Webdav",
-            "serveur CardDav/CalDav",
-            "Backblaze B2",
-            "systemes backoffice",
-            "fiable repository GIT",
-            "fiable serveur mysql",
-            "fiable serveur LDAP",
-            "compte Google Drive",
-            "compte Dropbox",
-        ],
-        typeSpeed: 50,
-        backSpeed: 30,
-        startDelay: 100,
-        backDelay: 500,
-        smartBackspace: true,
-        loop: true
-        });
-      </script>
-
-      <p class="button">
-        <a class="btn" href="{% link _docs/index.fr.md %}">Commencez maintenant!</a>
-	  </p>
-
     </div>
   </div>
+  <div id="waveshape"></div>
 </div>
-
-<h2 id="introduce-second-heading">Un gestionnaire de fichiers Web pour:</h2>
+<div style="background: var(--bg-color);">
+  <div class="container center">
+    <br><br>
+    <strong style="font-size:1.2rem">Une solution OEM qui s'intègre à vos données et à vos process</strong> <br><br>
+    <a href="/pricing/#enterprise" class="btn">Chat with us</a>
+    <br><br><br><br>
+  </div>
+</div>
 
 <div id="features">
     <div class="container large">
@@ -146,8 +154,8 @@ head:
 
     <div class="call-to-action">
         <h2>Essayez maintenant?</h2>
-        <a class="btn" href="{% link _docs/index.fr.md %}">Commencez ici</a>
-        <a class="btn" href="https://demo.filestash.app">DEMO</a>
+        <a class="btn light" href="{% link _docs/index.fr.md %}">Commencez ici</a>
+        <a class="btn light" href="https://demo.filestash.app">DEMO</a>
     </div>
 
     <div class="container">
@@ -225,5 +233,4 @@ head:
     </div>
 </div>
 
-{% include support.html %}
 {% include footer.html %}

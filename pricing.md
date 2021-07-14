@@ -873,9 +873,10 @@ layout: default
     <form onsubmit="submitForm(event)" action="https://downloads.filestash.app/compute/form.php" method="post">
         <input type="hidden" name="type" value="enterprise" />
         <input type="hidden" name="redirect" value="https://www.filestash.app/ok/" />
-        <input type="email" name="email" placeholder="Your email address" />
-        <input type="phone" name="phone" placeholder="Your phone number" />
-        <textarea name="message" placeholder="what are you trying to achieve?"></textarea>
+        <input type="email" name="email" placeholder="Email Address" />
+        <input type="phone" name="phone" placeholder="Phone Number" />
+        <input type="text" name="job-title" placeholder="Job Title" />
+        <textarea name="message" placeholder="what are you trying to achieve? How can we help you?" rows="4"></textarea>
         <button>SUBMIT</button>
     </form>
 </div>
@@ -887,7 +888,6 @@ layout: default
         <input type="text" name="company" placeholder="Your company name" />
         <input type="email" name="email" placeholder="Your email address" />
         <input type="phone" name="phone" placeholder="Your phone number" />
-        <textarea name="message" placeholder="what are you trying to achieve?"></textarea>
         <button>SUBMIT</button>
     </form>
 </div>
@@ -896,6 +896,8 @@ layout: default
  (function(){
      if(location.hash === "#support") {
          $('#support_register').modal({fadeDuration: 250});
+     } else if(location.hash === "#enterprise") {
+         $('#enterprise').modal({fadeDuration: 250});
      }
  })()
 </script>
@@ -992,7 +994,7 @@ layout: default
      border-radius: 3px;
      border: 2px solid rgba(0,0,0,0.1);
      outline: none;
-     padding: 5px 10px;
+     padding: 8px 10px;
      min-width: 100%;
      max-width: 100%;
      max-height: 80px;

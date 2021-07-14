@@ -88,6 +88,22 @@
     margin: 40px 0 20px 0;
 }
 #splash .screenshot img{ border-radius: 5px; }
+#splash #oem{
+    display: flex;
+    justify-content: space-between;
+    color: var(--emphasis);
+    margin-top: 20px;
+    background: var(--emphasis-primary);
+    box-shadow: 0px 10px 14px 0px rgb(23 43 77 / 20%);
+    padding: 20px 30px;
+    position: relative;
+    top: 70px;
+    border-radius: 2px;
+    text-align: left;
+}
+#splash #oem span { padding: 9px 5px 9px 0; }
+#splash #oem .btn{ margin: 0; text-align: center; }
+
 @media (max-width: 767px){
     #splash .onlyForDesktop{ display: none; }
     #splash .onlyForMobile{ display: block!important; }
@@ -108,10 +124,11 @@
 }
 
 #introduce-second-heading{
-    margin-top: 140px;
+    margin: 0 0 50px 0;
     text-align: center;
-    color: var(--secondary);
-    text-shadow: 0px 0px 2px white;
+    color: var(--bg-color);
+    background: linear-gradient(var(--dark), #505457);
+    padding: 140px;
 }
 
 /* Features */
@@ -179,30 +196,35 @@
     width: 440px;
     object-fit: cover;
 }
-#features > .feature:nth-child(even) > h2,
-#features > .feature:nth-child(even) > h3,
-#features > .feature:nth-child(even) > p {
+#features .features .feature:nth-child(even) > h2,
+#features .features .feature:nth-child(even) > h3,
+#features .features .feature:nth-child(even) > p {
     text-align: right;
 }
 img.fancy.hidden-xs{
-    margin-top: -60px;
+    margin-top: -70px;
 }
-img.fancy.pull-left { margin-right: 200px; }
-img.fancy.pull-right { margin-left: 200px; }
+img.fancy.pull-left { margin-right: 170px; }
+img.fancy.pull-right { margin-left: 170px; }
 @media (max-width: 1200px){
     #features .feature img.fancy { width:400px; height: 270px; }
     img.fancy.pull-left { margin-right: 130px; }
     img.fancy.pull-right { margin-left: 130px; }
 }
 @media (max-width: 991px){
-    img.fancy.hidden-xs{ margin-top: -20px; }
+    img.fancy.hidden-xs{ margin-top: -35px; }
     #features .feature img.fancy { width:340px; height: 229px; }
     img.fancy.pull-left { margin-right: 50px; }
     img.fancy.pull-right { margin-left: 50px; }
 }
-@media (max-width: 768px){
+@media (max-width: 767px){
     #features .feature img.fancy{ width: 100%; }
     #features .features.main .feature { margin-bottom: 30px; }
+    #features .features .feature:nth-child(even) > h2,
+    #features .features .feature:nth-child(even) > h3,
+    #features .features .feature:nth-child(even) > p {
+        text-align: inherit;
+    }
 }
 
 #features .call-to-action{

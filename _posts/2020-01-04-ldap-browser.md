@@ -53,7 +53,7 @@ language: en
 </div>
 <div class="waveshape"></div>
 
-<div id="features">
+<div id="features" style="padding-bottom:0;">
   <div class="container large">
     <div class="row features main">
 
@@ -135,21 +135,12 @@ language: en
 
   <div class="call-to-action">
     <h2>Some other online client tools:</h2>
-    <a class="btn" href="{% post_url 2019-11-26-ftp-web-client %}">FTP</a>
-    <a class="btn" href="{% post_url 2019-11-21-s3-browser %}">S3</a>
-    <a class="btn" href="{% post_url 2020-04-30-sftp-browser %}">SFTP</a>
-    <a class="btn" rel="nofollow" href="https://demo.filestash.app/login">Webdav</a>
-    <a class="btn" rel="nofollow" href="https://demo.filestash.app/login">GIT</a>
+    <a class="btn light" href="{% post_url 2019-11-26-ftp-web-client %}">FTP</a>
+    <a class="btn light" href="{% post_url 2019-11-21-s3-browser %}">S3</a>
+    <a class="btn light" href="{% post_url 2020-04-30-sftp-browser %}">SFTP</a>
+    <a class="btn light" rel="nofollow" href="https://demo.filestash.app/login">Webdav</a>
+    <a class="btn light" rel="nofollow" href="https://demo.filestash.app/login">GIT</a>
   </div>
-
-
-  <div class="container">
-    <p style="margin-top: 100px;">
-      We hope you find Filestash as cool as we do. If you need help or want to chat, you can find us on IRC on freenode at <a href="https://support.filestash.app/">#filestash</a>
-    </p>
-  </div>
-
 
 </div>
 
-{% include support.html %}
