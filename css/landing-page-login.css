@@ -13,7 +13,7 @@ h1 a{ color: inherit; border-bottom: 2px dashed white; }
 #splash form label{ display: block; margin-bottom: 5px; }
 #splash form label span{ display: inline-block; width: 160px}
 #splash form label input, form label select{ width: calc(100% - 160px); padding: 5px; color: var(--emphasis); box-sizing: border-box; }
-#splash form input[type="submit"]{ margin-top: 20px; width: 100%; color: inherit; padding: 4px 0; margin-bottom: 0; }
+#splash form input[type="submit"]{ margin-top: 20px; width: 100%; padding: 4px 0; margin-bottom: 0; }
 
 #splash .hgroup{ margin-top: 0; padding-top: 20px; }
 #splash p.example{ margin-bottom: 0; }
