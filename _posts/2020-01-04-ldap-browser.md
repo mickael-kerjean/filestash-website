@@ -30,7 +30,7 @@ language: en
         <label>
           <span>Base DN:</span><input type="text" name="base_dn" placeholder="dc=example,dc=com" />
         </label>
-        <input type="submit" value="Connect" />
+        <input type="submit" value="Connect" class="btn" />
       </form>
 
       <script>

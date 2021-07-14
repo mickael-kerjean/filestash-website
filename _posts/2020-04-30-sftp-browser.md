@@ -33,7 +33,7 @@ redirect_from:
         <label>
           <span>Port:</span><input type="text" name="port" placeholder="Default: 22"/>
         </label>
-        <input type="submit" value="Connect" />
+        <input type="submit" value="Connect" class="btn" />
       </form>
       <script>
         function clickPublicSFTPHandler(e, data){

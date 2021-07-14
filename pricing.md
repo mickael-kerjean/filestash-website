@@ -877,7 +877,7 @@ layout: default
         <input type="phone" name="phone" placeholder="Phone Number" />
         <input type="text" name="job-title" placeholder="Job Title" />
         <textarea name="message" placeholder="what are you trying to achieve? How can we help you?" rows="4"></textarea>
-        <button>SUBMIT</button>
+        <button class="btn">SUBMIT</button>
     </form>
 </div>
 <div id="support_register" class="modal">
@@ -888,7 +888,7 @@ layout: default
         <input type="text" name="company" placeholder="Your company name" />
         <input type="email" name="email" placeholder="Your email address" />
         <input type="phone" name="phone" placeholder="Your phone number" />
-        <button>SUBMIT</button>
+        <button class="btn">SUBMIT</button>
     </form>
 </div>
 
@@ -1001,15 +1001,9 @@ layout: default
      box-sizing: border-box;
  }
  .modal form button{
-     border: none;
-     outline: none;
      padding: 7px 0px;
      width: 100%;
-     background: var(--primary);
-     color: var(--emphasis);
-     font-size: 0.9rem;
      margin-top: 5px;
-     border-radius: 3px;
  }
 </style>
 
