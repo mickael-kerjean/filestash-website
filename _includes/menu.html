@@ -149,6 +149,7 @@
     margin-top: 10px;
     height: 30px;
     width: 100%;
+    box-sizing: border-box;
 }
 #nav .search-input-group button {
     position: absolute;
@@ -213,7 +214,7 @@ input[type="search"]::-webkit-search-cancel-button {
 
       /* SEARCH */
       window.addEventListener("load", function() {
-          document.querySelector("#search-btn").onclick = function() {          
+          document.querySelector("#search-btn").onclick = function() {
               LOADJS("/js/jquery.min.js").then(function() {
                   $(".nav-search-overlay")
 		              .addClass("opened")

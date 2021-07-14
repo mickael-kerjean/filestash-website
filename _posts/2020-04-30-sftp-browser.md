@@ -53,7 +53,14 @@ redirect_from:
     </div>
   </div>
   {% include share.html %}
-  <strong id="oem">OEM Software</strong>
+  <div class="container">
+    <div id="oem">
+      <span>
+        We can make Filestash to work with your backend, your processes, your users and your brand
+      </span>
+      <a href="/pricing/#enterprise" class="btn">Chat with us</a>
+    </div>
+  </div>
 </div>
 <div class="waveshape"></div>
 
