@@ -1,0 +1,184 @@
+---
+title: FTP Online | Der beste Web-Client für FTP
+description: FTP Online. Ein 100%iger Online-FTP-Client, mit dem Sie auf Ihren FTP-Server zugreifen können, als ob es sich um einen anderen modernen File-Sharing-Dienst handeln würde
+layout: landing
+permalink: /de/ftp-online-client.html
+tags: ftp oem online-client tool
+language: de
+head:
+  - <link rel="alternate" href="https://www.filestash.app/online-ftp-client.html" hreflang="en" />
+  - <link rel="alternate" href="https://www.filestash.app/fr/client-web-ftp-en-ligne.html" hreflang="fr" />
+  - <link rel="alternate" href="https://www.filestash.app/de/ftp-online-client.html" hreflang="de" />
+  - <link rel="alternate" href="https://www.filestash.app/es/client-ftp-online.html" hreflang="es" />
+  - <link rel="alternate" href="https://www.filestash.app/it/client-ftp-online.html" hreflang="it" />
+  - <link rel="alternate" href="https://www.filestash.app/pt/cliente-ftp-online.html" hreflang="pt" />
+---
+
+<link rel="stylesheet" href="/css/landing-page.css">
+<link rel="stylesheet" href="/css/landing-page-login.css">
+
+<div id="splash" class="nopadding">
+  <div class="row">
+    <div class="col-sm-12">
+      <div class="hgroup">
+        <h1><a href="https://en.wikipedia.org/wiki/File_Transfer_Protocol">FTP</a> Online; Testen Sie unseren webbasierten FTP-Client</h1>
+      </div>
+      <form onsubmit='$("form input[type=\"submit\"]").attr("value", "LOADING...")' action="https://demo.filestash.app/login" method="GET">
+        <input type="hidden" name="type" value="ftp" />
+        <label>
+          <span>Hostname:</span><input type="text" name="hostname" placeholder="IP-Adresse Ihres Servers" required/>
+        </label>
+        <label>
+          <span>Benutzername:</span><input default="anonymous" type="text" name="username" placeholder="Standard: anonymous"/>
+        </label>
+        <label>
+          <span>Kennwort:</span><input type="password" name="password" />
+        </label>
+        <label>
+          <span>Port:</span><input type="text" name="port" placeholder="Voreinstellung: 21"/>
+        </label>
+        <input type="submit" class="btn" value="Anmelden" />
+      </form>
+
+      <script>
+        function clickPublicFTPHandler(e){
+            e.preventDefault();
+            document.querySelector("form input[name='hostname']").value = e.target.text;
+            document.querySelector("form input[type='submit']").click()
+        }
+      </script>
+      <p class="example">
+        Beispiel für einen <a href="{% post_url 2020-07-08-free-ftp-server-online %}">freien FTP-Server</a>:<br>
+        <a rel="nofollow noopener" onclick="clickPublicFTPHandler(event);" href="ftp://ftp.gnu.org/">ftp.gnu.org</a>
+        <a rel="nofollow noopener" onclick="clickPublicFTPHandler(event);" href="ftp://ftp.pureftpd.org/">ftp.pureftpd.org</a>
+        <a rel="nofollow noopener" onclick="clickPublicFTPHandler(event);" href="ftp://ftp.vim.org/pub/">ftp.vim.org</a>
+        <a rel="nofollow noopener" onclick="clickPublicFTPHandler(event);" href="ftp://ftp.slackware.com/">ftp.slackware.com</a>
+      </p>
+    </div>
+  </div>
+  {% include share.html %}
+  <div class="container">
+    <div id="oem">
+      <span>
+        Wir können Filestash so integrieren, dass es mit Ihrem Backend, Ihren Prozessen, Ihren Benutzern und Ihrer Marke funktioniert
+      </span>
+      <a href="/pricing/#enterprise" class="btn">Chatten Sie mit uns</a>
+    </div>
+  </div>
+</div>
+<div class="waveshape"></div>
+<div id="features" style="padding-bottom:0;">
+  <div class="container large">
+    <div class="row features main">
+
+      <div class="feature">
+        <img alt="screenshot of Filestash when uploading" loading="lazy" class="fancy pull-left hidden-xs" src="/img/screenshots/feature1.png" />
+        <h2>Erforschen und Verwalten Ihres FTP-Servers</h2>
+        <p>
+          Unser <strong>Web-FTP-Client</strong> macht es einfach, die Daten auf Ihrem Server zu verwalten und zu erkunden. Er funktioniert mit jedem <a href="https://tools.ietf.org/html/rfc959">FTP-kompatiblen Server</a> wie <a href="http://www.proftpd.org/">Proftpd</a>, <a href="https://www.pureftpd.org/project/pure-ftpd/">Pureftpd</a>, <a href="https://filezilla-project.org/">Filezilla</a>, <a href="https://security.appspot.com/vsftpd.html">Vsftpd</a>, ...
+        </p>
+        <img alt="screenshot of Filestash when uploading" loading="lazy" class="fancy visible-xs" src="/img/screenshots/feature1.png" />
+      </div>
+
+      <div class="feature">
+        <img alt="screenshot of the text editor" loading="lazy" class="fancy pull-right hidden-xs" src="/img/posts/2019-08-20-ftp-web-client.html.1.png" />
+        <h2>Content-Editor und Viewer</h2>
+        <p>
+          Betrachten Sie Ihre Videos oder Bilder, mit dem integrierten FTP-Editor können Sie nicht nur Office-Dokumente, sondern auch eine Vielzahl von Dateiformaten und mehr anzeigen und bearbeiten
+        </p>
+        <img alt="screenshot of the text editor" loading="lazy" class="fancy visible-xs" src="/img/posts/2019-08-20-ftp-web-client.html.1.png" />
+      </div>
+
+      <div class="feature">
+        <img alt="agpl logo" loading="lazy" class="fancy pull-left hidden-xs" src="/img/posts/2019-08-20-ftp-web-client.html.2.png" />
+        <h2>Offener Quellcode und freie Software</h2>
+        <p>
+          Filestash ist eine Open-Source-Software. Unser Code ist auf <a href="https://github.com/mickael-kerjean/filestash">Github</a> verfügbar, so dass Sie Ihre eigene Version prüfen, erweitern und selbst hosten können (siehe die <a href="{% link _docs/index.md %}">Dokumentation</a>).
+        </p>
+        <img alt="agpl logo" loading="lazy" class="fancy visible-xs" src="/img/posts/2019-08-20-ftp-web-client.html.2.png" />
+      </div>
+
+      <div class="feature">
+        <img alt="logo of the 3 main operating system" loading="lazy" class="fancy pull-right hidden-xs" src="/img/posts/2019-08-20-ftp-web-client.html.4.png" />
+        <h2>Mac, Windows und Linux</h2>
+        <p>
+          Unser Software-Tool ist als Webanwendung in Ihrem Browser verfügbar, so dass Sie die ultimative Portabilität haben, ohne etwas installieren zu müssen. Es funktioniert am besten mit Chrome, Chromium und Firefox.
+        </p>
+        <img alt="logo of the 3 main operating system" loading="lazy" class="fancy visible-xs" src="/img/posts/2019-08-20-ftp-web-client.html.4.png" />
+      </div>
+
+      <div class="feature">
+        <img alt="illustration of the shared link screen" loading="lazy" class="fancy pull-left hidden-xs" src="/img/screenshots/feature_share_0000.png" />
+        <h2>File Sharing und Volltextsuche</h2>
+        <p>
+          Arbeiten Sie mit gemeinsam genutzten Links, die unter strenger Kontrolle bleiben. Die Volltext-Suchmaschine macht es einfach, Ihre vorhandenen Inhalte zu finden.
+        </p>
+        <img alt="illustration of the shared link screen" loading="lazy" class="fancy visible-xs" src="/img/screenshots/feature_share_0000.png" />
+      </div>
+
+      <div class="feature">
+        <img alt="illustration of the shared link screen" loading="lazy" class="fancy pull-right hidden-xs" src="/img/screenshots/viewerpage.png" />
+        <h2>Präsentieren Sie Ihr FTP im Web</h2>
+        <p>
+          Bieten Sie Ihren Benutzern die Oberfläche, die sie verdienen, und integrieren Sie sie entweder über einen Iframe oder mit einer benutzerdefinierten Seite wie dieser
+        </p>
+        <img alt="illustration of the shared link screen" loading="lazy" class="fancy visible-xs" src="/img/screenshots/feature_share_0000.png" />
+      </div>
+
+      <div class="feature">
+        <img alt="illustration of the online behavior" loading="lazy" class="fancy pull-left hidden-xs" src="/img/posts/2019-08-20-ftp-web-client.html.5.png" />
+        <h2>Online und offline</h2>
+        <p>
+          Als PWA funktioniert Filestash nicht nur online hervorragend, sondern bietet auch einige grundlegende Funktionen für die Offline-Nutzung
+        </p>
+        <img alt="illustration of the online behavior" loading="lazy" class="fancy visible-xs" src="/img/posts/2019-08-20-ftp-web-client.html.5.png" />
+      </div>
+
+      <div class="feature">
+        <img alt="webdav integration" loading="lazy" class="fancy pull-right hidden-xs" src="/img/posts/2019-08-20-ftp-web-client.html.3.png" />
+        <h2>Integriert mit Ihrem Dateimanager</h2>
+        <p>
+          Freigegebene Links lassen sich in Ihren Dateimanager integrieren. Sie können als Netzlaufwerk unter Windows, OSX oder Linux verwendet werden. Diese Links sind vollwertige WebDAV-Server, die an Ihr FTP angebunden sind
+        </p>
+        <img alt="webdav integration" loading="lazy" class="fancy visible-xs" src="/img/posts/2019-08-20-ftp-web-client.html.3.png" />
+      </div>
+
+      <div class="feature">
+        <img alt="plugin illustration" loading="lazy" class="fancy pull-left hidden-xs" src="/img/posts/2019-08-20-ftp-web-client.html.6.png" />
+        <h2>Erweiterbar</h2>
+        <p>
+          Unser <strong>Web-FTP-Tool</strong> ist vollständig anpassbar. Es kann durch den Plugin-Mechanismus mit einem White-Label versehen und erweitert werden, um es an Ihre Bedürfnisse und Prozesse anzupassen
+        </p>
+        <img alt="plugin illustration" loading="lazy" class="fancy visible-xs" src="/img/posts/2019-08-20-ftp-web-client.html.6.png" />
+      </div>
+
+    </div>
+
+    <h2 style="margin-top:0;">Ein toller Web-FTP-Client</h2>
+    <p>
+      Traditionelle FTP-Clients wie <a href="https://filezilla-project.org/">Filezilla FTP</a> oder <a href="https://winscp.net/eng/index.php">WinSCP</a> sind großartig für Systemadministratoren und Techniker, aber alle Ihre Benutzer sind vielleicht nicht mit dem zugrundeliegenden Protokoll vertraut und wollen nur ein Tool, um Dinge auf einfache Weise zu erledigen. Das Wertversprechen von Filestash ist es, FTP für Ihre Endanwender einfach nutzbar zu machen und Kollaborationsfunktionen zu bieten, um FTP zu einem modernen Ersatz für <a href="https://www.theguardian.com/technology/2014/jul/17/edward-snowden-dropbox-privacy-spideroak">Dropbox</a> zu machen.
+    </p>
+    <br><br><br><br>
+  </div>
+
+  <br><br><br><br><br><br>
+
+  <div class="call-to-action">
+    <h2>Wir haben einige weitere Online-Clients:</h2>
+    <a class="btn light" href="{% post_url 2019-11-21-s3-browser %}">S3</a>
+    <a class="btn light" href="{% post_url 2020-01-04-ldap-browser %}">LDAP</a>
+    <a class="btn light" href="{% post_url 2020-04-30-sftp-browser %}">SFTP</a>
+    <a class="btn light" href="https://demo.filestash.app/login">Webdav</a>
+    <a class="btn light" href="https://demo.filestash.app/login">GIT</a>
+  </div>
+
+</div>
+
+<script>
+  // deep links to login in some anonymous server
+  (function(){
+      if(/#connect=/.test(location.hash) == false) return;
+      document.querySelector("form input[name='hostname']").value = location.hash.replace("#connect=", "");
+      document.querySelector("form input[type='submit']").click()
+  })()
+</script>
