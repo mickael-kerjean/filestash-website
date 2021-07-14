@@ -893,13 +893,24 @@ layout: default
 </div>
 
 <script>
- (function(){
+  (function(){
      if(location.hash === "#support") {
          $('#support_register').modal({fadeDuration: 250});
-     } else if(location.hash === "#enterprise") {
-         $('#enterprise').modal({fadeDuration: 250});
+         return;
+     } else if(location.search === "?modal=support") {
+         $('#support_register').modal({fadeDuration: 250});
+         return;
      }
- })()
+
+     if(location.hash === "#support") {
+         $('#support_register').modal({fadeDuration: 250});
+         return;
+     } else if(location.search === "?modal=enterprise") {
+         $('#support_register').modal({fadeDuration: 250});
+         return;
+     }
+
+  })()
 </script>
 
 
