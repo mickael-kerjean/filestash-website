@@ -12,6 +12,11 @@
         <div class="flex">
           {{ site | tag_cloud }}
         </div>
+        {% else if page.language == "pt" %}
+        <h4>Tópicos:</h4>
+        <div class="flex">
+          {{ site | tag_cloud }}
+        </div>
         {% endif %}
       </div>
       <div class="col-sm-2">
