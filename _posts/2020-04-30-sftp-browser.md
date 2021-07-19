@@ -1,6 +1,6 @@
 ---
 title: SFTP Browser | An online SFTP client tool
-description: An online web client to browse and manage the content on your SFTP server like if was a modern file sharing service
+description: Browse and manage your SFTP online with our modern online sftp client
 layout: landing
 permalink: /sftp-browser.html
 tags: sftp oem online-client tool
@@ -69,7 +69,7 @@ redirect_from:
     <div class="row features main">
 
       <div class="feature">
-        <img alt="screenshot of Filestash when uploading" loading="lazy" class="fancy pull-right hidden-xs" src="/img/screenshots/feature1.png" style="margin-top: -30px;" />
+        <img alt="screenshot of Filestash when uploading" loading="lazy" class="fancy pull-left hidden-xs" src="/img/screenshots/feature1.png" style="margin-top: -30px;" />
         <h2>SSH File Browser and Explorer</h2>
         <p>
           Our <strong>web SFTP</strong> client makes it easy to copy files and folders both from local to remote and from remote to local. Under the hood it uses the <strong>SSH File Transfer Protocol</strong> also known as SFTP
@@ -78,7 +78,7 @@ redirect_from:
       </div>
 
       <div class="feature">
-        <img alt="screenshot of Filestash when uploading" loading="lazy" class="fancy pull-left hidden-xs" src="/img/screenshots/viewerpage.png" />
+        <img alt="screenshot of Filestash when uploading" loading="lazy" class="fancy pull-right hidden-xs" src="/img/screenshots/viewerpage.png" />
         <h2>Access your sftp from your browser</h2>
         <p>
             Filestash is a <strong>web interface</strong> to access your SFTP server from your browser. It makes it easy to explore / edit / upload/ download / delete / rename anything on your server
@@ -87,7 +87,7 @@ redirect_from:
       </div>
 
       <div class="feature">
-          <img loading="lazy" class="fancy pull-right hidden-xs" src="https://miro.medium.com/max/580/1*DHe24MbDHtbkOeIJzxrfdA.png" />
+          <img loading="lazy" class="fancy pull-left hidden-xs" src="https://miro.medium.com/max/580/1*DHe24MbDHtbkOeIJzxrfdA.png" />
           <h2>Works with all the popular free SFTP servers</h2>
           <p>
               Our online tool works great with any <a href="https://tools.ietf.org/html/draft-ietf-secsh-filexfer-13">SFTP compliant server</a> like
@@ -97,7 +97,7 @@ redirect_from:
       </div>
 
       <div class="feature">
-        <img alt="screenshot of the text editor" loading="lazy" class="fancy pull-left hidden-xs" src="/img/posts/2019-08-20-ftp-web-client.html.1.png" />
+        <img alt="screenshot of the text editor" loading="lazy" class="fancy pull-right hidden-xs" src="/img/posts/2019-08-20-ftp-web-client.html.1.png" />
         <h2>Document editor</h2>
         <p>
             Open up your files and easily edit them directly from your browser. It even works with word documents, spreadsheet and presentations
@@ -106,7 +106,7 @@ redirect_from:
       </div>
 
       <div class="feature">
-        <img alt="screenshot of the shared link" loading="lazy" class="fancy pull-right hidden-xs" src="/img/screenshots/feature_share_0000.png" />
+        <img alt="screenshot of the shared link" loading="lazy" class="fancy pull-left hidden-xs" src="/img/screenshots/feature_share_0000.png" />
         <h2>Collaborate easily</h2>
         <p>
             Create shared links without sharing any credentials to anyone. Protect those links with a password, make it available to a specific email adress or a domain, there's many options available.
@@ -115,7 +115,7 @@ redirect_from:
       </div>
 
       <div class="feature">
-          <img alt="open as network drive from finder on MacOS" loading="lazy" class="fancy pull-left hidden-xs" src="/img/posts/2019-08-20-ftp-web-client.html.3.png" />
+          <img alt="open as network drive from finder on MacOS" loading="lazy" class="fancy pull-right hidden-xs" src="/img/posts/2019-08-20-ftp-web-client.html.3.png" />
           <h2>File manager integration</h2>
           <p>
               Shared links can be mounted in your file manager and be used like any other network drive
@@ -125,7 +125,7 @@ redirect_from:
 
 
       <div class="feature">
-          <img alt="agpl logo" loading="lazy" class="fancy pull-right hidden-xs" src="/img/posts/2019-08-20-ftp-web-client.html.2.png" />
+          <img alt="agpl logo" loading="lazy" class="fancy pull-left hidden-xs" src="/img/posts/2019-08-20-ftp-web-client.html.2.png" />
           <h2>Open source and Free software</h2>
           <p>
               You don't have to trust us. The code of our software is available on <a href="https://github.com/mickael-kerjean/filestash">github</a> for everyone to download, audit, selfhost and contribute back
@@ -134,7 +134,7 @@ redirect_from:
       </div>
 
       <div class="feature">
-        <img alt="plugin" loading="lazy" class="fancy pull-left hidden-xs" src="/img/posts/2019-08-20-ftp-web-client.html.6.png" />
+        <img alt="plugin" loading="lazy" class="fancy pull-right hidden-xs" src="/img/posts/2019-08-20-ftp-web-client.html.6.png" />
         <h2>Extensible and Configurable</h2>
         <p>
           Filestash can be customised quite simply. Also, many features can be enable/disable from the admin console. If that's not enough, you can extend the program by creating your own <a href="/docs/plugin/">plugins</a>
@@ -146,14 +146,20 @@ redirect_from:
 
   <div class="container" id="faq">
       <h2 style="margin-top:0;">Frequently Asked Questions</h2>
+
+      <h3>What does sftp stand for?</h3>
+      <p>
+          SFTP stands for <strong>SSH File Transfer Protocol</strong>
+      </p>
+
       <h3>What is SFTP?</h3>
       <p>
-          SFTP stands for <strong>SSH File Transfer Protocol</strong>. It is a protocol for securely transfer file over a network between a client that can use that protocol and a server that implements the protocol.
+          It is a protocol for securely transfer file over a network between a client that can use that protocol and a server that implements the protocol.
       </p>
 
       <h3>How SFTP works?</h3>
       <p>
-          The particularity of SFTP compared to <a href="{% post_url 2019-11-26-ftp-web-client %}">FTP and FTPS</a> is how it uses SSH as a transport mechanism to securely transfer files.
+          The particularity of SFTP compared to <a href="{% post_url 2019-11-26-ftp-web-client %}">FTP and FTPS</a> is how it uses SSH as a transport mechanism to securely transfer file.ssft
       </p>
 
       <h3>How to use SFTP?</h3>
@@ -203,6 +209,14 @@ redirect_from:
            "@context": "https://schema.org",
            "@type": "FAQPage",
            "mainEntity": [
+               {
+                   "@type": "Question",
+                   "name": "What does sftp stand for?",
+                   "acceptedAnswer": {
+                       "@type": "Answer",
+                       "text": "SFTP stands for SSH File Transfer Protocol"
+                   }
+               },
                {
                    "@type": "Question",
                    "name": "What is SFTP?",
@@ -299,4 +313,3 @@ redirect_from:
     <a class="btn light" href="https://demo.filestash.app/login">Webdav</a>
   </div>
 </div>
-
