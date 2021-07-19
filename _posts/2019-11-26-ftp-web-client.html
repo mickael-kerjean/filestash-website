@@ -26,7 +26,7 @@ head:
       <div class="hgroup">
         <h1><a href="https://en.wikipedia.org/wiki/File_Transfer_Protocol">FTP</a> Online; Try our web-based FTP client</h1>
       </div>
-      <form onsubmit='$("form input[type=\"submit\"]").attr("value", "LOADING...")' action="https://demo.filestash.app/login" method="GET">
+      <form onsubmit='$("#splash form input[type=\"submit\"]").attr("value", "LOADING...")' action="https://demo.filestash.app/login" method="GET">
         <input type="hidden" name="type" value="ftp" />
         <label>
           <span>Hostname:</span><input type="text" name="hostname" placeholder="IP address of your server" required/>
@@ -46,8 +46,8 @@ head:
       <script>
         function clickPublicFTPHandler(e){
             e.preventDefault();
-            document.querySelector("form input[name='hostname']").value = e.target.text;
-            document.querySelector("form input[type='submit']").click()
+            document.querySelector("#splash form input[name='hostname']").value = e.target.text;
+            document.querySelector("#splash form").submit()
         }
       </script>
       <p class="example">
@@ -371,12 +371,12 @@ head:
   <br><br><br><br><br><br>
 
   <div class="call-to-action">
-    <h2>We have some more online clients:</h2>
+    <h2>Check our other online tools:</h2>
+    <a class="btn light" href="{% post_url 2020-08-04-ftp-testing-tool %}">FTP Test</a>
     <a class="btn light" href="{% post_url 2019-11-21-s3-browser %}">S3</a>
     <a class="btn light" href="{% post_url 2020-01-04-ldap-browser %}">LDAP</a>
     <a class="btn light" href="{% post_url 2020-04-30-sftp-browser %}">SFTP</a>
     <a class="btn light" href="https://demo.filestash.app/login">Webdav</a>
-    <a class="btn light" href="https://demo.filestash.app/login">GIT</a>
   </div>
 
 </div>
@@ -385,7 +385,7 @@ head:
   // deep links to login in some anonymous server
   (function(){
       if(/#connect=/.test(location.hash) == false) return;
-      document.querySelector("form input[name='hostname']").value = location.hash.replace("#connect=", "");
-      document.querySelector("form input[type='submit']").click()
+      document.querySelector("#splash form input[name='hostname']").value = location.hash.replace("#connect=", "");
+      document.querySelector("#splash form input[type='submit']").click()
   })()
 </script>

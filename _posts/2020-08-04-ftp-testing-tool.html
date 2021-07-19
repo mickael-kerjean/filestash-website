@@ -7,9 +7,6 @@ tags: ftp tool
 language: en
 ---
 
-<!-- https://neilpatel.com/ab-testing-calculator/ -->
-
-
 <link rel="stylesheet" href="/css/landing-page.css">
 <link rel="stylesheet" href="/css/landing-page-login.css">
 
@@ -33,8 +30,8 @@ language: en
       <script>
         function clickPublicFTPHandler(e){
             e.preventDefault();
-            document.querySelector("form input[name='domain']").value = e.target.text;
-            document.querySelector("form").submit()
+            document.querySelector("#splash form input[name='domain']").value = e.target.text;
+            document.querySelector("#splash form").submit()
         }
       </script>
       <p class="example center">
@@ -148,10 +145,10 @@ language: en
 
   <div class="call-to-action">
     <h2>Our online tools:</h2>
-    <a class="btn" href="{% post_url 2019-11-26-ftp-web-client %}">Online FTP Client</a>
-    <a class="btn" href="{% post_url 2020-08-31-sftp-online-test %}">SFTP Testing Tool</a>
-    <a class="btn" href="{% post_url 2020-04-30-sftp-browser %}">SFTP Browser</a>
-    <a class="btn" href="{% post_url 2019-11-21-s3-browser %}">S3 Explorer</a>
-    <a class="btn" href="{% post_url 2020-01-04-ldap-browser %}">LDAP Browser</a>
+    <a class="btn light" href="{% post_url 2019-11-26-ftp-web-client %}">Online FTP Client</a>
+    <a class="btn light" href="{% post_url 2020-08-31-sftp-online-test %}">SFTP Testing Tool</a>
+    <a class="btn light" href="{% post_url 2020-04-30-sftp-browser %}">SFTP Browser</a>
+    <a class="btn light" href="{% post_url 2019-11-21-s3-browser %}">S3 Explorer</a>
+    <a class="btn light" href="{% post_url 2020-01-04-ldap-browser %}">LDAP Browser</a>
   </div>
 </div>
