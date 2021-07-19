@@ -290,13 +290,13 @@ redirect_from:
   <br><br><br><br><br>
 
   <div class="call-to-action">
-    <h2>See our other web client:</h2>
+    <h2>See our other tools:</h2>
+    <a class="btn light" href="{% post_url 2020-08-31-sftp-online-test %}">SFTP Test</a>
     <a class="btn light" href="{% post_url 2019-11-26-ftp-web-client %}">FTP</a>
     <a class="btn light" href="{% post_url 2019-11-26-ftp-web-client %}">FTPS</a>
     <a class="btn light" href="{% post_url 2019-11-21-s3-browser %}">S3</a>
     <a class="btn light" href="{% post_url 2020-01-04-ldap-browser %}">LDAP</a>
     <a class="btn light" href="https://demo.filestash.app/login">Webdav</a>
-    <a class="btn light" href="https://demo.filestash.app/login">GIT</a>
   </div>
 </div>
 

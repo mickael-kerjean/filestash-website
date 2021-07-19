@@ -1,6 +1,6 @@
 ---
 title: Online SFTP testing Tool
-description: A free tool to test your SFTP server online
+description: A free tool to test your SFTP server connection
 layout: landing
 permalink: /sftp-test.html
 tags: sftp tool
@@ -16,7 +16,7 @@ language: en
       <div class="hgroup">
         <h1>SFTP Testing Tool</h1>
         <p class="container">
-          Test your SFTP server from this testing tool <br>
+          Test your SFTP connecting from this testing tool <br>
           Enter your server IP or domain and our test tool will tell you everything it finds about your SFTP server
         </p>
       </div>
@@ -31,13 +31,12 @@ language: en
         function clickPublicSFTPHandler(e){
             e.preventDefault();
             document.querySelector("form input[name='domain']").value = e.target.text.replace(/^sftp:\/\//, "");
-            document.querySelector("form").submit()
+            document.querySelector("#splash form").submit();
         }
       </script>
       <p class="example center">
         See how your server stack up against those ones: <br>
-        <a rel="nofollow noopener" onclick="clickPublicSFTPHandler(event);" href="sftp://test.rebex.net">sftp://test.rebex.net</a>
-        <a rel="nofollow noopener" onclick="clickPublicSFTPHandler(event);" href="sftp://itcsubmit.wustl.edu">sftp://itcsubmit.wustl.edu</a>
+        <a rel="nofollow noopener" onclick="clickPublicSFTPHandler(event);" href="sftp://itcsubmit.wustl.edu">sftp://itcsubmit.wustl.edu</a> <a rel="nofollow noopener" onclick="clickPublicSFTPHandler(event);" href="sftp://www.filestash.app">sftp://www.filestash.app</a> <a rel="nofollow noopener" onclick="clickPublicSFTPHandler(event);" href="sftp://test.rebex.net">sftp://test.rebex.net</a>
         <br>
       </p>
     </div>
@@ -104,7 +103,6 @@ language: en
                 document.getElementById("is-online").innerText = data["isOnline"] ? "Yes" : "No";
                 document.getElementById("server_info").innerText = data["server_info"];
 
-                console.log(data);
                 if(data["isOnline"]){
                     let html = "<a target=\"_blank\" href=\"";
                     html += "http://demo.filestash.app/login"
@@ -140,10 +138,10 @@ language: en
 
   <div class="call-to-action">
     <h2>Our online tools:</h2>
-    <a class="btn" href="{% post_url 2019-11-26-ftp-web-client %}">Online FTP Client</a>
-    <a class="btn" href="{% post_url 2019-11-26-ftp-web-client %}">FTP Testing Tool</a>
-    <a class="btn" href="{% post_url 2019-11-21-s3-browser %}">S3 Explorer</a>
-    <a class="btn" href="{% post_url 2020-01-04-ldap-browser %}">LDAP Browser</a>
-    <a class="btn" href="{% post_url 2020-04-30-sftp-browser %}">SFTP Browser</a>
+    <a class="btn light" href="{% post_url 2020-04-30-sftp-browser %}">SFTP Browser</a>
+    <a class="btn light" href="{% post_url 2020-08-04-ftp-testing-tool %}">FTP Testing Tool</a>
+    <a class="btn light" href="{% post_url 2019-11-26-ftp-web-client %}">Online FTP Client</a>
+    <a class="btn light" href="{% post_url 2019-11-21-s3-browser %}">S3 Explorer</a>
+    <a class="btn light" href="{% post_url 2020-01-04-ldap-browser %}">LDAP Browser</a>
   </div>
 </div>
