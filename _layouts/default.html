@@ -15,6 +15,7 @@
 	    <meta property="og:title" content="{% if page.title %}{{ page.title }}{% else %}Filestash{% endif %}">
 	    <meta property="og:description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}">
 	    <meta property="og:image" content="/img/logo/logo.png">
+        <meta name="referrer" content="no-referrer-when-downgrade">
         <link rel="canonical" href="{{ page.url | absolute_url }}">
         {% for head in page.head %}
         {{ head }}{% endfor %}
