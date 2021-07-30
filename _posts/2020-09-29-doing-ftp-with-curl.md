@@ -1,19 +1,20 @@
 ---
-title: A guide on how to use FTP with curl
-description: Example of commonly used commands you can use to do FTP using curl
+title: How to use curl for FTP?
+description: A cheat sheet with all the FTP related commands available from curl - examples to upload files, download file, list files, delete file, etc...
 layout: post
 permalink: /ftp-with-curl.html
 tags: ftp guide
 language: en
 ---
+
 <style>
 h2 { margin-bottom: 5px; }
 </style>
 
-curl is the goto tool for anything HTTP related. A lesser known feature about curl is how you can use it for your FTP and FTPS tasks and that's what we will be covering in this guide, some example of common curl command you can use to:
-1. [upload files on your FTP server](#uploading-some-files-to-an-ftp-server)
+curl is the goto tool for anything HTTP related but you can also use it for your FTP and FTPS tasks. This post is a cheat sheet with a list of common curl commands you can use to:
+1. [upload files on your FTP server](#uploading-a-file-to-your-ftp-server)
 2. [download file stored on an FTP server](#downloading-files-on-an-ftp-server)
-3. [authenticate to your FTP server](#connect-to-a-ftp-server-with-your-credentials)
+3. [authenticate to your FTP server](#connect-with-your-username-and-password)
 4. [list files on your FTP server](#list-files-on-an-ftp-server)
 5. [delete files on your FTP server](#delete-files-on-an-ftp-server)
 
@@ -79,7 +80,7 @@ ls-lR.gz	welcome.msg<br>
 </span>
 </div>
 
-## Connect to a FTP server with your credentials
+## Connect with your username and password
 <div class="terminal">
 <span class="prompt">~/$ </span>curl ftp://username:password@ftp.slackware.com/<br>
 <span class="stdout">
@@ -101,7 +102,7 @@ drwxr-xr-x    4 0        0            4096 Jun 30 16:58 pub<br>
 </div>
 
 
-## Uploading some files to an FTP server
+## Uploading a file to your FTP server
 <div class="terminal">
 <span class="prompt">~/$ </span>curl -T welcome.msg -u "username:password" ftp://ftp.example.com/<br>
 <span class="stdout">
@@ -124,7 +125,7 @@ drwxr-xr-x    4 0        0            4096 Jun 30 16:58 pub<br>
         <img src="https://mickael.kerjean.me/assets/img/arrow_bottom.png"/>
     </div>
     <div class="related_content">
-        <a href="{% post_url 2020-08-04-ftp-testing-tool %}"><h3 class="no-anchor">FTP Testing Tool</h3></a><a href="{% post_url 2019-11-26-ftp-web-client %}"><h3 class="no-anchor">FTP Web Client</h3></a>
+        <a href="{% post_url 2020-08-04-ftp-testing-tool %}"><h3 class="no-anchor">FTP Testing Tool</h3></a><a href="{% post_url 2019-11-26-ftp-web-client %}"><h3 class="no-anchor">FTP Web Client</h3></a><a href="{% post_url 2020-07-06-ftp-from-the-command-line %}"><h3 class="no-anchor">FTP CLI</h3></a>
     </div>
 </div>
 <style>
