@@ -15,9 +15,11 @@ language: en
     <div class="col-sm-12">
       <div class="hgroup">
         <h1>SFTP Testing Tool</h1>
+        <h2 style="display: block;font-size: 1.3rem;height: inherit;margin-bottom: 1.5rem;">
+            Test your SFTP connection and your SFTP server
+        </h2>
         <p class="container">
-          Test your SFTP connecting from this testing tool <br>
-          Enter your server IP or domain and our test tool will tell you everything it finds about your SFTP server
+          How it works? Enter your server IP or domain and our test tool will tell you what we can find about your SFTP server
         </p>
       </div>
 
@@ -35,8 +37,8 @@ language: en
         }
       </script>
       <p class="example center">
-        See how your server stack up against those ones: <br>
-        <a rel="nofollow noopener" onclick="clickPublicSFTPHandler(event);" href="sftp://itcsubmit.wustl.edu">sftp://itcsubmit.wustl.edu</a> <a rel="nofollow noopener" onclick="clickPublicSFTPHandler(event);" href="sftp://www.filestash.app">sftp://www.filestash.app</a> <a rel="nofollow noopener" onclick="clickPublicSFTPHandler(event);" href="sftp://test.rebex.net">sftp://test.rebex.net</a>
+        See how your server stack up against those sftp test servers: <br>
+        <a rel="nofollow noopener" onclick="clickPublicSFTPHandler(event);" href="sftp://itcsubmit.wustl.edu">sftp://itcsubmit.wustl.edu</a> <a rel="nofollow noopener" onclick="clickPublicSFTPHandler(event);" href="sftp://www.filestash.app">sftp://www.filestash.app</a>
         <br>
       </p>
     </div>
@@ -104,12 +106,11 @@ language: en
                 document.getElementById("server_info").innerText = data["server_info"];
 
                 if(data["isOnline"]){
-                    let html = "<a target=\"_blank\" href=\"";
-                    html += "http://demo.filestash.app/login"
-                    html += "\">";
-                    html += data["hostname"];
-                    html += "</a>";
-                    document.getElementById("hostname").innerHTML = html;
+                    let $a = document.createElement("a");
+                    $a.setAttribute("target", "_blank");
+                    $a.setAttribute("href", "http://www.filestash.app{% post_url 2020-04-30-sftp-browser %}");
+                    $a.innerText = data["hostname"];
+                    document.getElementById("hostname").innerHTML = $a.outerHTML;
                 } else {
                     document.getElementById("hostname").innerText = data["hostname"];
                 }
