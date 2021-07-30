@@ -16,10 +16,10 @@ language: en
       <div class="hgroup">
         <h1>SFTP Testing Tool</h1>
         <h2 style="display: block;font-size: 1.3rem;height: inherit;margin-bottom: 1.5rem;">
-            Test your SFTP connection and your SFTP server
+            Test your SFTP connection and SSH server online
         </h2>
         <p class="container">
-          How it works? Enter your server IP or domain and our test tool will tell you what we can find about your SFTP server
+          How it works? Enter your server IP or domain and our test tool will tell you what we can find about your server
         </p>
       </div>
 
