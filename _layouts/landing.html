@@ -5,3 +5,16 @@ layout: default
 {% include menu.html context="homepage" %}
 {{ content }}
 {% include footer.html %}
+
+
+<script src="https://unpkg.com/scrollreveal@4.0.9/dist/scrollreveal.js" defer></script>
+<script defer>
+  window.addEventListener("load", function() {
+      ScrollReveal({
+          duration: 500,
+          distance: "15px",
+          reset: true,
+          easing: "ease-out"
+      }).reveal('img.fancy');
+  });
+</script>
