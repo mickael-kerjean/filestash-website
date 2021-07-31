@@ -134,12 +134,11 @@ language: en
   </div>
 
   <div class="call-to-action">
-    <h2>Some other online client tools:</h2>
+    <h2>Some other online tools:</h2>
+    <a class="btn light" href="{% post_url 2021-08-01-ldap-test-tool %}">LDAP Test</a>
     <a class="btn light" href="{% post_url 2019-11-26-ftp-web-client %}">FTP</a>
     <a class="btn light" href="{% post_url 2019-11-21-s3-browser %}">S3</a>
     <a class="btn light" href="{% post_url 2020-04-30-sftp-browser %}">SFTP</a>
-    <a class="btn light" rel="nofollow" href="https://demo.filestash.app/login">Webdav</a>
-    <a class="btn light" rel="nofollow" href="https://demo.filestash.app/login">GIT</a>
   </div>
 
 </div>
