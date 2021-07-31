@@ -84,6 +84,7 @@ language: en
       <h2 id="hostname"></h2>
       <strong>Online:</strong> <span id="is-online"></span><br>
       <strong>Latency:</strong> <span id="latency"></span><br>
+      <strong>Host Key:</strong> <span id="fingerprint"></span><br/>
       <strong>Server info:</strong> <pre id="server_info" style="margin:0;"></pre>
       <style>
         #tester h2{ margin-top:0;margin-bottom:20px;text-align:left; }
@@ -104,6 +105,7 @@ language: en
                 document.getElementById("latency").innerText = data["latency"];
                 document.getElementById("is-online").innerText = data["isOnline"] ? "Yes" : "No";
                 document.getElementById("server_info").innerText = data["server_info"];
+                document.getElementById("fingerprint").innerText = data["fingerprint"];
 
                 if(data["isOnline"]){
                     let $a = document.createElement("a");
