@@ -7,12 +7,7 @@ tags: ftp guide
 language: en
 ---
 
-Looking for a free FTP server? We've scoured the internet looking for the best options and shortlist the best ones for each categories:
-
-1. hosting companies that provide a [free FTP server](#fully-managed--online-ftp-servers) as part of their free plan
-2. a list of publicly accessible [FTP servers](#ftp-server-with-anonymous-access) that allow anonymous access
-3. [server software](#free-server-software) you can install on your own hardware.
-
+A curated list of hosting companies that provides [free FTP server](#fully-managed--online-ftp-servers) as part of their free plan along with [free server software](#free-server-software) you can install on your own hardware and publicly accessible [FTP servers](#ftp-server-with-anonymous-access) that allow anonymous access.
 
 ## Fully managed / online FTP servers
 
@@ -50,10 +45,9 @@ If you want to dig your options deeper, wikipedia also list [a few more options]
 
 ## Other freebies
 
-Filezilla is the historic FTP client used by almost everyone but isn't the only one. Our [online FTP tool]({% post_url 2019-11-26-ftp-web-client %}) makes it possible to transform your FTP server into an online file manager:
+Our [online FTP client]({% post_url 2019-11-26-ftp-web-client %}) makes it possible to transform your FTP server into an online file manager:
 
 [![screenshot of Filestash](/img/posts/2020-07-08-free-ftp-server-online.png)](https://www.filestash.app/online-ftp-client.html)
-
 
 
 <div class="related">
@@ -62,7 +56,7 @@ Filezilla is the historic FTP client used by almost everyone but isn't the only 
         <img src="https://mickael.kerjean.me/assets/img/arrow_bottom.png"/>
     </div>
     <div class="related_content">
-        <a href="{% post_url 2019-11-26-ftp-web-client %}"><h3 class="no-anchor">Online FTP Client</h3></a><a href="{% post_url 2020-07-06-ftp-from-the-command-line %}"><h3 class="no-anchor">FTP Commands</h3></a>
+        <a href="{% post_url 2019-11-26-ftp-web-client %}"><h3 class="no-anchor">Online FTP Client</h3></a><a href="{% post_url 2020-08-04-ftp-testing-tool %}"><h3 class="no-anchor">FTP Test Tool</h3></a><a href="{% post_url 2020-07-06-ftp-from-the-command-line %}"><h3 class="no-anchor">FTP Commands</h3></a><a href="{% post_url 2020-09-29-doing-ftp-with-curl %}"><h3 class="no-anchor">FTP with curl</h3></a>
     </div>
 </div>
 
@@ -86,6 +80,7 @@ Filezilla is the historic FTP client used by almost everyone but isn't the only 
 }
 .related .related_content a{
     display: inline-block;
+    box-sizing: border-box;
     width: 33%;
     padding: 5px;
     text-decoration: none!important;
