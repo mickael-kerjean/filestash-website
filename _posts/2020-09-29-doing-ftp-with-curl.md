@@ -121,11 +121,11 @@ drwxr-xr-x    4 0        0            4096 Jun 30 16:58 pub<br>
 
 <div class="related">
     <div class="title">
-        Online FTP Tools<br>
+        Related pages<br>
         <img src="https://mickael.kerjean.me/assets/img/arrow_bottom.png"/>
     </div>
     <div class="related_content">
-        <a href="{% post_url 2020-08-04-ftp-testing-tool %}"><h3 class="no-anchor">FTP Testing Tool</h3></a><a href="{% post_url 2019-11-26-ftp-web-client %}"><h3 class="no-anchor">FTP Web Client</h3></a><a href="{% post_url 2020-07-06-ftp-from-the-command-line %}"><h3 class="no-anchor">FTP CLI</h3></a>
+        <a href="{% post_url 2020-08-04-ftp-testing-tool %}"><h3 class="no-anchor">FTP Testing Tool</h3></a><a href="{% post_url 2019-11-26-ftp-web-client %}"><h3 class="no-anchor">FTP Web Client</h3></a><a href="{% post_url 2020-07-06-ftp-from-the-command-line %}"><h3 class="no-anchor">FTP CLI</h3></a><a href="{% post_url 2021-08-07-ftp-with-telnet %}"><h3 class="no-anchor">FTP with telnet</h3></a>
     </div>
 </div>
 <style>
@@ -148,7 +148,7 @@ drwxr-xr-x    4 0        0            4096 Jun 30 16:58 pub<br>
  }
  .related .related_content a{
      display: inline-block;
-     width: 33%;
+     width: calc(33% - 10px);
      padding: 5px;
      text-decoration: none!important;
  }

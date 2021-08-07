@@ -56,7 +56,7 @@ Our [online FTP client]({% post_url 2019-11-26-ftp-web-client %}) makes it possi
         <img src="https://mickael.kerjean.me/assets/img/arrow_bottom.png"/>
     </div>
     <div class="related_content">
-        <a href="{% post_url 2019-11-26-ftp-web-client %}"><h3 class="no-anchor">Online FTP Client</h3></a><a href="{% post_url 2020-08-04-ftp-testing-tool %}"><h3 class="no-anchor">FTP Test Tool</h3></a><a href="{% post_url 2020-07-06-ftp-from-the-command-line %}"><h3 class="no-anchor">FTP Commands</h3></a><a href="{% post_url 2020-09-29-doing-ftp-with-curl %}"><h3 class="no-anchor">FTP with curl</h3></a>
+        <a href="{% post_url 2019-11-26-ftp-web-client %}"><h3 class="no-anchor">Online FTP Client</h3></a><a href="{% post_url 2020-08-04-ftp-testing-tool %}"><h3 class="no-anchor">FTP Test Tool</h3></a><a href="{% post_url 2020-07-06-ftp-from-the-command-line %}"><h3 class="no-anchor">FTP Commands</h3></a><a href="{% post_url 2020-09-29-doing-ftp-with-curl %}"><h3 class="no-anchor">FTP with curl</h3></a><a href="{% post_url 2021-08-07-ftp-with-telnet %}"><h3 class="no-anchor">FTP with telnet</h3></a>
     </div>
 </div>
 
