@@ -1,6 +1,6 @@
 ---
 title: SFTP Browser | An online SFTP client tool
-description: Browse and manage your SFTP online with our modern online sftp client
+description: SFTP Online. A 100% online SFTP client to access your SFTP server like if it was another modern file sharing service.
 layout: landing
 permalink: /sftp-browser.html
 tags: sftp oem online-client tool
@@ -144,7 +144,7 @@ redirect_from:
     </div>
   </div>
 
-  <div class="container" id="faq">
+  <div class="container" id="faq" data-nosnippet>
       <h2 style="margin-top:0;">Frequently Asked Questions</h2>
 
       <h3>What does sftp stand for?</h3>
