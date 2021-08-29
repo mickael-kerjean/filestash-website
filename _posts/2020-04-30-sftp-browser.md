@@ -48,7 +48,7 @@ redirect_from:
       <p class="example">
         <a href="{% post_url 2020-07-01-sftp-example %}">Examples</a> of free <a href="{% post_url 2020-07-01-sftp-example %}">online SFTP server</a> for testing: <br>
         <a onclick="clickPublicSFTPHandler(event, {hostname: 'test.rebex.net', username: 'demo', password: 'password', port: 22});" href="https://test.rebex.net/">test.rebex.net</a>
-        <a onclick="clickPublicSFTPHandler(event, {hostname: 'demo.wftpserver.com', username: 'demo-user', password: 'demo-user', port: 2222});" href="http://demo.wftpserver.com/">demo.wftpserver.com</a>
+        <a onclick="clickPublicSFTPHandler(event, {hostname: 'demo.wftpserver.com', username: 'demo', password: 'demo', port: 2222});" href="http://demo.wftpserver.com/">demo.wftpserver.com</a>
       </p>
     </div>
   </div>
