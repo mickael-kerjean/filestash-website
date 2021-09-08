@@ -139,6 +139,98 @@ head:
   <a href="/pricing/?modal=enterprise" class="btn light">Chat with Us</a>
 </h2>
 
+
+
+<div id="github-events"></div>
+<script defer>
+ // https://github.com/azer/relative-date/blob/master/lib/relative-date.js
+ function relativeDate(input,reference){
+     let SECOND = 1000,
+         MINUTE = 60 * SECOND,
+         HOUR = 60 * MINUTE,
+         DAY = 24 * HOUR,
+         WEEK = 7 * DAY,
+         YEAR = DAY * 365,
+         MONTH = YEAR / 12;
+
+     let formats = [
+         [ 0.7 * MINUTE, 'just now' ],
+         [ 1.5 * MINUTE, 'a minute ago' ],
+         [ 60 * MINUTE, 'minutes ago', MINUTE ],
+         [ 1.5 * HOUR, 'an hour ago' ],
+         [ DAY, 'hours ago', HOUR ],
+         [ 2 * DAY, 'yesterday' ],
+         [ 7 * DAY, 'days ago', DAY ],
+         [ 1.5 * WEEK, 'a week ago'],
+         [ MONTH, 'weeks ago', WEEK ],
+         [ 1.5 * MONTH, 'a month ago' ],
+         [ YEAR, 'months ago', MONTH ],
+         [ 1.5 * YEAR, 'a year ago' ],
+         [ Number.MAX_VALUE, 'years ago', YEAR ]
+     ];
+
+     !reference && ( reference = (new Date).getTime() );
+     reference instanceof Date && ( reference = reference.getTime() );
+     input instanceof Date && ( input = input.getTime() );
+
+     var delta = reference - input,
+         format, i, len;
+
+     for(i = -1, len=formats.length; ++i < len; ){
+         format = formats[i];
+         if(delta < format[0]){
+             return format[2] == undefined ? format[1] : Math.round(delta/format[2]) + ' ' + format[1];
+         }
+     };
+ }
+ fetch("https://api.github.com/repos/mickael-kerjean/filestash/events")
+     .then((r) => r.json())
+     .then((r) => {
+         document.getElementById("github-events").innerHTML = r.map((e) => {
+             switch(e.type) {
+                 case "WatchEvent":
+                     return `
+<div>
+  <img src="${e.actor.avatar_url}"/>
+  <div>
+    <div class="ellipsis"><a href="https://github.com/${e.actor.login}">${e.actor.login}</a> is following us</div>
+    <div class="date">${relativeDate(new Date(e.created_at))}</div>
+  </div>
+</div>`
+                 case "ForkEvent":
+                     return `<div>
+   <img src="${e.actor.avatar_url}"/>
+   <div><div class="ellipsis"><a href="https://github.com/${e.actor.login}">${e.actor.login}</a> is exploring our code</div>
+   <div class="date">${relativeDate(new Date(e.created_at))}</div></div>
+</div>`
+                     break;
+                 case "PullRequestEvent":
+                     return `<div>
+   <img src="${e.actor.avatar_url}"/>
+   <div><div class="ellipsis"><a href="https://github.com/${e.actor.login}">${e.actor.login}</a> is contributing</div>
+   <div class="date">${relativeDate(new Date(e.created_at))}</div></div>
+</div>`
+                     break;
+                 default:
+                     return ""
+             }
+             return
+         }).join("")
+ })
+ .catch((err) => console.log(err))
+</script>
+<style>
+ #github-events {
+     display: flex;
+     overflow-x: hidden;
+     margin-top: -40px;
+ }
+ #github-events > div { clear: left; margin: 0 10px 10px 0; border: 1px dashed #e2e2e2; padding: 10px; font-size: 0.9rem; min-width: 290px; }
+ #github-events .ellipsis { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+ #github-events .date { margin-top: 5px; }
+ #github-events img { width: 45px; height: 45px; float: left; padding-right: 7px; filter: grayscale(100%); }
+</style>
+
 <div id="features">
     <div class="container large">
         <div class="row features main">
