@@ -1,5 +1,5 @@
 ---
-title: Benchmark
+title: Benchmarking results
 layout: post
 language: en
 ---

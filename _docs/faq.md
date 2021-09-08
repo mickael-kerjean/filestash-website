@@ -1,6 +1,6 @@
 ---
 layout: documentation
-title: Faq
+title: Frequently asked questions
 order: 7
 language: en
 ---
@@ -25,7 +25,7 @@ server {
 
 ## I want to use S3. How do you create an AWS access Key ID and AWS Secret Access key?
 
-We wrote a post about this, [check it out](({% post_url 2019-11-21-s3-browser %}))
+We wrote a post about this, [check it out]({% post_url 2019-11-21-s3-browser %})
 
 ## My server provider only supports PHP based applications, is that ok?
 

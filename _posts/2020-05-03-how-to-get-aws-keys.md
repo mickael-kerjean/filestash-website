@@ -106,6 +106,6 @@ There's many way to test if your S3 keys is working:
 
 <iframe id="appframe" frameborder="0" src="https://demo-s3.filestash.app/" allow="fullscreen;speaker"></iframe>
 
-Our [S3 browser and explorer](({% post_url 2019-11-21-s3-browser %})) thrives at making S3 user friendly by non technical users. With Filestash, you can easily edit / upload and explore your buckets, create shared links that are as easy to set up as on Dropbox and providing a range of access control to keep your buckets secure.
+Our [S3 browser and explorer]({% post_url 2019-11-21-s3-browser %}) thrives at making S3 user friendly by non technical users. With Filestash, you can easily edit / upload and explore your buckets, create shared links that are as easy to set up as on Dropbox and providing a range of access control to keep your buckets secure.
 
 On premise or on the cloud, you can install the web client anywhere you want. Our code is [open source](https://github.com/mickael-kerjean/filestash) if you feel like reading some code.
