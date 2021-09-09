@@ -5,7 +5,6 @@ kramdown:
 url: https://www.filestash.app
 plugins:
   - jekyll-feed
-  - jekyll-sitemap
   - jekyll-archives
   - jekyll-redirect-from
   - jekyll-gzip
