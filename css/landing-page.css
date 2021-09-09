@@ -105,11 +105,19 @@
 #splash #oem span { padding: 9px 5px 9px 0; }
 #splash #oem .btn{ margin: 0; text-align: center; }
 
+#introduce-second-heading{
+    margin: 0 0 50px 0;
+    text-align: center;
+    color: var(--bg-color);
+    background: linear-gradient(var(--dark), #505457);
+    padding: 140px;
+}
+
 @media (max-width: 767px){
     #splash .onlyForDesktop{ display: none; }
     #splash .onlyForMobile{ display: block!important; }
     #splash .hgroup{padding-top:0!important; }
-    #introduce-second-heading{display: none;}
+    #introduce-second-heading{padding: 140px 0;}
 }
 #splash .onlyForMobile{ display: none; }
 
@@ -122,14 +130,6 @@
     #splash .row{ max-width: 100%; }
     #splash .iframe-wrapper{ max-width: 390px; }
     #splash .iframe-wrapper iframe{ height: 600px; }
-}
-
-#introduce-second-heading{
-    margin: 0 0 50px 0;
-    text-align: center;
-    color: var(--bg-color);
-    background: linear-gradient(var(--dark), #505457);
-    padding: 140px;
 }
 
 /* Features */

@@ -193,7 +193,7 @@ head:
 <div>
   <img src="${e.actor.avatar_url}"/>
   <div>
-    <div class="ellipsis"><a href="https://github.com/${e.actor.login}">${e.actor.login}</a> is following us</div>
+    <div class="ellipsis"><a rel="nofollow" href="https://github.com/${e.actor.login}">${e.actor.login}</a> is following us</div>
     <div class="date">${relativeDate(new Date(e.created_at))}</div>
   </div>
 </div>`
@@ -224,6 +224,7 @@ head:
      display: flex;
      overflow-x: hidden;
      margin-top: -40px;
+     height: 80px;
  }
  #github-events > div { clear: left; margin: 0 10px 10px 0; border: 1px dashed #e2e2e2; padding: 10px; font-size: 0.9rem; min-width: 290px; }
  #github-events .ellipsis { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
