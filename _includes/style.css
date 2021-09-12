@@ -43,7 +43,7 @@ pre, .terminal {
 }
 .terminal > span {
     color: var(--light);
-    opacity: 0.5;
+    opacity: 0.9;
 }
 .terminal span.prompt, .terminal span.stdout { user-select: none; font-size: 0.95em; }
 
