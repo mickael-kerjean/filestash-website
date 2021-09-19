@@ -1,6 +1,6 @@
 ---
 layout: documentation
-title: Frequently asked questions
+title: Faq
 order: 7
 language: en
 ---

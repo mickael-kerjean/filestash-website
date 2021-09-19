@@ -1,6 +1,6 @@
 ---
 layout: documentation
-title: Filestash Support
+title: Support
 language: en
 order: 6
 ---

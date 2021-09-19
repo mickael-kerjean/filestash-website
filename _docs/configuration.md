@@ -1,6 +1,6 @@
 ---
 layout: documentation
-title: Filestash Configuration
+title: Configuration
 language: en
 order: 3
 ---
