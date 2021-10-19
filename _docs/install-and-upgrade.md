@@ -98,6 +98,7 @@ Recreating filestash_app ... done
 
 In the meantime, community guides are also available:
 - SRugina: [ubuntu instructions + script](https://github.com/mickael-kerjean/filestash/pull/136)
+- sehnryr: [Debian install](https://github.com/mickael-kerjean/filestash/pull/415)
 - *add your own with a PR*
 
 If you want to build and install Filestash by yourself, the reference is the [Dockerfile](https://github.com/mickael-kerjean/filestash/blob/master/docker/prod/Dockerfile){:rel="nofollow"}. This recipe is just one example of a custom build with an emphasis on speed, efficiency and features at the cost of installation size. You could shrink down the required space by 90% by disabling features such as image transcoding (getting rid of libvips and libraw), org-mode export (getting rid of emacs and our latex distribution) and other tools (such as pdftotext).
