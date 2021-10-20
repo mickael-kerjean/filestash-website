@@ -37,7 +37,6 @@ layout: default
      font-size: 1.7rem;
      margin-bottom: 10px;
  }
-
 </style>
 <div class="jumbotron">
     <div class="geometric-shape" style="left: -13rem;"></div>
@@ -94,7 +93,7 @@ layout: default
     <div class="flex">
         <div class="padding">
             <h3>
-                For you
+                <span>Open Source</span>
                 <svg width="30" height="30" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M20 21V19C20 17.9391 19.5786 16.9217 18.8284 16.1716C18.0783 15.4214 17.0609 15 16 15H8C6.93913 15 5.92172 15.4214 5.17157 16.1716C4.42143 16.9217 4 17.9391 4 19V21" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
                     <path d="M12 11C14.2091 11 16 9.20914 16 7C16 4.79086 14.2091 3 12 3C9.79086 3 8 4.79086 8 7C8 9.20914 9.79086 11 12 11Z" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
@@ -102,9 +101,11 @@ layout: default
             </h3>
             <div class="plan" id="plan-hobby">
                 <div class="plan-name">
-                    <h4>Hobby
+                    <h4>
+                        <span data-related="selfhosted">Selfhosted</span>
+                        <span data-related="cloud">&nbsp;</span>
                         <div class="onoffswitch">
-                            <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="myonoffswitch" tabindex="0" checked>
+                            <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="myonoffswitch" tabindex="0">
                             <label class="onoffswitch-label" for="myonoffswitch">
                                 <span class="onoffswitch-inner"></span>
                                 <span class="onoffswitch-switch"></span>
@@ -117,18 +118,21 @@ layout: default
                     </div>
                 </div>
                 <ul class="features">
-                    <li>All features</li>
-                    <li data-show="cloud">up to 3 users</li>
-                    <li data-show="selfhosted">unlimited users</li>
+                    <li>AGPL v3</li>
+                    <li data-related="cloud">up to 3 users</li>
+                    <li data-related="selfhosted">unlimited users</li>
                 </ul>
-                <a class="btn" href="https://deploy.filestash.app/?type=personal::cloud">
-                    START <span data-related="cloud">Your free trial</span>
+                <a class="btn" href="/docs/" data-related="selfhosted">
+                    START
+                </a>
+                <a class="btn" href="https://deploy.filestash.app/?type=personal::cloud" data-related="cloud">
+                    START YOUR FREE TRIAL
                 </a>
             </div>
         </div>
         <div class="box padding">
             <h3>
-                For your team
+                For your company
                 <svg width="30" height="30" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M17 21V19C17 17.9391 16.5786 16.9217 15.8284 16.1716C15.0783 15.4214 14.0609 15 13 15H5C3.93913 15 2.92172 15.4214 2.17157 16.1716C1.42143 16.9217 1 17.9391 1 19V21" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
                     <path d="M9 11C11.2091 11 13 9.20914 13 7C13 4.79086 11.2091 3 9 3C6.79086 3 5 4.79086 5 7C5 9.20914 6.79086 11 9 11Z" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
@@ -141,15 +145,14 @@ layout: default
                     <div class="plan-name">
                         <h4>Pro</h4>
                         <div class="price">
-                            20$ / month
+                            50$ / month
                         </div>
                     </div>
                     <ul class="features">
+                        <li>Commercial License</li>
                         <li>Unlimited users</li>
-                        <li>SLA</li>
-                        <li>Support</li>
                     </ul>
-                    <a href="https://deploy.filestash.app/?type=professional::cloud" class="btn">START YOUR FREE TRIAL</a>
+                    <a href="https://buy.stripe.com/cN215sdCSdpA436aEE" class="btn">START YOUR FREE TRIAL</a>
                 </div>
                 <div class="plan" id="plan-enterprise">
                     <div class="plan-name">
@@ -158,11 +161,11 @@ layout: default
                             Suited to your needs
                         </div>
                     </div>
-
                     <ul class="features">
-                        <li>Customisation</li>
-                        <li>Consulting</li>
                         <li>24/7 Support</li>
+                        <li>Custom Branding</li>
+                        <li>SSO</li>
+                        <li>Consulting</li>
                     </ul>
                     <a class="btn action" href="#enterprise" rel="modal:open">START</a>
                 </div>
@@ -348,7 +351,7 @@ layout: default
 </style>
 <script>
  jQuery(document).ready(function() {
-     jQuery("[data-related='selfhosted']").hide();
+     jQuery("[data-related='cloud']").hide();
  });
  jQuery("input[type='checkbox']").on("change", function(){
      // update the compare plans & features
@@ -368,7 +371,95 @@ layout: default
  });
 </script>
 
-<h2 class="center">Compare plans & Features</h2>
+
+
+
+
+
+
+
+
+<div class="container" id="faq">
+    <h3 data-target="#why-paying">Why should I pay for an open source software?</h3>
+    <div class="collapse" id="why-paying">
+        Usage of Open Source software comes with rights and obligations. The open Source license is ideal for use cases where you don't need support and all obligations under the AGPL license can be met. Otherwise we suggest a commercial license.
+    </div>
+
+    <h3 data-target="#choices-of-license">What are the licensing options available?</h3>
+    <div class="collapse" id="choices-of-license">
+        <ul>
+            <li>GNU AGPL v3 Open Source License</li>
+            <li>Commercial License</li>
+        </ul>
+    </div>
+
+    <h3 data-target="#how-to-choose">How do I know if I need the commercial vs Open source version?</h3>
+    <div class="collapse" id="how-to-choose">
+        As a rule of thumb, you need a commercial license if you use our software in a solution that is not 100% open source.
+    </div>
+
+    <h3 data-target="#agplv3">Do I need to worry about GNU AGPLv3 when using a commercially licensed version of Filestash?</h3>
+    <div class="collapse" id="agplv3">
+        No. The commercial license exempt you from the obligation of the AGPLv3 license.
+    </div>
+
+    <h3 data-target="#after-expiration">Can I continue to use my commercial license after it has expired?</h3>
+    <div class="collapse" id="after-expiration">
+        No. Once expired, the license would require to open source your solution
+    </div>
+
+    <h3 data-target="#cancellation">Can I cancel at any time?</h3>
+    <div class="collapse" id="cancellation">
+        Yes
+    </div>
+
+    <h3 data-target="#more-questions">What if I have more questions?</h3>
+    <div class="collapse" id="more-questions">
+        Send us an email at mickael@kerjean.me and we’ll help you out.
+    </div>
+
+    <h3 data-target="#how-payment-done">How is my payment being processed?</h3>
+    <div class="collapse" id="how-payment-done">
+        We don't handle your credit card information directly and use Stripe to process your payment.
+    </div>
+
+</div>
+<script>
+ jQuery("#faq .collapse").hide();
+ jQuery("#faq h3").on("click", function(){
+     jQuery("#faq .collapse").hide(100);
+     var $el = jQuery(jQuery(this).attr("data-target"))
+     if($el.is(":hidden")) $el.show(100);
+ });
+</script>
+<style>
+ #faq{
+     padding-left: 15px;
+     padding-right: 15px;
+     max-width: 900px;
+     margin-bottom: 200px;
+ }
+ #faq h3{
+     cursor: pointer;
+     border-top: 1px solid rgba(0,0,0,0.1);
+     padding-top: 20px;
+     margin-top: 20px;
+     user-select: none;
+ }
+ #faq h3:after{
+     content: '+';
+     float: right;
+     font-family: monospace;
+ }
+ @media only screen and (max-width: 550px) {
+     #faq h3:after{ content: ""; }
+ }
+</style>
+
+
+
+
+<h2 class="center">Compare Plans</h2>
 <style>
  .featurelist{
      max-width: 900px;
@@ -486,11 +577,18 @@ layout: default
 
             <tr class="header">
                 <td colspan="5">
-                    <h3 style="margin-top:0">Backend connectors</h3>
+                    <h3 style="margin-top:0">Connectors</h3>
                 </td>
             </tr>
             <tr>
                 <td><a href="{% post_url 2019-11-26-ftp-web-client %}">FTP</a></td>
+                <td data-related="cloud"><i class="check"></i></td>
+                <td data-related="selfhosted"><i class="check"></i></td>
+                <td><i class="check"></i></td>
+                <td><i class="check"></i></td>
+            </tr>
+            <tr>
+                <td><a href="{% post_url 2019-11-26-ftp-web-client %}">FTPS</a></td>
                 <td data-related="cloud"><i class="check"></i></td>
                 <td data-related="selfhosted"><i class="check"></i></td>
                 <td><i class="check"></i></td>
@@ -511,6 +609,13 @@ layout: default
                 <td><i class="check"></i></td>
             </tr>
             <tr>
+                <td>SMB</td>
+                <td data-related="cloud"><i class="check"></i></td>
+                <td data-related="selfhosted"><i class="check"></i></td>
+                <td><i class="check"></i></td>
+                <td><i class="check"></i></td>
+            </tr>
+            <tr>
                 <td><a href="{% post_url 2019-11-21-s3-browser %}">S3</a></td>
                 <td data-related="cloud"><i class="check"></i></td>
                 <td data-related="selfhosted"><i class="check"></i></td>
@@ -519,6 +624,20 @@ layout: default
             </tr>
             <tr>
                 <td><a href="{% post_url 2019-11-21-s3-browser %}">Minio</a></td>
+                <td data-related="cloud"><i class="check"></i></td>
+                <td data-related="selfhosted"><i class="check"></i></td>
+                <td><i class="check"></i></td>
+                <td><i class="check"></i></td>
+            </tr>
+            <tr>
+                <td>Backblaze B2</td>
+                <td data-related="cloud"><i class="check"></i></td>
+                <td data-related="selfhosted"><i class="check"></i></td>
+                <td><i class="check"></i></td>
+                <td><i class="check"></i></td>
+            </tr>
+            <tr>
+                <td>GIT</td>
                 <td data-related="cloud"><i class="check"></i></td>
                 <td data-related="selfhosted"><i class="check"></i></td>
                 <td><i class="check"></i></td>
@@ -550,34 +669,6 @@ layout: default
                 <td data-related="cloud"><i class="check"></i></td>
                 <td data-related="selfhosted"><i class="check"></i></td>
                 <td><i class="check"></i></td>
-                <td><i class="check"></i></td>
-            </tr>
-            <tr>
-                <td>Postgres</td>
-                <td data-related="cloud"><i class="close"></i></td>
-                <td data-related="selfhosted"><i class="close"></i></td>
-                <td><i class="close"></i></td>
-                <td><i class="check"></i></td>
-            </tr>
-            <tr>
-                <td>Sqlite</td>
-                <td data-related="cloud"><i class="close"></i></td>
-                <td data-related="selfhosted"><i class="close"></i></td>
-                <td><i class="close"></i></td>
-                <td><i class="check"></i></td>
-            </tr>
-            <tr>
-                <td>MS SQL</td>
-                <td data-related="cloud"><i class="close"></i></td>
-                <td data-related="selfhosted"><i class="close"></i></td>
-                <td><i class="close"></i></td>
-                <td><i class="check"></i></td>
-            </tr>
-            <tr>
-                <td>Oracle</td>
-                <td data-related="cloud"><i class="close"></i></td>
-                <td data-related="selfhosted"><i class="close"></i></td>
-                <td><i class="close"></i></td>
                 <td><i class="check"></i></td>
             </tr>
 
@@ -646,7 +737,7 @@ layout: default
                 <td>Branding</td>
                 <td data-related="cloud"><i class="close"></i></td>
                 <td data-related="selfhosted"><i class="close"></i></td>
-                <td><i class="close"></i></td>
+                <td><i class="check"></i></td>
                 <td><i class="check"></i></td>
             </tr>
 
@@ -670,24 +761,24 @@ layout: default
                 <td><i class="check"></i></td>
             </tr>
             <tr>
-                <td>Customisation</td>
-                <td data-related="cloud"><i class="check"></i></td>
-                <td data-related="selfhosted"><i class="check"></i></td>
-                <td><i class="check"></i></td>
-                <td><i class="check"></i></td>
-            </tr>
-            <tr>
-                <td>Usage Audit</td>
-                <td data-related="cloud"><i class="close"></i></td>
-                <td data-related="selfhosted"><i class="check"></i></td>
-                <td><i class="check"></i></td>
-                <td><i class="check"></i></td>
-            </tr>
-            <tr>
                 <td>Bring your own DNS</td>
                 <td data-related="cloud"><i class="close"></i></td>
                 <td data-related="selfhosted"><i class="check"></i></td>
                 <td><i class="check"></i></td>
+                <td><i class="check"></i></td>
+            </tr>
+            <tr>
+                <td>Customisation</td>
+                <td data-related="cloud"><i class="close"></i></td>
+                <td data-related="selfhosted"><i class="close"></i></td>
+                <td><i class="close"></i></td>
+                <td><i class="check"></i></td>
+            </tr>
+            <tr>
+                <td>Detailed Audit</td>
+                <td data-related="cloud"><i class="close"></i></td>
+                <td data-related="selfhosted"><i class="close"></i></td>
+                <td><i class="close"></i></td>
                 <td><i class="check"></i></td>
             </tr>
             <tr>
@@ -702,6 +793,13 @@ layout: default
                 <td colspan="5">
                     <h3>Support & Maintenance</h3>
                 </td>
+            </tr>
+            <tr>
+                <td>Custom build</td>
+                <td data-related="cloud"><i class="close"></i></td>
+                <td data-related="selfhosted"><i class="close"></i></td>
+                <td><i class="close"></i></td>
+                <td><i class="check"></i></td>
             </tr>
             <tr>
                 <td>Setup advices</td>
@@ -740,9 +838,9 @@ layout: default
             </tr>
             <tr>
                 <td>Automatic SSL</td>
-                <td data-related="cloud"><i class="check"></i></td>
+                <td data-related="cloud"><i class="close"></i></td>
                 <td data-related="selfhosted"><i class="close"></i></td>
-                <td><i class="check"></i></td>
+                <td><i class="close"></i></td>
                 <td><i class="check"></i></td>
             </tr>
             <tr>
@@ -754,7 +852,7 @@ layout: default
             </tr>
             <tr>
                 <td>Eearly Security patches</td>
-                <td data-related="cloud"><i class="check"></i></td>
+                <td data-related="cloud"><i class="close"></i></td>
                 <td data-related="selfhosted"><i class="close"></i></td>
                 <td><i class="check"></i></td>
                 <td><i class="check"></i></td>
@@ -790,45 +888,37 @@ layout: default
                 <td>Docker</td>
                 <td data-related="cloud"><i>N/A</i></td>
                 <td data-related="selfhosted"><i class="check"></i></td>
-                <td><i>N/A</i></td>
+                <td><i class="check"></i></td>
                 <td><i class="check"></i></td>
             </tr>
             <tr>
                 <td>Custom install</td>
                 <td data-related="cloud"><i>N/A</i></td>
                 <td data-related="selfhosted"><i class="close"></i></td>
-                <td><i>N/A</i></td>
+                <td><i class="close"></i></td>
                 <td><i class="check"></i></td>
             </tr>
             <tr>
                 <td>Debian installer</td>
                 <td data-related="cloud"><i>N/A</i></td>
                 <td data-related="selfhosted"><i class="close"></i></td>
-                <td><i>N/A</i></td>
+                <td><i class="close"></i></td>
                 <td><i class="check"></i></td>
             </tr>
             <tr>
                 <td>RHEL installer</td>
                 <td data-related="cloud"><i>N/A</i></td>
                 <td data-related="selfhosted"><i class="close"></i></td>
-                <td><i>N/A</i></td>
+                <td><i class="close"></i></td>
                 <td><i class="check"></i></td>
             </tr>
             <tr>
                 <td>Ubuntu installer</td>
                 <td data-related="cloud"><i>N/A</i></td>
                 <td data-related="selfhosted"><i class="close"></i></td>
-                <td><i>N/A</i></td>
+                <td><i class="close"></i></td>
                 <td><i class="check"></i></td>
             </tr>
-            <tr>
-                <td>Windows installer</td>
-                <td data-related="cloud"><i>N/A</i></td>
-                <td data-related="selfhosted"><i class="close"></i></td>
-                <td><i>N/A</i></td>
-                <td><i class="check"></i></td>
-            </tr>
-
         </tbody>
     </table>
 </div>
@@ -915,67 +1005,6 @@ layout: default
 
 
 
-<h2 class="center">Question & Answers</h2>
-
-<div class="container" id="faq">
-    <h3 data-target="#how-payment-done">How is my payment being processed?</h3>
-    <div class="collapse" id="how-payment-done">
-        We don't handle your credit card information directly and use Stripe to process your payment.
-    </div>
-
-    <h3 data-target="#yearly-option">Do you have monthly and yearly billing options?</h3>
-    <div class="collapse" id="yearly-option">
-        We can arrange that. Send us an email at mickael@kerjean.me and we will get you set
-    </div>
-
-    <h3 data-target="#cancellation">Can I cancel at any time?</h3>
-    <div class="collapse" id="cancellation">
-        Yes. The refund will be calculated on a pro-rata basis
-    </div>
-
-    <h3 data-target="#more-questions">What if I have more questions?</h3>
-    <div class="collapse" id="more-questions">
-        Send us an email at mickael@kerjean.me and we’ll help you out.
-    </div>
-
-</div>
-<script>
- jQuery("#faq .collapse").hide();
- jQuery("#faq h3").on("click", function(){
-     jQuery("#faq .collapse").hide(100);
-     var $el = jQuery(jQuery(this).attr("data-target"))
-     if($el.is(":hidden")) $el.show(100);
- });
-</script>
-<style>
- #faq{
-     padding-left: 15px;
-     padding-right: 15px;
-     max-width: 650px;
-     margin-bottom: 200px;
- }
- #faq h3{
-     cursor: pointer;
-     border-top: 1px solid rgba(0,0,0,0.1);
-     padding-top: 20px;
-     margin-top: 20px;
-     user-select: none;
- }
- #faq h3:after{
-     content: '+';
-     float: right;
-     font-family: monospace;
- }
- @media only screen and (max-width: 550px) {
-     #faq h3:after{ content: ""; }
- }
-</style>
-
-
-
-
-
-
 
 
 <style>
@@ -1033,4 +1062,5 @@ layout: default
  }
 </style>
 
+<br/><br/><br/><br/><br/><br/>
 {% include footer.html %}
