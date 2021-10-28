@@ -310,6 +310,6 @@ redirect_from:
     <a class="btn light" href="{% post_url 2019-11-26-ftp-web-client %}">FTPS</a>
     <a class="btn light" href="{% post_url 2019-11-21-s3-browser %}">S3</a>
     <a class="btn light" href="{% post_url 2020-01-04-ldap-browser %}">LDAP</a>
-    <a class="btn light" href="https://demo.filestash.app/login">Webdav</a>
+    <a class="btn light" href="{% post_url 2021-10-18-webdav-client %}">WebDAV</a>
   </div>
 </div>

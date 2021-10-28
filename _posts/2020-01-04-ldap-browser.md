@@ -139,6 +139,7 @@ language: en
     <a class="btn light" href="{% post_url 2019-11-26-ftp-web-client %}">FTP</a>
     <a class="btn light" href="{% post_url 2019-11-21-s3-browser %}">S3</a>
     <a class="btn light" href="{% post_url 2020-04-30-sftp-browser %}">SFTP</a>
+    <a class="btn light" href="{% post_url 2021-10-18-webdav-client %}">WebDAV</a>
   </div>
 
 </div>
