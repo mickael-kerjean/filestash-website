@@ -602,7 +602,7 @@ layout: default
                 <td><i class="check"></i></td>
             </tr>
             <tr>
-                <td>WebDav</td>
+                <td><a href="{% post_url 2021-10-18-webdav-client %}">WebDav</a></td>
                 <td data-related="cloud"><i class="check"></i></td>
                 <td data-related="selfhosted"><i class="check"></i></td>
                 <td><i class="check"></i></td>
