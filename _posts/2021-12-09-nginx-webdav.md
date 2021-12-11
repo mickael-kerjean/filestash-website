@@ -6,7 +6,7 @@ language: en
 tags: webdav guide
 ---
 
-This guide is split in 2 steps:
+In this tutorial, I will guide you though the step by step instructions to get a webdav server ready in less than 2 minutes. It is structured around 2 parts:
 1. [installing the necessary packages](#install-nginx)
 2. [configuring the webdav server](#configure-the-webdav-server)
 
