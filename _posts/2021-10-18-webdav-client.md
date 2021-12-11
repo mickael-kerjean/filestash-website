@@ -1,5 +1,5 @@
 ---
-title: The best WebDAV Client
+title: WebDAV Client | An online WebDAV Client tool
 description: A modern online WebDAV client to explore and browse your WebDAV server like Nginx, Apache, Nextcloud, Owncloud, Synology and more
 layout: landing
 permalink: /webdav-client.html
