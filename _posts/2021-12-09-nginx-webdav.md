@@ -124,7 +124,8 @@ For a nicer webdav client than curl, check our online [webdav client]({% post_ur
 *Pro tips*:
 1. If the server doesn't have a user already defined, see the [user management linux cheat sheet](https://www.guru99.com/linux-commands-cheat-sheet.html#4)
 2. Before using this webdav server for anything serious, it is strongly advised to create an SSL certificate. The nginx blog has a great article about [that exact topic](https://www.nginx.com/blog/using-free-ssltls-certificates-from-lets-encrypt-with-nginx/).
-3. if you want to chroot your user onto their home folder, you will need to replace the location block with something like this:
+3. To make the server readonly, you will need to remove the nginx config line which contains `dav_methods PUT DELETE MKCOL COPY MOVE;`. For more information about what you can do by removing some of the supported methods in webdav, refer [rfc4918](https://datatracker.ietf.org/doc/html/rfc4918).
+4. if you want to chroot your user onto their home folder, you will need to replace the location block with something like this:
 ```
 location ~ ^/(.*)$ {
   alias /home/$remote_user/$1;
