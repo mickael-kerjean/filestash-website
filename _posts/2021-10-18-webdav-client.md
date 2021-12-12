@@ -14,7 +14,7 @@ language: en
   <div class="row">
     <div class="col-sm-12">
       <div class="hgroup">
-        <h1><a href="https://en.wikipedia.org/wiki/WebDAV">WebDAV</a> Client</h1>
+        <h1>Online <a href="https://en.wikipedia.org/wiki/WebDAV">WebDAV</a> Client</h1>
       </div>
       <form onsubmit='$("form input[type=\"submit\"]").attr("value", "LOADING...")' action="https://demo.filestash.app/login" method="GET">
         <input type="hidden" name="type" value="webdav" />
