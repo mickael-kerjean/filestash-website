@@ -2,6 +2,7 @@
 title: Privacy Policy
 layout: post
 permalink: /privacy-policy.html
+language: en
 ---
 
 This privacy policy will explain how our organization (MKConsulting) uses the data we collect when you use our web applications.
