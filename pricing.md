@@ -152,7 +152,7 @@ layout: default
                         <li>Commercial License</li>
                         <li>Unlimited users</li>
                     </ul>
-                    <a href="https://buy.stripe.com/cN215sdCSdpA436aEE" class="btn">START YOUR FREE TRIAL</a>
+                    <a href="/redirect.html?url=https://buy.stripe.com/cN215sdCSdpA436aEE" class="btn">START YOUR FREE TRIAL</a>
                 </div>
                 <div class="plan" id="plan-enterprise">
                     <div class="plan-name">

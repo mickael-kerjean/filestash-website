@@ -1,0 +1,41 @@
+---
+layout: default
+permalink: /redirect.html
+---
+
+{% include menu.html %}
+
+<div id="redirect">
+  You will be redirected in <span id="redirect-counter">x</span> seconds. Or Click <a id="redirect-href" href="">this link</a>
+</div>
+<script>
+  (function() {
+      var redirect_uri = (new URLSearchParams(location.search)).get("url");
+      if(!redirect_uri) {
+          document.getElementById("redirect").textContent = "Invalid link";
+      }
+      function redirect(t) {
+          if(t > 0) {
+              document.getElementById("redirect-counter").textContent = t;
+              setTimeout(() => redirect(t - 1), 1000);
+          } else if(t === 0) {
+              location.href = redirect_uri;
+          }
+      }
+      document.getElementById("redirect-href").setAttribute(
+          "href",
+          redirect_uri,
+      )
+      redirect(5);
+  })();
+</script>
+
+<style>
+  #redirect {
+      text-align: center;
+      margin: 100px auto;
+      font-size: 1.1rem;
+  }
+  #footer { opacity: 0; }
+</style>
+{% include footer.html %}
