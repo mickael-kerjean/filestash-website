@@ -1,6 +1,7 @@
 ---
 layout: default
 title: ok
+permalink: /ok/
 ---
 
 {% include menu.html %}

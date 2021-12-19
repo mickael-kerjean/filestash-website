@@ -1,3 +1,6 @@
+---
+permalink: /robots.txt
+---
 User-Agent: *
 Allow: /
 
