@@ -5,6 +5,9 @@ language: en
 tags: guide
 ---
 
+If you want a quick solution to access your filesystem using Filestash, you can use the [local plugin](https://github.com/mickael-kerjean/filestash/tree/master/server/plugin/plg_backend_local) which as its name implies makes it possible to work from a filesystem.
+
+<!--
 <style>
 #main ol li p { margin: 0; }
 #main ol { margin-top: -15px; }
@@ -46,3 +49,4 @@ There's a lot of backend that are available in the ecosystem of software that ru
 - Apache webdav
 - Samba
 - Minio
+-->
