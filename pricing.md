@@ -1,5 +1,7 @@
 ---
 layout: default
+head:
+  - <link rel="stylesheet" href="/css/form.css" />
 ---
 {% include menu.html context="homepage" %}
 <script src="/js/jquery.min.js"></script>
@@ -1028,23 +1030,6 @@ layout: default
      border-top-right-radius: 4px;
  }
  .modal a.close-modal{ display: none; }
- .modal form input, .modal form textarea {
-     display: block;
-     margin: 10px 0;
-     border-radius: 3px;
-     border: 2px solid rgba(0,0,0,0.1);
-     outline: none;
-     padding: 8px 10px;
-     min-width: 100%;
-     max-width: 100%;
-     max-height: 80px;
-     box-sizing: border-box;
- }
- .modal form button{
-     padding: 7px 0px;
-     width: 100%;
-     margin-top: 5px;
- }
 </style>
 
 <style>
