@@ -6,7 +6,7 @@ language: en
 tags: webdav guide
 ---
 
-In this tutorial, I will guide you though the step by step instructions to get a webdav server ready in less than 2 minutes. It is structured around 2 parts:
+In this tutorial, I will guide you through the step by step instructions to get a webdav server ready in less than 2 minutes. It is structured around 2 parts:
 1. [installing the necessary packages](#install-nginx)
 2. [configuring the webdav server](#configure-the-webdav-server)
 
@@ -139,7 +139,7 @@ location ~ ^/(.*)$ {
         <img src="https://mickael.kerjean.me/assets/img/arrow_bottom.png"/>
     </div>
     <div class="related_content">
-        <a href="{% post_url 2021-10-18-webdav-client %}"><h3 class="no-anchor">Webdav Client</h3></a><a href="{% post_url 2019-11-26-ftp-web-client %}"><h3 class="no-anchor">FTP Client</h3></a><a href="{% post_url 2020-04-30-sftp-browser %}"><h3 class="no-anchor">SFTP Client</h3></a><a href="{% post_url 2019-11-21-s3-browser %}"><h3 class="no-anchor">S3 Explorer</h3></a>
+        <a href="{% post_url 2021-10-18-webdav-client %}"><h3 class="no-anchor">Webdav Client</h3></a>        <a href="{% post_url 2022-01-15-webdav-test-tool %}"><h3 class="no-anchor">Webdav Test Tool</h3></a><a href="{% post_url 2019-11-26-ftp-web-client %}"><h3 class="no-anchor">FTP Client</h3></a><a href="{% post_url 2020-04-30-sftp-browser %}"><h3 class="no-anchor">SFTP Client</h3></a><a href="{% post_url 2019-11-21-s3-browser %}"><h3 class="no-anchor">S3 Explorer</h3></a>
     </div>
 </div>
 <style>
