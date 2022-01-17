@@ -10,7 +10,7 @@ head:
 ---
 
 To use Filestash, you can either:
-1. Get your own instance running in the cloud. Start your trial [here](https://deploy.filestash.app/?type=unknown::cloud){:target="_blank"}
+1. Get your own instance running in the cloud. Start your trial [here](/redirect.html?url=https://deploy.filestash.app/?type=unknown::cloud)
 2. Self-host the application on your own server and manage everything yourself: [see the documentation](/docs/install-and-upgrade/)
 3. Play around with the public demo:
 
