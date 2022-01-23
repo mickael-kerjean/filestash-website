@@ -1,7 +1,7 @@
 ---
 title: How to create a webdav server with Nginx
 layout: post
-description: Step by step instructions to get your nginx powered webdav server ready in less than 2 minutes
+description: Step by step instructions to install and setup a webdav server using nginx and its related dav modules in less than 2 minutes
 language: en
 tags: webdav guide
 ---

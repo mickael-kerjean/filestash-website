@@ -1,6 +1,6 @@
 ---
 title: Online SFTP testing Tool
-description: A free tool to test your SFTP server connection
+description: A online tool to test your SFTP server, from latency to host keys and other server information you are exposing with your SFTP server
 layout: landing
 permalink: /sftp-test.html
 tags: sftp tool
