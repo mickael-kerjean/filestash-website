@@ -89,13 +89,19 @@ language: en
 </style>
 
 <div id="appframe">
-    <iframe id="appframe" frameborder="0" src="https://demo.filestash.app/login?next=/view/Documents/office.docx#type=webdav&url=https://webdav.filestash.app"></iframe>
+    <iframe frameborder="0"></iframe>
     <div class="appframe-loader">
         <div class="spinner"></div>
         Preparing the <br> online word document editor
     </div>
 </div>
 <script>
+  let m = document.cookie.match(/^webid=([^;]*)/);
+  const userID = m ? m[1] : btoa(Math.random() * 100000).replace(/[^a-zA-Z0-9]/, "");
+  document.querySelector("#appframe iframe").setAttribute(
+      "src",
+      "https://demo.filestash.app/login?type=tmp&next=/view/tmp.docx&userID=" + userID,
+  );
  (function(){
      var $iframe = document.querySelector("#appframe iframe");
      var $loader = document.querySelector("#appframe .appframe-loader");
