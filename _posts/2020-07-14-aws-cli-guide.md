@@ -14,7 +14,7 @@ The [AWS command line interface](https://docs.aws.amazon.com/cli/latest/referenc
 
 If that's not already the case, you first need to [install and configure the AWS CLI](https://docs.aws.amazon.com/cli/latest/userguide/install-cliv2.html).
 
-## List Files and buckets
+## List Files and buckets with 'aws s3 ls'
 
 **list your buckets**:
 <div class="terminal">
@@ -145,7 +145,7 @@ remove_bucket: testing-tutorial
 
 
 <figure style="margin-top:100px;">
-    <figcaption style="text-align:center;">While you're at it, check our <a href="{% post_url 2019-11-21-s3-browser %}">S3 browser</a>:</figcaption>
+    <figcaption style="text-align:center;">If you're on the look for an S3 client that is usable by non nerds, check our <a href="{% post_url 2019-11-21-s3-browser %}">S3 browser</a>:</figcaption>
     <a href="{% post_url 2019-11-21-s3-browser %}"><img class="fancy" src="/img/screenshots/viewerpage.png" /></a>
 </figure>
 
