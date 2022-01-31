@@ -22,10 +22,10 @@ language: en
           <span>Hostname:</span><input type="text" name="hostname" placeholder="ldap://ldap.example.com" required/>
         </label>
         <label>
-          <span>Bind CN:</span><input default="anonymous" type="text" name="bind_cn" placeholder="cn=admin,dc=example,dc=com" />
+          <span>Bind DN:</span><input default="anonymous" type="text" name="bind_dn" placeholder="cn=admin,dc=example,dc=com" />
         </label>
         <label>
-          <span>Bind CN password:</span><input type="password" name="bind_password" placeholder="*******" />
+          <span>Bind DN password:</span><input type="password" name="bind_password" placeholder="*******" />
         </label>
         <label>
           <span>Base DN:</span><input type="text" name="base_dn" placeholder="dc=example,dc=com" />
@@ -44,8 +44,8 @@ language: en
       </script>
       <p class="example">
         LDAP examples you can use:<br>
-        <a rel="nofollow noopener" onclick="clickPublicLDAPHandler(event, {hostname: 'ldap://ipa.demo1.freeipa.org', bind_cn: 'uid=admin,cn=users,cn=accounts,dc=demo1,dc=freeipa,dc=org', bind_password:'Secret123', base_dn: 'cn=accounts,dc=demo1,dc=freeipa,dc=org'});" href="ldap://ipa.demo1.freeipa.org">ldap://ipa.demo1.freeipa.org</a>
-        <a rel="nofollow noopener" onclick="clickPublicLDAPHandler(event, {hostname: 'ldap://ldap.forumsys.com', bind_cn: 'cn=read-only-admin,dc=example,dc=com', bind_password: 'password', base_dn: 'dc=example,dc=com'});" href="ldap://ldap.forumsys.com/">ldap://ldap.forumsys.com</a>
+        <a rel="nofollow noopener" onclick="clickPublicLDAPHandler(event, {hostname: 'ldap://ipa.demo1.freeipa.org', bind_dn: 'uid=admin,cn=users,cn=accounts,dc=demo1,dc=freeipa,dc=org', bind_password:'Secret123', base_dn: 'cn=accounts,dc=demo1,dc=freeipa,dc=org'});" href="ldap://ipa.demo1.freeipa.org">ldap://ipa.demo1.freeipa.org</a>
+        <a rel="nofollow noopener" onclick="clickPublicLDAPHandler(event, {hostname: 'ldap://ldap.forumsys.com', bind_dn: 'cn=read-only-admin,dc=example,dc=com', bind_password: 'password', base_dn: 'dc=example,dc=com'});" href="ldap://ldap.forumsys.com/">ldap://ldap.forumsys.com</a>
       </p>
     </div>
   </div>
