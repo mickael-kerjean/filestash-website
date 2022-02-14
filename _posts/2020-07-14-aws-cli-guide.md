@@ -143,6 +143,97 @@ remove_bucket: testing-tutorial
 </div>
 
 
+<script type="application/ld+json">
+ {
+
+     "@context": "https://schema.org",
+     "@type": "FAQPage",
+     "mainEntity": [
+         {
+             "@type": "Question",
+             "name": "How to list things on S3?",
+             "acceptedAnswer": {
+                 "@type": "Answer",
+                 "text": "aws s3 ls --recursive /optional_bucketname/"
+             }
+         },
+         {
+             "@type": "Question",
+             "name": "How to create a bucket on S3?",
+             "acceptedAnswer": {
+                 "@type": "Answer",
+                 "text": "aws s3 mb s3://new-bucket42"
+             }
+         },
+         {
+             "@type": "Question",
+             "name": "How to upload a file on S3?",
+             "acceptedAnswer": {
+                 "@type": "Answer",
+                 "text": "aws s3 cp local/foo.txt s3://testing-tutorial/local/foobar.txt"
+             }
+         },
+         {
+             "@type": "Question",
+             "name": "How to upload a folder on S3?",
+             "acceptedAnswer": {
+                 "@type": "Answer",
+                 "text": "aws s3 sync local s3://testing-tutorial/local/"
+             }
+         },
+         {
+             "@type": "Question",
+             "name": "How to rename a file on S3?",
+             "acceptedAnswer": {
+                 "@type": "Answer",
+                 "text": "aws s3 mv s3://testing-tutorial/foobar.txt s3://testing-tutorial/foo/foo.txt"
+             }
+         },
+         {
+             "@type": "Question",
+             "name": "How to download a file on S3?",
+             "acceptedAnswer": {
+                 "@type": "Answer",
+                 "text": "aws s3 mv s3://testing-tutorial/local/foo.txt new.txt"
+             }
+         },
+         {
+             "@type": "Question",
+             "name": "How to download a folder on S3?",
+             "acceptedAnswer": {
+                 "@type": "Answer",
+                 "text": "aws s3 sync s3://testing-tutorial/local/ local"
+             }
+         },
+         {
+             "@type": "Question",
+             "name": "How to remove a file on S3?",
+             "acceptedAnswer": {
+                 "@type": "Answer",
+                 "text": "aws s3 rm s3://testing-tutorial/local/foo.txt"
+             }
+         },
+         {
+             "@type": "Question",
+             "name": "How to remove a folder on S3?",
+             "acceptedAnswer": {
+                 "@type": "Answer",
+                 "text": "aws s3 rm --recursive s3://testing-tutorial/local/"
+             }
+         },
+         {
+             "@type": "Question",
+             "name": "How to remove a bucket on S3?",
+             "acceptedAnswer": {
+                 "@type": "Answer",
+                 "text": "aws s3 rb --force s3://testing-tutorial"
+             }
+         }
+     ]
+ }
+</script>
+
+
 
 <figure style="margin-top:100px;">
     <figcaption style="text-align:center;">If you're on the look for an S3 client that is usable by non nerds, check our <a href="{% post_url 2019-11-21-s3-browser %}">S3 browser</a>:</figcaption>
