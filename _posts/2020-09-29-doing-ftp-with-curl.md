@@ -119,6 +119,48 @@ drwxr-xr-x    4 0        0            4096 Jun 30 16:58 pub<br>
     </span>
 </div>
 
+<script type="application/ld+json">
+ {
+
+     "@context": "https://schema.org",
+     "@type": "FAQPage",
+     "mainEntity": [
+         {
+             "@type": "Question",
+             "name": "How to list files on a FTP server using curl?",
+             "acceptedAnswer": {
+                 "@type": "Answer",
+                 "text": "curl -u \"anonymous:anonymous\" ftp://ftp.slackware.com/debian-cd/"
+             }
+         },
+         {
+             "@type": "Question",
+             "name": "How to download a file on a FTP server using curl?",
+             "acceptedAnswer": {
+                 "@type": "Answer",
+                 "text": "curl -u \"anonymous:anonymous\" ftp://ftp.slackware.com/welcome.msg"
+             }
+         },
+         {
+             "@type": "Question",
+             "name": "How to upload a file on a FTP server using curl?",
+             "acceptedAnswer": {
+                 "@type": "Answer",
+                 "text": "curl -T welcome.msg -u \"username:password\" ftp://ftp.example.com/"
+             }
+         },
+         {
+             "@type": "Question",
+             "name": "How to delete on a FTP server using curl?",
+             "acceptedAnswer": {
+                 "@type": "Answer",
+                 "text": "curl -u \"username:password\" --quote \"DELE welcome.msg\" ftp://ftp.example.com"
+             }
+         }
+     ]
+ }
+</script>
+
 <div class="related">
     <div class="title">
         Related pages<br>
