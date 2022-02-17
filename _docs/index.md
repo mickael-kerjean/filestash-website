@@ -10,10 +10,9 @@ head:
 ---
 
 To use Filestash, you can either:
-1. Run the application from the AWS Marketplace: [see the documentation]({% post_url 2022-01-27-aws-marketplace %})
-2. Get your own instance running in the cloud. Start your trial [here](/redirect.html?url=https://deploy.filestash.app/?type=unknown::cloud)
-3. Self-host the application on your own server and manage everything yourself: [see the documentation](/docs/install-and-upgrade/)
-4. Play around with the public [demos](https://demo.filestash.app):
+1. Run the application from the cloud via the [AWS Marketplace](/redirect.html?url=https://aws.amazon.com/marketplace/pp/prodview-ngwkedxz2dtrk)
+2. Self-host the application on your own server and manage everything yourself: [see the documentation](/docs/install-and-upgrade/)
+3. Play around with the public [demos](https://demo.filestash.app):
 
 <iframe style="width: 100%;height: 500px;border: 9px solid #0000001a;border-radius: 5px;box-sizing:border-box;" id="appframe" frameborder="0" src="https://demo.filestash.app/login" allow="fullscreen;speaker"></iframe>
 

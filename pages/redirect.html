@@ -26,7 +26,9 @@ permalink: /redirect.html
           "href",
           redirect_uri,
       )
-      redirect(5);
+
+      document.getElementById("redirect-counter").textContent = 1;
+      window.addEventListener("load", () => redirect(0));
   })();
 </script>
 
