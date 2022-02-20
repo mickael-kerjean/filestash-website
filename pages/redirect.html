@@ -10,24 +10,42 @@ permalink: /redirect.html
 </div>
 <script>
   (function() {
+      var $app = document.getElementById("redirect");
+      var $a = document.getElementById("redirect-href");
+      var $counter = document.getElementById("redirect-counter");
+
       var redirect_uri = (new URLSearchParams(location.search)).get("url");
+      var origin = new URL(redirect_uri).origin;
+
+      var is_valid = false;
       if(!redirect_uri) {
-          document.getElementById("redirect").textContent = "Invalid link";
+          is_valid = false;
       }
+      if (/stripe\.com$/.test(origin)) {
+          is_valid = true;
+      } else if (/amazon\.com$/.test(origin)) {
+          is_valid = true;
+      } else {
+          is_valid = false;
+      }
+
+      if (is_valid !== true) {
+          $app.textContent = "Invalid link";
+          return;
+      }
+
       function redirect(t) {
           if(t > 0) {
-              document.getElementById("redirect-counter").textContent = t;
+              $counter.textContent = t;
               setTimeout(() => redirect(t - 1), 1000);
           } else if(t === 0) {
               location.href = redirect_uri;
           }
       }
-      document.getElementById("redirect-href").setAttribute(
-          "href",
-          redirect_uri,
-      )
+      $a.setAttribute("href", redirect_uri);
+      $a.setAttribute("ref", "nofollow");
 
-      document.getElementById("redirect-counter").textContent = 1;
+      $counter.textContent = 1;
       window.addEventListener("load", () => redirect(0));
   })();
 </script>
