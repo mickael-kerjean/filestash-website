@@ -344,4 +344,5 @@ img.fancy {
     border: 9px solid #0000001a;
     border-radius: 5px;
     box-shadow: rgba(158, 163, 172, 0.3) 3px 3px 20px;
+    box-sizing: border-box;
 }

@@ -119,7 +119,7 @@ Accept-Ranges: bytes<br/>
 
 For a nicer webdav client than curl, check our online [webdav client]({% post_url 2021-10-18-webdav-client %}):
 
-<img class="fancy" src="https://www.filestash.app/img/screenshots/viewerpage.png" alt="screenshot of the Filestash webdav client" style="margin-top: -15px;" />
+<a href="{% post_url 2021-10-18-webdav-client %}"><img class="fancy" src="https://www.filestash.app/img/screenshots/viewerpage.png" alt="screenshot of the Filestash webdav client" style="margin-top: -15px;" /></a>
 
 *Pro tips*:
 1. If the server doesn't have a user already defined, see the [user management linux cheat sheet](https://www.guru99.com/linux-commands-cheat-sheet.html#4)

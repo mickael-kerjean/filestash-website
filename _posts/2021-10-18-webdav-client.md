@@ -43,7 +43,7 @@ language: en
       </script>
 
       <p class="example">
-        Examples of WebDAV server for testing: <br>
+        Examples of <a href="{% post_url 2021-12-09-nginx-webdav %}">WebDAV server</a> for testing: <br>
         <a onclick="clickOnWwwWebdavServerDotComHandler(event, {url: 'https://www.webdavserver.com/'});" href="https://www.webdavserver.com/">www.webdavserver.com</a>
         <a onclick="clickPublicWebDAVHandler(event, {url: 'https://webdav.filestash.app'});" href="https://webdav.filestash.app/">webdav.filestash.app</a>
       </p>
@@ -134,10 +134,10 @@ language: en
 
   <div class="call-to-action">
     <h2>See our other tools:</h2>
-    <a class="btn light" href="{% post_url 2020-04-30-sftp-browser %}">SFTP</a>
-    <a class="btn light" href="{% post_url 2019-11-26-ftp-web-client %}">FTP</a>
-    <a class="btn light" href="{% post_url 2019-11-26-ftp-web-client %}">FTPS</a>
-    <a class="btn light" href="{% post_url 2019-11-21-s3-browser %}">S3</a>
-    <a class="btn light" href="{% post_url 2020-01-04-ldap-browser %}">LDAP</a>
+    <a class="btn light" href="{% post_url 2022-01-15-webdav-test-tool %}">Webdav Test</a>
+    <a class="btn light" href="{% post_url 2020-04-30-sftp-browser %}">SFTP Client</a>
+    <a class="btn light" href="{% post_url 2019-11-26-ftp-web-client %}">FTP Client</a>
+    <a class="btn light" href="{% post_url 2019-11-21-s3-browser %}">S3 Browser</a>
+    <a class="btn light" href="{% post_url 2020-01-04-ldap-browser %}">LDAP Client</a>
   </div>
 </div>
