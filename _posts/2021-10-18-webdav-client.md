@@ -78,7 +78,7 @@ language: en
           <img loading="lazy" class="fancy pull-left hidden-xs" src="/img/posts/2021-10-18-webdav-client-0.jpg" />
           <h2>Works with your WebDAV server</h2>
           <p>
-              Our online tool works great with any <a href="https://tools.ietf.org/html/draft-ietf-secsh-filexfer-13">WebDAV compliant server</a> like <a href="https://httpd.apache.org/docs/2.4/mod/mod_dav.html">Apache</a>, <a href="{% post_url 2021-12-09-nginx-webdav %}">Nginx</a>, <a href="https://nextcloud.com/">Nextcloud</a>, <a href="https://owncloud.com/">Owncloud</a>, <a href="https://kb.synology.com/en-me/DSM/tutorial/How_to_access_files_on_Synology_NAS_with_WebDAV">Synology</a> and more
+              Our online tool works great with any <a href="https://tools.ietf.org/html/draft-ietf-secsh-filexfer-13">WebDAV compliant server</a> like <a href="{% post_url 2022-03-04-apache-webdav %}">Apache</a>, <a href="{% post_url 2021-12-09-nginx-webdav %}">Nginx</a>, <a href="https://nextcloud.com/">Nextcloud</a>, <a href="https://owncloud.com/">Owncloud</a>, <a href="https://kb.synology.com/en-me/DSM/tutorial/How_to_access_files_on_Synology_NAS_with_WebDAV">Synology</a> and more
         </p>
         <img alt="illustration of the shared link screen" loading="lazy" class="fancy visible-xs" src="/img/posts/2021-10-18-webdav-client-0.jpg" />
       </div>
