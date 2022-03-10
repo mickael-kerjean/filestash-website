@@ -10,7 +10,7 @@ h1 { margin-top: 4rem; }
 
 
 
-We will be assuming you already have an AWS Account. If that's not the case, you can either [create an account on your own](https://aws.amazon.com/resources/create-account/) or [reach out to us](/pricing/?modal=enterprise) and we will look after the entire hosting on your behalf. 
+We will be assuming you already have an AWS Account. If that's not the case, you can either [create an account on your own](https://aws.amazon.com/resources/create-account/) or [reach out to us](/pricing/?modal=enterprise) and we will look after everything on your behalf. 
 
 This guide is split in 3 parts:
 
@@ -29,7 +29,7 @@ From the AWS marketplace, subscribe to our product from our <a href="https://aws
 
 <img src="/img/posts/2022-02-21-image0015.png" class="fancy" />
 
-At this stage, the status should show pending for 1 or 2 minutes depending on the phase of the moon but once done, you will be presented with this screen:
+At this stage, the status should show pending for about 2 minutes after which you see this:
 
 <img src="/img/posts/2022-02-21-image0016.png" class="fancy" />
 
