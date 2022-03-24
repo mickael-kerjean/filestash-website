@@ -8,6 +8,8 @@ language: en
 redirect_from:
   - /online-sftp-browser.html
   - /ssh-file-transfer.html
+head:
+  - <link rel="alternate" href="https://www.filestash.app/fr/client-sftp-en-ligne.html" hreflang="fr" />
 ---
 
 <link rel="stylesheet" href="/css/landing-page.css">
