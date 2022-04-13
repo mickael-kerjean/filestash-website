@@ -6,9 +6,11 @@ language: en
 tags: webdav guide
 ---
 
-In this tutorial, I will guide you through the step by step instructions to get a webdav server ready in less than 2 minutes. It is structured around 2 parts:
-1. [installing the necessary packages](#install-apache)
-2. [configuring the webdav server](#configure-the-webdav-server)
+Apache is one of the most popular software there is when it comes to create a web server. My favorite feature is its [dynamic module system](https://httpd.apache.org/modules/) which enables users to extend the base server functionality with extra features among which creating a WebDAV server.
+
+In this guide, I will show you all the steps involved in creating a WebDAV server from scratch from:
+1. [the installation of Apache itself](#install-apache)
+2. [the required configuration](#configure-the-webdav-server)
 
 # Install Apache
 
@@ -147,11 +149,11 @@ If you're the kind of person who find xml sexy, you're good to go with curl, oth
 
 <div class="related">
     <div class="title">
-        Our Tools<br>
+        Related Pages<br>
         <img src="https://mickael.kerjean.me/assets/img/arrow_bottom.png"/>
     </div>
     <div class="related_content">
-        <a href="{% post_url 2021-10-18-webdav-client %}"><h3 class="no-anchor">Webdav Client</h3></a>        <a href="{% post_url 2022-01-15-webdav-test-tool %}"><h3 class="no-anchor">Webdav Test Tool</h3></a><a href="{% post_url 2019-11-26-ftp-web-client %}"><h3 class="no-anchor">FTP Client</h3></a><a href="{% post_url 2020-04-30-sftp-browser %}"><h3 class="no-anchor">SFTP Client</h3></a><a href="{% post_url 2019-11-21-s3-browser %}"><h3 class="no-anchor">S3 Explorer</h3></a>
+        <a href="{% post_url 2021-10-18-webdav-client %}"><h3 class="no-anchor">Webdav Client</h3></a>        <a href="{% post_url 2021-12-09-nginx-webdav %}"><h3 class="no-anchor">Nginx WebDAV</h3></a><a href="{% post_url 2022-01-15-webdav-test-tool %}"><h3 class="no-anchor">Webdav Test Tool</h3></a><a href="{% post_url 2019-11-26-ftp-web-client %}"><h3 class="no-anchor">FTP Client</h3></a><a href="{% post_url 2020-04-30-sftp-browser %}"><h3 class="no-anchor">SFTP Client</h3></a>
     </div>
 </div>
 <style>
