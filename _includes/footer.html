@@ -7,22 +7,32 @@
         <div class="flex">
           {{ site | tag_cloud }}
         </div>
-        {% else if page.language == "it" %}
+        {% endif %}
+        {% if page.language == "fr" %}
+        <h4>Tags:</h4>
+        <div class="flex">
+          {{ site | tag_cloud }}
+        </div>
+        {% endif %}
+        {% if page.language == "it" %}
         <h4>Argomenti:</h4>
         <div class="flex">
           {{ site | tag_cloud }}
         </div>
-        {% else if page.language == "pt" %}
+        {% endif %}
+        {% if page.language == "pt" %}
         <h4>Tópicos:</h4>
         <div class="flex">
           {{ site | tag_cloud }}
         </div>
-        {% else if page.language == "es" %}
+        {% endif %}
+        {% if page.language == "es" %}
         <h4>Temas:</h4>
         <div class="flex">
           {{ site | tag_cloud }}
         </div>
-        {% else if page.language == "de" %}
+        {% endif %}
+        {% if page.language == "de" %}
         <h4>Themen:</h4>
         <div class="flex">
           {{ site | tag_cloud }}
