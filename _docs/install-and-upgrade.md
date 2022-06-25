@@ -162,7 +162,7 @@ nginx -t && service nginx restart
 
 ## Optional: Using a bind mount for persistent configuration
 
-You can make the configuation of your instance persistent by using bind mounts in the `docker-compose.yml` file.
+You can make the configuration of your instance persistent by using bind mounts in the `docker-compose.yml` file.
 This might  be useful if you use tools like watchtower to automatically upgrade deployed containers.
 
 In most use-cases only the `/app/data/state`directory should be bound, as it contains the configuration files and database.
