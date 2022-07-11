@@ -96,7 +96,7 @@ EOF<br/>
 <span class="prompt">~/$ </span>sudo systemctl restart proftpd<br/>
 </div>
 
-There's a lot more ground to cover if you need to go further, [proftpd](http://proftpd.org/docs/modules/index.html) is highly configurable. If you need more with authentication, check out [mod_auth](http://proftpd.org/docs/modules/mod_auth.html), [mod_auth_file](http://proftpd.org/docs/modules/mod_auth_file.html), [mod_auth_pam](http://proftpd.org/docs/modules/mod_auth_pam.html), [mod_auth_unix](http://proftpd.org/docs/modules/mod_auth_unix.html).
+proftpd is highly configurable, check their [doc](http://proftpd.org/docs/modules/index.html) if you want to go further.
 
 <div class="related">
     <div class="title">
