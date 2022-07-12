@@ -5,6 +5,8 @@ layout: landing
 permalink: /webdav-client.html
 tags: webdav oem online-client tool
 language: en
+head:
+  - <link rel="alternate" href="https://www.filestash.app/fr/client-webdav.html" hreflang="fr" />
 ---
 
 <link rel="stylesheet" href="/css/landing-page.css">
