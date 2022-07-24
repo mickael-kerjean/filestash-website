@@ -1,5 +1,5 @@
 ---
-title: The path forward now that Chrome has dropped FTP support
+title: The path forward now that Chrome and Firefox have dropped FTP support
 layout: post
 description: Migrating away from the now deprecated Chrome integrated FTP client, a path forward using a web FTP client
 language: en
