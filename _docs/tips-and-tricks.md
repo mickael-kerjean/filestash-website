@@ -2,7 +2,7 @@
 layout: documentation
 title: Tips and tricks
 language: en
-order: 4
+order: 8
 ---
 
 1. Clicking on the edit icon lets you **move a file** either with an absolute or with a relative path. In other words, you can type:
