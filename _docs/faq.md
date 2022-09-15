@@ -58,3 +58,8 @@ Filestash's [original author](https://mickael.kerjean.me) couldn't find an open 
 4. Have a user interface which wouldn't be a second-class citizen compared to Dropbox or Google Drive
 5. Be submillisecond fast
 6. Be open source
+
+## What is the release policy / strategy
+
+See github issue [#490](https://github.com/mickael-kerjean/filestash/issues/490)
+
