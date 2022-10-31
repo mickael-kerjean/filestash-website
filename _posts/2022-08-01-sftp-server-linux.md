@@ -1,6 +1,6 @@
 ---
 title: Setup a SFTP server on ubuntu under 1 minute
-description: Instructions to create a SFTP server
+description: a very minimal SFTP server with no configuration
 layout: post
 tags: sftp guide
 language: en

@@ -127,7 +127,7 @@ head:
         <img alt="plugin" loading="lazy" class="fancy pull-right hidden-xs" src="/img/posts/2019-08-20-ftp-web-client.html.6.png" />
         <h2>Extensible and Configurable</h2>
         <p>
-          Filestash can be customised quite simply. Also, many features can be enable/disable from the admin console. If that's not enough, you can extend the program by creating your own <a href="/docs/plugin/">plugins</a>
+          Filestash can be configured to look and feel in many different ways, both with your own design and through configuration via the admin console. If you need to get further, you can extend the program by creating custom <a href="/docs/plugin/">plugins</a>
         </p>
         <img alt="plugin" loading="lazy" class="fancy visible-xs" src="/img/posts/2019-08-20-ftp-web-client.html.6.png" />
       </div>
