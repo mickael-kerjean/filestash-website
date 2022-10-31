@@ -1,0 +1,396 @@
+---
+layout: documentation
+title: API
+language: en
+order: 4
+---
+<style>
+  .banner{ display: none; }
+</style>
+
+<div id="doc-api">
+    <style>
+    .endpoint {
+        background: #c5e2f133;
+        border-radius: 3px;
+        border: 2px solid var(--primary);
+        margin: 10px 0;
+    }
+    .endpoint > .endpoint-header {
+        padding: 15px 10px;
+        color: var(--dark);
+        display: flex;
+        align-items:center;
+    }
+    .endpoint > .endpoint-header .http-method {
+        background: var(--primary);
+        color: white;
+        padding: 5px 10px;
+        margin-right: 15px;
+    }
+    .endpoint > .endpoint-header .endpoint-url {
+        font-size: 1.1rem;
+        flex-grow: 2;
+    }
+    .endpoint > .endpoint-header .action img {
+        width: 30px;
+        float: right;
+        cursor: pointer;
+    }
+
+    .endpoint > .endpoint-body {
+        border-top: 2px dashed var(--primary);
+        padding: 15px 10px;
+    }
+    .endpoint > .endpoint-body .endpoint-description {
+        font-size: 0.95rem;
+    }
+    .endpoint > .endpoint-body .endpoint-description pre.api-response {
+        background: var(--dark);
+        color: white;
+        margin-bottom: 0;
+    }
+    .endpoint > .endpoint-body pre.endpoint-curl {
+        border: 2px dashed var(--emphasis-primary);
+        border-top: none;
+        margin: 0;
+    }
+    .endpoint > .endpoint-body fieldset legend {
+        padding: 5px 10px;
+    }
+
+
+    #doc-api fieldset {
+        border: 2px dashed var(--emphasis-primary);
+        color: var(--primary);
+        background: white;
+        margin: 0;
+    }
+    </style>
+    <script>
+     var GLOBAL = {
+         "instance": "https://demo.filestash.app",
+         // "instance": "http://localhost:8334",
+         "key": "foobar",
+         "shareID": "shareID",
+     };
+    </script>
+  <script>
+   let controller = {};
+   function http(self, url, opts = {}) {
+       const $apiResponse = self.parentElement.parentElement.querySelector(".api-response");
+       $apiResponse.classList.remove("hide");
+       if(controller[url]) {
+           controller[url].abort();
+           delete controller[url];
+       }
+       controller[url] = new AbortController();
+       opts.signal = controller[url].signal;
+       opts.headers = opts.headers || {};
+       $apiResponse.innerHTML = "LOADING ...";
+       let counter = 0;
+       const out = window.setInterval(function() {
+           $apiResponse.innerHTML = "LOADING " + ".".repeat(counter % 4);
+           counter += 1;
+       }, 300);
+       let prepareForDisplay = (r) => (r);
+       fetch(GLOBAL.instance + url, opts)
+           .then((s) => {
+               if (s.headers.get("Content-Type") === "application/zip") {
+                   return s.blob().then((blob) => {
+                       const url = URL.createObjectURL(blob);
+                       const anchor = document.createElement('a');
+                       anchor.href = url;
+                       anchor.download = "file.zip";
+                       anchor.click();
+                       return "download as file";
+                   });
+               } else if (/^\/docs\//.test(url) || /ascii=true/.test(url)) {
+                   prepareForDisplay = (r) => ((new AnsiUp).ansi_to_html(r));
+               }
+               return s.text();
+           })
+           .then((body) => {
+               clearInterval(out);
+               delete controller[url];
+               $apiResponse.innerHTML = prepareForDisplay(body);
+           })
+           .catch((err) => {
+               clearInterval(out);
+               if (err.code === 20) return;
+               delete controller[url];
+               $apiResponse.innerHTML = err.message;
+           });
+   }
+  </script>
+
+  <p>
+  Filestash has an API to enable developers to interact with any type of storage in one consistent manner whether it's S3, SFTP, FTP or anything else. To start using that API, you first need to create an API key from the admin console:</p>
+
+  <img src="/img/posts/2022-11-01-api-documentation.png" class="fancy"/>
+  <p>
+    For the sake of this documentation page, we've setup that api key 'foobar' which has some cors rules setup to work from any filestash subdomain making this page entirely interactive. Also we've created a shared link called 'shareID' which we will be using in this page. The list of curl commands will only be working if you set this up first in your terminal:
+  </p>
+  <pre>
+export INSTANCE=https://demo.filestash.app
+export SHARE=shareID
+export KEY=foobar</pre>
+
+
+  <h2 id="files">API for File management</h2>
+
+  <p>
+    There's an API endpoint for every possible file management operation you can think of:
+    <ul style="margin:0 20px 20px 20px">
+      <li><a href="#list-files">list files </a></li>
+      <li><a href="#upload-file">upload a file</a></li>
+      <li><a href="#download-file">download a file</a></li>
+      <li><a href="#create-zip">zip something</a></li>
+      <li><a href="#rename-file">rename something</a></li>
+      <li><a href="#delete-file">delete something</a></li>
+      <li><a href="#create-folder">create a directory</a></li>
+      <li><a href="#create-file">create an empty file</a></li>
+    </ul>
+  </p>
+
+  <div class="endpoint" id="list-files">
+    <div class="endpoint-header">
+      <div class="http-method">GET</div>
+      <div class="endpoint-url">/api/files/ls?path={path}&key={key}&share={shareID}</div>
+      <div class="action" onclick="http(this, '/api/files/ls?share='+GLOBAL.shareID+'&key='+ GLOBAL.key+'&path=/', {method: 'GET'})">
+        <img src="/img/play-button.svg" />
+      </div>
+    </div>
+    <div class="endpoint-body">
+      <div class="endpoint-description">
+        List files and folder under the specified path. The results key will show the content of a folder and the metadata key will show what you can and cannot do from there.
+
+        <pre class="endpoint-curl">curl "$INSTANCE/api/files/ls?share=$SHARE&key=$KEY&path=/"</pre>
+        <pre class="api-response">
+{
+    "status": "ok",
+    "results": [
+        {
+            "name": "README.org",
+            "type": "file",
+            "size": 281,
+            "time": 1591432761000
+        },
+        {
+            "name": "Documents",
+            "type": "directory",
+            "size": 0,
+            "time": 1591432774000
+        }
+    ]
+}</pre>
+      </div>
+    </div>
+  </div>
+
+  <div class="endpoint" id="download-file">
+    <div class="endpoint-header">
+      <div class="http-method">POST</div>
+      <div class="endpoint-url">/api/files/cat?path={path}&key={key}&share={shareID}</div>
+      <div class="action" onclick="http(this, '/api/files/cat?share='+GLOBAL.shareID+'&key='+ GLOBAL.key+'&path=/input.txt', {method: 'POST', body: 'lorem ipsum'})">
+        <img src="/img/play-button.svg" />
+      </div>
+    </div>
+    <div class="endpoint-body">
+      <div class="endpoint-description">
+        Upload a file at the specified path
+        <pre class="endpoint-curl">
+curl "$INSTANCE/api/files/cat?share=$SHARE&key=$KEY&path=/input.txt" \
+    -X POST --data @input.txt</pre>
+        <pre class="api-response hide"></pre>
+      </div>
+    </div>
+  </div>
+
+  <div class="endpoint" id="upload-file">
+    <div class="endpoint-header">
+      <div class="http-method">GET</div>
+      <div class="endpoint-url">/api/files/cat?path={path}&key={key}&share={shareID}</div>
+      <div class="action" onclick="http(this, '/api/files/cat?share='+GLOBAL.shareID+'&key='+GLOBAL.key+'&path=/input.txt')">
+        <img src="/img/play-button.svg" />
+    </div>
+    </div>
+    <div class="endpoint-body">
+      <div class="endpoint-description">
+        Download the file located under the specified path. Plugins can further expand of what is possible here, eg: plg_image_ascii which can render images as ascii art
+        <pre class="endpoint-curl">
+
+curl -X GET "$INSTANCE/api/files/cat?key=$KEY&share=$SHARE&path=/input.txt"</pre>
+        <pre class="api-response hide"></pre>
+      </div>
+    </div>
+  </div>
+
+  <div class="endpoint" id="create-zip">
+    <div class="endpoint-header">
+      <div class="http-method">GET</div>
+      <div class="endpoint-url">/api/files/zip?path={path}&key={key}&share={shareID}</div>
+      <div class="action" onclick="http(this, '/api/files/zip?share='+GLOBAL.shareID+'&key='+ GLOBAL.key+'&path=/input.txt', {method: 'GET'})">
+        <img src="/img/play-button.svg" />
+      </div>
+    </div>
+    <div class="endpoint-body">
+      <div class="endpoint-description">
+        Create a Zip file from something
+        <pre class="endpoint-curl">
+curl "$INSTANCE/api/files/zip?share=$SHARE&key=$KEY&path=/input.txt"</pre>
+        <pre class="api-response hide"></pre>
+      </div>
+    </div>
+  </div>
+
+  <div class="endpoint" id="create-folder">
+    <div class="endpoint-header">
+      <div class="http-method">POST</div>
+      <div class="endpoint-url">/api/files/mkdir?path={path}&key={key}&share={shareID}</div>
+      <div class="action" onclick="http(this, '/api/files/mkdir?share='+GLOBAL.shareID+'&key='+ GLOBAL.key+'&path=/test/', {method: 'POST'})">
+        <img src="/img/play-button.svg" />
+      </div>
+    </div>
+    <div class="endpoint-body">
+      <div class="endpoint-description">
+        Create a new folder
+        <pre class="endpoint-curl">
+curl -X POST "$INSTANCE/api/files/mkdir?key=$KEY&share=$SHARE&path=/tmp/"</pre>
+        <pre class="api-response hide"></pre>
+      </div>
+    </div>
+  </div>
+
+  <div class="endpoint" id="create-file">
+    <div class="endpoint-header">
+      <div class="http-method">POST</div>
+      <div class="endpoint-url">/api/files/touch?path={path}&key={key}&share={shareID}</div>
+      <div class="action" onclick="http(this, '/api/files/touch?share='+GLOBAL.shareID+'&key='+ GLOBAL.key+'&path=/test.txt', {method: 'POST'})">
+        <img src="/img/play-button.svg" />
+      </div>
+    </div>
+    <div class="endpoint-body">
+      <div class="endpoint-description">
+        Create an empty file
+        <pre class="endpoint-curl">
+curl -X POST "$INSTANCE/api/files/touch?key=$KEY&share=$SHARE&path=/test.txt" </pre>
+        <pre class="api-response hide"></pre>
+      </div>
+    </div>
+  </div>
+
+  <div class="endpoint" id="rename-file">
+    <div class="endpoint-header">
+      <div class="http-method">POST</div>
+      <div class="endpoint-url">/api/files/mv?from={path}&to={path}&key={key}&share={shareID}</div>
+      <div class="action" onclick="http(this, '/api/files/mv?share='+GLOBAL.shareID+'&key='+ GLOBAL.key+'&from=/input.txt&to=/test/input.txt', {method: 'POST'})">
+        <img src="/img/play-button.svg" />
+      </div>
+    </div>
+    <div class="endpoint-body">
+      <div class="endpoint-description">
+        Rename a file / folder from the specified path to the specified destination
+        <pre class="endpoint-curl">
+curl -X POST "$INSTANCE/api/files/mv?key=$KEY&share=$SHARE&from=/input.txt&to=/test/input.txt"</pre>
+        <pre class="api-response hide"></pre>
+      </div>
+    </div>
+  </div>
+
+  <div class="endpoint" id="delete-file">
+    <div class="endpoint-header">
+      <div class="http-method">POST</div>
+      <div class="endpoint-url">/api/files/rm?path={path}&key={key}&share={shareID}</div>
+      <div class="action" onclick="http(this, '/api/files/rm?share='+GLOBAL.shareID+'&key='+GLOBAL.key+'&path=/test/', {method: 'POST'})">
+        <img src="/img/play-button.svg" />
+      </div>
+    </div>
+    <div class="endpoint-body">
+      <div class="endpoint-description">
+        Remove the file/folder at the specified path
+        <pre class="endpoint-curl">
+curl -X POST "$INSTANCE/api/files/rm?key=$KEY&share=$SHARE&path=/test/" </pre>
+        <pre class="api-response hide"></pre>
+      </div>
+    </div>
+  </div>
+
+    <!--
+  <h2>Man Pages</h2>
+
+  Filestash has some man pages embed directly onto the software itself. Simply prefix any URL from the API with /docs/ and you will be shown the related documentation either from your browser (eg: <a href="https://demo.filestash.app/docs/api/token">/docs/api/token</a>) or when building up your query via curl like this:
+
+  <div class="endpoint">
+    <div class="endpoint-header">
+      <div class="http-method">*</div>
+      <div class="endpoint-url">/docs/api/token</div>
+      <div class="action" onclick="http(this, '/docs/api/token')">
+        <img src="/img/play-button.svg" />
+      </div>
+    </div>
+    <div class="endpoint-body">
+      <div class="endpoint-description">
+        <pre class="endpoint-curl" style="border-top:2px dashed var(--emphasis-primary)">
+curl https://demo.filestash.app/docs/api/token</pre>
+        <pre class="api-response hide"></pre>
+      </div>
+    </div>
+  </div>
+
+  <div class="endpoint">
+    <div class="endpoint-header">
+      <div class="http-method">*</div>
+      <div class="endpoint-url">/docs/api/files</div>
+      <div class="action" onclick="http(this, '/docs/api/files')">
+        <img src="/img/play-button.svg"/>
+      </div>
+    </div>
+    <div class="endpoint-body">
+      <div class="endpoint-description">
+        <pre class="endpoint-curl" style="border-top:2px dashed var(--emphasis-primary)">
+curl https://demo.filestash.app/docs/api/files</pre>
+        <pre class="api-response hide"></pre>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    document.querySelectorAll(".endpoint-curl").forEach(($el) => {
+        $el.setAttribute("data-curl", $el.innerHTML);
+    })
+    function onChange($input) {
+        const $root = $input.parentElement.parentElement.parentElement;
+        let content = $root.querySelector("[data-curl]").getAttribute("data-curl");
+        $root.querySelectorAll("input").forEach(($formEl) => {
+            content = content.replace(
+                "{" + $formEl.getAttribute("name") + "}",
+                $formEl.value,
+            );
+        });
+        content = content.replace(
+            "__MISSING_TOKEN__",
+            document.getElementById("token").value,
+        );
+        $root.querySelector(".endpoint-curl").innerHTML = content;
+    }
+  </script>
+-->
+</div>
+  <!--
+<script src="/js/ansi_up.js" type="text/javascript"></script>
+
+## Generate a token
+
+A Token is the central construct that contains everything Filestash need to know to connect to your storage. To connect to an FTP site you will generate a token like this:
+
+<pre>
+curl -D - http://localhost:8334/api/token?key=foobar --data '{"type":"ftp","hostname":"ftp.gnu.org","username":"anonymous"}'
+</pre>
+
+
+To make things easier to follow, let's store such token in an environment variable:
+<pre>
+TOKEN=`curl http://localhost:8334/api/token?key=foobar --data '{"type":"tmp"}' | jq -r '.access_token'`
+</pre>
+-->
