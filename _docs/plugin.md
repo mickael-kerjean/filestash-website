@@ -5,60 +5,37 @@ language: en
 order: 5
 ---
 
-When you find yourself needing something that's not available by default, plugins helps you make things happen. The scope of plugins is large and extend the features provided by Filestash's core.
+<style>
+.banner { display: none }
+</style>
 
-## Plugin Marketplace
-- [plg_backend_backblaze](https://github.com/mickael-kerjean/filestash/tree/master/server/plugin/plg_backend_backblaze){:rel="nofollow"}: Integration with the Blackblaze B2 cloud storage service
-- [plg_backend_dav](https://github.com/mickael-kerjean/filestash/tree/master/server/plugin/plg_backend_dav){:rel="nofollow"}: Integration with CalDAV and CardDAV servers
-- [plg_backend_ldap](https://github.com/mickael-kerjean/filestash/tree/master/server/plugin/plg_backend_ldap){:rel="nofollow"}: Integration with an LDAP server
-- [plg_backend_mysql](https://github.com/mickael-kerjean/filestash/tree/master/server/plugin/plg_backend_mysql){:rel="nofollow"}: Integration with a Mysql database
-- [plg_handler_console](https://github.com/mickael-kerjean/filestash/tree/master/server/plugin/plg_handler_console){:rel="nofollow"}: a fully-fledged tty console which makes it to maintain your instance when SSH access is blocked ([screenshot](https://raw.githubusercontent.com/mickael-kerjean/filestash_images/master/screenshots/admin_tty.png){:rel="nofollow"})
-- [plg_image_light](https://github.com/mickael-kerjean/filestash/tree/master/server/plugin/plg_image_light){:rel="nofollow"}: Handles image transcoding and resizing.
-- [plg_security_scanner](https://github.com/mickael-kerjean/filestash/tree/master/server/plugin/plg_security_scanner){:rel="nofollow"}: Handles non legitimate traffic from scanners with a bunch of tricks that are picked at random: gzip bomb, XML bomb, redirection to the attacker's own IP, redirection to localhost, sendout of HTTP headers that don't match with the  content that was send and other fun stuff
-- [plg_security_svg](https://github.com/mickael-kerjean/filestash/tree/master/server/plugin/plg_security_svg){:rel="nofollow"}: this plugin handles the security aspect of SVG images (by default, SVG images could be crafted to execute javascript or break the browser with an XML bomb). Has 2 modes that can be configured from the admin console: mitigation mode where SVG images are allowed but filtered to remove potential harms and blocking mode where SVG images are simply blocked
-- [plg_starter_http](https://github.com/mickael-kerjean/filestash/tree/master/server/plugin/plg_starter_http){:rel="nofollow"}: serve an application via HTTP. This plugin is the legacy server that was used until May 2019
-- [plg_starter_http2](https://github.com/mickael-kerjean/filestash/tree/master/server/plugin/plg_starter_http2){:rel="nofollow"}: same as plg_starter_http but with an HTTP2 server
-- [plg_started_https](https://github.com/mickael-kerjean/filestash/tree/master/server/plugin/plg_starter_https){:rel="nofollow"}: same as plg_starter_http but with an HTTPS server.
-- [plg_starter_tor](https://github.com/mickael-kerjean/filestash/tree/master/server/plugin/plg_starter_tor){:rel="nofollow"}: same as plg_starter_http but the server is expose on TOR with an onion URL
-- [plg_starter_tunnel](https://github.com/mickael-kerjean/filestash/tree/master/server/plugin/plg_starter_tunnel){:rel="nofollow"}: this is the default server that's used since May 2019
+Most of Filestash code is made of plugins which you can add / remove or add new ones so it can fit your use case without compromise.
 
-- *add you own with a PR*
+## Plugin type
 
+- backend plugin (aka plugin implementing the [IBackend interface](https://github.com/mickael-kerjean/filestash/blob/master/server/common/types.go#L11-L21)): all the available storage Filestash supports by default is done that way. Here are some [sample code](https://github.com/mickael-kerjean/filestash/tree/master/server/plugin) if you want to make your own.
+- authentication middleware plugin (aka plugin implementing the [IAuthentication interface](https://github.com/mickael-kerjean/filestash/blob/master/server/common/types.go#L23-L27)): they are middleware who can be used to connect any source of user to the storage of your choosing. For example, if you use FTP, you might think you can't link it to your IDP via SAML, authentication middleware are the glue that make the magic happen where the Callback function returns the bindings available for the attribute mappings.
+- authorisation middleware plugin (aka plugin implementing the [IAuthorisation interface](https://github.com/mickael-kerjean/filestash/blob/master/server/common/types.go#L29-L37)): this plugin hook onto the filesystem to overwrite who can do what and where, giving the plugin developer an opportunity to deny access to some ressource based on some custom conditions.
+- search plugin (aka plugin implementing the [ISearch interface](https://github.com/mickael-kerjean/filestash/blob/master/server/common/types.go#L44-L46)): By default Filestash ships with a [recursive search plugin](https://github.com/mickael-kerjean/filestash/tree/master/server/plugin/plg_search_stateless) but we have a [full text search plugin](https://github.com/mickael-kerjean/filestash/tree/master/server/plugin/plg_search_sqlitefts) available as well and you can create your own if you have some specific needs. Eg: we know some companies who have made their own search based on elastic search but you can also disable search altogether if you don't specific a search plugin at all.
+- config plugin: this type of plugin changes the default storage mechanism of the config file. We've helped companies scale Filestash to store config in S3 buckets and environment variable but anything is possible
+- file transformer plugin: this is how you can transform the content of a file before it's send back to the browser. You're using this whenever the browser request a thumbnail version of an image (see [here](https://github.com/mickael-kerjean/filestash/blob/master/server/plugin/plg_image_thumbnail/index.go)) or whenever a user is trying to load an SVG picture via the [plg_security_svg](https://github.com/mickael-kerjean/filestash/blob/master/server/plugin/plg_security_svg/index.go) plugin to either block svg entirely or accept them (FYI: svg can contain/run javascript and could cause XSS). Some "fun" example includes [this plugin](https://github.com/mickael-kerjean/filestash/blob/master/server/plugin/plg_image_ascii/index.go) which convert an image into ascii art so it can be displayed nicely from a terminal instead of a regular browser
+- starter plugin: this type of plugin make it possible to expose your instance with whatever protocol of your choosing, we've implemented a range of these to expose Filestash using HTTP, HTTP2 and TOR and have a couple others we keep for customers like HTTPS via letsencrypt and HTTPS using certificates from the filesystem either via env variable or the filesystem.
+- audit plugin: when installed this kind of plugins make it possible for auditors to do their jobs, seeing who did what and when with various filters to drill down on the history of events and create excel reports
+- log plugin: this type of plugin changes how log behaves so you can change the default behavior of logs which is to write it on stdout and a file to push those to any system you might want
 
-## Anatomy of a Filestash plugin
+Some other cool things you can do with plugin:
+- change what viewer should be open for every possible type of files you might have
+- register your own viewer application to handle a particular file type. A good example of this is how we've implemented support for [microsoft office documents](https://github.com/mickael-kerjean/filestash/tree/master/server/plugin/plg_editor_onlyoffice)
+- add your own endpoints to the application. That's how we've made the [microsoft office document integration](https://github.com/mickael-kerjean/filestash/tree/master/server/plugin/plg_editor_onlyoffice) and how plugins such as [plg_handler_console](https://github.com/mickael-kerjean/filestash/tree/master/server/plugin/plg_handler_console) or [plg_handler_syncthing](https://github.com/mickael-kerjean/filestash/tree/master/server/plugin/plg_handler_syncthing) works
+- change any kind of endpoints provided by default. This is how we typically adapt the branding so companies can see their own logo instead of the Filestash one alongside some more advanced use case
 
-Plugins are developed using the Go programming language. Those are listed in [this file](https://github.com/mickael-kerjean/filestash/blob/master/server/plugin/index.go){:rel="nofollow"} before getting compiled (see [our guide](https://github.com/mickael-kerjean/filestash/blob/master/CONTRIBUTING.md){:rel="nofollow"} to make a build)
+## Add or remove a plugin
 
-Internally, plugins have a few key parts:
-- an entry point which will be called when Filestash boots up. The entry point of a plugin is its `init` function
-- they can call a series of hooks and APIs to perform their duties (see [here](https://github.com/mickael-kerjean/filestash/blob/master/server/common/plugin.go){:rel="nofollow"})
+Plugins are developed using the Go programming language. To add or remove a plugin, you need to edit [this file](https://github.com/mickael-kerjean/filestash/blob/master/server/plugin/index.go) and recompile the software. The list of plugin is visible from the [/about](https://demo.filestash.app/about) page alongside some extra information about the build
 
-## Basic example
+## Plugin configuration
 
-``` go
-package main
-
-import (
-	. "github.com/mickael-kerjean/filestash/server/common"
-	"io"
-	"net/http"
-)
-
-func init() {
-    plugin_enable := Config.Get("features.nothing.enable").Default(true).Bool()
-
-    Hooks.Register.ProcessFileContentBeforeSend(func(reader io.ReadCloser, ctx *App, res *http.ResponseWriter, req *http.Request) (io.ReadCloser, error){
-        if plugin_enable {
-            Log.Info("Can do something here: %v", plugin_enable)
-        }
-        return reader, nil
-    })
-}
-```
-
-## Configuration management
-
-A Plugin can query and/or mutate the configuration state using the global `Config` object. The resulting configuration can be seen and updated from the admin UI (`/admin/configure`).
+A Plugin can query and/or mutate the configuration state using the global `Config` object. The resulting configuration can be seen and updated from the admin UI (`/admin/settings`).
 
 Usage Example:
 ``` go
@@ -77,9 +54,15 @@ var testConfig1 string = Config.Get("general.test").Schema(func(f *FormElement) 
     f.Placeholder = "Input placeholder"
 }).String()
 ```
+If you want to dig deeper [check this](https://github.com/mickael-kerjean/filestash/blob/master/server/plugin/plg_video_transcoder/index.go#L36-L68) and [this](https://github.com/mickael-kerjean/filestash/blob/master/server/common/config.go).
 
-## Development Hints
 
-- The list of available hooks is defined [there](https://github.com/mickael-kerjean/filestash/blob/master/server/common/plugin.go){:rel="nofollow"}. Those will be extended when a need is identified, pull requests are welcome.
-- Backends are registered [like this](https://github.com/mickael-kerjean/filestash/blob/master/server/plugin/plg_backend_dav/index.go#L33){:rel="nofollow"} and need to implement [this interface](https://github.com/mickael-kerjean/filestash/blob/master/server/common/types.go#L10-L20){:rel="nofollow"}
-- There's a range of middlewares available for reusable logic (things like managing access, permissions and sessions, etc.), reuse them as you see fit (see [examples](https://github.com/mickael-kerjean/filestash/blob/master/server/main.go){:rel="nofollow"})
+## Custom plugin development
+
+We can help you customisating Filestash for your needs, [reach out to us](/pricing/?modal=enterprise). We can offer custom development of plugin and custom build services.
+
+To give some concrete examples of what we've already done, we've made plugins for the like of:
+- [MIT](https://www.media.mit.edu/posts/file-sharing/) to integrate their samba file sharing server with their two factor authentication and LDAP.
+- [DHL](https://www.deutschepost.de/) enabling their employees to access and manage workspaces in their artifactory server
+- [Schneider Electric](https://se.com/) enabling their technical documentation team to push changes to their online help pages embed onto their softwares
+- a lot more ...

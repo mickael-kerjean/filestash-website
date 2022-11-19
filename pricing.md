@@ -853,7 +853,7 @@ head:
                 <td><i class="check"></i></td>
             </tr>
             <tr>
-                <td>Eearly Security patches</td>
+                <td>Early Security patches</td>
                 <td data-related="cloud"><i class="close"></i></td>
                 <td data-related="selfhosted"><i class="close"></i></td>
                 <td><i class="check"></i></td>
