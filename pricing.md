@@ -47,7 +47,7 @@ head:
                 background: linear-gradient(76.4deg,rgba(233,230,246,.21) 11.23%,rgba(233,230,246,0) 36.25%,rgba(233,230,246,0) 55.2%,rgba(255,255,255,0.1) 97.53%);
                 height: 32rem;"></div>
     <div class="container">
-        <h1>The frontend for your data </h1>
+        <h1>The frontend of your storage</h1>
     </div>
     <div class="container">
         <div class="center backend-list">
@@ -93,7 +93,7 @@ head:
 <h2 class="center"> Pricing </h2>
 <div class="container" id="pricing">
     <div class="flex">
-        <div class="padding">
+        <div class="padding" style="box-sizing:border-box">
             <h3>
                 <span>Open Source</span>
                 <svg width="30" height="30" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -106,7 +106,7 @@ head:
                     <h4>
                         <span data-related="selfhosted">Selfhosted</span>
                         <span data-related="cloud">&nbsp;</span>
-                        <div class="onoffswitch">
+                        <div class="onoffswitch" style="display:none">
                             <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="myonoffswitch" tabindex="0">
                             <label class="onoffswitch-label" for="myonoffswitch">
                                 <span class="onoffswitch-inner"></span>
@@ -122,7 +122,6 @@ head:
                 <ul class="features">
                     <li>AGPL v3</li>
                     <li data-related="cloud">up to 3 users</li>
-                    <li data-related="selfhosted">unlimited users</li>
                 </ul>
                 <a class="btn" href="/docs/" data-related="selfhosted">
                     START
@@ -132,7 +131,7 @@ head:
                 </a>
             </div>
         </div>
-        <div class="box padding">
+        <div class="box padding" style="box-sizing:border-box">
             <h3>
                 For your company
                 <svg width="30" height="30" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -147,12 +146,12 @@ head:
                     <div class="plan-name">
                         <h4>Pro</h4>
                         <div class="price">
-                            50$ / month
+                            85$ / month
                         </div>
                     </div>
                     <ul class="features">
                         <li>Commercial License</li>
-                        <li>Unlimited users</li>
+                        <li>Cloud / Selfhosted</li>
                     </ul>
                     <a href="/redirect.html?url=https://buy.stripe.com/cN215sdCSdpA436aEE" class="btn">START YOUR FREE TRIAL</a>
                 </div>
@@ -165,9 +164,10 @@ head:
                     </div>
                     <ul class="features">
                         <li>24/7 Support</li>
-                        <li>Custom Branding</li>
-                        <li>SSO</li>
-                        <li>Consulting</li>
+                        <li>Whitelabeling</li>
+                        <li>Single sign-on</li>
+                        <li>Auditing</li>
+                        <li>Custom plugin</li>
                     </ul>
                     <a class="btn action" href="#enterprise" rel="modal:open">START</a>
                 </div>
@@ -217,7 +217,7 @@ head:
      margin-bottom: 25px;
  }
  #pricing .plan .price{ font-size: 0.95rem; }
- #pricing .features { height: 120px; padding-left: 20px; }
+ #pricing .features { height: 145px; padding-left: 20px; }
  #pricing .plan .btn {
      text-transform: uppercase;
      width: 100%;
@@ -983,6 +983,12 @@ head:
         <button class="btn">SUBMIT</button>
     </form>
 </div>
+<div id="installer" class="modal">
+    <div>
+        <div>Cloud</div>
+        <div>Selfhosted</div>
+    </div>
+</div>
 
 <script>
   (function(){
@@ -994,19 +1000,21 @@ head:
          return;
      }
 
-     if(location.hash === "#enterprise") {
+     if (location.hash === "#enterprise") {
          $('#enterprise').modal({fadeDuration: 250});
          return;
-     } else if(location.search === "?modal=enterprise") {
+     } else if (location.search === "?modal=enterprise") {
          $('#enterprise').modal({fadeDuration: 250});
+         return;
+     }
+
+     if (location.search === "?modal=installer") {
+         $('#installer').modal({fadeDuration: 250});
          return;
      }
 
   })()
 </script>
-
-
-
 
 
 <style>
