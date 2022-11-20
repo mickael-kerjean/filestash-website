@@ -153,7 +153,7 @@ head:
                         <li>Commercial License</li>
                         <li>Cloud / Selfhosted</li>
                     </ul>
-                    <a href="/redirect.html?url=https://buy.stripe.com/cN215sdCSdpA436aEE" class="btn">START YOUR FREE TRIAL</a>
+                    <a href="./?modal=installer" class="btn">START YOUR FREE TRIAL</a>
                 </div>
                 <div class="plan" id="plan-enterprise">
                     <div class="plan-name">
@@ -984,10 +984,24 @@ head:
     </form>
 </div>
 <div id="installer" class="modal">
+    <h3>Install for:</h3>
     <div>
-        <div>Cloud</div>
-        <div>Selfhosted</div>
+        <a href="/redirect.html?url=https://buy.stripe.com/cN215sdCSdpA436aEE">Cloud</a>
+        <a href="/docs/install-and-upgrade/?release=pro">Selfhosted</a>
     </div>
+    <style>
+    #installer > div { display: flex;justify-content: space-between; }
+    #installer > div > a {
+      display: block;
+      width: 45%;
+      padding: 25px 0;
+      background: var(--primary);
+      border-radius: 5px;
+      text-align: center;
+      font-size: 1.1rem;
+      color: inherit;
+    }
+    </style>
 </div>
 
 <script>
