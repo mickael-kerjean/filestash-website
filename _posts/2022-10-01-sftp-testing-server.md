@@ -51,7 +51,7 @@ Remote working directory: /home/mickael/Downloads<br/>
 </span>
 </div>
 
-If you have a hard time converting everbody to the CLI, check our [SFTP client](({% post_url 2020-04-30-sftp-browser %})) the people you work with will love:
+If you have a hard time converting everbody to the CLI, check our [SFTP client]({% post_url 2020-04-30-sftp-browser %}) the people you work with will love:
 
 <a href="{% post_url 2020-04-30-sftp-browser %}"><img alt="screenshot filestash" src="/img/screenshots/viewerpage.png" class="fancy"></a>
 
