@@ -103,6 +103,10 @@ In the meantime, community guides are also available:
 
 If you want to build and install Filestash by yourself, the reference is the [Dockerfile](https://github.com/mickael-kerjean/filestash/blob/master/docker/prod/Dockerfile){:rel="nofollow"}. This recipe is just one example of a custom build with an emphasis on speed, efficiency and features at the cost of installation size. You could shrink down the required space by 90% by disabling features such as image transcoding (getting rid of libvips and libraw), org-mode export (getting rid of emacs and our latex distribution) and other tools (such as pdftotext).
 
+## Alternative: build docker image from source
+
+The docker image builds from released versions of filestash, if you wish to build filestash from source directly (in case you added a plugin for example) you can use this [Dockerfile](https://gist.github.com/mildred/934c9ac776ed95b7864b39a6d8444ff2).
+
 ## Optional: Using a reverse proxy
 
 Using a reverse proxy isn't mandatory but it is quite useful when you have multiple services installed on your server and can't dedicate ports 80 and 443 to one specific application.
