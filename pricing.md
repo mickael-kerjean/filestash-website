@@ -166,10 +166,10 @@ head:
                         <li>24/7 Support</li>
                         <li>Whitelabeling</li>
                         <li>Single sign-on</li>
-                        <li>Auditing</li>
+                        <li>Audit & Compliance</li>
                         <li>Custom plugin</li>
                     </ul>
-                    <a class="btn action" href="#enterprise" rel="modal:open">START</a>
+                    <a class="btn action" href="./?modal=enterprise">START</a>
                 </div>
             </div>
         </div>
@@ -934,9 +934,6 @@ head:
  .jquery-modal{ z-index: 10; }
  .modal{display: none;}
 </style>
-<script>
- $(".pricing a.action").modal({fadeDuration: 300});
-</script>
 
 <script>
  function submitForm(e){
