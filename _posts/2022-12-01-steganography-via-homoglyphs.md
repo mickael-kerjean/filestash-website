@@ -1,6 +1,6 @@
 ---
 title: Online Steganography Tool
-description: text based steganography tool to hide messages in plain sight
+description: A steganography tool that works in plain text without images to encode and decode messages in plain sight
 layout: post
 tags: tool
 permalink: /online-steganography.html
@@ -219,8 +219,10 @@ language: en
  }
 </style>
 
-There’s a wide range of techniques that can be used to do steganography but most available online tools available at this time only focus on image-based steganography. You can hide information not only in images but also in plain text using a range of techniques like whitespace watermarking leveraging either the [zero-width space]((https://en.wikipedia.org/wiki/Zero-width_space)) or the various [whitespace characters]((https://en.wikipedia.org/wiki/Whitespace_character)) available from [Unicode](https://en.wikipedia.org/wiki/Unicode).
+There’s a wide range of techniques that can be used to do steganography. Most available online tools available at this time focus on image-based steganography but you can hide information in virtually anything anywhere, not just images.
 
-The technique we use here is a variation of that approach that is based on [Homoglyphs](https://en.wikipedia.org/wiki/Homoglyph) which according to [this source](https://news.ycombinator.com/item?id=33625024) was used by Google to protect their internal communication. The main advantage of this technique is its resistance to copy and paste from and to any medium but also that it enables each new version to add its own metadata without destroying the existing one.
+There's almost an infinite amount of possible encoder and decoder you could build to do steganography on plain text, this page is just one of such example. The technique that's used here is based on [Homoglyphs](https://en.wikipedia.org/wiki/Homoglyph) which according to [this source](https://news.ycombinator.com/item?id=33625024) was used by Google to protect their internal communication but some other technques could be found in the literature like whitespace watermarking leveraging either the [zero-width space]((https://en.wikipedia.org/wiki/Zero-width_space)) or the various [whitespace characters]((https://en.wikipedia.org/wiki/Whitespace_character)) available from [Unicode](https://en.wikipedia.org/wiki/Unicode).
 
-If you're interested in Steganography to protect your company information, we have made some tools to protect your sensitive and confidential data sitting on servers using FTP, SFTP, S3, WebDAV, Samba and more, [contact us](/pricing/?modal=enterprise) and we will look at your exact needs and see what we can do for you.
+If you're considering one of the other, each technique got pro/cons depending on what you're trying to do. One of the cool things with Homoglyphs which is used here is its resistance to copy and paste from and to any medium but also that it enables the addition of new metadata for each copy without destroying the existing metadata.
+
+If you're interested in Steganography to protect your company information, we have made some tools to protect your sensitive and confidential data sitting on servers using FTP, SFTP, S3, NFS, WebDAV, Samba and more, [contact us](/pricing/?modal=enterprise) and we will look at your exact needs in more details.
