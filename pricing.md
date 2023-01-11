@@ -41,7 +41,6 @@ head:
  }
 </style>
 <div class="jumbotron">
-    <div class="geometric-shape" style="left: -13rem;"></div>
     <div class="geometric-shape" style="transform: rotate(-5deg);
                 top: 7rem;
                 background: linear-gradient(76.4deg,rgba(233,230,246,.21) 11.23%,rgba(233,230,246,0) 36.25%,rgba(233,230,246,0) 55.2%,rgba(255,255,255,0.1) 97.53%);

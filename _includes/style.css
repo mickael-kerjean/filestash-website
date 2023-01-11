@@ -260,7 +260,7 @@ blockquote p { margin: 0; }
     box-shadow: none;
     opacity: 0.8;
 }
-.nopadding{ padding: 0; }
+.nopadding{ padding: 0!important; }
 
 /*
  * SVG icon styles

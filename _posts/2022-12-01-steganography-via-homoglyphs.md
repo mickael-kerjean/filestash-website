@@ -171,51 +171,70 @@ language: en
 <div class="tool" style="margin-bottom:10px;">
     <h2>Decoder Tool</h2>
     <fieldset>
-        <legend>Input</legend>
-        <textarea onkeyup="updateDecoder(this)" rows="4" placeholder="Paste content that was encoded with our online tool"></textarea>
+        <legend>INPUT</legend>
+        <textarea onkeyup="updateDecoder(this)" rows="6" placeholder="Paste content that was encoded with our online tool"></textarea>
     </fieldset>
     <fieldset class="decoded-content">
-        <legend>Output</legend>
-        <div></div>
+        <legend>OUTPUT</legend>
+        <div class="output"></div>
     </fieldset>
 </div>
 
 <div class="tool">
     <h2>Encoder Tool</h2>
     <fieldset>
-        <legend>Input</legend>
+        <legend>INPUT</legend>
         <label>
             message:
-            <input type="text" value="" onkeyup="updateEncoder(this)" />
+            <input type="text" value="" onkeyup="updateEncoder(this)" style="border-radius: 3px; border: 2px solid rgba(0,0,0,0.1);"/>
         </label><br/>
         <label>
             base content:
-            <textarea rows="4" onkeyup="updateEncoder(this)">
+            <textarea rows="6" onkeyup="updateEncoder(this)">
             </textarea>
         </label>
     </fieldset>
     <fieldset class="encoded-content">
-        <legend>Output</legend>
-        <div>
+        <legend>OUTPUT</legend>
+        <div class="output">
         </div>
     </fieldset>
 </div>
 
 <style>
  .tool {
-     background: var(--emphasis-primary);
-     border-radius: 5px;
-     border: 9px solid var(--secondary);
-     padding: 10px;
+    background: var(--dark);
+    padding: 25px;
+    border-radius: 5px;
+    color: var(--bg-color);
+    box-shadow: 0px 0px 50px rgb(0 0 0 / 50%); 
+ }
+ .tool fieldset {
+    color: var(--color);
+    border: 2px dashed var(--color);
+ }
+ .tool fieldset > div, .tool fieldset > label {
+    color: white;
  }
  .tool textarea {
-     width: 100%;
-     box-sizing: border-box;
-     display: block;
+    width: 100%;
+    box-sizing: border-box;
+    display: block;
+    border-radius: 3px;
+    border: 2px solid rgba(0, 0, 0, 0.1);
+    padding: 8px 10px;
+    min-width: 100%;
+    max-width: 100%;
  }
  #main .tool h2{
+     color: white;
      margin: 0 0 10px 0;
      padding: 0;
+ }
+ .tool .output {
+    background: var(--color);
+    padding: 5px;
+    border-radius: 3px;
  }
 </style>
 

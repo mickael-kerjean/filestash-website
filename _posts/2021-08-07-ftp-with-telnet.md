@@ -104,7 +104,7 @@ To find the correct telnet command to use to establish a data channel, you can e
         <input type="text" placeholder="eg: 227 Entering Passive Mode (145,220,21,40,242,69)." value="227 Entering Passive Mode (145,220,21,40,242,69)." change="onInputChange" />
     </label>
 
-    <div style="margin:20px 0 20px 0">
+    <div style="margin:20px 0 20px 0;text-align:center;">
         <i class="arrow down"></i> <br/>
         <i style="position:relative;top:-20px;" class="arrow down"></i> <br/>
     </div>
@@ -134,12 +134,12 @@ displayTelnetCommand(document.querySelector("form.calculator input").value)
 </script>
 <style>
 form.calculator {
-    text-align: center;
-    padding: 30px 10px;
-    margin-bottom: 20px;
-    background: var(--emphasis-primary);
+    background: var(--dark);
+    padding: 25px;
     border-radius: 5px;
-    border: 9px solid var(--secondary);
+    color: var(--bg-color);
+    box-shadow: 0px 0px 50px rgb(0 0 0 / 50%);
+    margin-bottom: 20px;
 }
 form.calculator input {
     width: 100%;
@@ -154,7 +154,7 @@ form.calculator input {
     font-size: 1.1rem;
 }
 .arrow {
-  border: solid var(--secondary);
+  border: solid var(--color);
   border-width: 0 7px 7px 0;
   display: inline-block;
   padding: 15px;
