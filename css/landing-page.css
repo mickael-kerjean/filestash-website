@@ -6,9 +6,10 @@
 #splash-container #splash{ background: inherit; padding: 0 15px; padding-bottom: 10px; }
 #splash-container #nav{ background: transparent; }
 #splash-container #waveshape{
-    background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxNDQwIDMyMCIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPHBhdGggZmlsbD0iI2YyZjNmNSIgZmlsbC1vcGFjaXR5PSIxIiBkPSJNMCwxOTJMNjAsMTgxLjNDMTIwLDE3MSwyNDAsMTQ5LDM2MCwxNjUuM0M0ODAsMTgxLDYwMCwyMzUsNzIwLDI1MC43Qzg0MCwyNjcsOTYwLDI0NSwxMDgwLDIxMy4zQzEyMDAsMTgxLDEzMjAsMTM5LDEzODAsMTE3LjNMMTQ0MCw5NkwxNDQwLDMyMEwxMzgwLDMyMEMxMzIwLDMyMCwxMjAwLDMyMCwxMDgwLDMyMEM5NjAsMzIwLDg0MCwzMjAsNzIwLDMyMEM2MDAsMzIwLDQ4MCwzMjAsMzYwLDMyMEMyNDAsMzIwLDEyMCwzMjAsNjAsMzIwTDAsMzIwWiI+PC9wYXRoPgo8L3N2Zz4K);
+    background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxNDQwIDMyMCIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPHBhdGggZmlsbD0iI2YyZjNmNSIgZmlsbC1vcGFjaXR5PSIxIiBkPSJNIDAsMjcyIEMgNzQ2LjIyNjUyLDI2Ni4xMzg4MSAxMDAzLjYwNDIsMjEzLjYzMDA4IDE0NDAsOTIgViAzMjAgSCAwIFoiPjwvcGF0aD4KPC9zdmc+);
     background-size: 100% 100%;
     height: 10rem;
+    margin-top: -80px;
 }
 .container.large{ max-width: 1024px; }
 
@@ -98,7 +99,7 @@
     box-shadow: 0px 10px 14px 0px rgb(23 43 77 / 20%);
     padding: 20px 30px;
     position: relative;
-    top: 80px;
+    top: 110px;
     border-radius: 2px;
     text-align: left;
 }
@@ -229,11 +230,26 @@ img.fancy.pull-right { margin-left: 170px; }
 }
 
 #features .call-to-action{
-    padding: 150px 0;
+    padding: 180px 0;
     background: var(--dark);
     background: linear-gradient(var(--dark), #505457);
     text-align: center;
 }
+
+#features .call-to-action { position: relative; }
+#features .call-to-action:before{
+    content: "";
+    background-image: linear-gradient(to top left, transparent 50%, var(--super-light) 51%);
+    background-position: top right;
+    background-size: 100% 50px;
+    background-repeat: no-repeat;
+    position: absolute;
+    left: 0px;
+    right: 0px;
+    height: 50px;
+    top: 0;
+}
+
 #features .call-to-action .btn{
     border-color: var(--bg-color);
     color: var(--bg-color);

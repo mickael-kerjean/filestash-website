@@ -27,12 +27,12 @@ h1 a{ color: inherit; border-bottom: 2px dashed white; }
 }
 
 .waveshape{
-    background-image: url(data:image/svg+xml;charset=utf8,%0A%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%221440%22%20height%3D%22220%22%20viewBox%3D%220%200%201440%20220%22%3E%0A%20%20%3Cpath%20style%3D%22fill%3A%239ad1ed%22%20d%3D%22M%201440%2C0.00566875%20C%201058.2025%2C-0.18654985%201111.1906%2C74.615531%20868.26628%2C46.755935%20625.34191%2C18.896339%20375.67341%2C9.504338%20251.53491%2C30.044723%20127.39641%2C50.585108%2094.792899%2C1.3763015%200%2C0.00566875%20h%201440%22%20%2F%3E%0A%3C%2Fsvg%3E);
+    background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNDQwIiBoZWlnaHQ9IjIyMCIgdmlld0JveD0iMCAwIDE0NDAgMjIwIj4KPHBhdGggc3R5bGU9ImZpbGw6IzlhZDFlZCIgZD0ibSAxNDQwLDAgMSw4NSBDIDEyODIuMTcxNSw4NSA2NzAsMTMzIDQ5MCwxMzMgNDU1LDEzMyAxNCwxNCAwLDE0IFYgMCIgLz4KPC9zdmc+);
     background-size: cover;
     background-repeat: no-repeat;
     height: 220px;
-    margin-top: -2px;
     background-position: top center;
+    margin-top: -10px;
 }
 
 #splash form fieldset legend{ padding: 2px 7px; cursor: pointer; user-select: none; }

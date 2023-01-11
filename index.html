@@ -27,7 +27,7 @@ head:
 		  <h2>
             turns your <br>
             <noscript>
-              <a href="{% post_url 2019-11-26-ftp-web-client %}">FTP</a> / <a href="{% post_url 2021-10-18-webdav-client %}">WebDav</a> / <a href="{% post_url 2020-04-30-sftp-browser %}">SFTP</a> / <a href="{% post_url 2019-11-21-s3-browser %}">S3</a> / <a href="{% post_url 2019-11-21-s3-browser %}">Minio</a> / Git / <a href="{% post_url 2020-01-04-ldap-browser %}">LDAP</a> / Google drive / Dropbox server / <a href="{% post_url 2019-11-21-s3-browser %}">Storj</a>
+              <a href="{% post_url 2019-11-26-ftp-web-client %}">FTP</a> / <a href="{% post_url 2021-10-18-webdav-client %}">WebDav</a> / <a href="{% post_url 2020-04-30-sftp-browser %}">SFTP</a> / <a href="{% post_url 2019-11-21-s3-browser %}">S3</a> / <a href="{% post_url 2019-11-21-s3-browser %}">Minio</a> / Git / <a href="{% post_url 2020-01-04-ldap-browser %}">LDAP</a> / Google drive / Dropbox server / Storj
             </noscript>
             <span id="typing"></span> <br>
             into this
@@ -54,6 +54,7 @@ head:
                   "awesome Webdav server",
                   "awesome CardDav/CalDav server",
                   "Backblaze B2",
+                  "Storj data store",
                   "backend systems",
                   "reliable Git repo",
                   "reliable mysql server",
@@ -93,6 +94,10 @@ head:
       <strong>Github</strong>
       <strong>Gitlab</strong>
       <strong><a href="{% post_url 2021-10-18-webdav-client %}">WebDav</a></strong>
+      <strong>Samba</strong>
+      <strong>Storj</strong>
+      <strong>Local FS</strong>
+      <strong>NFS</strong>
       <strong><a href="{% post_url 2020-01-04-ldap-browser %}">LDAP</a></strong>
       <strong>CalDAV</strong>
       <strong>CardDAV</strong>
@@ -139,6 +144,7 @@ head:
   <a href="/pricing/?modal=enterprise" class="btn light">Chat with Us</a>
 </h2>
 
+<p class="center" style="font-weight: bold; text-transform: uppercase; color: var(--light)">Trusted by word class organisation</p>
 <div class="social-proof">
   <div>
     <a href="https://www.media.mit.edu/posts/file-sharing/"><img src="http://archive.kerjean.me/public/2022/mit.png" /></a>
@@ -180,7 +186,7 @@ head:
       justify-content: center;
       align-items: center;
       overflow-x: hidden;
-      margin: 30px 0;
+      margin: 10px 0;
   }
   .social-proof img {
       width: 240px;
@@ -191,10 +197,12 @@ head:
 
 <div class="reviews">
   <div class="review">
+    <svg class="w-5 lg:w-4.6 xl:w-5.1 text-v1-indigo-200" xmlns="http://www.w3.org/2000/svg" fill="var(--light)" viewBox="0 0 32 32"><defs></defs><g class="fill-current" clip-path="url(#clip0)"><path d="M.007 22.205a7.617 7.617 0 107.617-7.617c-.864 0-1.692.15-2.467.416C6.871 5.172 14.538-1.168 7.431 4.05-.449 9.837-.002 21.972.007 22.195v.01zM16.765 22.205a7.617 7.617 0 107.617-7.617c-.864 0-1.692.15-2.466.416 1.714-9.832 9.38-16.172 2.273-10.954-7.88 5.787-7.432 17.922-7.424 18.145v.01z"></path></g><defs><clipPath id="clip0"><path fill="#fff" d="M0 0h32v32H0z"></path></clipPath></defs></svg>
     My company required a custom plugin derived from the original open source repo. The developer provided such great support during the first meetings, that my company immediately opened an enterprise account with Filestash. The support and development of our own custom plugin was fantastic!
     <br/><br/><a rel="nofollow" href="https://www.linkedin.com/in/davidcarrillojr/"><strong>David C.</strong></a>
   </div>
   <div class="review">
+    <svg class="w-5 lg:w-4.6 xl:w-5.1 text-v1-indigo-200" xmlns="http://www.w3.org/2000/svg" fill="var(--light)" viewBox="0 0 32 32"><defs></defs><g class="fill-current" clip-path="url(#clip0)"><path d="M.007 22.205a7.617 7.617 0 107.617-7.617c-.864 0-1.692.15-2.467.416C6.871 5.172 14.538-1.168 7.431 4.05-.449 9.837-.002 21.972.007 22.195v.01zM16.765 22.205a7.617 7.617 0 107.617-7.617c-.864 0-1.692.15-2.466.416 1.714-9.832 9.38-16.172 2.273-10.954-7.88 5.787-7.432 17.922-7.424 18.145v.01z"></path></g><defs><clipPath id="clip0"><path fill="#fff" d="M0 0h32v32H0z"></path></clipPath></defs></svg>
     If you need a file manager, get filestash. The product is easy to use, easy to configure, very secure, and works very well. Mickael has been outstanding with his customer support, helping us customize the app to fit our specific requirements. I can't say enough good things about his app, and him. If you are looking for a fast, efficient, and streamlined front-end GUI to manage files, look no further.
     <br/><br/><a rel="nofollow" href="https://www.linkedin.com/in/chris-meng-41b8b297/"><strong>Chris M.</strong></a></div>
 </div>
@@ -210,9 +218,13 @@ head:
       text-align: justify;
       margin: 15px;
 
-      border: 1px dashed #e2e2e2;
+      border: 1px dashed #e2e2e2aa;
       font-size: 0.9rem;
+
+      background: white;
+      border-radius: 5px;
   }
+  .reviews > .review svg { width: 20px; margin-right: 5px; }
 </style>
 
 <div id="github-events"></div>
@@ -299,7 +311,10 @@ head:
      overflow-x: hidden;
      height: 80px;
  }
- #github-events > div { clear: left; margin: 0 10px 10px 0; border: 1px dashed #e2e2e2; padding: 10px; font-size: 0.9rem; min-width: 290px; }
+ #github-events > div {
+     clear: left; margin: 0 10px 10px 0; border: 1px dashed #e2e2e2aa; padding: 10px; font-size: 0.9rem; min-width: 290px;
+     background: white; border-radius: 5px;
+ }
  #github-events .ellipsis { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
  #github-events .date { margin-top: 5px; }
  #github-events img { width: 45px; height: 45px; float: left; padding-right: 7px; filter: grayscale(100%); }
@@ -361,7 +376,7 @@ head:
                 <img alt="example of login screen after configuring Filestash" loading="lazy" class="fancy visible-xs" src="/img/screenshots/feature3.png" />
             </div>
 
-            <br><br><br><br><br>
+            <br><br><br>
         </div>
     </div>
 
@@ -370,6 +385,21 @@ head:
         <a class="btn light" href="{% link _docs/index.md %}">GETTING STARTED</a>
         <a class="btn light" href="https://demo.filestash.app">DEMO</a>
     </div>
+    <style>
+      #features .call-to-action:after{
+          content: "";
+          background-image: linear-gradient(to top left, var(--super-light) 50%, transparent 51%);
+          background-position: bottom right;
+          background-size: 100% 50px;
+          background-repeat: no-repeat;
+          position: absolute;
+          left: 0px;
+          right: 0px;
+          height: 50px;
+          bottom: 0;
+      }
+
+    </style>
 
     <div class="container">
         <h2 class="center"> More Features</h2>
