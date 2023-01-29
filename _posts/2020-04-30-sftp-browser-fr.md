@@ -155,3 +155,4 @@ même vos buckets Amazon S3 via <a href="https://console.aws.amazon.com/transfer
     <a class="btn light" href="{% post_url 2020-01-04-ldap-browser %}">LDAP</a>
   </div>
 </div>
+{% include filestash-demo-dependency.html %}

@@ -143,3 +143,4 @@ head:
     <a class="btn light" href="{% post_url 2020-01-04-ldap-browser %}">LDAP Client</a>
   </div>
 </div>
+{% include filestash-demo-dependency.html %}

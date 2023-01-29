@@ -315,3 +315,4 @@ head:
     <a class="btn light" href="{% post_url 2021-10-18-webdav-client %}">WebDAV</a>
   </div>
 </div>
+{% include filestash-demo-dependency.html %}

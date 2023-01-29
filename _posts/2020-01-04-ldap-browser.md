@@ -143,4 +143,4 @@ language: en
   </div>
 
 </div>
-
+{% include filestash-demo-dependency.html %}
