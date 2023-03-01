@@ -1,5 +1,5 @@
 ---
-title: A simple guide to the AWS S3 CLI
+title: A cheat sheet for the AWS S3 CLI
 description: Find your way on the AWS S3 CLI - list files with ls, removal with rm, copy, download, move ...
 layout: post
 permalink: /aws-s3-cli.html
