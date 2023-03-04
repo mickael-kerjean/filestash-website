@@ -145,14 +145,14 @@ head:
                     <div class="plan-name">
                         <h4>Pro</h4>
                         <div class="price">
-                            85$ / month
+                            100$ / month
                         </div>
                     </div>
                     <ul class="features">
                         <li>Commercial License</li>
                         <li>Cloud / Selfhosted</li>
                     </ul>
-                    <a href="./?modal=installer" class="btn">START YOUR FREE TRIAL</a>
+                    <a href="./?modal=installer" class="btn">START</a>
                 </div>
                 <div class="plan" id="plan-enterprise">
                     <div class="plan-name">
@@ -982,8 +982,8 @@ head:
 <div id="installer" class="modal">
     <h3>Install for:</h3>
     <div>
-        <a href="/redirect.html?url=https://buy.stripe.com/cN215sdCSdpA436aEE">Cloud</a>
-        <a href="/docs/install-and-upgrade/?release=pro">Selfhosted</a>
+        <a href="/redirect.html?origin=pricing::cloud&url=https://buy.stripe.com/7sIdSe9mCetEgPSeUW">Cloud</a>
+        <a href="/redirect.html?origin=pricing::selfhosted&url=https://buy.stripe.com/7sIdSe9mCetEgPSeUW">Selfhosted</a>
     </div>
     <style>
     #installer > div { display: flex;justify-content: space-between; }
