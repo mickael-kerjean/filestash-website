@@ -32,7 +32,7 @@ jobs:
         name: build
         path: _site
     - name: Deploy
-      uses: up9cloud/action-rsync@master
+      uses: mickael-kerjean/gh-action-rsync@master
       env:
         HOST: ${{secrets.SSH_HOSTNAME}}
         USER: ${{secrets.SSH_USERNAME}}
