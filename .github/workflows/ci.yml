@@ -17,4 +17,14 @@ jobs:
     - name: Setup
       run: bundle install
     - name: Build
-      run: JEKYLL_ENV=production bundle exec jekyll build
+      run: JEKYLL_ENV=production bundle exec jekyll build  
+    - name: Deploy
+      uses: trendyminds/github-actions-rsync@v1.0.0
+      with:
+        RSYNC_OPTIONS: -avn --delete
+        RSYNC_TARGET: /mnt/me-kerjean-pages/projects/filestash/website/
+        RSYNC_SOURCE: _site/
+      env:
+        SSH_PRIVATE_KEY: ${{secrets.SSH_PRIVATE_KEY}}
+        SSH_USERNAME: ${{secrets.SSH_USERNAME}}
+        SSH_HOSTNAME: ${{secrets.SSH_HOSTNAME}}
