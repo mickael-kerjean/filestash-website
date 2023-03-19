@@ -17,7 +17,23 @@ jobs:
     - name: Setup
       run: bundle install
     - name: Build
-      run: JEKYLL_ENV=production bundle exec jekyll build  
+      run: JEKYLL_ENV=production bundle exec jekyll build 
+    - uses: actions/upload-artifact@master
+      with:
+        name: build
+        path: _site
+  
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/download-artifact@master
+      with:
+        name: build
+    - name: Debug
+      run: |
+        ls -lah
+        echo "====="
+        ls -lah _site
     - name: Deploy
       uses: trendyminds/github-actions-rsync@master
       with:
