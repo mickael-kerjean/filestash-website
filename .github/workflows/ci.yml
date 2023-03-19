@@ -1,0 +1,21 @@
+name: Jekyll site CI
+
+on:
+  push:
+    branches: [ "master" ]
+  pull_request:
+    branches: [ "master" ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    - name: Set up Ruby
+      uses: ruby/setup-ruby@master
+        with:
+          ruby-version: '2.7'
+    - name: Setup
+      run: bundle install
+    - name: Build
+      run: JEKYLL_ENV=production bundle exec jekyll build
