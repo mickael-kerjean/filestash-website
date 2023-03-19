@@ -10,3 +10,5 @@ group :jekyll_plugins do
   gem "jekyll-gzip"
   gem 'jekyll-tagging', '1.1.0'
 end
+
+gem "webrick", "~> 1.8"
