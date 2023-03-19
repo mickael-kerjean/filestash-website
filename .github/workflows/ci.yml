@@ -30,6 +30,7 @@ jobs:
     - uses: actions/download-artifact@master
       with:
         name: build
+        path: _site
     - name: Debug
       run: |
         ls -lah
