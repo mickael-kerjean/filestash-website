@@ -11,10 +11,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v3
-    - name: Set up Ruby
-      uses: ruby/setup-ruby@master
-        with:
-          ruby-version: '2.7'
+    - uses: ruby/setup-ruby@master
+      with:
+        ruby-version: '2.7'
     - name: Setup
       run: bundle install
     - name: Build
