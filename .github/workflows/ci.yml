@@ -19,7 +19,7 @@ jobs:
     - name: Build
       run: JEKYLL_ENV=production bundle exec jekyll build  
     - name: Deploy
-      uses: trendyminds/github-actions-rsync@v1.0.0
+      uses: trendyminds/github-actions-rsync@master
       with:
         RSYNC_OPTIONS: -avn --delete
         RSYNC_TARGET: /mnt/me-kerjean-pages/projects/filestash/website/
