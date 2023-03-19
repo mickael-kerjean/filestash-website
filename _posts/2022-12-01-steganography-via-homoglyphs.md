@@ -1,6 +1,6 @@
 ---
 title: Online Steganography Tool
-description: A steganography tool that works in plain text without images to encode and decode messages in plain sight
+description: An online steganography tool that works in plain text without images to encode and decode messages in plain sight
 layout: post
 tags: tool
 permalink: /online-steganography.html
