@@ -151,7 +151,7 @@ même vos buckets Amazon S3 via <a href="https://console.aws.amazon.com/transfer
     <a class="btn light" href="{% post_url 2019-11-26-ftp-web-client-fr %}">FTPS</a>
     <a class="btn light" href="{% post_url 2021-10-18-webdav-client-fr %}">WebDAV</a>
     <a class="btn light" href="{% post_url 2020-08-31-sftp-online-test %}">SFTP Test</a>
-    <a class="btn light" href="{% post_url 2019-11-21-s3-browser %}">S3</a>
+    <a class="btn light" href="{% post_url 2019-11-21-s3-browser-fr %}">S3</a>
     <a class="btn light" href="{% post_url 2020-01-04-ldap-browser %}">LDAP</a>
   </div>
 </div>

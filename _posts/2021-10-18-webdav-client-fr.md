@@ -138,7 +138,7 @@ head:
     <h2>Nous avons d'autres clients en ligne:</h2>
     <a class="btn light" href="{% post_url 2020-04-30-sftp-browser-fr %}">Client SFTP</a>
     <a class="btn light" href="{% post_url 2019-11-26-ftp-web-client-fr %}">Client FTP</a>
-    <a class="btn light" href="{% post_url 2019-11-21-s3-browser %}">Client S3</a>
+    <a class="btn light" href="{% post_url 2019-11-21-s3-browser-fr %}">Client S3</a>
     <a class="btn light" href="{% post_url 2020-01-04-ldap-browser %}">Client LDAP</a>
   </div>
 </div>

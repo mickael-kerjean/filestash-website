@@ -1,14 +1,12 @@
 ---
-title: S3 Browser | An online S3 Client tool that rocks!
-description: An online S3 browser to explore your S3 buckets from your browser
+title: S3 Browser | Le meilleur client S3 pour votre navigateur
+description: Un client S3 pour naviguer et explorer vos fichier et repertoire dans vos buckets S3 depuis votre browser
 layout: landing
-permalink: /s3-browser.html
+permalink: /fr/s3-browser.html
 language: en
 tags: s3 oem online-client tool
-redirect_from:
-  - /aws-s3-explorer.html
 head:
-  - <link rel="alternate" href="https://www.filestash.app/fr/s3-browser.html" hreflang="fr" />
+  - <link rel="alternate" href="https://www.filestash.app/s3-browser.html" hreflang="en" />
 ---
 
 <link rel="stylesheet" href="/css/landing-page.css">
@@ -18,8 +16,8 @@ head:
   <div class="row">
     <div class="col-sm-12">
       <div class="hgroup">
-        <h1>S3 Browser</h1>
-        <h2 style="display:block;font-size:1.3rem;height:inherit;">An S3 client that turns your <a style="color:inherit" href="https://aws.amazon.com/s3/">S3</a> buckets into an online file browser</h2>
+        <h1>Navigateur de fichier S3</h1>
+        <h2 style="display:block;font-size:1.3rem;height:inherit;">Un client S3 qui transforme vos <a style="color:inherit" href="https://aws.amazon.com/s3/">buckets S3</a> en explorateur de fichiers en ligne</h2>
       </div>
       <form onsubmit='$("form input[type=\"submit\"]").attr("value", "LOADING...")' action="https://demo.filestash.app/login" method="GET">
         <input type="hidden" name="type" value="s3" />
@@ -30,7 +28,7 @@ head:
           <span>Secret Access Key:</span><input type="text" name="secret_access_key" placeholder="Secret Access Key*" required/>
         </label>
         <label>
-          <span>Region:</span><select name="region">
+          <span>Région:</span><select name="region">
             <option name="us-east-2" default>us-east-2</option>
             <option name="us-east-1">us-east-1</option>
             <option name="us-west-1">us-west-1</option>
@@ -57,13 +55,13 @@ head:
           </select>
         </label>
         <fieldset>
-          <legend onclick="toggleExpand()"><i style="transform: scale(0.6) rotate(45deg);margin-right:5px" class="arrow down"></i>Advanced</legend>
+          <legend onclick="toggleExpand()"><i style="transform: scale(0.6) rotate(45deg);margin-right:5px" class="arrow down"></i>Avancé</legend>
           <div class="fieldset-content" style="display:none;">
             <label>
-              <span>Encryption Key:</span><input type="text" name="encryption_key" placeholder="Encryption Key" />
+              <span>Clé de chiffrement:</span><input type="text" name="encryption_key" placeholder="Encryption Key" />
             </label>
             <label>
-              <span>Endpoint:</span><input type="text" name="endpoint" placeholder="Endpoint"/>
+              <span>URL d'instance:</span><input type="text" name="endpoint" placeholder="Endpoint"/>
             </label>
           </div>
         </fieldset>
@@ -75,7 +73,7 @@ head:
           }
         </script>
 
-        <input type="submit" value="Connect" class="btn" />
+        <input type="submit" value="Connecter" class="btn" />
       </form>
       <script>
         function clickPublicS3Handler(e, data){
@@ -89,7 +87,7 @@ head:
 
 
       <p class="example">
-        Log in with your <a href="{% post_url 2020-05-03-how-to-get-aws-keys %}">S3 keys</a> or use an Amazon S3 compatible software like <br> <a onclick="clickPublicS3Handler(event, {access_key_id: 'Q3AM3UQ867SPQQA43P2F', secret_access_key: 'zuf+tfteSlswRu7BJ86wekitnifILbZam1KYY3TG', endpoint: 'https://play.minio.io:9000/'});" href="https://play.minio.io:9000/">https://play.minio.io:9000</a>
+        Connectez-vous avec vos <a href="{% post_url 2020-05-03-how-to-get-aws-keys %}">clés S3</a> ou utilisez un logiciel compatible Amazon S3 comme <br> <a onclick="clickPublicS3Handler(event, {access_key_id: 'Q3AM3UQ867SPQQA43P2F', secret_access_key: 'zuf+tfteSlswRu7BJ86wekitnifILbZam1KYY3TG', endpoint: 'https://play.minio.io:9000/'});" href="https://play.minio.io:9000/">https://play.minio.io:9000</a>
       </p>
     </div>
   </div>
@@ -97,9 +95,9 @@ head:
   <div class="container">
     <div id="oem">
       <span>
-        Filestash can be tailored with your company colors and logo, integrating with your corporate single signed on. We will go the extra mile to fullfil your needs and requirements for customisation
+        Filestash peut être personnalisé avec les couleurs et le logo de votre entreprise, s'intégrant avec votre SSO. Nous ferons le maximum pour répondre à vos besoins et exigences en matière de personnalisation.
       </span>
-      <a href="/pricing/?modal=enterprise" class="btn">Chat with us</a>
+      <a href="/pricing/?modal=enterprise" class="btn">Parlez nous en</a>
     </div>
   </div>
 </div>
@@ -111,63 +109,63 @@ head:
 
       <div class="feature">
         <img alt="screenshot of Filestash when uploading" loading="lazy" class="fancy pull-left hidden-xs" src="/img/screenshots/feature1.png" />
-        <h2>The S3 explorer that works like a file browser</h2>
+        <h2>L'explorateur S3 qui fonctionne comme un navigateur de fichiers</h2>
         <p>
-          Our <strong>web client</strong> makes it easy to browse, explore, upload files into your bucket but also downloads files, rename or delete them or just act as an S3 viewer, all from the web interface!
+          Notre client web facilite la navigation, l'exploration, le téléchargement de fichiers dans vos buckets, mais aussi le renommage ou la suppression d'objects S3, directement depuis l'interface web!
         </p>
         <img alt="screenshot of Filestash when uploading" loading="lazy" class="fancy visible-xs" src="/img/screenshots/feature1.png" />
       </div>
 
       <div class="feature">
         <img alt="screenshot of the text editor" loading="lazy" class="fancy pull-right hidden-xs" src="/img/posts/2019-08-20-ftp-web-client.html.1.png" />
-        <h2>An S3 viewer and a document editor</h2>
+        <h2>Téléchargement et édition d'object S3</h2>
         <p>
-          Whether you're hosting a website or storing a lot of documents on S3, you can view and edit your website, word documents, spreadsheets and many more.
+          Que vous hébergiez un site web ou stockiez de nombreux documents sur S3, vous pouvez visualiser et modifier votre site web, vos documents Word, vos tableurs et bien d'autres.
         </p>
         <img alt="screenshot of the text editor" loading="lazy" class="fancy visible-xs" src="/img/posts/2019-08-20-ftp-web-client.html.1.png" />
       </div>
 
       <div class="feature">
         <img alt="S3 logo" loading="lazy" class="fancy pull-left hidden-xs" src="https://miro.medium.com/max/580/1*DHe24MbDHtbkOeIJzxrfdA.png" />
-        <h2>Amazon S3 but not only</h2>
+        <h2>Amazon S3, mais pas seulement</h2>
         <p>
-          Whether you're using <strong>AWS</strong> or an API <a href="https://en.wikipedia.org/wiki/Amazon_S3#S3_API_and_competing_services">compatible alternative</a>, Filestash is there to help you explore your buckets. As an example, you can connect to <a onclick="clickPublicS3Handler(event, {access_key_id: 'Q3AM3UQ867SPQQA43P2F', secret_access_key: 'zuf+tfteSlswRu7BJ86wekitnifILbZam1KYY3TG', endpoint: 'https://play.minio.io:9000/'});" href="https://play.minio.io:9000/">Minio</a>
+          Que vous utilisiez AWS ou une alternative compatible, Filestash est là pour vous aider à explorer vos buckets. Par exemple, vous pouvez vous connecter à <a onclick="clickPublicS3Handler(event, {access_key_id: 'Q3AM3UQ867SPQQA43P2F', secret_access_key: 'zuf+tfteSlswRu7BJ86wekitnifILbZam1KYY3TG', endpoint: 'https://play.minio.io:9000/'});" href="https://play.minio.io:9000/">Minio</a>
         </p>
         <img alt="illustration of the shared link screen" loading="lazy" class="fancy visible-xs" src="https://miro.medium.com/max/580/1*DHe24MbDHtbkOeIJzxrfdA.png" />
       </div>
 
       <div class="feature">
         <img alt="screenshot of the application" loading="lazy" class="fancy pull-right hidden-xs" src="/img/screenshots/viewerpage.png" />
-        <h2>Look and feel like a file manager</h2>
+        <h2>Apparence de gestionnaire de fichiers classique</h2>
         <p>
-          Filestash intends to be easy to use by everyone without training. Power users who need extra power can always use the complete <a href="https://docs.aws.amazon.com/cli/latest/reference/s3/">AWS CLI</a> to access all advanced features built for them.
+          Filestash se veut facile à utiliser par tous sans formation préalable puisqu'il fonctionne tout comme Dropbox ou Google Drive.
         </p>
         <img alt="screenshot of the application" loading="lazy" class="fancy visible-xs" src="/img/screenshots/viewerpage.png" />
       </div>
 
       <div class="feature">
         <img alt="agpl logo" loading="lazy" class="fancy pull-left hidden-xs" src="/img/posts/2019-08-20-ftp-web-client.html.2.png" />
-        <h2>Open source and Free software</h2>
+        <h2>Logiciel libre et open source</h2>
         <p>
-          You don't have to trust us. The code of our software is available on <a href="https://github.com/mickael-kerjean/filestash">Github</a> for everyone to download, audit, self-host and contribute back
+          Vous n'êtes pas obligé de nous faire confiance. Le code de notre logiciel est disponible sur <a href="https://github.com/mickael-kerjean/filestash">Github</a> pour que chacun puisse télécharger, auditer, auto-héberger et contribuer en retour.
         </p>
         <img alt="agpl logo" loading="lazy" class="fancy visible-xs" src="/img/posts/2019-08-20-ftp-web-client.html.2.png" />
       </div>
 
       <div class="feature">
         <img alt="logo of the 3 main operating system" loading="lazy" class="fancy pull-right hidden-xs" src="/img/posts/2019-08-20-ftp-web-client.html.4.png" />
-        <h2>Mac, Windows, Linux, IOS and Android</h2>
+        <h2>Mac, Windows, Linux, IOS et Android</h2>
         <p>
-          Filestash is the missing <strong>S3 app</strong> that's is available from your browser. No download required, our tool is portable and works on any platform
+          Filestash est l'application S3 manquante qui est disponible depuis votre navigateur. Aucun téléchargement requis, notre outil est portable et fonctionne sur n'importe quelle plateforme
         </p>
         <img alt="logo of the 3 main operating system" loading="lazy" class="fancy pull-left visible-xs" src="/img/posts/2019-08-20-ftp-web-client.html.4.png" />
       </div>
 
       <div class="feature">
         <img alt="screenshot of the shared link" loading="lazy" class="fancy pull-left hidden-xs" src="/img/screenshots/feature_share_0000.png" />
-        <h2>Collaborate easily</h2>
+        <h2>Collaborer facilement</h2>
         <p>
-          Filestash lets you create shared links without sharing your keys. Shared links can be protected with a password and/or only available to a specific email address or a domain (example: '*@my-company.com')
+          Filestash vous permet de créer des liens partagés sans partager vos clés. Les liens partagés peuvent être protégés par un mot de passe et/ou être disponibles uniquement pour une adresse e-mail spécifique ou un domaine (exemple : '*@my-company.com')
         </p>
         <img alt="screenshot of the shared link" loading="lazy" class="fancy visible-xs" src="/img/screenshots/feature_share_0000.png" />
       </div>
@@ -175,50 +173,50 @@ head:
 
       <div class="feature">
         <img alt="network drive in OSX finder" loading="lazy" class="fancy pull-right hidden-xs" src="/img/posts/2019-08-20-ftp-web-client.html.3.png" />
-        <h2>It integrates with your real File manager</h2>
+        <h2>Intègration à votre gestionnaire de fichiers</h2>
         <p>
-          Shared links can be mounted in your file manager and be used like any other <strong>network drive</strong>
+          Les liens partagés peuvent être montés dans votre gestionnaire de fichiers et être utilisés comme n'importe quel autre lecteur réseau
         </p>
         <img alt="network drive in OSX finder" loading="lazy" class="fancy visible-xs" src="/img/posts/2019-08-20-ftp-web-client.html.3.png" />
       </div>
 
       <div class="feature">
         <img alt="search screenshot" loading="lazy" class="fancy pull-left hidden-xs" src="/img/screenshots/search.png" />
-        <h2>Full-text search</h2>
+        <h2>Recherche de fichier</h2>
         <p>
-          Find your content is key. Filestash has a powerful full-text search engine. It will create its index automatically by crawling your buckets (The feature is disabled by default to avoid an extra charge from Amazon to crawl your bucket)
+          Trouver votre contenu est essentiel. Filestash dispose d'un puissant moteur de recherche que vous pouvez configurer soit pour la recherche de nom ou en texte intégral. 
         </p>
         <img alt="search screenshot" loading="lazy" class="fancy visible-xs" src="/img/screenshots/search.png" />
       </div>
 
       <div class="feature">
         <img alt="plugin" loading="lazy" class="fancy pull-right hidden-xs" src="/img/posts/2019-08-20-ftp-web-client.html.6.png" />
-        <h2>Extensible and Configurable</h2>
+        <h2>Extensible et configurable</h2>
         <p>
-          Filestash can be configured to look and feel in many different ways, both with your own design and through configuration via the admin console. If you need to get further, you can extend the program by creating custom <a href="/docs/plugin/">plugins</a>
+          Filestash peut être configuré pour avoir une apparence et un fonctionnement variés, à la fois avec votre propre design et via la configuration via la console d'administration. Si vous avez besoin d'aller plus loin, vous pouvez étendre le programme en créant des <a href="/docs/plugin/">plugins</a>
         </p>
         <img alt="plugin" loading="lazy" class="fancy visible-xs" src="/img/posts/2019-08-20-ftp-web-client.html.6.png" />
       </div>
 
     </div>
 
-    <h2 class="center" style="margin-top:0;">Creating an awesome S3 Browser</h2>
+    <h2 class="center" style="margin-top:0;">Notre objectif est de faire le meilleur navigateur S3 dit S3 browser</h2>
     <p>
-      Traditional S3 GUI and <a href="{% post_url 2020-07-14-aws-cli-guide %}">CLI</a> such as the <a href="https://aws.amazon.com/cli/">Amazon CLI</a>, <a href="https://cloudberry-explorer-for-amazon-s3.en.lo4d.com/windows">Cloudberry Explorer</a> or <a href="https://cyberduck.io/">Cyberduck</a> are great for sys admin who needs the full power of S3, but having access to all those features makes it harder to use for everyone else. The value proposition of Filestash is to make protocols and platform like Amazon S3 easy to use for the end-users (not sys admins who already have great tools to work with) bringing collaboration features and making S3 look and feel like a modern Dropbox replacement
+      Les interfaces graphiques et <a href="{% post_url 2020-07-14-aws-cli-guide %}">CLI S3</a> traditionnelles telles que l'interface de ligne de commande Amazon, <a href="https://cloudberry-explorer-for-amazon-s3.en.lo4d.com/windows">Cloudberry Explorer</a> ou <a href="https://cyberduck.io/">Cyberduck</a> sont idéales pour les administrateurs système qui ont besoin de toute la puissance de S3, mais l'accès à toutes ces fonctionnalités rend leur utilisation plus difficile pour les autres. La proposition de Filestash est de rendre les protocoles et la plateforme comme Amazon S3 faciles à utiliser pour les utilisateurs normaux et non les administrateurs système qui disposent déjà d'excellents outils pour travailler tout en apportant des fonctionnalités de collaboration et en donnant à S3 l'apparence et la convivialité d'un remplacement moderne de Dropbox     
     </p>
 
     <p style="margin-top: 100px;">
-      We hope you find Filestash as cool as we do. If you need help or want to chat, you can find us on IRC on Freenode at <a href="https://support.filestash.app/">#filestash</a>
+      Nous espérons que vous trouverez Filestash aussi cool que nous. Si vous avez besoin d'aide ou si vous voulez discuter, vous pouvez nous trouver sur IRC sur Freenode à <a href="https://support.filestash.app/">#filestash</a>
     </p>
     <br><br><br><br><br><br><br><br><br><br>
   </div>
 
   <div class="call-to-action">
-    <h2>See our other online web client:</h2>
-    <a class="btn light" href="{% post_url 2019-11-26-ftp-web-client %}">FTP</a>
+    <h2>Nos autres outils en ligne:</h2>
+    <a class="btn light" href="{% post_url 2019-11-26-ftp-web-client-fr %}">FTP</a>
     <a class="btn light" href="{% post_url 2020-01-04-ldap-browser %}">LDAP</a>
-    <a class="btn light" href="{% post_url 2020-04-30-sftp-browser %}">SFTP</a>
-    <a class="btn light" href="{% post_url 2021-10-18-webdav-client %}">WebDAV</a>
+    <a class="btn light" href="{% post_url 2020-04-30-sftp-browser-fr %}">SFTP</a>
+    <a class="btn light" href="{% post_url 2021-10-18-webdav-client-fr %}">WebDAV</a>
     <a class="btn light" href="https://demo.filestash.app/login">GIT</a>
   </div>
 
