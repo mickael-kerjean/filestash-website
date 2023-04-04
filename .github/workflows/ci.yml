@@ -39,7 +39,7 @@ jobs:
         KEY: ${{secrets.SSH_PRIVATE_KEY}}
         TARGET: /mnt/me-kerjean-pages/projects/filestash/website/
         VERBOSE: true
-        ARGS: -avn --delete
+        ARGS: -av --delete
         SSH_ARGS: '-p 22 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no'
         SOURCE: _site/
 
