@@ -151,4 +151,8 @@ Local file 'newfile.txt' created successfully.<br>
 
 </div>
 
-GPT-4 exceeded all my expectations. It not only simulated an FTP server like if that things actually existed, it did demonstrates some capacity to navigate through both a local and remote filesystem like with an actual FTP server and made up some content that would be of interest of any Disney enthusiast.
+GPT-4 exceeded all my expectations. It's not only able to simulate an FTP server, it did demonstrates some capacity to navigate through both a local and remote filesystem like with an actual FTP server and made up some content that would be of interest of any Disney enthusiast.
+
+To be continued when openai release their [code interpreter plugins](https://openai.com/blog/chatgpt-plugins) and we can actually access such made up server from any [FTP client]({% post_url 2019-11-26-ftp-web-client %}) and stream content straight from there with something like our [universal client](https://github.com/mickael-kerjean/filestash):
+
+<img class="fancy" src="/img/screenshots/viewerpage.png" />
