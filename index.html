@@ -14,6 +14,14 @@ head:
 	  <div class="col-sm-12">
         <div class="iframe-wrapper onlyForDesktop">
           <iframe id="appframe" frameborder="0" src="https://demo.filestash.app/login?type=webdav&url=https://webdav.filestash.app/" allow="fullscreen;speaker"></iframe>
+          <script>
+            fetch("https://demo.filestash.app/healthz").then((res) => {
+                if (res.ok) return;
+                throw new Error("err")
+            }).catch((err) => {
+                document.getElementById("appframe").parentElement.innerHTML = `<img alt="Filestash screenshot" src="/img/screenshots/viewerpage.png" />`;
+            })
+          </script>
         </div>
 	    <div class="hgroup">
 		  <h1>Filestash</h1>
