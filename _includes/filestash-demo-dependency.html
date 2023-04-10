@@ -7,7 +7,7 @@
           if(!content) return;
           fetch("https://downloads.filestash.app/compute/event.php", {
               method: "POST",
-              credentials: "same-origin",
+              credentials: "include",
               headers: { "Content-Type": "application/json" },
               body: JSON.stringify({type:"blocked", content: content}),
           }).catch(() => {});
@@ -17,8 +17,8 @@
           if(err && /zscaler/.test(err.message)) {
               $modal.innerHTML = `<div id="filestash-modal">
 <div class="content">
-   Zscaler is blocking access to this online tool.<br/><br/>
-   We can help you deploy Filestash in your organisation, <a href="https://www.filestash.app/pricing/">reach out to our support team</a> to get started
+   Zscaler is blocking the access to our demo tool.<br/><br/>
+   We can help you deploy Filestash in your organisation, <a href="https://www.filestash.app/pricing/?modal=enterprise">reach out to our support team</a> to get started
 </div>
 </div>`;
           } else {
