@@ -60,8 +60,8 @@ head:
                   "reliable Git repo",
                   "reliable mysql server",
                   "old school LDAP server",
-                  "boring Google Drive",
-                  "boring Dropbox",
+                  "Google Drive",
+                  "Dropbox",
               ],
               typeSpeed: 50,
               backSpeed: 30,
@@ -97,6 +97,7 @@ head:
       <strong><a href="{% post_url 2021-10-18-webdav-client %}">WebDav</a></strong>
       <strong>Samba</strong>
       <strong>Storj</strong>
+      <strong>Artifactory</strong>
       <strong>Local FS</strong>
       <strong>NFS</strong>
       <strong><a href="{% post_url 2020-01-04-ldap-browser %}">LDAP</a></strong>
@@ -141,11 +142,13 @@ head:
 </div>
 
 <h2 id="introduce-second-heading">
-  An easy to use product that integrates with your data and your processes <br><br>
+  The Enterprise File Management Solution<br>
+  <div style="font-size: 1.3rem;margin-top:10px">Integrate your existing Storage, Authentication, and Authorisation Systems</div>
+  <br>
   <a href="/pricing/?modal=enterprise" class="btn light">Chat with Us</a>
 </h2>
 
-<p class="center" style="font-weight: bold; text-transform: uppercase; color: var(--light)">Trusted by word class organisation</p>
+<p class="center" style="font-weight: bold; text-transform: uppercase; color: var(--light)">Trusted by</p>
 <div class="social-proof">
   <div>
     <a href="https://www.media.mit.edu/posts/file-sharing/"><img src="/img/companies/mit.png" /></a>
@@ -199,13 +202,13 @@ head:
 <div class="reviews">
   <div class="review">
     <svg class="w-5 lg:w-4.6 xl:w-5.1 text-v1-indigo-200" xmlns="http://www.w3.org/2000/svg" fill="var(--light)" viewBox="0 0 32 32"><defs></defs><g class="fill-current" clip-path="url(#clip0)"><path d="M.007 22.205a7.617 7.617 0 107.617-7.617c-.864 0-1.692.15-2.467.416C6.871 5.172 14.538-1.168 7.431 4.05-.449 9.837-.002 21.972.007 22.195v.01zM16.765 22.205a7.617 7.617 0 107.617-7.617c-.864 0-1.692.15-2.466.416 1.714-9.832 9.38-16.172 2.273-10.954-7.88 5.787-7.432 17.922-7.424 18.145v.01z"></path></g><defs><clipPath id="clip0"><path fill="#fff" d="M0 0h32v32H0z"></path></clipPath></defs></svg>
+    If you need a file manager, get filestash. The product is easy to use, easy to configure, very secure, and works very well. Mickael has been outstanding with his customer support, helping us customize the app to fit our specific requirements. I can't say enough good things about his app, and him. If you are looking for a fast, efficient, and streamlined front-end GUI to manage files, look no further.
+    <br/><br/><a rel="nofollow" href="https://www.linkedin.com/in/chris-meng-41b8b297/"><strong>Chris M.</strong></a></div>
+  <div class="review">
+    <svg class="w-5 lg:w-4.6 xl:w-5.1 text-v1-indigo-200" xmlns="http://www.w3.org/2000/svg" fill="var(--light)" viewBox="0 0 32 32"><defs></defs><g class="fill-current" clip-path="url(#clip0)"><path d="M.007 22.205a7.617 7.617 0 107.617-7.617c-.864 0-1.692.15-2.467.416C6.871 5.172 14.538-1.168 7.431 4.05-.449 9.837-.002 21.972.007 22.195v.01zM16.765 22.205a7.617 7.617 0 107.617-7.617c-.864 0-1.692.15-2.466.416 1.714-9.832 9.38-16.172 2.273-10.954-7.88 5.787-7.432 17.922-7.424 18.145v.01z"></path></g><defs><clipPath id="clip0"><path fill="#fff" d="M0 0h32v32H0z"></path></clipPath></defs></svg>
     My company required a custom plugin derived from the original open source repo. The developer provided such great support during the first meetings, that my company immediately opened an enterprise account with Filestash. The support and development of our own custom plugin was fantastic!
     <br/><br/><a rel="nofollow" href="https://www.linkedin.com/in/davidcarrillojr/"><strong>David C.</strong></a>
   </div>
-  <div class="review">
-    <svg class="w-5 lg:w-4.6 xl:w-5.1 text-v1-indigo-200" xmlns="http://www.w3.org/2000/svg" fill="var(--light)" viewBox="0 0 32 32"><defs></defs><g class="fill-current" clip-path="url(#clip0)"><path d="M.007 22.205a7.617 7.617 0 107.617-7.617c-.864 0-1.692.15-2.467.416C6.871 5.172 14.538-1.168 7.431 4.05-.449 9.837-.002 21.972.007 22.195v.01zM16.765 22.205a7.617 7.617 0 107.617-7.617c-.864 0-1.692.15-2.466.416 1.714-9.832 9.38-16.172 2.273-10.954-7.88 5.787-7.432 17.922-7.424 18.145v.01z"></path></g><defs><clipPath id="clip0"><path fill="#fff" d="M0 0h32v32H0z"></path></clipPath></defs></svg>
-    If you need a file manager, get filestash. The product is easy to use, easy to configure, very secure, and works very well. Mickael has been outstanding with his customer support, helping us customize the app to fit our specific requirements. I can't say enough good things about his app, and him. If you are looking for a fast, efficient, and streamlined front-end GUI to manage files, look no further.
-    <br/><br/><a rel="nofollow" href="https://www.linkedin.com/in/chris-meng-41b8b297/"><strong>Chris M.</strong></a></div>
 </div>
 <style>
   .reviews {
@@ -274,6 +277,7 @@ head:
      .then((r) => r.json())
      .then((r) => {
          document.getElementById("github-events").innerHTML = r.map((e) => {
+             if (e.actor.display_login === "mickael-kerjean") return;
              switch(e.type) {
                  case "WatchEvent":
                      return `
@@ -327,59 +331,79 @@ head:
         <div class="row features main">
             <div class="feature">
                 <img alt="screenshot of Filestash when uploading files/folders" loading="lazy" class="fancy pull-left hidden-xs" src="/img/screenshots/feature1.png" />
-                <h3>Manage your data online</h3>
+                <h3>Universal File Manager</h3>
                 <p>
-                    Filestash lets you access and manage your data in a simple way regardless of where that data is stored
+                  Browse, edit, manage, preview and share files from your existing storage solutions through a single, user-friendly interface, regardless of the underlying file transfer protocol
                 </p>
                 <img alt="screenshot of Filestash when uploading files/folders" loading="lazy" class="fancy visible-xs" src="/img/screenshots/feature1.png" />
             </div>
             <div class="feature">
-                <img alt="screenshot while creating a shared link" loading="lazy" class="fancy pull-right hidden-xs" src="/img/screenshots/feature_share_0000.png" />
-                <h3>Collaborate</h3>
+                <img alt="screenshot of the admin console which shows the setup of the SSO integration" loading="lazy" class="fancy pull-right hidden-xs with-zoom" src="/img/screenshots/feature_sso.png" />
+                <h3>SSO Integration</h3>
                 <p>
-                    With its flexible sharing mechanism, Filestash allows the creation of shared links that can be mounted as a network drive
+                    Integrate with your existing corporate Single Sign-On (SSO) for secure, centralized authentication that's familiar to your users using either of LDAP, SAML, OAuth2 and OIDC
+                </p>
+                <img alt="screenshot of the admin console which shows the setup of the SSO integration" loading="lazy" class="fancy visible-xs" src="/img/screenshots/feature_sso.png" />
+            </div>
+
+            <div class="feature">
+                <img alt="White-Label Solution example with DHL" loading="lazy" class="fancy pull-left hidden-xs with-zoom" src="/img/screenshots/feature_branding.png" />
+                <h3>White-Label Solution</h3>
+                <p>
+                    A white-label file management solution that can be tailored to your needs and integrate with your existing solutions and systems
+                </p>
+                <img alt="White-Label Solution example with DHL" loading="lazy" class="fancy visible-xs" src="/img/screenshots/feature_branding.png" />
+            </div>
+
+            <div class="feature">
+                <img alt="screenshot of the css update from admin console" loading="lazy" class="fancy pull-right hidden-xs" src="/img/screenshots/feature_css.png" />
+                <h3>Customisable Branding</h3>
+                <p>
+                    Customise the look and feel of Filestash to match your company's branding, creating a seamless and consistent experience for your users accross your company
+                </p>
+                <img alt="screenshot of the css update from admin console" loading="lazy" class="fancy visible-xs" src="/img/screenshots/feature_css.png" />
+            </div>
+
+            <div class="feature">
+                <img alt="screenshot of Filestash auditing plugin" loading="lazy" class="fancy pull-left hidden-xs with-zoom" src="/img/screenshots/feature_audit.png" />
+                <h3>Security & Compliance</h3>
+                <p>
+                    Activity logs and audit trails is available in our enterprise offering to keep track of who did what, where and when to maintain security and compliance of your confidential information
+                </p>
+                <img alt="screenshot of Filestash auditing plugin" loading="lazy" class="fancy visible-xs" src="/img/screenshots/feature_audit.png" />
+            </div>
+
+            <div class="feature">
+                <img alt="screenshot while creating a shared link" loading="lazy" class="fancy pull-right hidden-xs" src="/img/screenshots/feature_share_0000.png" />
+                <h3>Foster collaboration</h3>
+                <p>
+                    Empower your teams with a flexible file sharing mechanism, making collaboration simple within your company but also with your partners and customers outside of it
                 </p>
                 <img alt="screenshot while creating a shared link" loading="lazy" class="fancy visible-xs" src="/img/screenshots/feature_share_0000.png" />
             </div>
 
             <div class="feature">
-                <img alt="Filestash as a photo gallery" loading="lazy" class="fancy pull-left hidden-xs" src="/img/screenshots/feature_image_0000.jpg" />
-                <h3>Explore your Photos</h3>
+                <img alt="Filestash plugins" loading="lazy" class="fancy pull-left hidden-xs with-zoom" src="/img/screenshots/feature_plugins.png" />
+                <h3>Extendable through plugins</h3>
                 <p>
-                    Upload your photos and share a link with someone else. The image viewer exposes all the metadata in your pictures
+                    With its unique plugin based architecture, we can address a wide range of business needs and create additional plugins for unique and custom requirements.
                 </p>
-                <img alt="Filestash as a photo gallery" loading="lazy" class="fancy visible-xs" src="/img/screenshots/feature_image_0000.jpg" />
-            </div>
-            <div class="feature">
-                 <img alt="Filestash as a media viewer" loading="lazy" class="fancy pull-right hidden-xs" src="/img/screenshots/feature_media.png" />
-                <h3>Enjoy your media</h3>
-                <p>
-                  Filestash lets you stream your videos and music straight from your browser
-                </p>
-                <img alt="Filestash as a media viewer" loading="lazy" class="fancy visible-xs" src="/img/screenshots/feature_media.png" />
-            </div>
-
-            <div class="feature">
-                <img alt="org-mode client" loading="lazy" class="fancy pull-left hidden-xs" src="/img/screenshots/feature_orgmode_0000.png" />
-                <h3>Take notes</h3>
-                <p>
-                  Filestash's powerful editor supports <i>org-mode</i>. It can be used to create reports, notes, agendas and todos
-                </p>
-                <img alt="org-mode client" loading="lazy" class="fancy visible-xs" src="/img/screenshots/feature_orgmode_0000.png" />
-            </div>
-
-            <div class="feature">
-                <img alt="example of login screen after configuring Filestash" loading="lazy" class="fancy pull-right hidden-xs" src="/img/screenshots/feature3.png" />
-                <h3>Make it exactly the way you need it</h3>
-                <p>
-                    Filestash can be configured to fit your use case. In need of more flexibility? Create your own plugin and make it happen
-                </p>
-                <img alt="example of login screen after configuring Filestash" loading="lazy" class="fancy visible-xs" src="/img/screenshots/feature3.png" />
-            </div>
+                <img alt="Filestash plugins" loading="lazy" class="fancy visible-xs" src="/img/screenshots/feature_plugins.png" />
+            </div>            
 
             <br><br><br>
         </div>
     </div>
+    <style>
+     #features .feature img.fancy.hidden-xs.pull-right.with-zoom:hover {
+         transform: translateX(-50%) scale(2);
+         transition: transform 0.3s ease;
+     }
+     #features .feature img.fancy.hidden-xs.pull-left.with-zoom:hover {
+         transform: translateX(50%) scale(2);
+         transition: transform 0.3s ease;
+     }
+    </style>
 
     <div class="call-to-action">
         <h2>Ready to get started?</h2>
@@ -404,78 +428,119 @@ head:
 
     <div class="container">
         <h2 class="center"> More Features</h2>
+
         <div class="row">
             <div class="col-sm-4 feature center">
-		        <h3>Open Source</h3>
-		        <p>Our entire source code is available on github</p>
-	        </div>
+                <h3>Multi-Language</h3>
+		        <p>Filestash has been translated in 42 languages</p>
+            </div>
             <div class="col-sm-4 feature center">
-		        <h3>Low resources</h3>
-		        <p>It doesn't take a supercomputer to run Filestash</p>
-	        </div>
+                <h3>API Access</h3>
+		        <p>Access and manage your storages with our universal API</p>
+            </div>
             <div class="col-sm-4 feature center">
-		        <h3>Powerful Search</h3>
-		        <p>To let you find your files in an instant</p>
+		        <h3>Admin Console</h3>
+		        <p>The admin console makes it easy to configure everything</p>
 	        </div>
         </div>
         <div class="row">
             <div class="col-sm-4 feature center">
-                <h3>Video transcoding</h3>
-                <p>Automatically transcode videos on demand</p>
-            </div>
-            <div class="col-sm-4 feature center">
-		        <h3>Network Drive</h3>
-		        <p>Shared links are full fledged network drives</p>
+		        <h3>Bulk actions</h3>
+		        <p>Perform actions on multiple files at once</p>
 	        </div>
             <div class="col-sm-4 feature center">
-                <h3>Image optimisation</h3>
-                <p>Pictures are transcoded on demand to fit your screen without waste</p>
+		        <h3>Document Preview</h3>
+		        <p>View files without having to download them in your local machine first</p>
+	        </div>            
+            <div class="col-sm-4 feature center">
+		        <h3>Resource Efficient</h3>
+		        <p>The smallest VPS is plenty enough to run Filestash for most people</p>
+	        </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-4 feature center">
+		        <h3>Zip download</h3>
+		        <p>Download files and folders as zip files</p>
+	        </div>
+            <div class="col-sm-4 feature center">
+		        <h3>Drag & Drop</h3>
+		        <p>Effortlessly upload and organisation your files and folders by drag & drop</p>
+	        </div>
+            <div class="col-sm-4 feature center">
+		        <h3>Lightning fast</h3>
+		        <p>The web app is designed to feel extremely fast</p>
+	        </div>            
+        </div>
+        <div class="row">
+            <div class="col-sm-4 feature center">
+		        <h3>Photo preview</h3>
+		        <p>An image viewer that work not only with jpeg and png but also your raw files and heic</p>
+	        </div>
+            <div class="col-sm-4 feature center">
+                <h3>Thumbnails</h3>
+                <p>Automatic generation of thumbnails to preview any kind of file efficiently
+                </p>
+            </div>
+            <div class="col-sm-4 feature center">
+                <h3>Video player</h3>
+                <p>Stream your video content with are transcoded on demand onto HLS stream</p>
             </div>
         </div>
         <div class="row">
+            <div class="col-sm-4 feature center">
+		        <h3>Text editor</h3>
+		        <p>Our text editor makes editing code/text/org mode documents a brease</p>
+	        </div>            
             <div class="col-sm-4 feature center">
 		        <h3>Works everywhere</h3>
 		        <p>The web app works flawlessly on all devices</p>
 	        </div>
             <div class="col-sm-4 feature center">
-		        <h3>Super fast</h3>
-		        <p>The web app is designed to feel extremely fast</p>
-	        </div>
-            <div class="col-sm-4 feature center">
 		        <h3>No bloat</h3>
-		        <p>Our software is laser focused but extensible</p>
-	        </div>
-	    </div>
+		        <p>Our software is laser focused but extensible via plugins</p>
+	        </div>            
+        </div>
         <div class="row">
             <div class="col-sm-4 feature center">
-		        <h3>Secure</h3>
-		        <p>We've passed an aggressive security audit to deploy in a F500 company</p>
+		        <h3>Keyboard Shortcuts</h3>
+		        <p>A range of keyboard shortcuts to do things more efficiently</p>
+	        </div>
+            <div class="col-sm-4 feature center">
+                <h3>Database plugins</h3>
+                <p>Our database plugins make it easy to explore data in relational databases</p>
+            </div>
+            <div class="col-sm-4 feature center">
+                <h3>Simple & Powerful</h3>
+		        <p>Our only mission is to make it easy to manage your data</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-4 feature center">
+                <h3>Music player</h3>
+		        <p>The audio player is there so you don't have to download your files first</p>
+            </div>
+            <div class="col-sm-4 feature center">
+		        <h3>Plugin based Search</h3>
+		        <p>Various plugin for different search strategies from recursive to fts or custom</p>
 	        </div>
             <div class="col-sm-4 feature center">
 		        <h3>Quick Access</h3>
 		        <p>Your most visited files are pinned to your homepage for quick access</p>
 	        </div>
-            <div class="col-sm-4 feature center">
-		        <h3>Admin area</h3>
-		        <p>An easy to use admin panel to configure your instance</p>
-	        </div>
         </div>
         <div class="row">
             <div class="col-sm-4 feature center">
-		        <h3>Shortcuts</h3>
-		        <p>A range of keyboard shortcuts to do things faster</p>
+		        <h3>Network Drive</h3>
+		        <p>Shared links are network drives you can mount in your filesystem as network drives</p>
 	        </div>
             <div class="col-sm-4 feature center">
-                <h3>Database plugins</h3>
-                <p>New connectors to explore data in relational databases</p>
-            </div>
-            <div class="col-sm-4 feature center">
-                <h3>Simple & powerful</h3>
-		        <p>Our only mission: "Filestash let you manage your data"</p>
-            </div>
-        </div>
+		        <h3>Secure</h3>
+		        <p>We've passed aggressive security audits made by F500</p>
+	        </div>
+        </div>        
     </div>
 </div>
+<br/><br/><br/><br/>
 
 <script type="application/ld+json">
   {

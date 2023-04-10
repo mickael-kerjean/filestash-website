@@ -197,7 +197,9 @@
     height: 297px;
     width: 440px;
     object-fit: cover;
+    transition: transform 0.1s ease;
 }
+
 #features .features .feature:nth-child(even) > h2,
 #features .features .feature:nth-child(even) > h3,
 #features .features .feature:nth-child(even) > p {
