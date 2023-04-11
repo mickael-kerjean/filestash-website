@@ -109,7 +109,7 @@ blockquote p { margin: 0; }
 /*****************************
 /*******   CONTENT    ********
 /*****************************/
-#main { margin-top: 30px; margin-bottom: 60px; min-height: calc(100vh - 260px); box-sizing: border-box; }
+#main { margin-top: 30px; margin-bottom: 250px; min-height: calc(100vh - 260px); box-sizing: border-box; }
 
 #main h1 {
     font-size: 2.4rem;
@@ -120,7 +120,7 @@ blockquote p { margin: 0; }
     color: var(--secondary);
     padding-top: 10px;
     margin-top: 25px;
-    font-size: 24px;
+    font-size: 1.6rem;
     font-weight: bold;
     line-height: 28px;
 }
@@ -340,7 +340,7 @@ p[align="center"]{
     text-align: center!important;
 }
 
-img.fancy {
+img.fancy, svg.fancy {
     border: 9px solid #0000001a;
     border-radius: 5px;
     box-shadow: rgba(158, 163, 172, 0.3) 3px 3px 20px;
