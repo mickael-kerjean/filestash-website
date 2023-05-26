@@ -13,13 +13,15 @@ A curated list of hosting companies that provides [free FTP server](#fully-manag
 
 Some hosting companies are offering free FTP storage coming with FTP access such as:
 
-- [**Byet.host**](https://byet.host/): 5GB worth of storage space, 10MB maximum file size, PHP, Mysql, and a [lot more](https://byet.host/free-hosting)
+- [**TinkerHost.net**](https://tinkerhost.net/): 5GB worth of storage space, PHP & .htaccess support, FTP & MySQL access, and a [lot more](https://tinkerhost.net/free)
 
-- [**000webhost**](https://www.000webhost.com/): 300MB space, 3GB bandwith, PHP Mysql, no ads
+- [**Byet.host**](https://byet.host/): 5GB worth of storage space, 10MB maximum file size, PHP, MySQL, and a [lot more](https://byet.host/free-hosting)
 
-- [**Infinityfree.net**](https://infinityfree.net/): unlimited space and bandwidth, 10MB maximum file size
+- [**000webhost**](https://www.000webhost.com/): 300MB space, 3GB bandwith, PHP MySQL, no ads
 
-- [**profreehost.com**](https://profreehost.com/): claim to provide unlimited bandwidth and storage
+- [**Infinityfree.net**](https://infinityfree.net/): 5GB storage and 100MB bandwidth, 10MB maximum file size
+
+- [**profreehost.com**](https://profreehost.com/): 5GB storage and 100MB bandwidth, 10MB maximum file size
 
 
 
@@ -40,6 +42,7 @@ A lot of the FTP servers can be used for free. The most popular ones are:
 - [ProFTPd](http://www.proftpd.org/)
 - [PureFTPd](https://www.pureftpd.org/project/pure-ftpd/)
 - [vsFTPd](https://security.appspot.com/vsftpd.html)
+- [WinSCP](https://winscp.net/eng/download.php) (Windows Only)
 
 If you want to dig your options deeper, wikipedia also list [a few more options](https://en.wikipedia.org/wiki/Comparison_of_FTP_server_software_packages)
 
