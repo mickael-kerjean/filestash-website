@@ -39,7 +39,7 @@ Hardware requirement is minimal: 64MB of RAM and 1 core will give you plenty of 
 The installation can be done in 3 bash commands:
 <div class="terminal">
 <span class="prompt">~/$ </span>mkdir filestash && cd filestash<br>
-<span class="prompt">~/filestash$ </span>curl -O https://downloads.filestash.app/latest/docker-compose.yml<br>
+<span class="prompt">~/filestash$ </span>curl -O https://raw.githubusercontent.com/mickael-kerjean/filestash/master/docker/docker-compose.yml<br>
 <span class="stdout">
 % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current<br>
                                  Dload  Upload   Total   Spent    Left  Speed<br>
@@ -72,7 +72,7 @@ Enter the admin password you want to use to protect the admin console. The admin
 Upgrades are straightforward:
 
 <div class="terminal">
-<span class="prompt">~/filestash$ </span>curl -O https://downloads.filestash.app/latest/docker-compose.yml<br>
+<span class="prompt">~/filestash$ </span>curl -O https://raw.githubusercontent.com/mickael-kerjean/filestash/master/docker/docker-compose.yml<br>
 <span class="stdout">
 % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current<br>
                                  Dload  Upload   Total   Spent    Left  Speed<br>
