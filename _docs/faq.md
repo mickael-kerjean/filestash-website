@@ -1,7 +1,6 @@
 ---
 layout: documentation
 title: Faq
-order: 7
 language: en
 ---
 
@@ -62,4 +61,3 @@ Filestash's [original author](https://mickael.kerjean.me) couldn't find an open 
 ## What is the release policy / strategy
 
 See github issue [#490](https://github.com/mickael-kerjean/filestash/issues/490)
-

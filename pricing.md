@@ -145,7 +145,7 @@ head:
                     <div class="plan-name">
                         <h4>Pro</h4>
                         <div class="price">
-                            100$ / month
+                            150$ / month
                         </div>
                     </div>
                     <ul class="features">
@@ -979,33 +979,59 @@ head:
         <button class="btn">SUBMIT</button>
     </form>
 </div>
-<div id="installer" class="modal">
+<div id="installer" class="modal installer">
     <h3>Install for:</h3>
-    <div>
-        <a href="/redirect.html?origin=pricing::cloud&url=https://buy.stripe.com/7sIdSe9mCetEgPSeUW">Cloud</a>
-        <a href="/redirect.html?origin=pricing::selfhosted&url=https://buy.stripe.com/7sIdSe9mCetEgPSeUW">Selfhosted</a>
+    <div class="flex shortbox">
+        <a href="?modal=installer_cloud">Cloud</a>
+        <a href="?modal=installer_selfhosted">Selfhosted</a>
     </div>
-    <style>
-    #installer > div { display: flex;justify-content: space-between; }
-    #installer > div > a {
-      display: block;
-      width: 45%;
-      padding: 25px 0;
+</div>
+<div id="installer_selfhosted" class="modal">
+    <h3>Selfhosted</h3>
+    <div class="flex">
+        <a href="/redirect.html?origin=pricing::selfhosted&url=https://buy.stripe.com/8wM4hE0Q64T40QU3cd">Buy a license</a>
+        <a href="https://platform.filestash.app/support/book">Talk to an engineer</a>
+        <a href="?modal=enterprise&origin=pricing::installer_selfhosted">Schedule a demo</a>
+    </div>
+</div>
+<div id="installer_cloud" class="modal">
+    <h3>Cloud</h3>
+    <div class="flex">
+        <a href="/redirect.html?origin=pricing::cloud&url=https://buy.stripe.com/8wM4hE0Q64T40QU3cd">Purchase</a>
+        <a href="https://platform.filestash.app/support/book">Talk to an engineer</a>
+        <a href="https://demo.filestash.app">Try the demo instance</a>
+    </div>
+</div>
+
+
+<style>
+    .modal .flex { display: flex;justify-content: space-between; flex-wrap: wrap; }
+    .modal .flex > a {
+      padding: 10px 0;
       background: var(--primary);
       border-radius: 5px;
       text-align: center;
       font-size: 1.1rem;
       color: inherit;
+      display: block;
+      width: 100%;
+      margin: 10px 0 0 0;
     }
-    </style>
-</div>
+    .modal .flex.shortbox > a {
+      width: 45%;
+      padding: 25px 0;
+    }
+</style>
 
 <script>
   (function(){
+     const modalSelected = (new URLSearchParams(location.search)).get("modal");
+     console.log("MODAL", modalSelected)
+
      if(location.hash === "#support") {
          $('#support_register').modal({fadeDuration: 250});
          return;
-     } else if(location.search === "?modal=support") {
+     } else if(modalSelected === "support") {
          $('#support_register').modal({fadeDuration: 250});
          return;
      }
@@ -1013,13 +1039,19 @@ head:
      if (location.hash === "#enterprise") {
          $('#enterprise').modal({fadeDuration: 250});
          return;
-     } else if (location.search === "?modal=enterprise") {
+     } else if (modalSelected === "enterprise") {
          $('#enterprise').modal({fadeDuration: 250});
          return;
      }
 
-     if (location.search === "?modal=installer") {
+     if (modalSelected === "installer") {
          $('#installer').modal({fadeDuration: 250});
+         return;
+     } else if (modalSelected === "installer_selfhosted") {
+         $('#installer_selfhosted').modal({fadeDuration: 250});
+         return;
+     } else if (modalSelected === "installer_cloud") {
+         $('#installer_cloud').modal({fadeDuration: 250});
          return;
      }
 
@@ -1042,7 +1074,7 @@ head:
      text-align: center;
      font-weight: 500;
      font-size: 1.4rem;
-     margin: -15px -15px 20px -15px;
+     margin: -15px -15px 0px -15px;
      padding: 12px 0;
      border-top-left-radius: 4px;
      border-top-right-radius: 4px;

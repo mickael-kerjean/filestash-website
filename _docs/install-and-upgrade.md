@@ -7,12 +7,12 @@ language: en
 
 {% include toc.md %}
 
-## Requirement
+## Requirements
 
 The official installation method requires a Linux server with the following tools installed:
 - [docker](https://docs.docker.com/install/){:rel="nofollow"}
 - [docker-compose](https://docs.docker.com/compose/install/){:rel="nofollow"}
-- curl (very likely already installed by your Linux distribution)
+- curl
 
 <div class="terminal">
 <span class="prompt">~/$ </span>docker -v<br>
@@ -32,11 +32,12 @@ Features: ...<br>
 </span>
 </div>
 
-Hardware requirement is minimal: 64MB of RAM and 1 core will give you plenty of comfort. If you're expecting some heavy load, check out our [benchmark](/2019/05/06/benchmark/)
+Hardware requirement is minimal: 128MB of RAM and 1 core will give you plenty of comfort if you're not doing any heavy video transcoding and don't have many thousands of users
 
 ## Installation
 
-The installation can be done in 3 bash commands:
+The official Docker images are available on [DockerHub](https://hub.docker.com/r/machines/filestash/).
+
 <div class="terminal">
 <span class="prompt">~/$ </span>mkdir filestash && cd filestash<br>
 <span class="prompt">~/filestash$ </span>curl -O https://downloads.filestash.app/latest/docker-compose.yml<br>
@@ -52,20 +53,41 @@ Creating filestash_app ... done
 </span>
 </div>
 
-*Note*: Official Docker images are available on [DockerHub](https://hub.docker.com/r/machines/filestash/).
+Once the installation has completed, open up a browser and go to: `http://your_domain:8334`. You will be asked to set an admin password:
 
-Once the installation has completed, open up a browser and go to: `http://your_ip:8334`. You will be asked to set an admin password:
+<img class="fancy" src="https://raw.githubusercontent.com/mickael-kerjean/filestash_images/master/screenshots/setup_password.png" alt="setup screenshot" height="320px"/>
 
-<img src="https://raw.githubusercontent.com/mickael-kerjean/filestash_images/master/screenshots/setup_password.png" alt="setup screenshot" height="320px"/>
-Enter the admin password you want to use to protect the admin console. The admin console is available at the `/admin` url.
+## Setup
 
-## Preparing your instance
+In its most basic setup, you can enable / disable the storages you want like this:
 
-1. For a production instance, it is advised to fill the `host` value under `configure->general` with your domain name. This enables some additional security measures like HSTS and host name verification.
+<img class="fancy" src="/img/screenshots/doc_install_setup00.png" alt="storage backend screenshot" />
 
-2. You can enable full-text search via the admin console. This feature is disabled by default for 2 reasons:
-    - associated cost when you use a vendor like [S3]({% post_url 2019-11-21-s3-browser %}) that charges both for the bandwith and API calls. In your settings you can change the reindex time to a higher value to minimise cost at the expense of having some stale data in your index.
-    - privacy concerns, as creating a searchable index will result in your instance crawling through your content and keep some persistent data locally for the purpose of answering search queries.
+Effectively every single storage you see from the admin console is written as a plugin and while storage plugins are arguably the most important kind of plugins available, you can go a long way by using authentication middleware plugins.
+
+<svg class="fancy" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="541px" height="251px" viewBox="-0.5 -0.5 541 251" content="&lt;mxfile host=&quot;app.diagrams.net&quot; modified=&quot;2023-10-26T10:41:44.689Z&quot; agent=&quot;Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.0.0 Safari/537.36&quot; etag=&quot;eEwr9J-BfdjW0COSig_D&quot; version=&quot;22.0.8&quot; type=&quot;device&quot;&gt;&lt;diagram name=&quot;Page-1&quot; id=&quot;c8K3z8Ol-qs7Zjn3edB4&quot;&gt;5Zldc6IwFIZ/jZfrQACVS9bS6qwtHeLW2b3ZQYmQaSRuDKvtr99E4mfotLutllKd0fASonne4zlnpGF1Z6srFs3Taxoj0gBGvGpYFw0AHNASr1J4KATTtNuFkjAcK20nQPyIlGgoNccxWhxM5JQSjueH4oRmGZrwAy1ijC4Pp00pOfzUeZQgTYCTiOjqCMc8LdSOY+z0HsJJuvlk01BnZtFmshIWaRTT5Z5k+Q2ryyjlxWi26iIi4W24FNddPnF2+8UYyvhLLohHUwrb+a/ZHR3l3/owcru/v4BilT8RydWG4TAIvSu/IVdrEbHy1zETo0SOoB/e+aHaDn/YMBI7m8vhJB+Lt6/LFHME59FEaksRFkJL+YyII1MuR/MsRvFgvBWiyX3CpBrknOAMKT2O2H0glsFcBo/RNJxDEaxVOVNtAjGOVk/SMbfMRbAiOkOcPYgp6oKOcknF6fZ4uTPd3Jie7hnuKi1ScZZsV95ZIQbKjX9wxtKcuewPfDj0YE/I3SD0NR9YQVbhe8aGlDL8SDMebQSJD4vA9whOMqFxOn8btK1DtCbQ0Tr2OdHaGtonQzqm+ZggTyYSGXyYiRyDqcSzoLn89s9hfgN+pn0Um6YOEJTwa5+Kn6Px874Pe/7NsN/1hv3g5lMlDuA4FcscrY8V3pYJmkcI3zvA26UBHoT9nyq+axjHNqhaHHc+VhzbbsXStGlqACGnTDa8wLgleYKzxet6iPKWYYoJ6VJC2XpFa+rIp9RFt7GnFw+hLzij92jvTGv9eBtX2kfNR6skqlslrjgnc0WvnpfD29f5UGnirk68rNsDJwOu10NYL+KmWTXkegGFVp2AO1UDrtfKZrNZJ+Ju1Yi7GnFPdhqfp7IC67BhLC2tbeeMpXVj9p4n1ziOCVqKTX0iZ2zzJc6cs+kBeivaG956EI6C8KJGaQq0j8iXpCm35CdxsjQF9G4TwqBOxI+z0HsXBqC3m/UqxVbVGnygd5uh74k3I7gZ/KgReS2vl5DvnJV83dtOx65YdrH0FicMBq+8FVQp5Lb7PPKyvyH/A7k43N1+XZ/bu4lt+X8B&lt;/diagram&gt;&lt;/mxfile&gt;" style="padding:10px; box-sizing: content-box;"><defs/><g><path d="M 20 160 L 150 160 L 170 180 L 170 250 L 40 250 L 20 230 L 20 160 Z" fill="rgb(255, 255, 255)" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="all"/><path d="M 20 160 L 150 160 L 170 180 L 40 180 Z" fill-opacity="0.05" fill="#000000" stroke="none" pointer-events="all"/><path d="M 20 160 L 40 180 L 40 250 L 20 230 Z" fill-opacity="0.1" fill="#000000" stroke="none" pointer-events="all"/><path d="M 40 250 L 40 180 L 20 160 M 40 180 L 170 180" fill="none" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="all"/><g transform="translate(-0.5 -0.5)"><switch><foreignObject pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility" style="overflow: visible; text-align: left;"><div xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 128px; height: 1px; padding-top: 215px; margin-left: 41px;"><div data-drawio-colors="color: rgb(0, 0, 0); " style="box-sizing: border-box; font-size: 0px; text-align: center;"><div style="display: inline-block; font-size: 12px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; pointer-events: all; white-space: normal; overflow-wrap: normal;">STORAGE <br />SERVER</div></div></div></foreignObject><text x="105" y="219" fill="rgb(0, 0, 0)" font-family="Helvetica" font-size="12px" text-anchor="middle">STORAGE...</text></switch></g><rect x="0" y="0" width="540" height="90" rx="13.5" ry="13.5" fill="rgb(255, 255, 255)" stroke="rgb(0, 0, 0)" pointer-events="all"/><g transform="translate(-0.5 -0.5)"><switch><foreignObject pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility" style="overflow: visible; text-align: left;"><div xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe flex-start; justify-content: unsafe center; width: 538px; height: 1px; padding-top: 7px; margin-left: 1px;"><div data-drawio-colors="color: rgb(0, 0, 0); " style="box-sizing: border-box; font-size: 0px; text-align: center;"><div style="display: inline-block; font-size: 12px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; pointer-events: all; white-space: normal; overflow-wrap: normal;">FILESTASH CORE</div></div></div></foreignObject><text x="270" y="19" fill="rgb(0, 0, 0)" font-family="Helvetica" font-size="12px" text-anchor="middle">FILESTASH CORE</text></switch></g><path d="M 55 125 L 69 115 L 69 122 L 111 122 L 111 115 L 125 125 L 111 135 L 111 128 L 69 128 L 69 135 Z" fill="rgb(255, 255, 255)" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" transform="rotate(90,90,125)" pointer-events="all"/><path d="M 195 160 L 325 160 L 345 180 L 345 250 L 215 250 L 195 230 L 195 160 Z" fill="rgb(255, 255, 255)" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="all"/><path d="M 195 160 L 325 160 L 345 180 L 215 180 Z" fill-opacity="0.05" fill="#000000" stroke="none" pointer-events="all"/><path d="M 195 160 L 215 180 L 215 250 L 195 230 Z" fill-opacity="0.1" fill="#000000" stroke="none" pointer-events="all"/><path d="M 215 250 L 215 180 L 195 160 M 215 180 L 345 180" fill="none" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="all"/><g transform="translate(-0.5 -0.5)"><switch><foreignObject pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility" style="overflow: visible; text-align: left;"><div xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 128px; height: 1px; padding-top: 215px; margin-left: 216px;"><div data-drawio-colors="color: rgb(0, 0, 0); " style="box-sizing: border-box; font-size: 0px; text-align: center;"><div style="display: inline-block; font-size: 12px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; pointer-events: all; white-space: normal; overflow-wrap: normal;">AUTHENTICATION<br />SERVER</div></div></div></foreignObject><text x="280" y="219" fill="rgb(0, 0, 0)" font-family="Helvetica" font-size="12px" text-anchor="middle">AUTHENTICATION...</text></switch></g><path d="M 227.5 125 L 241.5 115 L 241.5 122 L 283.5 122 L 283.5 115 L 297.5 125 L 283.5 135 L 283.5 128 L 241.5 128 L 241.5 135 Z" fill="rgb(255, 255, 255)" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" transform="rotate(90,262.5,125)" pointer-events="all"/><path d="M 365 160 L 495 160 L 515 180 L 515 250 L 385 250 L 365 230 L 365 160 Z" fill="rgb(255, 255, 255)" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="all"/><path d="M 365 160 L 495 160 L 515 180 L 385 180 Z" fill-opacity="0.05" fill="#000000" stroke="none" pointer-events="all"/><path d="M 365 160 L 385 180 L 385 250 L 365 230 Z" fill-opacity="0.1" fill="#000000" stroke="none" pointer-events="all"/><path d="M 385 250 L 385 180 L 365 160 M 385 180 L 515 180" fill="none" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="all"/><g transform="translate(-0.5 -0.5)"><switch><foreignObject pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility" style="overflow: visible; text-align: left;"><div xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 128px; height: 1px; padding-top: 215px; margin-left: 386px;"><div data-drawio-colors="color: rgb(0, 0, 0); " style="box-sizing: border-box; font-size: 0px; text-align: center;"><div style="display: inline-block; font-size: 12px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; pointer-events: all; white-space: normal; overflow-wrap: normal;">AUTHORIZATION</div></div></div></foreignObject><text x="450" y="219" fill="rgb(0, 0, 0)" font-family="Helvetica" font-size="12px" text-anchor="middle">AUTHORIZATION</text></switch></g><path d="M 405 125 L 419 115 L 419 122 L 461 122 L 461 115 L 475 125 L 461 135 L 461 128 L 419 128 L 419 135 Z" fill="rgb(255, 255, 255)" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" transform="rotate(90,440,125)" pointer-events="all"/><rect x="10" y="40" width="160" height="50" rx="7.5" ry="7.5" fill="#f5f5f5" stroke="#666666" pointer-events="all"/><g transform="translate(-0.5 -0.5)"><switch><foreignObject pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility" style="overflow: visible; text-align: left;"><div xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe flex-start; justify-content: unsafe center; width: 158px; height: 1px; padding-top: 47px; margin-left: 11px;"><div data-drawio-colors="color: #333333; " style="box-sizing: border-box; font-size: 0px; text-align: center;"><div style="display: inline-block; font-size: 12px; font-family: Helvetica; color: rgb(51, 51, 51); line-height: 1.2; pointer-events: all; white-space: normal; overflow-wrap: normal;">Storage Plugins</div></div></div></foreignObject><text x="90" y="59" fill="#333333" font-family="Helvetica" font-size="12px" text-anchor="middle">Storage Plugins</text></switch></g><rect x="10" y="70" width="40" height="20" rx="3" ry="3" fill="#f5f5f5" stroke="#666666" pointer-events="all"/><g transform="translate(-0.5 -0.5)"><switch><foreignObject pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility" style="overflow: visible; text-align: left;"><div xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 38px; height: 1px; padding-top: 80px; margin-left: 11px;"><div data-drawio-colors="color: #333333; " style="box-sizing: border-box; font-size: 0px; text-align: center;"><div style="display: inline-block; font-size: 12px; font-family: Helvetica; color: rgb(51, 51, 51); line-height: 1.2; pointer-events: all; white-space: normal; overflow-wrap: normal;">FTP</div></div></div></foreignObject><text x="30" y="84" fill="#333333" font-family="Helvetica" font-size="12px" text-anchor="middle">FTP</text></switch></g><rect x="50" y="70" width="40" height="20" rx="3" ry="3" fill="#f5f5f5" stroke="#666666" pointer-events="all"/><g transform="translate(-0.5 -0.5)"><switch><foreignObject pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility" style="overflow: visible; text-align: left;"><div xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 38px; height: 1px; padding-top: 80px; margin-left: 51px;"><div data-drawio-colors="color: #333333; " style="box-sizing: border-box; font-size: 0px; text-align: center;"><div style="display: inline-block; font-size: 12px; font-family: Helvetica; color: rgb(51, 51, 51); line-height: 1.2; pointer-events: all; white-space: normal; overflow-wrap: normal;">SFTP</div></div></div></foreignObject><text x="70" y="84" fill="#333333" font-family="Helvetica" font-size="12px" text-anchor="middle">SFTP</text></switch></g><rect x="90" y="70" width="40" height="20" rx="3" ry="3" fill="#f5f5f5" stroke="#666666" pointer-events="all"/><g transform="translate(-0.5 -0.5)"><switch><foreignObject pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility" style="overflow: visible; text-align: left;"><div xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 38px; height: 1px; padding-top: 80px; margin-left: 91px;"><div data-drawio-colors="color: #333333; " style="box-sizing: border-box; font-size: 0px; text-align: center;"><div style="display: inline-block; font-size: 12px; font-family: Helvetica; color: rgb(51, 51, 51); line-height: 1.2; pointer-events: all; white-space: normal; overflow-wrap: normal;">S3</div></div></div></foreignObject><text x="110" y="84" fill="#333333" font-family="Helvetica" font-size="12px" text-anchor="middle">S3</text></switch></g><rect x="130" y="70" width="40" height="20" rx="3" ry="3" fill="#f5f5f5" stroke="#666666" pointer-events="all"/><g transform="translate(-0.5 -0.5)"><switch><foreignObject pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility" style="overflow: visible; text-align: left;"><div xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 38px; height: 1px; padding-top: 80px; margin-left: 131px;"><div data-drawio-colors="color: #333333; " style="box-sizing: border-box; font-size: 0px; text-align: center;"><div style="display: inline-block; font-size: 12px; font-family: Helvetica; color: rgb(51, 51, 51); line-height: 1.2; pointer-events: all; white-space: normal; overflow-wrap: normal;">...</div></div></div></foreignObject><text x="150" y="84" fill="#333333" font-family="Helvetica" font-size="12px" text-anchor="middle">...</text></switch></g><rect x="175" y="40" width="175" height="50" rx="7.5" ry="7.5" fill="#f5f5f5" stroke="#666666" pointer-events="all"/><g transform="translate(-0.5 -0.5)"><switch><foreignObject pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility" style="overflow: visible; text-align: left;"><div xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe flex-start; justify-content: unsafe center; width: 173px; height: 1px; padding-top: 47px; margin-left: 176px;"><div data-drawio-colors="color: #333333; " style="box-sizing: border-box; font-size: 0px; text-align: center;"><div style="display: inline-block; font-size: 12px; font-family: Helvetica; color: rgb(51, 51, 51); line-height: 1.2; pointer-events: all; white-space: normal; overflow-wrap: normal;">Auth Plugins</div></div></div></foreignObject><text x="263" y="59" fill="#333333" font-family="Helvetica" font-size="12px" text-anchor="middle">Auth Plugins</text></switch></g><rect x="355" y="40" width="170" height="50" rx="7.5" ry="7.5" fill="#f5f5f5" stroke="#666666" pointer-events="all"/><g transform="translate(-0.5 -0.5)"><switch><foreignObject pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility" style="overflow: visible; text-align: left;"><div xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe flex-start; justify-content: unsafe center; width: 168px; height: 1px; padding-top: 47px; margin-left: 356px;"><div data-drawio-colors="color: #333333; " style="box-sizing: border-box; font-size: 0px; text-align: center;"><div style="display: inline-block; font-size: 12px; font-family: Helvetica; color: rgb(51, 51, 51); line-height: 1.2; pointer-events: all; white-space: normal; overflow-wrap: normal;">Middleware Plugins</div></div></div></foreignObject><text x="440" y="59" fill="#333333" font-family="Helvetica" font-size="12px" text-anchor="middle">Middleware Plugins</text></switch></g><rect x="215" y="70" width="95" height="20" rx="3" ry="3" fill="#f5f5f5" stroke="#666666" pointer-events="all"/><g transform="translate(-0.5 -0.5)"><switch><foreignObject pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility" style="overflow: visible; text-align: left;"><div xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 93px; height: 1px; padding-top: 80px; margin-left: 216px;"><div data-drawio-colors="color: #333333; " style="box-sizing: border-box; font-size: 0px; text-align: center;"><div style="display: inline-block; font-size: 12px; font-family: Helvetica; color: rgb(51, 51, 51); line-height: 1.2; pointer-events: all; white-space: normal; overflow-wrap: normal;">HTPASSWORD</div></div></div></foreignObject><text x="263" y="84" fill="#333333" font-family="Helvetica" font-size="12px" text-anchor="middle">HTPASSWORD</text></switch></g><rect x="175" y="70" width="40" height="20" rx="3" ry="3" fill="#f5f5f5" stroke="#666666" pointer-events="all"/><g transform="translate(-0.5 -0.5)"><switch><foreignObject pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility" style="overflow: visible; text-align: left;"><div xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 38px; height: 1px; padding-top: 80px; margin-left: 176px;"><div data-drawio-colors="color: #333333; " style="box-sizing: border-box; font-size: 0px; text-align: center;"><div style="display: inline-block; font-size: 12px; font-family: Helvetica; color: rgb(51, 51, 51); line-height: 1.2; pointer-events: all; white-space: normal; overflow-wrap: normal;">SSO</div></div></div></foreignObject><text x="195" y="84" fill="#333333" font-family="Helvetica" font-size="12px" text-anchor="middle">SSO</text></switch></g><rect x="310" y="70" width="40" height="20" rx="3" ry="3" fill="#f5f5f5" stroke="#666666" pointer-events="all"/><g transform="translate(-0.5 -0.5)"><switch><foreignObject pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility" style="overflow: visible; text-align: left;"><div xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 38px; height: 1px; padding-top: 80px; margin-left: 311px;"><div data-drawio-colors="color: #333333; " style="box-sizing: border-box; font-size: 0px; text-align: center;"><div style="display: inline-block; font-size: 12px; font-family: Helvetica; color: rgb(51, 51, 51); line-height: 1.2; pointer-events: all; white-space: normal; overflow-wrap: normal;">...</div></div></div></foreignObject><text x="330" y="84" fill="#333333" font-family="Helvetica" font-size="12px" text-anchor="middle">...</text></switch></g><rect x="355" y="70" width="80" height="20" rx="3" ry="3" fill="#f5f5f5" stroke="#666666" pointer-events="all"/><g transform="translate(-0.5 -0.5)"><switch><foreignObject pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility" style="overflow: visible; text-align: left;"><div xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 78px; height: 1px; padding-top: 80px; margin-left: 356px;"><div data-drawio-colors="color: #333333; " style="box-sizing: border-box; font-size: 0px; text-align: center;"><div style="display: inline-block; font-size: 12px; font-family: Helvetica; color: rgb(51, 51, 51); line-height: 1.2; pointer-events: all; white-space: normal; overflow-wrap: normal;">READ ONLY</div></div></div></foreignObject><text x="395" y="84" fill="#333333" font-family="Helvetica" font-size="12px" text-anchor="middle">READ ONLY</text></switch></g><rect x="485" y="70" width="40" height="20" rx="3" ry="3" fill="#f5f5f5" stroke="#666666" pointer-events="all"/><g transform="translate(-0.5 -0.5)"><switch><foreignObject pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility" style="overflow: visible; text-align: left;"><div xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 38px; height: 1px; padding-top: 80px; margin-left: 486px;"><div data-drawio-colors="color: #333333; " style="box-sizing: border-box; font-size: 0px; text-align: center;"><div style="display: inline-block; font-size: 12px; font-family: Helvetica; color: rgb(51, 51, 51); line-height: 1.2; pointer-events: all; white-space: normal; overflow-wrap: normal;">...</div></div></div></foreignObject><text x="505" y="84" fill="#333333" font-family="Helvetica" font-size="12px" text-anchor="middle">...</text></switch></g><rect x="435" y="70" width="50" height="20" rx="3" ry="3" fill="#f5f5f5" stroke="#666666" pointer-events="all"/><g transform="translate(-0.5 -0.5)"><switch><foreignObject pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility" style="overflow: visible; text-align: left;"><div xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 48px; height: 1px; padding-top: 80px; margin-left: 436px;"><div data-drawio-colors="color: #333333; " style="box-sizing: border-box; font-size: 0px; text-align: center;"><div style="display: inline-block; font-size: 12px; font-family: Helvetica; color: rgb(51, 51, 51); line-height: 1.2; pointer-events: all; white-space: normal; overflow-wrap: normal;">ROLE</div></div></div></foreignObject><text x="460" y="84" fill="#333333" font-family="Helvetica" font-size="12px" text-anchor="middle">ROLE</text></switch></g></g><switch><g requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility"/><a transform="translate(0,-5)" xlink:href="https://www.drawio.com/doc/faq/svg-export-text-problems" target="_blank"><text text-anchor="middle" font-size="10px" x="50%" y="100%">Text is not SVG - cannot display</text></a></switch></svg>
+
+When using an authentication middleware, you force users to authenticate through another mean and can automatically connect your users according to the rules you defined in the attribute mapping section. To demonstrate this approach we will start with the `passthrough` plugin which is handy to either automatically login someone or to forward the username and password typed by the user to your storage:
+
+<img class="fancy" src="/img/screenshots/doc_install_setup03.png" alt="auth middleware screenshot using passthrough to be used as an FTP client" loading="lazy" />
+
+The attribute mapping section describes how the authentication binds to the storage. With this setup, when a user try to connect, he will see this:
+
+<img class="fancy" src="/img/screenshots/doc_install_setup02.png" alt="resulting frontend as an FTP client" loading="lazy" />
+
+Another very common use case is to create some facade to your existing storage. To do this, you can use a plugin like the `htpasswd` plugin to create some users and password that don't even exist in your storage like this:
+
+<img class="fancy" src="/img/screenshots/doc_install_setup04.png" alt="auth middleware screenshot using passthrough to be used as a S3 browser" loading="lazy" />
+
+With this setup, the `rick` user will have access to all the S3 buckets whereas the `jerry` user can only see the `earth` bucket. You have access to the entire golang templating language to build your rules alongside a few custom functions like .contains which is handy if you want to provide role based access ....
+
+We've only touched the surface of what plugins are capable of, virtually any aspect of Filestash can be changed to fit a very wide range of use case as it was build from the ground up to be extended via plugins.
+
+All the available plugins available in your build can be found from the `/about` page:
+
+<img class="fancy" src="/img/screenshots/doc_install_setup01.png" alt="about page screenshot" loading="lazy" />
+
+If you need help in your setup, we do provide professional services and have a wide range of plugins available off the shelve and can write custom plugins if needed, just [reach out to us](/pricing/?modal=installer_selfhosted) and we will help you out.
 
 ## Upgrade
 
@@ -101,86 +123,4 @@ In the meantime, community guides are also available:
 - sehnryr: [Installing Filestash on Debian 10 (Buster)](https://sehnryr.medium.com/installing-filestash-on-debian-10-buster-8b6d33c8daed)
 - *add your own with a PR*
 
-If you want to build and install Filestash by yourself, the reference is the [Dockerfile](https://github.com/mickael-kerjean/filestash/blob/master/docker/prod/Dockerfile){:rel="nofollow"}. This recipe is just one example of a custom build with an emphasis on speed, efficiency and features at the cost of installation size. You could shrink down the required space by 90% by disabling features such as image transcoding (getting rid of libvips and libraw), org-mode export (getting rid of emacs and our latex distribution) and other tools (such as pdftotext).
-
-## Optional: Using a reverse proxy
-
-Using a reverse proxy isn't mandatory but it is quite useful when you have multiple services installed on your server and can't dedicate ports 80 and 443 to one specific application.
-
-A sample configuration for Nginx:
-```
-# change the env variable to what you want to use
-export FILESTASH_DOMAIN=demo.filestash.app
-openssl dhparam -out /etc/letsencrypt/live/$FILESTASH_DOMAIN/dh2048.pem -outform PEM -2 2048
-
-cat > /etc/nginx/sites-available/filestash.conf <<EOF
-server {
-    listen         80;
-    server_name    $FILESTASH_DOMAIN;
-    return         301 https://\$server_name\$request_uri;
-}
-server {
-    listen 443 ssl;
-    server_name $FILESTASH_DOMAIN;
-    expires \$expires;
-
-    ssl on;
-    ssl_certificate /etc/letsencrypt/live/$FILESTASH_DOMAIN/fullchain.pem;
-    ssl_certificate_key /etc/letsencrypt/live/$FILESTASH_DOMAIN/privkey.pem;
-    ssl_dhparam /etc/letsencrypt/live/$FILESTASH_DOMAIN/dh2048.pem;
-    ssl_protocols TLSv1.1 TLSv1.2;
-    ssl_ciphers 'ECDHE-ECDSA-CHACHA20-POLY1305:ECDHE-RSA-CHACHA20-POLY1305:ECDHE-ECDSA-AES128-GCM-SHA256:ECDHE-RSA-AES128-GCM-SHA256:ECDHE-ECDSA-AES256-GCM-SHA384:ECDHE-RSA-AES256-GCM-SHA384:DHE-RSA-AES128-GCM-SHA256:DHE-RSA-AES256-GCM-SHA384:ECDHE-ECDSA-AES128-SHA256:ECDHE-RSA-AES128-SHA256:ECDHE-ECDSA-AES128-SHA:ECDHE-RSA-AES256-SHA384:ECDHE-RSA-AES128-SHA:ECDHE-ECDSA-AES256-SHA384:ECDHE-ECDSA-AES256-SHA:ECDHE-RSA-AES256-SHA:DHE-RSA-AES128-SHA256:DHE-RSA-AES128-SHA:DHE-RSA-AES256-SHA256:DHE-RSA-AES256-SHA:ECDHE-ECDSA-DES-CBC3-SHA:ECDHE-RSA-DES-CBC3-SHA:EDH-RSA-DES-CBC3-SHA:AES128-GCM-SHA256:AES256-GCM-SHA384:AES128-SHA256:AES256-SHA256:AES128-SHA:AES256-SHA:DES-CBC3-SHA:!DSS';
-    ssl_ecdh_curve secp384r1;
-
-    # file upload limit
-    client_max_body_size 1024M;
-
-    location / {
-        proxy_http_version 1.1;
-        proxy_set_header Upgrade \$http_upgrade;
-        proxy_set_header Connection "upgrade";
-
-        proxy_set_header     Host \$host:\$server_port;
-        proxy_set_header     X-Real-IP \$remote_addr;
-        proxy_set_header     X-Forwarded-For \$proxy_add_x_forwarded_for;
-        proxy_set_header     X-Forwarded-Proto \$scheme;
-        proxy_set_header     Origin '';
-
-        add_header Strict-Transport-Security "max-age=31536000; includeSubDomains" always;
-
-        proxy_pass           http://127.0.0.1:8334;
-        proxy_read_timeout   86400;
-    }
-}
-EOF
-
-ln -s /etc/nginx/sites-available/filestash.conf /etc/nginx/sites-enabled/filestash.conf
-nginx -t && service nginx restart
-```
-
-**Note**: Resist the temptation of using gzip or other caching mechanisms at reverse proxy level, you would waste valuable CPU cycles adding latency and increasing bandwith usage, creating issues with cache invalidation. Filestash is already doing its best at compile time, optimising performance at a level no reverse proxy could ever compete with by using a few lines of configuration and no deep knowledge of the underlying service.
-
-## Optional: Using a bind mount for persistent configuration
-
-You can make the configuration of your instance persistent by using bind mounts in the `docker-compose.yml` file.
-This might  be useful if you use tools like watchtower to automatically upgrade deployed containers.
-
-In most use-cases only the `/app/data/state`directory should be bound, as it contains the configuration files and database.
-
-Filestash currently *does not* create the needed files in an empty mount. Instead, you need to copy the base configuration after the first start.
-
-1. Create the directory which shall be used for the mount
-1. Use the provided `docker-compose.yml` to start the container (*do not* add the `volumes`-tag yet): `docker-compose up -d`
-1. Copy the contents of the `/app/data/state/` directory from within the running container to your host directory by issuing the following command on the host: `docker cp filestash:/app/data/state /path/to/your/local/mount/directory` (The name of the container may vary depending on your configuration)
-1. Stop and remove the container: `docker-compose down`
-1. Add the following block to you `docker-compose.yml` (at the same indent level as `image`):
-
-```
-...
-volumes:
-      - path/to/your/local/mount/directory:/app/data/state
-...
-```
-At the next start, the container will use the files saved on the host and your configuration will be kept throughout restarts and upgrades.
-
-Keep in mind that updates may change the structure of the directory and therefore may require you to modify the contents of the mount by hand, although the goal is to automatically migrate via scripts in this case.
+If you want to build and install Filestash by yourself, the reference is the [Dockerfile](https://github.com/mickael-kerjean/filestash/blob/master/docker/prod/Dockerfile){:rel="nofollow"}.

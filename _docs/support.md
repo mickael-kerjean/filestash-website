@@ -5,12 +5,10 @@ language: en
 order: 6
 ---
 
-You can register for enterprise support from [this link](/pricing/?modal=support)
+By becoming a customer you not only get to support our work but you will be given a turnkey solution that work for your exact needs, SLAs, extra plugins including SSO, branding, white labelling, custom build if needed, audit features, ...
 
-## Contribute to the project
+Also you will be given access to our [customer platform](https://platform.filestash.app) to get things done on your own or by interacting directly with us:
 
-If you want to contribute code, a good starting point is [our guide](https://github.com/mickael-kerjean/filestash/blob/master/CONTRIBUTING.md){:rel="nofollow"}.
+<img class="fancy" src="/img/screenshots/doc_support.png" alt="setup screenshot" />
 
-Also there are many ways to contribute which don't involve coding or becoming a customer. For example, you can:
-1. Improve the documentation: the website you are reading can be edited straight from the github interface.
-2. Report bugs
+To get started, either go through [this self service link](/redirect.html?origin=doc::support&url=https://buy.stripe.com/8wM4hE0Q64T40QU3cd) or [talk to us](/pricing/?modal=support&origin), we're just a bunch of techies that love tech and love to spend time talking to our customers to get them with the best solution for their needs.
