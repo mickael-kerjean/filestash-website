@@ -60,6 +60,8 @@ head:
             <span>Github</span>
             <span>Gitlab</span>
             <span>WebDav</span>
+            <span>NFS</span>
+            <span>Samba</span>
             <span>LDAP</span>
             <span>CalDAV</span>
             <span>CardDAV</span>

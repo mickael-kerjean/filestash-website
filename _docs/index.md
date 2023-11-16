@@ -10,16 +10,15 @@ head:
 ---
 
 To use Filestash, you can either:
-1. Run the application from the cloud: either via [our cloud](/redirect.html?origin=doc::cloud&url=https://buy.stripe.com/7sIdSe9mCetEgPSeUW) or the [AWS Marketplace](/install-cloud.html)
-2. Self-host the application on your own server and manage everything yourself: [see the documentation](/docs/install-and-upgrade/?release=agpl)
-3. Play around with the public [demos](https://demo.filestash.app):
-
+1. Launch it from the cloud using our [cloud service](/redirect.html?origin=doc::cloud&url=https://buy.stripe.com/7sIdSe9mCetEgPSeUW) or through the [AWS Marketplace](/install-cloud.html).
+2. Self-host on your own server - [see the documentation](/docs/install-and-upgrade/?release=agpl) for the detailed instructions
+3. Play with the [demo server](https://demo.filestash.app):
 <iframe style="width: 100%;height: 500px;border: 9px solid #0000001a;border-radius: 5px;box-sizing:border-box;" id="appframe" frameborder="0" src="https://demo.filestash.app/login" allow="fullscreen;speaker"></iframe>
 
 <div class="related">
     <div class="title">
-        Other Online Clients <br>
-        <img src="https://mickael.kerjean.me/assets/img/arrow_bottom.png"/>
+        Online Clients <br>
+        <img src="https://mickael.kerjean.me/assets/img/arrow_bottom.png">
     </div>
     <div class="related_content">
         <a href="{% post_url 2019-11-26-ftp-web-client %}"><h3 class="no-anchor">FTP Client</h3></a><a href="{% post_url 2020-04-30-sftp-browser %}"><h3 class="no-anchor">SFTP Client</h3></a><a href="{% post_url 2019-11-21-s3-browser %}"><h3 class="no-anchor">S3 Browser</h3></a><a href="{% post_url 2021-10-18-webdav-client %}"><h3 class="no-anchor">WebDAV Client</h3></a><a href="{% post_url 2020-01-04-ldap-browser %}"><h3 class="no-anchor">LDAP Browser</h3></a>
