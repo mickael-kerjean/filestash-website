@@ -40,7 +40,7 @@ The official docker images are available on [docker hub](https://hub.docker.com/
 
 <div class="terminal">
 <span class="prompt">~/$ </span>mkdir filestash && cd filestash<br>
-<span class="prompt">~/filestash$ </span>curl -O https://downloads.filestash.app/latest/docker-compose.yml<br>
+<span class="prompt">~/filestash$ </span>curl -O https://raw.githubusercontent.com/mickael-kerjean/filestash/master/docker/docker-compose.yml<br>
 <span class="stdout">
 % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current<br>
                                  Dload  Upload   Total   Spent    Left  Speed<br>
@@ -113,7 +113,7 @@ To truly grasp the breadth of options available through plugins, delving into th
 To update Filestash:
 
 <div class="terminal">
-<span class="prompt">~/filestash$ </span>curl -O https://downloads.filestash.app/latest/docker-compose.yml<br>
+<span class="prompt">~/filestash$ </span>curl -O https://raw.githubusercontent.com/mickael-kerjean/filestash/master/docker/docker-compose.yml<br>
 <span class="stdout">
 % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current<br>
                                  Dload  Upload   Total   Spent    Left  Speed<br>
