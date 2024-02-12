@@ -254,7 +254,7 @@ blockquote p { margin: 0; }
     opacity: 1;
 }
 .btn.light:disabled, .btn.light:hover, .btn.light:focus{
-    background: var(--light);
+    background: rgba(255,255,255,0.2);
 }
 .btn:active {
     box-shadow: none;

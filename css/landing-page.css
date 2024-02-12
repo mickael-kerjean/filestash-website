@@ -25,9 +25,8 @@
     border-bottom: 3px solid var(--emphasis-primary);
 }
 #splash h1, #splash h2{
-    display:inline;
-    font-size:1.70rem;
-    line-height: 2rem;
+    display: inline;
+    font-size: 1.8rem;
     font-weight: normal;
     color: inherit;
     text-shadow: 0 0 2px var(--bg-color);
@@ -37,7 +36,7 @@
 #splash p.button {
     margin-top: 50px;
 }
-#splash p a.btn{ padding-left: 35px; padding-right: 35px; }
+#splash p a.btn{ padding-left: 10px; padding-right: 10px; }
 #splash .row {
     max-width:1200px;
     margin: 0 auto;
@@ -135,7 +134,7 @@
 
 /* Features */
 #features {
-    padding: 50px 0 80px;
+    padding: 50px 0 0px 0;
 }
 #features h2 {
     margin-top: 150px;

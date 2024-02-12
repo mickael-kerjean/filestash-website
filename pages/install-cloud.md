@@ -10,7 +10,7 @@ h1 { margin-top: 4rem; }
 
 
 
-We will be assuming you already have an AWS Account. If that's not the case, you can either [create an account on your own](https://aws.amazon.com/resources/create-account/) or [reach out to us](/pricing/?modal=enterprise) and we will look after everything on your behalf. 
+We will be assuming you already have an AWS Account. If that's not the case, you can either [create an account on your own](/redirect.html?origin=pricing::selfhosted&url=https://aws.amazon.com/resources/create-account/) or [reach out to us](/pricing/?modal=enterprise&origin=doc::aws) and we will look after everything on your behalf.
 
 This guide is split in 3 parts:
 

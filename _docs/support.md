@@ -13,4 +13,4 @@ Upon onboarding, you'll unlock access to our dedicated [customer platform](https
 
 <img class="fancy" src="/img/screenshots/doc_support.png" alt="setup screenshot" />
 
-Ready to dive in? Use this [self-service link](/redirect.html?origin=doc::support&url=https://buy.stripe.com/8wM4hE0Q64T40QU3cd) or [talk to us](/pricing/?modal=support&origin); we love spending time talking to our customers.
+Ready to dive in? Use this [self-service link](/redirect.html?origin=doc::support&url=https://buy.stripe.com/bIY15scyObhs6be006) or [talk to us](/pricing/?modal=support&origin=doc::support); we love spending time talking to our customers.

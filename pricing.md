@@ -170,7 +170,7 @@ head:
                         <li>Audit & Compliance</li>
                         <li>Custom plugin</li>
                     </ul>
-                    <a class="btn action" href="./?modal=enterprise">START</a>
+                    <a class="btn action" href="./?modal=enterprise">BOOK A DEMO</a>
                 </div>
             </div>
         </div>
@@ -383,11 +383,6 @@ head:
 
 
 <div class="container" id="faq">
-    <h3 data-target="#why-paying">Why should I pay for an open source software?</h3>
-    <div class="collapse" id="why-paying">
-        Usage of Open Source software comes with rights and obligations. The open Source license is ideal for use cases where you don't need support and all obligations under the AGPL license can be met. Otherwise we suggest a commercial license.
-    </div>
-
     <h3 data-target="#choices-of-license">What are the licensing options available?</h3>
     <div class="collapse" id="choices-of-license">
         <ul>
@@ -406,6 +401,11 @@ head:
         No. The commercial license exempt you from the obligation of the AGPLv3 license.
     </div>
 
+    <h3 data-target="#why-paying">Why should I pay for an open source software?</h3>
+    <div class="collapse" id="why-paying">
+        Usage of Open Source software comes with rights and obligations. The open Source license is ideal for use cases where you don't need any kind of support, customisations and all obligations under the AGPL license can be met. Otherwise we suggest a commercial license.
+    </div>
+
     <h3 data-target="#after-expiration">Can I continue to use my commercial license after it has expired?</h3>
     <div class="collapse" id="after-expiration">
         No. Once expired, the license would require to open source your solution
@@ -418,7 +418,7 @@ head:
 
     <h3 data-target="#more-questions">What if I have more questions?</h3>
     <div class="collapse" id="more-questions">
-        Send us an email at mickael@kerjean.me and we’ll help you out.
+        Send us an email at support@filestash.app and we’ll help you out.
     </div>
 
     <h3 data-target="#how-payment-done">How is my payment being processed?</h3>
@@ -619,6 +619,20 @@ head:
                 <td><i class="check"></i></td>
             </tr>
             <tr>
+                <td>NFS</td>
+                <td data-related="cloud"><i class="check"></i></td>
+                <td data-related="selfhosted"><i class="check"></i></td>
+                <td><i class="check"></i></td>
+                <td><i class="check"></i></td>
+            </tr>
+            <tr>
+                <td>Artifactory</td>
+                <td data-related="cloud"><i class="check"></i></td>
+                <td data-related="selfhosted"><i class="check"></i></td>
+                <td><i class="check"></i></td>
+                <td><i class="check"></i></td>
+            </tr>
+            <tr>
                 <td><a href="{% post_url 2019-11-21-s3-browser %}">S3</a></td>
                 <td data-related="cloud"><i class="check"></i></td>
                 <td data-related="selfhosted"><i class="check"></i></td>
@@ -633,13 +647,6 @@ head:
                 <td><i class="check"></i></td>
             </tr>
             <tr>
-                <td>Backblaze B2</td>
-                <td data-related="cloud"><i class="check"></i></td>
-                <td data-related="selfhosted"><i class="check"></i></td>
-                <td><i class="check"></i></td>
-                <td><i class="check"></i></td>
-            </tr>
-            <tr>
                 <td>GIT</td>
                 <td data-related="cloud"><i class="check"></i></td>
                 <td data-related="selfhosted"><i class="check"></i></td>
@@ -648,6 +655,27 @@ head:
             </tr>
             <tr>
                 <td><a href="{% post_url 2020-01-04-ldap-browser %}">LDAP</a></td>
+                <td data-related="cloud"><i class="check"></i></td>
+                <td data-related="selfhosted"><i class="check"></i></td>
+                <td><i class="check"></i></td>
+                <td><i class="check"></i></td>
+            </tr>
+            <tr>
+                <td>Local Filesystem</td>
+                <td data-related="cloud"><i class="check"></i></td>
+                <td data-related="selfhosted"><i class="check"></i></td>
+                <td><i class="check"></i></td>
+                <td><i class="check"></i></td>
+            </tr>
+            <tr>
+                <td>Backblaze B2</td>
+                <td data-related="cloud"><i class="check"></i></td>
+                <td data-related="selfhosted"><i class="check"></i></td>
+                <td><i class="check"></i></td>
+                <td><i class="check"></i></td>
+            </tr>
+            <tr>
+                <td>Storj</td>
                 <td data-related="cloud"><i class="check"></i></td>
                 <td data-related="selfhosted"><i class="check"></i></td>
                 <td><i class="check"></i></td>
@@ -674,6 +702,20 @@ head:
                 <td><i class="check"></i></td>
                 <td><i class="check"></i></td>
             </tr>
+            <tr>
+                <td>Azure Blob</td>
+                <td data-related="cloud"><i class="close"></i></td>
+                <td data-related="selfhosted"><i class="close"></i></td>
+                <td><i class="close"></i></td>
+                <td><i class="check"></i></td>
+            </tr>
+            <tr>
+                <td>Google Cloud Storage</td>
+                <td data-related="cloud"><i class="close"></i></td>
+                <td data-related="selfhosted"><i class="close"></i></td>
+                <td><i class="close"></i></td>
+                <td><i class="check"></i></td>
+            </tr>
 
             <tr class="header">
                 <td colspan="5">
@@ -681,21 +723,21 @@ head:
                 </td>
             </tr>
             <tr>
-                <td>Image viewer</td>
+                <td>API access</td>
                 <td data-related="cloud"><i class="check"></i></td>
                 <td data-related="selfhosted"><i class="check"></i></td>
                 <td><i class="check"></i></td>
                 <td><i class="check"></i></td>
             </tr>
             <tr>
-                <td>Image transcoding</td>
+                <td>Image transcoding / viewer</td>
                 <td data-related="cloud"><i class="check"></i></td>
                 <td data-related="selfhosted"><i class="check"></i></td>
                 <td><i class="check"></i></td>
                 <td><i class="check"></i></td>
             </tr>
             <tr>
-                <td>Video viewer</td>
+                <td>Video transcoding / viewer</td>
                 <td data-related="cloud"><i class="check"></i></td>
                 <td data-related="selfhosted"><i class="check"></i></td>
                 <td><i class="check"></i></td>
@@ -737,60 +779,62 @@ head:
                 <td><i class="check"></i></td>
             </tr>
             <tr>
-                <td>Branding</td>
+                <td>Branding and White Labeling</td>
+                <td data-related="cloud"><i class="close"></i></td>
+                <td data-related="selfhosted"><i class="close"></i></td>
+                <td><i class="close"></i></td>
+                <td><i class="check"></i></td>
+            </tr>
+            <tr>
+                <td>SSO using OIDC</td>
                 <td data-related="cloud"><i class="close"></i></td>
                 <td data-related="selfhosted"><i class="close"></i></td>
                 <td><i class="check"></i></td>
+                <td><i class="check"></i></td>
+            </tr>
+            <tr>
+                <td>SSO using SAML</td>
+                <td data-related="cloud"><i class="close"></i></td>
+                <td data-related="selfhosted"><i class="close"></i></td>
+                <td><i class="check"></i></td>
+                <td><i class="check"></i></td>
+            </tr>
+            <tr>
+                <td>LDAP integration</td>
+                <td data-related="cloud"><i class="close"></i></td>
+                <td data-related="selfhosted"><i class="close"></i></td>
+                <td><i class="check"></i></td>
+                <td><i class="check"></i></td>
+            </tr>
+            <tr>
+                <td>MFA integration</td>
+                <td data-related="cloud"><i class="close"></i></td>
+                <td data-related="selfhosted"><i class="close"></i></td>
+                <td><i class="close"></i></td>
+                <td><i class="check"></i></td>
+            </tr>
+            <tr>
+                <td>Enterprise search integration</td>
+                <td data-related="cloud"><i class="close"></i></td>
+                <td data-related="selfhosted"><i class="close"></i></td>
+                <td><i class="close"></i></td>
+                <td><i class="check"></i></td>
+            </tr>
+            <tr>
+                <td>Custom integration</td>
+                <td data-related="cloud"><i class="close"></i></td>
+                <td data-related="selfhosted"><i class="close"></i></td>
+                <td><i class="close"></i></td>
+                <td><i class="check"></i></td>
+            </tr>
+            <tr>
+                <td>Priority Feature Requests</td>
+                <td data-related="cloud"><i class="close"></i></td>
+                <td data-related="selfhosted"><i class="close"></i></td>
+                <td><i class="close"></i></td>
                 <td><i class="check"></i></td>
             </tr>
 
-            <tr class="header">
-                <td colspan="5">
-                    <h3>Administration</h3>
-                </td>
-            </tr>
-            <tr>
-                <td>Admin console</td>
-                <td data-related="cloud"><i class="check"></i></td>
-                <td data-related="selfhosted"><i class="check"></i></td>
-                <td><i class="check"></i></td>
-                <td><i class="check"></i></td>
-            </tr>
-            <tr>
-                <td>Security tools</td>
-                <td data-related="cloud"><i class="check"></i></td>
-                <td data-related="selfhosted"><i class="check"></i></td>
-                <td><i class="check"></i></td>
-                <td><i class="check"></i></td>
-            </tr>
-            <tr>
-                <td>Bring your own DNS</td>
-                <td data-related="cloud"><i class="close"></i></td>
-                <td data-related="selfhosted"><i class="check"></i></td>
-                <td><i class="check"></i></td>
-                <td><i class="check"></i></td>
-            </tr>
-            <tr>
-                <td>Customisation</td>
-                <td data-related="cloud"><i class="close"></i></td>
-                <td data-related="selfhosted"><i class="close"></i></td>
-                <td><i class="close"></i></td>
-                <td><i class="check"></i></td>
-            </tr>
-            <tr>
-                <td>Detailed Audit</td>
-                <td data-related="cloud"><i class="close"></i></td>
-                <td data-related="selfhosted"><i class="close"></i></td>
-                <td><i class="close"></i></td>
-                <td><i class="check"></i></td>
-            </tr>
-            <tr>
-                <td>Cluster</td>
-                <td data-related="cloud"><i class="close"></i></td>
-                <td data-related="selfhosted"><i class="close"></i></td>
-                <td><i class="close"></i></td>
-                <td><i class="check"></i></td>
-            </tr>
 
             <tr class="header">
                 <td colspan="5">
@@ -798,14 +842,42 @@ head:
                 </td>
             </tr>
             <tr>
-                <td>Custom build</td>
+                <td>Dedicated Account Manager</td>
                 <td data-related="cloud"><i class="close"></i></td>
                 <td data-related="selfhosted"><i class="close"></i></td>
                 <td><i class="close"></i></td>
                 <td><i class="check"></i></td>
             </tr>
             <tr>
-                <td>Setup advices</td>
+                <td>Compliance Report</td>
+                <td data-related="cloud"><i class="close"></i></td>
+                <td data-related="selfhosted"><i class="close"></i></td>
+                <td><i class="close"></i></td>
+                <td><i class="check"></i></td>
+            </tr>
+            <tr>
+                <td>SLA</td>
+                <td data-related="cloud"><i class="close"></i></td>
+                <td data-related="selfhosted"><i class="close"></i></td>
+                <td><i class="check"></i></td>
+                <td><i class="check"></i></td>
+            </tr>
+            <tr>
+                <td>Custom SLA</td>
+                <td data-related="cloud"><i class="close"></i></td>
+                <td data-related="selfhosted"><i class="close"></i></td>
+                <td><i class="close"></i></td>
+                <td><i class="check"></i></td>
+            </tr>
+            <tr>
+                <td>Managed Upgrades</td>
+                <td data-related="cloud"><i class="close"></i></td>
+                <td data-related="selfhosted"><i class="close"></i></td>
+                <td><i class="close"></i></td>
+                <td><i class="check"></i></td>
+            </tr>
+            <tr>
+                <td>Tailored build</td>
                 <td data-related="cloud"><i class="close"></i></td>
                 <td data-related="selfhosted"><i class="close"></i></td>
                 <td><i class="close"></i></td>
@@ -868,14 +940,70 @@ head:
                 <td><i class="check"></i></td>
             </tr>
             <tr>
-                <td>Consulting</td>
+                <td>Professional services</td>
                 <td data-related="cloud"><i class="close"></i></td>
                 <td data-related="selfhosted"><i class="close"></i></td>
                 <td><i class="close"></i></td>
                 <td><i class="check"></i></td>
             </tr>
             <tr>
-                <td>SLA</td>
+                <td>Security services</td>
+                <td data-related="cloud"><i class="close"></i></td>
+                <td data-related="selfhosted"><i class="close"></i></td>
+                <td><i class="close"></i></td>
+                <td><i class="check"></i></td>
+            </tr>
+            <tr>
+                <td>Setup advices</td>
+                <td data-related="cloud"><i class="close"></i></td>
+                <td data-related="selfhosted"><i class="close"></i></td>
+                <td><i class="close"></i></td>
+                <td><i class="check"></i></td>
+            </tr>
+
+
+            <tr class="header">
+                <td colspan="5">
+                    <h3>Administration</h3>
+                </td>
+            </tr>
+            <tr>
+                <td>Admin console</td>
+                <td data-related="cloud"><i class="check"></i></td>
+                <td data-related="selfhosted"><i class="check"></i></td>
+                <td><i class="check"></i></td>
+                <td><i class="check"></i></td>
+            </tr>
+            <tr>
+                <td>Bring your own DNS</td>
+                <td data-related="cloud"><i class="close"></i></td>
+                <td data-related="selfhosted"><i class="check"></i></td>
+                <td><i class="check"></i></td>
+                <td><i class="check"></i></td>
+            </tr>
+            <tr>
+                <td>Audit Engine</td>
+                <td data-related="cloud"><i class="close"></i></td>
+                <td data-related="selfhosted"><i class="close"></i></td>
+                <td><i class="check"></i></td>
+                <td><i class="check"></i></td>
+            </tr>
+            <tr>
+                <td>Cluster</td>
+                <td data-related="cloud"><i class="close"></i></td>
+                <td data-related="selfhosted"><i class="close"></i></td>
+                <td><i class="close"></i></td>
+                <td><i class="check"></i></td>
+            </tr>
+            <tr>
+                <td>Intrusion detection system</td>
+                <td data-related="cloud"><i class="check"></i></td>
+                <td data-related="selfhosted"><i class="close"></i></td>
+                <td><i class="check"></i></td>
+                <td><i class="check"></i></td>
+            </tr>
+            <tr>
+                <td>Customisation</td>
                 <td data-related="cloud"><i class="close"></i></td>
                 <td data-related="selfhosted"><i class="close"></i></td>
                 <td><i class="close"></i></td>
@@ -892,13 +1020,6 @@ head:
                 <td data-related="cloud"><i>N/A</i></td>
                 <td data-related="selfhosted"><i class="check"></i></td>
                 <td><i class="check"></i></td>
-                <td><i class="check"></i></td>
-            </tr>
-            <tr>
-                <td>Custom install</td>
-                <td data-related="cloud"><i>N/A</i></td>
-                <td data-related="selfhosted"><i class="close"></i></td>
-                <td><i class="close"></i></td>
                 <td><i class="check"></i></td>
             </tr>
             <tr>
@@ -922,6 +1043,15 @@ head:
                 <td><i class="close"></i></td>
                 <td><i class="check"></i></td>
             </tr>
+            <tr>
+                <td>Custom install</td>
+                <td data-related="cloud"><i>N/A</i></td>
+                <td data-related="selfhosted"><i class="close"></i></td>
+                <td><i class="close"></i></td>
+                <td><i class="check"></i></td>
+            </tr>
+
+
         </tbody>
     </table>
 </div>
@@ -991,7 +1121,7 @@ head:
 <div id="installer_selfhosted" class="modal">
     <h3>Selfhosted</h3>
     <div class="flex">
-        <a href="/redirect.html?origin=pricing::selfhosted&url=https://buy.stripe.com/8wM4hE0Q64T40QU3cd">Buy a license</a>
+        <a href="/redirect.html?origin=pricing::selfhosted&url=https://buy.stripe.com/bIY15scyObhs6be006">Buy a license</a>
         <a href="https://platform.filestash.app/support/book">Talk to an engineer</a>
         <a href="?modal=enterprise&origin=pricing::installer_selfhosted">Schedule a demo</a>
     </div>
