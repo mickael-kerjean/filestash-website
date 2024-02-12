@@ -821,6 +821,13 @@ head:
                 <td><i class="check"></i></td>
             </tr>
             <tr>
+                <td>Document Signature</td>
+                <td data-related="cloud"><i class="close"></i></td>
+                <td data-related="selfhosted"><i class="close"></i></td>
+                <td><i class="close"></i></td>
+                <td><i class="check"></i></td>
+            </tr>
+            <tr>
                 <td>Custom integration</td>
                 <td data-related="cloud"><i class="close"></i></td>
                 <td data-related="selfhosted"><i class="close"></i></td>
@@ -859,7 +866,7 @@ head:
                 <td>SLA</td>
                 <td data-related="cloud"><i class="close"></i></td>
                 <td data-related="selfhosted"><i class="close"></i></td>
-                <td><i class="check"></i></td>
+                <td><i class="close"></i></td>
                 <td><i class="check"></i></td>
             </tr>
             <tr>
@@ -922,7 +929,7 @@ head:
                 <td>Enhanced Security</td>
                 <td data-related="cloud"><i class="close"></i></td>
                 <td data-related="selfhosted"><i class="close"></i></td>
-                <td><i class="check"></i></td>
+                <td><i class="close"></i></td>
                 <td><i class="check"></i></td>
             </tr>
             <tr>
@@ -1004,6 +1011,61 @@ head:
             </tr>
             <tr>
                 <td>Customisation</td>
+                <td data-related="cloud"><i class="close"></i></td>
+                <td data-related="selfhosted"><i class="close"></i></td>
+                <td><i class="close"></i></td>
+                <td><i class="check"></i></td>
+            </tr>
+
+            <tr class="header">
+                <td colspan="5">
+                    <h3>Software Configuration</h3>
+                </td>
+            </tr>
+            <tr>
+                <td>Filesystem</td>
+                <td data-related="cloud"><i class="check"></i></td>
+                <td data-related="selfhosted"><i class="check"></i></td>
+                <td><i class="check"></i></td>
+                <td><i class="check"></i></td>
+            </tr>
+            <tr>
+                <td>ENV Variable</td>
+                <td data-related="cloud"><i class="close"></i></td>
+                <td data-related="selfhosted"><i class="close"></i></td>
+                <td><i class="close"></i></td>
+                <td><i class="check"></i></td>
+            </tr>
+            <tr>
+                <td>AWS S3</td>
+                <td data-related="cloud"><i class="close"></i></td>
+                <td data-related="selfhosted"><i class="close"></i></td>
+                <td><i class="close"></i></td>
+                <td><i class="check"></i></td>
+            </tr>
+            <tr>
+                <td>AWS Secret Manager</td>
+                <td data-related="cloud"><i class="close"></i></td>
+                <td data-related="selfhosted"><i class="close"></i></td>
+                <td><i class="close"></i></td>
+                <td><i class="check"></i></td>
+            </tr>
+            <tr>
+                <td>Google Secret Manager</td>
+                <td data-related="cloud"><i class="close"></i></td>
+                <td data-related="selfhosted"><i class="close"></i></td>
+                <td><i class="close"></i></td>
+                <td><i class="check"></i></td>
+            </tr>
+            <tr>
+                <td>Google Cloud Storage</td>
+                <td data-related="cloud"><i class="close"></i></td>
+                <td data-related="selfhosted"><i class="close"></i></td>
+                <td><i class="close"></i></td>
+                <td><i class="check"></i></td>
+            </tr>
+            <tr>
+                <td>Azure File Storage</td>
                 <td data-related="cloud"><i class="close"></i></td>
                 <td data-related="selfhosted"><i class="close"></i></td>
                 <td><i class="close"></i></td>
