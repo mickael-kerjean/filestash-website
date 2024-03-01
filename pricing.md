@@ -351,6 +351,7 @@ head:
  .onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-switch {
      right: 0px;
  }
+ form input[type="text"].control {display: none;}
 </style>
 <script>
  jQuery(document).ready(function() {
@@ -1158,6 +1159,7 @@ head:
         <input type="email" name="email" placeholder="Email Address" />
         <input type="phone" name="phone" placeholder="Phone Number" />
         <input type="text" name="job-title" placeholder="Job Title" />
+        <input type="text" name="description" placeholder="Your needs in more details" class="control" />
         <textarea name="message" placeholder="what are you trying to achieve? How can we help you?" rows="4"></textarea>
         <button class="btn">SUBMIT</button>
     </form>
@@ -1170,6 +1172,7 @@ head:
         <input type="text" name="company" placeholder="Your company name" />
         <input type="email" name="email" placeholder="Your email address" />
         <input type="phone" name="phone" placeholder="Your phone number" />
+        <input type="text" name="description" placeholder="Your needs in more details" class="control" />
         <button class="btn">SUBMIT</button>
     </form>
 </div>

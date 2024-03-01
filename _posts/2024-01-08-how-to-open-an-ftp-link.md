@@ -3,6 +3,7 @@ title: How to open a FTP link?
 description: An online tool to open urls with ftp://
 layout: post
 language: en
+tags: ftp
 head:
 - <link rel="stylesheet" href="/css/form.css">
 ---

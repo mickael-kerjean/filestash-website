@@ -16,7 +16,7 @@ If that's not already the case, you first need to [install and configure the AWS
 
 ## List Files and buckets with 'aws s3 ls'
 
-**list your buckets**:
+**list buckets**:
 <div class="terminal">
 <span class="prompt">~/$ </span>aws s3 ls<br>
 <span class="stdout">
@@ -61,7 +61,7 @@ If that's not already the case, you first need to [install and configure the AWS
 </span>
 </div>
 
-## Manage data on S3
+## Manage data on S3 via the CLI
 
 **create a bucket**:
 <div class="terminal">
@@ -151,6 +151,14 @@ remove_bucket: testing-tutorial
      "mainEntity": [
          {
              "@type": "Question",
+             "name": "The AWS CLI command to list S3 buckets?",
+             "acceptedAnswer": {
+                 "@type": "Answer",
+                 "text": "aws s3 ls"
+             }
+         },
+         {
+             "@type": "Question",
              "name": "How to list things on S3?",
              "acceptedAnswer": {
                  "@type": "Answer",
@@ -233,13 +241,11 @@ remove_bucket: testing-tutorial
  }
 </script>
 
+## Manager data on S3 via our web client
 
+The S3 CLI is great but sometime you might need something usable by people who would get scared of the terminal, in those scenario, the Filestash <a href="{% post_url 2019-11-21-s3-browser %}">S3 browser</a> is very handy:
 
-<figure style="margin-top:100px;">
-    <figcaption style="text-align:center;">If you're on the look for an S3 client that is usable by non nerds, check our <a href="{% post_url 2019-11-21-s3-browser %}">S3 browser</a>:</figcaption>
-    <a href="{% post_url 2019-11-21-s3-browser %}"><img class="fancy" src="/img/screenshots/viewerpage.png" /></a>
-</figure>
-
+<a href="{% post_url 2019-11-21-s3-browser %}"><img class="fancy" src="/img/screenshots/viewerpage.png" /></a>
 
 <div class="related">
     <div class="title">

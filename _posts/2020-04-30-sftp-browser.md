@@ -1,13 +1,14 @@
 ---
-title: SFTP Browser | An online SFTP client tool
-description: SFTP Online. A 100% online SFTP client to access your SFTP server as if it was a modern file sharing service.
+title: The simplest SFTP Client
+description: An online SFTP client that lets you manage your files and make your file transfers over SSH directly from your browser, with no installation required.
 layout: landing
-permalink: /sftp-browser.html
+permalink: /sftp-client.html
 tags: sftp oem online-client tool
 language: en
 redirect_from:
   - /online-sftp-browser.html
   - /ssh-file-transfer.html
+  - /sftp-browser.html
 head:
   - <link rel="alternate" href="https://www.filestash.app/fr/client-sftp-en-ligne.html" hreflang="fr" />
 ---
@@ -19,7 +20,7 @@ head:
   <div class="row">
     <div class="col-sm-12">
       <div class="hgroup">
-        <h1>SSH File transfer made easy with our <a href="https://en.wikipedia.org/wiki/SSH_File_Transfer_Protocol">SFTP</a> Browser</h1>
+        <h1>The <a href="https://en.wikipedia.org/wiki/SSH_File_Transfer_Protocol">SFTP</a> Client that make SSH File transfer easy</h1>
       </div>
       <form onsubmit='$("form input[type=\"submit\"]").attr("value", "LOADING...")' action="https://demo.filestash.app/login" method="GET">
         <input type="hidden" name="type" value="sftp" />
