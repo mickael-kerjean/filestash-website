@@ -3,7 +3,7 @@ title: Quick Guide - Setting up a local S3 testing server
 description: Create a simple local bucket in 30seconds with docker and localstack
 layout: post
 permalink: /s3-server.html
-tags: S3
+tags: s3
 language: en
 ---
 
