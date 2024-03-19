@@ -63,6 +63,30 @@ head:
 </div>
 <div class="waveshape"></div>
 
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "WebDAV Client",
+  "applicationCategory": "WebApplication",
+  "operatingSystem": "Any",
+  "description": "Access and manage your WebDAV server directly from your browser with our online WebDAV client",
+  "url": "https://www.filestash.app/webdav-client.html",
+  "screenshot": [
+    "https://www.filestash.app/img/screenshots/viewerpage.png",
+    "https://www.filestash.app/img/screenshots/feature1.png"
+  ],
+  "featureList": [
+    "file manager like operation to your webdav server",
+    "Direct file upload and download",
+    "Easy navigation and file management",
+    "Application viewers and document editor for all your files",
+    "Extensible via plugins"
+  ]
+}
+</script>
+
+
 <div id="features" style="padding-bottom:0">
   <div class="container large">
     <div class="row features main">
