@@ -3,37 +3,37 @@
     <div class="row">
       <div class="col-sm-10">
         {% if page.language == "en" %}
-        <h4>Topics:</h4>
+        <strong>Topics:</strong
         <div class="flex">
           {{ site | tag_cloud }}
         </div>
         {% endif %}
         {% if page.language == "fr" %}
-        <h4>Tags:</h4>
+        <strong>Tags:</strong>
         <div class="flex">
           {{ site | tag_cloud }}
         </div>
         {% endif %}
         {% if page.language == "it" %}
-        <h4>Argomenti:</h4>
+        <strong>Argomenti:</strong>
         <div class="flex">
           {{ site | tag_cloud }}
         </div>
         {% endif %}
         {% if page.language == "pt" %}
-        <h4>Tópicos:</h4>
+        <strong>Tópicos:</strong>
         <div class="flex">
           {{ site | tag_cloud }}
         </div>
         {% endif %}
         {% if page.language == "es" %}
-        <h4>Temas:</h4>
+        <strong>Temas:</strong>
         <div class="flex">
           {{ site | tag_cloud }}
         </div>
         {% endif %}
         {% if page.language == "de" %}
-        <h4>Themen:</h4>
+        <strong>Themen:</strong>
         <div class="flex">
           {{ site | tag_cloud }}
         </div>
@@ -54,10 +54,11 @@
       padding-top: 80px;
       padding-bottom: 70px;
   }
-  #footer h4 {
+  #footer strong {
       font-size: 1.1rem;
       color: inherit;
       margin: 0 0 10px;
+      display: block;
   }
   #footer img {
       height: 50px;
