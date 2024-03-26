@@ -147,20 +147,21 @@ head:
                     <div class="plan-name">
                         <h4>Pro</h4>
                         <div class="price">
-                            150$ / month
+                            0.1 $ / hour
                         </div>
                     </div>
                     <ul class="features">
                         <li>Commercial License</li>
-                        <li>Cloud / Selfhosted</li>
+                        <li>AWS Cloud</li>
                     </ul>
-                    <a href="./?modal=installer" class="btn">START</a>
+                    <!--<a href="./?modal=installer" class="btn">START</a>-->
+                    <a href="https://www.filestash.app/install-cloud.html" class="btn">START</a>
                 </div>
                 <div class="plan" id="plan-enterprise">
                     <div class="plan-name">
                         <h4>Enterprise</h4>
                         <div class="price">
-                            Suited to your needs
+                            Tailored solutions
                         </div>
                     </div>
                     <ul class="features">
@@ -168,9 +169,9 @@ head:
                         <li>Whitelabeling</li>
                         <li>Single sign-on</li>
                         <li>Audit & Compliance</li>
-                        <li>Custom plugin</li>
+                        <li>Custom plugin development</li>
                     </ul>
-                    <a class="btn action" href="./?modal=enterprise">BOOK A DEMO</a>
+                    <a class="btn action" href="./?modal=enterprise">CONTACT US</a>
                 </div>
             </div>
         </div>
@@ -1153,6 +1154,7 @@ head:
 </script>
 <div id="enterprise" class="modal">
     <h3>Enterprise</h3>
+    <a href="#" rel="modal:close">x</a>
     <form onsubmit="submitForm(event)" action="https://downloads.filestash.app/compute/form.php" method="post">
         <input type="hidden" name="type" value="enterprise" />
         <input type="hidden" name="redirect" value="https://www.filestash.app/ok/" />
@@ -1166,6 +1168,7 @@ head:
 </div>
 <div id="support_register" class="modal">
     <h3>Register for support</h3>
+    <a href="#" rel="modal:close">x</a>
     <form onsubmit="submitForm(event)" action="https://downloads.filestash.app/compute/form.php" method="post">
         <input type="hidden" name="type" value="support::register" />
         <input type="hidden" name="redirect" value="https://www.filestash.app/ok/" />
@@ -1218,12 +1221,18 @@ head:
       width: 45%;
       padding: 25px 0;
     }
+    .modal [rel="modal:close"] {
+        position:absolute;
+        top:10px;
+        right:20px;
+        font-family:monospace;
+        color:inherit;
+    }
 </style>
 
 <script>
   (function(){
      const modalSelected = (new URLSearchParams(location.search)).get("modal");
-     console.log("MODAL", modalSelected)
 
      if(location.hash === "#support") {
          $('#support_register').modal({fadeDuration: 250});
