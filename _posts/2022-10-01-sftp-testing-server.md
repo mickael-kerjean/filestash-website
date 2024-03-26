@@ -110,4 +110,15 @@ If you have a hard time converting everbody to the CLI, check our [SFTP client](
  }
 </style>
 
-
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "Simple SFTP Server",
+  "applicationCategory": "Utility",
+  "operatingSystem": "Linux",
+  "downloadUrl": "https://archive.kerjean.me/public/2022/sftp.bin",
+  "softwareVersion": "1.0",
+  "description": "A minimalistic SFTP server for testing purpose"
+}
+</script>
