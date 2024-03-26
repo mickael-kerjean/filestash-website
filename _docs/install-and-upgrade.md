@@ -3,6 +3,8 @@ layout: documentation
 title: Install and upgrade
 order: 2
 language: en
+redirect_from:
+  - /docs/configuration/
 ---
 
 {% include toc.md %}
