@@ -103,7 +103,7 @@
     text-align: left;
 }
 #splash #oem span { padding: 9px 5px 9px 0; }
-#splash #oem .btn{ margin: 0; text-align: center; }
+#splash #oem .btn{ margin: 0; text-align: center; display:flex; align-self:center; }
 
 #introduce-second-heading{
     margin: 0 0 50px 0;

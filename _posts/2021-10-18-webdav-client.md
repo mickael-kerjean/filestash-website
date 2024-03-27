@@ -55,7 +55,7 @@ head:
   <div class="container">
     <div id="oem">
       <span>
-        Filestash can be tailored with your company colors and logo, integrating with your corporate single signed on. We will go the extra mile to fullfil your needs and requirements for customisation
+          Want to run your own version of Filestash? Tailor every aspect via plugins or from the admin console, from integrating your FTP with your SSO provider or opting for full white labeling, we've got you covered. Filestash is the most adaptable file manager available.
       </span>
       <a href="/pricing/?modal=enterprise" class="btn">Chat with us</a>
     </div>
