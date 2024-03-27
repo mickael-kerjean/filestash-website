@@ -1,6 +1,8 @@
 ---
 layout: default
 permalink: /redirect.html
+head:
+  - <meta name="robots" content="noindex">
 ---
 
 {% include menu.html %}
@@ -15,6 +17,7 @@ permalink: /redirect.html
       var $counter = document.getElementById("redirect-counter");
 
       var redirect_uri = (new URLSearchParams(location.search)).get("url");
+      if (!redirect_uri) location.href = "/"
       var origin = new URL(redirect_uri).origin;
 
       var is_valid = false;
