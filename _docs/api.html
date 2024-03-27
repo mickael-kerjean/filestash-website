@@ -4,9 +4,6 @@ title: API
 language: en
 order: 7
 ---
-<style>
-  .banner{ display: none; }
-</style>
 
 <div id="doc-api">
     <style>
@@ -32,10 +29,16 @@ order: 7
         font-size: 1.1rem;
         flex-grow: 2;
     }
+    .endpoint > .endpoint-header .action {
+        background: var(--primary);
+        padding: 10px;
+        border-radius: 15px;
+    }
     .endpoint > .endpoint-header .action img {
-        width: 30px;
+        width: 20px;
         float: right;
         cursor: pointer;
+        filter: brightness(0) invert(1);
     }
 
     .endpoint > .endpoint-body {
@@ -124,17 +127,21 @@ order: 7
    }
   </script>
 
-  <p>
-  Filestash has an API to enable developers to interact with any type of storage in one consistent manner whether it's S3, SFTP, FTP or anything else. To start using that API, you first need to create an API key from the admin console:</p>
+    <p>
+      Filestash has a builtin API that allows developers to interact with any of the supported storage in a consistent manner, whether it’s S3, SFTP, FTP, .... To use it, you first need to generate an API key from the admin console:</p>
 
   <img src="/img/posts/2022-11-01-api-documentation.png" class="fancy"/>
   <p>
-    For the sake of this documentation page, we've setup that api key 'foobar' which has some cors rules setup to work from any filestash subdomain making this page entirely interactive. Also we've created a shared link called 'shareID' which we will be using in this page. The list of curl commands will only be working if you set this up first in your terminal:
+    We've setup the "foobar" api key and have associated some cors rules for any filestash subdomain effectively making this page entirely interactive. Once done, we've made a shared link called 'shareID' which we will also be using to interact with the API. If you want to copy paste the curl commands scattered in this page, you will need to do a bit of setup:
   </p>
   <pre>
 export INSTANCE=https://demo.filestash.app
 export SHARE=shareID
 export KEY=foobar</pre>
+
+  <div class="banner">
+    Note: This page only covers the part of the API that is ready for general consumption. The full API extends much beyond that but unless you have a support contract, you are expected to either explore it from our source code and/or with the network tab open.
+  </div>
 
 
   <h2 id="files">API for File management</h2>

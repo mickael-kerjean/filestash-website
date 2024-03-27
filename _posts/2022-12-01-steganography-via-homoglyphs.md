@@ -207,7 +207,7 @@ language: en
     padding: 25px;
     border-radius: 5px;
     color: var(--bg-color);
-    box-shadow: 0px 0px 50px rgb(0 0 0 / 50%); 
+    box-shadow: 0px 0px 50px rgb(0 0 0 / 50%);
  }
  .tool fieldset {
     color: var(--color);
