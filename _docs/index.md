@@ -10,7 +10,7 @@ head:
 ---
 
 To use Filestash, you can either:
-1. Launch it from the cloud using our [cloud service](/redirect.html?origin=doc::cloud&url=https://buy.stripe.com/4gwcOa0Q6bhs6be8wz) or through the [AWS Marketplace](/install-cloud.html).
+1. Launch it from the cloud via [the AWS Marketplace](/install-cloud.html).
 2. Self-host on your own server - [see the documentation](/docs/install-and-upgrade/?release=agpl) for the detailed instructions
 3. Play with the [demo server](https://demo.filestash.app):
 <iframe style="width: 100%;height: 500px;border: 9px solid #0000001a;border-radius: 5px;box-sizing:border-box;" id="appframe" frameborder="0" src="https://demo.filestash.app/login" allow="fullscreen;speaker"></iframe>
