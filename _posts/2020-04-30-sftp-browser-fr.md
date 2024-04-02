@@ -7,6 +7,7 @@ tags: sftp oem online-client
 language: fr
 head:
   - <link rel="alternate" href="https://www.filestash.app/sftp-browser.html" hreflang="en" />
+  - <link rel="alternate" href="https://www.filestash.app/fr/client-sftp-en-ligne.html" hreflang="fr" />
 ---
 
 <link rel="stylesheet" href="/css/landing-page.css">
@@ -89,7 +90,7 @@ head:
           <img loading="lazy" class="fancy pull-left hidden-xs" src="https://miro.medium.com/max/580/1*DHe24MbDHtbkOeIJzxrfdA.png" />
           <h2>Compatible avec tous les serveurs SFTP</h2>
           <p>
-              Notre logiciel fonctionne parfaitement avec tous les serveurs SFTP qui implémente le <a href="https://tools.ietf.org/html/draft-ietf-secsh-filexfer-13">protocole SFTP</a> comme <a href="https://www.openssh.com/">Openssh</a>, <a href="http://proftpd.org/">ProFTPD</a> et 
+              Notre logiciel fonctionne parfaitement avec tous les serveurs SFTP qui implémente le <a href="https://tools.ietf.org/html/draft-ietf-secsh-filexfer-13">protocole SFTP</a> comme <a href="https://www.openssh.com/">Openssh</a>, <a href="http://proftpd.org/">ProFTPD</a> et
 même vos buckets Amazon S3 via <a href="https://console.aws.amazon.com/transfer/home">AWS Transfer Family</a>
         </p>
         <img alt="illustration of the shared link screen" loading="lazy" class="fancy visible-xs" src="/img/posts/2019-11-26-s3.png" />

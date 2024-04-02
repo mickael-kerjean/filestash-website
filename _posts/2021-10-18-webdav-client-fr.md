@@ -7,6 +7,7 @@ tags: webdav online-client tool
 language: fr
 head:
   - <link rel="alternate" href="https://www.filestash.app/webdav-client.html" hreflang="en" />
+  - <link rel="alternate" href="https://www.filestash.app/fr/client-webdav.html" hreflang="fr" />
 ---
 
 <link rel="stylesheet" href="/css/landing-page.css">
