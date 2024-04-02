@@ -22,7 +22,8 @@
         <link rel="canonical" href="{{ page.url | absolute_url }}" />
         {% for head in page.head %}
         {{ head }}{% endfor %}
-        <style> {% include bootstrap.min.css %} </style>
+        {% capture bootstrap_css %}{% include bootstrap.min.css %}{% endcapture %}
+        <style>{{ bootstrap_css | minify_css }}</style>
         <style>
           :root {
               --bg-color: #f2f3f5;
@@ -65,9 +66,9 @@
         </style>
     </head>
     <body>
-        <style> {% include style.css %} </style>
+        {% capture included_css %}{% include style.css %}{% endcapture %}
+        <style>{{ included_css | minify_css }}</style>
 
-        </script>
 	    {{ content }}
 
 	    <script async src="/js/main.js" defer></script>

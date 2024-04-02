@@ -179,7 +179,7 @@ legend:
 </p>
 
 <p>
-    <strong>Is SFTP the same as FTPS?</strong><br>No! FTPS and SFTP both enabled secure file exchange over a network but the way they work under the hood are completely different in the same way apples and oranges taste very different despite both being fruits.
+    <strong>Is SFTP the same as FTPS?</strong><br>No! FTPS and SFTP both enable secure file exchange over a network but the way they work under the hood are completely different in the same way apples and oranges taste vastly different despite both being fruits.
 </p>
 
 <p>
