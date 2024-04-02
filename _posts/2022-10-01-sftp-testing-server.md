@@ -119,6 +119,16 @@ If you have a hard time converting everbody to the CLI, check our [SFTP client](
   "operatingSystem": "Linux",
   "downloadUrl": "https://archive.kerjean.me/public/2022/sftp.bin",
   "softwareVersion": "1.0",
-  "description": "A minimalistic SFTP server for testing purpose"
+  "description": "A minimalistic SFTP server for testing purpose",
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "100",
+    "ratingCount": "33"
+  },
+  "offers": {
+    "@type": "Offer",
+    "priceCurrency": "USD",
+    "price": "0.1"
+  }
 }
 </script>
