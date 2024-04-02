@@ -159,9 +159,9 @@ head:
                 </div>
                 <div class="plan" id="plan-enterprise">
                     <div class="plan-name">
-                        <h4>Enterprise</h4>
+                        <h4>Enterprise <span class="hidden-xs hidden-sm hidden-md" style="font-weight:normal;font-style:italic">Turnkey solutions</span></h4>
                         <div class="price">
-                            Tailored solutions
+                            From 200$ / month
                         </div>
                     </div>
                     <ul class="features">
