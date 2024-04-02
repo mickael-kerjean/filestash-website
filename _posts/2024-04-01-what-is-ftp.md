@@ -18,7 +18,7 @@ tags: ftp
         <h1>What is FTP?</h1>
         <p class="container" id="defining-ftp">
             <img src="/img/posts/2021-07-27-getting-started-with-a-ftp-server_0.png" alt="what is FTP" class="hidden-sm hidden-xs" />
-            File Transfer Protocol (FTP) is <strong>THE</strong> most battle-tested protocol for managing files over a network. Simply put, FTP is used for downloading and uploading files, managing folders, and executing all the file management operations you might want to do but across a network.
+            File Transfer Protocol (<a href="https://www.w3.org/Protocols/rfc959/">FTP</a>) is <strong>THE</strong> most battle-tested protocol for managing files over a network. Simply put, FTP is used for downloading and uploading files, managing folders, and executing all the file management operations you might want to do but across a network.
         </p>
       </div>
     </div>
@@ -51,7 +51,7 @@ tags: ftp
 
 <ul>
     <li>a <a href="#ftp-servers">FTP server</a>: that is the software program that runs on the server from which you will be manipulating files</li>
-    <li>a <a href="#the-different-type-of-ftp-client">FTP client</a>: that is the software you run to access the file on that server. It would typically looks like this:<br>
+    <li>a <a href="#the-different-type-of-ftp-client">FTP client</a>: that is the software you run to access the files on that server. It would typically looks like this:<br>
     <img class="fancy" alt="side by side screenshot of 2 FTP clients" src="/img/posts/2024-03-05-what-is-ftp-0.webp" /></li>
 </ul>
 
@@ -77,8 +77,8 @@ tags: ftp
 
 <ul>
     <li>command-line based client: <a href="{% post_url 2020-07-06-ftp-from-the-command-line %}">ftp</a> or <a href="https://lftp.yar.ru/">lftp</a></li>
-    <li>desktop application: <a href="https://filezilla-project.org/">Filezilla</a>, <a href="https://cyberduck.io/">cyberduck</a></li>
-    <li>web application: <a href="{% post_url 2019-11-26-ftp-web-client %}">Filestash</a></li>
+    <li>desktop client: <a href="https://filezilla-project.org/">Filezilla</a>, <a href="https://cyberduck.io/">Cyberduck</a></li>
+    <li>web client: <a href="{% post_url 2019-11-26-ftp-web-client %}">Filestash</a>, <a href="https://www.monstaftp.com/">MonstaFTP</a></li>
 </ul>
 
 <img alt="screenshot of Filestash when uploading" class="fancy" src="/img/screenshots/feature1.png" />
@@ -163,7 +163,7 @@ legend:
 </p>
 
 <p>
-    <strong>Is FTP secure?</strong><br>FTP is as secure as HTTP, in the same way as HTTP with HTTPS it is recommended to use FTPS which is the secure extension of FTP that use the exact same security as HTTPS. Effectively <a href="{% post_url 2023-11-23-debunking-the-security-of-ftp %}">FTPS is as secure as HTTPS</a>.
+    <strong>Is FTP secure?</strong><br>FTP is as secure as HTTP. In practice most people referring to FTP would have their server setup to accept FTPS connections and <a href="{% post_url 2023-11-23-debunking-the-security-of-ftp %}">FTPS is as secure as HTTPS</a>.
 </p>
 
 <p>
