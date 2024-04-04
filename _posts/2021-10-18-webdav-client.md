@@ -84,16 +84,54 @@ head:
     "Application viewers and document editor for all your files",
     "Extensible via plugins"
   ],
-  "aggregateRating": {
-    "@type": "AggregateRating",
-    "ratingValue": "5",
-    "ratingCount": "33"
-  },
   "offers": {
     "@type": "Offer",
     "priceCurrency": "USD",
     "price": "0.1"
-  }
+  },
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "5",
+    "ratingCount": "9347"
+  },
+  "interactionStatistic": [
+    {
+      "@type": "InteractionCounter",
+      "interactionType": "https://schema.org/LikeAction",
+      "userInteractionCount": 9314,
+      "description": "GitHub stars - https://github.com/mickael-kerjean/filestash"
+    },
+    {
+      "@type": "InteractionCounter",
+      "interactionType": "https://schema.org/LikeAction",
+      "userInteractionCount": 31,
+      "description": "source: https://alternativeto.net/software/nuage-app/"
+    }
+  ],
+  "review": [
+    {
+      "@type": "Review",
+      "reviewRating": {
+        "@type": "Rating",
+        "ratingValue": "5"
+      },
+      "author": {
+        "@type": "Person",
+        "name": "Chris Meng"
+      }
+    },
+    {
+      "@type": "Review",
+      "reviewRating": {
+        "@type": "Rating",
+        "ratingValue": "5"
+      },
+      "author": {
+        "@type": "Person",
+        "name": "David Carrillo Jr"
+      }
+    }
+  ]
 }
 </script>
 
