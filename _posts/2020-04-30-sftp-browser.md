@@ -89,7 +89,7 @@ head:
   ],
   "aggregateRating": {
     "@type": "AggregateRating",
-    "ratingValue": "100",
+    "ratingValue": "5",
     "ratingCount": "33"
   },
   "offers": {
