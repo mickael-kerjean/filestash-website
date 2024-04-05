@@ -36,6 +36,7 @@ pre, .terminal {
 .terminal{
     white-space: nowrap;
     overflow-x: auto;
+    border-radius: 2px;
 }
 
 .terminal > span.prompt {

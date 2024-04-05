@@ -1,6 +1,6 @@
 ---
-title: How to use FTP from the command line
-description: A guide to use and manage your FTP server from the CLI
+title: How to use FTP from the command line?
+description: Want a comprehensive guide on how to use the ftp command from a terminal? Look no further, we've covering everything there is to know about the ftp cli client.
 layout: post
 permalink: /ftp-from-the-command-line.html
 tags: ftp guide
@@ -53,9 +53,7 @@ drwx------   3 web site     4096 Jul  5  2020 public<br>
 </span>
 </div>
 
-## Manage content
-
-### Create a local file
+## Create a local file
 
 <div class="terminal">
 <span class="prompt">ftp> </span>lpwd<br>
@@ -81,7 +79,7 @@ test.txt
 </span><br>
 </div>
 
-### Create / Delete a folder
+## Create / Delete a folder
 
 <div class="terminal">
 <span class="prompt">ftp> </span>mkdir test<br>
@@ -94,8 +92,7 @@ test.txt
 </span>
 </div>
 
-
-### Upload a file to the FTP server
+## Upload a file to the FTP server
 <div class="terminal">
 <span class="prompt">ftp> </span>put test.txt<br>
 <span class="stdout">
@@ -107,7 +104,7 @@ test.txt
 </span>
 </div>
 
-### Download a file from the FTP server
+## Download a file from the FTP server
 
 <div class="terminal">
 <span class="prompt">ftp> </span>get test.txt<br>
@@ -122,7 +119,7 @@ test.txt
 </span>
 </div>
 
-### Delete a file
+## Delete a file
 
 <div class="terminal">
 <span class="prompt">ftp> </span>delete test.txt<br>
@@ -132,7 +129,25 @@ test.txt
 </span>
 </div>
 
-### Other tips and tricks
+## From a script
+
+You might not want to always be the one typing commands, it can be handy to get everything done from say a bash script. You can make it happen like this:
+
+<div class="terminal">
+<span class="prompt">$ </span>ftp -n ftp.gnu.org <<EOF<br>
+quote USER anonymous<br>
+quote PASS whatever<br>
+<br>
+cd /<br>
+<br>
+get welcome.msg<br>
+<br>
+quit<br>
+EOF<br>
+</div>
+
+
+## Other tips and tricks
 
 - the `ftp` command can quickly reach its limits if you need to operate on folder with subfolders to either delete something recursively or copy some folders over. The [lftp](https://lftp.yar.ru/) tool support all those use case.
 
@@ -142,7 +157,7 @@ test.txt
 <span class="prompt">~/$ </span><br>
 </div><br>
 
-- Not connected error. Example and resolution:
+- the "Not connected" error. To solve it you need to reopen your FTP like this:
 <div class="terminal">
 <span class="prompt">ftp> </span>pwd<br>
 <span class="stdout">
