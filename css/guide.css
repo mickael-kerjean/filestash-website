@@ -16,12 +16,12 @@
 }
 
 #nav.homepage, #splash {
-    background: var(--bg-color);
-    color: var(--emphasis);
+    background: var(--bg-color)!important;
+    color: var(--emphasis)!important;
 }
 
 #toc {
-    margin: 0px auto 100px auto;
+    margin: 0px auto 75px auto;
     max-width: 1200px;
 }
 #toc h2 {

@@ -1,15 +1,15 @@
 ---
-title: What is FTP? The Essential Guide
+title: What is FTP? The Essential Guide to the FTP protocol
 description: FTP is a protocol used to transfer files 📂 over a network. Same idea as your local file manager on your desktop or mobile but the filesystem is on a different machine
 layout: landing
 language: en
 permalink: /what-is-ftp.html
 tags: ftp
+head:
+  - <link rel="stylesheet" href="/css/landing-page.css">
+  - <link rel="stylesheet" href="/css/guide.css">
+  - <link rel="stylesheet" href="/css/landing-page-login.css">
 ---
-
-<link rel="stylesheet" href="/css/landing-page.css">
-<link rel="stylesheet" href="/css/landing-page-login.css">
-<link rel="stylesheet" href="/css/guide.css">
 
 <div id="splash" class="nopadding">
   <div class="row">
@@ -29,14 +29,14 @@ tags: ftp
 <div id="toc">
     <h2>Table of contents</h2>
     <ol>
-        <li><a href="#defining-ftp">Defining FTP</a></li>
         <li><a href="#ftp-fundamentals">FTP Fundamentals</a></li>
         <li><a href="#the-use-case-of-ftp">The use cases of FTP</a></li>
         <li><a href="#how-to-access-your-ftp-server">How to access your FTP server</a></li>
-        <li><a href="#the-different-type-of-ftp-clients">The different type of clients</a></li>
+        <li><a href="#the-different-types-of-ftp-clients">The different types of clients</a></li>
         <li><a href="#how-ftp-works">How FTP works</a></li>
         <li><a href="#ftp-faqs">FAQs</a></li>
         <li><a href="#technical-resources">Technical Resources</a></li>
+        <li><a href="#videos">Recent Videos</a></li>
     </ol>
 </div>
 
@@ -51,11 +51,11 @@ tags: ftp
 
 <ul>
     <li>a <a href="#ftp-servers">FTP server</a>: that is the software program that runs on the server from which you will be manipulating files</li>
-    <li>a <a href="#the-different-type-of-ftp-client">FTP client</a>: that is the software you run to access the files on that server. It would typically looks like this:<br>
+    <li>a <a href="#the-different-types-of-ftp-client">FTP client</a>: that is the software you run to access the files on that server. It would typically looks like this:<br>
     <img class="fancy" alt="side by side screenshot of 2 FTP clients" src="/img/posts/2024-03-05-what-is-ftp-0.webp" /></li>
 </ul>
 
-<h2 id="the-use-case-of-ftp">FTP Use cases</h2>
+<h2 id="the-use-case-of-ftp">The Use cases of FTP</h2>
 
 <p>
     <strong>Website administrator:</strong> The most common use case for FTP is to manage a site made with something like <a href="https://wordpress.org/">wordpress</a>, <a href="https://www.joomla.org/">joomla</a>, <a href="https://www.drupal.org/">Drupal</a>, ... Using FTP, administrators can upload new files and content to their servers, update web pages and scripts, manage media files, <a href="{% post_url 2019-12-06-ovh-ftp %}">back up</a> their website data, ...
@@ -81,13 +81,13 @@ tags: ftp
     <li>web client: <a href="{% post_url 2019-11-26-ftp-web-client %}">Filestash</a>, <a href="https://www.monstaftp.com/">MonstaFTP</a></li>
 </ul>
 
-<img alt="screenshot of Filestash when uploading" class="fancy" src="/img/screenshots/feature1.png" />
+<img alt="screenshot of Filestash when uploading" class="fancy" src="/img/screenshots/feature1.png" style="border: 3px solid;" />
 
 <p>
     The role of those clients is to talk to your server using the FTP protocol and perform the action you want to do on that server. For example, if you are hosting WordPress and want to change your theme, you will be able to use that client to update some data on your server.
 </p>
 
-<h2 id="how-to-access-your-ftp-server">How to access your FTP server?</h2>
+<h2 id="how-to-access-your-ftp-server">How to access an FTP server?</h2>
 
 <p>
     For the sake of this guide, we will be connecting to the gnu ftp server available from: <a href="https://ftp.gnu.org/">ftp://ftp.gnu.org</a>. To make things really simple we will be connecting to it via a <a href="{% post_url 2019-11-26-ftp-web-client %}">web client</a>:<br><br>
@@ -257,7 +257,7 @@ legend:
 }
 </style>
 
-<h2 id="recent-videos">Recent Videos</h2>
+<h2 id="videos">Recent Videos</h2>
 
 <!-- js generated <div class="video-container"></div> -->
 <style>
@@ -273,7 +273,7 @@ legend:
 }
 </style>
 <script>
-const $app = document.getElementById("recent-videos");
+const $app = document.getElementById("videos");
 fetch("https://pages.kerjean.me/projects/filestash/apps/youtube-search/?q=ftp")
   .then((e) => e.json())
   .then((resp) => resp.items.map((item) => {
