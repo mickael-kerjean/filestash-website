@@ -1,6 +1,6 @@
 ---
-title: S3 Browser | Le meilleur client S3 pour votre navigateur
-description: Un client S3 pour naviguer et explorer vos fichier et repertoire dans vos buckets S3 depuis votre browser
+title: S3 Browser | Le meilleur client S3 en ligne
+description: Gérez vos données dans le cloud avec notre client S3 en ligne. L'outil parfait pour naviguer et manipuler vos buckets S3 depuis votre browser.
 layout: landing
 permalink: /fr/s3-browser.html
 language: en
@@ -88,7 +88,7 @@ head:
 
 
       <p class="example">
-        Connectez-vous avec vos <a href="{% post_url 2020-05-03-how-to-get-aws-keys %}">clés S3</a> ou utilisez un logiciel compatible Amazon S3 comme <br> <a onclick="clickPublicS3Handler(event, {access_key_id: 'Q3AM3UQ867SPQQA43P2F', secret_access_key: 'zuf+tfteSlswRu7BJ86wekitnifILbZam1KYY3TG', endpoint: 'https://play.minio.io:9000/'});" href="https://play.minio.io:9000/">https://play.minio.io:9000</a>
+        Connectez-vous avec vos <a href="{% post_url 2020-05-03-how-to-get-aws-keys %}">clés S3</a> ou utilisez un logiciel compatible Amazon S3 comme <br> <a onclick="clickPublicS3Handler(event, {access_key_id: 'Q3AM3UQ867SPQQA43P2F', secret_access_key: 'zuf+tfteSlswRu7BJ86wekitnifILbZam1KYY3TG', endpoint: 'https://play.minio.io:9000/'});" href="https://play.minio.io:9000/">le playground minio</a>
       </p>
     </div>
   </div>
@@ -96,13 +96,131 @@ head:
   <div class="container">
     <div id="oem">
       <span>
-        Filestash peut être personnalisé avec les couleurs et le logo de votre entreprise, s'intégrant avec votre SSO. Nous ferons le maximum pour répondre à vos besoins et exigences en matière de personnalisation.
+        Vous voulez une solution clé en main pour S3 ? De l'intégration SSO au white label pour vos clients, en passant par le support et le déploiement d'entreprise, nous pouvons vous aider
       </span>
-      <a href="/pricing/?modal=enterprise" class="btn">Parlez nous en</a>
+      <a href="/pricing/?modal=enterprise" class="btn">Contactez nous</a>
     </div>
   </div>
 </div>
 <div class="waveshape"></div>
+
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "S3 Browser",
+  "applicationCategory": "WebApplication",
+  "operatingSystem": "Any",
+  "description": "Gérez vos données dans le cloud avec notre client S3 en ligne. L'outil parfait pour naviguer et manipuler vos buckets S3 depuis votre browser.",
+  "url": "https://www.filestash.app/fr/s3-browser.html",
+  "screenshot": [
+    "https://www.filestash.app/img/screenshots/viewerpage.png",
+    "https://www.filestash.app/img/screenshots/feature1.png"
+  ],
+  "featureList": [
+    "Un gestionnaire de fichiers comme si vous étiez en local",
+    "Téléchargement et envoi de vos fichiers sur S3",
+    "Navigation et gestion faciles de vos buckets S3",
+    "Visualisation et édition de vos documents directement sur S3",
+    "Extensible via des plugins"
+  ],
+  "offers": {
+    "@type": "Offer",
+    "priceCurrency": "USD",
+    "price": "0.1"
+  },
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "5",
+    "ratingCount": "9347"
+  },
+  "interactionStatistic": [
+    {
+      "@type": "InteractionCounter",
+      "interactionType": "https://schema.org/LikeAction",
+      "userInteractionCount": 9314,
+      "description": "GitHub stars - https://github.com/mickael-kerjean/filestash"
+    },
+    {
+      "@type": "InteractionCounter",
+      "interactionType": "https://schema.org/LikeAction",
+      "userInteractionCount": 31,
+      "description": "source: https://alternativeto.net/software/nuage-app/"
+    }
+  ],
+  "review": [
+    {
+      "@type": "Review",
+      "reviewRating": {
+        "@type": "Rating",
+        "ratingValue": "5"
+      },
+      "author": {
+        "@type": "Person",
+        "name": "Chris Meng"
+      }
+    },
+    {
+      "@type": "Review",
+      "reviewRating": {
+        "@type": "Rating",
+        "ratingValue": "5"
+      },
+      "author": {
+        "@type": "Person",
+        "name": "David Carrillo Jr"
+      }
+    }
+  ]
+}
+</script>
+
+<p class="center" style="font-weight: bold; text-transform: uppercase; color: var(--light);margin-top:-50px;">Ils utilisent Filestash</p>
+<div class="social-proof">
+  <div>
+    <img src="/img/companies/schneider-electric.png" />
+  </div>
+  <div>
+    <a href="https://www.media.mit.edu/posts/file-sharing/"><img src="/img/companies/mit.png" /></a>
+  </div>
+  <div><a href="/img/companies/insa-toulouse-proof.png">
+    <img src="/img/companies/insa-toulouse.png" />
+  </a></div>
+  <div>
+    <img src="/img/companies/dhl.png" />
+  </div>
+  <div>
+    <img src="/img/companies/bell.png" />
+  </div>
+</div>
+<div class="social-proof">
+  <div><a href="/img/companies/university_clermont-proof.png">
+    <img src="/img/companies/university_clermont.png" />
+  </a></div>
+  <div><a href="/img/companies/university_strasbourg-proof.png">
+    <img src="/img/companies/university_strasbourg.png" />
+  </a></div>
+  <div>
+    <img src="/img/companies/shell.png" />
+  </div>
+</div>
+<br><br><br><br><br>
+
+<style>
+ .social-proof {
+     text-align: center;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     overflow-x: hidden;
+     margin: 10px 0;
+ }
+ .social-proof img {
+     width: 240px;
+     height: 50px;
+     filter: grayscale(100) brightness(100) invert(0.5);
+ }
+</style>
 
 <div id="features" style="padding-bottom:0">
   <div class="container large">

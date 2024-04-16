@@ -1,6 +1,6 @@
 ---
 title: Le client SFTP en ligne
-description: Explorez, naviguez et partagez vos documents depuis votre navigateur avec notre client SFTP en ligne
+description: Le client SFTP en ligne qui vous permet de transférer et de gérer tous vos fichiers sur vos serveurs SFTP directement depuis votre navigateur.
 layout: landing
 permalink: /fr/client-sftp-en-ligne.html
 tags: sftp oem online-client
@@ -17,7 +17,7 @@ head:
   <div class="row">
     <div class="col-sm-12">
       <div class="hgroup">
-        <h1>Client <a href="https://en.wikipedia.org/wiki/SSH_File_Transfer_Protocol">SFTP</a> en ligne</h1>
+        <h1>Le client <a href="https://en.wikipedia.org/wiki/SSH_File_Transfer_Protocol">SFTP</a> en ligne</h1>
       </div>
       <form onsubmit='$("form input[type=\"submit\"]").attr("value", "LOADING...")' action="https://demo.filestash.app/login" method="GET">
         <input type="hidden" name="type" value="sftp" />
@@ -56,13 +56,141 @@ head:
   <div class="container">
     <div id="oem">
       <span>
-        Intégrez notre logiciel dans votre organisation avec les couleurs de votre entreprise, SSO et plein d'options qui s'adaptent à votre besoin
+        Vous voulez une solution clé en main autour du SFTP ? De l'intégration SSO au white label pour vos clients, en passant par le support et le déploiement d'entreprise, nous pouvons vous aider
       </span>
-      <a href="/pricing/?modal=enterprise" class="btn">Parlez nous en</a>
+      <a href="/pricing/?modal=enterprise" class="btn">Contactez nous</a>
     </div>
   </div>
 </div>
 <div class="waveshape"></div>
+
+<p class="center" style="font-weight: bold; text-transform: uppercase; color: var(--light);margin-top:-50px;">Ils utilisent Filestash</p>
+<div class="social-proof">
+  <div>
+    <img src="/img/companies/schneider-electric.png" />
+  </div>
+  <div>
+    <a href="https://www.media.mit.edu/posts/file-sharing/"><img src="/img/companies/mit.png" /></a>
+  </div>
+  <div><a href="/img/companies/insa-toulouse-proof.png">
+    <img src="/img/companies/insa-toulouse.png" />
+  </a></div>
+  <div>
+    <img src="/img/companies/dhl.png" />
+  </div>
+  <div>
+    <img src="/img/companies/bell.png" />
+  </div>
+</div>
+<div class="social-proof">
+  <div><a href="/img/companies/university_clermont-proof.png">
+    <img src="/img/companies/university_clermont.png" />
+  </a></div>
+  <div><a href="/img/companies/university_strasbourg-proof.png">
+    <img src="/img/companies/university_strasbourg.png" />
+  </a></div>
+  <div>
+    <img src="/img/companies/shell.png" />
+  </div>
+</div>
+<br><br><br><br><br>
+
+<style>
+ .social-proof {
+     text-align: center;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     overflow-x: hidden;
+     margin: 10px 0;
+ }
+ .social-proof img {
+     width: 240px;
+     height: 50px;
+     filter: grayscale(100) brightness(100) invert(0.5);
+ }
+</style>
+
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "SFTP Client",
+  "applicationCategory": "WebApplication",
+  "operatingSystem": "Any",
+  "description": "Le client SFTP en ligne qui vous permet de transférer et de gérer tous vos fichiers sur vos serveurs SFTP directement depuis votre navigateur.",
+  "url": "https://www.filestash.app/fr/client-sftp-en-ligne.html",
+  "screenshot": [
+    "https://www.filestash.app/img/screenshots/viewerpage.png",
+    "https://www.filestash.app/img/screenshots/feature1.png"
+  ],
+  "featureList": [
+    "Un gestionnaire de fichiers comme si vous étiez en local",
+    "Téléchargement et envoi de vos fichiers sur votre serveur SFTP",
+    "Navigation et gestion faciles de votre serveur",
+    "Visualisation et édition de vos documents directement sur votre serveur SFTP",
+    "Extensible via des plugins"
+  ],
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "5",
+    "ratingCount": "33"
+  },
+  "offers": {
+    "@type": "Offer",
+    "priceCurrency": "USD",
+    "price": "0.1"
+  },
+  "offers": {
+    "@type": "Offer",
+    "priceCurrency": "USD",
+    "price": "0.1"
+  },
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "5",
+    "ratingCount": "9347"
+  },
+  "interactionStatistic": [
+    {
+      "@type": "InteractionCounter",
+      "interactionType": "https://schema.org/LikeAction",
+      "userInteractionCount": 9314,
+      "description": "GitHub stars - https://github.com/mickael-kerjean/filestash"
+    },
+    {
+      "@type": "InteractionCounter",
+      "interactionType": "https://schema.org/LikeAction",
+      "userInteractionCount": 31,
+      "description": "source: https://alternativeto.net/software/nuage-app/"
+    }
+  ],
+  "review": [
+    {
+      "@type": "Review",
+      "reviewRating": {
+        "@type": "Rating",
+        "ratingValue": "5"
+      },
+      "author": {
+        "@type": "Person",
+        "name": "Chris Meng"
+      }
+    },
+    {
+      "@type": "Review",
+      "reviewRating": {
+        "@type": "Rating",
+        "ratingValue": "5"
+      },
+      "author": {
+        "@type": "Person",
+        "name": "David Carrillo Jr"
+      }
+    }
+  ]
+}
+</script>
 
 <div id="features" style="padding-bottom:0">
   <div class="container large">
