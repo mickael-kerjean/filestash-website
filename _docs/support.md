@@ -5,7 +5,6 @@ language: en
 order: 6
 ---
 
-
 By becoming a customer, you’re not just receiving a turnkey solution that works for your needs; you gain peace of mind if anything were to happen with our [SLAs](/redirect.html?origin=doc::support&url=https://downloads.filestash.app/upload/contract-support.pdf), access to a large library of enterprise plugins, corporate branding, white labeling, hardening guides, a direct communication line with the lead dev and more. In turn, it fuels our mission to make the world's best web file manager to access your data regardless of its location.
 
 They've bought support from us: MIT, DHL, Bell, University of California Irvine and many more world-class organisations.

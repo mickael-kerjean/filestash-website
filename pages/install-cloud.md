@@ -1,16 +1,19 @@
 ---
 layout: post
-title: Cloud Install
-permalink: /install-cloud.html
+title: AWS Marketplace install
+permalink: /docs/marketplace/
+redirect_from:
+  - /install-cloud.html
 ---
 <style>
 img.fancy { margin: 15px 0 0 0; }
 h1 { margin-top: 4rem; }
 </style>
 
-
-
-We will be assuming you already have an AWS Account. If that's not the case, you can either [create an account on your own](/redirect.html?origin=pricing::selfhosted&url=https://aws.amazon.com/resources/create-account/) or [reach out to us](/pricing/?modal=enterprise&origin=doc::aws) and we will look after everything on your behalf.
+{% include banner.html %}
+<div class="banner" style="text-align:justify">
+    Assumption: you have an AWS Account. If that's not the case, <a href="/redirect.html?origin=pricing::selfhosted&url=https://aws.amazon.com/resources/create-account/">create your account</a> or get a <a href="/docs/support/">support contract</a>.
+</div>
 
 This guide is split in 3 parts:
 
