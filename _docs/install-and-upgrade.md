@@ -110,6 +110,21 @@ To truly grasp the breadth of options available through plugins, delving into th
     We offer professional services, including a variety of ready-made plugins, and can develop custom plugins tailored to your needs. When you <a href="/docs/support/">get support</a>, we'll assist you every step of the way.
 </div>
 
+## Advanced Setup
+
+Filestash is deployed in many sensitive environments with very stringent needs. If this sounds like what you are doing, you might want to read:
+
+1. our [hardening guide](/redirect.html?origin=doc::install&url=https://downloads.filestash.app/upload/hardening-guide.pdf)
+
+2. some examples of architecture diagram that was made for a deployment in large pharma with requirements for high availability and scalability. You can read about that in [this post from the AWS Blog](https://aws.amazon.com/blogs/storage/how-regeneron-built-a-secure-and-scalable-file-transfer-service-using-aws-transfer-family/):
+
+<figure>
+    <img src="/img/illustration/architecture-diagram.png">
+    <figcaption style="text-align:left;">
+        Credit: aws.amazon.com/blogs/ <br>
+        Source: <a href="https://aws.amazon.com/blogs/storage/how-regeneron-built-a-secure-and-scalable-file-transfer-service-using-aws-transfer-family/">How Regeneron built a secure and scalable file transfer service using AWS Transfer Family</a></figcaption>
+</figure>
+
 ## Upgrade
 
 To update Filestash:

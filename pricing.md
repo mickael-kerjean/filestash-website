@@ -170,7 +170,7 @@ head:
                         <li>Audit & Compliance</li>
                         <li>Custom plugin development</li>
                     </ul>
-                    <a class="btn action" href="./?modal=enterprise">CONTACT US</a>
+                    <a class="btn action" href="./?origin=local&modal=enterprise">CONTACT US</a>
                 </div>
             </div>
         </div>

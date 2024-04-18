@@ -24,14 +24,14 @@
                 {% if page.language == 'fr' %}
                 <a href="{% link _docs/index.fr.md %}" {% if page.url contains "/docs" %}class="active"{% endif %}>Documentation</a>
                 {% else %}
-                <a href="{% link _docs/index.md %}" {% if page.url contains "/docs" %}class="active"{% endif %}>Documentation</a>
+                <a href="{% link _docs/index.md %}?origin=menu" {% if page.url contains "/docs" %}class="active"{% endif %}>Documentation</a>
                 {% endif %}
 		    </li>
             <li class="hidden-xs">
                 {% if page.language == 'fr' %}
                 <a href="{% link pricing.fr.md %}">Prix</a>
                 {% else %}
-                <a href="{% link pricing.md %}">Pricing</a>
+                <a href="{% link pricing.md %}?origin=menu">Pricing</a>
                 {% endif %}
 		    </li>
             {% if page.url == "/" %}
