@@ -5,14 +5,15 @@ language: en
 order: 6
 ---
 
-By becoming a customer, you're not just receiving a bespoke solution tailored to your needs, you're also fueling our mission to make the world best web file manager that works everywhere.
 
-To give you peace of mind, we offer solid service level agreements ([SLAs](/redirect.html?origin=doc::support&url=https://downloads.filestash.app/upload/contract-support.pdf)), access to a broad range of enterprise plugins, extensive customization options, including corporate branding and white labeling, hardening guides and more. Essentially, we're equipped to support all your enterprise needs.
+By becoming a customer, you’re not just receiving a turnkey solution that works for your needs; you gain peace of mind if anything were to happen with our [SLAs](/redirect.html?origin=doc::support&url=https://downloads.filestash.app/upload/contract-support.pdf), access to a large library of enterprise plugins, corporate branding, white labeling, hardening guides, a direct communication line with the lead dev and more. In turn, it fuels our mission to make the world's best web file manager to access your data regardless of its location.
 
-Want to dive in? Use this [self-service link](/redirect.html?origin=doc::support&url=https://buy.stripe.com/bIY15scyObhs6be006) or [talk to us](/pricing/?modal=support&origin=doc::support); we love spending time talking tech with our customers.
+They've bought support from us: MIT, DHL, Bell, University of California Irvine and many more world-class organisations.
+
+Want to dive in? Use this [self-service link](/redirect.html?origin=doc::support&url=https://buy.stripe.com/7sI29w7euetE4369AS) or [talk to us](/pricing/?modal=support&origin=doc::support); we love spending time talking nerdy stuff with our customers.
 
 Upon onboarding, you'll unlock access to our dedicated [customer platform](https://platform.filestash.app):
 
 <img class="fancy" src="/img/screenshots/doc_support.png" alt="setup screenshot" />
 
-It’s designed to handle everything from support queries to one-on-one sessions with the lead developer for solving any issues you might have, as well as retrieving invoices, requesting custom builds, and more.
+It’s designed to handle everything from support queries to one-on-one sessions with the lead developer for solving any issues you might have, feature requests as well as retrieving invoices, your build packages either as docker, deb, rpm or fat binary, and more.
