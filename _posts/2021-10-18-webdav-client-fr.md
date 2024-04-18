@@ -64,6 +64,25 @@ head:
 </div>
 <div class="waveshape"></div>
 
+{% include social-proof.html %}
+<div class="social-proof">
+  <h3>Ils utilisent Filestash</h3>
+  <div class="flex">
+    <div><img src="/img/companies/schneider-electric.png" /></div>
+    <a href="https://www.media.mit.edu/posts/file-sharing/"><img src="/img/companies/mit.png" /></a>
+    <a href="/img/companies/insa-toulouse-proof.png"><img src="/img/companies/insa-toulouse.png" /></a>
+    <div><img src="/img/companies/dhl.png" /></div>
+    <div><img src="/img/companies/bell.png" /></div>
+  </div>
+  <div class="flex">
+    <a href="/img/companies/university_clermont-proof.png"><img src="/img/companies/university_clermont.png" /></a>
+    <a href="/img/companies/university_strasbourg-proof.png"><img src="/img/companies/university_strasbourg.png" /></a>
+    <div><img src="/img/companies/shell.png" /></div>
+  </div>
+</div>
+
+<hr class="spacer"/><hr class="spacer"/>
+
 <div id="features" style="padding-bottom:0">
   <div class="container large">
     <div class="row features main">

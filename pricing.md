@@ -124,7 +124,7 @@ head:
                     <li>AGPL v3</li>
                     <li data-related="cloud">up to 3 users</li>
                 </ul>
-                <a class="btn" href="/docs/" data-related="selfhosted">
+                <a class="btn" href="/docs/?origin=pricing::selfhosted" data-related="selfhosted">
                     START
                 </a>
                 <a class="btn" href="https://deploy.filestash.app/?type=personal::cloud" data-related="cloud">
@@ -154,8 +154,7 @@ head:
                         <li>Commercial License</li>
                         <li>AWS Cloud</li>
                     </ul>
-                    <!--<a href="./?modal=installer" class="btn">START</a>-->
-                    <a href="https://www.filestash.app/install-cloud.html" class="btn">START</a>
+                    <a href="https://www.filestash.app/docs/marketplace/?origin=pricing::pro" class="btn">START</a>
                 </div>
                 <div class="plan" id="plan-enterprise">
                     <div class="plan-name">

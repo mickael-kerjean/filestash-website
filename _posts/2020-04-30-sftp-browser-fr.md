@@ -64,52 +64,32 @@ head:
 </div>
 <div class="waveshape"></div>
 
-<p class="center" style="font-weight: bold; text-transform: uppercase; color: var(--light);margin-top:-50px;">Ils utilisent Filestash</p>
+{% include social-proof.html %}
 <div class="social-proof">
-  <div>
-    <img src="/img/companies/schneider-electric.png" />
-  </div>
-  <div>
+  <h3>Ils utilisent Filestash</h3>
+  <div class="flex">
+    <div><img src="/img/companies/schneider-electric.png" /></div>
     <a href="https://www.media.mit.edu/posts/file-sharing/"><img src="/img/companies/mit.png" /></a>
+    <a href="/img/companies/insa-toulouse-proof.png"><img src="/img/companies/insa-toulouse.png" /></a>
+    <div><img src="/img/companies/dhl.png" /></div>
+    <div><img src="/img/companies/bell.png" /></div>
   </div>
-  <div><a href="/img/companies/insa-toulouse-proof.png">
-    <img src="/img/companies/insa-toulouse.png" />
-  </a></div>
-  <div>
-    <img src="/img/companies/dhl.png" />
-  </div>
-  <div>
-    <img src="/img/companies/bell.png" />
-  </div>
-</div>
-<div class="social-proof">
-  <div><a href="/img/companies/university_clermont-proof.png">
-    <img src="/img/companies/university_clermont.png" />
-  </a></div>
-  <div><a href="/img/companies/university_strasbourg-proof.png">
-    <img src="/img/companies/university_strasbourg.png" />
-  </a></div>
-  <div>
-    <img src="/img/companies/shell.png" />
+  <div class="flex">
+    <a href="/img/companies/university_clermont-proof.png"><img src="/img/companies/university_clermont.png" /></a>
+    <a href="/img/companies/university_strasbourg-proof.png"><img src="/img/companies/university_strasbourg.png" /></a>
+    <div><img src="/img/companies/shell.png" /></div>
   </div>
 </div>
-<br><br><br><br><br>
 
-<style>
- .social-proof {
-     text-align: center;
-     display: flex;
-     justify-content: center;
-     align-items: center;
-     overflow-x: hidden;
-     margin: 10px 0;
- }
- .social-proof img {
-     width: 240px;
-     height: 50px;
-     filter: grayscale(100) brightness(100) invert(0.5);
- }
-</style>
+<div class="technical-resources container">
+    <a href="https://aws.amazon.com/blogs/storage/how-regeneron-built-a-secure-and-scalable-file-transfer-service-using-aws-transfer-family/">
+        <h3>Du SFTP avec Filestash chez un mastodon du pharmaceutique</h3>
+        Un example de project d'implémentation avec des examples d'architecture scalable haute disponibilité dans une F500 de la pharma se basant sur SFTP avec AWS Transfer Family et Filestash.
+        <i>Lire l'article sur le blog d'AWS</i>
+    </a>
+</div>
+
+<hr class="spacer"/>
 
 <script type="application/ld+json">
 {

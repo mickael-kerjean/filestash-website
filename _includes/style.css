@@ -347,3 +347,5 @@ img.fancy, svg.fancy {
     box-shadow: rgba(158, 163, 172, 0.3) 3px 3px 20px;
     box-sizing: border-box;
 }
+
+hr.spacer { height: 50px; border: none; }

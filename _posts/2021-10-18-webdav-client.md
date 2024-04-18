@@ -58,11 +58,25 @@ head:
       <span>
           Want to run your own version of Filestash? Tailor every aspect via plugins or from the admin console, from integrating your FTP with your SSO provider or opting for full white labeling, we've got you covered. Filestash is the most adaptable file manager available.
       </span>
-      <a href="/pricing/?modal=enterprise" class="btn">Chat with us</a>
+      <a href="/pricing/?origin=landing::webdav&modal=enterprise" class="btn">Chat with us</a>
     </div>
   </div>
 </div>
 <div class="waveshape"></div>
+
+{% include social-proof.html %}
+<div class="social-proof">
+  <h3>We've worked with:</h3>
+  <div class="flex">
+    <a href="https://www.media.mit.edu/posts/file-sharing/"><img src="/img/companies/mit.png" /></a>
+    <div><img src="/img/companies/dhl.png" /></div>
+    <div><img src="/img/companies/bell.png" /></div>
+    <div><img src="/img/companies/uci.png" style="height:85px" /></div>
+    <div><img src="/img/companies/schneider-electric.png" /></div>
+  </div>
+</div>
+
+<hr class="spacer"/><hr class="spacer"/>
 
 <script type="application/ld+json">
 {
