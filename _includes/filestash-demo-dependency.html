@@ -13,23 +13,37 @@
           }).catch(() => {});
           throw new Error(content);
       }).catch((err) => {
-          const $modal = document.createElement("div");
           if(err && /zscaler/.test(err.message)) {
-              $modal.innerHTML = `<div id="filestash-modal">
-<div class="content">
-   Zscaler is blocking access to the demo instance<br/><br/>
-   Reach out to our <a href="https://www.filestash.app/pricing/?modal=enterprise">support team</a> to deploy Filestash in your organisation.
-</div>
+              const $disabled = document.createElement("div");
+              $disabled.innerHTML = `<div>
+   Zscaler is blocking access to our shared service<br/><br/>
+   Reach out to our <a href="https://www.filestash.app/pricing/?modal=enterprise">support team</a> to deploy Filestash directly in your organisation.
 </div>`;
+              $disabled.setAttribute("style", `position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0,0,0,0.8);
+    color: white;
+    padding: 70px 26px;
+    text-align: justify;
+    font-size:1.2rem;
+    border-radius: 5px;
+    `);
+              document.querySelector("#splash form").style.position = "relative";
+              document.querySelector("#splash form").appendChild($disabled);
+              document.querySelector("#splash form input[type=\"submit\"]").setAttribute("disabled", "true");
           } else {
-          $modal.innerHTML = `<div id="filestash-modal">
+              const $modal = document.createElement("div");
+              $modal.innerHTML = `<div id="filestash-modal">
 <div class="content">
    Our online tool isn't available at the moment.<br/><br/>
    We are working on it and will be back. Contact us if you need anything support@filestash.app
 </div>
 </div>`;
+              document.body.appendChild($modal);
           }
-          document.body.appendChild($modal);
       });
   })()
 </script>
