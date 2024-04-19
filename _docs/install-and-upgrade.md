@@ -107,7 +107,7 @@ To truly grasp the breadth of options available through plugins, delving into th
 
 <div class="banner" style="text-align:justify">
     Need a hand with your setup? <br>
-    We offer professional services, including a variety of ready-made plugins, and can develop custom plugins tailored to your needs. When you <a href="/docs/support/">get support</a>, we'll assist you every step of the way.
+    We offer professional services, including a variety of ready-made plugins, and can develop custom plugins tailored to your needs. When you <a href="/docs/support/?origin=doc::install">get support</a>, we'll assist you every step of the way.
 </div>
 
 ## Advanced Setup

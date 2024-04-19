@@ -12,7 +12,7 @@ h1 { margin-top: 4rem; }
 
 {% include banner.html %}
 <div class="banner" style="text-align:justify">
-    Assumption: you have an AWS Account. If that's not the case, <a href="/redirect.html?origin=pricing::selfhosted&url=https://aws.amazon.com/resources/create-account/">create your account</a> or get a <a href="/docs/support/">support contract</a>.
+    Assumption: you have an AWS Account. If that's not the case, <a href="/redirect.html?origin=pricing::selfhosted&url=https://aws.amazon.com/resources/create-account/">create your account</a> or get a <a href="/docs/support/?origin=doc::marketplace">support contract</a>.
 </div>
 
 This guide is split in 3 parts:
