@@ -7,11 +7,11 @@ order: 6
 
 By becoming a customer, you’re not just receiving a turnkey solution that works for your needs, you gain peace of mind if anything were to happen with our [SLAs](/redirect.html?origin=doc::support&url=https://downloads.filestash.app/upload/contract-support.pdf), access to a large library of enterprise plugins to not only enhance Filestash but also [harden it](/redirect.html?origin=doc::support&url=https://downloads.filestash.app/upload/hardening-guide.pdf), corporate branding, white labeling, a direct communication line with the lead dev and more. In turn, it fuels our mission to make the world's best web file manager to access your data regardless of its location.
 
-They've bought support from us: MIT, DHL, Bell, University of California Irvine and many more world-class organisations. Want to dive in too?
+They've bought support from us: [MIT](https://www.media.mit.edu/posts/file-sharing/), DHL, Bell, University of California Irvine and many more [world-class organisations](https://aws.amazon.com/blogs/storage/how-regeneron-built-a-secure-and-scalable-file-transfer-service-using-aws-transfer-family/). Want to dive in too?
 
 <div class="support-cta">
-    <a href="/redirect.html?origin=doc::support&url=https://buy.stripe.com/7sI29w7euetE4369AS">Self Service</a>
     <a href="/pricing/?modal=support&origin=doc::support">Talk With Us</a>
+    <a href="/redirect.html?origin=doc::support&url=https://buy.stripe.com/7sI29w7euetE4369AS">Purchase Now</a>
 </div>
 <style>
 .support-cta { display: flex; justify-content: space-around; }
