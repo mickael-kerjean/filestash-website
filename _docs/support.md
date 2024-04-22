@@ -10,7 +10,7 @@ By becoming a customer, you’re not just receiving a turnkey solution that work
 They've bought support from us: [MIT](https://www.media.mit.edu/posts/file-sharing/), DHL, Bell, University of California Irvine and many more [world-class organisations](https://aws.amazon.com/blogs/storage/how-regeneron-built-a-secure-and-scalable-file-transfer-service-using-aws-transfer-family/). Want to dive in too?
 
 <div class="support-cta">
-    <a href="/pricing/?modal=support&origin=doc::support">Talk With Us</a>
+    <a href="/redirect.html?origin=doc::support&url=https://platform.filestash.app/support/book">Talk With Us</a>
     <a href="/redirect.html?origin=doc::support&url=https://buy.stripe.com/7sI29w7euetE4369AS">Purchase Now</a>
 </div>
 <style>
