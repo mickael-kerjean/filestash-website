@@ -147,7 +147,7 @@ head:
                     <div class="plan-name">
                         <h4>Pro</h4>
                         <div class="price">
-                            0.1 $ / hour
+                            From 0.1$ / hour
                         </div>
                     </div>
                     <ul class="features">

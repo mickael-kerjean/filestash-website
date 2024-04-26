@@ -38,8 +38,7 @@ Hardware requirement is minimal: 128MB of RAM and 1 core will suffice, provided 
 
 ## Installation
 
-The official Docker images are available on [Docker Hub](https://hub.docker.com/r/machines/filestash/).
-
+The official Docker image is available on [Docker Hub](https://hub.docker.com/r/machines/filestash/)
 <div class="terminal">
 <span class="prompt">~/$ </span>mkdir filestash && cd filestash<br>
 <span class="prompt">~/filestash$ </span>curl -O https://downloads.filestash.app/latest/docker-compose.yml<br>
