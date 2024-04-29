@@ -38,7 +38,7 @@ language: en
       </script>
       <p class="example center">
         See how your server stack up against those sftp test servers: <br>
-        <a rel="nofollow noopener" onclick="clickPublicSFTPHandler(event);" href="sftp://itcsubmit.wustl.edu">sftp://itcsubmit.wustl.edu</a> <a rel="nofollow noopener" onclick="clickPublicSFTPHandler(event);" href="sftp://www.filestash.app">sftp://www.filestash.app</a>
+        <a rel="nofollow noopener" onclick="clickPublicSFTPHandler(event);" href="sftp://athena.dialup.mit.edu">sftp://athena.dialup.mit.edu</a> <a rel="nofollow noopener" onclick="clickPublicSFTPHandler(event);" href="sftp://gs600-bastion1.gsfc.nasa.gov">sftp://gs600-bastion1.gsfc.nasa.gov</a> <a rel="nofollow noopener" onclick="clickPublicSFTPHandler(event);" href="sftp://rick.kerjean.me">sftp://rick.kerjean.me</a>
         <br>
       </p>
     </div>
@@ -102,10 +102,14 @@ language: en
             var oReq = new XMLHttpRequest();
             oReq.onload = function(){
                 var data = JSON.parse(this.responseText);
+
+                const $server_info = document.getElementById("server_info");
+
                 document.getElementById("latency").innerText = data["latency"];
                 document.getElementById("is-online").innerText = data["isOnline"] ? "Yes" : "No";
-                document.getElementById("server_info").innerText = data["server_info"];
-                document.getElementById("fingerprint").innerText = data["fingerprint"];
+                if (data["server_info"]) $server_info.innerText = data["server_info"];
+                else $server_info.classList.add("hidden");
+                document.getElementById("fingerprint").innerText = data["fingerprint"] || "";
 
                 if(data["isOnline"]){
                     let $a = document.createElement("a");
