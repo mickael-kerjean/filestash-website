@@ -39,4 +39,4 @@ Upon onboarding, you'll unlock access to our dedicated [customer platform](https
 
 <img class="fancy" src="/img/screenshots/doc_support.png" alt="setup screenshot" />
 
-It’s designed to handle common needs like retrieving invoices, add / delete your credit card info, get your build packages either as docker, deb, rpm or fat binary, book one-on-one sessions with the lead developer for solving any issues you might have, feature requests, and more.
+It’s designed to handle common needs like retrieving invoices, get your build packages either as docker, deb, rpm or fat binary, book one-on-one sessions with the lead developer for solving any issues you might have, feature requests, and more.
