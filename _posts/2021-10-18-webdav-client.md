@@ -227,6 +227,7 @@ head:
     <a class="btn light" href="{% post_url 2020-04-30-sftp-browser %}">SFTP Client</a>
     <a class="btn light" href="{% post_url 2019-11-26-ftp-web-client %}">FTP Client</a>
     <a class="btn light" href="{% post_url 2019-11-21-s3-browser %}">S3 Browser</a>
+    <a class="btn light" href="{% post_url 2020-01-04-ldap-browser %}">SMB Client</a>
     <a class="btn light" href="{% post_url 2020-01-04-ldap-browser %}">LDAP Client</a>
   </div>
 </div>

@@ -1,0 +1,170 @@
+---
+title: SMB Client - Online Tool for SAMBA
+description: A web client for SMB to access and manage you shares directly from your browser, with no installation required.
+layout: landing
+permalink: /smb-client.html
+tags: online-client
+language: en
+---
+
+<link rel="stylesheet" href="/css/landing-page.css">
+<link rel="stylesheet" href="/css/landing-page-login.css">
+
+<div id="splash" class="nopadding">
+  <div class="row">
+    <div class="col-sm-12">
+      <div class="hgroup">
+        <h1>An online <a href="https://en.wikipedia.org/wiki/Server_Message_Block">SMB</a> Client</h1>
+      </div>
+      <form onsubmit='$("#splash form input[type=\"submit\"]").attr("value", "LOADING...")' action="https://demo.filestash.app/login" method="GET">
+        <input type="hidden" name="type" value="samba" />
+        <label>
+          <span>Hostname:</span><input type="text" name="hostname" placeholder="Hostname" required/>
+        </label>
+        <label>
+          <span>Username:</span><input default="anonymous" type="text" name="username" placeholder="Username"/>
+        </label>
+        <label>
+          <span>Password:</span><input type="password" name="password" placeholder="Password" />
+        </label>
+        <input type="submit" class="btn" value="Connect" />
+      </form>
+    </div>
+  </div>
+  {% include share.html %}
+  <div class="container">
+    <div id="oem">
+      <span>
+        Want to run your own Filestash? Tailor every aspect of it via plugins and using the admin console, integrate your SMB server with your SSO provider, or go the white labelling route; we've got you covered. Filestash is the most adaptable file manager available.
+      </span>
+      <a href="/pricing/?origin=landing::smb&modal=enterprise" class="btn">Chat with us</a>
+    </div>
+  </div>
+</div>
+<div class="waveshape"></div>
+
+{% include social-proof.html %}
+<div class="social-proof">
+  <h3>We've worked with:</h3>
+  <div class="flex">
+    <a href="https://www.media.mit.edu/posts/file-sharing/"><img src="/img/companies/mit.png" /></a>
+    <div><img src="/img/companies/dhl.png" /></div>
+    <div><img src="/img/companies/bell.png" /></div>
+    <div><img src="/img/companies/uci.png" style="height:85px" /></div>
+    <div><img src="/img/companies/schneider-electric.png" /></div>
+  </div>
+</div>
+
+<hr class="spacer"/><hr class="spacer"/>
+
+<div id="features" style="padding-bottom:0;">
+  <div class="container large">
+    <div class="row features main">
+
+      <div class="feature">
+        <img alt="screenshot of Filestash when uploading" loading="lazy" class="fancy pull-left hidden-xs" src="/img/screenshots/feature1.png" />
+        <h2>Explore and Manage your SMB shares</h2>
+        <p>
+          Our <strong>SMB</strong> client make it easy to manage and explore the data on your server. It will work with any <a href="https://learn.microsoft.com/en-us/openspecs/windows_protocols/ms-smb2/5606ad47-5ee0-437a-817e-70c366052962">SMB server</a> such as <a href="https://www.samba.org/">SAMBA</a>, <a href="https://learn.microsoft.com/en-us/azure/storage/files/files-smb-protocol">Azure files</a>, ...
+        </p>
+        <img alt="screenshot of Filestash when uploading" loading="lazy" class="fancy visible-xs" src="/img/screenshots/feature1.png" />
+      </div>
+
+      <div class="feature">
+        <img alt="screenshot of the text editor" loading="lazy" class="fancy pull-right hidden-xs" src="/img/posts/2019-08-20-ftp-web-client.html.1.png" />
+        <h2>Content editor and viewer</h2>
+        <p>
+          From watching videos to viewing images, the integrated SMB editor enables not only the viewing and editing of office documents but virtually any file format. Want something different? Plugins to the rescue.
+        </p>
+        <img alt="screenshot of the text editor" loading="lazy" class="fancy visible-xs" src="/img/posts/2019-08-20-ftp-web-client.html.1.png" />
+      </div>
+
+      <div class="feature">
+        <img alt="search screenshot" loading="lazy" class="fancy pull-left hidden-xs" src="/img/screenshots/search.png" />
+        <h2>SMB Search</h2>
+        <p>
+          From basic recursive searches to advanced full-text search capabilities, our plugins connect everything together to handle the complexity of enterprise search within your SMB environment.
+        </p>
+        <img alt="search screenshot" loading="lazy" class="fancy visible-xs" src="/img/screenshots/search.png" />
+      </div>
+
+      <div class="feature">
+        <img alt="logo of the 3 main operating system" loading="lazy" class="fancy pull-right hidden-xs" src="/img/posts/2019-08-20-ftp-web-client.html.4.png" />
+        <h2>Mac, Windows and Linux</h2>
+        <p>
+          Our online client tool is a web application that works seamlessly in any browser, including Chrome, Firefox, Chromium, and more, eliminating the hassle of installing software first.
+        </p>
+        <img alt="logo of the 3 main operating system" loading="lazy" class="fancy visible-xs" src="/img/posts/2019-08-20-ftp-web-client.html.4.png" />
+      </div>
+
+      <div class="feature">
+        <img alt="illustration of the shared link screen" loading="lazy" class="fancy pull-left hidden-xs" src="/img/screenshots/feature_share_0000.png" />
+        <h2>File Sharing</h2>
+        <p>
+          Use shared links to collaborate with users who don't even have an account on your SMB server. Apply fined grained access control to keep your shared content under control.
+        </p>
+        <img alt="illustration of the shared link screen" loading="lazy" class="fancy visible-xs" src="/img/screenshots/feature_share_0000.png" />
+      </div>
+
+      <div class="feature">
+        <img alt="illustration of the shared link screen" loading="lazy" class="fancy pull-right hidden-xs" src="/img/screenshots/viewerpage.png" />
+        <h2>Expose your SMB on the web</h2>
+        <p>
+          Provide your users with a sleek interface, whether as a standalone application within your infrastructure, as part of ours, or integrated into your own application.
+        </p>
+        <img alt="illustration of the shared link screen" loading="lazy" class="fancy visible-xs" src="/img/screenshots/feature_share_0000.png" />
+      </div>
+
+      <div class="feature">
+        <img alt="plugin illustration" loading="lazy" class="fancy pull-left hidden-xs" src="/img/posts/2019-08-20-ftp-web-client.html.6.png" />
+        <h2>Extensible </h2>
+        <p>
+          Our <strong>SMB tool</strong> is fully customizable, supporting white labeling and extension through plugins to adapt to your unique needs and workflows with a lot of flexibility.
+        </p>
+        <img alt="plugin illustration" loading="lazy" class="fancy visible-xs" src="/img/posts/2019-08-20-ftp-web-client.html.6.png" />
+      </div>
+
+      <div class="feature">
+        <img alt="webdav integration" loading="lazy" class="fancy pull-right hidden-xs" src="/img/posts/2019-08-20-ftp-web-client.html.3.png" />
+        <h2>Integrates with your file manager</h2>
+        <p>
+          Shared links integrates with your file manager. They can be used as a network drive under windows, OSX or Linux. Those links are full fledge WebDAV server that ties onto your SMB server.
+        </p>
+        <img alt="webdav integration" loading="lazy" class="fancy visible-xs" src="/img/posts/2019-08-20-ftp-web-client.html.3.png" />
+      </div>
+
+      <div class="feature">
+        <img alt="agpl logo" loading="lazy" class="fancy pull-left hidden-xs" src="/img/posts/2019-08-20-ftp-web-client.html.2.png" />
+        <h2>Open source and Free Software</h2>
+        <p>
+          Filestash is open source software. Our code is available from <a href="https://github.com/mickael-kerjean/filestash">Github</a> so you can audit, expand and self host your own version (see the <a href="{% link _docs/index.md %}">documentation</a>).
+        </p>
+        <img alt="agpl logo" loading="lazy" class="fancy visible-xs" src="/img/posts/2019-08-20-ftp-web-client.html.2.png" />
+      </div>
+
+
+    </div>
+
+  </div>
+
+  <br><br><br><br><br><br>
+
+  <div class="call-to-action">
+    <h2>Check our other online tools:</h2>
+    <a class="btn light" href="{% post_url 2019-11-26-ftp-web-client %}">FTP</a>
+    <a class="btn light" href="{% post_url 2019-11-21-s3-browser %}">S3</a>
+    <a class="btn light" href="{% post_url 2020-04-30-sftp-browser %}">SFTP</a>
+    <a class="btn light" href="{% post_url 2021-10-18-webdav-client %}">WebDAV</a>
+  </div>
+
+</div>
+
+<script>
+  // deep links to login in some anonymous server
+  (function(){
+      if(/#connect=/.test(location.hash) == false) return;
+      document.querySelector("#splash form input[name='hostname']").value = location.hash.replace("#connect=", "");
+      document.querySelector("#splash form input[type='submit']").click()
+  })()
+</script>
+{% include filestash-demo-dependency.html %}

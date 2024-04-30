@@ -613,7 +613,7 @@ head:
                 <td><i class="check"></i></td>
             </tr>
             <tr>
-                <td>SMB</td>
+                <td><a href="{% post_url 2024-05-01-smb-web-client %}">SMB</a></td>
                 <td data-related="cloud"><i class="check"></i></td>
                 <td data-related="selfhosted"><i class="check"></i></td>
                 <td><i class="check"></i></td>

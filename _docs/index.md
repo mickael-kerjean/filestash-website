@@ -21,7 +21,7 @@ To use Filestash, you can either:
         <img src="https://mickael.kerjean.me/assets/img/arrow_bottom.png">
     </div>
     <div class="related_content">
-        <a href="{% post_url 2019-11-26-ftp-web-client %}"><h3 class="no-anchor">FTP Client</h3></a><a href="{% post_url 2020-04-30-sftp-browser %}"><h3 class="no-anchor">SFTP Client</h3></a><a href="{% post_url 2019-11-21-s3-browser %}"><h3 class="no-anchor">S3 Browser</h3></a><a href="{% post_url 2021-10-18-webdav-client %}"><h3 class="no-anchor">WebDAV Client</h3></a><a href="{% post_url 2020-01-04-ldap-browser %}"><h3 class="no-anchor">LDAP Browser</h3></a>
+        <a href="{% post_url 2019-11-26-ftp-web-client %}"><h3 class="no-anchor">FTP Client</h3></a><a href="{% post_url 2020-04-30-sftp-browser %}"><h3 class="no-anchor">SFTP Client</h3></a><a href="{% post_url 2019-11-21-s3-browser %}"><h3 class="no-anchor">S3 Browser</h3></a><a href="{% post_url 2021-10-18-webdav-client %}"><h3 class="no-anchor">WebDAV Client</h3></a><a href="{% post_url 2024-05-01-smb-web-client %}"><h3 class="no-anchor">SMB Client</h3></a><a href="{% post_url 2020-01-04-ldap-browser %}"><h3 class="no-anchor">LDAP Browser</h3></a>
     </div>
 </div>
 
