@@ -67,11 +67,21 @@ You can pick and choose which storages you want your users to access:
     <figcaption>Example with only FTP & S3 enabled, appearing as "A FTP" and "AWS S3"</figcaption>
 </figure>
 
-Behind the scenes, "storage plugins" power each storage option in Filestash, providing a unified web interface that encapsulates the main functionalities of Filezilla, Cloudberry, WinSCP, and Cyberduck. This setup alone meets a wide range of needs but we can unlock some more powerful capabilities via "authentication middleware":
+Every single option available from the "*Storage Backend*" section is built as a "plugin". Once you pick a storage, you get a web client that is functionally similar to the like of Filezilla, Cloudberry, WinSCP, and Cyberduck but you can get a lot further when you start thinking of your implementation as 3 separate components:
+
+1. **Storage component**: that's what we have already configured, it can be anything like FTP, SFTP, S3, SMB, NFS, GIT, etc...
+
+2. **Authentication component**: it defines *how* users are expected to login. There are many valid strategies, from deferring the authentication to your storage (using the passthrough plugin) to defining your own users in Filestash itself (using the htpasswd plugin), AD, SAML, OIDC, proxy based authentication, and virtually any possible mechanism that could be used to authenticate a user. One example of such capability can be seen in the *authentication plugin* we created for MIT that extends the base LDAP authentication plugin with a 2FA layer using duo to authenticate to a SMB share, etc...
+
+3. **Authorisation component**: once someone have logged in, what are they allowed to do? You might want to restrict everyone to be readonly or setup rules for the marketing department to have read/write access on their assets while sales can only read that folder, etc...
+
+Let's start with the "*Authentication component*" which is configured in the "*authentication middleware*" section:
 
 <img class="fancy" src="/img/screenshots/doc_install_setup03.png" alt="auth middleware screenshot using passthrough to be used as an FTP client" loading="lazy" />
 
-By enabling an "Authentication middleware" plugin like the passthrough option shown above, you spare users from knowing and entering the technical details of your storage like hostname, port, access_keys, ... etc... These parameters will then be used to connect to your storage which in this case would show:
+By enabling an "*Authentication middleware*" plugin like the passthrough option shown above, you spare users from knowing and entering the technical details of your storage like hostname, port, access_keys, ... etc... These parameters will then be used to create the *connection details* needed to connect to your storage.
+
+In the exact setup shown above, end users will see:
 
 <figure>
     <img class="fancy" src="/img/screenshots/doc_install_setup02.png" alt="resulting frontend as an FTP client" loading="lazy" />

@@ -314,5 +314,6 @@ fetch("https://pages.kerjean.me/projects/filestash/apps/youtube-search/?q=ftp")
         <a class="btn light" href="{% post_url 2019-11-21-s3-browser %}">S3 Browser</a>
         <a class="btn light" href="{% post_url 2019-11-26-ftp-web-client %}">FTP Client</a>
         <a class="btn light" href="{% post_url 2020-04-30-sftp-browser %}">SFTP Client</a>
+        <a class="btn light" href="{% post_url 2024-05-01-smb-web-client %}">SMB Client</a>
     </div>
 </div>
