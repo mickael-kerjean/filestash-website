@@ -12,7 +12,7 @@ h1 { margin-top: 4rem; }
 
 {% include banner.html %}
 <div class="banner" style="text-align:justify">
-    Assumption: you have an AWS Account. If that's not the case, <a href="/redirect.html?origin=pricing::selfhosted&url=https://aws.amazon.com/resources/create-account/">create your account</a> or get a <a href="/docs/support/?origin=doc::marketplace">support contract</a>.
+   Have questions or need assistance? <a href="/redirect.html?origin=doc::marketplace::funnel&url=https://platform.filestash.app/support/book">Book your free consultation</a> with the lead dev. We'll help you make the best of your setup for your specific use case.
 </div>
 
 This guide is split in 3 parts:
