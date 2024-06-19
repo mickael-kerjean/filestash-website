@@ -1,6 +1,6 @@
 ---
 title: Bcrypt online
-description: An online tool to generate and verify bcrypt hash
+description: An online tool to generate and verify bcrypt hashes in pure js without any server component
 layout: post
 tags: tool
 language: en
