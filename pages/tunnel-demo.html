@@ -1,0 +1,81 @@
+---
+layout: post
+title: Book a Demo
+permalink: /tunnel/demo/
+head:
+  - <link rel="stylesheet" href="/css/form.css">
+---
+<style>
+  h1 { display: none; }
+  #main {
+      max-width: 1100px;
+      margin-top: 75px;
+  }
+  #main form label span {
+      display: inline-block;
+      margin: 5px 0;
+  }
+  #main form input, #main form textarea {
+      border: none;
+      margin: 0;
+  }
+  #main form button {
+      background: var(--secondary);
+      color: white;
+  }
+</style>
+
+<div style="display:flex;margin-top:50px;">
+  <div style="width: 400px; padding-right: 50px;
+    font-size: 2.5rem;
+    color: var(--emphasis);">
+    <span style="font-style: italic;
+    opacity: 0.8;
+    font-weight: bold;">Book a demo</span> with the project lead. We'll walk you through everything you want to know and answer any questions you may have.
+  </div>
+
+  <div style="flex-grow: 1; margin-top: -25px;">
+    <form onsubmit="submitForm(event)" action="https://downloads.filestash.app/compute/form.php" method="POST" style="background: var(--dark); box-shadow: 0px 0px 50px rgb(0 0 0 / 50%);
+    border-radius: 5px;
+    padding: 20px 20px 20px 20px;
+    color: white;">
+      <input type="hidden" name="type" value="tunnel::demo">
+      <input type="hidden" name="description" value="">
+      <input type="hidden" name="redirect" value="https://platform.filestash.app/support/book">
+      <label>
+        <span>Email*</span><input type="text" name="email" placeholder="Email address" required="">
+      </label><br>
+      <label>
+        <span>Phone</span><input type="text" name="phone" placeholder="Phone">
+      </label><br>
+      <label>
+        <span>Job Title</span><input type="text" name="job-title" placeholder="Job Title">
+      </label><br>
+      <label>
+        <span>What is your use case?</span><br>
+        <textarea style="resize:none;" rows="20" name="message" placeholder="eg: I want users in my active directory to connect to a s3 bucket where users in the marketing group can read write and others can only read"></textarea>
+      </label>
+      <button class="btn" style="margin-top:25px;margin-bottom:0;">SUBMIT</button>
+    </form>
+  </div>
+</div>
+
+<script>
+ function submitForm(e){
+     var $submit = e.target.querySelector("button");
+     e.target.setAttribute("disabled", "true");
+     var n = 0;
+     $submit.innerHTML = "LOADING ...";
+     window.setInterval(function(){
+         n += 1;
+         if(n === 1){
+             $submit.innerHTML = "LOADING .&nbsp&nbsp";
+         } else if(n === 2){
+             $submit.innerHTML = "LOADING ..&nbsp";
+         } else if(n === 3){
+             $submit.innerHTML = "LOADING ...";
+             n = 0;
+         }
+     }, 800);
+ }
+</script>

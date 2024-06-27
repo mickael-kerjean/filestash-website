@@ -1156,7 +1156,7 @@ head:
     <a href="#" rel="modal:close">x</a>
     <form onsubmit="submitForm(event)" action="https://downloads.filestash.app/compute/form.php" method="post">
         <input type="hidden" name="type" value="enterprise" />
-        <input type="hidden" name="redirect" value="https://www.filestash.app/ok/" />
+        <input type="hidden" name="redirect" value="https://platform.filestash.app/support/book" />
         <input type="email" name="email" placeholder="Email Address" />
         <input type="phone" name="phone" placeholder="Phone Number" />
         <input type="text" name="job-title" placeholder="Job Title" />
@@ -1170,7 +1170,7 @@ head:
     <a href="#" rel="modal:close">x</a>
     <form onsubmit="submitForm(event)" action="https://downloads.filestash.app/compute/form.php" method="post">
         <input type="hidden" name="type" value="support::register" />
-        <input type="hidden" name="redirect" value="https://www.filestash.app/ok/" />
+        <input type="hidden" name="redirect" value="https://platform.filestash.app/support/book" />
         <input type="text" name="company" placeholder="Your company name" />
         <input type="email" name="email" placeholder="Your email address" />
         <input type="phone" name="phone" placeholder="Your phone number" />
