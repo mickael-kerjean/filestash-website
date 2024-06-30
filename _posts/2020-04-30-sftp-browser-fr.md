@@ -121,11 +121,6 @@ head:
     "priceCurrency": "USD",
     "price": "0.1"
   },
-  "offers": {
-    "@type": "Offer",
-    "priceCurrency": "USD",
-    "price": "0.1"
-  },
   "aggregateRating": {
     "@type": "AggregateRating",
     "ratingValue": "5",

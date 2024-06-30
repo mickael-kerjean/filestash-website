@@ -14,10 +14,12 @@ head:
   #main form label span {
       display: inline-block;
       margin: 5px 0;
+      font-size: 0.9rem;
   }
   #main form input, #main form textarea {
       border: none;
       margin: 0;
+      padding: 9px 9px;
   }
   #main form button {
       background: var(--secondary);
@@ -52,7 +54,7 @@ head:
         <span>Job Title</span><input type="text" name="job-title" placeholder="Job Title">
       </label><br>
       <label>
-        <span>What is your use case?</span><br>
+        <span>Anything you think we should know?</span><br>
         <textarea style="resize:none;" rows="20" name="message" placeholder="eg: I want users in my active directory to connect to a s3 bucket where users in the marketing group can read write and others can only read"></textarea>
       </label>
       <button class="btn" style="margin-top:25px;margin-bottom:0;">SUBMIT</button>
