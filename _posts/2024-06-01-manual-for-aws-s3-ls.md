@@ -3,6 +3,7 @@ title: AWS S3 LS Manual
 description: The Manual page for aws s3 ls
 layout: post
 language: en
+tags: s3
 head:
   - <link rel="stylesheet" href="/css/guide.css">
 
