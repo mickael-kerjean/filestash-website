@@ -145,13 +145,15 @@ head:
             <div>
                 <div class="plan" id="plan-pro">
                     <div class="plan-name">
-                        <h4>Pro</h4>
+                        <h4>Pro <span class="hidden-xs hidden-sm hidden-md" style="font-weight:normal;font-style:italic">AWS Marketplace</span></h4>
                         <div class="price">
                             From 0.1$ / hour
                         </div>
                     </div>
                     <ul class="features">
                         <li>Commercial License</li>
+                        <li>SSO (SAML, OIDC, and LDAP)</li>
+                        <li>Audit & Compliance</li>
                         <li>AWS Cloud</li>
                     </ul>
                     <a href="https://www.filestash.app/docs/marketplace/?origin=pricing::pro" class="btn">START</a>
@@ -164,11 +166,11 @@ head:
                         </div>
                     </div>
                     <ul class="features">
-                        <li>24/7 Support</li>
+                        <li>+ everything from pro</li>
                         <li>Whitelabeling</li>
-                        <li>Single sign-on</li>
-                        <li>Audit & Compliance</li>
-                        <li>Custom plugin development</li>
+                        <li>24/7 Support</li>
+                        <li>Custom plugin dev.</li>
+                        <li>Extensive plugin collection</li>
                     </ul>
                     <a class="btn action" href="./?origin=local&modal=enterprise">CONTACT US</a>
                 </div>
@@ -780,6 +782,13 @@ head:
                 <td><i class="check"></i></td>
             </tr>
             <tr>
+                <td>Fine grained access control</td>
+                <td data-related="cloud"><i class="close"></i></td>
+                <td data-related="selfhosted"><i class="close"></i></td>
+                <td><i class="close"></i></td>
+                <td><i class="check"></i></td>
+            </tr>
+            <tr>
                 <td>Branding and White Labeling</td>
                 <td data-related="cloud"><i class="close"></i></td>
                 <td data-related="selfhosted"><i class="close"></i></td>
@@ -809,6 +818,13 @@ head:
             </tr>
             <tr>
                 <td>MFA integration</td>
+                <td data-related="cloud"><i class="close"></i></td>
+                <td data-related="selfhosted"><i class="close"></i></td>
+                <td><i class="close"></i></td>
+                <td><i class="check"></i></td>
+            </tr>
+            <tr>
+                <td>GIS viewer / editor</td>
                 <td data-related="cloud"><i class="close"></i></td>
                 <td data-related="selfhosted"><i class="close"></i></td>
                 <td><i class="close"></i></td>
