@@ -96,7 +96,7 @@ head:
 <img src="https://vitux.com/wp-content/uploads/proftpd-user-conf.png" />
 
 <p>
-    ProFTPD is an awesome solution that reminds me a lot of httpd with its very similar XML-ish syntax for configuration and more importantly a very wide range of modules to do anything you might want, including changing the default protocol from FTP to SFTP via the `mod_sftp` module. Don't be fooled by the not very modern website design which is stamped by a "W3C XHTML 1.0" logo that 15 years ago was a way to brag to your friends your website was cool. Well things have changed but lucky for us, the software is still seeing a lot of activity and quite frankly ProFTPD is an amazing piece of software, built in plain C by wizards who are skilled enough to not create segfault, that alone inspires respect.
+    ProFTPD is an awesome solution that reminds me a lot of httpd with its very similar XML-ish syntax for configuration and more importantly a very wide range of modules to do anything you might want, including changing the default protocol from FTP to SFTP via the `mod_sftp` module. Don't be fooled by the <a href="http://www.proftpd.org/">not very modern website design</a> which is stamped by a "W3C XHTML 1.0" logo that 15 years ago was a way to brag to your friends your website was cool. Well things have changed but lucky for us, that piece of software was made in C by true wizards who knew enough not to create segfault and the software stood the test of time brilliantly as it is still seeing regular new releases.
 </p>
 
 <h2 id="rebex">Rebex</h2>
