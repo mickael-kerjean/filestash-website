@@ -214,7 +214,7 @@ head:
 </p>
 <p>
     <strong>How to make an SFTP server?</strong>
-    If you're good at golang, there's all the tools you need to create an SFTP server in the <a href="https://pkg.go.dev/github.com/pkg/sftp">standard library</a>, the most popular in JAVA is <a href="https://mina.apache.org/sshd-project/index.html">Apache mina</a> and if you feel like doing some C, the <a href="https://github.com/openssh/openssh-portable">openssh code</a> is your friend.
+    If you're good at golang, there's all the tools you need to create an SFTP server in the <a href="https://pkg.go.dev/github.com/pkg/sftp">standard library</a>, the most popular in JAVA is <a href="https://mina.apache.org/sshd-project/index.html">Apache mina</a> and if you feel like doing some C <a href="https://www.libssh.org/">libssh</a> is your friend.
 </p>
 
 </div>
