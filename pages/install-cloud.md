@@ -12,7 +12,7 @@ h1 { margin-top: 4rem; }
 
 {% include banner.html %}
 <div class="banner" style="text-align:justify">
-   Have questions or need assistance? <a href="/redirect.html?origin=doc::marketplace::funnel&url=https://platform.filestash.app/support/book">Book your free consultation</a> with the lead dev. We'll help you make the best of your setup for your specific use case.
+   As an AWS Marketplace user, you have full support access. <a href="/redirect.html?origin=doc::marketplace::funnel&url=https://platform.filestash.app/support/book">Book your <strong>free</strong> support call now</a> with our lead dev to tailor Filestash to your particular use case.
 </div>
 
 This guide is split in 3 parts:
