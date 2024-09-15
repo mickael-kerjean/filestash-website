@@ -147,7 +147,7 @@ head:
                     <div class="plan-name">
                         <h4>Pro <span class="hidden-xs hidden-sm hidden-md" style="font-weight:normal;font-style:italic">AWS Marketplace</span></h4>
                         <div class="price">
-                            From 0.1$ / hour
+                            From $0.1 / hour
                         </div>
                     </div>
                     <ul class="features">
@@ -162,7 +162,7 @@ head:
                     <div class="plan-name">
                         <h4>Enterprise <span class="hidden-xs hidden-sm hidden-md" style="font-weight:normal;font-style:italic">Turnkey solutions</span></h4>
                         <div class="price">
-                            From 250$ / month
+                            From $250 / month
                         </div>
                     </div>
                     <ul class="features">
