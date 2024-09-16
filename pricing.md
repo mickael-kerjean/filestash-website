@@ -145,7 +145,7 @@ head:
             <div>
                 <div class="plan" id="plan-pro">
                     <div class="plan-name">
-                        <h4>Pro <span class="hidden-xs hidden-sm hidden-md" style="font-weight:normal;font-style:italic">AWS Marketplace</span></h4>
+                        <h4>Pro <span class="hidden-xs hidden-sm hidden-md" style="font-weight:normal;font-style:italic">Public Cloud</span></h4>
                         <div class="price">
                             From $0.1 / hour
                         </div>
@@ -156,7 +156,10 @@ head:
                         <li>Audit & Compliance</li>
                         <li>AWS Cloud</li>
                     </ul>
-                    <a href="https://www.filestash.app/docs/marketplace/?origin=pricing::pro" class="btn">START</a>
+                    <div style="display: flex; gap: 5px;">
+                        <a href="/docs/marketplace/?origin=pricing::pro" class="btn">FOR AWS</a>
+                        <a href="/docs/marketplace/azure.html?origin=pricing::pro" class="btn">FOR AZURE</a>
+                    </div>
                 </div>
                 <div class="plan" id="plan-enterprise">
                     <div class="plan-name">
