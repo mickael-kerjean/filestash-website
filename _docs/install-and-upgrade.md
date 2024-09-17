@@ -58,41 +58,41 @@ After installation, navigate to `http://your_domain:8334` to configure your admi
 
 <img class="fancy" src="https://raw.githubusercontent.com/mickael-kerjean/filestash_images/master/screenshots/setup_password.png" alt="setup screenshot" style="320px;width: 100%;object-fit: cover;"/>
 
-## Setup
+## Configuration
 
-You can pick and choose which storages you want your users to access:
+For a basic setup, just pick the storage backends you need, and you’re good to go:
 
 <figure>
     <img class="fancy" src="/img/screenshots/doc_install_setup00.png" alt="storage backend screenshot" />
     <figcaption>Example with only FTP & S3 enabled, appearing as "A FTP" and "AWS S3"</figcaption>
 </figure>
 
-Every single option available from the "*Storage Backend*" section is built as a "plugin". Once you pick a storage, you get a web client that is functionally similar to the like of Filezilla, Cloudberry, WinSCP, and Cyberduck but you can get a lot further when you start thinking of your implementation as 3 separate components:
+This is the setup we use for the publicly available <a href="https://demo.filestash.app/login">demo</a>. If that's all you need, you can jump straight to <a href="#going-to-prod">going to prod<a>.
 
-1. **Storage component**: that's what we have already configured, it can be anything like FTP, SFTP, S3, SMB, NFS, GIT, etc...
+### Passthrough Pattern
 
-2. **Authentication component**: it defines *how* users are expected to login. There are many valid strategies, from deferring the authentication to your storage (using the passthrough plugin) to defining your own users in Filestash itself (using the htpasswd plugin), AD, SAML, OIDC, proxy based authentication, and virtually any possible mechanism that could be used to authenticate a user. For example we've developed an authentication plugin for the MIT that authenticate their users through LDAP followed by an MFA step that is based of their existing mfa solution provider: duo, connecting all of this with their SMB based storage in a seamless fashion.
-
-3. **Authorisation component**: once someone have logged in, what are they allowed to do? You might want to restrict everyone to be readonly or setup rules for the marketing department to have read/write access on their assets while sales can only read that folder, etc...
-
-Let's start with the "*Authentication component*" which is configured in the "*authentication middleware*" section:
+Now that we’ve covered the basics, let’s dive into the cooler stuff, connecting your storage to different authentication and authorization sources. There are plenty of valid strategies for this, but we’ll start with the simplest one, the passthrough middleware:
 
 <img class="fancy" src="/img/screenshots/doc_install_setup03.png" alt="auth middleware screenshot using passthrough to be used as an FTP client" loading="lazy" />
 
-By enabling an "*Authentication middleware*" plugin like the passthrough option shown above, you spare users from knowing and entering the technical details of your storage like hostname, port, access_keys, ... etc... These parameters will then be used to create the *connection details* needed to connect to your storage.
-
-In the exact setup shown above, end users will see:
+If you go with the same exact configuration in the screenshot above, users will see a much simpler login screen like this:
 
 <figure>
     <img class="fancy" src="/img/screenshots/doc_install_setup02.png" alt="resulting frontend as an FTP client" loading="lazy" />
     <figcaption>Authenticating as "anonymous" to ftp.gnu.org</figcaption>
 </figure>
 
-Another very common pattern is to use a plugin like the `htpasswd` to create a facade for your storage:
+At this point, the user experience is already much better than having them type in the correct "hostname" and "port" like before. The connection is established using a mix of static values, such as the hardcoded "ftp.gnu.org" hostname from the admin configuration, and dynamic variables, which in this case are the username and password entered by the user. Another common strategy is to create automatic login links. To do this, simply change the strategy in the configuration to "direct" and set everything up statically or through URL variables. This approach is especially useful if you want to generate QR codes or deep URLs, in which case security can be preserved through URL signatures.
+
+### Facade Pattern
+
+Another very different pattern is to create a "facade" for your storage using methods like "htpasswd", "OIDC", "SAML", or "LDAP". In practice, it looks like this:
 
 <img class="fancy" src="/img/screenshots/doc_install_setup04.png" alt="auth middleware to be used as a S3 browser" loading="lazy" />
 
-This setup grants "rick" complete access to all S3 buckets, whereas "jerry" is restricted to the "earth" bucket only. These mappings can be done using the [Go templating language](https://pkg.go.dev/text/template) with a couple additional features to enable actions based on your environment variables and enabling role based access. A common exampe of this would be to have an admin group in your IDP which can see the whole filesystem but restrict non admin users to their respective folders like this: "{{ if contains .memberOf "admin" }}/{{ else }}/home/{{ .user }}/{{end}}"
+In the setup above, only two users with their own username and password are allowed access, and the path variable is dynamically generated based on who has successfully authenticated. The user “rick” has full access to all S3 buckets, while the user “jerry” is restricted to the “earth” bucket only.
+
+Under the hood, these mappings are done using the Go templating language, along with a few custom functions to enable more advanced use cases. For example, you can dynamically generate chroot paths based on AD groups by building queries like this: &#123;&#123; if contains .memberOf "ADMIN"}}/&#123;&#123; else }}/&#123;&#123; .department }}/&#123;&#123; endif }}.
 
 ## Plugins
 
@@ -103,22 +103,29 @@ So far, we've only touched on storage plugins and authentication middleware, whi
     <figcaption>Storage plugins implements the <a href="https://github.com/mickael-kerjean/filestash/blob/master/server/common/types.go#L11-L21">IBackend interface</a>, Auth middleware implements the <a href="https://github.com/mickael-kerjean/filestash/blob/master/server/common/types.go#L23C6-L27">IAuthentication interface</a> and you can get fine grained authorisation with the <a href="https://github.com/mickael-kerjean/filestash/blob/master/server/common/types.go#L29-L37">IAuthorization interface</a></figcaption>
 </figure>
 
-Yet, we're just beginning to tap into the potential of plugins. As we see it, Filestash is a framework for developing file management applications. Once you open up the cover, you will find a core engine wrapped with plugins that define almost every facet of the file manager.
+Yet, we’re only beginning to tap into the potential of plugins. Filestash is more than just a ready-to-use tool; it's built as a framework for developing file management applications. Once you take a closer look, you’ll find a core engine surrounded by [plugins](https://github.com/mickael-kerjean/filestash/blob/master/server/plugin/index.go) that define almost every aspect of the file manager.
 
-For example, with plugins, you can layer an authorisation framework like what's enabled in the enterprise offering to restrict the possible set of action someone could do on your storage, change the [default file viewer](https://github.com/mickael-kerjean/filestash/blob/master/server/common/plugin.go#L164-L171) or build completly new ones from the ground up as we did with our [OnlyOffice integration to support office documents](https://github.com/mickael-kerjean/filestash/tree/master/server/plugin/plg_editor_onlyoffice). You can also alter where Filestash's configuration is pulled from and saved. While the filesystem is the default method, there are existing plugins for [S3 or using an environment variables](https://github.com/mickael-kerjean/filestash/blob/master/server/common/config_state.go#L3-L14). Searching capabilities go beyond the default recursive search plugin; they can be enhanced with more sophisticated FTS engines, like [our SQLite implementation](https://github.com/mickael-kerjean/filestash/tree/master/server/plugin/plg_search_sqlitefts), integrate with your existing Elasticsearch or Solr cluster or be disabled altogether. Additionally, if the thought of a buffer overflow makes you sweat, you can switch the default thumbnail generators written in C for [another implementation made entirely in Go](https://github.com/mickael-kerjean/filestash/tree/master/server/plugin/plg_image_golang).
+To cite a few examples of what plugins can do, you can layer a complete authorisation framework, override frontend code to change the default set of icons, disable viewers, add buttons specific to your use case, or even build entire file viewer applications like our [OnlyOffice integration](https://github.com/mickael-kerjean/filestash/tree/master/server/plugin/plg_editor_onlyoffice) which supports office documents, change how [configuration is being stored](https://github.com/mickael-kerjean/filestash/blob/master/server/common/config_state.go#L3-L14) and saved to something like S3 or via environment variables, disable search or go the full text search path with either the [sqlite plugin](https://github.com/mickael-kerjean/filestash/tree/master/server/plugin/plg_search_sqlitefts) or integrate with your existing Elasticsearch or Solr cluster. We've gone so far that if the thought of a buffer overflow makes you sweat, you can switch the default thumbnail generators written in C for [another implementation made entirely in Go](https://github.com/mickael-kerjean/filestash/tree/master/server/plugin/plg_image_golang) or disable it altogether.
 
 You can see all the plugins installed in your build on the `/about` page of your Filestash instance:
 
 <img class="fancy" src="/img/screenshots/doc_install_setup01.png" alt="about page screenshot" loading="lazy" />
 
-To truly grasp the breadth of options available through plugins, delving into the source code is the way to go. A good starting point for this exploration is [this](https://github.com/mickael-kerjean/filestash/blob/master/server/common/plugin.go#L164-L171) and [this](https://github.com/mickael-kerjean/filestash/blob/master/server/common/types.go).
+The plugin based architecture runs deep in the software and allows for the kind of customisation that would be impossible with any other solution. If you have very specific needs, there's good chance custom plugin can work for you and we can assist you <a href="/pricing/?origin=local&modal=enterprise">every step of the way in your project</a>
 
-<div class="banner" style="text-align:justify">
-    Need a hand with your setup? <br>
-    We offer professional services, including a variety of ready-made plugins, and can develop custom plugins tailored to your needs. When you <a href="/docs/support/?origin=doc::install">get support</a>, we'll assist you every step of the way.
-</div>
+If you’re eager to explore the power of plugins, delving into the source code is your best bet. A good starting point for this exploration is [this](https://github.com/mickael-kerjean/filestash/blob/master/server/common/plugin.go#L164-L171) and [this](https://github.com/mickael-kerjean/filestash/blob/master/server/common/types.go).
 
-## Advanced Setup
+## Going to Prod
+
+### SSL & Load Balancer
+
+Most enterprises will want to bring their own SSL certificates and use an ELB (Elastic Load Balancer) to proxy requests to the service, ensuring high availability. The base image plays well with this kind of setup but if you live in a simpler world, you have a couple options:
+
+1. setup a reverse proxy sitting as a middleman and handling the SSL termination there. In practice it means you will be using something like [certbot](https://letsencrypt.org/getting-started/) to generate SSL certificate and have something like [nginx](https://docs.nginx.com/nginx/admin-guide/web-server/reverse-proxy/) sitting as a middle man configured with proxy_pass to "http://ip_of_the_service:8334" and ssl certificate installed [like this](https://nginx.org/en/docs/http/configuring_https_servers.html).
+
+2. use another plugin that make Filestash speaks HTTPS natively without reverse proxy. There's 2 variations of such plugins, one that does SSL through letsencrypt and another where you need to insert your certificate in a particular location.
+
+### Advanced Setup
 
 Filestash is deployed in many sensitive environments with very stringent needs. If this sounds like what you are doing, you might want to read:
 
