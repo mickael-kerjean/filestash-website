@@ -124,7 +124,7 @@ head:
   "aggregateRating": {
     "@type": "AggregateRating",
     "ratingValue": "5",
-    "ratingCount": "9347"
+    "ratingCount": "10025"
   },
   "interactionStatistic": [
     {
