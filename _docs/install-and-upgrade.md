@@ -94,6 +94,10 @@ In the setup above, only two users with their own username and password are allo
 
 Under the hood, these mappings are done using the Go templating language, along with a few custom functions to enable more advanced use cases. For example, you can dynamically generate chroot paths based on AD groups by building queries like this: &#123;&#123; if contains .memberOf "ADMIN"}}/&#123;&#123; else }}/&#123;&#123; .department }}/&#123;&#123; endif }}.
 
+<div class="banner">
+    We're on a mission to build the world's best web file manager, and your feedback is essential to keeping us on track. <a href="https://platform.filestash.app/support/book">Book a free timeslot</a> with us, and we’ll help you get the most out of Filestash while answering any questions you have. It's a win-win!
+</div>
+
 ## Plugins
 
 So far, we've only touched on storage plugins and authentication middleware, which are 2 of the 3 pillars of a solid bespoke solution:
