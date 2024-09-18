@@ -59,7 +59,7 @@ head:
   <div class="container">
     <div id="oem">
       <span>
-          Want to run your own Filestash? Tailor every aspect of it via plugins and using the admin console, integrate SSO with your server, or go the white labelling route; we've got you covered. Filestash is the most adaptable file manager available.
+          Filestash can be tailored with your company colors and logo, integrating with your corporate single signed on. We will go the extra mile to fullfil your needs and requirements for customisation
       </span>
       <a href="/pricing/?origin=landing::sftp&modal=enterprise" class="btn">Chat with us</a>
     </div>
