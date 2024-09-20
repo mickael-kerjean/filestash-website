@@ -153,22 +153,40 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
             </h3>
             <div>
                 <div class="plan" id="plan-pro">
-                    <div class="plan-name">
-                        <h4>Pro <span class="hidden-xs hidden-sm hidden-md" style="font-weight:normal;font-style:italic">Public Cloud</span></h4>
+                    <div class="plan-name" style="border-bottom-left-radius: 0; border-bottom-right-radius: 0;">
+                        <h4>Pro <span class="hidden-xs hidden-sm hidden-md" style="font-weight:normal;font-style:italic">Cloud</span></h4>
                         <div class="price">
-                            From $0.1 / hour
+                            From $50 / month
                         </div>
                     </div>
-                    <ul class="features">
-                        <li>Commercial License</li>
-                        <li>SSO (SAML, OIDC, and LDAP)</li>
-                        <li>Audit & Compliance</li>
-                        <li>AWS Cloud</li>
-                    </ul>
-                    <div style="display: flex; gap: 5px;">
-                        <a href="/docs/marketplace/?origin=pricing::pro" class="btn">FOR AWS</a>
-                        <a href="/docs/marketplace/azure.html?origin=pricing::pro" class="btn">FOR AZURE</a>
+                    <div id="pricing-pro">
+                        <span class="center active">Cloud</span>
+                        <a href="/docs/marketplace/?origin=pricing::pro" class="center">AWS</a>
+                        <a href="/docs/marketplace/azure.html?origin=pricing::pro" class="center">Azure</a>
                     </div>
+                    <style>
+                     #pricing-pro {
+                         margin-top: -25px;
+                         background: var(--dark);
+                         color: white;
+                         border-bottom-left-radius: 3px;
+                         border-bottom-right-radius: 3px;
+                         display: flex;
+                     }
+                     #pricing-pro > a, #pricing-pro > span {
+                         flex-grow: 1;
+                         line-height: 25px;
+                         color: white;
+                     }
+                     #pricing-pro > .active {
+                         background: var(--emphasis);
+                     }
+                    </style>
+                    <ul class="features" style="height:128px">
+                        <li>Unlimited Users</li>
+                        <li>Commercial License</li>
+                    </ul>
+                    <a class="btn action" href="/redirect.html?origin=pricing::pro&url=https://buy.stripe.com/cN215sdCSdpA436aEE">START YOUR FREE TRIAL</a>
                 </div>
                 <div class="plan" id="plan-enterprise">
                     <div class="plan-name">
@@ -178,10 +196,11 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
                         </div>
                     </div>
                     <ul class="features">
-                        <li>+ everything from pro</li>
+                        <li>SSO (SAML, OIDC, LDAP)</li>
+                        <li>Audit & Compliance</li>
                         <li>Whitelabeling</li>
                         <li>24/7 Support</li>
-                        <li>Custom plugin dev.</li>
+                        <li class="hidden">Custom plugin dev.</li>
                         <li>Extensive plugin collection</li>
                     </ul>
                     <a class="btn action" href="./?origin=local&modal=enterprise">CONTACT US</a>
@@ -229,7 +248,7 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
      color: white;
      border-radius: 3px;
      padding: 15px;
-     margin-bottom: 25px;
+     margin-bottom: 20px;
  }
  #pricing .plan .price{ font-size: 0.95rem; }
  #pricing .features { height: 145px; padding-left: 20px; }
