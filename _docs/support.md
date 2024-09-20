@@ -25,10 +25,10 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
 4. Receive security patches before public disclosure
 5. Additional deployment options depending on your setup: custom docker images, deb, rpm, binary packages, ...
 6. Range of off the shelve plugins that fit a wide range of use cases
-7. Help to [harden your setup](https://downloads.filestash.app/upload/hardening-guide.pdf)
+7. Help to [harden your setup](/redirect.html?origin=doc::support&url=https://downloads.filestash.app/upload/hardening-guide.pdf)
 8. Access to consulting services
 9. Enterprise License
-10. Access to our [customer platform](https://platform.filestash.app), to create support tickets, book support sessions, get your build package, retrieve invoices, feature requests, manage subscriptions, and more.
+10. Access to our [customer platform](/redirect.html?origin=doc::support&url=https://platform.filestash.app), to create support tickets, book support sessions, get your build package, retrieve invoices, feature requests, manage subscriptions, and more.
 
 In other words, we help you get the most out of our software and will be focused on your success. We're so confident in our software and services that you can try the full package for 30 days at no charge:
 
