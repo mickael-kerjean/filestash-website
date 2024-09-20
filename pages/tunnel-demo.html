@@ -6,14 +6,29 @@ head:
   - <link rel="stylesheet" href="/css/form.css">
 ---
 
-<script type="text/javascript">
-(function(c,l,a,r,i,t,y){
-c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
-y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-})(window, document, "clarity", "script", "8cx5ep4pd8");
+<div class="center">
+  <div class="loader"></div>
+</div>
+<style>
+.loader {
+  width: 50px;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  border: 8px solid;
+  border-color: #000 #0000;
+  animation: l1 1s infinite;
+  margin: 0 auto;
+}
+@keyframes l1 {to{transform: rotate(.5turn)}}
+h1 { display: none; }
+</style>
+<script>
+  location.href = "https://platform.filestash.app/support/book"
 </script>
 
+
+
+<div class="hidden">
 <style>
   h1 { display: none; }
   #main {
@@ -90,3 +105,4 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
      }, 800);
  }
 </script>
+</div>
