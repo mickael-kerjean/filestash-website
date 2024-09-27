@@ -41,7 +41,7 @@ Hardware requirement is minimal: 128MB of RAM and 1 core will suffice, provided 
 The official Docker image is available on [Docker Hub](https://hub.docker.com/r/machines/filestash/)
 <div class="terminal">
 <span class="prompt">~/$ </span>mkdir filestash && cd filestash<br>
-<span class="prompt">~/filestash$ </span>curl -O https://downloads.filestash.app/latest/docker-compose.yml<br>
+<span class="prompt">~/filestash$ </span>curl -O https://raw.githubusercontent.com/mickael-kerjean/filestash/master/docker/docker-compose.yml<br>
 <span class="stdout">
 % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current<br>
                                  Dload  Upload   Total   Spent    Left  Speed<br>
@@ -149,7 +149,7 @@ Filestash is deployed in many sensitive environments with very stringent needs. 
 To update Filestash:
 
 <div class="terminal">
-<span class="prompt">~/filestash$ </span>curl -O https://downloads.filestash.app/latest/docker-compose.yml<br>
+<span class="prompt">~/filestash$ </span>curl -O https://raw.githubusercontent.com/mickael-kerjean/filestash/master/docker/docker-compose.yml<br>
 <span class="stdout">
 % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current<br>
                                  Dload  Upload   Total   Spent    Left  Speed<br>
